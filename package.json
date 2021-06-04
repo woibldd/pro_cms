@@ -40,8 +40,10 @@
     "vue-template-compiler": "^2.6.11"
   },
   "_id": "simple-vue@0.1.0",
-  "gitHooks": {
-    "pre-commit": "lint-staged"
+  "///":{
+    "gitHooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.{js,jsx,vue}": [

@@ -30,7 +30,9 @@ const routes = [
   },
   {
     path: "*",
-    redirect: "/",
+    redirect: {
+      name:"detail"
+    }
   },
 ];
 
