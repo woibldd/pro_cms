@@ -6,7 +6,7 @@
       </div>
       <div class="sub">
         <span>来源：</span>
-        <span>{{ info.user_name }}</span>
+        <span class="username">{{ info.user_name }}</span>
         <span>{{ info.create_time  | filterDate }}</span>
       </div>
     </div>
@@ -77,6 +77,9 @@ export default {
     /* textSecond3 */
 
     color: #6d707d;
+  }
+  .username{
+    padding-right:10px;
   }
   .content {
     // margin:15px 0;
