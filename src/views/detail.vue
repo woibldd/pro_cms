@@ -7,7 +7,7 @@
       <div class="sub">
         <span>来源：</span>
         <span>{{ info.user_name }}</span>
-        <span>{{ info.create_time }}</span>
+        <span>{{ info.create_time  | filterDate }}</span>
       </div>
     </div>
     <div class="content" v-html="info.content"></div>
@@ -44,6 +44,11 @@ export default {
     }
   },
   methods: {},
+  filters:{
+      filterDate (create_time){
+          return new Date(create_time).toLocaleString()
+      }
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -59,7 +64,7 @@ export default {
     line-height: 28px;
   }
   .sub {
-    padding-bottom: 15px;
+    margin: 15px 0;
     font-family: PingFang SC;
     font-style: normal;
     font-weight: normal;
