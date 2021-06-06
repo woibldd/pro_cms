@@ -1,7 +1,7 @@
 import axios from "axios";
 const isProduction = process.env.NODE_ENV == "production";
 console.log("_____", process.env.VUE_APP_API);
-const request = axios.create({
+const   request = axios.create({
   baseURL: process.env.VUE_APP_API || "/",
 });
 
@@ -11,22 +11,27 @@ const request = axios.create({
 //         return config;
 //     },
 //     function(error) {
-//        r
-//         return Promise.reject(error);
+
+//         return Promise.resolve({
+//           status:1
+//         });
 //     }
 // );
-// // Add a response interceptor
-// request.interceptors.response.use(
-//     function(response) {
+// Add a response interceptor
+request.interceptors.response.use(
+    function(response) {
+        return  response.data
+    },
+    function(error) {
 
-//     },
-//     function(error) {
-//         loadingInstance.hide();
-//         error && error.config && rmCacheKey(error.config,true)
-//         // Do something with response error
-//         return Promise.reject(error);
-//     }
-// );–
+
+        // Do omething with response error
+         return Promise.resolve({
+          status:1,
+          data:"网路开了小差"
+        });
+    }
+);
 
 export const API = {
   getDetails: (data) => request.get("/article/detail", { params: data }),

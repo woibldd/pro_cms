@@ -11,6 +11,7 @@
       </div>
     </div>
     <div class="content" v-html="info.content"></div>
+    <van-image-preview  close-on-popstate closeable :start-position="current" v-model="showPreview" :images="images" @change="onChange" @onclose="onclose"/>
   </div>
 </template>
 
@@ -22,7 +23,12 @@ export default {
   data() {
     const date = new Date();
     return {
-      info: {},
+      showPreview:false,
+      images:[],
+      current:0,
+      info: {
+
+      },
     };
   },
 
@@ -34,19 +40,36 @@ export default {
   async mounted() {
     const toast = this.$toast.loading({ duration: 0 });
     const id = this.$route.params.id || this.$route.query.id;
-    const { status, data } = await API.getDetails({ id });
+    const result  = await API.getDetails({ id });
+    const { status, data } = result
     toast.clear();
-    if (data.status == 0) {
-      this.info = data.data;
+    if (status == 0) {
+      this.info = data;
       document.title = this.info.title;
     } else {
-      this.$toast(data.data);
+      this.$toast(data);
+    }
+    await this.$nextTick()
+    const self = this
+    const  imgs = document.getElementById("article").getElementsByTagName("img")
+    this.images =  Array.from(imgs).map((v,index)=>{
+       v.setAttribute("show_index",index)
+       v.onclick=function(){
+          self.showPreview =true
+          self.current = (Number(this.getAttribute("show_index") || 0))
+       }
+       return v.getAttribute("src") || v.getAttribute("href")
+    }).filter(v=>v)
+  },
+  methods: {
+    onChange(){},
+    onclose(){
+      console.log(arguments)
     }
   },
-  methods: {},
   filters:{
       filterDate (create_time){
-          return new Date(create_time).toLocaleString()
+          return new Date(create_time||new Date()).toLocaleString()
       }
   }
 };
