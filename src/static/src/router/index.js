@@ -4,7 +4,6 @@ import VueRouter from "vue-router";
 import articleDetail from "@/views/detail.vue";
 
 import home from "@/views/home.vue";
-import { config } from "@/config/index";
 
 Vue.use(VueRouter);
 

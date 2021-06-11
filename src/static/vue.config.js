@@ -1,11 +1,13 @@
 const path = require("path");
 // const WebpackZipPlugin = require('webpack-zip-plugin')
 const port = 8080;
-
-// const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 function resolve(dir) {
   return path.join(__dirname, dir);
 }
+
+
+// const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+
 
 const isProduction = process.env.NODE_ENV == "production";
 // vue.config.js
@@ -42,21 +44,12 @@ module.exports = {
       errors: true,
     },
 
-    // proxy: {
-    //     '/': {
-    //         // target: 'http://dev.bom.yktour.com.cn',
-    //         target: 'http://localhost:8898',
-    //         changeOrigin: true,
-    //     },
-    //     // '/ykly-app': {
-    //     //     target: 'https://testapp.yktour.com.cn/',
-    //     //     changeOrigin: true
-    //     // },
-    //     // '/': {
-    //     //     // target: 'http://dev.bom.yktour.com.cn/', // 测试服
-    //     //     changeOrigin: true
-    //     // }
-    // }
+    proxy: {
+        '/': {
+            target: process.env.VUE_PROXY_API || 'http://localhost:8080',
+            changeOrigin: true,
+        }
+    }
   },
   configureWebpack: {
     devtool: "source-map",

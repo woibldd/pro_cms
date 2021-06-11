@@ -1,0 +1,19 @@
+{
+    "apps": [
+      {
+        "node_args":"--inspect",
+        "name": "ProCms",
+        "script": "./index.js",
+        "watch": true,
+        "log_date_format": "YYYY-MM-DD HH:mm:ss",
+        "error_file": "/data/caoshiyuan/logs/pro_admin/api_error.log",
+        "out_file":  "/data/caoshiyuan/logs/pro_admin/api_runtime.log"
+      }
+    ]
+  }
+  
+  
+  
+  
+  
+  
