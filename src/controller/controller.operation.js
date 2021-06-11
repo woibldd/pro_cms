@@ -6,7 +6,7 @@ const DBhelper = require('../tool/operationhelper');
 module.exports = class BitkeepController extends CoreController {
 
 	constructor() {
-		super('cms/article');
+		super('article');
 	}
 	async detail(params) {
 		let data = await DBhelper.getArticleDetail(params);

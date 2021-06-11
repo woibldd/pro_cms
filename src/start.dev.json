@@ -1,7 +1,7 @@
 {
     "apps": [
       {
-        "node_args":"--inspect",
+        "node_args":"--inspect=0.0.0.0:9221",
         "name": "ProCms",
         "script": "./index.js",
         "watch": true,
