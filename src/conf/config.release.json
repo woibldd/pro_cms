@@ -1,10 +1,10 @@
 {
     "debug": false,
-    "port": 8080,
+    "port": 8081,
     "redis": {
         "host": "10.7.188.154",
         "port": 6379,
         "auth": ""
     },
-    "host_operation":"http://localhost:8898",
+    "host_operation":"http://ms.operation:8898"
 }
