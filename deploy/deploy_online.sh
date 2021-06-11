@@ -41,7 +41,7 @@ for instance in ${INSTANCES[*]}; do
     #将压缩文件拷贝到相应的目录
     sudo /usr/bin/scp -i /home/devops-user/.ssh/id_rsa ${HISTORY_DIR}/${TGZ_NAME} devops-user@${instance}:/data/vhosts/
     #解压文件,重新建立项目所需配置文件连接,重新启动pm
-    remote_ssh ${instance} "/bin/tar xzf ${TARGET_TGZ_FILE} -C ${TARGET_TAG_DIR};/bin/rm -f ${TARGET_TGZ_FILE};/bin/rm -f ${TARGET_TAG_DIR}/src/conf/config.json;/bin/ln -s ${TARGET_TAG_DIR}/src/conf/config.release.json ${TARGET_TAG_DIR}/src/conf/config.json;/bin/unlink ${TARGET_DIR};/bin/ln -s ${TARGET_TAG_DIR} ${TARGET_DIR}; export NODE_PATH=\"/home/devops-user/.nvm/versions/node/v8.16.2/lib/node_modules/\"; cd ${TARGET_DIR}/src; pm2 delete start.json; pm2 start start.json;"
+    remote_ssh ${instance} "/bin/tar xzf ${TARGET_TGZ_FILE} -C ${TARGET_TAG_DIR};/bin/rm -f ${TARGET_TGZ_FILE};/bin/rm -f ${TARGET_TAG_DIR}/src/conf/config.json;/bin/ln -s ${TARGET_TAG_DIR}/src/conf/config.release.json ${TARGET_TAG_DIR}/src/conf/config.json;/bin/unlink ${TARGET_DIR};/bin/ln -s ${TARGET_TAG_DIR} ${TARGET_DIR}; export NODE_PATH=\"/usr/lib/node_modules/\"; cd ${TARGET_DIR}/src; pm2 delete start.json; pm2 start start.json;"
     
 done
 
