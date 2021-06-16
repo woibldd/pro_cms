@@ -4,21 +4,9 @@ sudo yum install -y git
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-nvm install 8.16.2
+nvm install v10.24.0
 
-npm install -g stream
-npm install -g path
-npm install -g fs
-npm install -g assert
-npm install -g crypto
-npm install -g multimap
-npm install -g utf8
-npm install -g mime
-npm install -g underscore
-npm install -g request
-npm install -g streamifier
-npm install -g md5
-npm install -g ontp
-npm install -g thirty-two
+npm install -g babel-plugin-import core-js node-sass@^4.14.1 postcss-px2rem-exclude sass-loader@^7.3.1 uglifyjs-webpack-plugin @nuxtjs/axios @nuxtjs/proxy
+
 
 

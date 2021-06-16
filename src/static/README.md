@@ -1,8 +1,11 @@
-# cms h5 
-   .evn*文件是环境变量穿惨
+# STATIC
 
-# 启动
-   test   npm run build:dev
+**This directory is not required, you can delete it if you don't want to use it.**
 
-   pro    npm run build    dist目录是静态资源目录   env.preduction   VUE_APP_API 是api地址
+This directory contains your static files.
+Each file inside this directory is mapped to `/`.
+Thus you'd want to delete this README.md before deploying to production.
 
+Example: `/static/robots.txt` is mapped as `/robots.txt`.
+
+More information about the usage of this directory in [the documentation](https://nuxtjs.org/guide/assets#static).

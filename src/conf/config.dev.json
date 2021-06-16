@@ -1,19 +1,7 @@
 {
-	"debug": true,
-    "port": 8080,
-
-	"redis": {
-        "host": "10.7.161.254",
-        "port": 6379,
-        "auth": ""
-    },
-
-
-    "host_operation":"http://localhost:8898",
-    "//":"h5地址",
-  
-    "temp_path": "/data/caoshiyuan/tmp/"
-    
+    "debug": false,
+    "port": 8081,
+    "host_operation":"http://localhost:8898"
 }
 
 
