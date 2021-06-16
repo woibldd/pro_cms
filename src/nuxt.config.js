@@ -5,9 +5,10 @@ const Path = require("path")
 const isPro = process.env.NODE_ENV === 'production'
 const CONFIG =  require(Path.resolve(__dirname,"./conf/config.json"))
 
-const API_URL  = process.env.NUXT_ENV_operation_api || 'http://dev.bitkeep.top:8898'
+// const API_URL  = process.env.NUXT_ENV_operation_api || 'http://dev.bitkeep.top:8898'
 
 console.log("process.env.NODE_ENV", process.env.NODE_ENV)
+console.log(CONFIG)
 export default {
   // mode: 'universal',
   server: {
@@ -81,7 +82,7 @@ export default {
   ],
   publicRuntimeConfig: {
     axios: {
-      baseURL:  API_URL
+      baseURL:  CONFIG.host_operation
     }
   },
 
