@@ -6,11 +6,7 @@
       "watch": true,
       "log_date_format": "YYYY-MM-DD HH:mm:ss",
       "error_file": "/data/logs/pro_cms/api_error.log",
-      "out_file":  "/data/logs/pro_cms/api_runtime.log",
-      "env": {
-        "NODE_ENV": "production",
-        "NUXT_ENV_API": "http://localhost:8898"
-      }
+      "out_file":  "/data/logs/pro_cms/api_runtime.log"
     }
   ]
 }

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "article-detail-id",
+    "path": "/article/detail/:id?",
+    "component": "/Users/caoshiyuan/project/bitkeep/bproject/pro_cms/src/pages/article/detail/_id.vue",
+    "chunkName": "pages/article/detail/_id"
+  },
+  {
+    "name": "id",
+    "path": "/:id?",
+    "component": "/Users/caoshiyuan/project/bitkeep/bproject/pro_cms/src/pages/_id.vue",
+    "chunkName": "pages/_id"
+  }
+]

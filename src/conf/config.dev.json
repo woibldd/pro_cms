@@ -1,6 +1,5 @@
 {
-    "debug": false,
-    "port": 8081,
+    "port": 808,
     "host_operation":"http://localhost:8898"
 }
 
