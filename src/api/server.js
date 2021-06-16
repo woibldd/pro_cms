@@ -27,7 +27,7 @@ export default {
      } = ctx
    
     console.log("请求参数：", JSON.stringify(params),JSON.stringify(query))
-    let url = createURL(`/article/detail`, params);
+    let url = createURL(`/operation/detail`, params);
     return $axios
       .$get(url)
       .then(result => {

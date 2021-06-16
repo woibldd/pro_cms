@@ -3,12 +3,14 @@
     "name": "article-detail-id",
     "path": "/article/detail/:id?",
     "component": "/Users/caoshiyuan/project/bitkeep/bproject/pro_cms/src/pages/article/detail/_id.vue",
-    "chunkName": "pages/article/detail/_id"
+    "chunkName": "pages/article/detail/_id",
+    "_name": "_000c4fbd"
   },
   {
     "name": "id",
     "path": "/:id?",
     "component": "/Users/caoshiyuan/project/bitkeep/bproject/pro_cms/src/pages/_id.vue",
-    "chunkName": "pages/_id"
+    "chunkName": "pages/_id",
+    "_name": "_7cf85b62"
   }
 ]
