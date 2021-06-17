@@ -129,6 +129,7 @@ export default {
   margin: 0 auto;
   padding: 15px 16px;
   box-sizing: border-box;
+  width: 100%;
   .title {
     font-style: normal;
     font-weight: 500;
