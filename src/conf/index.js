@@ -1,5 +1,4 @@
 global.CONFIG = require('./config.json');
-
 // (function(){
 // 	if(!CONFIG.redis) return;
 // 	var redis = require("redis");

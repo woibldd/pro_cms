@@ -2,7 +2,7 @@
   "apps": [
     {
       "name": "ProCms",
-      "script": "./node_modules/nuxt/bin/nuxt.js start",
+      "script": "nuxt start",
       "watch": true,
       "log_date_format": "YYYY-MM-DD HH:mm:ss",
       "error_file": "/data/caoshiyuan/pro_cms/api_error.log",
