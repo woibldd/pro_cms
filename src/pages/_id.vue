@@ -5,7 +5,7 @@
         {{ info.title }}
       </div>
       <div class="sub">
-        <span>来源：</span>
+        <span>{{ source }}:</span>
         <span class="username">{{ info.user_name }}</span>
         <span>{{ info.create_time | filterDate }}</span>
       </div>
@@ -31,32 +31,44 @@ import API from "@/api/server.js";
 export default {
   name: "Detail",
   async asyncData(ctx) {
-    const result = await API.articleDetail(ctx);
-    const { status, data } = result;
-
+   const [langR, detailR] =  await Promise.all([
+      API.articleLang(ctx),
+      API.articleDetail(ctx)
+    ])
+    const { status, data } = detailR;
     const info =
       String(data) == "null" || !data
         ? {
             title: "该文章不存在",
           }
         : data;
-    
-    if (status == 0) {
-      ctx.app.head.title = info.title;
-      return {
-        info
-      };
-    } else {
-      return {
-         info
-      };
+    const { languages, means} =  langR.status ==0 ? langR.data : { languages:[],means:[] }
+    if(detailR.status == 0){
+        ctx.app.head.title = info.title;
     }
+    return {
+        info,
+        languages,
+        means
+    };
+  },
+  computed:{
+      source(){
+        const { list } = this.languages.find(v=>v.zh=='来源') || {list:[]}
+        const { value }  = list.find(v=>v.key ==this.info.language) || {
+          key:"en",
+          value:"source"
+        }
+        return value
+      }
   },
   data() {
     return {
       showPreview: false,
       images: [],
       current: 0,
+      languages:[],
+      means:[],
       info: {
 
       }

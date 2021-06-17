@@ -2417,10 +2417,6 @@ external_vant_["Empty"], external_vant_["ImagePreview"]];
 
 function install(Vue) {
   vant_components.forEach(function (item) {
-    console.log({
-      item
-    });
-
     if (item.install) {
       Vue.use(item);
     } else if (item.name) {

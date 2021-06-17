@@ -7,7 +7,8 @@ const CONFIG =  require(Path.resolve(__dirname,"./conf/config.json"))
 
 const API_URL  = process.env.NUXT_ENV_operation_api || 'http://dev.bitkeep.top:8898'
 
-console.log("process.env.url", API_URL, process.env.NUXT_ENV_operation_api)
+console.log("API_URL", API_URL, process.env.NUXT_ENV_operation_api)
+  
 console.log(CONFIG)
 export default {
   // mode: 'universal',
