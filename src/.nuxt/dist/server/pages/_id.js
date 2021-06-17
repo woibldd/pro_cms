@@ -39,7 +39,7 @@ function createURL(url, params) {
       $config
     } = ctx;
     let url = createURL(`/article/detail`, params);
-    console.log("请求参数：", url);
+    console.log("请求参数：", JSON.stringify($config), JSON.stringify(params), JSON.stringify(query));
     return $axios.$get(url).then(result => {
       console.log("响应：", result);
       return result;
@@ -55,10 +55,11 @@ function createURL(url, params) {
     const {
       $axios,
       params,
-      query
+      query,
+      $config
     } = ctx;
+    console.log("请求参数：", JSON.stringify($config), JSON.stringify(params), JSON.stringify(query));
     let url = createURL(`/article/lang`, params);
-    console.log("请求参数：", url);
     return $axios.$get(url).then(result => {
       console.log("响应：", result);
       return result;
