@@ -155,7 +155,7 @@ export default {
   }
   .content {
     // margin:15px 0;
-    white-space: pre
+    // white-space: pre
   }
   .noData{
     color: #999;

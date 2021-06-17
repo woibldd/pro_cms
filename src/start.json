@@ -2,7 +2,7 @@
     "apps": [
       {
         "name": "ProCms",
-        "script": "/usr/lib/node_modules/nuxt/nuxt.js start",
+        "script": "nuxt start",
         "watch": false,
         "log_date_format": "YYYY-MM-DD HH:mm:ss",
 
