@@ -30,7 +30,8 @@ TARGET_TGZ_FILE="/data/vhosts/${TGZ_NAME}"
 # create code tarball
 deploy_message "Create tarball"
 cd ${DEPLOY_DIR}/;
-/bin/tar zcf ${TGZ_NAME} ./src/* --exclude=logs --exclude=data --exclude=history;
+# 因为nuxt打包后默认是.nuxt文件 去掉了 *
+/bin/tar zcf ${TGZ_NAME} ./src/ --exclude=logs --exclude=data --exclude=history;
 git checkout .;
 mkdir -p ${HISTORY_DIR};
 /bin/mv ./${TGZ_NAME} ${HISTORY_DIR}/
