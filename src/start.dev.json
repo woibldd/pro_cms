@@ -2,14 +2,14 @@
   "apps": [
     {
       "name": "ProCms",
-      "script": "nuxt start",
+      "script": "./node_modules/nuxt/bin/nuxt.js start",
       "watch": true,
       "log_date_format": "YYYY-MM-DD HH:mm:ss",
       "error_file": "/data/caoshiyuan/pro_cms/api_error.log",
       "out_file":  "/data/caoshiyuan/pro_cms/api_runtime.log",
       "env": {
         "NODE_ENV": "production",
-        "NUXT_ENV_operation_api": "http://dev.bitkeep.top:8898"
+        "NUXT_ENV_operation_api": "http://localhost:8898"
       }
     }
   ]

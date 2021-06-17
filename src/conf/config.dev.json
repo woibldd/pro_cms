@@ -1,6 +1,6 @@
 {
-    "port": 808,
-    "host_operation":""
+	"debug": true,
+    "port": 8080    
 }
 
 
