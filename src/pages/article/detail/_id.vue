@@ -128,8 +128,12 @@ export default {
   min-height: 100vh;
   margin: 0 auto;
   padding: 15px 16px;
+  width: 100vw;
   box-sizing: border-box;
-  width: 100%;
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
   .title {
     font-style: normal;
     font-weight: 500;
@@ -155,6 +159,7 @@ export default {
     padding-right: 10px;
   }
   .content {
+    word-break: break-all;
     // margin:15px 0;
     // white-space: pre
   }
