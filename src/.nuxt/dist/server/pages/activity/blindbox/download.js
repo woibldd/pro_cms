@@ -55,12 +55,12 @@ module.exports = ___CSS_LOADER_EXPORT___;
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/blindbox/download.vue?vue&type=template&id=0cd95b92&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"download"}},[_c('Header',[_c('div',{staticClass:"blindbox_header"},[_c('span',{staticClass:"header_back",on:{"click":_vm.back}},[_c('div',[_c('img',{attrs:{"src":__webpack_require__(112)}})])]),_vm._v(" "),_c('span',{staticClass:"logo"},[_c('img',{attrs:{"src":__webpack_require__(113)}})])])]),_vm._ssrNode(" <div class=\"block_body\"><a href=\"intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end\"> Take a QR code </a> <img"+(_vm._ssrAttr("src",__webpack_require__(114)))+"> <a href=\"https://bitkeep.org\" class=\"btn\">立即下载</a></div>")],2)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/blindbox/download.vue?vue&type=template&id=9711cebc&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"download"}},[_c('Header',[_c('div',{staticClass:"blindbox_header"},[_c('span',{staticClass:"header_back",on:{"click":_vm.back}},[_c('div',[_c('img',{attrs:{"src":__webpack_require__(112)}})])]),_vm._v(" "),_c('span',{staticClass:"logo"},[_c('img',{attrs:{"src":__webpack_require__(113)}})])])]),_vm._ssrNode(" <div class=\"block_body\"><img"+(_vm._ssrAttr("src",__webpack_require__(114)))+"> <a href=\"https://bitkeep.org\" class=\"btn\">立即下载</a></div>")],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/activity/blindbox/download.vue?vue&type=template&id=0cd95b92&
+// CONCATENATED MODULE: ./pages/activity/blindbox/download.vue?vue&type=template&id=9711cebc&
 
 // EXTERNAL MODULE: ./components/common/index.js
 var common = __webpack_require__(63);

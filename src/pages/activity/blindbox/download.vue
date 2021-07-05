@@ -13,7 +13,7 @@
       </div>
     </Header>
     <div class="block_body">
-      <a href="intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end"> Take a QR code </a>
+      <!-- <a href="intent://scan/#Intent;scheme=zxing;package=com.google.zxing.client.android;S.browser_fallback_url=http%3A%2F%2Fzxing.org;end"> Take a QR code </a> -->
 
       <img src="@/assets/activity/blindbox/download@2.png" />
       <a class="btn" href="https://bitkeep.org">立即下载</a>
