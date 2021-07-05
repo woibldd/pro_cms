@@ -29,7 +29,7 @@
               @click="handlerBtn(item, 0)"
             >
               <div :class="{ list_item: true }">
-                <div class="list_item_warpper">
+                <div class="list_item_warpper radial-gradient">
                   <div v-if="item.status != 0" class="list_item_invaild"></div>
                   <div class="list_item_pic">
                     <van-image
@@ -84,21 +84,7 @@
           <div
             class="noData"
             v-if="!listLoading && (!blindbox_list || blindbox_list.length == 0)"
-          >
-            <div class="noData_content ">
-              <img
-                class="bg"
-                src="@/assets/activity/blindbox/noDataBg2@2.png"
-              />
-              <div class="text  color_theme">
-                <span class="title ">暂时没有盲盒</span>
-                <div class="content">
-                  据说使用 BitKeep
-                  转账成功或兑换数字资产可随机获得一个盲盒，有概率开出惊喜数字资产
-                </div>
-              </div>
-            </div>
-          </div>
+          ></div>
         </van-pull-refresh>
       </div>
     </div>
@@ -285,15 +271,17 @@ export default {
       min-height: 100vh;
     }
     .noData {
+      // border: 2px solid #d5c6ff;
+      box-sizing: border-box;
       width: 220px;
       height: 282px;
-      margin:166px auto 0  ;
+      margin: 166px auto 0;
       box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.6);
       backdrop-filter: blur(10px);
       /* Note: backdrop-filter has minimal browser support */
 
       border-radius: 18px;
-      background: url("@/assets/activity/blindbox/noDataBg@2.png") center center
+      background: url("@/assets/activity/blindbox/noData@2.png") center center
         no-repeat;
       background-size: 100% 100%;
       text-align: center;
@@ -307,7 +295,7 @@ export default {
           left: 0;
           bottom: 0;
           background: #ffffff;
-          opacity: 0.6;
+          opacity: 0.4;
         }
         position: relative;
         overflow: hidden;
@@ -320,14 +308,6 @@ export default {
         margin: 10px 16px;
         display: flex;
         justify-content: space-between;
-        background: radial-gradient(
-          15354.96% 14203.58% at 8.02% 0%,
-          #fffbe6 0%,
-          #ffefea 19.79%,
-          #ffeff7 53.47%,
-          #ffecfd 59.9%,
-          #ddd1ff 97.4%
-        );
         border-radius: 10px;
 
         .list_item_pic {

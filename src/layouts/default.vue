@@ -24,6 +24,16 @@
 .btn:active {
   opacity: 0.8;
 }
+.radial-gradient{
+   background: radial-gradient(
+          at right top,
+          #fffbe5 0%,
+          #ffefea 19.79%,
+          #ffeff7 53.47%,
+          #ffecfd 59.9%,
+          #ddd1ff 97.4%
+        );
+}
 // .btn {
 //   background: linear-gradient(122.71deg, #74eeff 3.38%, #6f2cff 92.57%), #c4c4c4;
 //   border-radius: 100px;

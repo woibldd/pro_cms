@@ -2558,7 +2558,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".body {\n  font-family: PingFang SC;\n  font-style: normal;\n  font-weight: normal;\n}\n.color_red {\n  color: #ff255a;\n  font-weight: 600;\n}\n.color_text {\n  color: #4b5373;\n}\n.color_theme {\n  color: #0c0998;\n}\n.btn:active {\n  opacity: 0.8;\n}\n@keyframes heartbeat {\n0% {\n    transform: scale(0.9, 0.9);\n    opacity: 1;\n}\n25% {\n    transform: scale(1, 1);\n    opacity: 0.9;\n}\n100% {\n    opacity: 1;\n    transform: scale(0.9, 0.9);\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".body {\n  font-family: PingFang SC;\n  font-style: normal;\n  font-weight: normal;\n}\n.color_red {\n  color: #ff255a;\n  font-weight: 600;\n}\n.color_text {\n  color: #4b5373;\n}\n.color_theme {\n  color: #0c0998;\n}\n.btn:active {\n  opacity: 0.8;\n}\n.radial-gradient {\n  background: radial-gradient(at right top, #fffbe5 0%, #ffefea 19.79%, #ffeff7 53.47%, #ffecfd 59.9%, #ddd1ff 97.4%);\n}\n@keyframes heartbeat {\n0% {\n    transform: scale(0.9, 0.9);\n    opacity: 1;\n}\n25% {\n    transform: scale(1, 1);\n    opacity: 0.9;\n}\n100% {\n    opacity: 1;\n    transform: scale(0.9, 0.9);\n}\n}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
@@ -3011,7 +3011,7 @@ async function setContext(app, context) {
       error: context.error,
       base: app.router.options.base,
       env: {
-        "BUILD_ENV": "pro",
+        "BUILD_ENV": "dev",
         "HOST_API": "http://dev.bitkeep.top:8880",
         "NODE_ENV": "production",
         "DEBUG": "bit*"
@@ -3536,15 +3536,15 @@ var external_vue_router_default = /*#__PURE__*/__webpack_require__.n(external_vu
 
 
 
-const _65e970f7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 16).then(__webpack_require__.bind(null, 125)));
+const _65e970f7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 16).then(__webpack_require__.bind(null, 124)));
 
-const _20d08508 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail */ 14).then(__webpack_require__.bind(null, 126)));
+const _20d08508 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail */ 14).then(__webpack_require__.bind(null, 125)));
 
-const _6bb9fd1a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 15).then(__webpack_require__.bind(null, 127)));
+const _6bb9fd1a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 15).then(__webpack_require__.bind(null, 126)));
 
-const _1b2d1009 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 17).then(__webpack_require__.bind(null, 128)));
+const _1b2d1009 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 17).then(__webpack_require__.bind(null, 127)));
 
-const _74266e07 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 18).then(__webpack_require__.bind(null, 124)));
+const _74266e07 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 18).then(__webpack_require__.bind(null, 123)));
 
 const emptyFn = () => {};
 
@@ -4083,12 +4083,12 @@ var nuxt_loading_component = Object(componentNormalizer["a" /* default */])(
 // EXTERNAL MODULE: ./node_modules/vant/lib/index.css
 var lib = __webpack_require__(43);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=template&id=2688a71a&
-var defaultvue_type_template_id_2688a71a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('Nuxt')],1)}
-var defaultvue_type_template_id_2688a71a_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=template&id=43460fd3&
+var defaultvue_type_template_id_43460fd3_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('Nuxt')],1)}
+var defaultvue_type_template_id_43460fd3_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./layouts/default.vue?vue&type=template&id=2688a71a&
+// CONCATENATED MODULE: ./layouts/default.vue?vue&type=template&id=43460fd3&
 
 // CONCATENATED MODULE: ./layouts/default.vue
 
@@ -4104,8 +4104,8 @@ if (style0.__inject__) style0.__inject__(context)
 
 var default_component = Object(componentNormalizer["a" /* default */])(
   script,
-  defaultvue_type_template_id_2688a71a_render,
-  defaultvue_type_template_id_2688a71a_staticRenderFns,
+  defaultvue_type_template_id_43460fd3_render,
+  defaultvue_type_template_id_43460fd3_staticRenderFns,
   false,
   default_injectStyles,
   null,
@@ -4464,8 +4464,8 @@ const components = {
   Common: () => __webpack_require__.e(/* import() | components/common */ 4).then(__webpack_require__.bind(null, 63)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 8).then(__webpack_require__.bind(null, 95)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 9).then(__webpack_require__.bind(null, 70)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 10).then(__webpack_require__.bind(null, 129)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 7).then(__webpack_require__.bind(null, 123)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 10).then(__webpack_require__.bind(null, 128)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 7).then(__webpack_require__.bind(null, 122)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutPainter: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-painter */ 11).then(__webpack_require__.bind(null, 82)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutQrcode: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-qrcode */ 12).then(__webpack_require__.bind(null, 69)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 13).then(__webpack_require__.bind(null, 83)).then(c => wrapFunctional(c.default || c))
@@ -4908,6 +4908,10 @@ async function createApp(ssrContext, config = {}) {
       "script": [{
         "name": "viewport",
         "content": "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      }, {
+        "src": "https:\u002F\u002Fcdn.bootcdn.net\u002Fajax\u002Flibs\u002FvConsole\u002F3.8.1\u002Fvconsole.min.js",
+        "type": "text\u002Fjavascript",
+        "charset": "utf-8"
       }],
       "style": []
     },
