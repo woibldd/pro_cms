@@ -2,9 +2,10 @@
     cms c端展示系统  nuxt  服务端渲染
 # 虚拟机启动
     pm2 start start.dev.json
-    pm2 start start.json
-    
-## Build Setup
+    pm2 start start.json  //生产部署
+
+
+## 本地运行
 
 ``` bash
 # install dependencies

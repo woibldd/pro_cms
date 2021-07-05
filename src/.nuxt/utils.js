@@ -196,11 +196,11 @@ export async function setContext (app, context) {
       isDev: false,
       isHMR: false,
       app,
-
+      store: app.store,
       payload: context.payload,
       error: context.error,
       base: app.router.options.base,
-      env: {}
+      env: {"baseUrl":"http://dev.bitkeep.top:8880","HOST_URL":"http://dev.bitkeep.top:8880","NODE_ENV":"production","DEBUG":"*"}
     }
     // Only set once
 

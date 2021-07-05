@@ -8,8 +8,10 @@
       "error_file": "/data/caoshiyuan/pro_cms/api_error.log",
       "out_file":  "/data/caoshiyuan/pro_cms/api_runtime.log",
       "env": {
+        "DEBUG":"*",
         "NODE_ENV": "production",
-        "NUXT_ENV_operation_api": "http://localhost:8898"
+        "NUXT_ENV_operation_api": "http://ms.operation:8898",
+        "HOST_USER":"http://ms.user:8880"
       }
     }
   ]

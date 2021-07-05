@@ -1,16 +1,29 @@
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
 require('events').EventEmitter.defaultMaxListeners = 30
 const Path = require("path")
 
+
 const isPro = process.env.NODE_ENV === 'production'
-const CONFIG =  require(Path.resolve(__dirname,"./conf/config.json"))
+const CONFIG = require(Path.resolve(__dirname, "./conf/config.json"))
 
-const API_URL  = process.env.NUXT_ENV_operation_api || 'http://dev.bitkeep.top:8898'
 
-console.log("API_URL", API_URL, process.env.NUXT_ENV_operation_api)
-  
-console.log(CONFIG)
+const API_URL = process.env.NUXT_ENV_operation_api || CONFIG.host_operation || "http://ms.operation:8898"
+const baseUrl = process.env.HOST_USER || CONFIG.host_user || "http://ms.user:8881"
+const HOST_USER = process.env.HOST_USER || CONFIG.host_user || "http://ms.user:8881"
+
+console.log(`当前环境________`, CONFIG, {
+  API_URL,
+  baseUrl,
+  HOST_USER
+})
 export default {
+  env: {
+    baseUrl,
+    HOST_USER,
+    NODE_ENV: process.env.NODE_ENV,
+    DEBUG: CONFIG.debug ? "*" : ""
+  },
   // mode: 'universal',
   server: {
     port: CONFIG.port, // default: 3000
@@ -35,16 +48,25 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
-    script: [
-      // {
-      //   src: '/common/flexible.js',
-      //   type: 'text/javascript',
-      //   charset: 'utf-8'
-      // }
+    script: isPro ? [
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
+      }
+    ] : [{
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
+    },
+
+    {
+      src: 'https://cdn.bootcdn.net/ajax/libs/vConsole/3.8.1/vconsole.min.js',
+      type: 'text/javascript',
+      charset: 'utf-8'
+    }
     ]
   },
- 
 
+  // loading: { color: '#d832b3' },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     'vant/lib/index.css'
@@ -53,31 +75,44 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     // '@/plugins/vant'
-    { src:'@/plugins/common/flexible.js', ssr: false },
-    { src:'@/plugins/common/vant.js', ssr: true },
+    { src: '@/plugins/client/bitkeep.js', ssr: false },
+    { src: '@/plugins/client/flexible.js', ssr: false },
+    { src: '@/plugins/common/init.js'},
+    { src: "@/plugins/client/sessionStorage.js", ssr: false },
+    "@/plugins/axios.js"
+
+    // { src:'@/plugins/common/lang/vant.js', ssr: true },
 
   ],
 
+
   router: {
-    // middleware: ['initVuex'],
+    middleware: ['initRouter'],
     scrollBehavior: function (to, from, savedPosition) {
       console.log({ to, from, savedPosition })
+      return savedPosition
     }
   },
-  
+
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-  // proxy: {
-  //   //  开发环境
-  //   '/api': {
-  //     target: process.env.NUXT_ENV_operation_api,  //上线要改成testapi
-  //     changeOrigin: true,
-  //     pathRewrite: {
-  //       '^/api': ''
-  //     }
-  //   }
-  
-  // },
+  proxy: {
+    //  开发环境
+    '/user': {
+      target: HOST_USER,  //上线要改成testapi
+      changeOrigin: true,
+      // pathRewrite: {
+      //   '^/user': ''
+      // }
+    },
+    '/poster': {
+      target: "https://cdn.bitkeep.vip",  //上线要改成testapi
+      changeOrigin: true,
+      pathRewrite: {
+        '^/poster': ''
+      }
+    }
+  },
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
   ],
@@ -96,6 +131,9 @@ export default {
   devtools: true,
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    terser: {
+      sourceMap: !isPro,
+    },
     postcss: [
       require('postcss-px2rem-exclude')({
         // remUnit: 37.5,
@@ -111,7 +149,7 @@ export default {
         remPrecision: 2, // rem的小数点后位数
         exclude: /(node_modules)/,
       }),
- 
+
       // require('autoprefixer')({
       //   overrideBrowserslist: ['Android >= 4.0', 'iOS >= 7']
       // }),

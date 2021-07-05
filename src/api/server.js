@@ -14,7 +14,7 @@ function createURL(url, params) {
 export default {
   articleDetail(ctx, data = {}) {
     const { $axios,
-       app,
+      app,
       store,
       route,
       params,
@@ -29,11 +29,11 @@ export default {
    
    
     let url = createURL(`/article/detail`, params);
-    console.log("请求参数：", JSON.stringify($config),JSON.stringify(params),JSON.stringify(query))
+    // console.log("请求参数：", JSON.stringify($config),JSON.stringify(params),JSON.stringify(query))
     return $axios
       .$get(url)
       .then(result => {
-        console.log("响应：",result)
+        // console.log("响应：",result)
         return result;
       })
       .catch(err => {
@@ -50,12 +50,12 @@ export default {
       $config
      } = ctx
    
-    console.log("请求参数：", JSON.stringify($config),JSON.stringify(params),JSON.stringify(query))
+    // console.log("请求参数：", JSON.stringify($config),JSON.stringify(params),JSON.stringify(query))
     let url = createURL(`/article/lang`, params);
     return $axios
       .$get(url)
       .then(result => {
-        console.log("响应：",result)
+        // console.log("响应：",result)
         return result;
       })
       .catch(err => {

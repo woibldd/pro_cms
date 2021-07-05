@@ -7,6 +7,7 @@
         "log_date_format": "YYYY-MM-DD HH:mm:ss",
 
         "env": {
+          "DEBUG":"*",
           "NODE_ENV": "production",
           "NUXT_ENV_operation_api": "http://ms.operation:8898"
         }

@@ -4,8 +4,11 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+const _abcb9dfe = () => interopDefault(import('../pages/activity/blindbox/index.vue' /* webpackChunkName: "pages/activity/blindbox/index" */))
+const _317efeb2 = () => interopDefault(import('../pages/activity/blindbox/detail.vue' /* webpackChunkName: "pages/activity/blindbox/detail" */))
+const _2f3ecd29 = () => interopDefault(import('../pages/activity/blindbox/download.vue' /* webpackChunkName: "pages/activity/blindbox/download" */))
+const _cd81b282 = () => interopDefault(import('../pages/activity/blindbox/list.vue' /* webpackChunkName: "pages/activity/blindbox/list" */))
 const _000c4fbd = () => interopDefault(import('../pages/article/detail/_id.vue' /* webpackChunkName: "pages/article/detail/_id" */))
-const _7cf85b62 = () => interopDefault(import('../pages/_id.vue' /* webpackChunkName: "pages/_id" */))
 
 const emptyFn = () => {}
 
@@ -19,13 +22,25 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/activity/blindbox",
+    component: _abcb9dfe,
+    name: "activity-blindbox"
+  }, {
+    path: "/activity/blindbox/detail",
+    component: _317efeb2,
+    name: "activity-blindbox-detail"
+  }, {
+    path: "/activity/blindbox/download",
+    component: _2f3ecd29,
+    name: "activity-blindbox-download"
+  }, {
+    path: "/activity/blindbox/list",
+    component: _cd81b282,
+    name: "activity-blindbox-list"
+  }, {
     path: "/article/detail/:id?",
     component: _000c4fbd,
     name: "article-detail-id"
-  }, {
-    path: "/:id?",
-    component: _7cf85b62,
-    name: "id"
   }],
 
   fallback: false
