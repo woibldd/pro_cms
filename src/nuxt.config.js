@@ -7,7 +7,7 @@ const Path = require("path")
 const isPro = process.env.NODE_ENV === 'production'
 const CONFIG = require(Path.resolve(__dirname, "./conf/config.json"))
 
-
+const isDev =process.env.NODE_ENV !== 'production'
 const API_URL = process.env.NUXT_ENV_operation_api || CONFIG.host_operation || "http://ms.operation:8898"
 const baseUrl = process.env.HOST_API || CONFIG.host_api 
 const HOST_API = process.env.HOST_API || CONFIG.host_api 
@@ -57,7 +57,6 @@ export default {
       name: 'viewport',
       content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
     },
-
     {
       src: 'https://cdn.bootcdn.net/ajax/libs/vConsole/3.8.1/vconsole.min.js',
       type: 'text/javascript',

@@ -1053,7 +1053,7 @@ if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
 var add = __webpack_require__(9).default
 module.exports.__inject__ = function (context) {
-  add("6ac3c623", content, true, context)
+  add("6ac3c623", content, false, context)
 };
 
 /***/ }),
@@ -1070,7 +1070,7 @@ if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
 var add = __webpack_require__(9).default
 module.exports.__inject__ = function (context) {
-  add("7e56e4e3", content, true, context)
+  add("7e56e4e3", content, false, context)
 };
 
 /***/ }),
@@ -1087,7 +1087,7 @@ if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
 var add = __webpack_require__(9).default
 module.exports.__inject__ = function (context) {
-  add("4e8213bc", content, true, context)
+  add("4e8213bc", content, false, context)
 };
 
 /***/ }),
@@ -2524,7 +2524,7 @@ var content = __webpack_require__(44);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
-__webpack_require__(9).default("521f9ff1", content, true)
+__webpack_require__(9).default("521f9ff1", content, false)
 
 /***/ }),
 /* 44 */
@@ -2843,9 +2843,7 @@ function hasFetch(vm) {
   return vm.$options && typeof vm.$options.fetch === 'function' && !vm.$options.fetch.length;
 }
 function purifyData(data) {
-  if (true) {
-    return data;
-  }
+  if (false) {}
 
   return Object.entries(data).filter(([key, value]) => {
     const valid = !(value instanceof Function) && !(value instanceof Promise);
@@ -3013,7 +3011,7 @@ async function setContext(app, context) {
       env: {
         "baseUrl": "http://localhost:8880",
         "HOST_API": "http://localhost:8880",
-        "NODE_ENV": "production",
+        "NODE_ENV": "dev",
         "DEBUG": ""
       }
     }; // Only set once
@@ -4313,7 +4311,7 @@ let store_store = {};
 
 const createStore = store_store instanceof Function ? store_store : () => {
   return new external_vuex_default.a.Store(Object.assign({
-    strict: "production" !== 'production'
+    strict: "dev" !== 'production'
   }, store_store));
 };
 
@@ -4897,6 +4895,10 @@ async function createApp(ssrContext, config = {}) {
       "script": [{
         "name": "viewport",
         "content": "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      }, {
+        "src": "https:\u002F\u002Fcdn.bootcdn.net\u002Fajax\u002Flibs\u002FvConsole\u002F3.8.1\u002Fvconsole.min.js",
+        "type": "text\u002Fjavascript",
+        "charset": "utf-8"
       }],
       "style": []
     },

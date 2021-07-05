@@ -9,7 +9,7 @@
       "out_file":  "/data/caoshiyuan/pro_cms/api_runtime.log",
       "env": {
         "DEBUG":"*",
-        "NODE_ENV": "production",
+        "NODE_ENV": "dev",
         "NUXT_ENV_operation_api": "http://ms.user:8898",
         "HOST_API":"http://dev.bitkeep.top:8880"
       }
