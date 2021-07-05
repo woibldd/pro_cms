@@ -5,9 +5,10 @@
       "script": "./node_modules/nuxt/bin/nuxt.js start",
       "watch": true,
       "log_date_format": "YYYY-MM-DD HH:mm:ss",
-      "error_file": "/data/caoshiyuan/pro_cms/api_error.log",
-      "out_file":  "/data/caoshiyuan/pro_cms/api_runtime.log",
+     
       "env": {
+
+        "VCONSOLE":"true",
         "DEBUG":"*",
         "NODE_ENV": "dev",
         "NUXT_ENV_operation_api": "http://ms.user:8898",

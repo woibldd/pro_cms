@@ -649,6 +649,7 @@ const actions = {
 
     if (state.UA.isBitKeep) {
       log("内嵌bitkeep app 设置参数", state.UA.isBitKeep);
+      console.log("内嵌bitkeep app 设置参数", state.UA.isBitKeep);
       commit('SET_BIT_KEEP', {
         language: req.headers.language,
         currency: req.headers.currency,
@@ -664,6 +665,7 @@ const actions = {
     }
 
     commit("CHANGE_LANG", locale);
+    console.log("当前语言", state.UA.isBitKeep);
     log("当前语言", {
       locale
     });
@@ -3009,10 +3011,11 @@ async function setContext(app, context) {
       error: context.error,
       base: app.router.options.base,
       env: {
-        "baseUrl": "http://localhost:8880",
-        "HOST_API": "http://localhost:8880",
-        "NODE_ENV": "dev",
-        "DEBUG": ""
+        "baseUrl": "http://dev.bitkeep.top:8880",
+        "HOST_API": "http://dev.bitkeep.top:8880",
+        "NODE_ENV": "env",
+        "DEBUG": "*",
+        "VCONSOLE": "true"
       }
     }; // Only set once
 
@@ -4311,7 +4314,7 @@ let store_store = {};
 
 const createStore = store_store instanceof Function ? store_store : () => {
   return new external_vuex_default.a.Store(Object.assign({
-    strict: "dev" !== 'production'
+    strict: "env" !== 'production'
   }, store_store));
 };
 

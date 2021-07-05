@@ -54,6 +54,7 @@ const actions = {
     //App内嵌
     if (state.UA.isBitKeep) {
       log("内嵌bitkeep app 设置参数",state.UA.isBitKeep)
+      console.log("内嵌bitkeep app 设置参数",state.UA.isBitKeep)
       commit('SET_BIT_KEEP', {
         language: req.headers.language,
         currency: req.headers.currency,
@@ -71,6 +72,7 @@ const actions = {
 
     
     commit("CHANGE_LANG", locale);
+    console.log("当前语言",state.UA.isBitKeep)
     log("当前语言",{locale} )
   }
 }

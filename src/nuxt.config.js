@@ -5,24 +5,31 @@ const Path = require("path")
 
 
 const isPro = process.env.NODE_ENV === 'production'
+
+
+
 const CONFIG = require(Path.resolve(__dirname, "./conf/config.json"))
 
-const isDev =process.env.NODE_ENV !== 'production'
 const API_URL = process.env.NUXT_ENV_operation_api || CONFIG.host_operation || "http://ms.operation:8898"
 const baseUrl = process.env.HOST_API || CONFIG.host_api 
 const HOST_API = process.env.HOST_API || CONFIG.host_api 
-
-console.log(`当前环境________`, CONFIG, {
+const VCONSOLE = process.env.VCONSOLE 
+const DEBUG = (process.env.DEBUG  ||  CONFIG.debug ) ? "*" : ""
+console.log(`当前环境________`, {
   API_URL,
   baseUrl,
-  HOST_API
+  HOST_API,
+  DEBUG,
+  VCONSOLE,
+  NODE_ENV:process.env.NODE_ENV
 })
 export default {
   env: {
     baseUrl,
     HOST_API,
     NODE_ENV: process.env.NODE_ENV,
-    DEBUG: CONFIG.debug ? "*" : ""
+    DEBUG: DEBUG,
+    VCONSOLE
   },
   // mode: 'universal',
   server: {
@@ -48,7 +55,7 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
-    script: isPro ? [
+    script: (isPro &&!VCONSOLE) ? [
       {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
@@ -171,7 +178,7 @@ export default {
           new UglifyJsPlugin({
             uglifyOptions: {
               compress: {
-                drop_console: isPro
+                drop_console:  isPro && !VCONSOLE
               }
             }
           })
