@@ -3009,10 +3009,10 @@ async function setContext(app, context) {
       error: context.error,
       base: app.router.options.base,
       env: {
-        "baseUrl": "http://ms.user:8880",
-        "HOST_USER": "http://ms.user:8880",
+        "baseUrl": "http://localhost:8880",
+        "HOST_API": "http://localhost:8880",
         "NODE_ENV": "dev",
-        "DEBUG": "*"
+        "DEBUG": ""
       }
     }; // Only set once
 
@@ -3534,15 +3534,15 @@ var external_vue_router_default = /*#__PURE__*/__webpack_require__.n(external_vu
 
 
 
-const _abcb9dfe = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 16).then(__webpack_require__.bind(null, 123)));
+const _65e970f7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 16).then(__webpack_require__.bind(null, 123)));
 
-const _317efeb2 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail */ 14).then(__webpack_require__.bind(null, 124)));
+const _20d08508 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail */ 14).then(__webpack_require__.bind(null, 124)));
 
-const _2f3ecd29 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 15).then(__webpack_require__.bind(null, 125)));
+const _6bb9fd1a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 15).then(__webpack_require__.bind(null, 125)));
 
-const _cd81b282 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 17).then(__webpack_require__.bind(null, 126)));
+const _1b2d1009 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 17).then(__webpack_require__.bind(null, 126)));
 
-const _000c4fbd = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 18).then(__webpack_require__.bind(null, 122)));
+const _74266e07 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 18).then(__webpack_require__.bind(null, 122)));
 
 const emptyFn = () => {};
 
@@ -3555,23 +3555,23 @@ const routerOptions = {
   scrollBehavior: router_scrollBehavior,
   routes: [{
     path: "/activity/blindbox",
-    component: _abcb9dfe,
+    component: _65e970f7,
     name: "activity-blindbox"
   }, {
     path: "/activity/blindbox/detail",
-    component: _317efeb2,
+    component: _20d08508,
     name: "activity-blindbox-detail"
   }, {
     path: "/activity/blindbox/download",
-    component: _2f3ecd29,
+    component: _6bb9fd1a,
     name: "activity-blindbox-download"
   }, {
     path: "/activity/blindbox/list",
-    component: _cd81b282,
+    component: _1b2d1009,
     name: "activity-blindbox-list"
   }, {
     path: "/article/detail/:id?",
-    component: _000c4fbd,
+    component: _74266e07,
     name: "article-detail-id"
   }],
   fallback: false
@@ -3769,7 +3769,7 @@ var nuxt_error_component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   null,
-  "f1cc7b6a"
+  "7df36c6e"
   
 )
 
@@ -4073,7 +4073,7 @@ var nuxt_loading_component = Object(componentNormalizer["a" /* default */])(
   false,
   nuxt_loading_injectStyles,
   null,
-  "c3ed4e82"
+  "0ef1f8bd"
   
 )
 
@@ -4107,7 +4107,7 @@ var default_component = Object(componentNormalizer["a" /* default */])(
   false,
   default_injectStyles,
   null,
-  "2ed1bde6"
+  "e93714ea"
   
 )
 

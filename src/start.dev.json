@@ -2,7 +2,7 @@
   "apps": [
     {
       "name": "ProCms",
-      "script": "nuxt start",
+      "script": "./node_modules/nuxt/bin/nuxt.js start",
       "watch": true,
       "log_date_format": "YYYY-MM-DD HH:mm:ss",
       "error_file": "/data/caoshiyuan/pro_cms/api_error.log",
@@ -11,11 +11,14 @@
         "DEBUG":"*",
         "NODE_ENV": "production",
         "NUXT_ENV_operation_api": "http://ms.user:8898",
-        "HOST_API":"http://ms.user:8880"
+        "HOST_API":"http://127.0.0.1:8880"
       }
     }
   ]
 }
+
+
+
 
 
 

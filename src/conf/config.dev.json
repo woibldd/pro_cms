@@ -1,8 +1,8 @@
 {
-	"debug": true,
-    "port": 8082,
-    "host_api":"http://ms.user:8880",
-    "host_operation": "http://ms.user:8898"
+    "debug": false,
+    "port": 8081,
+    "host_api":"http://dev.bitkeep.top:8880",
+    "host_operation":"http://dev.bitkeep.top:8898"
 }
 
 

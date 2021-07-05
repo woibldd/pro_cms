@@ -287,7 +287,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "d77df3f4",
-  "3915fd00"
+  "3cba6542"
   
 )
 
@@ -421,7 +421,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "3521874b",
-  "d4c5a6d4"
+  "1eb405d8"
   
 )
 
@@ -459,7 +459,7 @@ const Header = _header_vue__WEBPACK_IMPORTED_MODULE_0__["default"];
 
 const host_user_instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
   baseURL: "/",
-  timeout: 10,
+  timeout: 60000,
   headers: {
     token: "",
     // token: "",

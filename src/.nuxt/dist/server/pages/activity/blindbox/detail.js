@@ -140,7 +140,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "3521874b",
-  "d4c5a6d4"
+  "1eb405d8"
   
 )
 
@@ -436,7 +436,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "ce47b7d2",
-  "26f1a687"
+  "9b23d0f6"
   
 )
 
@@ -500,7 +500,7 @@ module.exports = function (url, options) {
 
 const host_user_instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
   baseURL: "/",
-  timeout: 10,
+  timeout: 60000,
   headers: {
     token: "",
     // token: "",
@@ -734,7 +734,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "e6436f42",
-  "5c6de301"
+  "302b5802"
   
 )
 
@@ -951,7 +951,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "f308423a",
-  "472a7161"
+  "19545dba"
   
 )
 
@@ -1220,7 +1220,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   null,
-  "5a20cc67"
+  "ae1978ae"
   
 )
 
@@ -1771,7 +1771,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "fedfaf1e",
-  "36f948b3"
+  "39b6af16"
   
 )
 

@@ -5,7 +5,7 @@ import  Vue  from "vue"
 
 const host_user_instance = axios.create({
   baseURL: "/",
-  timeout:10,
+  timeout: 60000,
   headers: {
     token: "",
     // token: "",
