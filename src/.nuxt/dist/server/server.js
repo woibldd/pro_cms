@@ -2665,11 +2665,11 @@ module.exports = {
       "blindBoxNumText": "The blind box is still short of <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> people to help",
       "blindBoxSurpriseText": "After opening, you will get surprise digital assets",
       "ValidUntilText": "Valid until",
-      "GoOpenText": "去开启",
-      "GoShareText": "去分享",
-      "TurnedOnText": "已开启",
-      "SuccessfullyOpenedText": "成功开启",
-      "expiredText": "已过期"
+      "GoOpenText": "Go open",
+      "GoShareText": "Go share",
+      "TurnedOnText": "Turned on",
+      "SuccessfullyOpenedText": "Successfully opened",
+      "expiredText": "expired"
     },
     ActivityBlindboxDetail: {
       "BitKeepTitleText": "BitKeep数字盲盒",
