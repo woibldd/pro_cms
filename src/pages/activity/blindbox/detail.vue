@@ -11,7 +11,7 @@
           <span class="header_back" @click="back">
             <img src="@/assets/activity/blindbox/nav_back_black@3.png" />
           </span>
-          <span class="header_btn btn">
+          <span class="header_btn btn" v-if="isBitKeep">
             我的盲盒
           </span>
         </div>
@@ -35,7 +35,7 @@
           </div>
           <!-- 是否已经开启-->
           <!-- 金额展示 -->
-          <div class="block_invite_coin color_red" v-if="info.status == 2">
+          <div class="block_invite_coin color_red" v-if="info.status == 2 && info.is_owner==1">
             <span>+{{ info.amount }}</span>
             &nbsp;
             <span>{{ info.symbol }}</span>
@@ -74,30 +74,7 @@
             </div>
           </div>
           <!-- 操作按钮÷÷ -->
-          <div v-if="info.status != 3" class="block_invite_button">
-            <div
-              v-if="info.status == 1 && info.is_owner == 1"
-              class="invite_button heart"
-              @click="handerBotton(0)"
-            >
-              立即开启盲盒
-            </div>
-            <div
-              v-if="info.status == 0"
-              class="invite_button heart"
-              @click="handerBotton(1)"
-            >
-              {{ info.is_owner == 1 ? "立即邀请好友助力" : "立即助力开启盲盒" }}
-            </div>
-            <div
-              v-if="info.status == 2"
-              class="invite_button heart"
-              @click="handerBotton(2)"
-            >
-              查看资产
-            </div>
-          </div>
-
+          <BlindButton  @handerBotton="handerBotton"  :info="info" />
           <!-- 下载地址 -->
           <div
             v-if="info.is_owner != 1"
@@ -182,6 +159,7 @@ import { Header } from "@/components/common";
 import Countdown from "@/components/common/c-vue-countdown";
 import BlindTimeText from "@/components/blindbox/blindTimeText.vue";
 import BlindTitleImage from "@/components/blindbox/titleImage.vue";
+import BlindButton from "@/components/blindbox/BlindButton.vue";
 import CreatePoster from "@/components/blindbox/createPoster.vue";
 import { USER_API } from "../../../api/client";
 import html2canvas from "html2canvas";
@@ -197,7 +175,8 @@ export default {
     Countdown,
     BlindTimeText,
     BlindTitleImage,
-    CreatePoster
+    CreatePoster,
+    BlindButton
   },
   computed: {
     ...mapState(["local"]),
@@ -424,7 +403,7 @@ export default {
   width: 100%;
   box-sizing: border-box;
   .block_warpper {
-    background: #ffffff;
+    // background: #ffffff;
     border-radius: 16px;
     // width: 343px;
     box-sizing: border-box;
@@ -477,6 +456,9 @@ export default {
         display: flex;
         justify-content: center;
         align-items: center;
+        opacity: 0.8;
+
+        border-radius: 8px;
         input {
           border: none;
           width: 80%;
@@ -492,40 +474,41 @@ export default {
         }
       }
     }
-    .block_invite_button {
-      margin-top: 20px;
-      background: url("@/assets/activity/blindbox/BTN@3.png") center center
-        no-repeat;
-      width: 303px;
-      // height: 84px;
-      background-size: 100% 100%;
-      .heart {
-        animation: heartbeat 1s infinite ease;
-      }
-      .invite_button {
-        // animation: heartbeat 1s infinite ease-in;
-        margin: 0 auto;
-        width: 280px;
-        height: 50px;
-        background: url("@/assets/activity/blindbox/shareBtn.png") center center
-          no-repeat;
-        background-size: 100% 100%;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #ffffff;
-        font-weight: 600;
-        font-size: 17px;
+    // .block_invite_button {
+    //   margin-top: 20px;
+    //   background: url("@/assets/activity/blindbox/BTN@3.png") center center
+    //     no-repeat;
+    //   width: 303px;
+    //   // height: 84px;
+    //   background-size: 100% 100%;
+    //   .heart {
+    //     animation: heartbeat 1s infinite ease;
+    //   }
+    //   .invite_button {
+    //     // animation: heartbeat 1s infinite ease-in;
+    //     margin: 0 auto;
+    //     width: 280px;
+    //     height: 50px;
+    //     background: url("@/assets/activity/blindbox/shareBtn.png") center center
+    //       no-repeat;
+    //     background-size: 100% 100%;
+    //     text-align: center;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     color: #ffffff;
+    //     font-weight: 600;
+    //     font-size: 17px;
 
-        &:hover {
-          opacity: 0.6 !important;
-        }
-      }
-    }
+    //     &:hover {
+    //       opacity: 0.6 !important;
+    //     }
+    //   }
+    // }
     .block_invite_down {
       margin: 20px auto 0px;
-      width: 210px;
+      width: 100%;
+      text-align: center;
       height: 16px;
       font-weight: 500;
       font-size: 12px;
@@ -543,6 +526,8 @@ export default {
       background: #f2f1fa;
       border-radius: 8px;
       box-sizing: border-box;
+      opacity: 0.8;
+
       .title {
         margin-bottom: 5px;
       }
@@ -560,7 +545,7 @@ export default {
   .block_open_strategy_warpper {
     width: 100%;
     height: 100%;
-    background: url("@/assets/activity/blindbox/min02@3.png") center center
+    background: url("@/assets/activity/blindbox/02@2.png") center center
       no-repeat;
     background-size: 100% 100%;
   }

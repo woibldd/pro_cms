@@ -1,4 +1,7 @@
 {
+  "BlindboxBlindButton": {
+    "description": "Auto imported from components/blindbox/BlindButton.vue"
+  },
   "BlindboxBlindTimeText": {
     "description": "Auto imported from components/blindbox/blindTimeText.vue"
   },

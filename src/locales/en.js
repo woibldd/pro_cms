@@ -5,9 +5,9 @@ module.exports = {
   },
   "ActivityBlindbox": {
     dialog: {
-      "getBlindbox": "恭喜获得BitKeep数字盲盒",
-      "openBlindbox": "开启获得惊喜数字资产",
-      "lookBlindbox": "查看数字盲盒",
+      "getBlindbox": "Congratulations on getting the BitKeep digital blind box",
+      "openBlindbox": "Open to get surprise digital assets",
+      "lookBlindbox": "View digital blind box",
     },
     statusText: [
       "恭喜获得BitKeep数字盲盒",
@@ -15,12 +15,12 @@ module.exports = {
       "查看数字盲盒"
     ],
     ActivityBlindboxList: {
-      "myBlindboxText": "我的盲盒",
-      "RaidersText": "攻略",
-      "DigitalBlindBoxText": "数字盲盒",
-      "blindBoxNumText": "距离开启盲盒仅差3/5人助力",
-      "blindBoxSurpriseText": "开启后将获得惊喜数字资产",
-      "ValidUntilText": "有效期至",
+      "myBlindboxText": "My blind box",
+      "RaidersText": "Raiders",
+      "DigitalBlindBoxText": "Digital blind box",
+      "blindBoxNumText": "The blind box is still short of <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> people to help",
+      "blindBoxSurpriseText": "After opening, you will get surprise digital assets",
+      "ValidUntilText": "Valid until",
 
       "GoOpenText": "去开启",
       "GoShareText": "去分享",

@@ -15,15 +15,10 @@
         :endTime="endTime"
         :format="format"
       />
-      <van-icon class="close" name="close" @click="showModal = false" />
-      <div class="poster_wrapper"  v-show="!poster.url" id="poster" ref="poster">
+      <span class="close" name="close" @click="showModal = false" />
+      <div class="poster_wrapper" v-show="!poster.url" id="poster" ref="poster">
         <!-- <img class="poster_bg"  :src="info.invite_image1" alt="" /> -->
-        <img
-          class="poster_bg"
-          :src="poster_img"
-          alt=""
-          @load="createPoster"
-        />
+        <img class="poster_bg" :src="poster_img" alt="" @load="createPoster" />
 
         <div class="commany_title">
           <img
@@ -42,17 +37,22 @@
         <img :src="poster.url" />
       </div>
       <div class="footer">
-        <div  v-if='isBitKeep || pedding' class="btn left" @click="saveImage">
-           <img src="@/assets/activity/blindbox/BTN1@2.png" alt="" />
+        <div v-if="isBitKeep || pedding" class="btn left" @click="saveImage">
+          <img src="@/assets/activity/blindbox/BTN1@2.png" alt="" />
         </div>
-        <a  v-else class="btn left"  :href="poster.url" :download="new Date().getTime()+'.jpeg'">
+        <a
+          v-else
+          class="btn left"
+          :href="poster.url"
+          :download="new Date().getTime() + '.jpeg'"
+        >
           <img src="@/assets/activity/blindbox/BTN1@2.png" alt="" />
         </a>
-        <div v-if='isBitKeep'  class="btn" @click="shareImage">
+        <div v-if="isBitKeep" class="btn" @click="shareImage">
           <img src="@/assets/activity/blindbox/BTN2@2.png" alt="" />
         </div>
         <div v-else class="btn">
-            <img src="@/assets/activity/blindbox/BTN2@2.png" alt="" />
+          <img src="@/assets/activity/blindbox/BTN2@2.png" alt="" />
         </div>
       </div>
     </div>
@@ -64,13 +64,13 @@ import { mapState } from "vuex";
 import { BaseMixin } from "@/mixin/base.js";
 import html2canvas from "html2canvas";
 import BlindTimeText from "@/components/blindbox/blindTimeText.vue";
-import { getImageInfo, Download, downloadFile , DPR } from "@/tools/common";
+import { getImageInfo, Download, downloadFile, DPR } from "@/tools/common";
 export default {
   name: "CrearePoster",
   mixins: [BaseMixin],
   components: { BlindTimeText },
   props: {
-    zIndex:{
+    zIndex: {
       default: 100
     },
     isBitKeep: {
@@ -96,8 +96,10 @@ export default {
     }
   },
   computed: {
-    poster_img(){
-      return `/poster${(this.info.invite_image1||'').replace("http://cdn.bitkeep.vip","").replace("https://cdn.bitkeep.vip","")}`
+    poster_img() {
+      return `/poster${(this.info.invite_image1 || "")
+        .replace("http://cdn.bitkeep.vip", "")
+        .replace("https://cdn.bitkeep.vip", "")}`;
     },
     codeText() {
       return this.qrcodeText || (process.client ? location.href : "");
@@ -110,7 +112,7 @@ export default {
       poster: {
         url: ""
       },
-      pedding:false
+      pedding: false
     };
   },
   async mounted() {
@@ -118,37 +120,33 @@ export default {
   },
   methods: {
     init() {
+    
       this.showModal = true;
-      if(this.pedding){
-        this.showLoading("生成中...")
+      if (this.pedding) {
+        this.showLoading("生成中...");
       }
     },
     async createPoster() {
-      
-      if(this.pedding) return this.showLoading("生成中...");
-
+      if (this.pedding) return this.showLoading("生成中...");
 
       this.showModal && this.showLoading("生成中...");
-      this.pedding= 
-      
-
-      this.poster.url = "";
+      this.pedding = this.poster.url = "";
       const el = this.$refs.poster;
-  
+
       if (!this.qrcodeUrl) {
         this.qrcodeUrl = await QRCode.toDataURL(this.codeText).catch(err => "");
         await this.$nextTick();
       }
       console.time("poster");
-      console.log({el:el.offsetWidth})
+      console.log({ el: el.offsetWidth });
       html2canvas(el, {
-        dpi: DPR() ,
+        dpi: DPR(),
         // backgroundColor: "#fff",
         // useCORS: true,
         // windowWidth: document.body.scrollWidth,
         // windowHeight: document.body.scrollHeight,
-        width: el.offsetWidth-1,
-        height: el.offsetHeight-1,
+        width: el.offsetWidth - 1,
+        height: el.offsetHeight - 1,
         scale: 2,
         async: true,
         // width: 375,
@@ -156,25 +154,27 @@ export default {
         scrollY: 0,
         scrollX: 0,
         allowTaint: false
-      }).then(async canvas => {
-        // canvas.toBlob((blob) => {
-        //   console.log({blob})
-        // })
-        // canvas.toDataURL("image/png");
-        // const wid = canvas.width;
-        // const hei = canvas.height;
-        // const img = html2canvas.convertToJPEG(canvas, wid, hei);
-        // const dataURL = img.getAttribute("src");
-        this.poster.url = canvas.toDataURL("image/jpeg");
-        await this.$nextTick()
-        this.pedding = false
-        console.timeEnd("poster");
-        console.time("upload");
-        this.hideLoading();
-      }).catch(err=>{
-          this.pedding = false
-          this.$toast.fail(JSON.stringify(err))
       })
+        .then(async canvas => {
+          // canvas.toBlob((blob) => {
+          //   console.log({blob})
+          // })
+          // canvas.toDataURL("image/png");
+          // const wid = canvas.width;
+          // const hei = canvas.height;
+          // const img = html2canvas.convertToJPEG(canvas, wid, hei);
+          // const dataURL = img.getAttribute("src");
+          this.poster.url = canvas.toDataURL("image/jpeg");
+          await this.$nextTick();
+          this.pedding = false;
+          console.timeEnd("poster");
+          console.time("upload");
+          this.hideLoading();
+        })
+        .catch(err => {
+          this.pedding = false;
+          this.$toast.fail(JSON.stringify(err));
+        });
     },
     shareImage() {
       BitKeepInvoke.shareUrl(
@@ -192,8 +192,8 @@ export default {
           this.hideLoading();
         });
         return;
-      }else{
-        this.createPoster()
+      } else {
+        this.createPoster();
       }
       // this.createPoster();
     }
@@ -205,7 +205,7 @@ export default {
   width: 100vw;
   z-index: 100;
   &.hidden {
-    z-index: -10!important;
+    z-index: -10 !important;
   }
   .canvasTmp {
     position: absolute;
@@ -216,10 +216,14 @@ export default {
   }
   .close {
     position: absolute;
-    top: 30px;
-    right: 10px;
-    font-size: 20px;
-    color: #ffffff;
+    z-index: 1;
+    top: 60px;
+    right: 26px;
+    width: 28px;
+    height: 28px;
+    background: url("@/assets/activity/blindbox/icon_close@2.png") center center
+      no-repeat;
+    background-size: 100% 100%;
   }
   .block_time {
     opacity: 0.6;
@@ -240,7 +244,7 @@ export default {
     // width: 100%;
 
     position: relative;
-   
+
     width: 345px;
     height: 534px;
     max-height: calc(100vh - 115px);

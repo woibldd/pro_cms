@@ -1,6 +1,7 @@
 {
   "entry": "server.js",
   "files": {
+    "components/blindbox-blind-button.js": "components/blindbox-blind-button.js",
     "components/blindbox-blind-time-text.js": "components/blindbox-blind-time-text.js",
     "components/blindbox-create-poster.js": "components/blindbox-create-poster.js",
     "components/blindbox-title-image.js": "components/blindbox-title-image.js",
@@ -22,6 +23,7 @@
     "server.js": "server.js"
   },
   "maps": {
+    "components/blindbox-blind-button.js": "components/blindbox-blind-button.js.map",
     "components/blindbox-blind-time-text.js": "components/blindbox-blind-time-text.js.map",
     "components/blindbox-create-poster.js": "components/blindbox-create-poster.js.map",
     "components/blindbox-title-image.js": "components/blindbox-title-image.js.map",

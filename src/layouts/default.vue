@@ -24,9 +24,12 @@
 .btn:active {
   opacity: 0.8;
 }
+.active{
+   opacity: 0.8;
+}
 .radial-gradient{
    background: radial-gradient(
-          at right top,
+          at left top,
           #fffbe5 0%,
           #ffefea 19.79%,
           #ffeff7 53.47%,

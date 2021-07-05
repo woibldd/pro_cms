@@ -1,7 +1,7 @@
 <template>
   <div :class="{titleImage:true}" v-if="type == 'helper'">
     <img
-      v-if="status == 2"
+      v-if="status == 2 && isOwner"
       src="@/assets/activity/blindbox/openTextTitle@2.png"
     />
     <img v-else-if="isOwner" src="@/assets/activity/blindbox/inviteTextTitle@2.png" />

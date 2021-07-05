@@ -29,7 +29,7 @@
               @click="handlerBtn(item, 0)"
             >
               <div :class="{ list_item: true }">
-                <div class="list_item_warpper radial-gradient">
+                <div class="list_item_warpper radial-gradient active">
                   <div v-if="item.status != 0" class="list_item_invaild"></div>
                   <div class="list_item_pic">
                     <van-image
@@ -43,15 +43,30 @@
                       {{ item.title }}
                     </div>
                     <div class="content">
-                      距离开启盲盒仅差
+                      <span
+                        v-html="
+                          $t(
+                            'ActivityBlindbox.ActivityBlindboxList.blindBoxNumText',
+                            {
+                              surplus: item.invite - item.already_invite,
+                              invite: item.invite
+                            }
+                          )
+                        "
+                        ></span>
+                        <div>
+                          {{$t(
+                            'ActivityBlindbox.ActivityBlindboxList.blindBoxSurpriseText')}}
+                        </div>
+                      <!-- 距离开启盲盒仅差
                       <span class="color_red">{{
                         item.invite - item.already_invite
                       }}</span
                       >/<span class="color_blod">{{ item.invite }}</span>
-                      人助力 开启后将获惊喜数字资产
+                      人助力 开启后将获惊喜数字资产 -->
                     </div>
                     <div class="time van-ellipsis">
-                      有效期至 {{ item.start_time | date }}
+                       <span>{{$t("ActivityBlindbox.ActivityBlindboxList.ValidUntilText")}}</span> {{ item.start_time | date }}
                     </div>
                   </div>
                   <div class="list_item_btn">
@@ -60,21 +75,21 @@
                       v-if="item.status == 0"
                       @click="handlerBtn(item, 0)"
                     >
-                      去开启
+                      {{$t("ActivityBlindbox.ActivityBlindboxList.GoOpenText")}}
                     </div>
                     <div
                       class="btn"
                       v-if="item.status == 1"
                       @click="handlerBtn(item, 1)"
                     >
-                      成功开启
+                      {{$t("ActivityBlindbox.ActivityBlindboxList.SuccessfullyOpenedText")}}
                     </div>
                     <div
                       class="btn"
                       v-if="item.status == 2"
                       @click="handlerBtn(item, 2)"
                     >
-                      已过期
+                        {{$t("ActivityBlindbox.ActivityBlindboxList.expiredText")}}
                     </div>
                   </div>
                 </div>
@@ -223,6 +238,9 @@ export default {
   color: #ff255a;
   font-weight: 600;
 }
+.font-18 {
+  font-size: 18px;
+}
 .color_text {
   color: #4b5373;
 }
@@ -300,7 +318,7 @@ export default {
         position: relative;
         overflow: hidden;
         width: 343px;
-        height: 94px;
+        // height: 94px;
 
         border-radius: 10px;
         box-sizing: border-box;
@@ -309,7 +327,7 @@ export default {
         display: flex;
         justify-content: space-between;
         border-radius: 10px;
-
+        align-items: center;
         .list_item_pic {
           height: 74px;
           width: 74px;
@@ -323,7 +341,7 @@ export default {
         }
         .list_item_cont {
           flex: 1;
-          height: 28px;
+          // height: 28px;
           width: 161px;
           color: #7f828f;
           font-size: 10px;
@@ -340,11 +358,12 @@ export default {
           .content {
             margin: 5px 0px;
             line-height: 14px;
-            color: #7f828f;
+            // color: #7f828f;
+            color: #0c0998;
           }
           .time {
             font-size: 10px;
-            line-height: 10px;
+            // line-height: 10px;
             color: #4b5373;
             // line-height: 10px;  //有的最小12px
           }
@@ -352,6 +371,7 @@ export default {
         .list_item_btn {
           display: flex;
           align-items: flex-end;
+          align-self: flex-end;
         }
       }
     }

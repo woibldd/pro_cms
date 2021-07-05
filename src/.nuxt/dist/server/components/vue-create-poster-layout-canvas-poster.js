@@ -1,5 +1,304 @@
-exports.ids = [8,9,11,12,13];
+exports.ids = [9,10,12,13,14];
 exports.modules = {
+
+/***/ 100:
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
+var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, ".canvas[data-v-b137f4e8] {\n  position: fixed;\n  top: 53.33rem;\n}", ""]);
+// Exports
+module.exports = ___CSS_LOADER_EXPORT___;
+
+
+/***/ }),
+
+/***/ 101:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: ./components/vue-create-poster/layout/painter.js
+var painter = __webpack_require__(83);
+
+// EXTERNAL MODULE: ./components/vue-create-poster/layout/util.js
+var util = __webpack_require__(84);
+
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/vue-create-poster/layout/canvas-poster.vue?vue&type=script&lang=js&
+
+
+/* harmony default export */ var canvas_postervue_type_script_lang_js_ = ({
+  name: 'VueCanvasPoster',
+  props: {
+    painting: {
+      type: Object,
+      default: function () {
+        return {};
+      }
+    },
+    dirty: {
+      type: Boolean,
+      default: false
+    },
+    widthPixels: {
+      type: Number,
+      default: 750
+    }
+  },
+  watch: {
+    painting: {
+      handler(newVal, oldVal) {
+        if (this.isNeedRefresh(newVal, oldVal)) {
+          this.paintCount = 0;
+          this.startPaint();
+        }
+      },
+
+      deep: true,
+      immediate: true
+    }
+  },
+
+  data() {
+    return {
+      paintCount: 0,
+      painterStyle: '',
+      canvasWidthInPx: 375,
+      canvasHeightInPx: 375,
+      width: 100,
+      height: 100,
+      canvas: null,
+      ctx: null
+    };
+  },
+
+  render(h) {
+    return h('div', [h('canvas', {
+      ref: 'canvas',
+      class: 'canvas',
+      style: this.painterStyle
+    })]);
+  },
+
+  mounted() {
+    this.$nextTick(() => {
+      this.canvas = this.$refs.canvas; // 指定canvas
+
+      this.ctx = this.canvas.getContext('2d'); //设置2D渲染区域
+    });
+  },
+
+  methods: {
+    /**
+     * 判断一个 object 是否为 空
+     * @param {object} object
+     */
+    isEmpty(object) {
+      for (const i in object) {
+        return false;
+      }
+
+      return true;
+    },
+
+    isNeedRefresh(newVal, oldVal) {
+      if (!newVal || this.isEmpty(newVal) || this.dirty && Object(util["equal"])(newVal, oldVal)) {
+        return false;
+      }
+
+      return true;
+    },
+
+    // 开始绘画
+    startPaint() {
+      if (this.isEmpty(this.painting)) {
+        return;
+      }
+
+      setStringPrototype(1); // 下载图片
+
+      this.downloadImages().then(res => {
+        const {
+          width,
+          height
+        } = res;
+
+        if (!width || !height) {
+          console.error(`You should set width and height correctly for painter, width: ${width}, height: ${height}`);
+          return;
+        }
+
+        this.canvasWidthInPx = width.toPx();
+
+        if (this.widthPixels) {
+          // 重设宽度，高度
+          setStringPrototype(this.widthPixels / this.canvasWidthInPx);
+          this.canvasWidthInPx = this.widthPixels;
+        }
+
+        this.canvasHeightInPx = height.toPx();
+        this.painterStyle = `width:${this.canvasWidthInPx}px;height:${this.canvasHeightInPx}px;`;
+        this.canvas = this.$refs.canvas; // 指定canvas
+
+        this.canvas.width = this.canvasWidthInPx;
+        this.canvas.height = this.canvasHeightInPx;
+        const ctx = this.canvas.getContext('2d'); //设置2D渲染区域
+
+        const pen = new painter["default"](ctx, res);
+        pen.paint(() => {
+          var imageBase64 = this.canvas.toDataURL('image/png');
+          this.$emit('success', imageBase64);
+        });
+      }).catch(err => {
+        this.$emit('fail', err);
+      });
+    },
+
+    // 下载所有图片
+    downloadImages() {
+      return new Promise(resolve => {
+        let preCount = 0;
+        let completeCount = 0;
+        const paintCopy = JSON.parse(JSON.stringify(this.painting));
+
+        if (paintCopy.background) {
+          preCount++;
+          this.loadImage(paintCopy.background).then(image => {
+            paintCopy.background = image;
+            completeCount++;
+            preCount === completeCount && resolve(paintCopy);
+          }, err => {
+            completeCount++;
+            preCount === completeCount && resolve(paintCopy);
+            console.log(err);
+          });
+        }
+
+        if (paintCopy.views) {
+          for (const view of paintCopy.views) {
+            if (view && view.type === 'image' && view.url) {
+              preCount++;
+              /* eslint-disable no-loop-func */
+
+              this.loadImage(view.url).then(image => {
+                completeCount++;
+                view.url = image; // 获得一下图片信息，供后续裁减使用
+
+                view.sWidth = image.width;
+                view.sHeight = image.height;
+                preCount === completeCount && resolve(paintCopy);
+              }, err => {
+                completeCount++;
+                preCount === completeCount && resolve(paintCopy);
+                console.log(err);
+              });
+            }
+          }
+        }
+
+        preCount === 0 && resolve(paintCopy); // if (preCount !== completeCount) {
+        //   reject('paintCopy');
+        // }
+      });
+    },
+
+    // 下载图片
+    loadImage(src) {
+      return new Promise((resolve, reject) => {
+        if (src.startsWith('#')) {
+          resolve(src);
+          return;
+        }
+
+        const img = new Image();
+
+        img.onload = () => resolve(img);
+
+        img.onerror = () => reject(`下载图片失败 ${src}`);
+
+        img.crossOrigin = 'anonymous';
+        img.src = src;
+
+        if (img.complete === true) {
+          // Inline XML images may fail to parse, throwing an Error later on
+          setTimeout(() => resolve(img), 500);
+        }
+      });
+    }
+
+  }
+});
+
+function setStringPrototype(scale) {
+  /* eslint-disable no-extend-native */
+
+  /**
+   * 是否支持负数
+   * @param {Boolean} minus 是否支持负数
+   */
+  String.prototype.toPx = function toPx(minus, baseSize) {
+    if (this === '0') {
+      return 0;
+    }
+
+    let reg;
+
+    if (minus) {
+      reg = /^-?[0-9]+([.]{1}[0-9]+){0,1}(px|%)$/g;
+    } else {
+      reg = /^[0-9]+([.]{1}[0-9]+){0,1}(px|%)$/g;
+    }
+
+    const results = reg.exec(this);
+    const unit = results[2];
+    const value = parseFloat(this);
+    let res = 0;
+
+    if (unit === 'px') {
+      res = Math.round(value * (scale || 1));
+    } else if (unit === '%') {
+      res = Math.round(value * baseSize / 100);
+    }
+
+    return res;
+  };
+}
+// CONCATENATED MODULE: ./components/vue-create-poster/layout/canvas-poster.vue?vue&type=script&lang=js&
+ /* harmony default export */ var layout_canvas_postervue_type_script_lang_js_ = (canvas_postervue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__(3);
+
+// CONCATENATED MODULE: ./components/vue-create-poster/layout/canvas-poster.vue
+var render, staticRenderFns
+
+
+function injectStyles (context) {
+  
+  var style0 = __webpack_require__(99)
+if (style0.__inject__) style0.__inject__(context)
+
+}
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  layout_canvas_postervue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  injectStyles,
+  "b137f4e8",
+  "28ac5904"
+  
+)
+
+/* harmony default export */ var canvas_poster = __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
 
 /***/ 69:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -817,13 +1116,13 @@ function linearEffect(width, height, bg, ctx) {
 
 /***/ }),
 
-/***/ 79:
+/***/ 80:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(94);
+var content = __webpack_require__(100);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -835,7 +1134,7 @@ module.exports.__inject__ = function (context) {
 
 /***/ }),
 
-/***/ 82:
+/***/ 83:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1672,7 +1971,7 @@ class Painter {
 
 /***/ }),
 
-/***/ 83:
+/***/ 84:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1742,314 +2041,15 @@ const equal = (a, b) => {
 
 /***/ }),
 
-/***/ 93:
+/***/ 99:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_canvas_poster_vue_vue_type_style_index_0_id_b137f4e8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(79);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_canvas_poster_vue_vue_type_style_index_0_id_b137f4e8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(80);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_canvas_poster_vue_vue_type_style_index_0_id_b137f4e8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_canvas_poster_vue_vue_type_style_index_0_id_b137f4e8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_canvas_poster_vue_vue_type_style_index_0_id_b137f4e8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_3_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_3_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_3_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_canvas_poster_vue_vue_type_style_index_0_id_b137f4e8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
-
-/***/ }),
-
-/***/ 94:
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
-var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
-// Module
-___CSS_LOADER_EXPORT___.push([module.i, ".canvas[data-v-b137f4e8] {\n  position: fixed;\n  top: 53.33rem;\n}", ""]);
-// Exports
-module.exports = ___CSS_LOADER_EXPORT___;
-
-
-/***/ }),
-
-/***/ 95:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXTERNAL MODULE: ./components/vue-create-poster/layout/painter.js
-var painter = __webpack_require__(82);
-
-// EXTERNAL MODULE: ./components/vue-create-poster/layout/util.js
-var util = __webpack_require__(83);
-
-// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/vue-create-poster/layout/canvas-poster.vue?vue&type=script&lang=js&
-
-
-/* harmony default export */ var canvas_postervue_type_script_lang_js_ = ({
-  name: 'VueCanvasPoster',
-  props: {
-    painting: {
-      type: Object,
-      default: function () {
-        return {};
-      }
-    },
-    dirty: {
-      type: Boolean,
-      default: false
-    },
-    widthPixels: {
-      type: Number,
-      default: 750
-    }
-  },
-  watch: {
-    painting: {
-      handler(newVal, oldVal) {
-        if (this.isNeedRefresh(newVal, oldVal)) {
-          this.paintCount = 0;
-          this.startPaint();
-        }
-      },
-
-      deep: true,
-      immediate: true
-    }
-  },
-
-  data() {
-    return {
-      paintCount: 0,
-      painterStyle: '',
-      canvasWidthInPx: 375,
-      canvasHeightInPx: 375,
-      width: 100,
-      height: 100,
-      canvas: null,
-      ctx: null
-    };
-  },
-
-  render(h) {
-    return h('div', [h('canvas', {
-      ref: 'canvas',
-      class: 'canvas',
-      style: this.painterStyle
-    })]);
-  },
-
-  mounted() {
-    this.$nextTick(() => {
-      this.canvas = this.$refs.canvas; // 指定canvas
-
-      this.ctx = this.canvas.getContext('2d'); //设置2D渲染区域
-    });
-  },
-
-  methods: {
-    /**
-     * 判断一个 object 是否为 空
-     * @param {object} object
-     */
-    isEmpty(object) {
-      for (const i in object) {
-        return false;
-      }
-
-      return true;
-    },
-
-    isNeedRefresh(newVal, oldVal) {
-      if (!newVal || this.isEmpty(newVal) || this.dirty && Object(util["equal"])(newVal, oldVal)) {
-        return false;
-      }
-
-      return true;
-    },
-
-    // 开始绘画
-    startPaint() {
-      if (this.isEmpty(this.painting)) {
-        return;
-      }
-
-      setStringPrototype(1); // 下载图片
-
-      this.downloadImages().then(res => {
-        const {
-          width,
-          height
-        } = res;
-
-        if (!width || !height) {
-          console.error(`You should set width and height correctly for painter, width: ${width}, height: ${height}`);
-          return;
-        }
-
-        this.canvasWidthInPx = width.toPx();
-
-        if (this.widthPixels) {
-          // 重设宽度，高度
-          setStringPrototype(this.widthPixels / this.canvasWidthInPx);
-          this.canvasWidthInPx = this.widthPixels;
-        }
-
-        this.canvasHeightInPx = height.toPx();
-        this.painterStyle = `width:${this.canvasWidthInPx}px;height:${this.canvasHeightInPx}px;`;
-        this.canvas = this.$refs.canvas; // 指定canvas
-
-        this.canvas.width = this.canvasWidthInPx;
-        this.canvas.height = this.canvasHeightInPx;
-        const ctx = this.canvas.getContext('2d'); //设置2D渲染区域
-
-        const pen = new painter["default"](ctx, res);
-        pen.paint(() => {
-          var imageBase64 = this.canvas.toDataURL('image/png');
-          this.$emit('success', imageBase64);
-        });
-      }).catch(err => {
-        this.$emit('fail', err);
-      });
-    },
-
-    // 下载所有图片
-    downloadImages() {
-      return new Promise(resolve => {
-        let preCount = 0;
-        let completeCount = 0;
-        const paintCopy = JSON.parse(JSON.stringify(this.painting));
-
-        if (paintCopy.background) {
-          preCount++;
-          this.loadImage(paintCopy.background).then(image => {
-            paintCopy.background = image;
-            completeCount++;
-            preCount === completeCount && resolve(paintCopy);
-          }, err => {
-            completeCount++;
-            preCount === completeCount && resolve(paintCopy);
-            console.log(err);
-          });
-        }
-
-        if (paintCopy.views) {
-          for (const view of paintCopy.views) {
-            if (view && view.type === 'image' && view.url) {
-              preCount++;
-              /* eslint-disable no-loop-func */
-
-              this.loadImage(view.url).then(image => {
-                completeCount++;
-                view.url = image; // 获得一下图片信息，供后续裁减使用
-
-                view.sWidth = image.width;
-                view.sHeight = image.height;
-                preCount === completeCount && resolve(paintCopy);
-              }, err => {
-                completeCount++;
-                preCount === completeCount && resolve(paintCopy);
-                console.log(err);
-              });
-            }
-          }
-        }
-
-        preCount === 0 && resolve(paintCopy); // if (preCount !== completeCount) {
-        //   reject('paintCopy');
-        // }
-      });
-    },
-
-    // 下载图片
-    loadImage(src) {
-      return new Promise((resolve, reject) => {
-        if (src.startsWith('#')) {
-          resolve(src);
-          return;
-        }
-
-        const img = new Image();
-
-        img.onload = () => resolve(img);
-
-        img.onerror = () => reject(`下载图片失败 ${src}`);
-
-        img.crossOrigin = 'anonymous';
-        img.src = src;
-
-        if (img.complete === true) {
-          // Inline XML images may fail to parse, throwing an Error later on
-          setTimeout(() => resolve(img), 500);
-        }
-      });
-    }
-
-  }
-});
-
-function setStringPrototype(scale) {
-  /* eslint-disable no-extend-native */
-
-  /**
-   * 是否支持负数
-   * @param {Boolean} minus 是否支持负数
-   */
-  String.prototype.toPx = function toPx(minus, baseSize) {
-    if (this === '0') {
-      return 0;
-    }
-
-    let reg;
-
-    if (minus) {
-      reg = /^-?[0-9]+([.]{1}[0-9]+){0,1}(px|%)$/g;
-    } else {
-      reg = /^[0-9]+([.]{1}[0-9]+){0,1}(px|%)$/g;
-    }
-
-    const results = reg.exec(this);
-    const unit = results[2];
-    const value = parseFloat(this);
-    let res = 0;
-
-    if (unit === 'px') {
-      res = Math.round(value * (scale || 1));
-    } else if (unit === '%') {
-      res = Math.round(value * baseSize / 100);
-    }
-
-    return res;
-  };
-}
-// CONCATENATED MODULE: ./components/vue-create-poster/layout/canvas-poster.vue?vue&type=script&lang=js&
- /* harmony default export */ var layout_canvas_postervue_type_script_lang_js_ = (canvas_postervue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(3);
-
-// CONCATENATED MODULE: ./components/vue-create-poster/layout/canvas-poster.vue
-var render, staticRenderFns
-
-
-function injectStyles (context) {
-  
-  var style0 = __webpack_require__(93)
-if (style0.__inject__) style0.__inject__(context)
-
-}
-
-/* normalize component */
-
-var component = Object(componentNormalizer["a" /* default */])(
-  layout_canvas_postervue_type_script_lang_js_,
-  render,
-  staticRenderFns,
-  false,
-  injectStyles,
-  "b137f4e8",
-  "28ac5904"
-  
-)
-
-/* harmony default export */ var canvas_poster = __webpack_exports__["default"] = (component.exports);
 
 /***/ })
 
