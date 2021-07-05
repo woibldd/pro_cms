@@ -9,18 +9,18 @@ const CONFIG = require(Path.resolve(__dirname, "./conf/config.json"))
 
 
 const API_URL = process.env.NUXT_ENV_operation_api || CONFIG.host_operation || "http://ms.operation:8898"
-const baseUrl = process.env.HOST_USER || CONFIG.host_user || "http://ms.user:8881"
-const HOST_USER = process.env.HOST_USER || CONFIG.host_user || "http://ms.user:8881"
+const baseUrl = process.env.HOST_API || CONFIG.host_api 
+const HOST_API = process.env.HOST_API || CONFIG.host_api 
 
 console.log(`当前环境________`, CONFIG, {
   API_URL,
   baseUrl,
-  HOST_USER
+  HOST_API
 })
 export default {
   env: {
     baseUrl,
-    HOST_USER,
+    HOST_API,
     NODE_ENV: process.env.NODE_ENV,
     DEBUG: CONFIG.debug ? "*" : ""
   },
@@ -99,7 +99,7 @@ export default {
   proxy: {
     //  开发环境
     '/user': {
-      target: HOST_USER,  //上线要改成testapi
+      target: HOST_API,  //上线要改成testapi
       changeOrigin: true,
       // pathRewrite: {
       //   '^/user': ''

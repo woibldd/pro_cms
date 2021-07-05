@@ -11,7 +11,7 @@
         "DEBUG":"*",
         "NODE_ENV": "production",
         "NUXT_ENV_operation_api": "http://ms.user:8898",
-        "HOST_USER":"http://ms.user:8880"
+        "HOST_API":"http://ms.user:8880"
       }
     }
   ]
@@ -30,17 +30,3 @@
 
 
 
-
-curl 'http://ms.user:8880/activity/mBoxDetail?id=1' \
-  -H 'currency: ' \
-  -H 'package: ' \
-  -H 'language: zh' \
-  -H 'im: ' \
-  -H 'User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1' \
-  -H 'Accept: application/json, text/plain, */*' \
-  -H 'Referer: http://ms.user:8880/activity/blindbox/detail?id=1' \
-  -H 'brand: ' \
-  -H 'os: ' \
-  -H 'token: ' \
-  -H 'clientversion: ' \
-  --compressed

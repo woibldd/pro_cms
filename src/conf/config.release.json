@@ -1,7 +1,7 @@
 {
     "debug": false,
     "port": 8081,
-    "host_user":"http://ms.user:8881",
+    "host_api":"http://ms.user:8880",
     "host_operation": "http://ms.operation:8898"
 
 }
