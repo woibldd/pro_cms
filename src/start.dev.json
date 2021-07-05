@@ -1,3 +1,5 @@
+
+
 {
   "apps": [
     {
@@ -5,18 +7,50 @@
       "script": "./node_modules/nuxt/bin/nuxt.js start",
       "watch": true,
       "log_date_format": "YYYY-MM-DD HH:mm:ss",
-     
+      "error_file": "./log/api_error.log",
+      "out_file":  "./log/api_runtime.log",
       "env": {
-
-        "VCONSOLE":"true",
-        "DEBUG":"*",
-        "NODE_ENV": "dev",
-        "NUXT_ENV_operation_api": "http://ms.user:8898",
+        "DEBUG":"bit*",
+        "NUXT_ENV_operation_api": "http://dev.bitkeep.top:8898",
         "HOST_API":"http://dev.bitkeep.top:8880"
       }
     }
   ]
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

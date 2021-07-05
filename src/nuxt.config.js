@@ -5,31 +5,31 @@ const Path = require("path")
 
 
 const isPro = process.env.NODE_ENV === 'production'
-
-
+const BUILD_ENV = process.env.BUILD_ENV
+const drop_console =   isPro && BUILD_ENV!='env'
 
 const CONFIG = require(Path.resolve(__dirname, "./conf/config.json"))
 
-const API_URL = process.env.NUXT_ENV_operation_api || CONFIG.host_operation || "http://ms.operation:8898"
-const baseUrl = process.env.HOST_API || CONFIG.host_api 
-const HOST_API = process.env.HOST_API || CONFIG.host_api 
-const VCONSOLE = process.env.VCONSOLE 
-const DEBUG = (process.env.DEBUG  ||  CONFIG.debug ) ? "*" : ""
+const HOST_OPERATION = process.env.NUXT_ENV_operation_api || CONFIG.host_operation || "http://ms.operation:8898"
+
+
+// const baseUrl = process.env.HOST_API || CONFIG.host_api 
+const HOST_API = process.env.HOST_API || CONFIG.host_api
+const DEBUG = process.env.DEBUG || ""
 console.log(`当前环境________`, {
-  API_URL,
-  baseUrl,
+  BUILD_ENV,
+  HOST_OPERATION,
   HOST_API,
   DEBUG,
-  VCONSOLE,
-  NODE_ENV:process.env.NODE_ENV
+  NODE_ENV: process.env.NODE_ENV
 })
 export default {
   env: {
-    baseUrl,
+    // baseUrl,
+    BUILD_ENV,
     HOST_API,
     NODE_ENV: process.env.NODE_ENV,
-    DEBUG: DEBUG,
-    VCONSOLE
+    DEBUG:  DEBUG
   },
   // mode: 'universal',
   server: {
@@ -55,12 +55,7 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
-    script: (isPro &&!VCONSOLE) ? [
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
-      }
-    ] : [{
+    script: BUILD_ENV == 'dev' ? [{
       name: 'viewport',
       content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
     },
@@ -69,6 +64,11 @@ export default {
       type: 'text/javascript',
       charset: 'utf-8'
     }
+    ] : [
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
+      }
     ]
   },
 
@@ -83,9 +83,9 @@ export default {
     // '@/plugins/vant'
     { src: '@/plugins/client/bitkeep.js', ssr: false },
     { src: '@/plugins/client/flexible.js', ssr: false },
-    { src: '@/plugins/common/init.js'},
+    { src: '@/plugins/common/init.js' },
     { src: "@/plugins/client/sessionStorage.js", ssr: false },
-    "@/plugins/axios.js"
+    "@/plugins/axios.js"  //拦截
 
     // { src:'@/plugins/common/lang/vant.js', ssr: true },
 
@@ -105,7 +105,7 @@ export default {
   proxy: {
     //  开发环境
     '/user': {
-      target: HOST_API,  //上线要改成testapi
+      target: HOST_API,
       changeOrigin: true,
       // pathRewrite: {
       //   '^/user': ''
@@ -122,9 +122,10 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
   ],
+  //服务端$axios
   publicRuntimeConfig: {
     axios: {
-      baseURL: API_URL
+      baseURL: HOST_OPERATION
     }
   },
 
@@ -134,11 +135,11 @@ export default {
     '@nuxtjs/proxy'
     // 'nuxt-ssr-cache'
   ],
-  devtools: true,
+  devtools: BUILD_ENV=='dev',
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     terser: {
-      sourceMap: !isPro,
+      sourceMap: BUILD_ENV=='dev',
     },
     postcss: [
       require('postcss-px2rem-exclude')({
@@ -149,7 +150,7 @@ export default {
         // selectorBlackList: [''], //过滤的类名
         // replace: true, //默认直接替换属性
         // mediaQuery: false,
-        minPixelValue: 12, //所有小于设置的样式都不被转换
+        minPixelValue: 8, //所有小于设置的样式都不被转换
         remUnit: 37.5, // 50px = 1rem
         // remUnit: 99, // 50px =
         remPrecision: 2, // rem的小数点后位数
@@ -173,15 +174,15 @@ export default {
     },
     extend(config, ctx) {
       if (!ctx.isDev && ctx.isClient) {
-        console.log('drop_console', isPro)
+        console.log('drop_console', drop_console)
         config.plugins.push(
-          // new UglifyJsPlugin({
-          //   uglifyOptions: {
-          //     compress: {
-          //       drop_console:  isPro && !VCONSOLE
-          //     }
-          //   }
-          // })
+          new UglifyJsPlugin({
+            uglifyOptions: {
+              compress: {
+                drop_console
+              }
+            }
+          })
         )
       }
     }

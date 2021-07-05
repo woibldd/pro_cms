@@ -51,7 +51,7 @@
         <div v-if='isBitKeep'  class="btn" @click="shareImage">
           <img src="@/assets/activity/blindbox/BTN2@2.png" alt="" />
         </div>
-        <div  class="btn">
+        <div v-else class="btn">
             <img src="@/assets/activity/blindbox/BTN2@2.png" alt="" />
         </div>
       </div>
@@ -97,7 +97,7 @@ export default {
   },
   computed: {
     poster_img(){
-      return `poster${(this.info.invite_image1||'').replace("http://cdn.bitkeep.vip","").replace("https://cdn.bitkeep.vip","")}`
+      return `/poster${(this.info.invite_image1||'').replace("http://cdn.bitkeep.vip","").replace("https://cdn.bitkeep.vip","")}`
     },
     codeText() {
       return this.qrcodeText || (process.client ? location.href : "");

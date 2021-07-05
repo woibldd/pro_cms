@@ -1,12 +1,16 @@
 <template>
-  <div> 
-
+  <div>
     <Nuxt />
   </div>
 </template>
 
 <style lang="scss">
 /* 需要加成全局≥÷ 暂时放在这里 */
+.body {
+  font-family: PingFang SC;
+  font-style: normal;
+  font-weight: normal;
+}
 .color_red {
   color: #ff255a;
   font-weight: 600;
@@ -14,8 +18,10 @@
 .color_text {
   color: #4b5373;
 }
-
-.btn:active{
+.color_theme {
+  color: #0c0998;
+}
+.btn:active {
   opacity: 0.8;
 }
 // .btn {

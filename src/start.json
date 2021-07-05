@@ -5,12 +5,13 @@
         "script": "nuxt start",
         "watch": false,
         "log_date_format": "YYYY-MM-DD HH:mm:ss",
-
+        "error_file": "/data/logs/pro_cms/api_error.log",
+        "out_file":  "/data/logs/pro_cms/api_runtime.log",
         "env": {
-          "DEBUG":"*",
+          "DEBUG":"bit*",
           "NODE_ENV": "production",
           "NUXT_ENV_operation_api": "http://ms.operation:8898",
-          "HOST_API":"http://ms.api:8880"
+          "HOST_API":"http://ms.user:8880"
         }
       }
     ]

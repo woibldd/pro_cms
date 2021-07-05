@@ -1,7 +1,7 @@
 <template>
   <div id="blindbox_list">
     <div class="loading" v-if="isLoading">
-      <van-loading  color="#1989fa" />
+      <van-loading color="#1989fa" />
     </div>
     <div v-else>
       <!-- <Header>
@@ -12,14 +12,22 @@
         </div>
       </Header> -->
       <div class="blindbox_list_body">
-        <van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+        <van-pull-refresh
+          class="blindbox_list_content"
+          v-model="refreshing"
+          @refresh="onRefresh"
+        >
           <van-list
             v-model="listLoading"
             :finished="finished"
             :finished-text="$t('base.no_more')"
             @load="onLoad"
           >
-            <div v-for="item in blindbox_list" :key="item.id" @click="handlerBtn(item, 0)">
+            <div
+              v-for="item in blindbox_list"
+              :key="item.id"
+              @click="handlerBtn(item, 0)"
+            >
               <div :class="{ list_item: true }">
                 <div class="list_item_warpper">
                   <div v-if="item.status != 0" class="list_item_invaild"></div>
@@ -27,7 +35,6 @@
                     <van-image
                       width="100%"
                       height="100%"
-                      
                       :src="item.cover_image"
                     />
                   </div>
@@ -37,7 +44,9 @@
                     </div>
                     <div class="content">
                       距离开启盲盒仅差
-                      <span class="color_red">{{ item.invite  - item.already_invite }}</span
+                      <span class="color_red">{{
+                        item.invite - item.already_invite
+                      }}</span
                       >/<span class="color_blod">{{ item.invite }}</span>
                       人助力 开启后将获惊喜数字资产
                     </div>
@@ -72,10 +81,27 @@
               </div>
             </div>
           </van-list>
+          <div
+            class="noData"
+            v-if="!listLoading && (!blindbox_list || blindbox_list.length == 0)"
+          >
+            <div class="noData_content ">
+              <img
+                class="bg"
+                src="@/assets/activity/blindbox/noDataBg2@2.png"
+              />
+              <div class="text  color_theme">
+                <span class="title ">暂时没有盲盒</span>
+                <div class="content">
+                  据说使用 BitKeep
+                  转账成功或兑换数字资产可随机获得一个盲盒，有概率开出惊喜数字资产
+                </div>
+              </div>
+            </div>
+          </div>
         </van-pull-refresh>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -107,7 +133,7 @@ export default {
   },
   async created() {},
   async beforeMount() {
-    // this.onLoad();
+    this.onLoad(true);
   },
   async mounted() {
     this.showLoading();
@@ -170,7 +196,7 @@ export default {
         this.blindbox_list = [];
         this.refreshing = false;
       }
-      await this.getList(isRefresh?1:this.start + 1);
+      await this.getList(isRefresh ? 1 : this.start + 1);
       this.listLoading = false;
       // if (this.total <= this.blindbox_list.length) {
       this.finished = true;
@@ -255,10 +281,25 @@ export default {
   }
   .blindbox_list_body {
     overflow: hidden;
+    .blindbox_list_content {
+      min-height: 100vh;
+    }
+    .noData {
+      width: 220px;
+      height: 282px;
+      margin:166px auto 0  ;
+      box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      /* Note: backdrop-filter has minimal browser support */
 
+      border-radius: 18px;
+      background: url("@/assets/activity/blindbox/noDataBg@2.png") center center
+        no-repeat;
+      background-size: 100% 100%;
+      text-align: center;
+    }
     .list_item {
       .list_item_warpper {
-        position: relative;
         .list_item_invaild {
           position: absolute;
           top: 0;
@@ -268,17 +309,26 @@ export default {
           background: #ffffff;
           opacity: 0.6;
         }
+        position: relative;
         overflow: hidden;
         width: 343px;
         height: 94px;
-        background: #ffffff;
+
         border-radius: 10px;
         box-sizing: border-box;
         padding: 10px;
         margin: 10px 16px;
         display: flex;
-
         justify-content: space-between;
+        background: radial-gradient(
+          15354.96% 14203.58% at 8.02% 0%,
+          #fffbe6 0%,
+          #ffefea 19.79%,
+          #ffeff7 53.47%,
+          #ffecfd 59.9%,
+          #ddd1ff 97.4%
+        );
+        border-radius: 10px;
 
         .list_item_pic {
           height: 74px;
@@ -296,7 +346,7 @@ export default {
           height: 28px;
           width: 161px;
           color: #7f828f;
-          font-size: 12px;
+          font-size: 10px;
           line-height: 14px;
           margin: 0 10px;
           .title {
@@ -305,13 +355,17 @@ export default {
             font-weight: 500;
             line-height: 16px;
             letter-spacing: 0px;
+            color: #080d21;
           }
           .content {
             margin: 5px 0px;
             line-height: 14px;
+            color: #7f828f;
           }
           .time {
             font-size: 10px;
+            line-height: 10px;
+            color: #4b5373;
             // line-height: 10px;  //有的最小12px
           }
         }

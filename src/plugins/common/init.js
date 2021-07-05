@@ -2,7 +2,7 @@ import Vue from "vue"
 import {debug} from "debug"
 // import VueCanvasPoster from 'vue-canvas-poster'
 import createVueI18n from "../../locales"
-const log  = debug("init")
+const log  = debug("bit:init")
 
 
 
@@ -76,12 +76,21 @@ if(process.env.DEBUG && process.client){
 
 export default ({ app, store, query={},params={}}) => {
     // log({app, store })
-    const lang = query.lang || params.lang
-  const {locale,UA }    = store.state.local
+  const lang = query.lang || params.lang
+  const {locale, UA ,  bitkeep }    = store.state.local
   Vue.prototype.$store = store
   app.i18n = createVueI18n(locale)
   if(!UA.isBitKeep &&  process.client ){
     createVueI18n(lang || navigator.language)
   }
+  if(UA.isBitKeep &&  process.client ){
+      if(sessionStorage.bitKeep){
+        store.commit("SET_BIT_KEEP",sessionStorage.bitKeep)
+      }else{
+        sessionStorage.setItem("bitKeep",JSON.stringify(bitkeep))
+      }
+      
+  }
+  log("init: success")
   
 }
