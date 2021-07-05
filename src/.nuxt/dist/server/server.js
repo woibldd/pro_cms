@@ -3011,8 +3011,8 @@ async function setContext(app, context) {
       error: context.error,
       base: app.router.options.base,
       env: {
-        "baseUrl": "http://dev.bitkeep.top:8880",
-        "HOST_URL": "http://dev.bitkeep.top:8880",
+        "baseUrl": "http://ms.user:8880",
+        "HOST_USER": "http://ms.user:8880",
         "NODE_ENV": "production",
         "DEBUG": "*"
       }

@@ -2,7 +2,7 @@
 	"debug": true,
     "port": 8082,
     "host_user":"http://ms.user:8880",
-    "host_operation": "http://ms.operation:8898"
+    "host_operation": "http://ms.user:8898"
 }
 
 
