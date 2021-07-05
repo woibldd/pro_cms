@@ -175,13 +175,13 @@ export default {
       if (!ctx.isDev && ctx.isClient) {
         console.log('drop_console', isPro)
         config.plugins.push(
-          new UglifyJsPlugin({
-            uglifyOptions: {
-              compress: {
-                drop_console:  isPro && !VCONSOLE
-              }
-            }
-          })
+          // new UglifyJsPlugin({
+          //   uglifyOptions: {
+          //     compress: {
+          //       drop_console:  isPro && !VCONSOLE
+          //     }
+          //   }
+          // })
         )
       }
     }
