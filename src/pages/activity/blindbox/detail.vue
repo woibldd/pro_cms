@@ -16,7 +16,7 @@
           </span>
         </div>
       </Header>
-      <div class="block_detail_bg">
+      <div class="block_detail_bg ">
         <van-image width="100%" height="100%" :src="info.cover_image" />
       </div>
       <BlindTimeText
@@ -29,7 +29,7 @@
         @end="end"
       />
       <div class="block_invite">
-        <div class="block_warpper">
+        <div class="block_warpper radial-gradient">
           <div class="block_header">
             <BlindTitleImage :is_owner="info.is_owner" :status="info.status" />
           </div>
@@ -132,7 +132,7 @@
       </div>
 
       <div class="block_acitve_strategy">
-        <div class="block_warpper">
+        <div class="block_warpper radial-gradient">
           <div class="block_header">
             <BlindTitleImage
               type="footer"
