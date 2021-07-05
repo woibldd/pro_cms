@@ -20,7 +20,7 @@
         <!-- <img class="poster_bg"  :src="info.invite_image1" alt="" /> -->
         <img
           class="poster_bg"
-          src="/poster/u_b_ee808000-db1f-11eb-9ad0-ddefb611a80f.png"
+          :src="poster_img"
           alt=""
           @load="createPoster"
         />
@@ -96,6 +96,9 @@ export default {
     }
   },
   computed: {
+    poster_img(){
+      return `poster${(this.info.invite_image1||'').replace("http://cdn.bitkeep.vip","").replace("https://cdn.bitkeep.vip","")}`
+    },
     codeText() {
       return this.qrcodeText || (process.client ? location.href : "");
     }

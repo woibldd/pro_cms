@@ -830,7 +830,7 @@ if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
 var add = __webpack_require__(9).default
 module.exports.__inject__ = function (context) {
-  add("cbba6d14", content, false, context)
+  add("cbba6d14", content, true, context)
 };
 
 /***/ }),

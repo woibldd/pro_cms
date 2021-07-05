@@ -8,15 +8,15 @@ exports.modules = {
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/blindbox/createPoster.vue?vue&type=template&id=f5f3d83a&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/blindbox/createPoster.vue?vue&type=template&id=651ff006&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('van-overlay',{class:{
     qcodeModalwarpper: true,
     hidden: !_vm.showModal
-  },attrs:{"show":true}},[_c('canvas',{ref:"qrcode",staticClass:"canvasTmp"}),_vm._v(" "),_c('div',{on:{"click":function($event){$event.stopPropagation();}}},[_c('BlindTimeText',{staticClass:"block_time",attrs:{"info":_vm.info,"startTime":_vm.startTime,"endTime":_vm.endTime,"format":_vm.format}}),_vm._v(" "),_c('van-icon',{staticClass:"close",attrs:{"name":"close"},on:{"click":function($event){_vm.showModal = false}}}),_vm._v(" "),_c('div',{directives:[{name:"show",rawName:"v-show",value:(!_vm.poster.url),expression:"!poster.url"}],ref:"poster",staticClass:"poster_wrapper",attrs:{"id":"poster"}},[_c('img',{staticClass:"poster_bg",attrs:{"src":"/poster/u_b_ee808000-db1f-11eb-9ad0-ddefb611a80f.png","alt":""},on:{"load":_vm.createPoster}}),_vm._v(" "),_c('div',{staticClass:"commany_title"},[_c('img',{staticClass:"logo",attrs:{"src":__webpack_require__(90),"alt":""}}),_vm._v(" "),_c('div',{staticClass:"content"},[_c('div',[_vm._v("扫描领取数字盲盒")]),_vm._v(" "),_c('div',[_vm._v("下载 Bitkeep，瓜分盲盒中数字资产")])])]),_vm._v(" "),_c('img',{staticClass:"poster_qrcode",attrs:{"src":_vm.qrcodeUrl}})]),_vm._v(" "),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.poster.url),expression:"poster.url"}],staticClass:"postershow"},[_c('img',{attrs:{"src":_vm.poster.url}})]),_vm._v(" "),_c('div',{staticClass:"footer"},[(_vm.isBitKeep || _vm.pedding)?_c('div',{staticClass:"btn left",on:{"click":_vm.saveImage}},[_c('img',{attrs:{"src":__webpack_require__(76),"alt":""}})]):_c('a',{staticClass:"btn left",attrs:{"href":_vm.poster.url,"download":new Date().getTime()+'.jpeg'}},[_c('img',{attrs:{"src":__webpack_require__(76),"alt":""}})]),_vm._v(" "),(_vm.isBitKeep)?_c('div',{staticClass:"btn",on:{"click":_vm.shareImage}},[_c('img',{attrs:{"src":__webpack_require__(77),"alt":""}})]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"btn"},[_c('img',{attrs:{"src":__webpack_require__(77),"alt":""}})])])],1)])}
+  },attrs:{"show":true}},[_c('canvas',{ref:"qrcode",staticClass:"canvasTmp"}),_vm._v(" "),_c('div',{on:{"click":function($event){$event.stopPropagation();}}},[_c('BlindTimeText',{staticClass:"block_time",attrs:{"info":_vm.info,"startTime":_vm.startTime,"endTime":_vm.endTime,"format":_vm.format}}),_vm._v(" "),_c('van-icon',{staticClass:"close",attrs:{"name":"close"},on:{"click":function($event){_vm.showModal = false}}}),_vm._v(" "),_c('div',{directives:[{name:"show",rawName:"v-show",value:(!_vm.poster.url),expression:"!poster.url"}],ref:"poster",staticClass:"poster_wrapper",attrs:{"id":"poster"}},[_c('img',{staticClass:"poster_bg",attrs:{"src":_vm.poster_img,"alt":""},on:{"load":_vm.createPoster}}),_vm._v(" "),_c('div',{staticClass:"commany_title"},[_c('img',{staticClass:"logo",attrs:{"src":__webpack_require__(90),"alt":""}}),_vm._v(" "),_c('div',{staticClass:"content"},[_c('div',[_vm._v("扫描领取数字盲盒")]),_vm._v(" "),_c('div',[_vm._v("下载 Bitkeep，瓜分盲盒中数字资产")])])]),_vm._v(" "),_c('img',{staticClass:"poster_qrcode",attrs:{"src":_vm.qrcodeUrl}})]),_vm._v(" "),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.poster.url),expression:"poster.url"}],staticClass:"postershow"},[_c('img',{attrs:{"src":_vm.poster.url}})]),_vm._v(" "),_c('div',{staticClass:"footer"},[(_vm.isBitKeep || _vm.pedding)?_c('div',{staticClass:"btn left",on:{"click":_vm.saveImage}},[_c('img',{attrs:{"src":__webpack_require__(76),"alt":""}})]):_c('a',{staticClass:"btn left",attrs:{"href":_vm.poster.url,"download":new Date().getTime()+'.jpeg'}},[_c('img',{attrs:{"src":__webpack_require__(76),"alt":""}})]),_vm._v(" "),(_vm.isBitKeep)?_c('div',{staticClass:"btn",on:{"click":_vm.shareImage}},[_c('img',{attrs:{"src":__webpack_require__(77),"alt":""}})]):_vm._e(),_vm._v(" "),_c('div',{staticClass:"btn"},[_c('img',{attrs:{"src":__webpack_require__(77),"alt":""}})])])],1)])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./components/blindbox/createPoster.vue?vue&type=template&id=f5f3d83a&
+// CONCATENATED MODULE: ./components/blindbox/createPoster.vue?vue&type=template&id=651ff006&
 
 // EXTERNAL MODULE: external "qrcode"
 var external_qrcode_ = __webpack_require__(55);
@@ -138,6 +138,10 @@ var common = __webpack_require__(16);
     }
   },
   computed: {
+    poster_img() {
+      return `poster${(this.info.invite_image1 || '').replace("http://cdn.bitkeep.vip", "").replace("https://cdn.bitkeep.vip", "")}`;
+    },
+
     codeText() {
       return this.qrcodeText || ( false ? undefined : "");
     }
@@ -284,7 +288,7 @@ if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
 var add = __webpack_require__(9).default
 module.exports.__inject__ = function (context) {
-  add("365d89f2", content, false, context)
+  add("365d89f2", content, true, context)
 };
 
 /***/ }),
@@ -302,7 +306,7 @@ if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
 var add = __webpack_require__(9).default
 module.exports.__inject__ = function (context) {
-  add("111d9e82", content, false, context)
+  add("111d9e82", content, true, context)
 };
 
 /***/ }),
@@ -679,7 +683,7 @@ if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
 var add = __webpack_require__(9).default
 module.exports.__inject__ = function (context) {
-  add("ad6ee5bc", content, false, context)
+  add("ad6ee5bc", content, true, context)
 };
 
 /***/ }),

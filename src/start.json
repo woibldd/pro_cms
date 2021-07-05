@@ -9,7 +9,8 @@
         "env": {
           "DEBUG":"*",
           "NODE_ENV": "production",
-          "NUXT_ENV_operation_api": "http://ms.operation:8898"
+          "NUXT_ENV_operation_api": "http://ms.operation:8898",
+          "HOST_API":"http://ms.api:8880"
         }
       }
     ]
