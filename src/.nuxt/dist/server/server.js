@@ -4908,7 +4908,7 @@ async function createApp(ssrContext, config = {}) {
       }],
       "script": [{
         "name": "viewport",
-        "content": "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+        "content": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
       }, {
         "src": "https:\u002F\u002Fcdn.bootcdn.net\u002Fajax\u002Flibs\u002FvConsole\u002F3.8.1\u002Fvconsole.min.js",
         "type": "text\u002Fjavascript",
@@ -5467,19 +5467,19 @@ const createNext = ssrContext => opts => {
 /* 55 */
 /***/ (function(module, exports) {
 
-module.exports = require("qrcode");
+module.exports = require("dayjs");
 
 /***/ }),
 /* 56 */
 /***/ (function(module, exports) {
 
-module.exports = require("html2canvas");
+module.exports = require("qrcode");
 
 /***/ }),
 /* 57 */
 /***/ (function(module, exports) {
 
-module.exports = require("dayjs");
+module.exports = require("html2canvas");
 
 /***/ })
 /******/ ]);

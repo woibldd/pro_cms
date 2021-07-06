@@ -12,7 +12,7 @@
             <img src="@/assets/activity/blindbox/nav_back_black@3.png" />
           </span>
           <span class="header_btn btn" v-if="isBitKeep">
-            我的盲盒
+            {{ $t("ActivityBlindboxList.myBlindboxText") }}
           </span>
         </div>
       </Header>
@@ -74,7 +74,12 @@
             </div>
           </div>
           <!-- 操作按钮÷÷ -->
-          <BlindButton  v-if="info.status!=3"  :isBitKeep="isBitKeep" @handerBotton="handerBotton" :info="info" />
+          <BlindButton
+            v-if="info.status != 3"
+            :isBitKeep="isBitKeep"
+            @handerBotton="handerBotton"
+            :info="info"
+          />
           <!-- 下载地址 -->
           <div
             v-if="!isBitKeep"
@@ -163,9 +168,7 @@ import BlindTitleImage from "@/components/blindbox/titleImage.vue";
 import BlindButton from "@/components/blindbox/BlindButton.vue";
 import CreatePoster from "@/components/blindbox/createPoster.vue";
 import { USER_API } from "../../../api/client";
-import html2canvas from "html2canvas";
 
-import QRCode from "qrcode";
 import { mapState } from "vuex";
 import { BaseMixin } from "@/mixin/base.js";
 export default {
@@ -195,6 +198,9 @@ export default {
     },
     isBitKeep() {
       return this.local.UA.isBitKeep;
+    },
+    locale() {
+      return this.local.locale;
     }
   },
   async asyncData(ctx) {},
@@ -300,7 +306,16 @@ export default {
           break;
         //查看资产
         case "2":
-          //  this.showLoading()
+          if (this.isBitKeep) {
+            BitKeepInvoke.openUrl("bitkeep://cloundWallet");
+          } else {
+            !this.isBitKeep &&
+              this.$router.push({
+                path: "/activity/blindbox/download",
+                query: {}
+              });
+          }
+
           break;
         default:
           break;
@@ -330,10 +345,11 @@ export default {
 
         // await this.getDetails();
 
-       !this.isBitKeep && this.$router.push({
-          path: "/activity/blindbox/download",
-          query: {}
-        });
+        !this.isBitKeep &&
+          this.$router.push({
+            path: "/activity/blindbox/download",
+            query: {}
+          });
       }
     },
     back() {

@@ -55,9 +55,10 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
+
     script: BUILD_ENV == 'dev' ? [{
       name: 'viewport',
-      content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
+      content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
     },
     {
       src: 'https://cdn.bootcdn.net/ajax/libs/vConsole/3.8.1/vconsole.min.js',

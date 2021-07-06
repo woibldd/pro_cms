@@ -77,6 +77,7 @@
                     >
                       {{$t("ActivityBlindbox.ActivityBlindboxList.GoShareText")}}
                     </div>
+
                     <div
                       class="btn"
                       v-if="item.status == 1 && item.is_owner ==1"
@@ -91,6 +92,8 @@
                     >
                       {{$t("ActivityBlindbox.ActivityBlindboxList.GoShareText")}}
                     </div>
+
+                    
                     <div
                       class="btn"
                       v-if="item.status == 2"
@@ -111,7 +114,7 @@
             </div>
           </van-list>
           <div
-            class="noData"
+            :class="{noData:true,[locale]:true}"
             v-if="!listLoading && (!blindbox_list || blindbox_list.length == 0)"
           ></div>
         </van-pull-refresh>
@@ -129,7 +132,10 @@ export default {
   name: "mBoxList",
   components: { Header },
   computed: {
-    ...mapState(["local"])
+    ...mapState(["local"]),
+    locale(){
+      return this.local.locale
+    }
   },
   // async asyncData(ctx) {},
 
@@ -157,6 +163,7 @@ export default {
     this.isLoading = false;
   },
 
+
   methods: {
     async getList(pageNo = 1) {
       const { data, status } = await USER_API.mBoxList({
@@ -173,6 +180,7 @@ export default {
       this.start = pageNo;
       if (pageNo == 1) {
         this.blindbox_list = list;
+        
       } else {
         this.blindbox_list = [...this.blindbox_list, ...list];
       }
@@ -317,7 +325,12 @@ export default {
         no-repeat;
       background-size: 100% 100%;
       text-align: center;
+      &.en{
+          background: url("@/assets/activity/blindbox/noData@2.png") center center
+        no-repeat;
+      }
     }
+  
     .list_item {
       .list_item_warpper {
         .list_item_invaild {

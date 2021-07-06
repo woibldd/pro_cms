@@ -63,7 +63,7 @@ var staticRenderFns = []
 var common = __webpack_require__(64);
 
 // EXTERNAL MODULE: external "dayjs"
-var external_dayjs_ = __webpack_require__(57);
+var external_dayjs_ = __webpack_require__(55);
 var external_dayjs_default = /*#__PURE__*/__webpack_require__.n(external_dayjs_);
 
 // EXTERNAL MODULE: ./api/client.js

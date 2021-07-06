@@ -19,7 +19,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./components/blindbox/createPoster.vue?vue&type=template&id=398f1f1d&
 
 // EXTERNAL MODULE: external "qrcode"
-var external_qrcode_ = __webpack_require__(55);
+var external_qrcode_ = __webpack_require__(56);
 var external_qrcode_default = /*#__PURE__*/__webpack_require__.n(external_qrcode_);
 
 // EXTERNAL MODULE: external "vuex"
@@ -29,7 +29,7 @@ var external_vuex_ = __webpack_require__(5);
 var base = __webpack_require__(82);
 
 // EXTERNAL MODULE: external "html2canvas"
-var external_html2canvas_ = __webpack_require__(56);
+var external_html2canvas_ = __webpack_require__(57);
 var external_html2canvas_default = /*#__PURE__*/__webpack_require__.n(external_html2canvas_);
 
 // EXTERNAL MODULE: ./components/blindbox/blindTimeText.vue + 4 modules
