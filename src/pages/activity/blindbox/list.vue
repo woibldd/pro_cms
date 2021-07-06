@@ -30,7 +30,7 @@
             >
               <div :class="{ list_item: true }">
                 <div class="list_item_warpper radial-gradient active">
-                  <div v-if="item.status != 0" class="list_item_invaild"></div>
+                  <div v-if="item.status == 3" class="list_item_invaild"></div>
                   <div class="list_item_pic">
                     <van-image
                       width="100%"
@@ -75,18 +75,32 @@
                       v-if="item.status == 0"
                       @click="handlerBtn(item, 0)"
                     >
-                      {{$t("ActivityBlindbox.ActivityBlindboxList.GoOpenText")}}
+                      {{$t("ActivityBlindbox.ActivityBlindboxList.GoShareText")}}
                     </div>
                     <div
                       class="btn"
-                      v-if="item.status == 1"
+                      v-if="item.status == 1 && item.is_owner ==1"
                       @click="handlerBtn(item, 1)"
                     >
-                      {{$t("ActivityBlindbox.ActivityBlindboxList.SuccessfullyOpenedText")}}
+                      {{$t("ActivityBlindbox.ActivityBlindboxList.GoOpenText")}}
+                    </div>
+                     <div
+                      class="btn"
+                      v-if="item.status == 1 && item.is_owner !=1"
+                      @click="handlerBtn(item, 0)"
+                    >
+                      {{$t("ActivityBlindbox.ActivityBlindboxList.GoShareText")}}
                     </div>
                     <div
                       class="btn"
                       v-if="item.status == 2"
+                      @click="handlerBtn(item, 2)"
+                    >
+                        {{$t("ActivityBlindbox.ActivityBlindboxList.SuccessfullyOpenedText")}}
+                    </div>
+                    <div
+                      class="btn"
+                      v-if="item.status == 3"
                       @click="handlerBtn(item, 2)"
                     >
                         {{$t("ActivityBlindbox.ActivityBlindboxList.expiredText")}}
@@ -134,7 +148,7 @@ export default {
   },
   async created() {},
   async beforeMount() {
-    this.onLoad(true);
+    // this.onLoad(true);
   },
   async mounted() {
     this.showLoading();
@@ -359,12 +373,12 @@ export default {
             margin: 5px 0px;
             line-height: 14px;
             // color: #7f828f;
-            color: #0c0998;
+            color: #7F828F;
           }
           .time {
             font-size: 10px;
-            // line-height: 10px;
-            color: #4b5373;
+            line-height: 12px;
+            color: #080D21;
             // line-height: 10px;  //有的最小12px
           }
         }

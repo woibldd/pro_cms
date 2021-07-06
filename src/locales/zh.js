@@ -18,7 +18,7 @@ module.exports = {
             "myBlindboxText": "我的盲盒",
             "RaidersText": "攻略",
             "DigitalBlindBoxText": "数字盲盒",
-            "blindBoxNumText": "距离开启盲盒仅差3/5人助力",
+            "blindBoxNumText": "距离开启盲盒仅差 <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> 人助力",
             "blindBoxSurpriseText": "开启后将获得惊喜数字资产",
             "ValidUntilText": "有效期至",
 

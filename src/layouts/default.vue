@@ -25,7 +25,10 @@
   opacity: 0.8;
 }
 .active{
-   opacity: 0.8;
+   &:active{
+     opacity: 0.8;
+   }
+   
 }
 .radial-gradient{
    background: radial-gradient(

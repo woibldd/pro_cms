@@ -2558,7 +2558,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".body {\n  font-family: PingFang SC;\n  font-style: normal;\n  font-weight: normal;\n}\n.color_red {\n  color: #ff255a;\n  font-weight: 600;\n}\n.color_text {\n  color: #4b5373;\n}\n.color_theme {\n  color: #0c0998;\n}\n.btn:active {\n  opacity: 0.8;\n}\n.active {\n  opacity: 0.8;\n}\n.radial-gradient {\n  background: radial-gradient(at left top, #fffbe5 0%, #ffefea 19.79%, #ffeff7 53.47%, #ffecfd 59.9%, #ddd1ff 97.4%);\n}\n@keyframes heartbeat {\n0% {\n    transform: scale(0.9, 0.9);\n    opacity: 1;\n}\n25% {\n    transform: scale(1, 1);\n    opacity: 0.9;\n}\n100% {\n    opacity: 1;\n    transform: scale(0.9, 0.9);\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".body {\n  font-family: PingFang SC;\n  font-style: normal;\n  font-weight: normal;\n}\n.color_red {\n  color: #ff255a;\n  font-weight: 600;\n}\n.color_text {\n  color: #4b5373;\n}\n.color_theme {\n  color: #0c0998;\n}\n.btn:active {\n  opacity: 0.8;\n}\n.active:active {\n  opacity: 0.8;\n}\n.radial-gradient {\n  background: radial-gradient(at left top, #fffbe5 0%, #ffefea 19.79%, #ffeff7 53.47%, #ffecfd 59.9%, #ddd1ff 97.4%);\n}\n@keyframes heartbeat {\n0% {\n    transform: scale(0.9, 0.9);\n    opacity: 1;\n}\n25% {\n    transform: scale(1, 1);\n    opacity: 0.9;\n}\n100% {\n    opacity: 1;\n    transform: scale(0.9, 0.9);\n}\n}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
@@ -2745,7 +2745,7 @@ module.exports = {
       "myBlindboxText": "我的盲盒",
       "RaidersText": "攻略",
       "DigitalBlindBoxText": "数字盲盒",
-      "blindBoxNumText": "距离开启盲盒仅差3/5人助力",
+      "blindBoxNumText": "距离开启盲盒仅差 <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> 人助力",
       "blindBoxSurpriseText": "开启后将获得惊喜数字资产",
       "ValidUntilText": "有效期至",
       "GoOpenText": "去开启",
@@ -4083,12 +4083,12 @@ var nuxt_loading_component = Object(componentNormalizer["a" /* default */])(
 // EXTERNAL MODULE: ./node_modules/vant/lib/index.css
 var lib = __webpack_require__(43);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=template&id=f40ad318&
-var defaultvue_type_template_id_f40ad318_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('Nuxt')],1)}
-var defaultvue_type_template_id_f40ad318_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=template&id=e9e06478&
+var defaultvue_type_template_id_e9e06478_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('Nuxt')],1)}
+var defaultvue_type_template_id_e9e06478_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./layouts/default.vue?vue&type=template&id=f40ad318&
+// CONCATENATED MODULE: ./layouts/default.vue?vue&type=template&id=e9e06478&
 
 // CONCATENATED MODULE: ./layouts/default.vue
 
@@ -4104,8 +4104,8 @@ if (style0.__inject__) style0.__inject__(context)
 
 var default_component = Object(componentNormalizer["a" /* default */])(
   script,
-  defaultvue_type_template_id_f40ad318_render,
-  defaultvue_type_template_id_f40ad318_staticRenderFns,
+  defaultvue_type_template_id_e9e06478_render,
+  defaultvue_type_template_id_e9e06478_staticRenderFns,
   false,
   default_injectStyles,
   null,

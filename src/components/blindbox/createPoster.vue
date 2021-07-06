@@ -18,8 +18,8 @@
       <span class="close" name="close" @click="showModal = false" />
       <div class="poster_wrapper" v-show="!poster.url" id="poster" ref="poster">
         <!-- <img class="poster_bg"  :src="info.invite_image1" alt="" /> -->
-        <img class="poster_bg" :src="poster_img" alt="" @load="createPoster" />
-
+        <img class="poster_bg" :src="proxy_img" alt="" @load="createPoster" />
+          <!-- <van-image  class="poster_bg" width="100%" height="100%" @load="createPoster" :src="proxy_img" /> -->
         <div class="commany_title">
           <img
             class="logo"
@@ -96,10 +96,11 @@ export default {
     }
   },
   computed: {
-    poster_img() {
-      return `/poster${(this.info.invite_image1 || "")
+    proxy_img() {
+      const sourceUrl = this.info.invite_image1 || ""
+      return sourceUrl? `/poster${(sourceUrl)
         .replace("http://cdn.bitkeep.vip", "")
-        .replace("https://cdn.bitkeep.vip", "")}`;
+        .replace("https://cdn.bitkeep.vip", "")}`:'';
     },
     codeText() {
       return this.qrcodeText || (process.client ? location.href : "");
@@ -121,16 +122,18 @@ export default {
   methods: {
     init() {
     
-      this.showModal = true;
+     this.showModal = true;
       if (this.pedding) {
         this.showLoading("生成中...");
       }
     },
     async createPoster() {
+      // if(!this.proxy_img && !this.info.invite_image1) return 
       if (this.pedding) return this.showLoading("生成中...");
 
       this.showModal && this.showLoading("生成中...");
-      this.pedding = this.poster.url = "";
+      this.pedding = true
+      this.poster.url = "";
       const el = this.$refs.poster;
 
       if (!this.qrcodeUrl) {
@@ -147,7 +150,7 @@ export default {
         // windowHeight: document.body.scrollHeight,
         width: el.offsetWidth - 1,
         height: el.offsetHeight - 1,
-        scale: 2,
+        scale: 1,
         async: true,
         // width: 375,
         // height: 812,

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="info.status != 3" class="block_invite_button">
+  <div class="block_invite_button">
     <div
       v-if="info.status == 1 && info.is_owner == 1"
       class="invite_button heart"
@@ -35,8 +35,11 @@
 export default {
   name: "titleImag",
   props: {
+    isBitKeep: {
+      type: Boolean
+    },
     info: {
-      default: ()=>({})
+      default: () => ({})
     }
   },
   computed: {

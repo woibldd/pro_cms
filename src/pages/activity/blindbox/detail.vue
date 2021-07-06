@@ -31,11 +31,18 @@
       <div class="block_invite">
         <div class="block_warpper radial-gradient">
           <div class="block_header">
-            <BlindTitleImage :is_owner="info.is_owner" :status="info.status" />
+            <BlindTitleImage
+              :isBitKeep="isBitKeep"
+              :is_owner="info.is_owner"
+              :status="info.status"
+            />
           </div>
           <!-- 是否已经开启-->
           <!-- 金额展示 -->
-          <div class="block_invite_coin color_red" v-if="info.status == 2 && info.is_owner==1">
+          <div
+            class="block_invite_coin color_red"
+            v-if="info.status == 2 && info.is_owner == 1"
+          >
             <span>+{{ info.amount }}</span>
             &nbsp;
             <span>{{ info.symbol }}</span>
@@ -64,20 +71,13 @@
                 v-model="address"
                 placeholder="点即此处输入 ETH 地址即可助力"
               />
-              <!-- <van-field
-                    v-model="address"
-                    name="用户名"
-                    input-align="center"
-                    placeholder="点即此处输入 ETH 地址即可助力"
-                    :rules="[{ required: true, message: '请填写用户名' }]"
-                /> -->
             </div>
           </div>
           <!-- 操作按钮÷÷ -->
-          <BlindButton  @handerBotton="handerBotton"  :info="info" />
+          <BlindButton  v-if="info.status!=3"  :isBitKeep="isBitKeep" @handerBotton="handerBotton" :info="info" />
           <!-- 下载地址 -->
           <div
-            v-if="info.is_owner != 1"
+            v-if="!isBitKeep"
             :class="{
               block_invite_down: true,
               mb: invite_list && invite_list.length > 0
@@ -113,6 +113,7 @@
           <div class="block_header">
             <BlindTitleImage
               type="footer"
+              :isBitKeep="isBitKeep"
               :is_owner="info.is_owner"
               :status="info.status"
             />
@@ -203,8 +204,8 @@ export default {
       Toast: null,
       timer: null,
       format: "{dd}天{hh}小时{mm}分钟{ss}秒",
-      startTime: new Date().getTime(),
-      endTime: new Date().getTime() + 60 * 1000 * 60 * 24 * 30,
+      startTime: 0,
+      endTime: 0,
       isLoading: true,
 
       poster: {
@@ -248,7 +249,7 @@ export default {
     },
     async getDetails(refresh) {
       if (!this.$route.query.id) {
-        this.$toast.fail("params id is not found");
+        // this.$toast.fail("params id is not found");
         return false;
       }
       if (this.info.status > 1) return;
@@ -268,7 +269,7 @@ export default {
       }
       if (JSON.stringify(this.info) == JSON.stringify(data)) return false;
       this.info = data;
-      this.startTime = new Date(data.start_time).getTime();
+      this.startTime = data.current_time;
       this.endTime = new Date(data.end_time).getTime();
       this.invite_list = data.help_record || [];
       return true;
@@ -329,7 +330,7 @@ export default {
 
         // await this.getDetails();
 
-        this.$router.push({
+       !this.isBitKeep && this.$router.push({
           path: "/activity/blindbox/download",
           query: {}
         });
@@ -337,6 +338,10 @@ export default {
     },
     back() {
       this.$router.back();
+    },
+    beforeDestroy() {
+      console.log(111);
+      clearTimeout(this.timer);
     },
     chountChange({ dd, hh, mm, ss, ms, yy }) {},
     end() {},
