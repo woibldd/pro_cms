@@ -2668,7 +2668,7 @@ module.exports = {
       "GoOpenText": "Go open",
       "GoShareText": "Go share",
       "TurnedOnText": "Turned on",
-      "SuccessfullyOpenedText": "Successfully opened",
+      "SuccessfullyOpenedText": "Already Opened",
       "expiredText": "expired"
     },
     ActivityBlindboxDetail: {

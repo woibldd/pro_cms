@@ -117,7 +117,17 @@ export default {
     };
   },
   async mounted() {
-    this.qrcodeUrl = await QRCode.toDataURL(this.codeText).catch(err => "");
+    this.qrcodeUrl = await QRCode.toDataURL(this.codeText,{
+      errorCorrectionLevel: 'H',
+      //  quality: 1,
+      // margin: 5,
+      color: {
+  
+      // // background: ;
+      // dark:"#FFBF60FF",
+      // light:"#ffffffb3"
+    }
+    }).catch(err => "");
   },
   methods: {
     init() {
@@ -282,10 +292,8 @@ export default {
       bottom: 20px;
       width: 60px;
       height: 60px;
-      // background: rgba(255, 255, 255, 0.7);
-      // box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), inset 0px -1px 0px rgba(255, 255, 255, 0.15);
-      // backdrop-filter: blur(30px);
-      /* Note: backdrop-filter has minimal browser support */
+  
+      box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), inset 0px -1px 0px rgba(255, 255, 255, 0.15);
 
       border-radius: 8px;
     }
