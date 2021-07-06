@@ -160,7 +160,7 @@ export default {
         // windowHeight: document.body.scrollHeight,
         width: el.offsetWidth - 1,
         height: el.offsetHeight - 1,
-        scale: 2,
+        scale: 3, 
         async: true,
         // width: 375,
         // height: 812,
@@ -219,6 +219,7 @@ export default {
   z-index: 100;
   &.hidden {
     z-index: -10 !important;
+    opacity: 0;
   }
   .canvasTmp {
     position: absolute;
@@ -238,9 +239,9 @@ export default {
       no-repeat;
     background-size: 100% 100%;
   }
-  .block_time {
-    opacity: 0.6;
-  }
+  // .block_time {
+  //   opacity: 0.6;
+  // }
   .postershow {
     width: 345px;
     height: 533px;

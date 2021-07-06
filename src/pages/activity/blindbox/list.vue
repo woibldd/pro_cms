@@ -53,11 +53,14 @@
                             }
                           )
                         "
-                        ></span>
-                        <div>
-                          {{$t(
-                            'ActivityBlindbox.ActivityBlindboxList.blindBoxSurpriseText')}}
-                        </div>
+                      ></span>
+                      <div>
+                        {{
+                          $t(
+                            "ActivityBlindbox.ActivityBlindboxList.blindBoxSurpriseText"
+                          )
+                        }}
+                      </div>
                       <!-- 距离开启盲盒仅差
                       <span class="color_red">{{
                         item.invite - item.already_invite
@@ -66,7 +69,12 @@
                       人助力 开启后将获惊喜数字资产 -->
                     </div>
                     <div class="time van-ellipsis">
-                       <span>{{$t("ActivityBlindbox.ActivityBlindboxList.ValidUntilText")}}</span> {{ item.start_time | date }}
+                      <span>{{
+                        $t(
+                          "ActivityBlindbox.ActivityBlindboxList.ValidUntilText"
+                        )
+                      }}</span>
+                      {{ item.start_time | date }}
                     </div>
                   </div>
                   <div class="list_item_btn">
@@ -75,38 +83,49 @@
                       v-if="item.status == 0"
                       @click="handlerBtn(item, 0)"
                     >
-                      {{$t("ActivityBlindbox.ActivityBlindboxList.GoShareText")}}
+                      {{
+                        $t("ActivityBlindbox.ActivityBlindboxList.GoShareText")
+                      }}
                     </div>
 
                     <div
                       class="btn"
-                      v-if="item.status == 1 && item.is_owner ==1"
+                      v-if="item.status == 1 && item.is_owner == 1"
                       @click="handlerBtn(item, 1)"
                     >
-                      {{$t("ActivityBlindbox.ActivityBlindboxList.GoOpenText")}}
+                      {{
+                        $t("ActivityBlindbox.ActivityBlindboxList.GoOpenText")
+                      }}
                     </div>
-                     <div
+                    <div
                       class="btn"
-                      v-if="item.status == 1 && item.is_owner !=1"
+                      v-if="item.status == 1 && item.is_owner != 1"
                       @click="handlerBtn(item, 0)"
                     >
-                      {{$t("ActivityBlindbox.ActivityBlindboxList.GoShareText")}}
+                      {{
+                        $t("ActivityBlindbox.ActivityBlindboxList.GoShareText")
+                      }}
                     </div>
 
-                    
                     <div
                       class="btn"
                       v-if="item.status == 2"
                       @click="handlerBtn(item, 2)"
                     >
-                        {{$t("ActivityBlindbox.ActivityBlindboxList.SuccessfullyOpenedText")}}
+                      {{
+                        $t(
+                          "ActivityBlindbox.ActivityBlindboxList.SuccessfullyOpenedText"
+                        )
+                      }}
                     </div>
                     <div
                       class="btn"
                       v-if="item.status == 3"
                       @click="handlerBtn(item, 2)"
                     >
-                        {{$t("ActivityBlindbox.ActivityBlindboxList.expiredText")}}
+                      {{
+                        $t("ActivityBlindbox.ActivityBlindboxList.expiredText")
+                      }}
                     </div>
                   </div>
                 </div>
@@ -114,7 +133,7 @@
             </div>
           </van-list>
           <div
-            :class="{noData:true,[locale]:true}"
+            :class="{ noData: true, [locale]: true }"
             v-if="!listLoading && (!blindbox_list || blindbox_list.length == 0)"
           ></div>
         </van-pull-refresh>
@@ -133,8 +152,11 @@ export default {
   components: { Header },
   computed: {
     ...mapState(["local"]),
-    locale(){
-      return this.local.locale
+    locale() {
+      return this.local.locale;
+    },
+    isBitKeep() {
+      return this.local.UA.isBitKeep;
     }
   },
   // async asyncData(ctx) {},
@@ -154,6 +176,9 @@ export default {
   },
   async created() {},
   async beforeMount() {
+    this.isBitKeep &&
+      BitKeepInvoke.setTitle(this.$t("ActivityBlindbox.title.myBlindboxText"));
+
     // this.onLoad(true);
   },
   async mounted() {
@@ -162,7 +187,6 @@ export default {
     this.hideLoading();
     this.isLoading = false;
   },
-
 
   methods: {
     async getList(pageNo = 1) {
@@ -180,7 +204,6 @@ export default {
       this.start = pageNo;
       if (pageNo == 1) {
         this.blindbox_list = list;
-        
       } else {
         this.blindbox_list = [...this.blindbox_list, ...list];
       }
@@ -294,6 +317,7 @@ export default {
   font-style: normal;
   font-weight: normal;
   font-family: PingFang SC;
+  overflow: hidden;
 
   .blindbox_list_header {
     display: flex;
@@ -307,6 +331,7 @@ export default {
   }
   .blindbox_list_body {
     overflow: hidden;
+    margin-top: 10px;
     .blindbox_list_content {
       min-height: 100vh;
     }
@@ -325,12 +350,12 @@ export default {
         no-repeat;
       background-size: 100% 100%;
       text-align: center;
-      &.en{
-          background: url("@/assets/activity/blindbox/noData@2.png") center center
-        no-repeat;
+      &.en {
+        background: url("@/assets/activity/blindbox/noData@2.png") center center
+          no-repeat;
       }
     }
-  
+
     .list_item {
       .list_item_warpper {
         .list_item_invaild {
@@ -386,12 +411,12 @@ export default {
             margin: 5px 0px;
             line-height: 14px;
             // color: #7f828f;
-            color: #7F828F;
+            color: #4b5373;
           }
           .time {
             font-size: 10px;
             line-height: 12px;
-            color: #080D21;
+            color: #4b5373;
             // line-height: 10px;  //有的最小12px
           }
         }

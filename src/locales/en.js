@@ -14,10 +14,23 @@ module.exports = {
       "开启获得惊喜数字资产",
       "查看数字盲盒"
     ],
+    button:{
+      
+      "OpenimmediatelyText": "Open the blind box immediately",
+      "InviteFriendsNow": "Invite friends to help now",
+      "OpenFriendsImmediately": "Help open the blind box",
+      "ViewAssets":"View assets",
+      "SuccessView":"Success! Please view assets"  //
+      // "OpenimmediatelyText": "Open the blind box immediately"
+    },
+    title:{
+      "myBlindboxText": "我的盲盒"
+    },
     ActivityBlindboxList: {
       "myBlindboxText": "My blind box",
       "RaidersText": "Raiders",
       "DigitalBlindBoxText": "Digital blind box",
+      
       "blindBoxNumText": "The blind box is still short of <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> people to help",
       "blindBoxSurpriseText": "After opening, you will get surprise digital assets",
       "ValidUntilText": "Valid until",
@@ -25,10 +38,13 @@ module.exports = {
       "GoOpenText": "Go open",
       "GoShareText": "Go share",
       "TurnedOnText": "Turned on",
-      "SuccessfullyOpenedText": "Already Opened",
+      "SuccessfullyOpenedText": "already Opened",
       "expiredText": "expired"
     },
     ActivityBlindboxDetail: {
+      "inputAddressPlaceholader": "Click here to input eth address",
+      "NoAddressDownload": "No address? Click download bitkeep to create an address",
+      "HelpSuccessETH":"Help success eth address",
       "BitKeepTitleText": "BitKeep数字盲盒",
       "OpenTitleText": "开启获得惊喜数字资产",
       "invalidTimeText": "距离盲盒失效还有 3天12小时23分23秒",

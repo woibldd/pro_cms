@@ -6,22 +6,32 @@
       >
     </div>
     <div v-else>
-      <Header v-if="!isBitKeep">
+      <Header>
         <div class="blindbox_invite_header">
-          <span class="header_back" @click="back">
-            <img src="@/assets/activity/blindbox/nav_back_black@3.png" />
+          <span class="header_back">
+            <!-- <img src="@/assets/activity/blindbox/nav_back_black@3.png" /> -->
           </span>
-          <span class="header_btn btn" v-if="isBitKeep">
-            {{ $t("ActivityBlindboxList.myBlindboxText") }}
+          <span
+            class="header_btn btn"
+            v-if="isBitKeep"
+            @click="
+              $router.replace({
+                path: '/activity/blindbox/list',
+                query: {}
+              })
+            "
+          >
+            {{ $t("ActivityBlindbox.ActivityBlindboxList.myBlindboxText") }}
           </span>
         </div>
       </Header>
       <div class="block_detail_bg ">
-        <van-image width="100%" height="100%" :src="info.cover_image" />
+        <van-image width="100%" height="100%" :src="info.poster_image" />
       </div>
       <BlindTimeText
         class="block_time"
         :info="info"
+        :locale="locale"
         :startTime="startTime"
         :endTime="endTime"
         :format="format"
@@ -33,6 +43,7 @@
           <div class="block_header">
             <BlindTitleImage
               :isBitKeep="isBitKeep"
+              :locale="locale"
               :is_owner="info.is_owner"
               :status="info.status"
             />
@@ -75,13 +86,23 @@
             v-if="info.is_owner != 1 && info.status == 0"
           >
             <div class="invite_ETH_content">
-              <input
+              <textarea
                 type="text"
                 v-model="address"
+                @focus="handlerFocus"
+                :class="{
+                  focus: !!address
+                }"
+                @blur="handlerBlur()"
                 :placeholder="
-                  $t('ActivityBlindbox.ActivityBlindboxList.blindBoxNumText')
+                  focus
+                    ? ''
+                    : $t(
+                        'ActivityBlindbox.ActivityBlindboxDetail.inputAddressPlaceholader'
+                      )
                 "
               />
+              <span></span>
             </div>
           </div>
           <!-- 操作按钮÷÷ -->
@@ -99,16 +120,20 @@
               mb: invite_list && invite_list.length > 0
             }"
           >
-            <a href="https://bitkeep.org"
-              >没有地址？点击下载 BitKeep 创建地址</a
-            >
+            <a href="https://bitkeep.org">{{
+              $t("ActivityBlindbox.ActivityBlindboxDetail.NoAddressDownload")
+            }}</a>
           </div>
           <!-- 邀请人地址 -->
           <div
             class="block_invite_list color_text"
             v-if="invite_list && invite_list.length > 0"
           >
-            <div class="title">助力成功 ETH 地址：</div>
+            <div class="title">
+              {{
+                $t("ActivityBlindbox.ActivityBlindboxDetail.HelpSuccessETH")
+              }}：
+            </div>
             <div
               v-for="(item, index) in invite_list"
               :key="item"
@@ -130,12 +155,13 @@
             <BlindTitleImage
               type="footer"
               :isBitKeep="isBitKeep"
+               :locale="locale"
               :is_owner="info.is_owner"
               :status="info.status"
             />
             <!-- <img src="@/assets/activity/blindbox/title03@2.png" /> -->
           </div>
-          <div class="block_body color_text">
+          <div class="block_body color_theme">
             <div
               v-for="(item, index) in $t(
                 'ActivityBlindbox.ActivityBlindboxDetail.rules'
@@ -157,6 +183,7 @@
         </div>
       </div>
       <CreatePoster
+        :locale="locale"
         :zIndex="100"
         ref="CreatePoster"
         :isBitKeep="isBitKeep"
@@ -236,7 +263,8 @@ export default {
         is_owner: 1
       },
       invite_list: [],
-      address: ""
+      address: "",
+      focus: false
     };
   },
   async created() {},
@@ -253,14 +281,21 @@ export default {
     async init() {
       await this.$nextTick();
     },
-
+    handlerFocus() {
+      this.focus = true;
+    },
+    handlerBlur() {
+      this.focus = false;
+    },
     shareImage() {
       BitKeepInvoke &&
         BitKeepInvoke.shareUrl(
           this.info.title,
-          this.info.title,
+          this.locale == "zh"
+            ? "我正在免费开盲盒，快来帮我助力一下吧～"
+            : "I'm opening blind free boxes, come and help me~",
           location.href,
-          this.info.invite_image1,
+          this.info.cover_image,
           console.log
         );
     },
@@ -289,6 +324,7 @@ export default {
       this.startTime = data.current_time;
       this.endTime = new Date(data.end_time).getTime();
       this.invite_list = data.help_record || [];
+      this.isBitKeep && BitKeepInvoke.setTitle(this.info.title);
       return true;
     },
     async handerBotton(type) {
@@ -462,6 +498,7 @@ export default {
       font-weight: normal;
       font-size: 14px;
       text-align: center;
+      white-space: nowrap;
       margin: 15px 0;
       .color_red {
         font-size: 16px;
@@ -470,7 +507,7 @@ export default {
     .block_invite_progress {
       width: 280px;
       height: 5px;
-      background: #f2f1fa;
+      background: #ffffff;
       margin: 0 auto;
       border-radius: 100px;
       .progress {
@@ -485,25 +522,30 @@ export default {
         margin-top: 20px;
         width: 303px;
         height: 60px;
-        background: #f2f1fa;
+        background: #ffffff;
         border-radius: 8px;
         display: flex;
         justify-content: center;
         align-items: center;
         opacity: 0.8;
-
-        border-radius: 8px;
-        input {
+        textarea {
+          border-radius: 8px;
           border: none;
-          width: 80%;
+          width: 271px;
+          height: 32px;
+          padding: 14px;
           text-align: center;
+          line-height: 32px;
           outline: none;
-          background: #f2f1fa;
-
+          background: #ffffff;
+          resize: none;
           font-size: 12px;
-          line-height: 16px;
           &::placeholder {
             color: #4b5373;
+          }
+          &.focus {
+            line-height: 16px;
+            text-align: left;
           }
         }
       }
@@ -511,6 +553,7 @@ export default {
     .block_invite_down {
       margin: 20px auto 0px;
       width: 100%;
+
       text-align: center;
       height: 16px;
       font-weight: 500;
@@ -526,7 +569,7 @@ export default {
       line-height: 16px;
       padding: 20px 16px 20px;
       overflow: hidden;
-      background: #f2f1fa;
+      background: #ffff;
       border-radius: 8px;
       box-sizing: border-box;
       opacity: 0.8;

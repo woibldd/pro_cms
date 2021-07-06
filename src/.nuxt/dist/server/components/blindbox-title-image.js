@@ -111,7 +111,7 @@ module.exports = __webpack_require__.p + "img/openTextTitle@2.d05c52a.png";
 /***/ 86:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/inviteTextTitle@2.8194a3d.png";
+module.exports = __webpack_require__.p + "img/inviteTextTitle@2.1a70c3e.png";
 
 /***/ }),
 
@@ -125,7 +125,7 @@ module.exports = __webpack_require__.p + "img/helperTextTitle@2.7b54db7.png";
 /***/ 88:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/title03@2.ad26fe9.png";
+module.exports = __webpack_require__.p + "img/title03@2.b3952e7.png";
 
 /***/ }),
 

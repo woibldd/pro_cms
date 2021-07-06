@@ -14,6 +14,17 @@ module.exports = {
             "开启获得惊喜数字资产",
             "查看数字盲盒"
         ],
+        button:{
+            "OpenimmediatelyText": "立即开启盲盒",
+            "InviteFriendsNow": "立即邀请好友助力",
+            "OpenFriendsImmediately": "立即助力开启盲盒",
+            "ViewAssets":"查看资产",
+            "SuccessView":"助力已完成，立即查看盲盒"
+        },
+        title:{
+            "myBlindboxText": "我的盲盒",
+        
+        },
         ActivityBlindboxList: {
             "myBlindboxText": "我的盲盒",
             "RaidersText": "攻略",
@@ -29,6 +40,9 @@ module.exports = {
             "expiredText": "已过期"
         },
         ActivityBlindboxDetail: {
+            "inputAddressPlaceholader": "点即此处输入 ETH 地址即可助力",
+            "NoAddressDownload": "没有地址？点击下载 BitKeep 创建地址",
+            "HelpSuccessETH":"助力成功 ETH 地址",
             "BitKeepTitleText": "BitKeep数字盲盒",
             "OpenTitleText": "开启获得惊喜数字资产",
             "invalidTimeText": "距离盲盒失效还有 3天12小时23分23秒",
@@ -46,7 +60,6 @@ module.exports = {
             "OpenTheBlindBoxText": "当足够数量的好友助力成功后，您可以点击开启盲盒",
             "shareWidthFriendsText": '您和好友瓜分盲盒内数字资产',
             "CanViewAssetsTocloudWallet": "盲盒开启后您和助力好友均可在 BitKeep 云钱包中查看获得的数字资产",
-
             rules: [
                 "每个盲盒里面有不等量的数字资产",
                 "只有下载 BitKeep 钱包并导入该 ETH 地址的钱包才能成功领取和开启盲盒",

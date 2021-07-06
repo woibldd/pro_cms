@@ -7,7 +7,7 @@ const host_user_instance = axios.create({
   baseURL: "/",
   timeout: 60000,
   headers: {
-    token: "5c4e30ffa048f856e01b7501e961229c",
+    token: "",
     // token: "",
     language: "zh",
     currency: "",
@@ -24,8 +24,16 @@ host_user_instance.interceptors.request.use(
   function (config) {
     if(process.client && Vue.prototype.$store){
         const state  = Vue.prototype.$store.state 
-        const { UA } = state.local
-        UA.isBitKeep && Object.assign(config.headers,state.local.bitkeep)
+        const { UA, local } = state.local
+        if(UA.isBitKeep){
+           Object.assign(config.headers,state.local.bitkeep,{
+                language: local
+           })
+        }else{
+          Object.assign(config.headers,{
+            language: local
+          })
+        }
        
     }
     

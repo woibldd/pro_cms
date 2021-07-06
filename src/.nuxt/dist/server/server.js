@@ -2658,6 +2658,18 @@ module.exports = {
       "lookBlindbox": "View digital blind box"
     },
     statusText: ["恭喜获得BitKeep数字盲盒", "开启获得惊喜数字资产", "查看数字盲盒"],
+    button: {
+      "OpenimmediatelyText": "Open the blind box immediately",
+      "InviteFriendsNow": "Invite friends to help now",
+      "OpenFriendsImmediately": "Help open the blind box",
+      "ViewAssets": "View assets",
+      "SuccessView": "Success! Please view assets" //
+      // "OpenimmediatelyText": "Open the blind box immediately"
+
+    },
+    title: {
+      "myBlindboxText": "我的盲盒"
+    },
     ActivityBlindboxList: {
       "myBlindboxText": "My blind box",
       "RaidersText": "Raiders",
@@ -2668,10 +2680,13 @@ module.exports = {
       "GoOpenText": "Go open",
       "GoShareText": "Go share",
       "TurnedOnText": "Turned on",
-      "SuccessfullyOpenedText": "Already Opened",
+      "SuccessfullyOpenedText": "already Opened",
       "expiredText": "expired"
     },
     ActivityBlindboxDetail: {
+      "inputAddressPlaceholader": "Click here to input eth address",
+      "NoAddressDownload": "No address? Click download bitkeep to create an address",
+      "HelpSuccessETH": "Help success eth address",
       "BitKeepTitleText": "BitKeep数字盲盒",
       "OpenTitleText": "开启获得惊喜数字资产",
       "invalidTimeText": "距离盲盒失效还有 3天12小时23分23秒",
@@ -2741,6 +2756,16 @@ module.exports = {
       "lookBlindbox": "查看数字盲盒"
     },
     statusText: ["恭喜获得BitKeep数字盲盒", "开启获得惊喜数字资产", "查看数字盲盒"],
+    button: {
+      "OpenimmediatelyText": "立即开启盲盒",
+      "InviteFriendsNow": "立即邀请好友助力",
+      "OpenFriendsImmediately": "立即助力开启盲盒",
+      "ViewAssets": "查看资产",
+      "SuccessView": "助力已完成，立即查看盲盒"
+    },
+    title: {
+      "myBlindboxText": "我的盲盒"
+    },
     ActivityBlindboxList: {
       "myBlindboxText": "我的盲盒",
       "RaidersText": "攻略",
@@ -2755,6 +2780,9 @@ module.exports = {
       "expiredText": "已过期"
     },
     ActivityBlindboxDetail: {
+      "inputAddressPlaceholader": "点即此处输入 ETH 地址即可助力",
+      "NoAddressDownload": "没有地址？点击下载 BitKeep 创建地址",
+      "HelpSuccessETH": "助力成功 ETH 地址",
       "BitKeepTitleText": "BitKeep数字盲盒",
       "OpenTitleText": "开启获得惊喜数字资产",
       "invalidTimeText": "距离盲盒失效还有 3天12小时23分23秒",
@@ -3536,15 +3564,15 @@ var external_vue_router_default = /*#__PURE__*/__webpack_require__.n(external_vu
 
 
 
-const _65e970f7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 17).then(__webpack_require__.bind(null, 129)));
+const _65e970f7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 17).then(__webpack_require__.bind(null, 128)));
 
-const _20d08508 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail */ 15).then(__webpack_require__.bind(null, 130)));
+const _20d08508 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail */ 15).then(__webpack_require__.bind(null, 129)));
 
-const _6bb9fd1a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 16).then(__webpack_require__.bind(null, 131)));
+const _6bb9fd1a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 16).then(__webpack_require__.bind(null, 130)));
 
-const _1b2d1009 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 18).then(__webpack_require__.bind(null, 132)));
+const _1b2d1009 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 18).then(__webpack_require__.bind(null, 131)));
 
-const _74266e07 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 19).then(__webpack_require__.bind(null, 128)));
+const _74266e07 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 19).then(__webpack_require__.bind(null, 127)));
 
 const emptyFn = () => {};
 
@@ -4456,17 +4484,17 @@ function wrapFunctional(options) {
 
 
 const components = {
+  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 6).then(__webpack_require__.bind(null, 68)).then(c => wrapFunctional(c.default || c)),
+  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 7).then(__webpack_require__.bind(null, 63)).then(c => wrapFunctional(c.default || c)),
+  Common: () => __webpack_require__.e(/* import() | components/common */ 5).then(__webpack_require__.bind(null, 64)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 1).then(__webpack_require__.bind(null, 108)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 2).then(__webpack_require__.bind(null, 81)).then(c => wrapFunctional(c.default || c)),
   BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 3).then(__webpack_require__.bind(null, 109)).then(c => wrapFunctional(c.default || c)),
   BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 4).then(__webpack_require__.bind(null, 107)).then(c => wrapFunctional(c.default || c)),
-  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 6).then(__webpack_require__.bind(null, 68)).then(c => wrapFunctional(c.default || c)),
-  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 7).then(__webpack_require__.bind(null, 63)).then(c => wrapFunctional(c.default || c)),
-  Common: () => __webpack_require__.e(/* import() | components/common */ 5).then(__webpack_require__.bind(null, 64)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 9).then(__webpack_require__.bind(null, 101)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 10).then(__webpack_require__.bind(null, 70)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 11).then(__webpack_require__.bind(null, 133)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 8).then(__webpack_require__.bind(null, 127)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 11).then(__webpack_require__.bind(null, 132)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 8).then(__webpack_require__.bind(null, 126)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutPainter: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-painter */ 12).then(__webpack_require__.bind(null, 83)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutQrcode: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-qrcode */ 13).then(__webpack_require__.bind(null, 69)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 14).then(__webpack_require__.bind(null, 84)).then(c => wrapFunctional(c.default || c))

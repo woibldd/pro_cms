@@ -5,29 +5,34 @@
       class="invite_button heart"
       @click="handerBotton(0)"
     >
-      立即开启盲盒
+      <!-- 立即开启盲盒 -->
+      {{ $t('ActivityBlindbox.button.OpenimmediatelyText')}}
     </div>
     <div
       v-if="info.status == 0"
       class="invite_button heart"
       @click="handerBotton(1)"
     >
-      {{ info.is_owner == 1 ? "立即邀请好友助力" : "立即助力开启盲盒" }}
+    <!-- {{ info.is_owner == 1 ? "立即邀请好友助力" : "立即助力开启盲盒" }} -->
+      
+    {{ info.is_owner == 1 ? $t('ActivityBlindbox.button.InviteFriendsNow') : $t('ActivityBlindbox.button.OpenFriendsImmediately')}} 
     </div>
     <div
       v-if="info.status == 2 && info.is_owner == 1"
       class="invite_button heart"
       @click="handerBotton(2)"
     >
-      查看资产
+      <!-- 查看资产 -->
+        {{ $t('ActivityBlindbox.button.ViewAssets')}}
     </div>
 
     <div
       v-if="info.status == 2 && info.is_owner == 0"
       class="invite_button heart"
-      @click="handerBotton(3)"
+      @click="handerBotton(2)"
     >
-      助力已完成，立即查看盲盒
+         {{ $t('ActivityBlindbox.button.SuccessView')}}
+      <!-- 助力已完成，立即查看盲盒 -->
     </div>
   </div>
 </template>
@@ -78,7 +83,8 @@ export default {
     position: relative;
     // animation: heartbeat 1s infinite ease-in;
     margin: 0 auto;
-    width: 280px;
+    min-width: 280px;
+    padding:0 10px;
     height: 50px;
     background: url("@/assets/activity/blindbox/shareBtn.png") center center
       no-repeat;

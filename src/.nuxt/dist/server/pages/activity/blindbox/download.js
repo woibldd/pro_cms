@@ -7,7 +7,7 @@ exports.modules = {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(121);
+var content = __webpack_require__(120);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -19,28 +19,28 @@ module.exports.__inject__ = function (context) {
 
 /***/ }),
 
-/***/ 117:
+/***/ 116:
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAF5SURBVHgB7dm9TcNQGIXh7zo/duPIMAEJDSUjULIFbAAtFWEDGCEjsEFKtsAbxCggmWBx8UGiwEmo7s9ndJ7yujqvHClXFiEiIiIiIiIiiiSdzK7SfLrK8ulzlh9fSCBGFMgms1uxdv7rbGAPqqqsxLNEIts1HupaCgkgaoB94421D3VdlhJAtJ/AvvEidlGvy0sJJEoALeMheABN4yFoAG3jIVgAjeMhSACt48F7AM3jwWsA7ePBW4A+jAcvAfoyHpwHwK2u/St7v/1E33hwfhcwYq+3T3WOB+cBrN11i0usKDUQx8aj4l2MOe8cnw7Tw6Nms3oUZZwHaD6qp+G4MG2Es84jlRGcB4BmUy37EsFLAOhLBG8BoA8RvAYA7RG8BwDNEYIEAK0RggUAjRGCBgBtEYIHAE0RogQALRGiBYA/IyTFommq//9tsH4t5+0V8q57nmXifTxEfQN+4E0YjYoXSczJ97350968rculEBERERERERF58AXhcvS9zEDW3QAAAABJRU5ErkJggg=="
 
 /***/ }),
 
-/***/ 118:
+/***/ 117:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/logo@2.ca1f304.png";
 
 /***/ }),
 
-/***/ 119:
+/***/ 118:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/download@2.e06d33c.png";
 
 /***/ }),
 
-/***/ 120:
+/***/ 119:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -52,7 +52,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 121:
+/***/ 120:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -66,7 +66,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 131:
+/***/ 130:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -74,7 +74,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 __webpack_require__.r(__webpack_exports__);
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/blindbox/download.vue?vue&type=template&id=9711cebc&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"download"}},[_c('Header',[_c('div',{staticClass:"blindbox_header"},[_c('span',{staticClass:"header_back",on:{"click":_vm.back}},[_c('div',[_c('img',{attrs:{"src":__webpack_require__(117)}})])]),_vm._v(" "),_c('span',{staticClass:"logo"},[_c('img',{attrs:{"src":__webpack_require__(118)}})])])]),_vm._ssrNode(" <div class=\"block_body\"><img"+(_vm._ssrAttr("src",__webpack_require__(119)))+"> <a href=\"https://bitkeep.org\" class=\"btn\">立即下载</a></div>")],2)}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"download"}},[_c('Header',[_c('div',{staticClass:"blindbox_header"},[_c('span',{staticClass:"header_back",on:{"click":_vm.back}},[_c('div',[_c('img',{attrs:{"src":__webpack_require__(116)}})])]),_vm._v(" "),_c('span',{staticClass:"logo"},[_c('img',{attrs:{"src":__webpack_require__(117)}})])])]),_vm._ssrNode(" <div class=\"block_body\"><img"+(_vm._ssrAttr("src",__webpack_require__(118)))+"> <a href=\"https://bitkeep.org\" class=\"btn\">立即下载</a></div>")],2)}
 var staticRenderFns = []
 
 
@@ -130,7 +130,7 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(120)
+  var style0 = __webpack_require__(119)
 if (style0.__inject__) style0.__inject__(context)
 
 }
