@@ -56,16 +56,26 @@ export default {
 </script>
 <style lang="scss" scoped>
 .block_invite_button {
+  position: relative;  
   margin-top: 20px;
-  background: url("@/assets/activity/blindbox/BTN@3.png") center center
+  &::after{
+    position: absolute;
+    width: 303px;
+     
+    height: 84px;
+    background: url("@/assets/activity/blindbox/BTN@3.png") center center
     no-repeat;
-  width: 303px;
-  // height: 84px;
-  background-size: 100% 100%;
+    background-size: 100% 100%;
+    content: "";
+    left: 0;
+    top: 0;
+  }
   .heart {
     animation: heartbeat 1s infinite ease;
   }
   .invite_button {
+    z-index: 1;
+    position: relative;
     // animation: heartbeat 1s infinite ease-in;
     margin: 0 auto;
     width: 280px;

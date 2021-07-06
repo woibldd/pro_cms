@@ -49,11 +49,20 @@
           </div>
           <!-- 助力进度  -->
           <div v-else>
-            <div class="block_invite_num color_text">
+            <!-- <div class="block_invite_num color_text">
               距离开启盲盒仅差
               <span class="color_red">{{ info.surplus }}</span
               >/{{ info.invite }} 人助力
-            </div>
+            </div> -->
+            <div
+              class="block_invite_num color_text"
+              v-html="
+                $t('ActivityBlindbox.ActivityBlindboxList.blindBoxNumText', {
+                  surplus: this.info.surplus || 0,
+                  invite: this.info.invite || 0
+                })
+              "
+            ></div>
 
             <div class="block_invite_progress">
               <div class="progress" :style="progress"></div>
@@ -69,7 +78,9 @@
               <input
                 type="text"
                 v-model="address"
-                placeholder="点即此处输入 ETH 地址即可助力"
+                :placeholder="
+                  $t('ActivityBlindbox.ActivityBlindboxList.blindBoxNumText')
+                "
               />
             </div>
           </div>
@@ -307,7 +318,9 @@ export default {
         //查看资产
         case "2":
           if (this.isBitKeep) {
-            BitKeepInvoke.openUrl("bitkeep://cloundWallet");
+            this.info.isCloudWallet == 1
+              ? BitKeepInvoke.openUrl("bitkeep://cloudWallet")
+              : BitKeepInvoke.openUrl("bitkeep://cloudCreateWallet");
           } else {
             !this.isBitKeep &&
               this.$router.push({
@@ -495,37 +508,6 @@ export default {
         }
       }
     }
-    // .block_invite_button {
-    //   margin-top: 20px;
-    //   background: url("@/assets/activity/blindbox/BTN@3.png") center center
-    //     no-repeat;
-    //   width: 303px;
-    //   // height: 84px;
-    //   background-size: 100% 100%;
-    //   .heart {
-    //     animation: heartbeat 1s infinite ease;
-    //   }
-    //   .invite_button {
-    //     // animation: heartbeat 1s infinite ease-in;
-    //     margin: 0 auto;
-    //     width: 280px;
-    //     height: 50px;
-    //     background: url("@/assets/activity/blindbox/shareBtn.png") center center
-    //       no-repeat;
-    //     background-size: 100% 100%;
-    //     text-align: center;
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: center;
-    //     color: #ffffff;
-    //     font-weight: 600;
-    //     font-size: 17px;
-
-    //     &:hover {
-    //       opacity: 0.6 !important;
-    //     }
-    //   }
-    // }
     .block_invite_down {
       margin: 20px auto 0px;
       width: 100%;

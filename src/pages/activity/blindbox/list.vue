@@ -396,9 +396,12 @@ export default {
           }
         }
         .list_item_btn {
+          height: 74px;
+          display: flex;
           display: flex;
           align-items: flex-end;
-          align-self: flex-end;
+          // align-items: flex-end;
+          // align-self: flex-end;
         }
       }
     }
