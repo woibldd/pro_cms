@@ -1,13 +1,13 @@
 <template>
   <div id="blindTimeText" class="block_time_content">
     <span class="color_white" v-if="info.status == 0 || info.status == 1"
-      >距离盲盒失效还有 &nbsp;&nbsp;</span
+      >{{$t("ActivityBlindbox.ActivityBlindboxDetail.invalidTimeText")}} &nbsp;&nbsp;</span
     >
     <span class="color_white" v-if="info.status == 2"
-      >盲盒已成功开启！ &nbsp;&nbsp;</span
+      >{{$t("ActivityBlindbox.ActivityBlindboxDetail.successfullyTimeText")}} &nbsp;&nbsp;</span
     >
     <span class="color_white" v-if="info.status == 3"
-      >太遗憾了，这个盲盒已过期 &nbsp;&nbsp;</span
+      >{{$t("ActivityBlindbox.ActivityBlindboxDetail.expiredTimeText")}} &nbsp;&nbsp;</span
     >
     <Countdown
       v-if="info.status == 0 || info.status == 1"
@@ -24,6 +24,10 @@ export default {
   name: "blindTimeText",
   components: { Countdown },
   props: {
+    locale:{
+      type: String,
+      default: () => "en"
+    },
     info: {
       type: Object,
       default: () => ({

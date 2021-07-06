@@ -24,14 +24,15 @@ host_user_instance.interceptors.request.use(
   function (config) {
     if(process.client && Vue.prototype.$store){
         const state  = Vue.prototype.$store.state 
-        const { UA, local } = state.local
+        const { UA, locale } = state.local
         if(UA.isBitKeep){
            Object.assign(config.headers,state.local.bitkeep,{
-                language: local
+                language: locale
            })
         }else{
+
           Object.assign(config.headers,{
-            language: local
+            language: locale
           })
         }
        

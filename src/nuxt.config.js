@@ -44,7 +44,7 @@ export default {
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no' },
       { hid: 'description', name: 'description', content: '' },
       {
         hid: 'keywords',
@@ -56,20 +56,23 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
 
-    script: BUILD_ENV == 'dev' ? [{
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'
-    },
+    script: BUILD_ENV == 'dev' ? [
+    //   {
+    //   name: 'viewport',
+    //   content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'
+    // },
+
+
     {
       src: 'https://cdn.bootcdn.net/ajax/libs/vConsole/3.8.1/vconsole.min.js',
       type: 'text/javascript',
       charset: 'utf-8'
     }
     ] : [
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
-      }
+      // {
+      //   name: 'viewport',
+      //   content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no'
+      // }
     ]
   },
 
@@ -108,6 +111,16 @@ export default {
     '/user': {
       target: HOST_API,
       changeOrigin: true,
+      onProxyReq(proxyReq,req){
+        // console.log("proxy_____",arguments)
+        const  xforwardedFor  =  (req.headers['x-forwarded-for'] ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        req.connection.socket.remoteAddress).replace('::ffff:', '')
+        
+        proxyReq.setHeader('x-forwarded-for', xforwardedFor);
+        proxyReq.setHeader('host', xforwardedFor);
+      }
       // pathRewrite: {
       //   '^/user': ''
       // }

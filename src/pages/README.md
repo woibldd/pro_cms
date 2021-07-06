@@ -8,3 +8,4 @@ More information about the usage of this directory in [the documentation](https:
 
 
 #(https://github.com/sunniejs/vue-canvas-poster/blob/master/src/lib/canvas-poster.vue)[]
+

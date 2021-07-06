@@ -20,7 +20,7 @@
           <van-list
             v-model="listLoading"
             :finished="finished"
-            :finished-text="$t('base.no_more')"
+           
             @load="onLoad"
           >
             <div
@@ -351,8 +351,9 @@ export default {
       background-size: 100% 100%;
       text-align: center;
       &.en {
-        background: url("@/assets/activity/blindbox/noData@2.png") center center
+        background: url("@/assets/activity/blindbox/noData@2.en.png") center center
           no-repeat;
+        background-size: 100% 100%;
       }
     }
 

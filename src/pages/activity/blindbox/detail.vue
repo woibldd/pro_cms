@@ -21,7 +21,7 @@
               })
             "
           >
-            {{ $t("ActivityBlindbox.ActivityBlindboxList.myBlindboxText") }}
+            {{ $t("ActivityBlindbox.title.myBlindboxText") }}
           </span>
         </div>
       </Header>
@@ -68,7 +68,7 @@
             <div
               class="block_invite_num color_text"
               v-html="
-                $t('ActivityBlindbox.ActivityBlindboxList.blindBoxNumText', {
+                $t('ActivityBlindbox.ActivityBlindboxDetail.blindBoxNumText', {
                   surplus: this.info.surplus || 0,
                   invite: this.info.invite || 0
                 })
@@ -88,10 +88,11 @@
             <div class="invite_ETH_content">
               <textarea
                 type="text"
+                ref="textarea"
                 v-model="address"
                 @focus="handlerFocus"
                 :class="{
-                  focus: !!address
+                  focus: focus || !!address
                 }"
                 @blur="handlerBlur()"
                 :placeholder="
@@ -155,7 +156,7 @@
             <BlindTitleImage
               type="footer"
               :isBitKeep="isBitKeep"
-               :locale="locale"
+              :locale="locale"
               :is_owner="info.is_owner"
               :status="info.status"
             />
@@ -171,7 +172,7 @@
               {{ index + 1 }}. {{ item }}
             </div>
           </div>
-          <div class="block_footer">本活动最终解释权归 BitKeep 所有</div>
+          <div class="block_footer">{{$t("ActivityBlindbox.ActivityBlindboxDetail.FinalInterpretation")}}</div>
         </div>
       </div>
 
@@ -239,6 +240,9 @@ export default {
     },
     locale() {
       return this.local.locale;
+    },
+    format(){
+        return  this.locale=='zh'? "{dd}天{hh}小时{mm}分钟{ss}秒":"{dd} D {hh} H {mm} M {ss} S"
     }
   },
   async asyncData(ctx) {},
@@ -247,7 +251,7 @@ export default {
     return {
       Toast: null,
       timer: null,
-      format: "{dd}天{hh}小时{mm}分钟{ss}秒",
+
       startTime: 0,
       endTime: 0,
       isLoading: true,
@@ -288,6 +292,14 @@ export default {
       this.focus = false;
     },
     shareImage() {
+      console.log(
+        this.info.title,
+        this.locale == "zh"
+          ? "我正在免费开盲盒，快来帮我助力一下吧～"
+          : "I'm opening blind free boxes, come and help me~",
+        location.href,
+        this.info.cover_image
+      );
       BitKeepInvoke &&
         BitKeepInvoke.shareUrl(
           this.info.title,
@@ -305,7 +317,7 @@ export default {
         return false;
       }
       if (this.info.status > 1) return;
-      !refresh && this.showLoading("加载中...");
+      !refresh && this.showLoading(this.$t("ActivityBlindbox.toast.loading"));
       const { data, status } = await USER_API.mBoxDetail({
         id: this.$route.query.id
       });
@@ -329,18 +341,28 @@ export default {
     },
     async handerBotton(type) {
       const isOwner = this.info.is_owner == 1;
-
       switch (String(type)) {
         //立即开启盲盒
         case "0":
-          this.showLoading("开启中...");
+          // 云钱包不存在，是否现在创建云钱包
+          if (this.info.isCloudWallet != 1) {
+            const isComfirm = await new Promise(resolve =>
+              BitKeepInvoke.confirm(
+                this.$t("ActivityBlindbox.dialog.isCreateWalletComfirm"),
+                resolve
+              )
+            );
+            isComfirm && BitKeepInvoke.openUrl("bitkeep://cloudCreateWallet");
+            return 
+          }
+          this.showLoading(this.$t("ActivityBlindbox.toast.open"));
           const openMBoxR = await USER_API.openMBox({
             id: this.$route.query.id
           });
           await this.getDetails();
           this.hideLoading();
           if (openMBoxR.status != 0) {
-            return this.$toast.fail(JSON.stringify(openMBoxR.data));
+            return this.$toast.fail(openMBoxR.data);
           }
           break;
         // 立即邀请好友助力
@@ -374,7 +396,9 @@ export default {
       if (isOwner) {
       } else {
         if (!this.address || !this.address.replace(/ /g, "")) {
-          return this.$toast.fail("助力请输入ETH地址");
+          this.$toast.fail(this.$t("ActivityBlindbox.toast.inputETH"));
+          this.$refs.textarea && this.$refs.textarea.focus();
+          return;
         }
         this.showLoading();
         const HelpR = await USER_API.helpMBox({
@@ -383,7 +407,7 @@ export default {
         });
         this.hideLoading();
         if (HelpR.status != 0) {
-          this.$toast.fail(JSON.stringify(HelpR.data));
+          this.$toast.fail(HelpR.data);
           return;
         }
         this.getDetails();
@@ -498,7 +522,7 @@ export default {
       font-weight: normal;
       font-size: 14px;
       text-align: center;
-      white-space: nowrap;
+      // white-space: nowrap;
       margin: 15px 0;
       .color_red {
         font-size: 16px;
@@ -545,6 +569,7 @@ export default {
           }
           &.focus {
             line-height: 16px;
+            font-size: 12px;
             text-align: left;
           }
         }

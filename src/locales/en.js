@@ -5,9 +5,15 @@ module.exports = {
   },
   "ActivityBlindbox": {
     dialog: {
+      "isCreateWalletComfirm":"Cloud wallet does not exist. Do you want to create it now?",
       "getBlindbox": "Congratulations on getting the BitKeep digital blind box",
       "openBlindbox": "Open to get surprise digital assets",
       "lookBlindbox": "View digital blind box",
+    },
+    toast:{
+       open:"Opening...",
+       loading:"Loading...",
+       inputETH:"Please enter eth address"
     },
     statusText: [
       "恭喜获得BitKeep数字盲盒",
@@ -24,30 +30,38 @@ module.exports = {
       // "OpenimmediatelyText": "Open the blind box immediately"
     },
     title:{
-      "myBlindboxText": "我的盲盒"
+      "myBlindboxText": "My blind box"
     },
     ActivityBlindboxList: {
       "myBlindboxText": "My blind box",
       "RaidersText": "Raiders",
       "DigitalBlindBoxText": "Digital blind box",
       
-      "blindBoxNumText": "The blind box is still short of <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> people to help",
-      "blindBoxSurpriseText": "After opening, you will get surprise digital assets",
+      "blindBoxNumText": "The box is still short of <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> people,you will get  digital assets",
+      "blindBoxSurpriseText": "",
       "ValidUntilText": "Valid until",
 
       "GoOpenText": "Go open",
       "GoShareText": "Go share",
       "TurnedOnText": "Turned on",
-      "SuccessfullyOpenedText": "already Opened",
+      "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired"
     },
     ActivityBlindboxDetail: {
+      "blindBoxNumText": "The box is still short of <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> people,you will get  digital assets",
       "inputAddressPlaceholader": "Click here to input eth address",
       "NoAddressDownload": "No address? Click download bitkeep to create an address",
       "HelpSuccessETH":"Help success eth address",
+     "FinalInterpretation": "The final interpretation of this activity belongs to BitKeep",
+
+     "invalidTimeText": "Distance blind box failure",
+     "successfullyTimeText" :"The blind box has been opened successfully!",
+      expiredTimeText    :"It's a pity that this blind box has expired",
+
+
       "BitKeepTitleText": "BitKeep数字盲盒",
       "OpenTitleText": "开启获得惊喜数字资产",
-      "invalidTimeText": "距离盲盒失效还有 3天12小时23分23秒",
+
       "InviteFriendsText": "邀请好友助力开启盲盒",
       "GetSurpriseAssetsText": "获得惊喜数字资产",
       "stillShort": "距离开启盲盒仅差3/5人助力",
@@ -68,8 +82,7 @@ module.exports = {
         "Only by downloading the BitKeep wallet and importing the wallet with the ETH address can you successfully receive and open the blind box",
         "After sharing with a friend, the friend can successfully assist after filling in a valid ETH address",
         "After a sufficient number of friends help successfully, you can click to open the blind box",
-        "Help friends to download the Bitkeep wallet to obtain the digital assets in the blind box",
-        "The final interpretation of this activity belongs to BitKeep"
+        "Help friends to download the Bitkeep wallet to obtain the digital assets in the blind box"
       ],
 
       modal: {

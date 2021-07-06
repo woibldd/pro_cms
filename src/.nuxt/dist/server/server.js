@@ -2653,9 +2653,15 @@ module.exports = {
   },
   "ActivityBlindbox": {
     dialog: {
+      "isCreateWalletComfirm": "Cloud wallet does not exist. Do you want to create it now?",
       "getBlindbox": "Congratulations on getting the BitKeep digital blind box",
       "openBlindbox": "Open to get surprise digital assets",
       "lookBlindbox": "View digital blind box"
+    },
+    toast: {
+      open: "Opening...",
+      loading: "Loading...",
+      inputETH: "Please enter eth address"
     },
     statusText: ["恭喜获得BitKeep数字盲盒", "开启获得惊喜数字资产", "查看数字盲盒"],
     button: {
@@ -2668,28 +2674,32 @@ module.exports = {
 
     },
     title: {
-      "myBlindboxText": "我的盲盒"
+      "myBlindboxText": "My blind box"
     },
     ActivityBlindboxList: {
       "myBlindboxText": "My blind box",
       "RaidersText": "Raiders",
       "DigitalBlindBoxText": "Digital blind box",
-      "blindBoxNumText": "The blind box is still short of <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> people to help",
-      "blindBoxSurpriseText": "After opening, you will get surprise digital assets",
+      "blindBoxNumText": "The box is still short of <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> people,you will get  digital assets",
+      "blindBoxSurpriseText": "",
       "ValidUntilText": "Valid until",
       "GoOpenText": "Go open",
       "GoShareText": "Go share",
       "TurnedOnText": "Turned on",
-      "SuccessfullyOpenedText": "already Opened",
+      "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired"
     },
     ActivityBlindboxDetail: {
+      "blindBoxNumText": "The box is still short of <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> people,you will get  digital assets",
       "inputAddressPlaceholader": "Click here to input eth address",
       "NoAddressDownload": "No address? Click download bitkeep to create an address",
       "HelpSuccessETH": "Help success eth address",
+      "FinalInterpretation": "The final interpretation of this activity belongs to BitKeep",
+      "invalidTimeText": "Distance blind box failure",
+      "successfullyTimeText": "The blind box has been opened successfully!",
+      expiredTimeText: "It's a pity that this blind box has expired",
       "BitKeepTitleText": "BitKeep数字盲盒",
       "OpenTitleText": "开启获得惊喜数字资产",
-      "invalidTimeText": "距离盲盒失效还有 3天12小时23分23秒",
       "InviteFriendsText": "邀请好友助力开启盲盒",
       "GetSurpriseAssetsText": "获得惊喜数字资产",
       "stillShort": "距离开启盲盒仅差3/5人助力",
@@ -2704,7 +2714,7 @@ module.exports = {
       "OpenTheBlindBoxText": "当足够数量的好友助力成功后，您可以点击开启盲盒",
       "shareWidthFriendsText": '您和好友瓜分盲盒内数字资产',
       "CanViewAssetsTocloudWallet": "盲盒开启后您和助力好友均可在 BitKeep 云钱包中查看获得的数字资产",
-      rules: ["There are unequal amounts of digital assets in each blind box", "Only by downloading the BitKeep wallet and importing the wallet with the ETH address can you successfully receive and open the blind box", "After sharing with a friend, the friend can successfully assist after filling in a valid ETH address", "After a sufficient number of friends help successfully, you can click to open the blind box", "Help friends to download the Bitkeep wallet to obtain the digital assets in the blind box", "The final interpretation of this activity belongs to BitKeep"],
+      rules: ["There are unequal amounts of digital assets in each blind box", "Only by downloading the BitKeep wallet and importing the wallet with the ETH address can you successfully receive and open the blind box", "After sharing with a friend, the friend can successfully assist after filling in a valid ETH address", "After a sufficient number of friends help successfully, you can click to open the blind box", "Help friends to download the Bitkeep wallet to obtain the digital assets in the blind box"],
       modal: {
         sharedHelperMeText: "助力我开启 BitKeep 数字盲盒吧",
         openSurpriseText: "开启获取惊喜数字资产",
@@ -2751,11 +2761,17 @@ module.exports = {
   },
   "ActivityBlindbox": {
     dialog: {
+      "isCreateWalletComfirm": "云钱包不存在，是否现在创建云钱包？",
       "getBlindbox": "恭喜获得BitKeep数字盲盒",
       "openBlindbox": "开启获得惊喜数字资产",
       "lookBlindbox": "查看数字盲盒"
     },
     statusText: ["恭喜获得BitKeep数字盲盒", "开启获得惊喜数字资产", "查看数字盲盒"],
+    toast: {
+      open: "开启中...",
+      loading: "加载中...",
+      inputETH: "请输入ETH助力地址"
+    },
     button: {
       "OpenimmediatelyText": "立即开启盲盒",
       "InviteFriendsNow": "立即邀请好友助力",
@@ -2780,12 +2796,16 @@ module.exports = {
       "expiredText": "已过期"
     },
     ActivityBlindboxDetail: {
+      "blindBoxNumText": "距离开启盲盒仅差 <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> 人助力",
       "inputAddressPlaceholader": "点即此处输入 ETH 地址即可助力",
       "NoAddressDownload": "没有地址？点击下载 BitKeep 创建地址",
       "HelpSuccessETH": "助力成功 ETH 地址",
+      "FinalInterpretation": "本活动最终解释权归 BitKeep 所有",
+      "invalidTimeText": "距离盲盒失效还有",
+      "successfullyTimeText": "盲盒已成功开启！",
+      'expiredTimeText': "太遗憾了，这个盲盒已过期",
       "BitKeepTitleText": "BitKeep数字盲盒",
       "OpenTitleText": "开启获得惊喜数字资产",
-      "invalidTimeText": "距离盲盒失效还有 3天12小时23分23秒",
       "InviteFriendsText": "邀请好友助力开启盲盒",
       "GetSurpriseAssetsText": "获得惊喜数字资产",
       "stillShort": "距离开启盲盒仅差3/5人助力",
@@ -2800,7 +2820,7 @@ module.exports = {
       "OpenTheBlindBoxText": "当足够数量的好友助力成功后，您可以点击开启盲盒",
       "shareWidthFriendsText": '您和好友瓜分盲盒内数字资产',
       "CanViewAssetsTocloudWallet": "盲盒开启后您和助力好友均可在 BitKeep 云钱包中查看获得的数字资产",
-      rules: ["每个盲盒里面有不等量的数字资产", "只有下载 BitKeep 钱包并导入该 ETH 地址的钱包才能成功领取和开启盲盒", "分享给好友后，好友填写有效的 ETH 地址后即可成功助力", "足够数量的好友助力成功后，即可点击开启盲盒", "助力好友下载 Bitkeep 钱包后也可获取该盲盒内的数字资产", "本活动最终解释权归 BitKeep 所有"],
+      rules: ["每个盲盒里面有不等量的数字资产", "只有下载 BitKeep 钱包并导入该 ETH 地址的钱包才能成功领取和开启盲盒", "分享给好友后，好友填写有效的 ETH 地址后即可成功助力", "足够数量的好友助力成功后，即可点击开启盲盒", "助力好友下载 Bitkeep 钱包后也可获取该盲盒内的数字资产"],
       modal: {
         sharedHelperMeText: "助力我开启 BitKeep 数字盲盒吧",
         openSurpriseText: "开启获取惊喜数字资产",
@@ -3564,15 +3584,15 @@ var external_vue_router_default = /*#__PURE__*/__webpack_require__.n(external_vu
 
 
 
-const _65e970f7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 17).then(__webpack_require__.bind(null, 128)));
+const _65e970f7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 17).then(__webpack_require__.bind(null, 129)));
 
-const _20d08508 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail */ 15).then(__webpack_require__.bind(null, 129)));
+const _20d08508 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail */ 15).then(__webpack_require__.bind(null, 130)));
 
-const _6bb9fd1a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 16).then(__webpack_require__.bind(null, 130)));
+const _6bb9fd1a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 16).then(__webpack_require__.bind(null, 131)));
 
-const _1b2d1009 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 18).then(__webpack_require__.bind(null, 131)));
+const _1b2d1009 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 18).then(__webpack_require__.bind(null, 132)));
 
-const _74266e07 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 19).then(__webpack_require__.bind(null, 127)));
+const _74266e07 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 19).then(__webpack_require__.bind(null, 128)));
 
 const emptyFn = () => {};
 
@@ -4484,17 +4504,17 @@ function wrapFunctional(options) {
 
 
 const components = {
-  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 6).then(__webpack_require__.bind(null, 68)).then(c => wrapFunctional(c.default || c)),
-  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 7).then(__webpack_require__.bind(null, 63)).then(c => wrapFunctional(c.default || c)),
-  Common: () => __webpack_require__.e(/* import() | components/common */ 5).then(__webpack_require__.bind(null, 64)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 1).then(__webpack_require__.bind(null, 108)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 2).then(__webpack_require__.bind(null, 81)).then(c => wrapFunctional(c.default || c)),
   BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 3).then(__webpack_require__.bind(null, 109)).then(c => wrapFunctional(c.default || c)),
   BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 4).then(__webpack_require__.bind(null, 107)).then(c => wrapFunctional(c.default || c)),
+  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 6).then(__webpack_require__.bind(null, 68)).then(c => wrapFunctional(c.default || c)),
+  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 7).then(__webpack_require__.bind(null, 63)).then(c => wrapFunctional(c.default || c)),
+  Common: () => __webpack_require__.e(/* import() | components/common */ 5).then(__webpack_require__.bind(null, 64)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 9).then(__webpack_require__.bind(null, 101)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 10).then(__webpack_require__.bind(null, 70)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 11).then(__webpack_require__.bind(null, 132)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 8).then(__webpack_require__.bind(null, 126)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 11).then(__webpack_require__.bind(null, 133)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 8).then(__webpack_require__.bind(null, 127)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutPainter: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-painter */ 12).then(__webpack_require__.bind(null, 83)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutQrcode: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-qrcode */ 13).then(__webpack_require__.bind(null, 69)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 14).then(__webpack_require__.bind(null, 84)).then(c => wrapFunctional(c.default || c))
@@ -4919,7 +4939,7 @@ async function createApp(ssrContext, config = {}) {
         "charset": "utf-8"
       }, {
         "name": "viewport",
-        "content": "width=device-width, initial-scale=1"
+        "content": "width=device-width, initial-scale=1, user-scalable=no"
       }, {
         "hid": "description",
         "name": "description",
@@ -4935,9 +4955,6 @@ async function createApp(ssrContext, config = {}) {
         "href": "\u002Ffavicon.ico"
       }],
       "script": [{
-        "name": "viewport",
-        "content": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-      }, {
         "src": "https:\u002F\u002Fcdn.bootcdn.net\u002Fajax\u002Flibs\u002FvConsole\u002F3.8.1\u002Fvconsole.min.js",
         "type": "text\u002Fjavascript",
         "charset": "utf-8"
