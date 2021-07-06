@@ -160,7 +160,7 @@ export default {
         // windowHeight: document.body.scrollHeight,
         width: el.offsetWidth - 1,
         height: el.offsetHeight - 1,
-        scale: 1,
+        scale: 2,
         async: true,
         // width: 375,
         // height: 812,
