@@ -143,14 +143,14 @@ export default {
     
      this.showModal = true;
       if (this.pedding) {
-        this.showLoading($t("ActivityBlindbox.toast.Generating"));
+        this.showLoading(this.$t("ActivityBlindbox.toast.Generating"));
       }
     },
     async createPoster() {
       // if(!this.proxy_img && !this.info.invite_image1) return 
-      if (this.pedding) return this.showLoading($t("ActivityBlindbox.toast.Generating"));
+      if (this.pedding) return this.showLoading(this.$t("ActivityBlindbox.toast.Generating"));
 
-      this.showModal && this.showLoading($t("ActivityBlindbox.toast.Generating"));
+      this.showModal && this.showLoading(this.$t("ActivityBlindbox.toast.Generating"));
       this.pedding = true
       this.poster.url = "";
       const el = this.$refs.poster;
@@ -209,7 +209,7 @@ export default {
     },
     saveImage() {
       if (this.poster.url) {
-        this.showLoading($t("ActivityBlindbox.toast.Saving"));
+        this.showLoading(this.$t("ActivityBlindbox.toast.Saving"));
         BitKeepInvoke.saveImageFromBase64(this.poster.url, e => {
           this.hideLoading();
         });

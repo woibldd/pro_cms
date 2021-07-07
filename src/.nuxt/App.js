@@ -7,6 +7,8 @@ import NuxtLoading from './components/nuxt-loading.vue'
 
 import '../node_modules/vant/lib/index.css'
 
+import '../assets/css/globle.scss'
+
 import _6f6c098b from '../layouts/default.vue'
 
 const layouts = { "_default": sanitizeComponent(_6f6c098b) }

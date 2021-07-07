@@ -1,7 +1,7 @@
 exports.ids = [12,10,13];
 exports.modules = {
 
-/***/ 69:
+/***/ 70:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -690,7 +690,7 @@ const api = {
 
 /***/ }),
 
-/***/ 70:
+/***/ 71:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -817,15 +817,15 @@ function linearEffect(width, height, bg, ctx) {
 
 /***/ }),
 
-/***/ 83:
+/***/ 84:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Painter; });
-const QR = __webpack_require__(69);
+const QR = __webpack_require__(70);
 
-const GD = __webpack_require__(70);
+const GD = __webpack_require__(71);
 
 class Painter {
   constructor(ctx, data) {

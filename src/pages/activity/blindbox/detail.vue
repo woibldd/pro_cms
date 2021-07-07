@@ -118,18 +118,21 @@
           <!-- 下载地址 -->
           <div
             v-if="!isBitKeep"
-            :class="{
-              block_invite_down: true,
-              mb: invite_list && invite_list.length > 0
-            }"
+            class="block_invite_down"
           >
+          
             <a href="https://bitkeep.org">{{
               $t("ActivityBlindbox.ActivityBlindboxDetail.NoAddressDownload")
             }}</a>
           </div>
           <!-- 邀请人地址 -->
           <div
-            class="block_invite_list color_text"
+            :class="{
+              block_invite_list:true,
+              color_text:true,
+              mt: isBitKeep
+            }"
+            class=" "
             v-if="invite_list && invite_list.length > 0"
           >
             <div class="title">
@@ -148,10 +151,12 @@
         </div>
       </div>
 
+        <!-- 开启盲盒攻略 -->
       <div class="block_open_strategy">
         <div :class="{block_open_strategy_warpper:true,[locale]:true }"></div>
       </div>
 
+      <!-- 底部规则÷ -->
       <div class="block_acitve_strategy">
         <div class="block_warpper radial-gradient">
           <div class="block_header">
@@ -448,7 +453,7 @@ export default {
 <style lang="scss"></style>
 <style lang="scss" scoped>
 .mb {
-  margin-bottom: -24px !important;
+  // margin-bottom: -24px !important;
 }
 
 .loading {
@@ -571,7 +576,6 @@ export default {
     .block_invite_down {
       margin: 20px auto 0px;
       width: 100%;
-
       text-align: center;
       height: 16px;
       font-weight: 500;
@@ -591,7 +595,9 @@ export default {
       border-radius: 8px;
       box-sizing: border-box;
       opacity: 0.8;
-
+      &.mt{
+          margin-top: 10px;
+      }
       .title {
         margin-bottom: 5px;
       }
@@ -656,6 +662,7 @@ export default {
   font-weight: bold;
   font-size: 28px;
   line-height: 28px;
+  font-family: "bitkeep EN BLOD";
   /* identical to box height, or 100% */
   // color: #ff255a;
 }

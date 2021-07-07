@@ -19,7 +19,7 @@
     </div>
     <div
       v-if="info.status == 2 && info.is_owner == 1"
-      class="invite_button heart"
+      class="invite_button"
       @click="handerBotton(2)"
     >
       <!-- 查看资产 -->

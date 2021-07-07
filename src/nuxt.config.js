@@ -79,7 +79,8 @@ export default {
   // loading: { color: '#d832b3' },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'vant/lib/index.css'
+    'vant/lib/index.css',
+    "@/assets/css/globle.scss"
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

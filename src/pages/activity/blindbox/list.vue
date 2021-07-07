@@ -17,20 +17,32 @@
           v-model="refreshing"
           @refresh="onRefresh"
         >
-          <van-list
-            v-model="listLoading"
-            :finished="finished"
-           
-            @load="onLoad"
-          >
+          <van-list v-model="listLoading" :finished="finished" @load="onLoad">
             <div
               v-for="item in blindbox_list"
               :key="item.id"
               @click="handlerBtn(item, 0)"
             >
               <div :class="{ list_item: true }">
-                <div class="list_item_warpper radial-gradient active">
-                  <div v-if="item.status == 3" class="list_item_invaild"></div>
+                <div
+                  :class="{
+                    list_item_warpper: true,
+                    'radial-gradient': true,
+                    active: true,
+                    invaild: item.status == 3
+                  }"
+                >
+                  <div class="tag">
+                    <span class="btn shared" v-if="item.is_owner != 1"
+                      >分享给我的</span
+                    >
+                    <span
+                      class="btn open"
+                      v-else-if="item.status == 1 && item.is_owner == 1"
+                      >待开启</span
+                    >
+                    <span v-else></span>
+                  </div>
                   <div class="list_item_pic">
                     <van-image
                       width="100%"
@@ -77,6 +89,7 @@
                       {{ item.start_time | date }}
                     </div>
                   </div>
+                  <!-- 按钮÷ -->
                   <div class="list_item_btn">
                     <div
                       class="btn"
@@ -106,7 +119,6 @@
                         $t("ActivityBlindbox.ActivityBlindboxList.GoShareText")
                       }}
                     </div>
-
                     <div
                       class="btn"
                       v-if="item.status == 2"
@@ -318,7 +330,39 @@ export default {
   font-weight: normal;
   font-family: PingFang SC;
   overflow: hidden;
+  position: relative;
+  .tag {
+    position: absolute;
+    right: 0;
+    top: 0;
+    .btn {
+      border-radius: 0px 10px;
+      font-size: 11px;
+      line-height: 11px;
+      height: 24px;
+      font-weight: 500;
+      box-sizing: border-box;
+      display: inline-block;
+      min-width: 78px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      &.open {
+        background: linear-gradient(274.96deg, #bc0eff 0.67%, #ff81e2 100%);
+        color: #FFFFFF;
+      }
+      &.shared {
 
+        color: #1cbdb5;
+        background: linear-gradient(
+          274.96deg,
+          rgba(0, 199, 215, 0.2) 0.67%,
+          rgba(115, 255, 221, 0.2) 100%
+        );
+      }
+    }
+  }
   .blindbox_list_header {
     display: flex;
     justify-content: space-between;
@@ -351,23 +395,17 @@ export default {
       background-size: 100% 100%;
       text-align: center;
       &.en {
-        background: url("@/assets/activity/blindbox/noData@2.en.png") center center
-          no-repeat;
+        background: url("@/assets/activity/blindbox/noData@2.en.png") center
+          center no-repeat;
         background-size: 100% 100%;
       }
     }
 
     .list_item {
+      .invaild {
+        opacity: 0.4;
+      }
       .list_item_warpper {
-        .list_item_invaild {
-          position: absolute;
-          top: 0;
-          right: 0;
-          left: 0;
-          bottom: 0;
-          background: #ffffff;
-          opacity: 0.4;
-        }
         position: relative;
         overflow: hidden;
         width: 343px;

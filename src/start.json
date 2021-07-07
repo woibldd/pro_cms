@@ -11,7 +11,7 @@
           "DEBUG":"bit*",
           "NODE_ENV": "production",
           "NUXT_ENV_operation_api": "http://ms.operation:8898",
-          "HOST_API":"http://ms.user:8880"
+          "HOST_API":"https://b1.bitkeep.top"
         }
       }
     ]

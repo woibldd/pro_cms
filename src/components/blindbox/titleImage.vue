@@ -94,12 +94,12 @@ export default {
   height: 48px;
 }
 .openTextTitle_en {
-  width: 256px;
-  height: 40px;
+ width: 256px;
+height: 40px;
 }
 .inviteTextTitle_zh {
-  width: 249px;
-  height: 40px;
+  width: 250px;
+  height: 48px;
 }
 .inviteTextTitle_en {
   width: 249px;
