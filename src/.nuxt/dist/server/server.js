@@ -3126,7 +3126,7 @@ async function setContext(app, context) {
       error: context.error,
       base: app.router.options.base,
       env: {
-        "BUILD_ENV": "dev",
+        "BUILD_ENV": "pro",
         "HOST_API": "http://dev.bitkeep.top:8880",
         "NODE_ENV": "production",
         "DEBUG": "bit*"
@@ -5023,11 +5023,7 @@ async function createApp(ssrContext, config = {}) {
         "type": "image\u002Fx-icon",
         "href": "\u002Ffavicon.ico"
       }],
-      "script": [{
-        "src": "https:\u002F\u002Fcdn.bootcdn.net\u002Fajax\u002Flibs\u002FvConsole\u002F3.8.1\u002Fvconsole.min.js",
-        "type": "text\u002Fjavascript",
-        "charset": "utf-8"
-      }],
+      "script": [],
       "style": []
     },
     store,

@@ -26,7 +26,7 @@
             src="@/assets/activity/blindbox/poster_logo@2.png"
             alt=""
           />
-          <div class="content">
+          <div :class="{ content:true,[locale]:true}">
             <!-- 扫描领取数字盲盒 -->
             <div>
               {{ $t("ActivityBlindbox.ActivityBlindboxDetail.ScanBlindBox") }}
@@ -83,6 +83,9 @@ export default {
   mixins: [BaseMixin],
   components: { BlindTimeText },
   props: {
+    locale:{
+      default:"en"
+    },
     zIndex: {
       default: 100
     },
@@ -304,11 +307,14 @@ export default {
         margin-top: 10px;
       }
       .content {
-        width: 300px;
+        width: 219px;
         word-break: break-all;
         word-wrap: break-word;
         // word-wrap: normal;
         // word-break: break-all;
+        &.en{
+          line-height: 13px;
+        }
       }
     }
     .poster_qrcode {

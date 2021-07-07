@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "cross-env   DEBUG=bit*  BUILD_ENV=dev  nuxt",
     "build:dev": "cross-env  DEBUG=bit*  BUILD_ENV=dev  nuxt build",
+    "postbuild:dev": "",
     "build": "cross-env  DEBUG=bit*  BUILD_ENV=pro nuxt build",
     "start": "cross-env  DEBUG=bit*  BUILD_ENV=pro nuxt start",
     "generate": "nuxt generate"
