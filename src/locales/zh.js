@@ -20,7 +20,8 @@ module.exports = {
             Saving:"保存中...",
             loading: "加载中...",
             inputETH: "请输入ETH助力地址",
-            Generating:"生成中..."
+            Generating:"生成中...",
+            ContributeSuccess: "助力成功"
         },
         statusText: [
             "恭喜获得BitKeep数字盲盒",
@@ -55,7 +56,11 @@ module.exports = {
             "GoShareText": "去分享",
             "TurnedOnText": "已开启",
             "SuccessfullyOpenedText": "成功开启",
-            "expiredText": "已过期"
+            "expiredText": "已过期",
+
+            "ShareWithMe": "分享给我的",
+             willOpened:"待开启"
+
         },
         ActivityBlindboxDetail: {
             "blindBoxNumText": "距离开启盲盒仅差 <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> 人助力",

@@ -21,7 +21,7 @@ module.exports = {
        Saving:"Saving...",
        inputETH:"Please enter eth address",
        Generating:"Generating...",
-   
+       ContributeSuccess: "Contribute to success"
     },
     statusText: [
       "恭喜获得BitKeep数字盲盒",
@@ -57,7 +57,9 @@ module.exports = {
       "GoShareText": "Go share",
       "TurnedOnText": "Turned on",
       "SuccessfullyOpenedText": "Opened",
-      "expiredText": "expired"
+      "expiredText": "expired",
+      "ShareWithMe": "Share with me",
+      willOpened:"To be opened"
     },
     ActivityBlindboxDetail: {
       "blindBoxNumText": "The box is still short of <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> people,you will get  digital assets",

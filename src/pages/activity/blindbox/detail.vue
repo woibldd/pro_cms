@@ -402,7 +402,7 @@ export default {
         }
         this.getDetails();
 
-      
+        this.$toast.success(this.$t("ActivityBlindbox.toast.ContributeSuccess"))
         // await new Promise((resolve) =>
         //   BitKeepInvoke.alert(
         //     this.$t("ActivityBlindbox.dialog.helperSuccess"),

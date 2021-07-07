@@ -34,12 +34,12 @@
                 >
                   <div class="tag">
                     <span class="btn shared" v-if="item.is_owner != 1"
-                      >分享给我的</span
+                      >{{$t("ActivityBlindbox.ActivityBlindboxList.ShareWithMe")}}</span
                     >
                     <span
                       class="btn open"
                       v-else-if="item.status == 1 && item.is_owner == 1"
-                      >待开启</span
+                      >{{$t("ActivityBlindbox.ActivityBlindboxList.willOpened")}}</span
                     >
                     <span v-else></span>
                   </div>
@@ -347,7 +347,6 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      
       &.open {
         background: linear-gradient(274.96deg, #bc0eff 0.67%, #ff81e2 100%);
         color: #FFFFFF;
