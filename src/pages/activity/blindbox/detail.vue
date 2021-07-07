@@ -298,26 +298,6 @@ export default {
     handlerBlur() {
       this.focus = false;
     },
-    shareImage() {
-      console.log(
-        this.info.title,
-        this.locale == "zh"
-          ? "我正在免费开盲盒，快来帮我助力一下吧～"
-          : "I'm opening blind free boxes, come and help me~",
-        location.href,
-        this.info.cover_image
-      );
-      BitKeepInvoke &&
-        BitKeepInvoke.shareUrl(
-          this.info.title,
-          this.locale == "zh"
-            ? "我正在免费开盲盒，快来帮我助力一下吧～"
-            : "I'm opening blind free boxes, come and help me~",
-          location.href,
-          this.info.cover_image,
-          console.log
-        );
-    },
     async getDetails(refresh) {
       if (!this.$route.query.id) {
         // this.$toast.fail("params id is not found");

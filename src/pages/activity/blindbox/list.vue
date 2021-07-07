@@ -17,7 +17,7 @@
           v-model="refreshing"
           @refresh="onRefresh"
         >
-          <van-list v-model="listLoading" :finished="finished" @load="onLoad">
+          <van-list  v-model="listLoading" :finished="finished" @load="onLoad">
             <div
               v-for="item in blindbox_list"
               :key="item.id"

@@ -199,13 +199,15 @@ export default {
         });
     },
     shareImage() {
-      BitKeepInvoke.shareUrl(
-        this.info.title,
-        this.info.title,
-        location.href,
-        this.info.invite_image1,
-        console.log
-      );
+        BitKeepInvoke.shareUrl(
+          this.info.title,
+          this.locale == "zh"
+            ? "我正在免费开盲盒，快来帮我助力一下吧～"
+            : "I'm opening blind free boxes, come and help me~",
+          location.href,
+          this.info.cover_image,
+          console.log
+        );
     },
     saveImage() {
       if (this.poster.url) {
