@@ -27,7 +27,7 @@
       </Header>
       <!-- h5图片。÷ -->
       <div class="block_detail_bg">
-        <van-image width="100%" height="100%" :src="info.poster_image" />
+        <van-image width="100%" height="100%" :src="heade_image" />
       </div>
       
       <BlindTimeText
@@ -250,6 +250,9 @@ export default {
     },
     format(){
         return  this.locale=='zh'? "{dd}天{hh}小时{mm}分钟{ss}秒":"{dd} D {hh} H {mm} M {ss} S"
+    },
+    heade_image(){
+      return this.info.status==2 ?  this.info.prize_image : this.info.poster_image
     }
   },
   async asyncData(ctx) {},

@@ -304,8 +304,11 @@ export default {
         margin-top: 10px;
       }
       .content {
-        width: 230px;
+        width: 300px;
         word-break: break-all;
+        word-wrap: break-word;
+        // word-wrap: normal;
+        // word-break: break-all;
       }
     }
     .poster_qrcode {
