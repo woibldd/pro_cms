@@ -33,11 +33,19 @@
                   }"
                 >
                   <div class="tag">
-                    <span class="btn shared" v-if="item.is_owner != 1"
+                    <span :class="{
+                      btn:true,
+                      shared:true,
+                      [locale]:true
+                    }" v-if="item.is_owner != 1"
                       >{{$t("ActivityBlindbox.ActivityBlindboxList.ShareWithMe")}}</span
                     >
                     <span
-                      class="btn open"
+                      :class="{
+                        btn:true,
+                        open:true,
+                        [locale]:true
+                      }"
                       v-else-if="item.status == 1 && item.is_owner == 1"
                       >{{$t("ActivityBlindbox.ActivityBlindboxList.willOpened")}}</span
                     >
@@ -335,15 +343,16 @@ export default {
     position: absolute;
     right: 0;
     top: 0;
+    
     .btn {
       border-radius: 0px 10px;
       font-size: 11px;
       line-height: 11px;
       height: 24px;
       font-weight: 500;
-      box-sizing: border-box;
-      display: inline-block;
-      min-width: 78px;
+      width: 78px;
+      white-space: nowrap;
+      
       display: flex;
       justify-content: center;
       align-items: center;
@@ -352,13 +361,15 @@ export default {
         color: #FFFFFF;
       }
       &.shared {
-
         color: #1cbdb5;
         background: linear-gradient(
           274.96deg,
           rgba(0, 199, 215, 0.2) 0.67%,
           rgba(115, 255, 221, 0.2) 100%
         );
+      }
+      &.en{
+        width: 95px;
       }
     }
   }

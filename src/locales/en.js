@@ -58,7 +58,7 @@ module.exports = {
       "TurnedOnText": "Turned on",
       "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired",
-      "ShareWithMe": "Share with me",
+      "ShareWithMe": "Shared width me",
       willOpened:"To be opened"
     },
     ActivityBlindboxDetail: {
