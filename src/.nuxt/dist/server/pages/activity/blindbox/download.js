@@ -1,13 +1,13 @@
 exports.ids = [16,5,7];
 exports.modules = {
 
-/***/ 104:
+/***/ 108:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(120);
+var content = __webpack_require__(125);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -19,69 +19,74 @@ module.exports.__inject__ = function (context) {
 
 /***/ }),
 
-/***/ 116:
-/***/ (function(module, exports) {
-
-module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAF5SURBVHgB7dm9TcNQGIXh7zo/duPIMAEJDSUjULIFbAAtFWEDGCEjsEFKtsAbxCggmWBx8UGiwEmo7s9ndJ7yujqvHClXFiEiIiIiIiIiiiSdzK7SfLrK8ulzlh9fSCBGFMgms1uxdv7rbGAPqqqsxLNEIts1HupaCgkgaoB94421D3VdlhJAtJ/AvvEidlGvy0sJJEoALeMheABN4yFoAG3jIVgAjeMhSACt48F7AM3jwWsA7ePBW4A+jAcvAfoyHpwHwK2u/St7v/1E33hwfhcwYq+3T3WOB+cBrN11i0usKDUQx8aj4l2MOe8cnw7Tw6Nms3oUZZwHaD6qp+G4MG2Es84jlRGcB4BmUy37EsFLAOhLBG8BoA8RvAYA7RG8BwDNEYIEAK0RggUAjRGCBgBtEYIHAE0RogQALRGiBYA/IyTFommq//9tsH4t5+0V8q57nmXifTxEfQN+4E0YjYoXSczJ97350968rculEBERERERERF58AXhcvS9zEDW3QAAAABJRU5ErkJggg=="
-
-/***/ }),
-
-/***/ 117:
+/***/ 121:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/logo@2.ca1f304.png";
 
 /***/ }),
 
-/***/ 118:
+/***/ 122:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/download@2.e06d33c.png";
 
 /***/ }),
 
-/***/ 119:
+/***/ 123:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/download@2.en.1036ffc.png";
+
+/***/ }),
+
+/***/ 124:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_download_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(104);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_download_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(108);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_download_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_download_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_download_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_download_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 120:
+/***/ 125:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, "#download {\n  font-family: PingFang SC;\n  font-style: normal;\n  min-height: 100vh;\n  background: #ffffff;\n}\n#download .blindbox_header {\n  width: 100vw;\n  display: flex;\n  justify-content: center;\n  padding: 0.4rem;\n  box-sizing: border-box;\n  align-items: center;\n}\n#download .blindbox_header .logo {\n  width: 2.4rem;\n  height: 0.64rem;\n  display: flex;\n}\n#download .blindbox_header .logo img {\n  width: 100%;\n  height: 100%;\n}\n#download .blindbox_header .header_back {\n  position: absolute;\n  left: 0.4rem;\n}\n#download .blindbox_header .header_back>div {\n  display: flex;\n  justify-items: center;\n}\n#download .blindbox_header .header_back>div img {\n  width: 0.85rem;\n  height: 0.85rem;\n}\n#download .block_body {\n  padding-top: 2.56rem;\n  text-align: center;\n}\n#download .block_body img {\n  width: 6rem;\n  height: 5.79rem;\n}\n#download .btn {\n  margin: 3.12rem auto 0;\n  background: linear-gradient(122.71deg, #5aebff 3.38%, #6d39ff 92.57%),#c4c4c4;\n  border-radius: 2.67rem;\n  width: 6rem;\n  height: 1.33rem;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border-radius: 2.67rem;\n  font-weight: 600;\n  font-size: 0.48rem;\n  line-height: 0.48rem;\n  color: #ffffff;\n}\n#download .btn:active {\n  opacity: 0.8;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, "#download {\n  font-family: PingFang SC;\n  font-style: normal;\n  min-height: 100vh;\n  background: #ffffff;\n}\n#download .blindbox_header {\n  width: 100vw;\n  display: flex;\n  justify-content: center;\n  padding: 0.4rem;\n  box-sizing: border-box;\n  align-items: center;\n}\n#download .blindbox_header .logo {\n  width: 2.4rem;\n  height: 0.64rem;\n  display: flex;\n}\n#download .blindbox_header .logo img {\n  width: 100%;\n  height: 100%;\n}\n#download .blindbox_header .header_back {\n  position: absolute;\n  left: 0.4rem;\n}\n#download .blindbox_header .header_back>div {\n  display: flex;\n  justify-items: center;\n}\n#download .blindbox_header .header_back>div img {\n  width: 0.85rem;\n  height: 0.85rem;\n}\n#download .block_body {\n  padding-top: 2.56rem;\n  text-align: center;\n}\n#download .block_body img {\n  width: 6rem;\n  height: 5.79rem;\n}\n#download .block_body img.en {\n  width: 8.37rem;\n  height: 6.19rem;\n}\n#download .btn {\n  margin: 3.12rem auto 0;\n  background: linear-gradient(122.71deg, #5aebff 3.38%, #6d39ff 92.57%),#c4c4c4;\n  border-radius: 2.67rem;\n  width: 6rem;\n  height: 1.33rem;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border-radius: 2.67rem;\n  font-weight: 600;\n  font-size: 0.48rem;\n  line-height: 0.48rem;\n  color: #ffffff;\n}\n#download .btn:active {\n  opacity: 0.8;\n}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
 
-/***/ 131:
+/***/ 136:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/blindbox/download.vue?vue&type=template&id=9711cebc&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"download"}},[_c('Header',[_c('div',{staticClass:"blindbox_header"},[_c('span',{staticClass:"header_back",on:{"click":_vm.back}},[_c('div',[_c('img',{attrs:{"src":__webpack_require__(116)}})])]),_vm._v(" "),_c('span',{staticClass:"logo"},[_c('img',{attrs:{"src":__webpack_require__(117)}})])])]),_vm._ssrNode(" <div class=\"block_body\"><img"+(_vm._ssrAttr("src",__webpack_require__(118)))+"> <a href=\"https://bitkeep.org\" class=\"btn\">立即下载</a></div>")],2)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/blindbox/download.vue?vue&type=template&id=0156beaa&
+var render = function () {
+var _obj, _obj$1;
+var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"download"}},[_c('Header',[_c('div',{staticClass:"blindbox_header"},[_c('span',{staticClass:"logo"},[_c('img',{attrs:{"src":__webpack_require__(121)}})])])]),_vm._ssrNode(" <div class=\"block_body\">"+((_vm.locale=='zh')?("<img"+(_vm._ssrAttr("src",__webpack_require__(122)))+(_vm._ssrClass(null,( _obj = {}, _obj[_vm.locale] = true, _obj )))+">"):("<img"+(_vm._ssrAttr("src",__webpack_require__(123)))+(_vm._ssrClass(null,( _obj$1 = {}, _obj$1[_vm.locale] = true, _obj$1 )))+">"))+" <a href=\"https://bitkeep.org\" class=\"btn\">"+_vm._ssrEscape(_vm._s(_vm.$t("ActivityBlindbox.button.Downloadnow")))+"</a></div>")],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/activity/blindbox/download.vue?vue&type=template&id=9711cebc&
+// CONCATENATED MODULE: ./pages/activity/blindbox/download.vue?vue&type=template&id=0156beaa&
 
 // EXTERNAL MODULE: ./components/common/index.js
 var common = __webpack_require__(64);
+
+// EXTERNAL MODULE: external "vuex"
+var external_vuex_ = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/blindbox/download.vue?vue&type=script&lang=js&
 //
@@ -106,11 +111,24 @@ var common = __webpack_require__(64);
 //
 //
 //
+//
+
 
 /* harmony default export */ var downloadvue_type_script_lang_js_ = ({
   name: "Download",
   components: {
     Header: common["Header"]
+  },
+  computed: { ...Object(external_vuex_["mapState"])(["local"]),
+
+    isBitKeep() {
+      return this.local.UA.isBitKeep;
+    },
+
+    locale() {
+      return this.local.locale;
+    }
+
   },
   methods: {
     back() {
@@ -130,7 +148,7 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(119)
+  var style0 = __webpack_require__(124)
 if (style0.__inject__) style0.__inject__(context)
 
 }

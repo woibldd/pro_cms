@@ -22,10 +22,11 @@ const modules = modulesFiles.keys().reduce((modules, modulePath) => {
 //     keyArr.shift() // 移除.
 //     map[keyArr.join('.').replace(/\.js$/g, '')] = context(key)
 //   }
+
 const filter_key  = Object.keys(modules).reduce((r,key)=>{
     var nk  = (key || '').slice(0,2).toLowerCase()
     // console.log( modules[key])
-    r[nk] = modules[key]
+    r[nk] =nk=='zh' ?modules["zh-CN"] :modules[key]
    return r
 },{})
 

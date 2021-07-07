@@ -13,7 +13,9 @@ module.exports = {
     toast:{
        open:"Opening...",
        loading:"Loading...",
-       inputETH:"Please enter eth address"
+       Saving:"Saving...",
+       inputETH:"Please enter eth address",
+       Generating:"Generating..."
     },
     statusText: [
       "恭喜获得BitKeep数字盲盒",
@@ -26,8 +28,12 @@ module.exports = {
       "InviteFriendsNow": "Invite friends to help now",
       "OpenFriendsImmediately": "Help open the blind box",
       "ViewAssets":"View assets",
-      "SuccessView":"Success! Please view assets"  //
+      "SuccessView":"Success! Please view assets", //
       // "OpenimmediatelyText": "Open the blind box immediately"
+      "savePicture":"Save Picture",  //
+      "ShareLink":"Share Link",  //
+      "Downloadnow":"Download now",
+      
     },
     title:{
       "myBlindboxText": "My blind box"
@@ -58,6 +64,9 @@ module.exports = {
      "successfullyTimeText" :"The blind box has been opened successfully!",
       expiredTimeText    :"It's a pity that this blind box has expired",
 
+      "ScanBlindBox": "Scan and receive digital blind box",
+      DownloadBitkeep: "Download Bitkeep to share the digital assets in the blind box",
+
 
       "BitKeepTitleText": "BitKeep数字盲盒",
       "OpenTitleText": "开启获得惊喜数字资产",
@@ -86,9 +95,11 @@ module.exports = {
       ],
 
       modal: {
+       
+
         sharedHelperMeText: "助力我开启 BitKeep 数字盲盒吧",
         openSurpriseText: "开启获取惊喜数字资产",
-        "ScanBlindBox": "扫描领取数字盲盒",
+      
         DownloadBitkeep: "下载 Bitkeep，瓜分盲盒中数字资产",
         savePicture: "保存图片",
         ShareLink: "分享链接",

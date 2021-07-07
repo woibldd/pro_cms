@@ -25,9 +25,11 @@
           </span>
         </div>
       </Header>
-      <div class="block_detail_bg ">
+      <!-- h5图片。÷ -->
+      <div class="block_detail_bg">
         <van-image width="100%" height="100%" :src="info.poster_image" />
       </div>
+      
       <BlindTimeText
         class="block_time"
         :info="info"
@@ -147,7 +149,7 @@
       </div>
 
       <div class="block_open_strategy">
-        <div class="block_open_strategy_warpper"></div>
+        <div :class="{block_open_strategy_warpper:true,[locale]:true }"></div>
       </div>
 
       <div class="block_acitve_strategy">
@@ -325,7 +327,7 @@ export default {
 
       clearTimeout(this.timer);
       this.timer = setTimeout(() => {
-        this.getDetails(true);
+        // this.getDetails(true);
       }, 5000);
       if (status != 0) {
         !refresh && this.$toast.fail(data);
@@ -503,15 +505,6 @@ export default {
     box-sizing: border-box;
     padding: 10px 20px 20px;
     .block_header {
-      overflow: hidden;
-      width: 250px;
-      height: 48px;
-      margin: 0 auto;
-      display: flex;
-      img {
-        width: 100%;
-        height: 100%;
-      }
     }
   }
 }
@@ -619,7 +612,13 @@ export default {
     background: url("@/assets/activity/blindbox/02@2.png") center center
       no-repeat;
     background-size: 100% 100%;
+    &.en{
+        background: url("@/assets/activity/blindbox/02@2.en.png") center center
+      no-repeat;
+      background-size: 100% 100%;
+    }
   }
+  
 
   // width: 348px;
   height: 426px;
@@ -629,10 +628,10 @@ export default {
   padding-top: 20px;
   overflow: hidden;
   .block_warpper {
-    // .block_header {
-    //   width: 178px;
-    //   height: 24px;
-    // }
+    .block_header {
+      // width: 178px;
+      // height: 24px;
+    }
     .block_body {
       padding-top: 15px;
       font-size: 12px;

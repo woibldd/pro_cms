@@ -27,8 +27,11 @@
             alt=""
           />
           <div class="content">
-            <div>扫描领取数字盲盒</div>
-            <div>下载 Bitkeep，瓜分盲盒中数字资产</div>
+            <!-- 扫描领取数字盲盒 -->
+            <div>{{$t("ActivityBlindbox.ActivityBlindboxDetail.ScanBlindBox")}}</div>
+              <!-- 下载 Bitkeep，瓜分盲盒中数字资产 -->
+            <div>
+              {{$t("ActivityBlindbox.ActivityBlindboxDetail.DownloadBitkeep")}}</div>
           </div>
         </div>
         <img class="poster_qrcode" :src="qrcodeUrl" />
@@ -38,7 +41,8 @@
       </div>
       <div class="footer">
         <div v-if="isBitKeep || pedding" class="btn left" @click="saveImage">
-          <img src="@/assets/activity/blindbox/BTN1@2.png" alt="" />
+          <img src="@/assets/activity/icon/icon_saveimage@2.png" alt="" />
+          <span>{{$t("ActivityBlindbox.button.savePicture")}}</span>
         </div>
         <a
           v-else
@@ -46,13 +50,18 @@
           :href="poster.url"
           :download="new Date().getTime() + '.jpeg'"
         >
-          <img src="@/assets/activity/blindbox/BTN1@2.png" alt="" />
+          <img src="@/assets/activity/icon/icon_saveimage@2.png" alt="" />
+          <span>{{$t("ActivityBlindbox.button.savePicture")}}</span>
+          <!-- <img src="@/assets/activity/blindbox/BTN1@2.png" alt="" /> -->
         </a>
         <div v-if="isBitKeep" class="btn" @click="shareImage">
-          <img src="@/assets/activity/blindbox/BTN2@2.png" alt="" />
+          
+          <img src="@/assets/activity/icon/icon_sharelink@2.png" alt="" />
+          <span>{{$t("ActivityBlindbox.button.ShareLink")}}</span>
         </div>
         <div v-else class="btn">
-          <img src="@/assets/activity/blindbox/BTN2@2.png" alt="" />
+           <img src="@/assets/activity/icon/icon_sharelink@2.png" alt="" />
+          <span>{{$t("ActivityBlindbox.button.ShareLink")}}</span>
         </div>
       </div>
     </div>
@@ -134,14 +143,14 @@ export default {
     
      this.showModal = true;
       if (this.pedding) {
-        this.showLoading("生成中...");
+        this.showLoading($t("ActivityBlindbox.toast.Generating"));
       }
     },
     async createPoster() {
       // if(!this.proxy_img && !this.info.invite_image1) return 
-      if (this.pedding) return this.showLoading("生成中...");
+      if (this.pedding) return this.showLoading($t("ActivityBlindbox.toast.Generating"));
 
-      this.showModal && this.showLoading("生成中...");
+      this.showModal && this.showLoading($t("ActivityBlindbox.toast.Generating"));
       this.pedding = true
       this.poster.url = "";
       const el = this.$refs.poster;
@@ -200,7 +209,7 @@ export default {
     },
     saveImage() {
       if (this.poster.url) {
-        this.showLoading("保存中...");
+        this.showLoading($t("ActivityBlindbox.toast.Saving"));
         BitKeepInvoke.saveImageFromBase64(this.poster.url, e => {
           this.hideLoading();
         });
@@ -213,7 +222,10 @@ export default {
   }
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
+.btn{
+  
+}
 .qcodeModalwarpper {
   width: 100vw;
   z-index: 100;
@@ -286,6 +298,10 @@ export default {
       .title {
         margin-top: 10px;
       }
+      .content{
+        width:230px;
+        word-break: break-all;
+      }
     }
     .poster_qrcode {
       position: absolute;
@@ -310,13 +326,20 @@ export default {
       display: flex;
       width: 162px;
       height: 50px;
+      font-size: 16px;
       background: linear-gradient(122.71deg, #5aebff 3.38%, #6d39ff 92.57%),
         #c4c4c4;
       border-radius: 100px;
+      font-weight: 600;
+      color: #FFFFFF;
+      justify-content: center;
+      align-items: center;
       img {
-        width: 100%;
-        height: 100%;
+        width: 20px;
+        height: 20px;
+        margin-right: 6px;
       }
+
     }
   }
 }

@@ -10,22 +10,29 @@ module.exports = {
             "openBlindbox": "开启获得惊喜数字资产",
             "lookBlindbox": "查看数字盲盒",
         },
+        toast: {
+            open: "开启中...",
+            Saving:"保存中...",
+            loading: "加载中...",
+            inputETH: "请输入ETH助力地址",
+            Generating:"生成中..."
+        },
         statusText: [
             "恭喜获得BitKeep数字盲盒",
             "开启获得惊喜数字资产",
             "查看数字盲盒"
         ],
-        toast: {
-            open: "开启中...",
-            loading: "加载中...",
-            inputETH: "请输入ETH助力地址"
-        },
+
         button: {
             "OpenimmediatelyText": "立即开启盲盒",
             "InviteFriendsNow": "立即邀请好友助力",
             "OpenFriendsImmediately": "立即助力开启盲盒",
             "ViewAssets": "查看资产",
-            "SuccessView": "助力已完成，立即查看盲盒"
+            "SuccessView": "助力已完成，立即查看盲盒",
+            "savePicture":"保存图片",  //
+            "ShareLink":"分享链接",
+            "Downloadnow":"立即下载",
+              //
         },
         title: {
             "myBlindboxText": "我的盲盒",
@@ -56,6 +63,11 @@ module.exports = {
             "invalidTimeText": "距离盲盒失效还有",
             "successfullyTimeText": "盲盒已成功开启！",
             'expiredTimeText': "太遗憾了，这个盲盒已过期",
+
+
+            "ScanBlindBox": "扫描领取数字盲盒",
+            DownloadBitkeep: "下载 Bitkeep，瓜分盲盒中数字资产",
+
 
             "BitKeepTitleText": "BitKeep数字盲盒",
             "OpenTitleText": "开启获得惊喜数字资产",
