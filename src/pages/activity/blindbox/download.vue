@@ -38,6 +38,9 @@ export default {
       return this.local.locale;
     }
   },
+  mounted() {
+    this.isBitKeep && BitKeepInvoke.setTitle(locale=='zh'?"下载 bitKeep":'Download bitKeep');
+  },
   methods: {
     back() {
       this.$router.back();

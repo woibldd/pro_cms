@@ -69,7 +69,7 @@
 </template>
 <script>
 import QRCode from "qrcode";
-import { mapState } from "vuex";
+// import { mapState } from "vuex";
 import { BaseMixin } from "@/mixin/base.js";
 import html2canvas from "html2canvas";
 import BlindTimeText from "@/components/blindbox/blindTimeText.vue";
@@ -128,7 +128,7 @@ export default {
   async mounted() {
     this.qrcodeUrl = await QRCode.toDataURL(this.codeText,{
       errorCorrectionLevel: 'H',
-      //  quality: 1,
+       quality: 100,
       // margin: 5,
       color: {
   

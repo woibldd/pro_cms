@@ -5,7 +5,9 @@ module.exports = {
     },
     "ActivityBlindbox": {
         dialog: {
+           
             "isCreateWalletComfirm": "云钱包不存在，是否现在创建云钱包？",
+            helperSuccess: "助力成功",
             "getBlindbox": "恭喜获得BitKeep数字盲盒",
             "openBlindbox": "开启获得惊喜数字资产",
             "lookBlindbox": "查看数字盲盒",

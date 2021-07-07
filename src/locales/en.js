@@ -6,6 +6,7 @@ module.exports = {
   "ActivityBlindbox": {
     dialog: {
       "isCreateWalletComfirm":"Cloud wallet does not exist. Do you want to create it now?",
+        helperSuccess: "Contribute to success",
       "getBlindbox": "Congratulations on getting the BitKeep digital blind box",
       "openBlindbox": "Open to get surprise digital assets",
       "lookBlindbox": "View digital blind box",
@@ -15,7 +16,8 @@ module.exports = {
        loading:"Loading...",
        Saving:"Saving...",
        inputETH:"Please enter eth address",
-       Generating:"Generating..."
+       Generating:"Generating...",
+   
     },
     statusText: [
       "恭喜获得BitKeep数字盲盒",

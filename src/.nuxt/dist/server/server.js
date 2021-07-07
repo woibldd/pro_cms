@@ -2696,6 +2696,7 @@ module.exports = {
   "ActivityBlindbox": {
     dialog: {
       "isCreateWalletComfirm": "Cloud wallet does not exist. Do you want to create it now?",
+      helperSuccess: "Contribute to success",
       "getBlindbox": "Congratulations on getting the BitKeep digital blind box",
       "openBlindbox": "Open to get surprise digital assets",
       "lookBlindbox": "View digital blind box"
@@ -2812,6 +2813,7 @@ module.exports = {
   "ActivityBlindbox": {
     dialog: {
       "isCreateWalletComfirm": "云钱包不存在，是否现在创建云钱包？",
+      helperSuccess: "助力成功",
       "getBlindbox": "恭喜获得BitKeep数字盲盒",
       "openBlindbox": "开启获得惊喜数字资产",
       "lookBlindbox": "查看数字盲盒"

@@ -130,7 +130,7 @@
             :class="{
               block_invite_list:true,
               color_text:true,
-              mt: isBitKeep
+              mt: !isBitKeep
             }"
             class=" "
             v-if="invite_list && invite_list.length > 0"
@@ -332,7 +332,7 @@ export default {
 
       clearTimeout(this.timer);
       this.timer = setTimeout(() => {
-        // this.getDetails(true);
+        this.getDetails(true);
       }, 5000);
       if (status != 0) {
         !refresh && this.$toast.fail(data);
@@ -419,10 +419,13 @@ export default {
         }
         this.getDetails();
 
-        await this.$dialog.alert({
-          message: "助力成功"
-        });
-
+      
+        await new Promise((resolve) =>
+          BitKeepInvoke.alert(
+            this.$t("ActivityBlindbox.dialog.helperSuccess"),
+            resolve
+          )
+        );
         // await this.getDetails();
 
         !this.isBitKeep &&
@@ -586,17 +589,19 @@ export default {
       }
     }
     .block_invite_list {
+      position: relative;
+      z-index: 10;
       margin-top: 34px;
       font-size: 12px;
       line-height: 16px;
       padding: 20px 16px 20px;
-      overflow: hidden;
-      background: #ffff;
+      // overflow: hidden;
+      background: #ffffff;
       border-radius: 8px;
       box-sizing: border-box;
       opacity: 0.8;
       &.mt{
-          margin-top: 10px;
+         margin-top: 10px;
       }
       .title {
         margin-bottom: 5px;
