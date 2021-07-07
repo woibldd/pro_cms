@@ -19,7 +19,7 @@
       <div class="poster_wrapper" v-show="!poster.url" id="poster" ref="poster">
         <!-- <img class="poster_bg"  :src="info.invite_image1" alt="" /> -->
         <img class="poster_bg" :src="proxy_img" alt="" @load="createPoster" />
-          <!-- <van-image  class="poster_bg" width="100%" height="100%" @load="createPoster" :src="proxy_img" /> -->
+        <!-- <van-image  class="poster_bg" width="100%" height="100%" @load="createPoster" :src="proxy_img" /> -->
         <div class="commany_title">
           <img
             class="logo"
@@ -28,10 +28,15 @@
           />
           <div class="content">
             <!-- 扫描领取数字盲盒 -->
-            <div>{{$t("ActivityBlindbox.ActivityBlindboxDetail.ScanBlindBox")}}</div>
-              <!-- 下载 Bitkeep，瓜分盲盒中数字资产 -->
             <div>
-              {{$t("ActivityBlindbox.ActivityBlindboxDetail.DownloadBitkeep")}}</div>
+              {{ $t("ActivityBlindbox.ActivityBlindboxDetail.ScanBlindBox") }}
+            </div>
+            <!-- 下载 Bitkeep，瓜分盲盒中数字资产 -->
+            <div>
+              {{
+                $t("ActivityBlindbox.ActivityBlindboxDetail.DownloadBitkeep")
+              }}
+            </div>
           </div>
         </div>
         <img class="poster_qrcode" :src="qrcodeUrl" />
@@ -42,7 +47,7 @@
       <div class="footer">
         <div v-if="isBitKeep || pedding" class="btn left" @click="saveImage">
           <img src="@/assets/activity/icon/icon_saveimage@2.png" alt="" />
-          <span>{{$t("ActivityBlindbox.button.savePicture")}}</span>
+          <span>{{ $t("ActivityBlindbox.button.savePicture") }}</span>
         </div>
         <a
           v-else
@@ -51,17 +56,16 @@
           :download="new Date().getTime() + '.jpeg'"
         >
           <img src="@/assets/activity/icon/icon_saveimage@2.png" alt="" />
-          <span>{{$t("ActivityBlindbox.button.savePicture")}}</span>
+          <span>{{ $t("ActivityBlindbox.button.savePicture") }}</span>
           <!-- <img src="@/assets/activity/blindbox/BTN1@2.png" alt="" /> -->
         </a>
         <div v-if="isBitKeep" class="btn" @click="shareImage">
-          
           <img src="@/assets/activity/icon/icon_sharelink@2.png" alt="" />
-          <span>{{$t("ActivityBlindbox.button.ShareLink")}}</span>
+          <span>{{ $t("ActivityBlindbox.button.ShareLink") }}</span>
         </div>
         <div v-else class="btn">
-           <img src="@/assets/activity/icon/icon_sharelink@2.png" alt="" />
-          <span>{{$t("ActivityBlindbox.button.ShareLink")}}</span>
+          <img src="@/assets/activity/icon/icon_sharelink@2.png" alt="" />
+          <span>{{ $t("ActivityBlindbox.button.ShareLink") }}</span>
         </div>
       </div>
     </div>
@@ -106,10 +110,12 @@ export default {
   },
   computed: {
     proxy_img() {
-      const sourceUrl = this.info.invite_image1 || ""
-      return sourceUrl? `/poster${(sourceUrl)
-        .replace("http://cdn.bitkeep.vip", "")
-        .replace("https://cdn.bitkeep.vip", "")}`:'';
+      const sourceUrl = this.info.invite_image1 || "";
+      return sourceUrl
+        ? `/poster${sourceUrl
+            .replace("http://cdn.bitkeep.vip", "")
+            .replace("https://cdn.bitkeep.vip", "")}`
+        : "";
     },
     codeText() {
       return this.qrcodeText || (process.client ? location.href : "");
@@ -126,32 +132,32 @@ export default {
     };
   },
   async mounted() {
-    this.qrcodeUrl = await QRCode.toDataURL(this.codeText,{
-      errorCorrectionLevel: 'H',
-       quality: 100,
+    this.qrcodeUrl = await QRCode.toDataURL(this.codeText, {
+      errorCorrectionLevel: "H",
+      quality: 100,
       // margin: 5,
       color: {
-  
-      // // background: ;
-      // dark:"#FFBF60FF",
-      // light:"#ffffffb3"
-    }
+        // // background: ;
+        // dark:"#FFBF60FF",
+        // light:"#ffffffb3"
+      }
     }).catch(err => "");
   },
   methods: {
     init() {
-    
-     this.showModal = true;
+      this.showModal = true;
       if (this.pedding) {
         this.showLoading(this.$t("ActivityBlindbox.toast.Generating"));
       }
     },
     async createPoster() {
-      // if(!this.proxy_img && !this.info.invite_image1) return 
-      if (this.pedding) return this.showLoading(this.$t("ActivityBlindbox.toast.Generating"));
+      // if(!this.proxy_img && !this.info.invite_image1) return
+      if (this.pedding)
+        return this.showLoading(this.$t("ActivityBlindbox.toast.Generating"));
 
-      this.showModal && this.showLoading(this.$t("ActivityBlindbox.toast.Generating"));
-      this.pedding = true
+      this.showModal &&
+        this.showLoading(this.$t("ActivityBlindbox.toast.Generating"));
+      this.pedding = true;
       this.poster.url = "";
       const el = this.$refs.poster;
 
@@ -169,7 +175,7 @@ export default {
         // windowHeight: document.body.scrollHeight,
         width: el.offsetWidth - 1,
         height: el.offsetHeight - 1,
-        scale: 3, 
+        scale: 3,
         async: true,
         // width: 375,
         // height: 812,
@@ -199,15 +205,13 @@ export default {
         });
     },
     shareImage() {
-        BitKeepInvoke.shareUrl(
-          this.info.title,
-          this.locale == "zh"
-            ? "我正在免费开盲盒，快来帮我助力一下吧～"
-            : "I'm opening blind free boxes, come and help me~",
-          location.href,
-          this.info.cover_image,
-          console.log
-        );
+      BitKeepInvoke.shareUrl(
+        this.info.title,
+        this.$t("ActivityBlindbox.shared.content"),
+        location.href,
+        this.info.cover_image,
+        console.log
+      );
     },
     saveImage() {
       if (this.poster.url) {
@@ -225,8 +229,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.btn{
-  
+.btn {
 }
 .qcodeModalwarpper {
   width: 100vw;
@@ -300,8 +303,8 @@ export default {
       .title {
         margin-top: 10px;
       }
-      .content{
-        width:230px;
+      .content {
+        width: 230px;
         word-break: break-all;
       }
     }
@@ -311,8 +314,9 @@ export default {
       bottom: 20px;
       width: 60px;
       height: 60px;
-  
-      box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4), inset 0px -1px 0px rgba(255, 255, 255, 0.15);
+
+      box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4),
+        inset 0px -1px 0px rgba(255, 255, 255, 0.15);
 
       border-radius: 8px;
     }
@@ -333,7 +337,7 @@ export default {
         #c4c4c4;
       border-radius: 100px;
       font-weight: 600;
-      color: #FFFFFF;
+      color: #ffffff;
       justify-content: center;
       align-items: center;
       img {
@@ -341,7 +345,6 @@ export default {
         height: 20px;
         margin-right: 6px;
       }
-
     }
   }
 }

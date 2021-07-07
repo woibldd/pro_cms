@@ -400,12 +400,12 @@ export default {
         this.getDetails();
 
       
-        await new Promise((resolve) =>
-          BitKeepInvoke.alert(
-            this.$t("ActivityBlindbox.dialog.helperSuccess"),
-            resolve
-          )
-        );
+        // await new Promise((resolve) =>
+        //   BitKeepInvoke.alert(
+        //     this.$t("ActivityBlindbox.dialog.helperSuccess"),
+        //     resolve
+        //   )
+        // );
         // await this.getDetails();
 
         !this.isBitKeep &&

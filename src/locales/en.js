@@ -3,7 +3,11 @@ module.exports = {
     loading: "Loading",
     no_more: "No more"
   },
+  
   "ActivityBlindbox": {
+    shared:{
+      content:"I'm opening blind free boxes, come and help me~"
+  },
     dialog: {
       "isCreateWalletComfirm":"Cloud wallet does not exist. Do you want to create it now?",
         helperSuccess: "Contribute to success",

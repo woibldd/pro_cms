@@ -4,6 +4,9 @@ module.exports = {
         no_more: "没有更多了"
     },
     "ActivityBlindbox": {
+        shared:{
+            content:"我正在免费开盲盒，快来帮我助力一下吧～"
+        },
         dialog: {
            
             "isCreateWalletComfirm": "云钱包不存在，是否现在创建云钱包？",

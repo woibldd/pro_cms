@@ -2694,6 +2694,9 @@ module.exports = {
     no_more: "No more"
   },
   "ActivityBlindbox": {
+    shared: {
+      content: "I'm opening blind free boxes, come and help me~"
+    },
     dialog: {
       "isCreateWalletComfirm": "Cloud wallet does not exist. Do you want to create it now?",
       helperSuccess: "Contribute to success",
@@ -2811,6 +2814,9 @@ module.exports = {
     no_more: "没有更多了"
   },
   "ActivityBlindbox": {
+    shared: {
+      content: "我正在免费开盲盒，快来帮我助力一下吧～"
+    },
     dialog: {
       "isCreateWalletComfirm": "云钱包不存在，是否现在创建云钱包？",
       helperSuccess: "助力成功",
