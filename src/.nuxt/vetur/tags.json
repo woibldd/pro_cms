@@ -2,6 +2,9 @@
   "BlindboxBlindButton": {
     "description": "Auto imported from components/blindbox/BlindButton.vue"
   },
+  "BlindboxBlindStrategy": {
+    "description": "Auto imported from components/blindbox/blindStrategy.vue"
+  },
   "BlindboxBlindTimeText": {
     "description": "Auto imported from components/blindbox/blindTimeText.vue"
   },

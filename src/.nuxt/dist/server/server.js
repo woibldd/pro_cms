@@ -43,7 +43,7 @@ module.exports =
 /******/
 /******/ 		// "0" is the signal for "already loaded"
 /******/ 		if(installedChunks[chunkId] !== 0) {
-/******/ 			var chunk = require("./" + ({"1":"components/blindbox-blind-button","2":"components/blindbox-blind-time-text","3":"components/blindbox-create-poster","4":"components/blindbox-title-image","5":"components/common","6":"components/common-c-vue-countdown","7":"components/common-header","8":"components/vue-create-poster-layout","9":"components/vue-create-poster-layout-canvas-poster","10":"components/vue-create-poster-layout-gradient","11":"components/vue-create-poster-layout-header","12":"components/vue-create-poster-layout-painter","13":"components/vue-create-poster-layout-qrcode","14":"components/vue-create-poster-layout-util","15":"pages/activity/blindbox/detail","16":"pages/activity/blindbox/download","17":"pages/activity/blindbox/index","18":"pages/activity/blindbox/list","19":"pages/article/detail/_id"}[chunkId]||chunkId) + ".js");
+/******/ 			var chunk = require("./" + ({"1":"components/blindbox-blind-button","2":"components/blindbox-blind-strategy","3":"components/blindbox-blind-time-text","4":"components/blindbox-create-poster","5":"components/blindbox-title-image","6":"components/common","7":"components/common-c-vue-countdown","8":"components/common-header","9":"components/vue-create-poster-layout","10":"components/vue-create-poster-layout-canvas-poster","11":"components/vue-create-poster-layout-gradient","12":"components/vue-create-poster-layout-header","13":"components/vue-create-poster-layout-painter","14":"components/vue-create-poster-layout-qrcode","15":"components/vue-create-poster-layout-util","16":"pages/activity/blindbox/detail","17":"pages/activity/blindbox/download","18":"pages/activity/blindbox/index","19":"pages/activity/blindbox/list","20":"pages/article/detail/_id"}[chunkId]||chunkId) + ".js");
 /******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				modules[moduleId] = moreModules[moduleId];
@@ -2588,7 +2588,7 @@ var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_1___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, "@font-face {\n  font-family: \"bitkeep EN\";\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n\n@font-face {\n  font-family: \"bitkeep EN BLOD\";\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n}\n\n.body {\n  font-family: PingFang SC;\n  font-style: normal;\n  font-weight: normal;\n}\n\n.font-20 {\n  font-size: 0.53rem !important;\n}\n\n.color_red {\n  color: #ff255a;\n  font-weight: 600;\n}\n\n.color_text {\n  color: #4b5373;\n}\n\n.color_theme {\n  color: #0c0998;\n}\n\n.btn:active {\n  opacity: 0.8;\n}\n\n.active:active {\n  opacity: 0.8;\n}\n\n.radial-gradient {\n  background: radial-gradient(at left top, #fffbe5 0%, #ffefea 19.79%, #ffeff7 53.47%, #ffecfd 59.9%, #ddd1ff 97.4%);\n}\n\n@keyframes heartbeat {\n  0% {\n    transform: scale(0.9, 0.9);\n    opacity: 1;\n  }\n\n  25% {\n    transform: scale(1, 1);\n    opacity: 0.9;\n  }\n\n  100% {\n    opacity: 1;\n    transform: scale(0.9, 0.9);\n  }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, "@font-face {\n  font-family: \"bitkeep EN\";\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n\n@font-face {\n  font-family: \"bitkeep EN BLOD\";\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n}\n\n.body {\n  font-family: PingFang SC;\n  font-style: normal;\n  font-weight: normal;\n}\n\n.word_keep {\n  word-break: keep-all;\n}\n\n.font-20 {\n  font-size: 0.53rem !important;\n}\n\n.color_red {\n  color: #ff255a;\n  font-weight: 600;\n}\n\n.color_text {\n  color: #4b5373;\n}\n\n.color_theme {\n  color: #0c0998;\n}\n\n.btn:active {\n  opacity: 0.8;\n}\n\n.active:active {\n  opacity: 0.8;\n}\n\n.radial-gradient {\n  background: radial-gradient(at left top, #fffbe5 0%, #ffefea 19.79%, #ffeff7 53.47%, #ffecfd 59.9%, #ddd1ff 97.4%);\n}\n\n@keyframes heartbeat {\n  0% {\n    transform: scale(0.9, 0.9);\n    opacity: 1;\n  }\n\n  25% {\n    transform: scale(1, 1);\n    opacity: 0.9;\n  }\n\n  100% {\n    opacity: 1;\n    transform: scale(0.9, 0.9);\n  }\n}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
@@ -2895,7 +2895,7 @@ module.exports = {
       "OpenTheBlindBoxText": "当足够数量的好友助力成功后，您可以点击开启盲盒",
       "shareWidthFriendsText": '您和好友瓜分盲盒内数字资产',
       "CanViewAssetsTocloudWallet": "盲盒开启后您和助力好友均可在 BitKeep 云钱包中查看获得的数字资产",
-      rules: ["每个盲盒里面有随机数量的数字资产", "分享给好友后，好友填写有效的 ETH 地址后即可成功助力", "足够数量的好友助力成功后，即可点击开启盲盒，盲盒开启后您和助力好友均可获得盲盒中的数字资产", "助力用户若无BitKeep 钱包，需下载 BitKeep 钱包并导入该 ETH 地址，方可领取盲盒奖励", "盲盒奖品发放至云钱包，若未激活云钱包，可在 BitKeep 菜单栏「云钱包」中激活，便可查看获得的数字资产"],
+      rules: ["每个盲盒里面有随机数量的数字资产", "分享给好友后，好友填写有效的 ETH 地址后即可成功助力", "足够数量的好友助力成功后，即可点击开启盲盒，盲盒开启后您和助力好友均可获得盲盒中的数字资产", "助力用户若无BitKeep 钱包，需下载 BitKeep 钱包并导入该 ETH 地址，方可领取盲盒奖励", "盲盒奖品发放至云钱包，若未激活云钱包，可在 <span class='word_keep'>BitKeep</span> 菜单栏「云钱包」中激活，便可查看获得的数字资产"],
       modal: {
         sharedHelperMeText: "助力我开启 BitKeep 数字盲盒吧",
         openSurpriseText: "开启获取惊喜数字资产",
@@ -3720,15 +3720,15 @@ function shouldScrollToTop(route) {
 
 
 
-const _65e970f7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 17).then(__webpack_require__.bind(null, 135)));
+const _65e970f7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 18).then(__webpack_require__.bind(null, 138)));
 
-const _20d08508 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail */ 15).then(__webpack_require__.bind(null, 136)));
+const _20d08508 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail */ 16).then(__webpack_require__.bind(null, 139)));
 
-const _6bb9fd1a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 16).then(__webpack_require__.bind(null, 137)));
+const _6bb9fd1a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 17).then(__webpack_require__.bind(null, 140)));
 
-const _1b2d1009 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 18).then(__webpack_require__.bind(null, 138)));
+const _1b2d1009 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 19).then(__webpack_require__.bind(null, 141)));
 
-const _74266e07 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 19).then(__webpack_require__.bind(null, 134)));
+const _74266e07 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 20).then(__webpack_require__.bind(null, 137)));
 
 const emptyFn = () => {};
 
@@ -4642,20 +4642,21 @@ function wrapFunctional(options) {
 
 
 const components = {
-  BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 1).then(__webpack_require__.bind(null, 113)).then(c => wrapFunctional(c.default || c)),
-  BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 2).then(__webpack_require__.bind(null, 82)).then(c => wrapFunctional(c.default || c)),
-  BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 3).then(__webpack_require__.bind(null, 114)).then(c => wrapFunctional(c.default || c)),
-  BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 4).then(__webpack_require__.bind(null, 112)).then(c => wrapFunctional(c.default || c)),
-  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 6).then(__webpack_require__.bind(null, 69)).then(c => wrapFunctional(c.default || c)),
-  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 7).then(__webpack_require__.bind(null, 64)).then(c => wrapFunctional(c.default || c)),
-  Common: () => __webpack_require__.e(/* import() | components/common */ 5).then(__webpack_require__.bind(null, 65)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 9).then(__webpack_require__.bind(null, 106)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 10).then(__webpack_require__.bind(null, 71)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 11).then(__webpack_require__.bind(null, 139)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 8).then(__webpack_require__.bind(null, 133)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutPainter: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-painter */ 12).then(__webpack_require__.bind(null, 84)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutQrcode: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-qrcode */ 13).then(__webpack_require__.bind(null, 70)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 14).then(__webpack_require__.bind(null, 85)).then(c => wrapFunctional(c.default || c))
+  BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 1).then(__webpack_require__.bind(null, 116)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 2).then(__webpack_require__.bind(null, 142)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 3).then(__webpack_require__.bind(null, 84)).then(c => wrapFunctional(c.default || c)),
+  BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 4).then(__webpack_require__.bind(null, 117)).then(c => wrapFunctional(c.default || c)),
+  BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 5).then(__webpack_require__.bind(null, 115)).then(c => wrapFunctional(c.default || c)),
+  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 7).then(__webpack_require__.bind(null, 69)).then(c => wrapFunctional(c.default || c)),
+  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 8).then(__webpack_require__.bind(null, 64)).then(c => wrapFunctional(c.default || c)),
+  Common: () => __webpack_require__.e(/* import() | components/common */ 6).then(__webpack_require__.bind(null, 65)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 10).then(__webpack_require__.bind(null, 108)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 11).then(__webpack_require__.bind(null, 71)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 12).then(__webpack_require__.bind(null, 143)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 9).then(__webpack_require__.bind(null, 136)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutPainter: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-painter */ 13).then(__webpack_require__.bind(null, 86)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutQrcode: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-qrcode */ 14).then(__webpack_require__.bind(null, 70)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 15).then(__webpack_require__.bind(null, 87)).then(c => wrapFunctional(c.default || c))
 };
 
 for (const name in components) {

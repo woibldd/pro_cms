@@ -452,7 +452,7 @@ export default {
             margin-top: 5px;
             font-size: 16px;
             font-weight: 500;
-            line-height: 16px;
+            // line-height: 16px;
             letter-spacing: 0px;
             color: #080d21;
           }

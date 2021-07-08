@@ -29,7 +29,7 @@
       <div class="block_detail_bg">
         <van-image width="100%" height="100%" :src="heade_image" />
       </div>
-      
+
       <BlindTimeText
         class="block_time"
         :info="info"
@@ -116,11 +116,7 @@
             :info="info"
           />
           <!-- 下载地址 -->
-          <div
-            v-if="!isBitKeep"
-            class="block_invite_down"
-          >
-          
+          <div v-if="!isBitKeep" class="block_invite_down">
             <a href="https://bitkeep.org">{{
               $t("ActivityBlindbox.ActivityBlindboxDetail.NoAddressDownload")
             }}</a>
@@ -128,8 +124,8 @@
           <!-- 邀请人地址 -->
           <div
             :class="{
-              block_invite_list:true,
-              color_text:true,
+              block_invite_list: true,
+              color_text: true,
               mt: !isBitKeep
             }"
             class=" "
@@ -151,9 +147,11 @@
         </div>
       </div>
 
-        <!-- 开启盲盒攻略 -->
+      <!-- 开启盲盒攻略 -->
       <div class="block_open_strategy">
-        <div :class="{block_open_strategy_warpper:true,[locale]:true }"></div>
+        <div
+          :class="{ block_open_strategy_warpper: true, [locale]: true }"
+        ></div>
       </div>
 
       <!-- 底部规则÷ -->
@@ -177,11 +175,15 @@
               )"
               :key="item"
             >
-               <span>{{ index + 1 }}.&nbsp;</span>
-               <span class="con">{{ item }}</span>
+              <span>{{ index + 1 }}.&nbsp;</span>
+              <span class="con" v-html="item"></span>
             </div>
           </div>
-          <div class="block_footer">{{$t("ActivityBlindbox.ActivityBlindboxDetail.FinalInterpretation")}}</div>
+          <div class="block_footer">
+            {{
+              $t("ActivityBlindbox.ActivityBlindboxDetail.FinalInterpretation")
+            }}
+          </div>
         </div>
       </div>
 
@@ -250,11 +252,15 @@ export default {
     locale() {
       return this.local.locale;
     },
-    format(){
-        return  this.locale=='zh'? "{dd}天{hh}时{mm}分{ss}秒":"{dd} D {hh} H {mm} M {ss} S"
+    format() {
+      return this.locale == "zh"
+        ? "{dd}天{hh}时{mm}分{ss}秒"
+        : "{dd} d {hh} h {mm} m {ss} s";
     },
-    heade_image(){
-      return this.info.status==2 ?  this.info.prize_image : this.info.poster_image
+    heade_image() {
+      return this.info.status == 2
+        ? this.info.prize_image
+        : this.info.poster_image;
     }
   },
   async asyncData(ctx) {},
@@ -345,7 +351,7 @@ export default {
               )
             );
             isComfirm && BitKeepInvoke.openUrl("bitkeep://cloudCreateWallet");
-            return 
+            return;
           }
           this.showLoading(this.$t("ActivityBlindbox.toast.open"));
           const openMBoxR = await USER_API.openMBox({
@@ -404,7 +410,9 @@ export default {
         }
         this.getDetails();
 
-        this.$toast.success(this.$t("ActivityBlindbox.toast.ContributeSuccess"))
+        this.$toast.success(
+          this.$t("ActivityBlindbox.toast.ContributeSuccess")
+        );
         // await new Promise((resolve) =>
         //   BitKeepInvoke.alert(
         //     this.$t("ActivityBlindbox.dialog.helperSuccess"),
@@ -450,6 +458,7 @@ export default {
   justify-content: center;
   align-items: center;
 }
+
 
 #blindbox_invite {
   font-family: PingFang SC;
@@ -499,11 +508,11 @@ export default {
     padding: 10px 20px 20px;
     .block_header {
     }
-    .rules_item{
-       display: flex;
-       .con{
-         flex: 1;
-       }
+    .rules_item {
+      display: flex;
+      .con {
+        flex: 1;
+      }
     }
   }
 }
@@ -591,8 +600,8 @@ export default {
       border-radius: 8px;
       box-sizing: border-box;
       opacity: 0.8;
-      &.mt{
-         margin-top: 10px;
+      &.mt {
+        margin-top: 10px;
       }
       .title {
         margin-bottom: 5px;
@@ -614,13 +623,12 @@ export default {
     background: url("@/assets/activity/blindbox/02@2.png") center center
       no-repeat;
     background-size: 100% 100%;
-    &.en{
-        background: url("@/assets/activity/blindbox/02@2.en.png") center center
-      no-repeat;
+    &.en {
+      background: url("@/assets/activity/blindbox/02@2.en.png") center center
+        no-repeat;
       background-size: 100% 100%;
     }
   }
-  
 
   // width: 348px;
   height: 426px;
@@ -644,8 +652,8 @@ export default {
     }
     .block_footer {
       color: #0c099899;
-      // word-wrap:break-word; 
-      word-break:  keep-all;
+      // word-wrap:break-word;
+      word-break: keep-all;
     }
   }
 }

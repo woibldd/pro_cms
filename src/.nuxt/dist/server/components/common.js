@@ -1,4 +1,4 @@
-exports.ids = [5,7];
+exports.ids = [6,8];
 exports.modules = {
 
 /***/ 60:

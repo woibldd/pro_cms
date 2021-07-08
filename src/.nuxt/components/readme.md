@@ -7,6 +7,7 @@ You can directly use them in pages and other components without the need to impo
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
 - `<BlindboxBlindButton>` | `<blindbox-blind-button>` (components/blindbox/BlindButton.vue)
+- `<BlindboxBlindStrategy>` | `<blindbox-blind-strategy>` (components/blindbox/blindStrategy.vue)
 - `<BlindboxBlindTimeText>` | `<blindbox-blind-time-text>` (components/blindbox/blindTimeText.vue)
 - `<BlindboxCreatePoster>` | `<blindbox-create-poster>` (components/blindbox/createPoster.vue)
 - `<BlindboxTitleImage>` | `<blindbox-title-image>` (components/blindbox/titleImage.vue)

@@ -1,17 +1,17 @@
 <template>
-  <div class="titleImage" v-if="type == 'helper'">
+  <div v-if="type == 'helper'" class="titleImage">
     <!-- 恭喜你成功开启盲盒 -->
     <!-- 并获取数字资产 -->
     <div v-if="status == 2 && isOwner" class="item">
       <img
         v-if="locale == 'zh'"
         class="openTextTitle_zh"
-        src="@/assets/activity/blindbox/openTextTitle@2.png"
+        src="@/assets/activity/blindbox/title/openTextTitle@2.png"
       />
       <img
         v-else
         class="openTextTitle_en"
-        src="@/assets/activity/blindbox/openTextTitle@2.en.png"
+        src="@/assets/activity/blindbox/title/openTextTitle@2.en.png"
       />
     </div>
 
@@ -21,12 +21,12 @@
       <img
         class="inviteTextTitle_zh"
         v-if="locale == 'zh'"
-        src="@/assets/activity/blindbox/inviteTextTitle@2.png"
+        src="@/assets/activity/blindbox/title/inviteTextTitle@2.png"
       />
       <img
         v-else
         class="inviteTextTitle_en"
-        src="@/assets/activity/blindbox/inviteTextTitle@2.en.png"
+        src="@/assets/activity/blindbox/title/inviteTextTitle@2.en.png"
       />
     </div>
     <!-- 助力好友开启盲盒 -->
@@ -35,12 +35,12 @@
       <img
         v-if="locale == 'zh'"
         class="helperTextTitle_zh"
-        src="@/assets/activity/blindbox/helperTextTitle@2.png"
+        src="@/assets/activity/blindbox/title/helperTextTitle@2.png"
       />
       <img
         v-else
         class="helperTextTitle_en"
-        src="@/assets/activity/blindbox/helperTextTitle@2.en.png"
+        src="@/assets/activity/blindbox/title/helperTextTitle@2.en.png"
       />
     </div>
   </div>
@@ -50,16 +50,30 @@
       <img
         v-if="locale == 'zh'"
         class="rulesTextTitle_zh"
-        src="@/assets/activity/blindbox/rulesTextTitle@2.png"
+        src="@/assets/activity/blindbox/title/rulesTextTitle@2.png"
       />
       <img
         v-else
         class="rulesTextTitle_en"
-        src="@/assets/activity/blindbox/rulesTextTitle@2.en.png"
+        src="@/assets/activity/blindbox/title/rulesTextTitle@2.en.png"
       />
     </div>
   </div>
-  <div v-else></div>
+  <div v-else-if="type == 'strategy'" class="titleImage">
+    <div class="item">
+      <img
+      
+        v-if="locale == 'zh'"
+        class="strategyTextTitle_zh"
+        src="@/assets/activity/blindbox/title/rulesTextTitle@2.png"
+      />
+      <img
+        v-else
+        class="strategyTextTitle_en"
+        src="@/assets/activity/blindbox/title/rulesTextTitle@2.en.png"
+      />
+    </div>
+  </div>
 </template>
 <script>
 export default {
@@ -94,8 +108,8 @@ export default {
   height: 48px;
 }
 .openTextTitle_en {
- width: 256px;
-height: 40px;
+  width: 256px;
+  height: 40px;
 }
 .inviteTextTitle_zh {
   width: 250px;
