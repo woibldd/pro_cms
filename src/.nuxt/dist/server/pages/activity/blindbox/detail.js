@@ -491,9 +491,13 @@ host_user_instance.interceptors.response.use(function (response) {
 }, function (error) {
   console.error("___", error); // Do omething with response error
 
+  let message = '网路开了小差';
+
+  if (false) {}
+
   return Promise.resolve({
     status: 1,
-    data: "网路开了小差"
+    data: message
   });
 });
 const USER_API = {

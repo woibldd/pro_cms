@@ -1,7 +1,8 @@
 module.exports = {
     base: {
         loading: "加载中",
-        no_more: "没有更多了"
+        no_more: "没有更多了",
+        networkErro:"网络开了小差"
     },
     "ActivityBlindbox": {
         shared:{

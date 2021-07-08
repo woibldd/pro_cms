@@ -1,7 +1,8 @@
 module.exports = {
   base: {
     loading: "Loading",
-    no_more: "No more"
+    no_more: "No more",
+    networkErro:"The Internet has gone awry"
   },
   
   "ActivityBlindbox": {

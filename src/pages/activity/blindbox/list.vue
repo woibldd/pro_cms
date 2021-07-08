@@ -94,7 +94,7 @@
                           "ActivityBlindbox.ActivityBlindboxList.ValidUntilText"
                         )
                       }}</span>
-                      {{ item.start_time | date }}
+                      {{ item.end_time | date }}
                     </div>
                   </div>
                   <!-- 按钮÷ -->

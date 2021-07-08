@@ -58,11 +58,16 @@ host_user_instance.interceptors.response.use(
   },
   function (error) {
 
+   
     console.error("___",error)
     // Do omething with response error
+    let message = '网路开了小差'
+    if(process.client && Vue.prototype.$t){
+      message = Vue.prototype.$t("base.networkErro")
+    }
     return Promise.resolve({
       status: 1,
-      data: "网路开了小差"
+      data: message
     });
   }
 );
