@@ -597,18 +597,18 @@ const log =  true ? (...arg) => {
   console.log("bit-vuex-local:", ...arg);
 } : undefined;
 const INIT_STATE = {
-  locale: "zh",
+  locale: "en",
   //  语言设置
   locales: ['zh', 'en'],
   bitkeep: {
-    language: 'zh',
+    language: 'en',
     currency: 'cny',
     os: 'android',
     package: 'com.bitkeep.wallet5',
     clientversion: '6.1.6',
     ua: 'BitKeep Android/6.1.6',
     token: '',
-    mylanguage: 'zh',
+    mylanguage: 'en',
     brand: 'Android'
   },
   userInfo: {
@@ -663,6 +663,16 @@ const actions = {
         brand: req.headers.brand
       });
       locale = req.headers.mylanguage || req.headers.language;
+
+      if (!state.locales.find(lan => lan == locale)) {
+        locale = 'en';
+      }
+    } else {
+      const acceptLanguage = req.headers['accept-language'];
+
+      if (acceptLanguage) {
+        locale = acceptLanguage.split(",")[0];
+      }
     }
 
     commit("CHANGE_LANG", locale);
@@ -681,6 +691,8 @@ const mutations = {
       state.locale = data || state.locale;
       Object(_locales__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(state.locale);
       log("切换语言", data); // langMouedles[state.locale] && Locale.use(state.locale, langMouedles[state.locale])
+    } else {
+      Object(_locales__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])("en");
     }
   },
 
@@ -4940,11 +4952,10 @@ if (false) {}
     bitkeep
   } = store.state.local;
   external_vue_default.a.prototype.$store = store;
-  app.i18n = Object(locales["a" /* default */])(locale);
-
-  if (!UA.isBitKeep && false) {
-    Object(locales["a" /* default */])(lang || navigator.language);
-  }
+  app.i18n = Object(locales["a" /* default */])(locale); //   if(!UA.isBitKeep &&  process.client ){
+  //     console.log("client", lang || navigator.language )
+  //     store.commit("CHANGE_LANG", lang || navigator.language)
+  //   }
 
   if (UA.isBitKeep && false) {
     if (sessionStorage.bitKeep) {
