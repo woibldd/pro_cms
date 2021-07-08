@@ -1,4 +1,25 @@
 {
+  "BlindboxBlindButton": {
+    "description": "Auto imported from components/blindbox/BlindButton.vue"
+  },
+  "BlindboxBlindTimeText": {
+    "description": "Auto imported from components/blindbox/blindTimeText.vue"
+  },
+  "BlindboxCreatePoster": {
+    "description": "Auto imported from components/blindbox/createPoster.vue"
+  },
+  "BlindboxTitleImage": {
+    "description": "Auto imported from components/blindbox/titleImage.vue"
+  },
+  "CommonCVueCountdown": {
+    "description": "Auto imported from components/common/c-vue-countdown.vue"
+  },
+  "CommonHeader": {
+    "description": "Auto imported from components/common/header.vue"
+  },
+  "Common": {
+    "description": "Auto imported from components/common/index.js"
+  },
   "VueCreatePosterLayoutCanvasPoster": {
     "description": "Auto imported from components/vue-create-poster/layout/canvas-poster.vue"
   },
@@ -19,26 +40,5 @@
   },
   "VueCreatePosterLayoutUtil": {
     "description": "Auto imported from components/vue-create-poster/layout/util.js"
-  },
-  "CommonCVueCountdown": {
-    "description": "Auto imported from components/common/c-vue-countdown.vue"
-  },
-  "CommonHeader": {
-    "description": "Auto imported from components/common/header.vue"
-  },
-  "Common": {
-    "description": "Auto imported from components/common/index.js"
-  },
-  "BlindboxBlindButton": {
-    "description": "Auto imported from components/blindbox/BlindButton.vue"
-  },
-  "BlindboxBlindTimeText": {
-    "description": "Auto imported from components/blindbox/blindTimeText.vue"
-  },
-  "BlindboxCreatePoster": {
-    "description": "Auto imported from components/blindbox/createPoster.vue"
-  },
-  "BlindboxTitleImage": {
-    "description": "Auto imported from components/blindbox/titleImage.vue"
   }
 }
