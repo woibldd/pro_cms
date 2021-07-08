@@ -96,11 +96,11 @@ module.exports = {
       "CanViewAssetsTocloudWallet": "盲盒开启后您和助力好友均可在 BitKeep 云钱包中查看获得的数字资产",
 
       rules: [
-        "There are unequal amounts of digital assets in each blind box",
-        "Only by downloading the BitKeep wallet and importing the wallet with the ETH address can you successfully receive and open the blind box",
-        "After sharing with a friend, the friend can successfully assist after filling in a valid ETH address",
-        "After a sufficient number of friends help successfully, you can click to open the blind box",
-        "Help friends to download the Bitkeep wallet to obtain the digital assets in the blind box"
+        "Each blind box has random number of digital assets",
+        "Friends fill in a valid ETH address to help",
+        "Blind box will open when invitations reaching certain amount, you and your friends can get the rewards",
+        "Invitee should download BitKeep, import the previous ETH address to get rewards",
+        "Rewards will be sent to your BitKeep cloud wallet, activate it to claim"
       ],
 
       modal: {

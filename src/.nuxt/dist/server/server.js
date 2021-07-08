@@ -2773,7 +2773,7 @@ module.exports = {
       "OpenTheBlindBoxText": "当足够数量的好友助力成功后，您可以点击开启盲盒",
       "shareWidthFriendsText": '您和好友瓜分盲盒内数字资产',
       "CanViewAssetsTocloudWallet": "盲盒开启后您和助力好友均可在 BitKeep 云钱包中查看获得的数字资产",
-      rules: ["There are unequal amounts of digital assets in each blind box", "Only by downloading the BitKeep wallet and importing the wallet with the ETH address can you successfully receive and open the blind box", "After sharing with a friend, the friend can successfully assist after filling in a valid ETH address", "After a sufficient number of friends help successfully, you can click to open the blind box", "Help friends to download the Bitkeep wallet to obtain the digital assets in the blind box"],
+      rules: ["Each blind box has random number of digital assets", "Friends fill in a valid ETH address to help", "Blind box will open when invitations reaching certain amount, you and your friends can get the rewards", "Invitee should download BitKeep, import the previous ETH address to get rewards", "Rewards will be sent to your BitKeep cloud wallet, activate it to claim"],
       modal: {
         sharedHelperMeText: "助力我开启 BitKeep 数字盲盒吧",
         openSurpriseText: "开启获取惊喜数字资产",
@@ -2895,7 +2895,7 @@ module.exports = {
       "OpenTheBlindBoxText": "当足够数量的好友助力成功后，您可以点击开启盲盒",
       "shareWidthFriendsText": '您和好友瓜分盲盒内数字资产',
       "CanViewAssetsTocloudWallet": "盲盒开启后您和助力好友均可在 BitKeep 云钱包中查看获得的数字资产",
-      rules: ["每个盲盒里面有不等量的数字资产", "只有下载 BitKeep 钱包并导入该 ETH 地址的钱包才能成功领取和开启盲盒", "分享给好友后，好友填写有效的 ETH 地址后即可成功助力", "足够数量的好友助力成功后，即可点击开启盲盒", "助力好友下载 Bitkeep 钱包后也可获取该盲盒内的数字资产"],
+      rules: ["每个盲盒里面有随机数量的数字资产", "分享给好友后，好友填写有效的 ETH 地址后即可成功助力", "足够数量的好友助力成功后，即可点击开启盲盒，盲盒开启后您和助力好友均可获得盲盒中的数字资产", "助力用户若无BitKeep 钱包，需下载 BitKeep 钱包并导入该 ETH 地址，方可领取盲盒奖励", "盲盒奖品发放至云钱包，若未激活云钱包，可在 BitKeep 菜单栏「云钱包」中激活，便可查看获得的数字资产"],
       modal: {
         sharedHelperMeText: "助力我开启 BitKeep 数字盲盒吧",
         openSurpriseText: "开启获取惊喜数字资产",
@@ -4642,13 +4642,13 @@ function wrapFunctional(options) {
 
 
 const components = {
+  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 6).then(__webpack_require__.bind(null, 69)).then(c => wrapFunctional(c.default || c)),
+  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 7).then(__webpack_require__.bind(null, 64)).then(c => wrapFunctional(c.default || c)),
+  Common: () => __webpack_require__.e(/* import() | components/common */ 5).then(__webpack_require__.bind(null, 65)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 1).then(__webpack_require__.bind(null, 113)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 2).then(__webpack_require__.bind(null, 82)).then(c => wrapFunctional(c.default || c)),
   BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 3).then(__webpack_require__.bind(null, 114)).then(c => wrapFunctional(c.default || c)),
   BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 4).then(__webpack_require__.bind(null, 112)).then(c => wrapFunctional(c.default || c)),
-  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 6).then(__webpack_require__.bind(null, 69)).then(c => wrapFunctional(c.default || c)),
-  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 7).then(__webpack_require__.bind(null, 64)).then(c => wrapFunctional(c.default || c)),
-  Common: () => __webpack_require__.e(/* import() | components/common */ 5).then(__webpack_require__.bind(null, 65)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 9).then(__webpack_require__.bind(null, 106)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 10).then(__webpack_require__.bind(null, 71)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 11).then(__webpack_require__.bind(null, 139)).then(c => wrapFunctional(c.default || c)),
