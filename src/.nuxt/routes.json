@@ -33,5 +33,12 @@
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/article/detail/_id.vue",
     "chunkName": "pages/article/detail/_id",
     "_name": "_74266e07"
+  },
+  {
+    "name": "id",
+    "path": "/:id?",
+    "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/_id.vue",
+    "chunkName": "pages/_id",
+    "_name": "_275a9b50"
   }
 ]

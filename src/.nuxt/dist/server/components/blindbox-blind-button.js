@@ -1,7 +1,7 @@
 exports.ids = [1];
 exports.modules = {
 
-/***/ 116:
+/***/ 118:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -78,7 +78,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./components/blindbox/BlindButton.vue?vue&type=script&lang=js&
  /* harmony default export */ var blindbox_BlindButtonvue_type_script_lang_js_ = (BlindButtonvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(4);
+var componentNormalizer = __webpack_require__(3);
 
 // CONCATENATED MODULE: ./components/blindbox/BlindButton.vue
 

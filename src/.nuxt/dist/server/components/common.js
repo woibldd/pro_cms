@@ -105,7 +105,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./components/common/header.vue?vue&type=script&lang=js&
  /* harmony default export */ var common_headervue_type_script_lang_js_ = (headervue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(4);
+var componentNormalizer = __webpack_require__(3);
 
 // CONCATENATED MODULE: ./components/common/header.vue
 

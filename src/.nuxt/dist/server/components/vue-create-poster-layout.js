@@ -1,7 +1,7 @@
 exports.ids = [9,10,11,13,14,15];
 exports.modules = {
 
-/***/ 106:
+/***/ 107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13,7 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 107:
+/***/ 108:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -27,7 +27,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 108:
+/***/ 109:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -282,7 +282,7 @@ function setStringPrototype(scale) {
 // CONCATENATED MODULE: ./components/vue-create-poster/layout/canvas-poster.vue?vue&type=script&lang=js&
  /* harmony default export */ var layout_canvas_postervue_type_script_lang_js_ = (canvas_postervue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(4);
+var componentNormalizer = __webpack_require__(3);
 
 // CONCATENATED MODULE: ./components/vue-create-poster/layout/canvas-poster.vue
 var render, staticRenderFns
@@ -290,7 +290,7 @@ var render, staticRenderFns
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(106)
+  var style0 = __webpack_require__(107)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -312,13 +312,13 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 136:
+/***/ 140:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "install", function() { return install; });
-/* harmony import */ var _canvas_poster__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(108);
+/* harmony import */ var _canvas_poster__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(109);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VueCanvasPoster", function() { return _canvas_poster__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
@@ -1167,7 +1167,7 @@ function linearEffect(width, height, bg, ctx) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(107);
+var content = __webpack_require__(108);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;

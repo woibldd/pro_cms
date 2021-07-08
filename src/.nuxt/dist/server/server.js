@@ -43,7 +43,7 @@ module.exports =
 /******/
 /******/ 		// "0" is the signal for "already loaded"
 /******/ 		if(installedChunks[chunkId] !== 0) {
-/******/ 			var chunk = require("./" + ({"1":"components/blindbox-blind-button","2":"components/blindbox-blind-strategy","3":"components/blindbox-blind-time-text","4":"components/blindbox-create-poster","5":"components/blindbox-title-image","6":"components/common","7":"components/common-c-vue-countdown","8":"components/common-header","9":"components/vue-create-poster-layout","10":"components/vue-create-poster-layout-canvas-poster","11":"components/vue-create-poster-layout-gradient","12":"components/vue-create-poster-layout-header","13":"components/vue-create-poster-layout-painter","14":"components/vue-create-poster-layout-qrcode","15":"components/vue-create-poster-layout-util","16":"pages/activity/blindbox/detail","17":"pages/activity/blindbox/download","18":"pages/activity/blindbox/index","19":"pages/activity/blindbox/list","20":"pages/article/detail/_id"}[chunkId]||chunkId) + ".js");
+/******/ 			var chunk = require("./" + ({"1":"components/blindbox-blind-button","2":"components/blindbox-blind-strategy","3":"components/blindbox-blind-time-text","4":"components/blindbox-create-poster","5":"components/blindbox-title-image","6":"components/common","7":"components/common-c-vue-countdown","8":"components/common-header","9":"components/vue-create-poster-layout","10":"components/vue-create-poster-layout-canvas-poster","11":"components/vue-create-poster-layout-gradient","12":"components/vue-create-poster-layout-header","13":"components/vue-create-poster-layout-painter","14":"components/vue-create-poster-layout-qrcode","15":"components/vue-create-poster-layout-util","16":"pages/_id","17":"pages/activity/blindbox/detail","18":"pages/activity/blindbox/download","19":"pages/activity/blindbox/index","20":"pages/activity/blindbox/list","21":"pages/article/detail/_id"}[chunkId]||chunkId) + ".js");
 /******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				modules[moduleId] = moreModules[moduleId];
@@ -138,12 +138,6 @@ module.exports = require("ufo");
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports) {
-
-module.exports = require("debug");
-
-/***/ }),
-/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -249,10 +243,16 @@ function normalizeComponent (
 
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports) {
 
 module.exports = require("vuex");
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+module.exports = require("debug");
 
 /***/ }),
 /* 6 */
@@ -586,14 +586,16 @@ module.exports = require("vue-no-ssr");
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _tools_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(16);
 /* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
 
 
 
-const log =  false ? undefined : Object(debug__WEBPACK_IMPORTED_MODULE_0__["debug"])('bit-vuex-local');
+const log =  true ? (...arg) => {
+  console.log("bit-vuex-local:", ...arg);
+} : undefined;
 const INIT_STATE = {
   locale: "zh",
   //  语言设置
@@ -2455,7 +2457,7 @@ function provideFunctionalComponents(component, components) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_0__);
 
 const log = Object(debug__WEBPACK_IMPORTED_MODULE_0__["debug"])('bit-middleware');
@@ -3134,7 +3136,7 @@ async function setContext(app, context) {
       error: context.error,
       base: app.router.options.base,
       env: {
-        "BUILD_ENV": "dev",
+        "BUILD_ENV": "pro",
         "HOST_API": "http://dev.bitkeep.top:8880",
         "NODE_ENV": "production",
         "DEBUG": "bit*"
@@ -3624,7 +3626,7 @@ async function serverPrefetch() {
 
 });
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(5);
+var external_vuex_ = __webpack_require__(4);
 var external_vuex_default = /*#__PURE__*/__webpack_require__.n(external_vuex_);
 
 // EXTERNAL MODULE: external "vue-meta"
@@ -3720,15 +3722,17 @@ function shouldScrollToTop(route) {
 
 
 
-const _65e970f7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 18).then(__webpack_require__.bind(null, 138)));
+const _65e970f7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 19).then(__webpack_require__.bind(null, 141)));
 
-const _20d08508 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail */ 16).then(__webpack_require__.bind(null, 139)));
+const _20d08508 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail */ 17).then(__webpack_require__.bind(null, 142)));
 
-const _6bb9fd1a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 17).then(__webpack_require__.bind(null, 140)));
+const _6bb9fd1a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 18).then(__webpack_require__.bind(null, 143)));
 
-const _1b2d1009 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 19).then(__webpack_require__.bind(null, 141)));
+const _1b2d1009 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 20).then(__webpack_require__.bind(null, 144)));
 
-const _74266e07 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 20).then(__webpack_require__.bind(null, 137)));
+const _74266e07 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 21).then(__webpack_require__.bind(null, 145)));
+
+const _275a9b50 = () => interopDefault(__webpack_require__.e(/* import() | pages/_id */ 16).then(__webpack_require__.bind(null, 146)));
 
 const emptyFn = () => {};
 
@@ -3759,6 +3763,10 @@ const routerOptions = {
     path: "/article/detail/:id?",
     component: _74266e07,
     name: "article-detail-id"
+  }, {
+    path: "/:id?",
+    component: _275a9b50,
+    name: "id"
   }],
   fallback: false
 };
@@ -3933,7 +3941,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./.nuxt/components/nuxt-error.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_nuxt_errorvue_type_script_lang_js_ = (nuxt_errorvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(4);
+var componentNormalizer = __webpack_require__(3);
 
 // CONCATENATED MODULE: ./.nuxt/components/nuxt-error.vue
 
@@ -4642,18 +4650,18 @@ function wrapFunctional(options) {
 
 
 const components = {
-  BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 1).then(__webpack_require__.bind(null, 116)).then(c => wrapFunctional(c.default || c)),
-  BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 2).then(__webpack_require__.bind(null, 142)).then(c => wrapFunctional(c.default || c)),
-  BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 3).then(__webpack_require__.bind(null, 84)).then(c => wrapFunctional(c.default || c)),
-  BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 4).then(__webpack_require__.bind(null, 117)).then(c => wrapFunctional(c.default || c)),
-  BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 5).then(__webpack_require__.bind(null, 115)).then(c => wrapFunctional(c.default || c)),
   CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 7).then(__webpack_require__.bind(null, 69)).then(c => wrapFunctional(c.default || c)),
   CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 8).then(__webpack_require__.bind(null, 64)).then(c => wrapFunctional(c.default || c)),
   Common: () => __webpack_require__.e(/* import() | components/common */ 6).then(__webpack_require__.bind(null, 65)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 10).then(__webpack_require__.bind(null, 108)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 1).then(__webpack_require__.bind(null, 118)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 2).then(__webpack_require__.bind(null, 147)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 3).then(__webpack_require__.bind(null, 84)).then(c => wrapFunctional(c.default || c)),
+  BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 4).then(__webpack_require__.bind(null, 119)).then(c => wrapFunctional(c.default || c)),
+  BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 5).then(__webpack_require__.bind(null, 117)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 10).then(__webpack_require__.bind(null, 109)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 11).then(__webpack_require__.bind(null, 71)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 12).then(__webpack_require__.bind(null, 143)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 9).then(__webpack_require__.bind(null, 136)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 12).then(__webpack_require__.bind(null, 148)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 9).then(__webpack_require__.bind(null, 140)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutPainter: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-painter */ 13).then(__webpack_require__.bind(null, 86)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutQrcode: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-qrcode */ 14).then(__webpack_require__.bind(null, 70)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 15).then(__webpack_require__.bind(null, 87)).then(c => wrapFunctional(c.default || c))
@@ -4875,7 +4883,7 @@ const setupProgress = axios => {
 var _nuxt_empty = __webpack_require__(11);
 
 // EXTERNAL MODULE: external "debug"
-var external_debug_ = __webpack_require__(3);
+var external_debug_ = __webpack_require__(5);
 
 // EXTERNAL MODULE: ./locales/index.js + 1 modules
 var locales = __webpack_require__(7);
@@ -4888,7 +4896,9 @@ var external_vant_ = __webpack_require__(1);
  // import VueCanvasPoster from 'vue-canvas-poster'
 
 
-const log =  false ? undefined : Object(external_debug_["debug"])('bit:init'); // import VueAwesomeSwiper from 'vue-awesome-swiper'
+const log =  true ? (...arg) => {
+  console.log("bit:init", ...arg);
+} : undefined; // import VueAwesomeSwiper from 'vue-awesome-swiper'
 // Vue.use(VueAwesomeSwiper)
 
 
@@ -4948,8 +4958,12 @@ if (false) {}
 });
 // CONCATENATED MODULE: ./plugins/axios.js
 
-const requestlog =  false ? undefined : Object(external_debug_["debug"])('bit-article-request');
-const responselog =  false ? undefined : Object(external_debug_["debug"])('bit-article-response');
+const requestlog =  true ? (...arg) => {
+  console.log("bit-article-request", ...arg);
+} : undefined;
+const responselog =  true ? (...arg) => {
+  console.log("bit-article-response", ...arg);
+} : undefined;
 /* harmony default export */ var plugins_axios = (function ({
   $axios,
   store,
@@ -5091,11 +5105,7 @@ async function createApp(ssrContext, config = {}) {
         "type": "image\u002Fx-icon",
         "href": "\u002Ffavicon.ico"
       }],
-      "script": [{
-        "src": "https:\u002F\u002Fcdn.bootcdn.net\u002Fajax\u002Flibs\u002FvConsole\u002F3.8.1\u002Fvconsole.min.js",
-        "type": "text\u002Fjavascript",
-        "charset": "utf-8"
-      }],
+      "script": [],
       "style": []
     },
     store,

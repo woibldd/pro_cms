@@ -9,6 +9,7 @@ const _20d08508 = () => interopDefault(import('../pages/activity/blindbox/detail
 const _6bb9fd1a = () => interopDefault(import('../pages/activity/blindbox/download.vue' /* webpackChunkName: "pages/activity/blindbox/download" */))
 const _1b2d1009 = () => interopDefault(import('../pages/activity/blindbox/list.vue' /* webpackChunkName: "pages/activity/blindbox/list" */))
 const _74266e07 = () => interopDefault(import('../pages/article/detail/_id.vue' /* webpackChunkName: "pages/article/detail/_id" */))
+const _275a9b50 = () => interopDefault(import('../pages/_id.vue' /* webpackChunkName: "pages/_id" */))
 
 const emptyFn = () => {}
 
@@ -41,6 +42,10 @@ export const routerOptions = {
     path: "/article/detail/:id?",
     component: _74266e07,
     name: "article-detail-id"
+  }, {
+    path: "/:id?",
+    component: _275a9b50,
+    name: "id"
   }],
 
   fallback: false

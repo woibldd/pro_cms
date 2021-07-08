@@ -18,7 +18,7 @@
       <span class="close" name="close" @click="showModal = false" />
       <div class="poster_wrapper" v-show="!poster.url" id="poster" ref="poster">
         <!-- <img class="poster_bg"  :src="info.invite_image1" alt="" /> -->
-        <img class="poster_bg" :src="proxy_img" alt="" @load="createPoster" />
+        <img  class="poster_bg" :src="proxy_img" alt="" @load="createPoster" />
         <!-- <van-image  class="poster_bg" width="100%" height="100%" @load="createPoster" :src="proxy_img" /> -->
         <div class="commany_title">
           <img
@@ -41,7 +41,7 @@
         </div>
         <img class="poster_qrcode" :src="qrcodeUrl" />
       </div>
-      <div class="postershow" v-show="poster.url">
+      <div class="postershow" v-if="poster.url">
         <img :src="poster.url" />
       </div>
       <div class="footer">
