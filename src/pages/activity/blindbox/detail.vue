@@ -178,7 +178,7 @@
               :key="item"
             >
                <span>{{ index + 1 }}.&nbsp;</span>
-               <span>{{ item }}</span>
+               <span class="con">{{ item }}</span>
             </div>
           </div>
           <div class="block_footer">{{$t("ActivityBlindbox.ActivityBlindboxDetail.FinalInterpretation")}}</div>
@@ -501,6 +501,9 @@ export default {
     }
     .rules_item{
        display: flex;
+       .con{
+         flex: 1;
+       }
     }
   }
 }
