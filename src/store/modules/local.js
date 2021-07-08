@@ -68,7 +68,10 @@ const actions = {
         mylanguage: req.headers.mylanguage,
         brand: req.headers.brand,
       });
-      locale = req.headers.mylanguage || req.headers.language
+      locale = req.headers.mylanguage || req.headers.language 
+      if(!state.locales.find(locale)){
+        locale = 'en'
+      }
     }
 
 
