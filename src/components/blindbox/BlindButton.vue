@@ -25,7 +25,7 @@
     </div>
 
     <div v-if="info.status == 2 && info.is_owner == 0">
-      <div class="invite_button heart" @click="handerBotton(2)">
+      <div class="invite_button" @click="handerBotton(2)">
         {{ $t("ActivityBlindbox.button.SuccessView") }}
       </div>
       <!-- 助力已完成，立即查看盲盒 -->
