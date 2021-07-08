@@ -59,7 +59,12 @@
                     />
                   </div>
                   <div class="list_item_cont">
-                    <div class="title color_blod van-ellipsis">
+                    <div :class="{
+                      title:true,
+                      color_blod:true,
+                      'van-ellipsis':true,
+                      [locale]: true
+                    }">
                       {{ item.title }}
                     </div>
                     <div class="content">
@@ -452,9 +457,12 @@ export default {
             margin-top: 5px;
             font-size: 16px;
             font-weight: 500;
-            // line-height: 16px;
+            line-height: 18px;
             letter-spacing: 0px;
             color: #080d21;
+            &.en{
+               line-height: 18px;
+            }
           }
           .content {
             margin: 5px 0px;
