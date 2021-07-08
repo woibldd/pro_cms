@@ -8,17 +8,17 @@ const log = process.env.BUILD_ENV == 'pro' ? (...arg) => {
   console.log("bit-vuex-local:", ...arg)
 } : debug('bit-vuex-local')
 const INIT_STATE = {
-  locale: "zh", //  语言设置
+  locale: "en", //  语言设置
   locales: ['zh','en'],
   bitkeep: {
-    language: 'zh',
+    language: 'en',
     currency: 'cny',
     os: 'android',
     package: 'com.bitkeep.wallet5',
     clientversion: '6.1.6',
     ua: 'BitKeep Android/6.1.6',
     token: '',
-    mylanguage: 'zh',
+    mylanguage: 'en',
     brand: 'Android',
   },
   userInfo: {
@@ -49,6 +49,7 @@ const actions = {
   async nuxtServerInit({ commit, state }, ctx) {
     const { params,
       query, req } = ctx
+    
     let locale =  query.lang || params.lang || state.locale
 
     //UA
@@ -69,8 +70,13 @@ const actions = {
         brand: req.headers.brand,
       });
       locale = req.headers.mylanguage || req.headers.language 
-      if(!state.locales.find(locale)){
+      if(!state.locales.find(lan=>lan==locale)){
         locale = 'en'
+      }
+    }else{
+      const acceptLanguage = req.headers['accept-language']
+      if(acceptLanguage){
+        locale = acceptLanguage.split(",")[0]
       }
     }
 
@@ -95,6 +101,8 @@ const mutations = {
       changeHelper(state.locale)
       log("切换语言",data)
       // langMouedles[state.locale] && Locale.use(state.locale, langMouedles[state.locale])
+    }else{
+      changeHelper("en")
     }
   },
   "SET_BIT_KEEP"(state, data) {
