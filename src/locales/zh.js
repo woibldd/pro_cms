@@ -63,7 +63,7 @@ module.exports = {
 
         },
         ActivityBlindboxDetail: {
-            "blindBoxNumText": "距离开启盲盒仅差 <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> 人助力",
+            "blindBoxNumText": "距离开启盲盒仅差 <span class='color_red font-20'>{surplus}</span>/<span class='color_blod'>{invite}</span> 人助力",
             "inputAddressPlaceholader": "点即此处输入 ETH 地址即可助力",
             "NoAddressDownload": "没有地址？点击下载 BitKeep 创建地址",
             "HelpSuccessETH": "助力成功 ETH 地址",

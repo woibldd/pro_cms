@@ -171,12 +171,14 @@
           </div>
           <div class="block_body color_theme">
             <div
+              class="rules_item"
               v-for="(item, index) in $t(
                 'ActivityBlindbox.ActivityBlindboxDetail.rules'
               )"
               :key="item"
             >
-              {{ index + 1 }}. {{ item }}
+               <span>{{ index + 1 }}.&nbsp;</span>
+               <span>{{ item }}</span>
             </div>
           </div>
           <div class="block_footer">{{$t("ActivityBlindbox.ActivityBlindboxDetail.FinalInterpretation")}}</div>
@@ -249,7 +251,7 @@ export default {
       return this.local.locale;
     },
     format(){
-        return  this.locale=='zh'? "{dd}天{hh}小时{mm}分钟{ss}秒":"{dd} D {hh} H {mm} M {ss} S"
+        return  this.locale=='zh'? "{dd}天{hh}时{mm}分{ss}秒":"{dd} D {hh} H {mm} M {ss} S"
     },
     heade_image(){
       return this.info.status==2 ?  this.info.prize_image : this.info.poster_image
@@ -497,6 +499,9 @@ export default {
     padding: 10px 20px 20px;
     .block_header {
     }
+    .rules_item{
+       display: flex;
+    }
   }
 }
 .block_invite {
@@ -509,7 +514,7 @@ export default {
       // white-space: nowrap;
       margin: 15px 0;
       .color_red {
-        font-size: 16px;
+        font-size: 20px;
       }
     }
     .block_invite_progress {
@@ -635,7 +640,7 @@ export default {
       }
     }
     .block_footer {
-      color: #999;
+      color: #0c099899
     }
   }
 }

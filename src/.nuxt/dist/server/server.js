@@ -246,13 +246,13 @@ function normalizeComponent (
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("debug");
+module.exports = require("vuex");
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = require("vuex");
+module.exports = require("debug");
 
 /***/ }),
 /* 6 */
@@ -586,14 +586,16 @@ module.exports = require("vue-no-ssr");
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _tools_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(16);
 /* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
 
-const log = Object(debug__WEBPACK_IMPORTED_MODULE_0__["debug"])('bit-vuex-local');
 
 
+const log =  true ? (...arg) => {
+  console.log("bit-vuex-local:", ...arg);
+} : undefined;
 const INIT_STATE = {
   locale: "zh",
   //  语言设置
@@ -2455,7 +2457,7 @@ function provideFunctionalComponents(component, components) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_0__);
 
 const log = Object(debug__WEBPACK_IMPORTED_MODULE_0__["debug"])('bit-middleware');
@@ -2588,7 +2590,7 @@ var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_1___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, "@font-face {\n  font-family: \"bitkeep EN\";\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n\n@font-face {\n  font-family: \"bitkeep EN BLOD\";\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n}\n\n.body {\n  font-family: PingFang SC;\n  font-style: normal;\n  font-weight: normal;\n}\n\n.color_red {\n  color: #ff255a;\n  font-weight: 600;\n}\n\n.color_text {\n  color: #4b5373;\n}\n\n.color_theme {\n  color: #0c0998;\n}\n\n.btn:active {\n  opacity: 0.8;\n}\n\n.active:active {\n  opacity: 0.8;\n}\n\n.radial-gradient {\n  background: radial-gradient(at left top, #fffbe5 0%, #ffefea 19.79%, #ffeff7 53.47%, #ffecfd 59.9%, #ddd1ff 97.4%);\n}\n\n@keyframes heartbeat {\n  0% {\n    transform: scale(0.9, 0.9);\n    opacity: 1;\n  }\n\n  25% {\n    transform: scale(1, 1);\n    opacity: 0.9;\n  }\n\n  100% {\n    opacity: 1;\n    transform: scale(0.9, 0.9);\n  }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, "@font-face {\n  font-family: \"bitkeep EN\";\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n}\n\n@font-face {\n  font-family: \"bitkeep EN BLOD\";\n  src: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\n}\n\n.body {\n  font-family: PingFang SC;\n  font-style: normal;\n  font-weight: normal;\n}\n\n.font-20 {\n  font-size: 0.53rem !important;\n}\n\n.color_red {\n  color: #ff255a;\n  font-weight: 600;\n}\n\n.color_text {\n  color: #4b5373;\n}\n\n.color_theme {\n  color: #0c0998;\n}\n\n.btn:active {\n  opacity: 0.8;\n}\n\n.active:active {\n  opacity: 0.8;\n}\n\n.radial-gradient {\n  background: radial-gradient(at left top, #fffbe5 0%, #ffefea 19.79%, #ffeff7 53.47%, #ffecfd 59.9%, #ddd1ff 97.4%);\n}\n\n@keyframes heartbeat {\n  0% {\n    transform: scale(0.9, 0.9);\n    opacity: 1;\n  }\n\n  25% {\n    transform: scale(1, 1);\n    opacity: 0.9;\n  }\n\n  100% {\n    opacity: 1;\n    transform: scale(0.9, 0.9);\n  }\n}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
@@ -2746,7 +2748,7 @@ module.exports = {
       willOpened: "To be opened"
     },
     ActivityBlindboxDetail: {
-      "blindBoxNumText": "The box is still short of <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> people,you will get  digital assets",
+      "blindBoxNumText": "The box is still short of <span class='color_red font-20'>{surplus}</span>/<span class='color_blod'>{invite}</span> people,you will get  digital assets",
       "inputAddressPlaceholader": "Click here to input eth address",
       "NoAddressDownload": "No address? Click download bitkeep to create an address",
       "HelpSuccessETH": "Help success eth address",
@@ -2867,7 +2869,7 @@ module.exports = {
       willOpened: "待开启"
     },
     ActivityBlindboxDetail: {
-      "blindBoxNumText": "距离开启盲盒仅差 <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> 人助力",
+      "blindBoxNumText": "距离开启盲盒仅差 <span class='color_red font-20'>{surplus}</span>/<span class='color_blod'>{invite}</span> 人助力",
       "inputAddressPlaceholader": "点即此处输入 ETH 地址即可助力",
       "NoAddressDownload": "没有地址？点击下载 BitKeep 创建地址",
       "HelpSuccessETH": "助力成功 ETH 地址",
@@ -3622,7 +3624,7 @@ async function serverPrefetch() {
 
 });
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(5);
+var external_vuex_ = __webpack_require__(4);
 var external_vuex_default = /*#__PURE__*/__webpack_require__.n(external_vuex_);
 
 // EXTERNAL MODULE: external "vue-meta"
@@ -3642,13 +3644,74 @@ var external_vue_router_ = __webpack_require__(14);
 var external_vue_router_default = /*#__PURE__*/__webpack_require__.n(external_vue_router_);
 
 // CONCATENATED MODULE: ./.nuxt/router.scrollBehavior.js
+
+
+if (false) {}
+
+function shouldScrollToTop(route) {
+  const Pages = getMatchedComponents(route);
+
+  if (Pages.length === 1) {
+    const {
+      options = {}
+    } = Pages[0];
+    return options.scrollToTop !== false;
+  }
+
+  return Pages.some(({
+    options
+  }) => options && options.scrollToTop);
+}
+
 /* harmony default export */ var router_scrollBehavior = (function (to, from, savedPosition) {
-  console.log({
-    to,
-    from,
-    savedPosition
+  // If the returned position is falsy or an empty object, will retain current scroll position
+  let position = false;
+  const isRouteChanged = to !== from; // savedPosition is only available for popstate navigations (back button)
+
+  if (savedPosition) {
+    position = savedPosition;
+  } else if (isRouteChanged && shouldScrollToTop(to)) {
+    position = {
+      x: 0,
+      y: 0
+    };
+  }
+
+  const nuxt = window.$nuxt;
+
+  if ( // Initial load (vuejs/vue-router#3199)
+  !isRouteChanged || // Route hash changes
+  to.path === from.path && to.hash !== from.hash) {
+    nuxt.$nextTick(() => nuxt.$emit('triggerScroll'));
+  }
+
+  return new Promise(resolve => {
+    // wait for the out transition to complete (if necessary)
+    nuxt.$once('triggerScroll', () => {
+      // coords will be used if no selector is provided,
+      // or if the selector didn't match any element.
+      if (to.hash) {
+        let hash = to.hash; // CSS.escape() is not supported with IE and Edge.
+
+        if (typeof window.CSS !== 'undefined' && typeof window.CSS.escape !== 'undefined') {
+          hash = '#' + window.CSS.escape(hash.substr(1));
+        }
+
+        try {
+          if (document.querySelector(hash)) {
+            // scroll to anchor by returning the selector
+            position = {
+              selector: hash
+            };
+          }
+        } catch (e) {
+          console.warn('Failed to save scroll position. Please add CSS.escape() polyfill (https://github.com/mathiasbynens/CSS.escape).');
+        }
+      }
+
+      resolve(position);
+    });
   });
-  return savedPosition;
 });
 // CONCATENATED MODULE: ./.nuxt/router.js
 
@@ -4811,7 +4874,7 @@ const setupProgress = axios => {
 var _nuxt_empty = __webpack_require__(11);
 
 // EXTERNAL MODULE: external "debug"
-var external_debug_ = __webpack_require__(4);
+var external_debug_ = __webpack_require__(5);
 
 // EXTERNAL MODULE: ./locales/index.js + 1 modules
 var locales = __webpack_require__(7);
@@ -4824,7 +4887,9 @@ var external_vant_ = __webpack_require__(1);
  // import VueCanvasPoster from 'vue-canvas-poster'
 
 
-const log = Object(external_debug_["debug"])("bit:init"); // import VueAwesomeSwiper from 'vue-awesome-swiper'
+const log =  true ? (...arg) => {
+  console.log("bit:init", ...arg);
+} : undefined; // import VueAwesomeSwiper from 'vue-awesome-swiper'
 // Vue.use(VueAwesomeSwiper)
 
 
@@ -4883,34 +4948,36 @@ if (false) {}
   log("init: success");
 });
 // CONCATENATED MODULE: ./plugins/axios.js
-let count = 0;
+
+const requestlog =  true ? (...arg) => {
+  console.log("bit-article-request", ...arg);
+} : undefined;
+const responselog =  true ? (...arg) => {
+  console.log("bit-article-response", ...arg);
+} : undefined;
 /* harmony default export */ var plugins_axios = (function ({
   $axios,
   store,
   redirect
-}) {// $axios.onError 是一个 nuxt 提供的辅助拦截器函数
+}) {
+  // $axios.onError 是一个 nuxt 提供的辅助拦截器函数
   // 里面可以拦截到错误
-  //   $axios.interceptors.request.use(
-  //     config => {
-  //         count++
-  //         console.log("interceptors:server",count)
-  //       return config
-  //     },
-  //     error => {
-  //       // do something with request error
-  //       return Promise.reject(error)
-  //     }
-  //   )
-  //   // response interceptor
-  //   $axios.interceptors.response.use(
-  //     response => {
-  //     console.log("interceptors:serve:response",count)
-  //       return response
-  //     },
-  //     error => {
-  //       return Promise.resolve({status:1,data:error})
-  //     }
-  //   )
+  $axios.interceptors.request.use(config => {
+    requestlog(config.url, config.params || '', config.data || '');
+    return config;
+  }, error => {
+    return Promise.reject(error);
+  }); // response interceptor
+
+  $axios.interceptors.response.use(response => {
+    responselog(response.status, response.config ? response.config.url : "");
+    return response;
+  }, error => {
+    return Promise.resolve({
+      status: 1,
+      data: error
+    });
+  });
 });
 // CONCATENATED MODULE: ./.nuxt/index.js
 

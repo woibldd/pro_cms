@@ -1,5 +1,8 @@
 import axios from "axios";
 import  Vue  from "vue"
+// import { debug } from 'debug'
+// const requestlog = debug('bit-activity-request')
+// const responselog = debug('bit-activity-response')
 // const isProduction = process.env.NODE_ENV == "production";
 // const HOST_URL = process.env.HOST_URL || process.env.baseURL
 
@@ -30,11 +33,11 @@ host_user_instance.interceptors.request.use(
                 language: locale
            })
         }else{
-
           Object.assign(config.headers,{
             language: locale
           })
         }
+    
        
     }
     

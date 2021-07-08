@@ -118,7 +118,7 @@ var external_dayjs_default = /*#__PURE__*/__webpack_require__.n(external_dayjs_)
 var client = __webpack_require__(72);
 
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(5);
+var external_vuex_ = __webpack_require__(4);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/blindbox/list.vue?vue&type=script&lang=js&
 //
@@ -613,7 +613,10 @@ const Header = _header_vue__WEBPACK_IMPORTED_MODULE_0__["default"];
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
 
- // const isProduction = process.env.NODE_ENV == "production";
+ // import { debug } from 'debug'
+// const requestlog = debug('bit-activity-request')
+// const responselog = debug('bit-activity-response')
+// const isProduction = process.env.NODE_ENV == "production";
 // const HOST_URL = process.env.HOST_URL || process.env.baseURL
 
 const host_user_instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({

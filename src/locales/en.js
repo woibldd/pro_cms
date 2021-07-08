@@ -62,7 +62,7 @@ module.exports = {
       willOpened:"To be opened"
     },
     ActivityBlindboxDetail: {
-      "blindBoxNumText": "The box is still short of <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> people,you will get  digital assets",
+      "blindBoxNumText": "The box is still short of <span class='color_red font-20'>{surplus}</span>/<span class='color_blod'>{invite}</span> people,you will get  digital assets",
       "inputAddressPlaceholader": "Click here to input eth address",
       "NoAddressDownload": "No address? Click download bitkeep to create an address",
       "HelpSuccessETH":"Help success eth address",

@@ -2,7 +2,9 @@ import Vue from "vue"
 import {debug} from "debug"
 // import VueCanvasPoster from 'vue-canvas-poster'
 import createVueI18n from "../../locales"
-const log  = debug("bit:init")
+const log = process.env.BUILD_ENV == 'pro' ? (...arg) => {
+    console.log("bit:init", ...arg)
+  } : debug('bit:init')
 
 
 

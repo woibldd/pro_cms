@@ -3,7 +3,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 require('events').EventEmitter.defaultMaxListeners = 30
 const Path = require("path")
 
-
 const isPro = process.env.NODE_ENV === 'production'
 const BUILD_ENV = process.env.BUILD_ENV
 const drop_console =   isPro && BUILD_ENV!='env'
@@ -98,11 +97,11 @@ export default {
 
 
   router: {
-    middleware: ['initRouter'],
-    scrollBehavior: function (to, from, savedPosition) {
-      console.log({ to, from, savedPosition })
-      return savedPosition
-    }
+    middleware: ['initRouter']
+    // scrollBehavior: function (to, from, savedPosition) {
+    //   console.log({ to, from, savedPosition })
+    //   return savedPosition
+    // }
   },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -112,13 +111,13 @@ export default {
     '/user': {
       target: HOST_API,
       changeOrigin: true,
-      onProxyReq(proxyReq,req){
+      onProxyReq(proxyReq,req,res){
         // console.log("proxy_____",arguments)
         const  xforwardedFor  =  (req.headers['x-forwarded-for'] ||
         req.connection.remoteAddress ||
         req.socket.remoteAddress ||
         req.connection.socket.remoteAddress).replace('::ffff:', '')
-        
+
         proxyReq.setHeader('x-forwarded-for', xforwardedFor);
         proxyReq.setHeader('host', xforwardedFor);
       }

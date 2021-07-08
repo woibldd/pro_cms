@@ -5,9 +5,10 @@
         "script": "nuxt start",
         "watch": false,
         "log_date_format": "YYYY-MM-DD HH:mm:ss",
-        "error_file": "/data/logs/pro_cms/api_error.log",
-        "out_file":  "/data/logs/pro_cms/api_runtime.log",
+        "error_file": "./api_error.log",
+        "out_file":  "./api_runtime.log",
         "env": {
+          "BUILD_ENV":"pro",
           "DEBUG":"bit*",
           "NODE_ENV": "production",
           "NUXT_ENV_operation_api": "http://ms.operation:8898",

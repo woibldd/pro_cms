@@ -1,9 +1,12 @@
 
 import { debug } from 'debug'
-const log = debug('bit-vuex-local')
+
 import { parseUA } from '@/tools/common'
 import changeHelper from "../../locales"
 
+const log = process.env.BUILD_ENV == 'pro' ? (...arg) => {
+  console.log("bit-vuex-local:", ...arg)
+} : debug('bit-vuex-local')
 const INIT_STATE = {
   locale: "zh", //  语言设置
   locales: ['zh','en'],
