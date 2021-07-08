@@ -643,7 +643,9 @@ export default {
       }
     }
     .block_footer {
-      color: #0c099899
+      color: #0c099899;
+      // word-wrap:break-word; 
+      word-break:  keep-all;
     }
   }
 }
