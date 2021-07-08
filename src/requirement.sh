@@ -10,8 +10,8 @@ nvm install v10.24.0
 npm install -g  core-js postcss-px2rem-exclude uglifyjs-webpack-plugin @nuxtjs/axios @nuxtjs/proxy nuxt axios  webpack
 
 
-##update
-npm install vue-i18n -g
+##update npm package
+npm install vue-i18n  vuex-persistedstate -g
 
 
 
