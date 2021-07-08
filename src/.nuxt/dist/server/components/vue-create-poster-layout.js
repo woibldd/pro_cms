@@ -282,7 +282,7 @@ function setStringPrototype(scale) {
 // CONCATENATED MODULE: ./components/vue-create-poster/layout/canvas-poster.vue?vue&type=script&lang=js&
  /* harmony default export */ var layout_canvas_postervue_type_script_lang_js_ = (canvas_postervue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(3);
+var componentNormalizer = __webpack_require__(4);
 
 // CONCATENATED MODULE: ./components/vue-create-poster/layout/canvas-poster.vue
 var render, staticRenderFns

@@ -12,7 +12,7 @@
             <!-- <img src="@/assets/activity/blindbox/nav_back_black@3.png" /> -->
           </span>
           <span
-            class="header_btn btn"
+            class="header_btn btn active"
             v-if="isBitKeep"
             @click="
               $router.replace({

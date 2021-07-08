@@ -138,6 +138,12 @@ module.exports = require("ufo");
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports) {
+
+module.exports = require("debug");
+
+/***/ }),
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -243,16 +249,10 @@ function normalizeComponent (
 
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
-module.exports = require("vuex");
-
-/***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = require("debug");
+module.exports = require("vuex");
 
 /***/ }),
 /* 6 */
@@ -586,16 +586,14 @@ module.exports = require("vue-no-ssr");
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _tools_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(16);
 /* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
 
 
 
-const log =  true ? (...arg) => {
-  console.log("bit-vuex-local:", ...arg);
-} : undefined;
+const log =  false ? undefined : Object(debug__WEBPACK_IMPORTED_MODULE_0__["debug"])('bit-vuex-local');
 const INIT_STATE = {
   locale: "zh",
   //  语言设置
@@ -2457,7 +2455,7 @@ function provideFunctionalComponents(component, components) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_0__);
 
 const log = Object(debug__WEBPACK_IMPORTED_MODULE_0__["debug"])('bit-middleware');
@@ -3136,7 +3134,7 @@ async function setContext(app, context) {
       error: context.error,
       base: app.router.options.base,
       env: {
-        "BUILD_ENV": "pro",
+        "BUILD_ENV": "dev",
         "HOST_API": "http://dev.bitkeep.top:8880",
         "NODE_ENV": "production",
         "DEBUG": "bit*"
@@ -3626,7 +3624,7 @@ async function serverPrefetch() {
 
 });
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(4);
+var external_vuex_ = __webpack_require__(5);
 var external_vuex_default = /*#__PURE__*/__webpack_require__.n(external_vuex_);
 
 // EXTERNAL MODULE: external "vue-meta"
@@ -3935,7 +3933,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./.nuxt/components/nuxt-error.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_nuxt_errorvue_type_script_lang_js_ = (nuxt_errorvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(3);
+var componentNormalizer = __webpack_require__(4);
 
 // CONCATENATED MODULE: ./.nuxt/components/nuxt-error.vue
 
@@ -4876,7 +4874,7 @@ const setupProgress = axios => {
 var _nuxt_empty = __webpack_require__(11);
 
 // EXTERNAL MODULE: external "debug"
-var external_debug_ = __webpack_require__(5);
+var external_debug_ = __webpack_require__(3);
 
 // EXTERNAL MODULE: ./locales/index.js + 1 modules
 var locales = __webpack_require__(7);
@@ -4889,9 +4887,7 @@ var external_vant_ = __webpack_require__(1);
  // import VueCanvasPoster from 'vue-canvas-poster'
 
 
-const log =  true ? (...arg) => {
-  console.log("bit:init", ...arg);
-} : undefined; // import VueAwesomeSwiper from 'vue-awesome-swiper'
+const log =  false ? undefined : Object(external_debug_["debug"])('bit:init'); // import VueAwesomeSwiper from 'vue-awesome-swiper'
 // Vue.use(VueAwesomeSwiper)
 
 
@@ -4951,12 +4947,8 @@ if (false) {}
 });
 // CONCATENATED MODULE: ./plugins/axios.js
 
-const requestlog =  true ? (...arg) => {
-  console.log("bit-article-request", ...arg);
-} : undefined;
-const responselog =  true ? (...arg) => {
-  console.log("bit-article-response", ...arg);
-} : undefined;
+const requestlog =  false ? undefined : Object(external_debug_["debug"])('bit-article-request');
+const responselog =  false ? undefined : Object(external_debug_["debug"])('bit-article-response');
 /* harmony default export */ var plugins_axios = (function ({
   $axios,
   store,
@@ -5098,7 +5090,11 @@ async function createApp(ssrContext, config = {}) {
         "type": "image\u002Fx-icon",
         "href": "\u002Ffavicon.ico"
       }],
-      "script": [],
+      "script": [{
+        "src": "https:\u002F\u002Fcdn.bootcdn.net\u002Fajax\u002Flibs\u002FvConsole\u002F3.8.1\u002Fvconsole.min.js",
+        "type": "text\u002Fjavascript",
+        "charset": "utf-8"
+      }],
       "style": []
     },
     store,
