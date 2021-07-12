@@ -275,7 +275,7 @@ const REG = {
 // CONCATENATED MODULE: ./components/common/c-vue-countdown.vue?vue&type=script&lang=js&
  /* harmony default export */ var common_c_vue_countdownvue_type_script_lang_js_ = (c_vue_countdownvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(4);
+var componentNormalizer = __webpack_require__(3);
 
 // CONCATENATED MODULE: ./components/common/c-vue-countdown.vue
 
@@ -424,7 +424,7 @@ var c_vue_countdown = __webpack_require__(69);
 // CONCATENATED MODULE: ./components/blindbox/blindTimeText.vue?vue&type=script&lang=js&
  /* harmony default export */ var blindbox_blindTimeTextvue_type_script_lang_js_ = (blindTimeTextvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(4);
+var componentNormalizer = __webpack_require__(3);
 
 // CONCATENATED MODULE: ./components/blindbox/blindTimeText.vue
 
