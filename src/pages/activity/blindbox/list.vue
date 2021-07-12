@@ -166,7 +166,11 @@
             </div>
           </van-list>
           <div
-            class="noData color_theme"
+            :class="{
+              noData:true, 
+              color_theme:true,
+              [locale]: true
+            }"
             v-if="!listLoading && (!blindbox_list || blindbox_list.length == 0)"
           >
             <div class="title">
@@ -425,7 +429,7 @@ export default {
       text-align: center;
       overflow: hidden;
       .title {
-        margin-top: 120px;
+        margin-top: 130px;
         font-size: 18px;
         line-height: 18px;
         font-weight: 800;
@@ -435,6 +439,22 @@ export default {
         line-height: 20px;
         text-align: justify;
         margin: 15px 30px 0px;
+      }
+      &.en{
+        background: url("@/assets/activity/blindbox/noDatabg@2.en.png") center center
+         no-repeat;
+        background-size: 100% 100%;
+        .title{
+           margin-top: 120px!important;
+           line-height: 20px;
+           font-size: 20px;
+      
+        }
+        .content{
+            font-size: 12px;
+            line-height: 18px;
+        }
+
       }
     }
 
