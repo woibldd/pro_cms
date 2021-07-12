@@ -356,7 +356,7 @@ export default {
           }
           this.showLoading(this.$t("ActivityBlindbox.toast.open"));
           const openMBoxR = await USER_API.openMBox({
-            id: this.$route.query.id
+            id: this.$route.params.id || this.$route.query.id
           });
           await this.getDetails();
           this.hideLoading();
@@ -402,7 +402,7 @@ export default {
         this.showLoading();
         const HelpR = await USER_API.helpMBox({
           address: this.address,
-          id: this.$route.query.id
+          id: this.$route.params.id || this.$route.query.id
         });
         this.hideLoading();
         if (HelpR.status != 0) {
