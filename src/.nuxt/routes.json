@@ -3,36 +3,49 @@
     "name": "activity-blindbox",
     "path": "/activity/blindbox",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindbox/index.vue",
-    "chunkName": "pages/activity/blindbox/index"
+    "chunkName": "pages/activity/blindbox/index",
+    "_name": "_65e970f7"
+  },
+  {
+    "name": "activity-blindbox-detail",
+    "path": "/activity/blindbox/detail",
+    "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindbox/detail/index.vue",
+    "chunkName": "pages/activity/blindbox/detail/index",
+    "_name": "_4f6736ff"
   },
   {
     "name": "activity-blindbox-download",
     "path": "/activity/blindbox/download",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindbox/download.vue",
-    "chunkName": "pages/activity/blindbox/download"
+    "chunkName": "pages/activity/blindbox/download",
+    "_name": "_6bb9fd1a"
   },
   {
     "name": "activity-blindbox-list",
     "path": "/activity/blindbox/list",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindbox/list.vue",
-    "chunkName": "pages/activity/blindbox/list"
+    "chunkName": "pages/activity/blindbox/list",
+    "_name": "_1b2d1009"
   },
   {
     "name": "activity-blindbox-detail-id",
-    "path": "/activity/blindbox/detail/:id?",
+    "path": "/activity/blindbox/detail/:id",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindbox/detail/_id.vue",
-    "chunkName": "pages/activity/blindbox/detail/_id"
+    "chunkName": "pages/activity/blindbox/detail/_id",
+    "_name": "_4d04ed27"
   },
   {
     "name": "article-detail-id",
     "path": "/article/detail/:id?",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/article/detail/_id.vue",
-    "chunkName": "pages/article/detail/_id"
+    "chunkName": "pages/article/detail/_id",
+    "_name": "_74266e07"
   },
   {
     "name": "id",
     "path": "/:id?",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/_id.vue",
-    "chunkName": "pages/_id"
+    "chunkName": "pages/_id",
+    "_name": "_275a9b50"
   }
 ]
