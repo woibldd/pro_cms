@@ -214,7 +214,7 @@ export default {
       refreshing: false,
       total: 20,
       start: 0,
-      limit: 20,
+      limit: 10,
       blindbox_list: []
     };
   },
@@ -235,7 +235,7 @@ export default {
   methods: {
     async getList(pageNo = 1) {
       const { data, status } = await USER_API.mBoxList({
-        start: pageNo,
+        start: (pageNo-1) * this.limit,
         limit: this.limit
       });
 
@@ -245,6 +245,10 @@ export default {
         item.bg_icon = `url(${item.cover_image}) no-repeat  center center/cover`;
         return item;
       });
+      if(!list || list.length==0) {
+        this.finished = true;
+        return 
+      }
       this.start = pageNo;
       if (pageNo == 1) {
         this.blindbox_list = list;
@@ -288,9 +292,9 @@ export default {
       }
       await this.getList(isRefresh ? 1 : this.start + 1);
       this.listLoading = false;
-      // if (this.total <= this.blindbox_list.length) {
+      if (this.total <= this.blindbox_list.length) {
       this.finished = true;
-      // }
+      }
     },
     onRefresh() {
       // 清空列表数据
