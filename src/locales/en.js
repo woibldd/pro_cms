@@ -60,7 +60,11 @@ module.exports = {
       "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired",
       "ShareWithMe": "Shared width me",
-      willOpened:"To be opened"
+      willOpened:"To be opened",
+      noData:{
+        title:"No blind box",
+        content:"It is said that Using BitSwap or cross-chain swap sucessfully will get a chance to receive blind box and get digital assets"
+      }
     },
     ActivityBlindboxDetail: {
       "blindBoxNumText": "The box is still short of <span class='color_red font-20'>{surplus}</span>/<span class='color_blod'>{invite}</span> people,you will get  digital assets",

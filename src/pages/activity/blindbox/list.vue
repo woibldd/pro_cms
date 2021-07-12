@@ -17,7 +17,7 @@
           v-model="refreshing"
           @refresh="onRefresh"
         >
-          <van-list  v-model="listLoading" :finished="finished" @load="onLoad">
+          <van-list v-model="listLoading" :finished="finished" @load="onLoad">
             <div
               v-for="item in blindbox_list"
               :key="item.id"
@@ -33,21 +33,27 @@
                   }"
                 >
                   <div class="tag">
-                    <span :class="{
-                      btn:true,
-                      shared:true,
-                      [locale]:true
-                    }" v-if="item.is_owner != 1"
-                      >{{$t("ActivityBlindbox.ActivityBlindboxList.ShareWithMe")}}</span
+                    <span
+                      :class="{
+                        btn: true,
+                        shared: true,
+                        [locale]: true
+                      }"
+                      v-if="item.is_owner != 1"
+                      >{{
+                        $t("ActivityBlindbox.ActivityBlindboxList.ShareWithMe")
+                      }}</span
                     >
                     <span
                       :class="{
-                        btn:true,
-                        open:true,
-                        [locale]:true
+                        btn: true,
+                        open: true,
+                        [locale]: true
                       }"
                       v-else-if="item.status == 1 && item.is_owner == 1"
-                      >{{$t("ActivityBlindbox.ActivityBlindboxList.willOpened")}}</span
+                      >{{
+                        $t("ActivityBlindbox.ActivityBlindboxList.willOpened")
+                      }}</span
                     >
                     <span v-else></span>
                   </div>
@@ -59,12 +65,14 @@
                     />
                   </div>
                   <div class="list_item_cont">
-                    <div :class="{
-                      title:true,
-                      color_blod:true,
-                      'van-ellipsis':true,
-                      [locale]: true
-                    }">
+                    <div
+                      :class="{
+                        title: true,
+                        color_blod: true,
+                        'van-ellipsis': true,
+                        [locale]: true
+                      }"
+                    >
                       {{ item.title }}
                     </div>
                     <div class="content">
@@ -158,9 +166,16 @@
             </div>
           </van-list>
           <div
-            :class="{ noData: true, [locale]: true }"
+            class="noData color_theme"
             v-if="!listLoading && (!blindbox_list || blindbox_list.length == 0)"
-          ></div>
+          >
+            <div class="title">
+              {{ $t("ActivityBlindbox.ActivityBlindboxList.noData.title") }}
+            </div>
+            <div class="content">
+              {{ $t("ActivityBlindbox.ActivityBlindboxList.noData.content") }}
+            </div>
+          </div>
         </van-pull-refresh>
       </div>
     </div>
@@ -218,7 +233,7 @@ export default {
       const { data, status } = await USER_API.mBoxList({
         start: pageNo,
         limit: this.limit
-      }).catch(console);
+      });
 
       if (status == 1) return this.$toast.fail(data);
       this.total = data.total;
@@ -235,10 +250,10 @@ export default {
     },
     handlerBtn(item, type) {
       this.$router.push({
-        path: "/activity/blindbox/detail",
-        query: {
-          id: item.id
-        }
+        path: `/activity/blindbox/detail/${item.id}`,
+        // query: {
+        //   id: item.id,
+        // }
       });
     },
     showLoading() {
@@ -348,7 +363,7 @@ export default {
     position: absolute;
     right: 0;
     top: 0;
-    
+
     .btn {
       border-radius: 0px 10px;
       font-size: 11px;
@@ -357,13 +372,13 @@ export default {
       font-weight: 500;
       width: 78px;
       white-space: nowrap;
-      
+
       display: flex;
       justify-content: center;
       align-items: center;
       &.open {
         background: linear-gradient(274.96deg, #bc0eff 0.67%, #ff81e2 100%);
-        color: #FFFFFF;
+        color: #ffffff;
       }
       &.shared {
         color: #1cbdb5;
@@ -373,7 +388,7 @@ export default {
           rgba(115, 255, 221, 0.2) 100%
         );
       }
-      &.en{
+      &.en {
         width: 95px;
       }
     }
@@ -403,16 +418,23 @@ export default {
       box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.6);
       backdrop-filter: blur(10px);
       /* Note: backdrop-filter has minimal browser support */
-
       border-radius: 18px;
-      background: url("@/assets/activity/blindbox/noData@2.png") center center
+      background: url("@/assets/activity/blindbox/noDatabg@2.png") center center
         no-repeat;
       background-size: 100% 100%;
       text-align: center;
-      &.en {
-        background: url("@/assets/activity/blindbox/noData@2.en.png") center
-          center no-repeat;
-        background-size: 100% 100%;
+      overflow: hidden;
+      .title {
+        margin-top: 120px;
+        font-size: 18px;
+        line-height: 18px;
+        font-weight: 800;
+      }
+      .content {
+        font-size: 14px;
+        line-height: 20px;
+        text-align: justify;
+        margin: 15px 30px 0px;
       }
     }
 
@@ -460,8 +482,8 @@ export default {
             line-height: 18px;
             letter-spacing: 0px;
             color: #080d21;
-            &.en{
-               line-height: 18px;
+            &.en {
+              line-height: 18px;
             }
           }
           .content {

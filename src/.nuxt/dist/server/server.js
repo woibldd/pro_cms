@@ -43,7 +43,7 @@ module.exports =
 /******/
 /******/ 		// "0" is the signal for "already loaded"
 /******/ 		if(installedChunks[chunkId] !== 0) {
-/******/ 			var chunk = require("./" + ({"1":"components/blindbox-blind-button","2":"components/blindbox-blind-strategy","3":"components/blindbox-blind-time-text","4":"components/blindbox-create-poster","5":"components/blindbox-title-image","6":"components/common","7":"components/common-c-vue-countdown","8":"components/common-header","9":"components/vue-create-poster-layout","10":"components/vue-create-poster-layout-canvas-poster","11":"components/vue-create-poster-layout-gradient","12":"components/vue-create-poster-layout-header","13":"components/vue-create-poster-layout-painter","14":"components/vue-create-poster-layout-qrcode","15":"components/vue-create-poster-layout-util","16":"pages/_id","17":"pages/activity/blindbox/detail","18":"pages/activity/blindbox/download","19":"pages/activity/blindbox/index","20":"pages/activity/blindbox/list","21":"pages/article/detail/_id"}[chunkId]||chunkId) + ".js");
+/******/ 			var chunk = require("./" + ({"1":"components/blindbox-blind-button","2":"components/blindbox-blind-strategy","3":"components/blindbox-blind-time-text","4":"components/blindbox-create-poster","5":"components/blindbox-title-image","6":"components/common","7":"components/common-c-vue-countdown","8":"components/common-header","9":"components/vue-create-poster-layout","10":"components/vue-create-poster-layout-canvas-poster","11":"components/vue-create-poster-layout-gradient","12":"components/vue-create-poster-layout-header","13":"components/vue-create-poster-layout-painter","14":"components/vue-create-poster-layout-qrcode","15":"components/vue-create-poster-layout-util","16":"pages/_id","17":"pages/activity/blindbox/detail/_id","18":"pages/activity/blindbox/download","19":"pages/activity/blindbox/index","20":"pages/activity/blindbox/list","21":"pages/article/detail/_id"}[chunkId]||chunkId) + ".js");
 /******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				modules[moduleId] = moreModules[moduleId];
@@ -138,6 +138,12 @@ module.exports = require("ufo");
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports) {
+
+module.exports = require("debug");
+
+/***/ }),
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -243,31 +249,21 @@ function normalizeComponent (
 
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports) {
 
 module.exports = require("vuex");
 
 /***/ }),
-/* 5 */
-/***/ (function(module, exports) {
-
-module.exports = require("debug");
-
-/***/ }),
 /* 6 */
-/***/ (function(module, exports) {
-
-module.exports = require("axios");
-
-/***/ }),
-/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, "a", function() { return /* binding */ changeHelper; });
+
+// UNUSED EXPORTS: getI18n
 
 // EXTERNAL MODULE: external "vue"
 var external_vue_ = __webpack_require__(0);
@@ -325,6 +321,9 @@ const messages = {
 };
 let i18n = null;
 const defaultLocale = 'en';
+const getI18n = function () {
+  return i18n;
+};
 function changeHelper(lang, locales) {
   locales = locales || external_vue_default.a.prototype.$store.state.local.locales;
   lang = (lang || "").slice(0, 2);
@@ -344,6 +343,12 @@ function changeHelper(lang, locales) {
   vant[lang] ? external_vant_["Locale"].use(lang, vant[lang]) : external_vant_["Locale"].use(defaultLocale, vant[defaultLocale]);
   return i18n;
 }
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 /* 8 */
@@ -586,16 +591,14 @@ module.exports = require("vue-no-ssr");
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _tools_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(16);
-/* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
+/* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
 
 
 
-const log =  true ? (...arg) => {
-  console.log("bit-vuex-local:", ...arg);
-} : undefined;
+const log =  false ? undefined : Object(debug__WEBPACK_IMPORTED_MODULE_0__["debug"])('bit-vuex-local');
 const INIT_STATE = {
   locale: "en",
   //  语言设置
@@ -645,7 +648,7 @@ const actions = {
       query,
       req
     } = ctx;
-    let locale = query.lang || params.lang || state.locale; //UA
+    let locale = query.lang || params.lang; //UA
 
     commit('SET_UA', Object(_tools_common__WEBPACK_IMPORTED_MODULE_1__[/* parseUA */ "b"])(req.headers['user-agent'])); //App内嵌
 
@@ -671,7 +674,7 @@ const actions = {
       const acceptLanguage = req.headers['accept-language'];
 
       if (acceptLanguage) {
-        locale = acceptLanguage.split(",")[0];
+        locale = locale || acceptLanguage.split(",")[0];
       }
     }
 
@@ -2469,7 +2472,7 @@ function provideFunctionalComponents(component, components) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_0__);
 
 const log = Object(debug__WEBPACK_IMPORTED_MODULE_0__["debug"])('bit-middleware');
@@ -2758,7 +2761,11 @@ module.exports = {
       "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired",
       "ShareWithMe": "Shared width me",
-      willOpened: "To be opened"
+      willOpened: "To be opened",
+      noData: {
+        title: "No blind box",
+        content: "It is said that Using BitSwap or cross-chain swap sucessfully will get a chance to receive blind box and get digital assets"
+      }
     },
     ActivityBlindboxDetail: {
       "blindBoxNumText": "The box is still short of <span class='color_red font-20'>{surplus}</span>/<span class='color_blod'>{invite}</span> people,you will get  digital assets",
@@ -2880,7 +2887,11 @@ module.exports = {
       "SuccessfullyOpenedText": "成功开启",
       "expiredText": "已过期",
       "ShareWithMe": "分享给我的",
-      willOpened: "待开启"
+      willOpened: "待开启",
+      noData: {
+        title: "暂时没有盲盒",
+        content: "据说使用 BitSwap 或跨链兑换成功交易即有机会获得盲盒，开出惊喜数字资产"
+      }
     },
     ActivityBlindboxDetail: {
       "blindBoxNumText": "距离开启盲盒仅差 <span class='color_red font-20'>{surplus}</span>/<span class='color_blod'>{invite}</span> 人助力",
@@ -3148,7 +3159,7 @@ async function setContext(app, context) {
       error: context.error,
       base: app.router.options.base,
       env: {
-        "BUILD_ENV": "pro",
+        "BUILD_ENV": "dev",
         "HOST_API": "http://dev.bitkeep.top:8880",
         "NODE_ENV": "production",
         "DEBUG": "bit*"
@@ -3638,7 +3649,7 @@ async function serverPrefetch() {
 
 });
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(4);
+var external_vuex_ = __webpack_require__(5);
 var external_vuex_default = /*#__PURE__*/__webpack_require__.n(external_vuex_);
 
 // EXTERNAL MODULE: external "vue-meta"
@@ -3734,17 +3745,17 @@ function shouldScrollToTop(route) {
 
 
 
-const _65e970f7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 19).then(__webpack_require__.bind(null, 141)));
+const _65e970f7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 19).then(__webpack_require__.bind(null, 140)));
 
-const _20d08508 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail */ 17).then(__webpack_require__.bind(null, 142)));
+const _6bb9fd1a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 18).then(__webpack_require__.bind(null, 141)));
 
-const _6bb9fd1a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 18).then(__webpack_require__.bind(null, 143)));
+const _1b2d1009 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 20).then(__webpack_require__.bind(null, 142)));
 
-const _1b2d1009 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 20).then(__webpack_require__.bind(null, 144)));
+const _4d04ed27 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/_id */ 17).then(__webpack_require__.bind(null, 143)));
 
-const _74266e07 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 21).then(__webpack_require__.bind(null, 145)));
+const _74266e07 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 21).then(__webpack_require__.bind(null, 144)));
 
-const _275a9b50 = () => interopDefault(__webpack_require__.e(/* import() | pages/_id */ 16).then(__webpack_require__.bind(null, 146)));
+const _275a9b50 = () => interopDefault(__webpack_require__.e(/* import() | pages/_id */ 16).then(__webpack_require__.bind(null, 145)));
 
 const emptyFn = () => {};
 
@@ -3760,10 +3771,6 @@ const routerOptions = {
     component: _65e970f7,
     name: "activity-blindbox"
   }, {
-    path: "/activity/blindbox/detail",
-    component: _20d08508,
-    name: "activity-blindbox-detail"
-  }, {
     path: "/activity/blindbox/download",
     component: _6bb9fd1a,
     name: "activity-blindbox-download"
@@ -3771,6 +3778,10 @@ const routerOptions = {
     path: "/activity/blindbox/list",
     component: _1b2d1009,
     name: "activity-blindbox-list"
+  }, {
+    path: "/activity/blindbox/detail/:id?",
+    component: _4d04ed27,
+    name: "activity-blindbox-detail-id"
   }, {
     path: "/article/detail/:id?",
     component: _74266e07,
@@ -3953,7 +3964,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./.nuxt/components/nuxt-error.vue?vue&type=script&lang=js&
  /* harmony default export */ var components_nuxt_errorvue_type_script_lang_js_ = (nuxt_errorvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(3);
+var componentNormalizer = __webpack_require__(4);
 
 // CONCATENATED MODULE: ./.nuxt/components/nuxt-error.vue
 
@@ -4663,7 +4674,7 @@ function wrapFunctional(options) {
 
 const components = {
   BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 1).then(__webpack_require__.bind(null, 118)).then(c => wrapFunctional(c.default || c)),
-  BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 2).then(__webpack_require__.bind(null, 147)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 2).then(__webpack_require__.bind(null, 146)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 3).then(__webpack_require__.bind(null, 84)).then(c => wrapFunctional(c.default || c)),
   BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 4).then(__webpack_require__.bind(null, 119)).then(c => wrapFunctional(c.default || c)),
   BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 5).then(__webpack_require__.bind(null, 117)).then(c => wrapFunctional(c.default || c)),
@@ -4672,8 +4683,8 @@ const components = {
   Common: () => __webpack_require__.e(/* import() | components/common */ 6).then(__webpack_require__.bind(null, 65)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 10).then(__webpack_require__.bind(null, 109)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 11).then(__webpack_require__.bind(null, 71)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 12).then(__webpack_require__.bind(null, 148)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 9).then(__webpack_require__.bind(null, 140)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 12).then(__webpack_require__.bind(null, 147)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 9).then(__webpack_require__.bind(null, 139)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutPainter: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-painter */ 13).then(__webpack_require__.bind(null, 86)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutQrcode: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-qrcode */ 14).then(__webpack_require__.bind(null, 70)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 15).then(__webpack_require__.bind(null, 87)).then(c => wrapFunctional(c.default || c))
@@ -4684,7 +4695,7 @@ for (const name in components) {
   external_vue_default.a.component('Lazy' + name, components[name]);
 }
 // EXTERNAL MODULE: external "axios"
-var external_axios_ = __webpack_require__(6);
+var external_axios_ = __webpack_require__(7);
 var external_axios_default = /*#__PURE__*/__webpack_require__.n(external_axios_);
 
 // EXTERNAL MODULE: external "defu"
@@ -4895,10 +4906,10 @@ const setupProgress = axios => {
 var _nuxt_empty = __webpack_require__(11);
 
 // EXTERNAL MODULE: external "debug"
-var external_debug_ = __webpack_require__(5);
+var external_debug_ = __webpack_require__(3);
 
 // EXTERNAL MODULE: ./locales/index.js + 1 modules
-var locales = __webpack_require__(7);
+var locales = __webpack_require__(6);
 
 // EXTERNAL MODULE: external "vant"
 var external_vant_ = __webpack_require__(1);
@@ -4908,9 +4919,7 @@ var external_vant_ = __webpack_require__(1);
  // import VueCanvasPoster from 'vue-canvas-poster'
 
 
-const log =  true ? (...arg) => {
-  console.log("bit:init", ...arg);
-} : undefined; // import VueAwesomeSwiper from 'vue-awesome-swiper'
+const log =  false ? undefined : Object(external_debug_["debug"])('bit:init'); // import VueAwesomeSwiper from 'vue-awesome-swiper'
 // Vue.use(VueAwesomeSwiper)
 
 
@@ -4952,10 +4961,7 @@ if (false) {}
     bitkeep
   } = store.state.local;
   external_vue_default.a.prototype.$store = store;
-  app.i18n = Object(locales["a" /* default */])(locale); //   if(!UA.isBitKeep &&  process.client ){
-  //     console.log("client", lang || navigator.language )
-  //     store.commit("CHANGE_LANG", lang || navigator.language)
-  //   }
+  app.i18n = Object(locales["a" /* default */])(locale);
 
   if (UA.isBitKeep && false) {
     if (sessionStorage.bitKeep) {
@@ -4969,12 +4975,8 @@ if (false) {}
 });
 // CONCATENATED MODULE: ./plugins/axios.js
 
-const requestlog =  true ? (...arg) => {
-  console.log("bit-article-request", ...arg);
-} : undefined;
-const responselog =  true ? (...arg) => {
-  console.log("bit-article-response", ...arg);
-} : undefined;
+const requestlog =  false ? undefined : Object(external_debug_["debug"])('bit-article-request');
+const responselog =  false ? undefined : Object(external_debug_["debug"])('bit-article-response');
 /* harmony default export */ var plugins_axios = (function ({
   $axios,
   store,
@@ -5116,7 +5118,11 @@ async function createApp(ssrContext, config = {}) {
         "type": "image\u002Fx-icon",
         "href": "\u002Ffavicon.ico"
       }],
-      "script": [],
+      "script": [{
+        "src": "https:\u002F\u002Fcdn.bootcdn.net\u002Fajax\u002Flibs\u002FvConsole\u002F3.8.1\u002Fvconsole.min.js",
+        "type": "text\u002Fjavascript",
+        "charset": "utf-8"
+      }],
       "style": []
     },
     store,

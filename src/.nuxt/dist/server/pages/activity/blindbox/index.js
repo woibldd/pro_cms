@@ -45,7 +45,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 141:
+/***/ 140:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -70,7 +70,7 @@ var external_dayjs_default = /*#__PURE__*/__webpack_require__.n(external_dayjs_)
 var client = __webpack_require__(72);
 
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(4);
+var external_vuex_ = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/blindbox/index.vue?vue&type=script&lang=js&
 //
@@ -289,7 +289,7 @@ var external_vuex_ = __webpack_require__(4);
 // CONCATENATED MODULE: ./pages/activity/blindbox/index.vue?vue&type=script&lang=js&
  /* harmony default export */ var activity_blindboxvue_type_script_lang_js_ = (blindboxvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(3);
+var componentNormalizer = __webpack_require__(4);
 
 // CONCATENATED MODULE: ./pages/activity/blindbox/index.vue
 
@@ -423,7 +423,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./components/common/header.vue?vue&type=script&lang=js&
  /* harmony default export */ var common_headervue_type_script_lang_js_ = (headervue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(3);
+var componentNormalizer = __webpack_require__(4);
 
 // CONCATENATED MODULE: ./components/common/header.vue
 
@@ -473,10 +473,12 @@ const Header = _header_vue__WEBPACK_IMPORTED_MODULE_0__["default"];
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return USER_API; });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
+
 
  // import { debug } from 'debug'
 // const requestlog = debug('bit-activity-request')

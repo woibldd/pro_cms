@@ -115,7 +115,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./components/blindbox/titleImage.vue?vue&type=script&lang=js&
  /* harmony default export */ var blindbox_titleImagevue_type_script_lang_js_ = (titleImagevue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(3);
+var componentNormalizer = __webpack_require__(4);
 
 // CONCATENATED MODULE: ./components/blindbox/titleImage.vue
 

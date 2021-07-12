@@ -60,7 +60,13 @@ module.exports = {
             "expiredText": "已过期",
 
             "ShareWithMe": "分享给我的",
-             willOpened:"待开启"
+             willOpened:"待开启",
+
+
+            noData:{
+                title:"暂时没有盲盒",
+                content:"据说使用 BitSwap 或跨链兑换成功交易即有机会获得盲盒，开出惊喜数字资产"
+            }
 
         },
         ActivityBlindboxDetail: {

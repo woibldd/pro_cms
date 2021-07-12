@@ -10,6 +10,9 @@ const messages = {
 }
 let i18n = null
 const defaultLocale = 'en'
+export const getI18n =function(){
+   return  i18n 
+}
 export default function changeHelper(lang,locales) {
     locales =  locales || Vue.prototype.$store.state.local.locales
     lang = (lang||"").slice(0,2)

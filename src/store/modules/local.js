@@ -50,7 +50,7 @@ const actions = {
     const { params,
       query, req } = ctx
     
-    let locale =  query.lang || params.lang || state.locale
+    let locale =  query.lang || params.lang 
 
     //UA
     commit('SET_UA', parseUA(req.headers['user-agent']));
@@ -76,7 +76,7 @@ const actions = {
     }else{
       const acceptLanguage = req.headers['accept-language']
       if(acceptLanguage){
-        locale = acceptLanguage.split(",")[0]
+        locale = locale ||  acceptLanguage.split(",")[0]
       }
     }
 

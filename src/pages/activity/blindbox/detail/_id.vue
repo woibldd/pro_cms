@@ -27,7 +27,7 @@
       </Header>
       <!-- h5图片。÷ -->
       <div class="block_detail_bg">
-        <van-image  width="100%" height="100%" :src="heade_image" />
+        <van-image width="100%" height="100%" :src="heade_image" />
       </div>
 
       <BlindTimeText
@@ -217,7 +217,7 @@ import BlindTimeText from "@/components/blindbox/blindTimeText.vue";
 import BlindTitleImage from "@/components/blindbox/titleImage.vue";
 import BlindButton from "@/components/blindbox/BlindButton.vue";
 import CreatePoster from "@/components/blindbox/createPoster.vue";
-import { USER_API } from "../../../api/client";
+import { USER_API } from "@/api/client";
 
 import { mapState } from "vuex";
 import { BaseMixin } from "@/mixin/base.js";
@@ -260,7 +260,7 @@ export default {
     heade_image() {
       return this.info.status == 2
         ? this.info.prize_image
-        : this.info.poster_image 
+        : this.info.poster_image;
     }
   },
   async asyncData(ctx) {},
@@ -310,14 +310,15 @@ export default {
       this.focus = false;
     },
     async getDetails(refresh) {
-      if (!this.$route.query.id) {
+      const id = this.$route.params.id || this.$route.query.id;
+      if (!id) {
         // this.$toast.fail("params id is not found");
         return false;
       }
       if (this.info.status > 1) return;
       !refresh && this.showLoading(this.$t("ActivityBlindbox.toast.loading"));
       const { data, status } = await USER_API.mBoxDetail({
-        id: this.$route.query.id
+        id
       });
       !refresh && this.hideLoading();
 
@@ -458,7 +459,6 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
 
 #blindbox_invite {
   font-family: PingFang SC;

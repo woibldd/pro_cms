@@ -5,9 +5,9 @@ import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
 const _65e970f7 = () => interopDefault(import('../pages/activity/blindbox/index.vue' /* webpackChunkName: "pages/activity/blindbox/index" */))
-const _20d08508 = () => interopDefault(import('../pages/activity/blindbox/detail.vue' /* webpackChunkName: "pages/activity/blindbox/detail" */))
 const _6bb9fd1a = () => interopDefault(import('../pages/activity/blindbox/download.vue' /* webpackChunkName: "pages/activity/blindbox/download" */))
 const _1b2d1009 = () => interopDefault(import('../pages/activity/blindbox/list.vue' /* webpackChunkName: "pages/activity/blindbox/list" */))
+const _4d04ed27 = () => interopDefault(import('../pages/activity/blindbox/detail/_id.vue' /* webpackChunkName: "pages/activity/blindbox/detail/_id" */))
 const _74266e07 = () => interopDefault(import('../pages/article/detail/_id.vue' /* webpackChunkName: "pages/article/detail/_id" */))
 const _275a9b50 = () => interopDefault(import('../pages/_id.vue' /* webpackChunkName: "pages/_id" */))
 
@@ -27,10 +27,6 @@ export const routerOptions = {
     component: _65e970f7,
     name: "activity-blindbox"
   }, {
-    path: "/activity/blindbox/detail",
-    component: _20d08508,
-    name: "activity-blindbox-detail"
-  }, {
     path: "/activity/blindbox/download",
     component: _6bb9fd1a,
     name: "activity-blindbox-download"
@@ -38,6 +34,10 @@ export const routerOptions = {
     path: "/activity/blindbox/list",
     component: _1b2d1009,
     name: "activity-blindbox-list"
+  }, {
+    path: "/activity/blindbox/detail/:id?",
+    component: _4d04ed27,
+    name: "activity-blindbox-detail-id"
   }, {
     path: "/article/detail/:id?",
     component: _74266e07,

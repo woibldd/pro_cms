@@ -1,5 +1,6 @@
 import axios from "axios";
 import  Vue  from "vue"
+import { getI18n } from "../locales"
 // import { debug } from 'debug'
 // const requestlog = debug('bit-activity-request')
 // const responselog = debug('bit-activity-response')
@@ -62,8 +63,9 @@ host_user_instance.interceptors.response.use(
     console.error("___",error)
     // Do omething with response error
     let message = '网路开了小差'
-    if(process.client && Vue.prototype.$t){
-      message = Vue.prototype.$t("base.networkErro")
+    if(process.client){
+      const  i18n = getI18n() || {}
+      message =  i18n.t? i18n.t("base.networkErro") :  message     
     }
     return Promise.resolve({
       status: 1,

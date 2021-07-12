@@ -7,13 +7,6 @@
     "_name": "_65e970f7"
   },
   {
-    "name": "activity-blindbox-detail",
-    "path": "/activity/blindbox/detail",
-    "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindbox/detail.vue",
-    "chunkName": "pages/activity/blindbox/detail",
-    "_name": "_20d08508"
-  },
-  {
     "name": "activity-blindbox-download",
     "path": "/activity/blindbox/download",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindbox/download.vue",
@@ -26,6 +19,13 @@
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindbox/list.vue",
     "chunkName": "pages/activity/blindbox/list",
     "_name": "_1b2d1009"
+  },
+  {
+    "name": "activity-blindbox-detail-id",
+    "path": "/activity/blindbox/detail/:id?",
+    "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindbox/detail/_id.vue",
+    "chunkName": "pages/activity/blindbox/detail/_id",
+    "_name": "_4d04ed27"
   },
   {
     "name": "article-detail-id",

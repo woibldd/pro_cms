@@ -81,11 +81,9 @@ export default ({ app, store, query={},params={}}) => {
   const lang = query.lang || params.lang
   const {locale, UA ,  bitkeep }    = store.state.local
   Vue.prototype.$store = store
+
   app.i18n = createVueI18n(locale)
-//   if(!UA.isBitKeep &&  process.client ){
-//     console.log("client", lang || navigator.language )
-//     store.commit("CHANGE_LANG", lang || navigator.language)
-//   }
+
   if(UA.isBitKeep &&  process.client ){
       if(sessionStorage.bitKeep){
         store.commit("SET_BIT_KEEP",sessionStorage.bitKeep)
