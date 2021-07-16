@@ -110,7 +110,7 @@ export default {
       var mm = time.getMinutes();
       return (
         y +
-        "—" +
+        "-" +
         isZero(m) +
         "-" +
         isZero(d) +
