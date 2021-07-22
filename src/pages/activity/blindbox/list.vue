@@ -165,10 +165,10 @@
               </div>
             </div>
           </van-list>
-           <div
+          <div
             :class="{
-              endBg:true, 
-              color_theme:true,
+              endBg: true,
+              color_theme: true,
               [locale]: true
             }"
             v-if="!listLoading && (!blindbox_list || blindbox_list.length == 0)"
@@ -176,12 +176,13 @@
             <div class="title">
               {{ $t("ActivityBlindbox.ActivityBlindboxList.end.title") }}
             </div>
-             <div class="subtitle">
+            <div class="subtitle">
               {{ $t("ActivityBlindbox.ActivityBlindboxList.end.subtitle") }}
             </div>
-            <div class="content" v-html='$t("ActivityBlindbox.ActivityBlindboxList.end.content") '>
-        
-            </div>
+            <div
+              class="content"
+              v-html="$t('ActivityBlindbox.ActivityBlindboxList.end.content')"
+            ></div>
           </div>
           <!-- <div
             :class="{
@@ -253,22 +254,22 @@ export default {
   methods: {
     async getList(pageNo = 1) {
       const { data, status } = await USER_API.mBoxList({
-        start: (pageNo-1) * this.limit,
+        start: (pageNo - 1) * this.limit,
         limit: this.limit
       });
-   
-      if (status == 1){
+
+      if (status == 1) {
         this.finished = true;
         return this.$toast.fail(data);
-      } 
+      }
       this.total = data.total;
       const list = data.list.map(item => {
         item.bg_icon = `url(${item.cover_image}) no-repeat  center center/cover`;
         return item;
       });
-      if(!list || list.length==0) {
+      if (!list || list.length == 0) {
         this.finished = true;
-        return 
+        return;
       }
       this.start = pageNo;
       if (pageNo == 1) {
@@ -279,7 +280,7 @@ export default {
     },
     handlerBtn(item, type) {
       this.$router.push({
-        path: `/activity/blindbox/detail/${item.id}`,
+        path: `/activity/blindbox/detail/${item.id}`
         // query: {
         //   id: item.id,
         // }
@@ -314,7 +315,7 @@ export default {
       await this.getList(isRefresh ? 1 : this.start + 1);
       this.listLoading = false;
       if (this.total <= this.blindbox_list.length) {
-      this.finished = true;
+        this.finished = true;
       }
     },
     onRefresh() {
@@ -438,7 +439,7 @@ export default {
     .blindbox_list_content {
       min-height: 100vh;
     }
-     .endBg {
+    .endBg {
       // border: 2px solid #d5c6ff;
       box-sizing: border-box;
       width: 220px;
@@ -453,42 +454,49 @@ export default {
       background-size: 100% 100%;
       text-align: center;
       overflow: hidden;
-      padding: 0 14px 0 16px;
-      box-shadow: inset 0px 1PX 2px rgba(255, 255, 255, 0.6);
+      box-shadow: inset 0px 1px 2px rgba(255, 255, 255, 0.6);
       .title {
         margin-top: 65px;
         font-size: 18px;
         line-height: 18px;
         font-weight: 800;
       }
-      .subtitle{
-        margin-top: 7px;
-        font-size: 12px;
-        line-height: 12px;
+      .subtitle {
+        padding: 0 14px 0 16px;
+        margin-top: 5px;
+        font-size: 14px;
+        line-height: 14px;
       }
       .content {
+        padding: 0 14px 0 16px;
         text-align: left;
-        margin-top:20px ;
+        margin-top: 15px;
         font-size: 14px;
-        line-height: 20px;
+        line-height: 18px;
         // word-wrap:break-word;
       }
-      // &.en{
-      //   background: url("@/assets/activity/blindbox/endbg@2.png") center center
-      //    no-repeat;
-      //   background-size: 100% 100%;
-      //   .title{
-      //      margin-top: 120px!important;
-      //      line-height: 20px;
-      //      font-size: 20px;
-      
-      //   }
-      //   .content{
-      //       font-size: 12px;
-      //       line-height: 18px;
-      //   }
-
-      // }
+      &.en {
+        word-break: keep-all;
+        .title {
+          margin-top: 65px;
+          line-height: 20px;
+          font-size: 20px;
+          text-align: center;
+           padding: 0 14px 0 16px;
+        }
+        .subtitle {
+          margin-top: 7px;
+          font-size: 12px;
+          line-height: 12px;
+        }
+        .content {
+          padding: 0 14px 0 16px;
+          text-align: left;
+          margin-top: 20px;
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
     }
     // .noData {
     //   // border: 2px solid #d5c6ff;
@@ -525,7 +533,7 @@ export default {
     //        margin-top: 120px!important;
     //        line-height: 20px;
     //        font-size: 20px;
-      
+
     //     }
     //     .content{
     //         font-size: 12px;
