@@ -165,7 +165,25 @@
               </div>
             </div>
           </van-list>
-          <div
+           <div
+            :class="{
+              endBg:true, 
+              color_theme:true,
+              [locale]: true
+            }"
+            v-if="!listLoading && (!blindbox_list || blindbox_list.length == 0)"
+          >
+            <div class="title">
+              {{ $t("ActivityBlindbox.ActivityBlindboxList.end.title") }}
+            </div>
+             <div class="subtitle">
+              {{ $t("ActivityBlindbox.ActivityBlindboxList.end.subtitle") }}
+            </div>
+            <div class="content" v-html='$t("ActivityBlindbox.ActivityBlindboxList.end.content") '>
+        
+            </div>
+          </div>
+          <!-- <div
             :class="{
               noData:true, 
               color_theme:true,
@@ -179,7 +197,7 @@
             <div class="content">
               {{ $t("ActivityBlindbox.ActivityBlindboxList.noData.content") }}
             </div>
-          </div>
+          </div> -->
         </van-pull-refresh>
       </div>
     </div>
@@ -238,8 +256,11 @@ export default {
         start: (pageNo-1) * this.limit,
         limit: this.limit
       });
-
-      if (status == 1) return this.$toast.fail(data);
+   
+      if (status == 1){
+        this.finished = true;
+        return this.$toast.fail(data);
+      } 
       this.total = data.total;
       const list = data.list.map(item => {
         item.bg_icon = `url(${item.cover_image}) no-repeat  center center/cover`;
@@ -417,7 +438,7 @@ export default {
     .blindbox_list_content {
       min-height: 100vh;
     }
-    .noData {
+     .endBg {
       // border: 2px solid #d5c6ff;
       box-sizing: border-box;
       width: 220px;
@@ -427,40 +448,92 @@ export default {
       backdrop-filter: blur(10px);
       /* Note: backdrop-filter has minimal browser support */
       border-radius: 18px;
-      background: url("@/assets/activity/blindbox/noDatabg@2.png") center center
+      background: url("@/assets/activity/blindbox/endbg@2.png") center center
         no-repeat;
       background-size: 100% 100%;
       text-align: center;
       overflow: hidden;
+      padding: 0 14px 0 16px;
+      box-shadow: inset 0px 1PX 2px rgba(255, 255, 255, 0.6);
       .title {
-        margin-top: 130px;
+        margin-top: 65px;
         font-size: 18px;
         line-height: 18px;
         font-weight: 800;
       }
+      .subtitle{
+        margin-top: 7px;
+        font-size: 12px;
+        line-height: 12px;
+      }
       .content {
+        text-align: left;
+        margin-top:20px ;
         font-size: 14px;
         line-height: 20px;
-        text-align: justify;
-        margin: 15px 30px 0px;
+        // word-wrap:break-word;
       }
-      &.en{
-        background: url("@/assets/activity/blindbox/noDatabg@2.en.png") center center
-         no-repeat;
-        background-size: 100% 100%;
-        .title{
-           margin-top: 120px!important;
-           line-height: 20px;
-           font-size: 20px;
+      // &.en{
+      //   background: url("@/assets/activity/blindbox/endbg@2.png") center center
+      //    no-repeat;
+      //   background-size: 100% 100%;
+      //   .title{
+      //      margin-top: 120px!important;
+      //      line-height: 20px;
+      //      font-size: 20px;
       
-        }
-        .content{
-            font-size: 12px;
-            line-height: 18px;
-        }
+      //   }
+      //   .content{
+      //       font-size: 12px;
+      //       line-height: 18px;
+      //   }
 
-      }
+      // }
     }
+    // .noData {
+    //   // border: 2px solid #d5c6ff;
+    //   box-sizing: border-box;
+    //   width: 220px;
+    //   height: 282px;
+    //   margin: 166px auto 0;
+    //   box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.6);
+    //   backdrop-filter: blur(10px);
+    //   /* Note: backdrop-filter has minimal browser support */
+    //   border-radius: 18px;
+    //   background: url("@/assets/activity/blindbox/noDatabg@2.png") center center
+    //     no-repeat;
+    //   background-size: 100% 100%;
+    //   text-align: center;
+    //   overflow: hidden;
+    //   .title {
+    //     margin-top: 130px;
+    //     font-size: 18px;
+    //     line-height: 18px;
+    //     font-weight: 800;
+    //   }
+    //   .content {
+    //     font-size: 14px;
+    //     line-height: 20px;
+    //     text-align: justify;
+    //     margin: 15px 30px 0px;
+    //   }
+    //   &.en{
+    //     background: url("@/assets/activity/blindbox/noDatabg@2.en.png") center center
+    //      no-repeat;
+    //     background-size: 100% 100%;
+    //     .title{
+    //        margin-top: 120px!important;
+    //        line-height: 20px;
+    //        font-size: 20px;
+      
+    //     }
+    //     .content{
+    //         font-size: 12px;
+    //         line-height: 18px;
+    //     }
+
+    //   }
+    // }
 
     .list_item {
       .invaild {

@@ -942,7 +942,7 @@ module.exports = __webpack_require__.p + "img/02@2.en.e3d5b05.png";
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(133);
+var content = __webpack_require__(132);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -1514,14 +1514,13 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* 127 */,
 /* 128 */,
 /* 129 */,
-/* 130 */,
-/* 131 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/logo2@3.fb021ce.png";
 
 /***/ }),
-/* 132 */
+/* 131 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1532,7 +1531,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /***/ }),
-/* 133 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -1550,6 +1549,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
+/* 133 */,
 /* 134 */,
 /* 135 */,
 /* 136 */,
@@ -1560,8 +1560,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 /* 141 */,
 /* 142 */,
 /* 143 */,
-/* 144 */,
-/* 145 */
+/* 144 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1591,7 +1590,7 @@ var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{
             mt: !_vm.isBitKeep
           }))+" data-v-0d62638a><div class=\"title\" data-v-0d62638a>"+_vm._ssrEscape("\n            "+_vm._s(_vm.$t("ActivityBlindbox.ActivityBlindboxDetail.HelpSuccessETH"))+"：\n          ")+"</div> "+(_vm._ssrList((_vm.invite_list),function(item,index){return ("<div class=\"block_invite_item\" data-v-0d62638a><div data-v-0d62638a>"+_vm._ssrEscape(_vm._s(index + 1)+". "+_vm._s(item))+"</div></div>")}))+"</div>"):"<!---->"))],2)]),_vm._ssrNode(" <div class=\"block_open_strategy\" data-v-0d62638a><div"+(_vm._ssrClass(null,( _obj = { block_open_strategy_warpper: true }, _obj[_vm.locale] = true, _obj )))+" data-v-0d62638a></div></div> "),_vm._ssrNode("<div class=\"block_acitve_strategy\" data-v-0d62638a>","</div>",[_vm._ssrNode("<div class=\"block_warpper radial-gradient\" data-v-0d62638a>","</div>",[_vm._ssrNode("<div class=\"block_header\" data-v-0d62638a>","</div>",[_c('BlindTitleImage',{attrs:{"type":"footer","isBitKeep":_vm.isBitKeep,"locale":_vm.locale,"is_owner":_vm.info.is_owner,"status":_vm.info.status}})],1),_vm._ssrNode(" <div class=\"block_body color_theme\" data-v-0d62638a>"+(_vm._ssrList((_vm.$t(
               'ActivityBlindbox.ActivityBlindboxDetail.rules'
-            )),function(item,index){return ("<div class=\"rules_item\" data-v-0d62638a><span data-v-0d62638a>"+_vm._ssrEscape(_vm._s(index + 1)+". ")+"</span> <span class=\"con\" data-v-0d62638a>"+(_vm._s(item))+"</span></div>")}))+"</div> <div class=\"block_footer\" data-v-0d62638a>"+_vm._ssrEscape("\n          "+_vm._s(_vm.$t("ActivityBlindbox.ActivityBlindboxDetail.FinalInterpretation"))+"\n        ")+"</div>")],2)]),_vm._ssrNode(" <div class=\"block_page_footer\" data-v-0d62638a><div class=\"block_warpper\" data-v-0d62638a><div class=\"block_header\" data-v-0d62638a><img"+(_vm._ssrAttr("src",__webpack_require__(131)))+" data-v-0d62638a></div></div></div> "),_c('CreatePoster',{ref:"CreatePoster",attrs:{"locale":_vm.locale,"zIndex":100,"isBitKeep":_vm.isBitKeep,"info":_vm.info,"startTime":_vm.startTime,"endTime":_vm.endTime,"format":_vm.format},on:{"change":_vm.chountChange,"end":_vm.end}})],2)])}
+            )),function(item,index){return ("<div class=\"rules_item\" data-v-0d62638a><span data-v-0d62638a>"+_vm._ssrEscape(_vm._s(index + 1)+". ")+"</span> <span class=\"con\" data-v-0d62638a>"+(_vm._s(item))+"</span></div>")}))+"</div> <div class=\"block_footer\" data-v-0d62638a>"+_vm._ssrEscape("\n          "+_vm._s(_vm.$t("ActivityBlindbox.ActivityBlindboxDetail.FinalInterpretation"))+"\n        ")+"</div>")],2)]),_vm._ssrNode(" <div class=\"block_page_footer\" data-v-0d62638a><div class=\"block_warpper\" data-v-0d62638a><div class=\"block_header\" data-v-0d62638a><img"+(_vm._ssrAttr("src",__webpack_require__(130)))+" data-v-0d62638a></div></div></div> "),_c('CreatePoster',{ref:"CreatePoster",attrs:{"locale":_vm.locale,"zIndex":100,"isBitKeep":_vm.isBitKeep,"info":_vm.info,"startTime":_vm.startTime,"endTime":_vm.endTime,"format":_vm.format},on:{"change":_vm.chountChange,"end":_vm.end}})],2)])}
 var staticRenderFns = []
 
 
@@ -2108,7 +2107,7 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style1 = __webpack_require__(132)
+  var style1 = __webpack_require__(131)
 if (style1.__inject__) style1.__inject__(context)
 
 }

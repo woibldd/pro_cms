@@ -2767,6 +2767,15 @@ module.exports = {
       noData: {
         title: "No blind box",
         content: "It is said that Using BitSwap or cross-chain swap sucessfully will get a chance to receive blind box and get digital assets"
+      },
+      end: {
+        title: "Blind box beta event has finished",
+        subtitle: "please stay tuned for next event",
+        content: `You can also follow <br/>
+        Twitter：@BitKeepOS <br/>
+        or join Telegram：<br/>
+        https://t.me/bitkeep <br/>
+        to know more updates.`
       }
     },
     ActivityBlindboxDetail: {
@@ -2893,6 +2902,16 @@ module.exports = {
       noData: {
         title: "暂时没有盲盒",
         content: "据说使用 BitSwap 或跨链兑换成功交易即有机会获得盲盒，开出惊喜数字资产"
+      },
+      end: {
+        title: "本期盲盒活动已结束",
+        subtitle: "敬请期待下期盲盒活动",
+        content: `您也可关注我们官方<br/>
+                Twitter：@BitKeepOS <br/>
+                或<br/>
+                Telegram：<br/>
+                https://0.plus/BitKeep_Official<br/> 
+                了解最新空投活动`
       }
     },
     ActivityBlindboxDetail: {
@@ -3747,19 +3766,19 @@ function shouldScrollToTop(route) {
 
 
 
-const _65e970f7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 20).then(__webpack_require__.bind(null, 142)));
+const _65e970f7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 20).then(__webpack_require__.bind(null, 141)));
 
-const _4f6736ff = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/index */ 18).then(__webpack_require__.bind(null, 140)));
+const _4f6736ff = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/index */ 18).then(__webpack_require__.bind(null, 139)));
 
-const _6bb9fd1a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 19).then(__webpack_require__.bind(null, 143)));
+const _6bb9fd1a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 19).then(__webpack_require__.bind(null, 142)));
 
-const _1b2d1009 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 21).then(__webpack_require__.bind(null, 144)));
+const _1b2d1009 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 21).then(__webpack_require__.bind(null, 143)));
 
-const _4d04ed27 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/_id */ 17).then(__webpack_require__.bind(null, 145)));
+const _4d04ed27 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/_id */ 17).then(__webpack_require__.bind(null, 144)));
 
-const _74266e07 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 22).then(__webpack_require__.bind(null, 146)));
+const _74266e07 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 22).then(__webpack_require__.bind(null, 145)));
 
-const _275a9b50 = () => interopDefault(__webpack_require__.e(/* import() | pages/_id */ 16).then(__webpack_require__.bind(null, 147)));
+const _275a9b50 = () => interopDefault(__webpack_require__.e(/* import() | pages/_id */ 16).then(__webpack_require__.bind(null, 146)));
 
 const emptyFn = () => {};
 
@@ -4682,7 +4701,7 @@ function wrapFunctional(options) {
 
 const components = {
   BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 1).then(__webpack_require__.bind(null, 118)).then(c => wrapFunctional(c.default || c)),
-  BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 2).then(__webpack_require__.bind(null, 148)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 2).then(__webpack_require__.bind(null, 147)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 3).then(__webpack_require__.bind(null, 84)).then(c => wrapFunctional(c.default || c)),
   BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 4).then(__webpack_require__.bind(null, 119)).then(c => wrapFunctional(c.default || c)),
   BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 5).then(__webpack_require__.bind(null, 117)).then(c => wrapFunctional(c.default || c)),
@@ -4691,8 +4710,8 @@ const components = {
   Common: () => __webpack_require__.e(/* import() | components/common */ 6).then(__webpack_require__.bind(null, 65)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 10).then(__webpack_require__.bind(null, 109)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 11).then(__webpack_require__.bind(null, 71)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 12).then(__webpack_require__.bind(null, 149)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 9).then(__webpack_require__.bind(null, 141)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 12).then(__webpack_require__.bind(null, 148)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 9).then(__webpack_require__.bind(null, 140)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutPainter: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-painter */ 13).then(__webpack_require__.bind(null, 86)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutQrcode: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-qrcode */ 14).then(__webpack_require__.bind(null, 70)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 15).then(__webpack_require__.bind(null, 87)).then(c => wrapFunctional(c.default || c))
