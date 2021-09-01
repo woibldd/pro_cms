@@ -19,6 +19,7 @@ import nuxt_plugin_bitkeep_1ee24016 from 'nuxt_plugin_bitkeep_1ee24016' // Sourc
 import nuxt_plugin_flexible_92f9b208 from 'nuxt_plugin_flexible_92f9b208' // Source: ../plugins/client/flexible.js (mode: 'client')
 import nuxt_plugin_init_04de01b7 from 'nuxt_plugin_init_04de01b7' // Source: ../plugins/common/init.js (mode: 'all')
 import nuxt_plugin_sessionStorage_c18bdcfc from 'nuxt_plugin_sessionStorage_c18bdcfc' // Source: ../plugins/client/sessionStorage.js (mode: 'client')
+import nuxt_plugin_firebase_37cc4f40 from 'nuxt_plugin_firebase_37cc4f40' // Source: ../plugins/client/firebase.js (mode: 'client')
 import nuxt_plugin_axios_397e53b5 from 'nuxt_plugin_axios_397e53b5' // Source: ../plugins/axios.js (mode: 'all')
 
 // Component: <ClientOnly>
@@ -238,6 +239,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (process.client && typeof nuxt_plugin_sessionStorage_c18bdcfc === 'function') {
     await nuxt_plugin_sessionStorage_c18bdcfc(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_firebase_37cc4f40 === 'function') {
+    await nuxt_plugin_firebase_37cc4f40(app.context, inject)
   }
 
   if (typeof nuxt_plugin_axios_397e53b5 === 'function') {

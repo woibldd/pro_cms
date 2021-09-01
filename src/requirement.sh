@@ -13,5 +13,7 @@ npm install -g  core-js postcss-px2rem-exclude uglifyjs-webpack-plugin @nuxtjs/a
 ##update npm package
 npm install vue-i18n  vuex-persistedstate vuex  html2canvas dayjs qrcode -g
 
+npm install firebase -g
+
 
 

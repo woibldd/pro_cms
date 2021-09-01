@@ -577,13 +577,13 @@ function renderStyles (styles) {
 /* 10 */
 /***/ (function(module, exports) {
 
-module.exports = require("vue-no-ssr");
+// This file is intentionally left empty for noop aliases
 
 /***/ }),
 /* 11 */
 /***/ (function(module, exports) {
 
-// This file is intentionally left empty for noop aliases
+module.exports = require("vue-no-ssr");
 
 /***/ }),
 /* 12 */
@@ -3682,7 +3682,7 @@ var external_vue_client_only_ = __webpack_require__(13);
 var external_vue_client_only_default = /*#__PURE__*/__webpack_require__.n(external_vue_client_only_);
 
 // EXTERNAL MODULE: external "vue-no-ssr"
-var external_vue_no_ssr_ = __webpack_require__(10);
+var external_vue_no_ssr_ = __webpack_require__(11);
 var external_vue_no_ssr_default = /*#__PURE__*/__webpack_require__.n(external_vue_no_ssr_);
 
 // EXTERNAL MODULE: external "vue-router"
@@ -4930,7 +4930,7 @@ const setupProgress = axios => {
   inject('axios', axios);
 });
 // EXTERNAL MODULE: ./.nuxt/empty.js
-var _nuxt_empty = __webpack_require__(11);
+var _nuxt_empty = __webpack_require__(10);
 
 // EXTERNAL MODULE: external "debug"
 var external_debug_ = __webpack_require__(6);
@@ -5060,6 +5060,8 @@ const responselog =  true ? (...arg) => {
  // Source: ../plugins/common/init.js (mode: 'all')
 
  // Source: ../plugins/client/sessionStorage.js (mode: 'client')
+
+ // Source: ../plugins/client/firebase.js (mode: 'client')
 
  // Source: ../plugins/axios.js (mode: 'all')
 // Component: <ClientOnly>
@@ -5298,6 +5300,8 @@ async function createApp(ssrContext, config = {}) {
   if (typeof init === 'function') {
     await init(app.context, inject);
   }
+
+  if (false) {}
 
   if (false) {}
 
