@@ -4,7 +4,7 @@ module.exports = {
     no_more: "No more",
     networkErro:"The Internet has gone awry"
   },
-  
+
   "ActivityBlindbox": {
     shared:{
       content:"I'm opening blind free boxes, come and help me~"
@@ -30,7 +30,7 @@ module.exports = {
       "查看数字盲盒"
     ],
     button:{
-      
+
       "OpenimmediatelyText": "Open the blind box immediately",
       "InviteFriendsNow": "Invite friends to help now",
       "OpenFriendsImmediately": "Help open the blind box",
@@ -40,7 +40,7 @@ module.exports = {
       "savePicture":"Save Picture",  //
       "ShareLink":"Share Link",  //
       "Downloadnow":"Download now",
-      
+
     },
     title:{
       "myBlindboxText": "My blind box"
@@ -49,7 +49,7 @@ module.exports = {
       "myBlindboxText": "My blind box",
       "RaidersText": "Raiders",
       "DigitalBlindBoxText": "Digital blind box",
-      
+
       "blindBoxNumText": "The box is still short of <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> people,you will get  digital assets",
       "blindBoxSurpriseText": "",
       "ValidUntilText": "Valid until",
@@ -117,11 +117,11 @@ module.exports = {
       ],
 
       modal: {
-       
+
 
         sharedHelperMeText: "助力我开启 BitKeep 数字盲盒吧",
         openSurpriseText: "开启获取惊喜数字资产",
-      
+
         DownloadBitkeep: "下载 Bitkeep，瓜分盲盒中数字资产",
         savePicture: "保存图片",
         ShareLink: "分享链接",
@@ -135,5 +135,54 @@ module.exports = {
 
     }
 
+  },
+  'CbkbExchange':{
+    balance: 'Balance',
+    get: 'You can get',
+    swap: 'Swap',
+    exchange: 'cBKB exchange BKB officially opened',
+    exchangeTitle: 'cBKB is a point voucher issued by BKB. cBKB is non-transferable and non-tradable. It is only used as a point voucher for redeeming BKB. cBKB is officially issued by BitKeep, and 100% can be exchanged for BKB.',
+    exchangeTitleA: 'The exchange channel for cBKB obtained by users through ecological rewards, blind boxes, invitations, airdrops, etc. in the early stage has now been opened. Users can exchange into BKB by themselves.',
+    exchangeTime: 'Exchange time',
+    time: '2021.10.15 00:00 - 2021.10.31.00:00(GMT+8)',
+    condition: 'Exchange conditions',
+    conditionText: 'Users must complete at least one Swap operation with BitKeep wallet before they can exchange.',
+    proportion: 'Exchange ratio',
+    proportionText: 'The conversion ratio of cBKB to BKB is 60:1',
+    exchangeTitle1: 'Note: cBKB that fails to complete the redemption operation within the specified time will automatically enter the destruction process.',
+    exchangeTitle2: '* BitKeep has the final decision right and the right to interpret the rules of this exchange activity. We reserve the right to disqualify users who have cheated, suspected of cheating, or violated any of BitKeep\'s rules and regulations.',
+    exchangeTitle3: 'To learn more about BKB\'s airdrop activities and progress, everyone is welcome to follow the BitKeep community announcement in time.',
+    about: 'About BKB',
+    viewAll: 'View All',
+    aboutContent: 'The concept of Bitcoin was first proposed by Satoshi Nakamoto in 2008. The open source software was designed and released …',
+    distribution: 'BKB issuance and distribution',
+    total: 'BKB total supply: ',
+    mining: 'Compound mining',
+    community: 'Community',
+    tram: 'Team & Investors ',
+    partner: 'Partner',
+    eco: 'Eco-construction',
+    hold: 'Hold BKB equity',
+    hold1: '1.Enjoy ecological governance rights',
+    hold2: '2.Ecological payment method',
+    hold3: '3.Member\'s rights and identity certificate',
+    hold4: '4.Public chain resource purchase',
+    hold5: '5.Unlock the VIP function of the wallet',
+    hold6: '6.Advertising fee payment',
+    hold7: '7.Participate in BitKeep IWO',
+    hold8: '8.Pledge to enter the exclusive channel of high-quality assets',
+    appreciation: 'BKB appreciation',
+    appreciationSwap: 'Swap commission deduction',
+    appreciationCoin: 'Payment coin',
+    appreciationPool: 'Multiple staking pool',
+    appreciationValut: 'Valut',
+    more: 'More about BKB',
+    website: 'Official website',
+    paper: 'White paper',
+    twitter: 'Twitter',
+    github: 'Github',
+    telegram: 'Telegram',
+    facebook: 'Facebook',
+    explorer: 'Block explorer',
   }
 }

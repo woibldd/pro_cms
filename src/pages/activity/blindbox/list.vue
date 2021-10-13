@@ -1,4 +1,4 @@
-<template>
+ <template>
   <div id="blindbox_list">
     <div class="loading" v-if="isLoading">
       <van-loading color="#1989fa" />
@@ -186,7 +186,7 @@
           </div>
           <!-- <div
             :class="{
-              noData:true, 
+              noData:true,
               color_theme:true,
               [locale]: true
             }"

@@ -27,7 +27,7 @@ const host_user_instance = axios.create({
 host_user_instance.interceptors.request.use(
   function (config) {
     if(process.client && Vue.prototype.$store){
-        const state  = Vue.prototype.$store.state 
+        const state  = Vue.prototype.$store.state
         const { UA, locale } = state.local
         if(UA.isBitKeep){
            Object.assign(config.headers,state.local.bitkeep,{
@@ -38,10 +38,10 @@ host_user_instance.interceptors.request.use(
             language: locale
           })
         }
-    
-       
+
+
     }
-    
+
     return config;
   },
   function (error) {
@@ -59,13 +59,13 @@ host_user_instance.interceptors.response.use(
   },
   function (error) {
 
-   
+
     console.error("___",error)
     // Do omething with response error
     let message = '网路开了小差'
     if(process.client){
       const  i18n = getI18n() || {}
-      message =  i18n.t? i18n.t("base.networkErro") :  message     
+      message =  i18n.t? i18n.t("base.networkErro") :  message
     }
     return Promise.resolve({
       status: 1,
@@ -85,6 +85,9 @@ export const USER_API = {
   helpMBox: (data,headers={}) => host_user_instance.get("user/activity/helpMBox", { params: data }),
 
 
-  mBoxDetail: (data,headers={}) => host_user_instance.get("user/activity/mBoxDetail", { params: data })
-  
+  mBoxDetail: (data,headers={}) => host_user_instance.get("user/activity/mBoxDetail", { params: data }),
+  //cbkb兑换模块
+  getCbkbSwapInfo: (data,headers={}) => host_user_instance.get("user/cloudwallet/getCbkbSwapInfo", { params: data }),
+  swapBkb: (data,headers={}) => host_user_instance.get("user/cloudwallet/swapBkb", { params: data })
+
 };

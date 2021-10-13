@@ -49,8 +49,8 @@ const actions = {
   async nuxtServerInit({ commit, state }, ctx) {
     const { params,
       query, req } = ctx
-    
-    let locale =  query.lang || params.lang 
+
+    let locale =  query.lang || params.lang
 
     //UA
     commit('SET_UA', parseUA(req.headers['user-agent']));
@@ -69,7 +69,7 @@ const actions = {
         mylanguage: req.headers.mylanguage,
         brand: req.headers.brand,
       });
-      locale = req.headers.mylanguage || req.headers.language 
+      locale = req.headers.mylanguage || req.headers.language
       if(!state.locales.find(lan=>lan==locale)){
         locale = 'en'
       }
@@ -81,7 +81,7 @@ const actions = {
     }
 
 
-    
+
     commit("CHANGE_LANG", locale);
     log("当前语言",{locale} )
   }
@@ -95,7 +95,7 @@ const mutations = {
   "CHANGE_LANG"(state, data) {
 
     if (data) data = data.slice(0, 2).toLowerCase()
-    
+
     if (state.locales.indexOf(data) !== -1) {
       state.locale = data || state.locale
       changeHelper(state.locale)

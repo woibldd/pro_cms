@@ -9,7 +9,7 @@ module.exports = {
             content:"我正在免费开盲盒，快来帮我助力一下吧～"
         },
         dialog: {
-           
+
             "isCreateWalletComfirm": "云钱包不存在，是否现在创建云钱包？",
             helperSuccess: "助力成功",
             "getBlindbox": "恭喜获得BitKeep数字盲盒",
@@ -74,7 +74,7 @@ module.exports = {
                 Twitter：@BitKeepOS <br/>
                 或<br/>
                 Telegram：<br/>
-                https://0.plus/BitKeep_Official<br/> 
+                https://0.plus/BitKeep_Official<br/>
                 了解最新空投活动`
               }
 
@@ -136,7 +136,56 @@ module.exports = {
                 DownloadNow: "立即下载"
             }
 
-        }
+        },
 
-    }
+    },
+    'CbkbExchange':{
+    balance: '余额',
+    get: '你可以得到',
+    swap: '兑换',
+    exchange: 'cBKB 兑换 BKB 正式开启',
+    exchangeTitle: 'cBKB 是基于 BKB 发行的积分凭证，cBKB 不可转账和不可交易，仅作为兑换 BKB 的积分凭证。cBKB 为 BitKeep官方发行，且百分之百可以兑换为 BKB。',
+    exchangeTitleA: '针对用户前期通过生态奖励、盲盒、邀约、空投等形式获取到的 cBKB 现已开启兑换通道。用户可以自行兑换成  BKB。',
+    exchangeTime: '兑换时间',
+    time: '2021.10.15 00:00 - 2021.10.31.00:00(GMT+8)',
+    condition: '兑换条件',
+    conditionText: '用户必须用 BitKeep 钱包完成至少一次 Swap 操作，才能进行兑换。',
+    proportion: '兑换比例',
+    proportionText: 'cBKB 与 BKB 兑换比例为 60 : 1',
+    exchangeTitle1: '注意：未在规定时间内完成兑换操作的 cBKB 将⾃动进⼊销毁流程。',
+    exchangeTitle2: '* BitKeep 享有本次兑换活动规则的最终决定权和解释权。我们保留取消任何作弊、疑似作弊或违反 BitKeep 任何规章制度的用户参与资格的权利。',
+    exchangeTitle3: '了解更多 BKB 的空投活动及进展，欢迎⼤家可以及时关注BitKeep 社区公告。',
+    about: '关于 BKB',
+    viewAll: '查看全部',
+    aboutContent: '比特币的概念最早由中本聪于 2008 年提出。开源软件的设计和发布……',
+    distribution: 'BKB发行与分发',
+    total: 'BKB总供应量：',
+    mining: '复合开采',
+    community: '社区',
+    tram: '团队与投资者',
+    partner: '伙伴',
+    eco: '生态建设',
+    hold: '持有BKB股权',
+    hold1: '1.享有生态治理权',
+    hold2: '2.生态支付方式',
+    hold3: '3.会员权益及身份证明',
+    hold4: '4.公链资源购买',
+    hold5: '5.解锁钱包VIP功能',
+    hold6: '6.广告费支付',
+    hold7: '7.参与BitKeep IWO',
+    hold8: '8.承诺进入优质资产专属通道',
+    appreciation: 'BKB升值',
+    appreciationSwap: '掉期佣金扣除',
+    appreciationCoin: '支付币',
+    appreciationPool: '多权益池',
+    appreciationValut: '货币',
+    more: '更多关于 BKB',
+    website: '官方网站',
+    paper: '白皮书',
+    twitter: 'Twitter',
+    github: 'Github',
+    telegram: '电报',
+    facebook: 'Facebook',
+    explorer: '区块浏览器',
+  }
 }

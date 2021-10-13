@@ -201,16 +201,16 @@ export const deepClone = oldObj => {
 
         // 处理循环引用
         const index = oldObjArr.indexOf(oldObj);
-        if (index != -1) {// 如果父数组存在本对象,说明之前已经被引用过,直接返回此对象    
+        if (index != -1) {// 如果父数组存在本对象,说明之前已经被引用过,直接返回此对象
             return newObjArr[index];
         }
 
         oldObjArr.push(oldObj);
         newObjArr.push(newObj);
         /*数组和对象都可以用forin语句，虽然数组使用forin会有一个问题(具体看最下面）。
-        但是这里不会影响，所以这么用 
+        但是这里不会影响，所以这么用
         */
-        for (let i in oldObj) {// 递归     
+        for (let i in oldObj) {// 递归
             newObj[i] = clone(oldObj[i]);
         }
 
@@ -246,7 +246,7 @@ export const parseUA = userAgent => {
         PC: ua.indexOf('Win') > -1 || ua.indexOf('Mac') > -1 || ua.indexOf('Linux') > -1,
         weixin: ua.indexOf('MicroMessenger') > -1,
         isBitKeep:/(BitKeep)/i.test(ua),  //app
-        isDinhgDing: /(DingTalk)/i.test(ua) 
+        isDinhgDing: /(DingTalk)/i.test(ua)
     }
     ret.bitKeepAndroid = ret.isBitKeep && ret.android
     ret.bitKeepIos = ret.isBitKeep && ret.ios
@@ -259,12 +259,12 @@ export function parseUrl(url){
     let keys=[
       "url", "scheme", "slash", "host", "port", "path", "query", "hash"
     ]
-    if(!reuslt) return {} 
+    if(!reuslt) return {}
     let Obj = {};
     keys.forEach((key, i) => {
       Obj[key] = reuslt[i];
     });
-  
+
     return Obj;
   };
 
