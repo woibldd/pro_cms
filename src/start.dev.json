@@ -12,7 +12,8 @@
       "env": {
         "DEBUG":"bit*",
         "NUXT_ENV_operation_api": "http://dev.bitkeep.top:8898",
-        "HOST_API":"http://dev.bitkeep.top:8880"
+        "HOST_API":"http://dev.bitkeep.top:8880",
+        "PORT": "8088"
       }
     }
   ]
