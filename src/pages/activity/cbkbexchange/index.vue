@@ -4,13 +4,13 @@
       <van-loading  color="#1989fa" vertical>加载中...</van-loading>
     </div>
     <div v-else>
-      <div class="img">
+      <div class="img" :style="locale=='en'? 'margin-top: -3px': ''">
         <img :src="locale=='en' ? 'http://cdn.bitkeep.vip/u_b_b0537090-2beb-11ec-b5c0-c1ce5b0a2535.png': 'http://cdn.bitkeep.vip/u_b_8aca85c0-2beb-11ec-b5c0-c1ce5b0a2535.png'" alt="">
       </div>
       <div class="text">
         <p class="balance">{{$t('CbkbExchange.balance')}}: {{cbkbBalance}} cBKB</p>
         <p class="text-t">{{$t('CbkbExchange.get')}}</p>
-        <p class="text-n">{{available}} <span class="setFont">BKB</span></p>
+        <p class="text-n"><span class="setH">{{available}}</span> <span class="setFont">BKB</span></p>
         <van-button class="swap-btn" @click="swapBkb" :class="[!enable ? 'disabled': '']">{{$t('CbkbExchange.swap')}}</van-button>
       </div>
       <div class="exchange">
@@ -277,8 +277,12 @@ export default {
   }
   .text-n{
     font-size: 24px;
-    line-height: 14px;
+    line-height: 18px;
     color: #080D21;
+    height: 18px;
+    .setH{
+      height: 18px;
+    }
     .setFont{
       font-size: 16px;
     }
