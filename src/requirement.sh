@@ -7,7 +7,7 @@ export NVM_DIR="$HOME/.nvm"
 nvm install v10.24.0
 
 
-npm install -g  core-js postcss-px2rem-exclude uglifyjs-webpack-plugin @nuxtjs/axios @nuxtjs/proxy nuxt axios  webpack
+npm install -g  core-js postcss-px2rem-exclude uglifyjs-webpack-plugin  vue-i18n  vuex-persistedstate vuex   firebase html2canvas dayjs qrcode  @nuxtjs/axios @nuxtjs/proxy nuxt axios  webpack
 
 
 ##update npm package

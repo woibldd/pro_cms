@@ -190,9 +190,6 @@ export default {
   },
   computed: {
     ...mapState(["local"]),
-    isBitKeep() {
-      return this.local.UA.isBitKeep;
-    },
     locale() {
       return this.local.locale;
     }
