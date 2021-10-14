@@ -157,6 +157,7 @@ module.exports = {
     exchangeTitle3: '了解更多 BKB 的空投活动及进展，欢迎⼤家可以及时关注BitKeep 社区公告。',
     about: '关于 BKB',
     viewAll: '查看全部',
+    pickUp: '收起',
     aboutContent: '比特币的概念最早由中本聪于 2008 年提出。开源软件的设计和发布……',
     distribution: 'BKB发行与分发',
     total: 'BKB总供应量：',

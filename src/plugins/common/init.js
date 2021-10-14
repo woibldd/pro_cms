@@ -28,7 +28,8 @@ import {
     // Badge,
     PullRefresh,
     Overlay,
-    Skeleton
+    Skeleton,
+    Button
 } from "vant";
 
 const components = [
@@ -47,17 +48,18 @@ const components = [
     Field,
     Form,
     Skeleton,
+    Button
     // Lazyload
     // VueCanvasPoster
 ];
 
-//存在问题结合nuxt使用  服务端拿不到query 
+//存在问题结合nuxt使用  服务端拿不到query
 Vue.use(Lazyload, {
     lazyComponent: false,
 });
 function install(Vue) {
     components.forEach(function (item) {
-      
+
         Vue.use(item);
         // console.log(item.install , item.name)
         // if (item.install) {
@@ -71,7 +73,7 @@ install(Vue)
 
 if(process.env.DEBUG && process.client){
     typeof VConsole !="undefined"  && new VConsole();
-   
+
 }
 
 
@@ -90,7 +92,7 @@ export default ({ app, store, query={},params={}}) => {
       }else{
         sessionStorage.setItem("bitKeep",JSON.stringify(bitkeep))
       }
-      
+
   }
   log("init: success")
 }

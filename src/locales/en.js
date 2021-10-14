@@ -154,6 +154,7 @@ module.exports = {
     exchangeTitle3: 'To learn more about BKB\'s airdrop activities and progress, everyone is welcome to follow the BitKeep community announcement in time.',
     about: 'About BKB',
     viewAll: 'View All',
+    pickUp: 'Pick up',
     aboutContent: 'The concept of Bitcoin was first proposed by Satoshi Nakamoto in 2008. The open source software was designed and released …',
     distribution: 'BKB issuance and distribution',
     total: 'BKB total supply: ',

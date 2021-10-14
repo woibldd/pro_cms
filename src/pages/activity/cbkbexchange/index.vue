@@ -1,175 +1,180 @@
 <template>
   <div>
-    <div class="img">
-      <img :src="locale=='en' ? 'http://cdn.bitkeep.vip/u_b_b0537090-2beb-11ec-b5c0-c1ce5b0a2535.png': 'http://cdn.bitkeep.vip/u_b_8aca85c0-2beb-11ec-b5c0-c1ce5b0a2535.png'" alt="">
+    <div class="loading" v-if="isLoading">
+      <van-loading  color="#1989fa" vertical>加载中...</van-loading>
     </div>
-    <div class="text">
-      <p class="balance">{{$t('CbkbExchange.balance')}}: {{cbkbBalance}} cBKB</p>
-      <p class="text-t">{{$t('CbkbExchange.get')}}</p>
-      <p class="text-n">{{available}} <span class="setFont">BKB</span></p>
-      <div class="swap-btn" @click="swapBkb">{{$t('CbkbExchange.swap')}}</div>
-    </div>
-    <div class="exchange">
-      <p class="title">{{$t('CbkbExchange.exchange')}} </p>
-      <p class="content">{{$t('CbkbExchange.exchangeTitle')}}</p>
-      <p class="content">{{$t('CbkbExchange.exchangeTitleA')}}</p>
-      <p class="title">{{$t('CbkbExchange.exchangeTime')}}</p>
-      <p class="content">{{$t('CbkbExchange.time')}}</p>
-      <p class="title">{{$t('CbkbExchange.condition')}}</p>
-      <p class="content">{{$t('CbkbExchange.conditionText')}}</p>
-      <p class="title">{{$t('CbkbExchange.proportion')}}</p>
-      <p class="content">{{$t('CbkbExchange.proportionText')}}</p>
-      <p class="title">{{$t('CbkbExchange.exchangeTitle1')}}</p>
-      <p class="content">{{$t('CbkbExchange.exchangeTitle2')}}</p>
-      <p class="content">{{$t('CbkbExchange.exchangeTitle3')}}</p>
-    </div>
-    <div class="line"></div>
-    <div class="about">
-      <div class="about-title">
-        <img src="http://cdn.bitkeep.vip/u_b_0978f140-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-        <span>{{$t('CbkbExchange.about')}}</span>
+    <div v-else>
+      <div class="img">
+        <img :src="locale=='en' ? 'http://cdn.bitkeep.vip/u_b_b0537090-2beb-11ec-b5c0-c1ce5b0a2535.png': 'http://cdn.bitkeep.vip/u_b_8aca85c0-2beb-11ec-b5c0-c1ce5b0a2535.png'" alt="">
       </div>
-      <div class="about-con">
-        {{$t('CbkbExchange.aboutContent')}}
+      <div class="text">
+        <p class="balance">{{$t('CbkbExchange.balance')}}: {{cbkbBalance}} cBKB</p>
+        <p class="text-t">{{$t('CbkbExchange.get')}}</p>
+        <p class="text-n">{{available}} <span class="setFont">BKB</span></p>
+        <van-button class="swap-btn" @click="swapBkb" :class="[!enable ? 'disabled': '']">{{$t('CbkbExchange.swap')}}</van-button>
       </div>
-      <div class="viewAll" @click="viewAll"> {{$t('CbkbExchange.viewAll')}}</div>
-    </div>
-    <div class="line"></div>
-    <div class="distribution">
-      <div class="distribution-title">
-        <img src="http://cdn.bitkeep.vip/u_b_244b3eb0-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-        <span>{{$t('CbkbExchange.distribution')}}</span>
+      <div class="exchange">
+        <p class="title">{{$t('CbkbExchange.exchange')}} </p>
+        <p class="content">{{$t('CbkbExchange.exchangeTitle')}}</p>
+        <p class="content">{{$t('CbkbExchange.exchangeTitleA')}}</p>
+        <p class="title">{{$t('CbkbExchange.exchangeTime')}}</p>
+        <p class="content">{{$t('CbkbExchange.time')}}</p>
+        <p class="title">{{$t('CbkbExchange.condition')}}</p>
+        <p class="content">{{$t('CbkbExchange.conditionText')}}</p>
+        <p class="title">{{$t('CbkbExchange.proportion')}}</p>
+        <p class="content">{{$t('CbkbExchange.proportionText')}}</p>
+        <p class="title">{{$t('CbkbExchange.exchangeTitle1')}}</p>
+        <p class="content">{{$t('CbkbExchange.exchangeTitle2')}}</p>
+        <p class="content">{{$t('CbkbExchange.exchangeTitle3')}}</p>
       </div>
-      <div class="charts-img">
-        <img src="http://cdn.bitkeep.vip/u_b_3b815290-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-        <p class="total">{{$t('CbkbExchange.total')}}<span>600,000,000</span></p>
-      </div>
-      <div class="distribution-man">
-        <div class="data">
-          <div>
-            <span style="background: #495BFF;"></span>
-            <span>{{$t('CbkbExchange.mining')}}</span>
-          </div>
-          <div>50%</div>
+      <div class="line"></div>
+      <div class="about">
+        <div class="about-title">
+          <img src="http://cdn.bitkeep.vip/u_b_0978f140-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
+          <span>{{$t('CbkbExchange.about')}}</span>
         </div>
-        <div class="data">
-          <div>
-            <span style="background: #1CBDB5;"></span>
-            <span>{{$t('CbkbExchange.community')}}</span>
-          </div>
-          <div>20%</div>
+        <div class="about-con">
+          {{$t('CbkbExchange.aboutContent')}}
         </div>
-        <div class="data">
-          <div>
-            <span style="background: #FF8146;"></span>
-            <span>{{$t('CbkbExchange.tram')}} </span>
-          </div>
-          <div>15%</div>
-        </div>
-        <div class="data">
-          <div>
-            <span style="background: #F04E98;"></span>
-            <span>{{$t('CbkbExchange.partner')}}</span>
-          </div>
-          <div>10%</div>
-        </div>
-        <div class="data">
-          <div>
-            <span style="background: #080D21;"></span>
-            <span>{{$t('CbkbExchange.eco')}}</span>
-          </div>
-          <div>5%</div>
-        </div>
+        <div class="viewAll" @click="viewAll"> {{!this.flag?$t('CbkbExchange.viewAll'):$t('CbkbExchange.pickUp')}}</div>
       </div>
-    </div>
-    <div class="line"></div>
-    <div class="hold">
-      <div class="hold-title">
-        <img src="http://cdn.bitkeep.vip/u_b_5930f660-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-        <span>{{$t('CbkbExchange.hold')}}</span>
-      </div>
-      <div class="hold-content">
-        <p>{{$t('CbkbExchange.hold1')}}</p>
-        <p>{{$t('CbkbExchange.hold2')}}</p>
-        <p>{{$t('CbkbExchange.hold3')}}</p>
-        <p>{{$t('CbkbExchange.hold4')}}</p>
-        <p>{{$t('CbkbExchange.hold5')}}</p>
-        <p>{{$t('CbkbExchange.hold6')}}</p>
-        <p>{{$t('CbkbExchange.hold7')}}</p>
-        <p>{{$t('CbkbExchange.hold8')}}</p>
-      </div>
-    </div>
-    <div class="line"></div>
-    <div class="appreciation">
-      <div class="appreciation-title">
-        <span>{{$t('CbkbExchange.appreciation')}}</span>
-      </div>
-      <div class="appreciation-grid">
-        <div class="appreciation-grid-flex">
-          <div>
-            <img src="http://cdn.bitkeep.vip/u_b_adf789c0-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-            <span style="width: 110px">{{$t('CbkbExchange.appreciationSwap')}}</span>
-          </div>
-          <div>
-            <img src="http://cdn.bitkeep.vip/u_b_adf71490-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-            <span>{{$t('CbkbExchange.appreciationCoin')}}</span>
-          </div>
+      <div class="line"></div>
+      <div class="distribution">
+        <div class="distribution-title">
+          <img src="http://cdn.bitkeep.vip/u_b_244b3eb0-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
+          <span>{{$t('CbkbExchange.distribution')}}</span>
         </div>
-        <div class="appreciation-grid-flex">
-          <div>
-            <img src="http://cdn.bitkeep.vip/u_b_adf789c1-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-            <span style="width: 110px">{{$t('CbkbExchange.appreciationPool')}}</span>
+        <div class="charts-img">
+          <img src="http://cdn.bitkeep.vip/u_b_3b815290-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
+          <p class="total">{{$t('CbkbExchange.total')}}<span>600,000,000</span></p>
+        </div>
+        <div class="distribution-man">
+          <div class="data">
+            <div>
+              <span style="background: #495BFF;"></span>
+              <span>{{$t('CbkbExchange.mining')}}</span>
+            </div>
+            <div>50%</div>
           </div>
-          <div>
-            <img src="http://cdn.bitkeep.vip/u_b_adf7b0d0-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-            <span>{{$t('CbkbExchange.appreciationValut')}}</span>
+          <div class="data">
+            <div>
+              <span style="background: #1CBDB5;"></span>
+              <span>{{$t('CbkbExchange.community')}}</span>
+            </div>
+            <div>20%</div>
+          </div>
+          <div class="data">
+            <div>
+              <span style="background: #FF8146;"></span>
+              <span>{{$t('CbkbExchange.tram')}} </span>
+            </div>
+            <div>15%</div>
+          </div>
+          <div class="data">
+            <div>
+              <span style="background: #F04E98;"></span>
+              <span>{{$t('CbkbExchange.partner')}}</span>
+            </div>
+            <div>10%</div>
+          </div>
+          <div class="data">
+            <div>
+              <span style="background: #080D21;"></span>
+              <span>{{$t('CbkbExchange.eco')}}</span>
+            </div>
+            <div>5%</div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="line"></div>
-    <div class="more">
-      <div class="more-title">{{$t('CbkbExchange.more')}}</div>
-      <div class="more-line">
-        <a href="https://www.bitkeep.org/" target="_blank">
-          <img src="http://cdn.bitkeep.vip/u_b_ddcf2860-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""><span>{{$t('CbkbExchange.website')}}</span>
-        </a>
-        <van-icon name="arrow"/></div>
-      <div class="more-line">
-        <a href="" target="_blank">
-          <img src="http://cdn.bitkeep.vip/u_b_ddf09310-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.paper')}}</span>
-        </a>
-        <van-icon name="arrow"/>
+      <div class="line"></div>
+      <div class="hold">
+        <div class="hold-title">
+          <img src="http://cdn.bitkeep.vip/u_b_5930f660-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
+          <span>{{$t('CbkbExchange.hold')}}</span>
+        </div>
+        <div class="hold-content">
+          <p>{{$t('CbkbExchange.hold1')}}</p>
+          <p>{{$t('CbkbExchange.hold2')}}</p>
+          <p>{{$t('CbkbExchange.hold3')}}</p>
+          <p>{{$t('CbkbExchange.hold4')}}</p>
+          <p>{{$t('CbkbExchange.hold5')}}</p>
+          <p>{{$t('CbkbExchange.hold6')}}</p>
+          <p>{{$t('CbkbExchange.hold7')}}</p>
+          <p>{{$t('CbkbExchange.hold8')}}</p>
+        </div>
       </div>
-      <div class="more-line">
-        <a href="https://twitter.com/BitKeepOS" target="_blank">
-          <img src="http://cdn.bitkeep.vip/u_b_ddcf4f71-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.twitter')}}</span>
-        </a>
-        <van-icon name="arrow"/>
+      <div class="line"></div>
+      <div class="appreciation">
+        <div class="appreciation-title">
+          <span>{{$t('CbkbExchange.appreciation')}}</span>
+        </div>
+        <div class="appreciation-grid">
+          <div class="appreciation-grid-flex">
+            <div>
+              <img src="http://cdn.bitkeep.vip/u_b_adf789c0-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
+              <span style="width: 110px">{{$t('CbkbExchange.appreciationSwap')}}</span>
+            </div>
+            <div>
+              <img src="http://cdn.bitkeep.vip/u_b_adf71490-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
+              <span>{{$t('CbkbExchange.appreciationCoin')}}</span>
+            </div>
+          </div>
+          <div class="appreciation-grid-flex">
+            <div>
+              <img src="http://cdn.bitkeep.vip/u_b_adf789c1-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
+              <span style="width: 110px">{{$t('CbkbExchange.appreciationPool')}}</span>
+            </div>
+            <div>
+              <img src="http://cdn.bitkeep.vip/u_b_adf7b0d0-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
+              <span>{{$t('CbkbExchange.appreciationValut')}}</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="more-line">
-        <a href="https://github.com/bitkeepcom" target="_blank">
-          <img src="http://cdn.bitkeep.vip/u_b_ddceb330-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.github')}}</span>
-        </a>
-        <van-icon name="arrow"/>
-      </div>
-      <div class="more-line">
-        <a href="https://t.me/bitkeep" target="_blank">
-          <img src="http://cdn.bitkeep.vip/u_b_ddcf0150-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.telegram')}}</span>
-        </a>
-        <van-icon name="arrow"/>
-      </div>
-      <div class="more-line">
-        <a href="" target="_blank">
-          <img src="http://cdn.bitkeep.vip/u_b_ddcf4f70-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.facebook')}}</span>
-        </a>
-        <van-icon name="arrow"/>
-      </div>
-      <div class="more-line">
-        <a :href="src" target="_blank">
-          <img src="http://cdn.bitkeep.vip/u_b_ddceda40-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.explorer')}}</span>
-        </a>
-        <van-icon name="arrow"/>
+      <div class="line"></div>
+      <div class="more">
+        <div class="more-title">{{$t('CbkbExchange.more')}}</div>
+        <div class="more-line">
+          <a href="https://www.bitkeep.org/" target="_blank">
+            <img src="http://cdn.bitkeep.vip/u_b_ddcf2860-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""><span>{{$t('CbkbExchange.website')}}</span>
+          </a>
+          <van-icon name="arrow"/></div>
+        <div class="more-line">
+          <a href="" target="_blank">
+            <img src="http://cdn.bitkeep.vip/u_b_ddf09310-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.paper')}}</span>
+          </a>
+          <van-icon name="arrow"/>
+        </div>
+        <div class="more-line">
+          <a href="https://twitter.com/BitKeepOS" target="_blank">
+            <img src="http://cdn.bitkeep.vip/u_b_ddcf4f71-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.twitter')}}</span>
+          </a>
+          <van-icon name="arrow"/>
+        </div>
+        <div class="more-line">
+          <a href="https://github.com/bitkeepcom" target="_blank">
+            <img src="http://cdn.bitkeep.vip/u_b_ddceb330-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.github')}}</span>
+          </a>
+          <van-icon name="arrow"/>
+        </div>
+        <div class="more-line">
+          <a href="https://t.me/bitkeep" target="_blank">
+            <img src="http://cdn.bitkeep.vip/u_b_ddcf0150-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.telegram')}}</span>
+          </a>
+          <van-icon name="arrow"/>
+        </div>
+        <div class="more-line">
+          <a href="" target="_blank">
+            <img src="http://cdn.bitkeep.vip/u_b_ddcf4f70-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.facebook')}}</span>
+          </a>
+          <van-icon name="arrow"/>
+        </div>
+        <div class="more-line">
+          <a :href="src" target="_blank">
+            <img src="http://cdn.bitkeep.vip/u_b_ddceda40-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.explorer')}}</span>
+          </a>
+          <van-icon name="arrow"/>
+        </div>
       </div>
     </div>
   </div>
@@ -185,7 +190,10 @@ export default {
     return{
       cbkbBalance: 0,
       available: 0,
-      src: ''
+      src: '',
+      flag: false,
+      enable: null,
+      isLoading: true
     }
   },
   computed: {
@@ -197,7 +205,9 @@ export default {
   async created(){
     process.client && window.addEventListener('load',()=>{
       this.getBalance();
-    })
+    });
+    await this.$nextTick();
+    this.isLoading = false;
   },
   methods:{
     // 获取地址cbkb地址
@@ -217,22 +227,36 @@ export default {
       if (status == 1) return this.$toast.fail(data);
       this.cbkbBalance = data.cbkbBalance;
       this.available = data.available;
+      this.enable = data.enable;
     },
     swapBkb:debounce(async function(){
       const { data, status } = await USER_API.swapBkb({
         userid: window.ethereum.selectedAddress,
       });
       if (status == 1) return this.$toast.fail(data);
-      this.$toast.success(data)
+      this.$toast.success(data);
+      this.getCbkbSwapInfo(window.ethereum.selectedAddress);
     }),
     viewAll(){
-      document.getElementsByClassName('about-con')[0].setAttribute('style','-webkit-line-clamp:10')
+      this.flag = !this.flag;
+      let dom =document.getElementsByClassName('about-con')[0];
+      if(this.flag){
+        dom.setAttribute('style','-webkit-line-clamp:10')
+      }else{
+        dom.setAttribute('style','-webkit-line-clamp:2')
+      }
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.loading {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .img img{
   width: 100%;
 }
@@ -269,6 +293,10 @@ export default {
     font-weight: 500;
     font-size: 16px;
     line-height: 50px;
+    display: block;
+  }
+  .disabled{
+    opacity: .5;
   }
 }
 .exchange{
