@@ -4,8 +4,8 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _262ba8c5 = () => interopDefault(import('../pages/cbkbexchange/index.vue' /* webpackChunkName: "pages/cbkbexchange/index" */))
 const _85ae8e80 = () => interopDefault(import('../pages/activity/blindbox/index.vue' /* webpackChunkName: "pages/activity/blindbox/index" */))
+const _432e757a = () => interopDefault(import('../pages/activity/cbkbexchange/index.vue' /* webpackChunkName: "pages/activity/cbkbexchange/index" */))
 const _26864b16 = () => interopDefault(import('../pages/activity/blindbox/detail/index.vue' /* webpackChunkName: "pages/activity/blindbox/detail/index" */))
 const _51b48dec = () => interopDefault(import('../pages/activity/blindbox/download.vue' /* webpackChunkName: "pages/activity/blindbox/download" */))
 const _271da9c0 = () => interopDefault(import('../pages/activity/blindbox/list.vue' /* webpackChunkName: "pages/activity/blindbox/list" */))
@@ -25,13 +25,13 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-    path: "/cbkbexchange",
-    component: _262ba8c5,
-    name: "cbkbexchange"
-  }, {
     path: "/activity/blindbox",
     component: _85ae8e80,
     name: "activity-blindbox"
+  }, {
+    path: "/activity/cbkbexchange",
+    component: _432e757a,
+    name: "activity-cbkbexchange"
   }, {
     path: "/activity/blindbox/detail",
     component: _26864b16,

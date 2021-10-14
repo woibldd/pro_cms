@@ -1,17 +1,17 @@
 [
   {
-    "name": "cbkbexchange",
-    "path": "/cbkbexchange",
-    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/cbkbexchange/index.vue",
-    "chunkName": "pages/cbkbexchange/index",
-    "_name": "_262ba8c5"
-  },
-  {
     "name": "activity-blindbox",
     "path": "/activity/blindbox",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindbox/index.vue",
     "chunkName": "pages/activity/blindbox/index",
     "_name": "_85ae8e80"
+  },
+  {
+    "name": "activity-cbkbexchange",
+    "path": "/activity/cbkbexchange",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/cbkbexchange/index.vue",
+    "chunkName": "pages/activity/cbkbexchange/index",
+    "_name": "_432e757a"
   },
   {
     "name": "activity-blindbox-detail",

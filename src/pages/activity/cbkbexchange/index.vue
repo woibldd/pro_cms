@@ -177,7 +177,7 @@
 
 <script>
 import { USER_API } from "@/api/client";
-import {debounce} from "../../tools/common";
+import {debounce} from "../../../tools/common";
 import { mapState } from "vuex";
 export default {
   name: "index",
