@@ -3,48 +3,56 @@
     "name": "activity-blindbox",
     "path": "/activity/blindbox",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindbox/index.vue",
-    "chunkName": "pages/activity/blindbox/index"
+    "chunkName": "pages/activity/blindbox/index",
+    "_name": "_85ae8e80"
   },
   {
     "name": "activity-cbkbexchange",
     "path": "/activity/cbkbexchange",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/cbkbexchange/index.vue",
-    "chunkName": "pages/activity/cbkbexchange/index"
+    "chunkName": "pages/activity/cbkbexchange/index",
+    "_name": "_432e757a"
   },
   {
     "name": "activity-blindbox-detail",
     "path": "/activity/blindbox/detail",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindbox/detail/index.vue",
-    "chunkName": "pages/activity/blindbox/detail/index"
+    "chunkName": "pages/activity/blindbox/detail/index",
+    "_name": "_26864b16"
   },
   {
     "name": "activity-blindbox-download",
     "path": "/activity/blindbox/download",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindbox/download.vue",
-    "chunkName": "pages/activity/blindbox/download"
+    "chunkName": "pages/activity/blindbox/download",
+    "_name": "_51b48dec"
   },
   {
     "name": "activity-blindbox-list",
     "path": "/activity/blindbox/list",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindbox/list.vue",
-    "chunkName": "pages/activity/blindbox/list"
+    "chunkName": "pages/activity/blindbox/list",
+    "_name": "_271da9c0"
   },
   {
     "name": "activity-blindbox-detail-id",
     "path": "/activity/blindbox/detail/:id",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindbox/detail/_id.vue",
-    "chunkName": "pages/activity/blindbox/detail/_id"
+    "chunkName": "pages/activity/blindbox/detail/_id",
+    "_name": "_24381afe"
   },
   {
     "name": "article-detail-id",
     "path": "/article/detail/:id?",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/article/detail/_id.vue",
-    "chunkName": "pages/article/detail/_id"
+    "chunkName": "pages/article/detail/_id",
+    "_name": "_262ca6c4"
   },
   {
     "name": "id",
     "path": "/:id?",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/_id.vue",
-    "chunkName": "pages/_id"
+    "chunkName": "pages/_id",
+    "_name": "_18d2f8a1"
   }
 ]

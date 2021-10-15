@@ -144,7 +144,7 @@ module.exports = {
     exchangeTitle: 'cBKB is a credit point issued by BKB. cBKB is non-transferable and non-tradable. It is only used as a point voucher for redeeming BKB. cBKB is officially issued by BitKeep, and 100% can be exchanged for BKB.',
     exchangeTitleA: 'Users can get cBKB through ecological rewards, blind boxes, invitations, airdrops, etc. The swap channel has opened. Users can exchange into BKB by themselves.',
     exchangeTime: 'Swap Time',
-    time: '2021.10.15 00:00 - 2021.10.31.00:00(GMT+8)',
+    time: '2021-10-20 12:00 — 11-03 12:00 (GMT+8)',
     condition: 'Swap Rules',
     conditionText: 'Users must complete at least one Swap in BitKeep wallet ',
     proportion: 'Swap Ratio',
@@ -185,5 +185,6 @@ module.exports = {
     telegram: 'Telegram',
     facebook: 'Facebook',
     explorer: 'Block explorer',
+    know: 'OK'
   }
 }

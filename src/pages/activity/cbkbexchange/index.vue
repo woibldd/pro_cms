@@ -4,14 +4,14 @@
       <van-loading  color="#1989fa" vertical>加载中...</van-loading>
     </div>
     <div v-else>
-      <div class="img" :style="locale=='en'? 'margin-top: -3px': ''">
-        <img :src="locale=='en' ? 'http://cdn.bitkeep.vip/u_b_b0537090-2beb-11ec-b5c0-c1ce5b0a2535.png': 'http://cdn.bitkeep.vip/u_b_8aca85c0-2beb-11ec-b5c0-c1ce5b0a2535.png'" alt="">
+      <div class="img">
+        <img :src="locale=='en' ? 'http://cdn.bitkeep.vip/u_b_554fd460-2d88-11ec-8da1-c9fb76b24289.png': 'http://cdn.bitkeep.vip/u_b_4c9f1920-2d88-11ec-8da1-c9fb76b24289.png'" alt="">
       </div>
       <div class="text">
         <p class="balance">{{$t('CbkbExchange.balance')}}: {{cbkbBalance}} cBKB</p>
         <p class="text-t">{{$t('CbkbExchange.get')}}</p>
         <p class="text-n"><span class="setH">{{available}}</span> <span class="setFont">BKB</span></p>
-        <van-button class="swap-btn" @click="swapBkb" :class="[!enable ? 'disabled': '']">{{$t('CbkbExchange.swap')}}</van-button>
+        <van-button class="swap-btn" @click="swapBkb">{{$t('CbkbExchange.swap')}}</van-button>
       </div>
       <div class="exchange">
         <p class="title">{{$t('CbkbExchange.exchange')}} </p>
@@ -50,7 +50,7 @@
         </div>
         <div class="charts-img">
           <img src="http://cdn.bitkeep.vip/u_b_3b815290-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-          <p class="total">{{$t('CbkbExchange.total')}}<span>600,000,000</span></p>
+          <p class="total">{{$t('CbkbExchange.total')}}<span class="exchangeTotal">600,000,000</span></p>
         </div>
         <div class="distribution-man">
           <div class="data">
@@ -116,7 +116,7 @@
           <div class="appreciation-grid-flex">
             <div>
               <img src="http://cdn.bitkeep.vip/u_b_adf789c0-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-              <span style="width: 110px">{{$t('CbkbExchange.appreciationSwap')}}</span>
+              <span>{{$t('CbkbExchange.appreciationSwap')}}</span>
             </div>
             <div>
               <img src="http://cdn.bitkeep.vip/u_b_adf71490-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
@@ -126,7 +126,7 @@
           <div class="appreciation-grid-flex">
             <div>
               <img src="http://cdn.bitkeep.vip/u_b_adf789c1-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-              <span style="width: 110px">{{$t('CbkbExchange.appreciationPool')}}</span>
+              <span>{{$t('CbkbExchange.appreciationPool')}}</span>
             </div>
             <div>
               <img src="http://cdn.bitkeep.vip/u_b_adf7b0d0-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
@@ -142,18 +142,18 @@
           <a href="https://www.bitkeep.com/" target="_blank">
             <img src="http://cdn.bitkeep.vip/u_b_ddcf2860-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""><span>{{$t('CbkbExchange.website')}}</span>
           </a>
-          <van-icon name="arrow"/></div>
+          <van-icon name="arrow" class="setIcon"/></div>
 <!--        <div class="more-line">-->
 <!--          <a href="" target="_blank">-->
 <!--            <img src="http://cdn.bitkeep.vip/u_b_ddf09310-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.paper')}}</span>-->
 <!--          </a>-->
-<!--          <van-icon name="arrow"/>-->
+<!--          <van-icon name="arrow" class="setIcon"/>-->
 <!--        </div>-->
         <div class="more-line">
           <a href="https://twitter.com/BitKeepOS" target="_blank">
             <img src="http://cdn.bitkeep.vip/u_b_ddcf4f71-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.twitter')}}</span>
           </a>
-          <van-icon name="arrow"/>
+          <van-icon name="arrow" class="setIcon"/>
         </div>
 <!--        <div class="more-line">-->
 <!--          <a href="https://github.com/bitkeepcom" target="_blank">-->
@@ -165,24 +165,25 @@
           <a href="https://t.me/bitkeep" target="_blank">
             <img src="http://cdn.bitkeep.vip/u_b_ddcf0150-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.telegram')}}</span>
           </a>
-          <van-icon name="arrow"/>
+          <van-icon name="arrow" class="setIcon"/>
         </div>
 <!--        <div class="more-line">-->
 <!--          <a href="" target="_blank">-->
 <!--            <img src="http://cdn.bitkeep.vip/u_b_ddcf4f70-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.facebook')}}</span>-->
 <!--          </a>-->
-<!--          <van-icon name="arrow"/>-->
+<!--          <van-icon name="arrow" class="setIcon"/>-->
 <!--        </div>-->
         <div class="more-line">
           <a :href="src" target="_blank">
             <img src="http://cdn.bitkeep.vip/u_b_ddceda40-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.explorer')}}</span>
           </a>
-          <van-icon name="arrow"/>
+          <van-icon name="arrow" class="setIcon"/>
         </div>
       </div>
     </div>
   </div>
 </template>
+
 
 <script>
 import { USER_API } from "@/api/client";
@@ -228,18 +229,24 @@ export default {
       const { data, status } = await USER_API.getCbkbSwapInfo({
         userid: address,
       });
-      if (status == 1) return this.$toast.fail(data);
-      this.cbkbBalance = data.cbkbBalance;
-      this.available = data.available;
+      if (status == 1){
+        return this.$dialog.alert({ message: data,confirmButtonText: this.$t('CbkbExchange.know'),confirmButtonColor: '#495BFF' });
+      }
+      let reg=/(?!^)(?=(\d{3})+(\.|$))/g;
+      this.cbkbBalance = data.cbkbBalance.toString().replace(reg, '$&,');
+      this.available = data.available.toString().replace(reg, '$&,');
       this.enable = data.enable;
     },
     swapBkb:debounce(async function(){
       const { data, status } = await USER_API.swapBkb({
         userid: window.ethereum.selectedAddress,
       });
-      if (status == 1) return this.$toast.fail(data);
-      this.$toast.success(data);
-      this.getCbkbSwapInfo(window.ethereum.selectedAddress);
+      if (status == 1) {
+        return this.$dialog.alert({ message: data,confirmButtonText: this.$t('CbkbExchange.know') ,confirmButtonColor: '#495BFF' });
+      }
+      this.$dialog.alert({ message: data,confirmButtonText: this.$t('CbkbExchange.know'),confirmButtonColor: '#495BFF' }).then(() =>{
+        this.getCbkbSwapInfo(window.ethereum.selectedAddress);
+      });
     }),
     viewAll(){
       this.flag = !this.flag;
@@ -255,6 +262,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .loading {
   min-height: 100vh;
   display: flex;
@@ -282,7 +290,7 @@ export default {
   .text-n{
     font-size: 24px;
     line-height: 18px;
-    font-family: DIN;
+    font-family: "bitkeep DIN";
     color: #080D21;
     height: 18px;
     .setH{
@@ -312,7 +320,7 @@ export default {
   margin: 30px 16px;
   background: #F3F5F6;
   border-radius: 8px;
-  padding: 15px;
+  padding: 2px 15px;
   font-size: 14px;
   line-height: 16px;
   .title{
@@ -331,9 +339,10 @@ export default {
   margin: 12px 16px 30px;
   .about-title{
     img{
-      width: 18px;
-      height: 18px;
-      vertical-align: bottom;
+      width: 20px;
+      height: 20px;
+      vertical-align: text-top;
+      margin-right: 5px;
     }
     font-size: 16px;
     line-height: 16px;
@@ -364,9 +373,10 @@ export default {
   margin: 12px 16px 30px;
   .distribution-title{
     img{
-      width: 18px;
-      height: 18px;
-      vertical-align: bottom;
+      width: 20px;
+      height: 20px;
+      vertical-align: text-top;
+      margin-right: 5px;
     }
     font-size: 16px;
     line-height: 16px;
@@ -380,6 +390,11 @@ export default {
     img{
       width: 110px;
       height: 110px;
+    }
+    .exchangeTotal{
+      font-family: bitkeep DIN;
+      font-size: 14px;
+      color: #4B5373;
     }
     .total{
       font-size: 14px;
@@ -398,6 +413,11 @@ export default {
     .data{
       display: flex;
       justify-content: space-between;
+      div:last-child{
+        font-family: bitkeep DIN;
+        font-size: 14px;
+        color: #080D21;
+      }
       >div{
         font-size: 14px;
         line-height: 34px;
@@ -423,9 +443,10 @@ export default {
   margin: 12px 16px 30px;
   .hold-title{
     img{
-      width: 18px;
-      height: 18px;
-      vertical-align: bottom;
+      width: 20px;
+      height: 20px;
+      vertical-align: text-top;
+      margin-right: 5px;
     }
     font-size: 16px;
     line-height: 16px;
@@ -465,6 +486,12 @@ export default {
           width: 24px;
           height: 24px;
         }
+        span{
+          font-size: 14px;
+          color: #4B5373;
+          width: 120px;
+          margin-top: 5px;
+        }
       }
     }
   }
@@ -487,6 +514,9 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    .setIcon{
+      color: #999BA3;
+    }
     a{
       flex: 1;
     }

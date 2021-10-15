@@ -70,7 +70,7 @@ const actions = {
         brand: req.headers.brand,
       });
       locale = req.headers.mylanguage || req.headers.language
-      if(!state.locales.find(lan=>lan==locale)){
+      if(!state.locales.find(lan=>lan==(locale || '').slice(0, 2))){
         locale = 'en'
       }
     }else{
