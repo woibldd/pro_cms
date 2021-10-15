@@ -1,7 +1,7 @@
 <template>
   <div id="blindbox_list">
     <div class="loading" v-if="isLoading">
-      <van-loading  http://192.168.50.246:8081/activity/cbkbexchange />
+      <van-loading  color="#1989fa" />
     </div>
     <div v-else>
       <!-- <Header>
