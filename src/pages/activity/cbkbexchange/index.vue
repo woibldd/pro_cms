@@ -239,11 +239,11 @@ export default {
       if (status == 1){
         return this.$dialog.alert({ message: data,confirmButtonText: this.$t('CbkbExchange.know'),confirmButtonColor: '#495BFF' });
       }
-      // let reg=/(\d)(?=(\d{3})+\b)/g; //小数点也带有千位分隔符
-      let reg=/(?<=^\d+)(?=(\d{3})+\b)/; //小数点没有千位分隔符
+      // let reg="/(\d)(?=(\d{3})+\b)/g"; //小数点也带有千位分隔符
+      let reg="/(?<=^\d+)(?=(\d{3})+\b)/"; //小数点没有千位分隔符
       this.cbkbBalance = data.cbkbBalance.toString().replace(reg, '$&,');
       this.available = data.available.toString().replace(reg, '$&,');
-      this.enable = data.enable;
+      // this.enable = data.enable;
     },
     swapBkb:debounce(async function(){
       const { data, status } = await USER_API.swapBkb({
