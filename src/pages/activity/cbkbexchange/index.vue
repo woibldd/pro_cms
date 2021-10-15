@@ -190,7 +190,7 @@ import { USER_API } from "@/api/client";
 import {debounce} from "../../../tools/common";
 import { mapState } from "vuex";
 export default {
-  name: "index",
+  name: "cbkbexchange",
   data(){
     return{
       cbkbBalance: 0,
@@ -205,6 +205,9 @@ export default {
     ...mapState(["local"]),
     locale() {
       return this.local.locale;
+    },
+    isBitKeep() {
+      return this.local.UA.isBitKeep;
     }
   },
   async created(){
@@ -213,6 +216,10 @@ export default {
     });
     await this.$nextTick();
     this.isLoading = false;
+  },
+   beforeMount() {
+    this.isBitKeep &&
+    BitKeepInvoke.setTitle(this.$t("CbkbExchange.swapTitle"));
   },
   methods:{
     // 获取地址cbkb地址
@@ -232,7 +239,8 @@ export default {
       if (status == 1){
         return this.$dialog.alert({ message: data,confirmButtonText: this.$t('CbkbExchange.know'),confirmButtonColor: '#495BFF' });
       }
-      let reg=/(?!^)(?=(\d{3})+(\.|$))/g;
+      // let reg=/(\d)(?=(\d{3})+\b)/g; //小数点也带有千位分隔符
+      let reg=/(?<=^\d+)(?=(\d{3})+\b)/; //小数点没有千位分隔符
       this.cbkbBalance = data.cbkbBalance.toString().replace(reg, '$&,');
       this.available = data.available.toString().replace(reg, '$&,');
       this.enable = data.enable;

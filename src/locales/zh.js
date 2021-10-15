@@ -188,6 +188,7 @@ module.exports = {
     telegram: 'Telegram',
     facebook: 'Facebook',
     explorer: 'Block explorer',
-    know: '知道了'
+    know: '知道了',
+    swapTitle: 'cBKB 兑换'
   }
 }

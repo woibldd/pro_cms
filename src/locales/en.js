@@ -185,6 +185,7 @@ module.exports = {
     telegram: 'Telegram',
     facebook: 'Facebook',
     explorer: 'Block explorer',
-    know: 'OK'
+    know: 'OK',
+    swapTitle: 'cBKB Swap'
   }
 }
