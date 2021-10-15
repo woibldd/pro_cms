@@ -23,7 +23,6 @@
         <p class="content">{{$t('CbkbExchange.conditionText')}}</p>
         <p class="title">{{$t('CbkbExchange.proportion')}}</p>
         <p class="content">{{$t('CbkbExchange.proportionText')}}</p>
-        <p class="title">{{$t('CbkbExchange.exchangeTitle1')}}</p>
         <p class="content">{{$t('CbkbExchange.exchangeTitle2')}}</p>
         <p class="content">{{$t('CbkbExchange.exchangeTitle3')}}</p>
       </div>
@@ -34,7 +33,12 @@
           <span>{{$t('CbkbExchange.about')}}</span>
         </div>
         <div class="about-con">
-          {{$t('CbkbExchange.aboutContent')}}
+          <span>
+          {{$t('CbkbExchange.aboutContent1')}}
+          </span>
+          <span>
+            {{$t('CbkbExchange.aboutContent2')}}
+          </span>
         </div>
         <div class="viewAll" @click="viewAll"> {{!this.flag?$t('CbkbExchange.viewAll'):$t('CbkbExchange.pickUp')}}</div>
       </div>
@@ -59,14 +63,14 @@
           <div class="data">
             <div>
               <span style="background: #1CBDB5;"></span>
-              <span>{{$t('CbkbExchange.community')}}</span>
+              <span>{{$t('CbkbExchange.eco')}}</span>
             </div>
             <div>20%</div>
           </div>
           <div class="data">
             <div>
               <span style="background: #FF8146;"></span>
-              <span>{{$t('CbkbExchange.tram')}} </span>
+              <span>{{$t('CbkbExchange.community')}} </span>
             </div>
             <div>15%</div>
           </div>
@@ -80,7 +84,7 @@
           <div class="data">
             <div>
               <span style="background: #080D21;"></span>
-              <span>{{$t('CbkbExchange.eco')}}</span>
+              <span>{{$t('CbkbExchange.tram')}}</span>
             </div>
             <div>5%</div>
           </div>
@@ -135,40 +139,40 @@
       <div class="more">
         <div class="more-title">{{$t('CbkbExchange.more')}}</div>
         <div class="more-line">
-          <a href="https://www.bitkeep.org/" target="_blank">
+          <a href="https://www.bitkeep.com/" target="_blank">
             <img src="http://cdn.bitkeep.vip/u_b_ddcf2860-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""><span>{{$t('CbkbExchange.website')}}</span>
           </a>
           <van-icon name="arrow"/></div>
-        <div class="more-line">
-          <a href="" target="_blank">
-            <img src="http://cdn.bitkeep.vip/u_b_ddf09310-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.paper')}}</span>
-          </a>
-          <van-icon name="arrow"/>
-        </div>
+<!--        <div class="more-line">-->
+<!--          <a href="" target="_blank">-->
+<!--            <img src="http://cdn.bitkeep.vip/u_b_ddf09310-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.paper')}}</span>-->
+<!--          </a>-->
+<!--          <van-icon name="arrow"/>-->
+<!--        </div>-->
         <div class="more-line">
           <a href="https://twitter.com/BitKeepOS" target="_blank">
             <img src="http://cdn.bitkeep.vip/u_b_ddcf4f71-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.twitter')}}</span>
           </a>
           <van-icon name="arrow"/>
         </div>
-        <div class="more-line">
-          <a href="https://github.com/bitkeepcom" target="_blank">
-            <img src="http://cdn.bitkeep.vip/u_b_ddceb330-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.github')}}</span>
-          </a>
-          <van-icon name="arrow"/>
-        </div>
+<!--        <div class="more-line">-->
+<!--          <a href="https://github.com/bitkeepcom" target="_blank">-->
+<!--            <img src="http://cdn.bitkeep.vip/u_b_ddceb330-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.github')}}</span>-->
+<!--          </a>-->
+<!--          <van-icon name="arrow"/>-->
+<!--        </div>-->
         <div class="more-line">
           <a href="https://t.me/bitkeep" target="_blank">
             <img src="http://cdn.bitkeep.vip/u_b_ddcf0150-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.telegram')}}</span>
           </a>
           <van-icon name="arrow"/>
         </div>
-        <div class="more-line">
-          <a href="" target="_blank">
-            <img src="http://cdn.bitkeep.vip/u_b_ddcf4f70-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.facebook')}}</span>
-          </a>
-          <van-icon name="arrow"/>
-        </div>
+<!--        <div class="more-line">-->
+<!--          <a href="" target="_blank">-->
+<!--            <img src="http://cdn.bitkeep.vip/u_b_ddcf4f70-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.facebook')}}</span>-->
+<!--          </a>-->
+<!--          <van-icon name="arrow"/>-->
+<!--        </div>-->
         <div class="more-line">
           <a :href="src" target="_blank">
             <img src="http://cdn.bitkeep.vip/u_b_ddceda40-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.explorer')}}</span>
@@ -190,7 +194,7 @@ export default {
     return{
       cbkbBalance: 0,
       available: 0,
-      src: '',
+      src: 'https://cn.etherscan.com/address/0xa286035a1e60abf172524bdbfd224abeef6ce362',
       flag: false,
       enable: null,
       isLoading: true
@@ -217,7 +221,7 @@ export default {
       }else{
         await window.ethereum.request({ method: "eth_requestAccounts" });
         this.getCbkbSwapInfo(window.ethereum.selectedAddress);
-        this.src = 'https://cn.etherscan.com/address/'+window.ethereum.selectedAddress
+        // this.src = 'https://cn.etherscan.com/address/'+window.ethereum.selectedAddress
       }
     },
     async getCbkbSwapInfo(address){
@@ -278,6 +282,7 @@ export default {
   .text-n{
     font-size: 24px;
     line-height: 18px;
+    font-family: DIN;
     color: #080D21;
     height: 18px;
     .setH{
@@ -352,6 +357,7 @@ export default {
     font-size: 14px;
     line-height: 14px;
     color: #495BFF;
+    margin-top: 6px;
   }
 }
 .distribution{
@@ -429,7 +435,6 @@ export default {
   }
   .hold-content{
     font-size: 14px;
-    line-height: 12px;
     color: #4B5373;
   }
 }
@@ -455,7 +460,6 @@ export default {
         flex-direction: column;
         width: 50%;
         float: left;
-        height: 65px;
         img{
           margin-top: 5px;
           width: 24px;
