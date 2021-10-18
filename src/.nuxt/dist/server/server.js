@@ -2899,7 +2899,7 @@ module.exports = {
     rules3: '3.Class A qualified users will get 125 BKB for completing the above tasks, Class B qualified users will get 1,250 BKB for completing the above tasks, and Class C qualified users will get 250 BKB for completing the above tasks.',
     note: '* BitKeep has the final decision right and the right to interpret the rules of this promotion. We reserve the right to disqualify any users who cheat, suspected of cheating, or violate any of BitKeep\'s rules and regulations.',
     airdropTitle: 'Receive BKB airdrop',
-    notStart: 'Activity not yet started'
+    notStart: 'The airdrop activity has not yet started'
   }
 };
 
@@ -3109,7 +3109,7 @@ module.exports = {
     rules3: '3.A 类合格用户完成上述任务将获得 125个 BKB、B 类合格用户完成上述任务将获得 1250个 BKB、C 类合格用户完成上述任务将获得 250个 BKB。',
     note: '* BitKeep 享有本次推广活动规则的最终决定权和解释权。我们保留取消任何作弊、疑似作弊或违反 BitKeep 任何规章制度的用户参与资格的权利。 ',
     airdropTitle: '领取 BKB 空投',
-    notStart: '活动暂未开始'
+    notStart: '空投活动还未开始'
   }
 };
 

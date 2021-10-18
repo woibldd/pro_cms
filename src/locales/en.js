@@ -207,6 +207,6 @@ module.exports = {
     rules3: '3.Class A qualified users will get 125 BKB for completing the above tasks, Class B qualified users will get 1,250 BKB for completing the above tasks, and Class C qualified users will get 250 BKB for completing the above tasks.',
     note: '* BitKeep has the final decision right and the right to interpret the rules of this promotion. We reserve the right to disqualify any users who cheat, suspected of cheating, or violate any of BitKeep\'s rules and regulations.',
     airdropTitle: 'Receive BKB airdrop',
-    notStart: 'Activity not yet started'
+    notStart: 'The airdrop activity has not yet started'
   }
 }
