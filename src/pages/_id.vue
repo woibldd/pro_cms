@@ -159,7 +159,7 @@ export default {
     padding-right: 10px;
   }
   .content {
-    word-break: break-all;
+    word-break: break-word;
     // margin:15px 0;
     // white-space: pre
   }

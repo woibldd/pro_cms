@@ -3878,21 +3878,21 @@ function shouldScrollToTop(route) {
 
 
 
-const _85ae8e80 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 20).then(__webpack_require__.bind(null, 145)));
+const _85ae8e80 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 20).then(__webpack_require__.bind(null, 148)));
 
-const _432e757a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/cbkbexchange/index */ 22).then(__webpack_require__.bind(null, 146)));
+const _432e757a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/cbkbexchange/index */ 22).then(__webpack_require__.bind(null, 149)));
 
-const _26864b16 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/index */ 18).then(__webpack_require__.bind(null, 143)));
+const _26864b16 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/index */ 18).then(__webpack_require__.bind(null, 146)));
 
-const _51b48dec = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 19).then(__webpack_require__.bind(null, 147)));
+const _51b48dec = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 19).then(__webpack_require__.bind(null, 150)));
 
-const _271da9c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 21).then(__webpack_require__.bind(null, 148)));
+const _271da9c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 21).then(__webpack_require__.bind(null, 151)));
 
-const _24381afe = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/_id */ 17).then(__webpack_require__.bind(null, 149)));
+const _24381afe = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/_id */ 17).then(__webpack_require__.bind(null, 152)));
 
-const _262ca6c4 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 23).then(__webpack_require__.bind(null, 150)));
+const _262ca6c4 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 23).then(__webpack_require__.bind(null, 153)));
 
-const _18d2f8a1 = () => interopDefault(__webpack_require__.e(/* import() | pages/_id */ 16).then(__webpack_require__.bind(null, 151)));
+const _18d2f8a1 = () => interopDefault(__webpack_require__.e(/* import() | pages/_id */ 16).then(__webpack_require__.bind(null, 154)));
 
 const emptyFn = () => {};
 
@@ -4818,18 +4818,18 @@ function wrapFunctional(options) {
 
 
 const components = {
-  BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 1).then(__webpack_require__.bind(null, 120)).then(c => wrapFunctional(c.default || c)),
-  BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 2).then(__webpack_require__.bind(null, 152)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 1).then(__webpack_require__.bind(null, 121)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 2).then(__webpack_require__.bind(null, 155)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 3).then(__webpack_require__.bind(null, 85)).then(c => wrapFunctional(c.default || c)),
-  BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 4).then(__webpack_require__.bind(null, 121)).then(c => wrapFunctional(c.default || c)),
-  BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 5).then(__webpack_require__.bind(null, 119)).then(c => wrapFunctional(c.default || c)),
+  BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 4).then(__webpack_require__.bind(null, 122)).then(c => wrapFunctional(c.default || c)),
+  BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 5).then(__webpack_require__.bind(null, 120)).then(c => wrapFunctional(c.default || c)),
   CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 7).then(__webpack_require__.bind(null, 71)).then(c => wrapFunctional(c.default || c)),
   CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 8).then(__webpack_require__.bind(null, 65)).then(c => wrapFunctional(c.default || c)),
   Common: () => __webpack_require__.e(/* import() | components/common */ 6).then(__webpack_require__.bind(null, 66)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 10).then(__webpack_require__.bind(null, 110)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 11).then(__webpack_require__.bind(null, 73)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 12).then(__webpack_require__.bind(null, 153)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 9).then(__webpack_require__.bind(null, 144)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 12).then(__webpack_require__.bind(null, 156)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 9).then(__webpack_require__.bind(null, 147)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutPainter: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-painter */ 13).then(__webpack_require__.bind(null, 87)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutQrcode: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-qrcode */ 14).then(__webpack_require__.bind(null, 72)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 15).then(__webpack_require__.bind(null, 88)).then(c => wrapFunctional(c.default || c))

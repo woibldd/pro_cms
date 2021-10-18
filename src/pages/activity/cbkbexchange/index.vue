@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="exchange_cbkb">
     <div class="loading" v-if="isLoading">
       <van-loading  color="#1989fa" vertical>加载中...</van-loading>
     </div>
@@ -268,7 +268,14 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+.van-dialog__message {
+  font-size: 17px !important;
+  padding: 0 !important;
+  font-weight: 500;
+}
 
+</style>
 <style lang="scss" scoped>
 
 .loading {
@@ -288,6 +295,7 @@ export default {
     line-height: 14px;
     text-align: center;
     color: #4B5373;
+    font-family: "bitkeep DIN";
   }
   .text-t{
     font-weight: 500;
@@ -296,7 +304,7 @@ export default {
     color: #080D21;
   }
   .text-n{
-    font-size: 24px;
+    font-size: 26px;
     line-height: 18px;
     font-family: "bitkeep DIN";
     color: #080D21;
@@ -465,6 +473,8 @@ export default {
   .hold-content{
     font-size: 14px;
     color: #4B5373;
+    text-indent: -14px;
+    padding-left: 15px;
   }
 }
 .appreciation{
