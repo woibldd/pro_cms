@@ -88,6 +88,9 @@ export const USER_API = {
   mBoxDetail: (data,headers={}) => host_user_instance.get("user/activity/mBoxDetail", { params: data }),
   //cbkb兑换模块
   getCbkbSwapInfo: (data,headers={}) => host_user_instance.get("user/cloudwallet/getCbkbSwapInfo", { params: data }),
-  swapBkb: (data,headers={}) => host_user_instance.get("user/cloudwallet/swapBkb", { params: data })
+  swapBkb: (data,headers={}) => host_user_instance.get("user/cloudwallet/swapBkb", { params: data }),
+  //BKB空投
+  getAirDropCount: (data,headers={}) => host_user_instance.post("user/cloudwallet/getAirDropCount", data),
+  getAirDrop: (data,headers={}) => host_user_instance.post("user/cloudwallet/getAirDrop", data)
 
 };

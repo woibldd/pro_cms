@@ -9,7 +9,7 @@
       </div>
       <div class="text">
         <p class="text-t">{{$t('airdrop.get')}}</p>
-        <p class="text-n"><span class="setH">{{available}}</span> <span class="setFont">BKB</span></p>
+        <p class="text-n"><span class="setH">{{airDropCount}}</span> <span class="setFont">BKB</span></p>
         <van-button class="swap-btn" @click="swapBkb">{{$t('airdrop.receive')}}</van-button>
       </div>
       <div class="airdrop">
@@ -198,8 +198,7 @@ export default {
   name: "cbkbexchange",
   data(){
     return{
-      cbkbBalance: 0,
-      available: 0,
+      airDropCount: 0,
       src: 'https://cn.etherscan.com/address/0xa286035a1e60abf172524bdbfd224abeef6ce362',
       flag: false,
       isLoading: true
@@ -232,30 +231,33 @@ export default {
         return
       }else{
         await window.ethereum.request({ method: "eth_requestAccounts" });
-        this.getCbkbSwapInfo(window.ethereum.selectedAddress);
+        this.getAirDropCount(window.ethereum.selectedAddress);
       }
     },
-    async getCbkbSwapInfo(address){
-      const { data, status } = await USER_API.getCbkbSwapInfo({
-        userid: address,
+    async getAirDropCount(address){
+      const { data, status } = await USER_API.getAirDropCount({
+        address,
+        lang: this.local.locale
       });
       if (status == 1){
         return this.$dialog.alert({ message: data,confirmButtonText: this.$t('CbkbExchange.know'),confirmButtonColor: '#495BFF' });
       }
-      // let reg="/(\d)(?=(\d{3})+\b)/g"; //小数点也带有千位分隔符
-      let reg="/(?<=^\d+)(?=(\d{3})+\b)/"; //小数点没有千位分隔符
-      this.cbkbBalance = data.cbkbBalance.toString().replace(reg, '$&,');
-      this.available = data.available.toString().replace(reg, '$&,');
+      this.airDropCount = this.milliFormat(data)
+    },
+    milliFormat (num) {
+      return num && num.toString()
+        .replace(/^\d+/g, (m) => m.replace(/(?=(?!^)(\d{3})+$)/g, ','))
     },
     swapBkb:debounce(async function(){
-      const { data, status } = await USER_API.swapBkb({
-        userid: window.ethereum.selectedAddress,
+      const { data, status } = await USER_API.getAirDrop({
+        address: window.ethereum.selectedAddress,
+        lang: this.local.locale
       });
       if (status == 1) {
         return this.$dialog.alert({ message: data,confirmButtonText: this.$t('CbkbExchange.know') ,confirmButtonColor: '#495BFF' });
       }
       this.$dialog.alert({ message: data,confirmButtonText: this.$t('CbkbExchange.know'),confirmButtonColor: '#495BFF' }).then(() =>{
-        this.getCbkbSwapInfo(window.ethereum.selectedAddress);
+        this.getAirDropCount(window.ethereum.selectedAddress);
       });
     }),
     viewAll(){
