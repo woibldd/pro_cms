@@ -241,9 +241,12 @@ export default {
       }
       // let reg="/(\d)(?=(\d{3})+\b)/g"; //小数点也带有千位分隔符
       let reg="/(?<=^\d+)(?=(\d{3})+\b)/"; //小数点没有千位分隔符
-      this.cbkbBalance = data.cbkbBalance.toString().replace(reg, '$&,');
-      this.available = data.available.toString().replace(reg, '$&,');
-      // this.enable = data.enable;
+      this.cbkbBalance = this.milliFormat(data.cbkbBalance)
+      this.available = this.milliFormat(data.available)
+    },
+    milliFormat (num) {
+      return num && num.toString()
+        .replace(/^\d+/g, (m) => m.replace(/(?=(?!^)(\d{3})+$)/g, ','))
     },
     swapBkb:debounce(async function(){
       const { data, status } = await USER_API.swapBkb({
@@ -308,7 +311,7 @@ export default {
   }
   .text-n{
     font-size: 30px;
-    margin: 5px 0 0;
+    margin: 10px 0 0;
     line-height: 18px;
     font-family: "bitkeep DIN";
     color: #080D21;
@@ -343,6 +346,9 @@ export default {
   padding: 2px 15px;
   font-size: 14px;
   line-height: 16px;
+  :first-child{
+    font-size: 16px;
+  }
   .title{
     color: #080D21;
     font-weight: 600;

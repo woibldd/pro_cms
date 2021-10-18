@@ -209,6 +209,7 @@ module.exports = {
       rules2: '2.在空投活动期间，满足参与条件的用户使用 BKSwap 一次及一次以上并交易成功，即获得空投奖励；',
       rules3: '3.A 类合格用户完成上述任务将获得 125个 BKB、B 类合格用户完成上述任务将获得 1250个 BKB、C 类合格用户完成上述任务将获得 250个 BKB。',
       note: '* BitKeep 享有本次推广活动规则的最终决定权和解释权。我们保留取消任何作弊、疑似作弊或违反 BitKeep 任何规章制度的用户参与资格的权利。 ',
-      airdropTitle: '领取 BKB 空投'
+      airdropTitle: '领取 BKB 空投',
+      notStart: '活动暂未开始'
     }
 }

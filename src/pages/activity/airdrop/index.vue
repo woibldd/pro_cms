@@ -10,7 +10,7 @@
       <div class="text">
         <p class="text-t">{{$t('airdrop.get')}}</p>
         <p class="text-n"><span class="setH">{{airDropCount}}</span> <span class="setFont">BKB</span></p>
-        <van-button class="swap-btn" @click="swapBkb">{{$t('airdrop.receive')}}</van-button>
+        <van-button class="swap-btn" @click="receive" :class="[!status? 'disabled': '']">{{$t('airdrop.receive')}}</van-button>
       </div>
       <div class="airdrop">
         <p class="title">{{$t('airdrop.airdrop')}} </p>
@@ -201,7 +201,8 @@ export default {
       airDropCount: 0,
       src: 'https://cn.etherscan.com/address/0xa286035a1e60abf172524bdbfd224abeef6ce362',
       flag: false,
-      isLoading: true
+      isLoading: true,
+      enabled: false,
     }
   },
   computed: {
@@ -242,13 +243,15 @@ export default {
       if (status == 1){
         return this.$dialog.alert({ message: data,confirmButtonText: this.$t('CbkbExchange.know'),confirmButtonColor: '#495BFF' });
       }
-      this.airDropCount = this.milliFormat(data)
+      this.airDropCount = this.milliFormat(data.amount)
+      this.status = data.status;
     },
     milliFormat (num) {
       return num && num.toString()
         .replace(/^\d+/g, (m) => m.replace(/(?=(?!^)(\d{3})+$)/g, ','))
     },
-    swapBkb:debounce(async function(){
+    receive:debounce(async function(){
+      if(!this.status) return this.$toast(this.$t('airdrop.notStart'))
       const { data, status } = await USER_API.getAirDrop({
         address: window.ethereum.selectedAddress,
         lang: this.local.locale
@@ -305,7 +308,7 @@ export default {
   }
   .text-n{
     font-size: 30px;
-    margin: 5px 0 0;
+    margin: 10px 0 0;
     line-height: 18px;
     font-family: "bitkeep DIN";
     color: #080D21;
@@ -329,9 +332,9 @@ export default {
     line-height: 50px;
     display: block;
   }
-  .disabled{
-    opacity: .5;
-  }
+}
+.disabled{
+  opacity: .3;
 }
 .airdrop{
   margin: 30px 16px;
@@ -340,6 +343,9 @@ export default {
   padding: 2px 15px;
   font-size: 14px;
   line-height: 16px;
+  :first-child{
+    font-size: 16px;
+  }
   .title{
     color: #080D21;
     font-weight: 600;
