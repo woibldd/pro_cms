@@ -284,15 +284,18 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.img img{
-  width: 100%;
+.img {
+  height: 140px;
+  img{
+    width: 100%;
+  }
 }
 .text{
   margin-top: 30px;
   text-align: center;
   .balance{
     font-size: 14px;
-    line-height: 14px;
+    line-height: 16px;
     text-align: center;
     color: #4B5373;
     font-family: "bitkeep DIN";
@@ -300,11 +303,12 @@ export default {
   .text-t{
     font-weight: 500;
     font-size: 14px;
-    line-height: 14px;
+    margin: 10px 0 0 0;
     color: #080D21;
   }
   .text-n{
-    font-size: 26px;
+    font-size: 30px;
+    margin: 5px 0 0;
     line-height: 18px;
     font-family: "bitkeep DIN";
     color: #080D21;
