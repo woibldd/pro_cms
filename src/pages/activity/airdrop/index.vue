@@ -202,7 +202,7 @@ export default {
       src: 'https://cn.etherscan.com/address/0xa286035a1e60abf172524bdbfd224abeef6ce362',
       flag: false,
       isLoading: true,
-      enabled: false,
+      status: false,
     }
   },
   computed: {
