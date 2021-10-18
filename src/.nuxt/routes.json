@@ -1,5 +1,12 @@
 [
   {
+    "name": "activity-airdrop",
+    "path": "/activity/airdrop",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/airdrop/index.vue",
+    "chunkName": "pages/activity/airdrop/index",
+    "_name": "_214ac336"
+  },
+  {
     "name": "activity-blindbox",
     "path": "/activity/blindbox",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindbox/index.vue",

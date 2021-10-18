@@ -190,5 +190,25 @@ module.exports = {
     explorer: 'Block explorer',
     know: '知道了',
     swapTitle: 'cBKB 兑换'
-  }
+  },
+    'airdrop':{
+      get: '你可领取',
+      receive: '领取',
+      airdrop: 'BKB 空投活动',
+      airdropContent: 'BKB 总量 6 亿枚，是 BitKeep 生态的生态令牌，用户持有 BKB 将享有生态治理权益，也是生态支付手段和会员权益的身份证明。',
+      time: '活动时间',
+      timeContent: '2021.10.18 20:00 — 2021.10.28 00:00 (GMT+8)',
+      particlpation: '领取条件',
+      particlpation1: '从 2020.07.01 到 2021.10.01',
+      particlpation2: '以下三个条件满足其一即视为合格用户，可获得空投参与资格。',
+      particlpation3: 'A: 使用 BitKeep 两次及两次以上并均转账成功，视为 A 类合格用户；',
+      particlpation4: 'B: 使用 BKswap 并交易成功，视为 B 类合格用户；',
+      particlpation5: 'C: 在 BitKeep NFT 板块成功存入 NFT 资产，视为 C 类合格用户。',
+      rules: '活动规则',
+      rules1: '1.加⼊到 BitKeep 官方 telegram 社群（https://t.me/bitkeep）和 discord 社群（https://discord.com/invite/qYTatUzNjM）；',
+      rules2: '2.在空投活动期间，满足参与条件的用户使用 BKSwap 一次及一次以上并交易成功，即获得空投奖励；',
+      rules3: '3.A 类合格用户完成上述任务将获得 125个 BKB、B 类合格用户完成上述任务将获得 1250个 BKB、C 类合格用户完成上述任务将获得 250个 BKB。',
+      note: '* BitKeep 享有本次推广活动规则的最终决定权和解释权。我们保留取消任何作弊、疑似作弊或违反 BitKeep 任何规章制度的用户参与资格的权利。 ',
+      airdropTitle: '领取 BKB 空投'
+    }
 }

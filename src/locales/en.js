@@ -187,5 +187,26 @@ module.exports = {
     explorer: 'Block explorer',
     know: 'OK',
     swapTitle: 'cBKB Swap'
+  },
+  'airdrop':{
+    get: 'You can get',
+    receive: 'Receive',
+    airdrop: 'BKB Airdrop',
+    airdropContent: 'The total amount of BKB is 600 million, which is the ecological token of BitKeep ecology. Users holding BKB will enjoy ecological governance rights, and it is also an identity certificate for ecological payment methods and membership rights. ',
+    time: 'Activity Time',
+    timeContent: '2021.10.18 20:00 — 2021.10.28 00:00 (GMT+8)',
+    particlpation: 'Conditions for Participation',
+    particlpation1: 'From July 2020. 07. 01 to October 2021. 10 .01',
+    particlpation2: 'Users who meet one of the following three requirements are eligible',
+    particlpation3: 'A :  Transfer tokens via BitKeep at least twice are deemed Class A users;    ',
+    particlpation4: 'B :  Those who have successfully used BKswap are deemed Class B users;',
+    particlpation5: 'C：Users who deposit NFT assets on BitKeep are considered Class C users.',
+    rules: 'Activity Rules',
+    rules1: '1.Join BitKeep official telegram and discord community;',
+    rules2: '2.During the airdrop event, users who meet the conditions of participation will be rewarded if they use BKSwap successfully;',
+    rules3: '3.Class A qualified users will get 125 BKB for completing the above tasks, Class B qualified users will get 1,250 BKB for completing the above tasks, and Class C qualified users will get 250 BKB for completing the above tasks.',
+    note: '* BitKeep has the final decision right and the right to interpret the rules of this promotion. We reserve the right to disqualify any users who cheat, suspected of cheating, or violate any of BitKeep\'s rules and regulations.',
+    airdropTitle: 'Receive BKB airdrop'
+
   }
 }
