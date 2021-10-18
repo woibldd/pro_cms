@@ -202,7 +202,6 @@ export default {
       available: 0,
       src: 'https://cn.etherscan.com/address/0xa286035a1e60abf172524bdbfd224abeef6ce362',
       flag: false,
-      enable: null,
       isLoading: true
     }
   },
@@ -234,7 +233,6 @@ export default {
       }else{
         await window.ethereum.request({ method: "eth_requestAccounts" });
         this.getCbkbSwapInfo(window.ethereum.selectedAddress);
-        // this.src = 'https://cn.etherscan.com/address/'+window.ethereum.selectedAddress
       }
     },
     async getCbkbSwapInfo(address){
@@ -248,7 +246,6 @@ export default {
       let reg="/(?<=^\d+)(?=(\d{3})+\b)/"; //小数点没有千位分隔符
       this.cbkbBalance = data.cbkbBalance.toString().replace(reg, '$&,');
       this.available = data.available.toString().replace(reg, '$&,');
-      // this.enable = data.enable;
     },
     swapBkb:debounce(async function(){
       const { data, status } = await USER_API.swapBkb({
