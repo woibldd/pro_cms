@@ -3104,7 +3104,7 @@ module.exports = {
     particlpation4: 'B: 使用 BKswap 并交易成功，视为 B 类合格用户；',
     particlpation5: 'C: 在 BitKeep NFT 板块成功存入 NFT 资产，视为 C 类合格用户。',
     rules: '活动规则',
-    rules1: '1.加⼊到 BitKeep 官方 telegram 社群（https://t.me/bitkeep）和 discord 社群（https://discord.com/invite/qYTatUzNjM）；',
+    rules1: '1.加⼊到 BitKeep 官方 telegram 社群(https://t.me/bitkeep)和 discord 社群(https://discord.com/invite/qYTatUzNjM);',
     rules2: '2.在空投活动期间，满足参与条件的用户使用 BKSwap 一次及一次以上并交易成功，即获得空投奖励；',
     rules3: '3.A 类合格用户完成上述任务将获得 125个 BKB、B 类合格用户完成上述任务将获得 1250个 BKB、C 类合格用户完成上述任务将获得 250个 BKB。',
     note: '* BitKeep 享有本次推广活动规则的最终决定权和解释权。我们保留取消任何作弊、疑似作弊或违反 BitKeep 任何规章制度的用户参与资格的权利。 ',

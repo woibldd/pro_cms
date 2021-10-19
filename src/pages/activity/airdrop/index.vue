@@ -309,12 +309,12 @@ export default {
   .text-n{
     font-size: 30px;
     margin: 10px 0 0;
-    line-height: 18px;
+    line-height: 20px;
     font-family: "bitkeep DIN";
     color: #080D21;
-    height: 18px;
+    height: 20px;
     .setH{
-      height: 18px;
+      height: 20px;
     }
     .setFont{
       font-size: 16px;
@@ -356,9 +356,10 @@ export default {
   .ruleContent{
     text-indent: -13px;
     padding-left: 13px;
+    line-height: 18px;
   }
   .note{
-    color: #999;
+    color: #97a0ad;
   }
 }
 .line{
