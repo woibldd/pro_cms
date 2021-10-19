@@ -13,7 +13,7 @@
         <van-button class="swap-btn" @click="receive" :class="[!status? 'disabled': '']">{{$t('airdrop.receive')}}</van-button>
       </div>
       <div class="airdrop">
-        <p class="title">{{$t('airdrop.airdrop')}} </p>
+        <p class="title" style="font-size: 16px;">{{$t('airdrop.airdrop')}} </p>
         <p class="content">{{$t('airdrop.airdropContent')}}</p>
         <p class="title">{{$t('airdrop.time')}}</p>
         <p class="content">{{$t('airdrop.timeContent')}}</p>
@@ -29,7 +29,7 @@
           <p class="content">{{$t('airdrop.rules2')}}</p>
           <p class="content">{{$t('airdrop.rules3')}}</p>
         </div>
-        <p class="content note">{{$t('airdrop.note')}}</p>
+        <p class="content note" style="line-height: 18px">{{$t('airdrop.note')}}</p>
       </div>
       <div class="line"></div>
       <div class="about">
@@ -343,9 +343,6 @@ export default {
   padding: 2px 15px;
   font-size: 14px;
   line-height: 16px;
-  :first-child{
-    font-size: 16px;
-  }
   .title{
     color: #080D21;
     font-weight: 600;
