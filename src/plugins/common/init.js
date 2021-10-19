@@ -25,11 +25,13 @@ import {
     Lazyload,
     Empty,
     ImagePreview,
+    CountDown,
     // Badge,
     PullRefresh,
     Overlay,
     Skeleton,
-    Button
+    Button,
+    Progress
 } from "vant";
 
 const components = [
@@ -41,7 +43,9 @@ const components = [
     Loading,
     List,
     Empty,
+    CountDown,
     PullRefresh,
+    Progress,
     ImagePreview,
     // Badge,
     Overlay,

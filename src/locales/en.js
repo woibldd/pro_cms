@@ -208,5 +208,23 @@ module.exports = {
     note: '* BitKeep has the final decision right and the right to interpret the rules of this promotion. We reserve the right to disqualify any users who cheat, suspected of cheating, or violate any of BitKeep\'s rules and regulations.',
     airdropTitle: 'Receive BKB airdrop',
     notStart: 'The airdrop activity has not yet started'
+  },
+  'mining':{
+    get: 'You got BKB total',
+    phase: ' ( Phase 1 )',
+    total: 'Total BKB rewards',
+    day: 'Your Transaction amount a day',
+    startCountdown: 'Start countdown ',
+    endCountdown: 'End countdown ',
+    toStart: 'To Start',
+    swapNow: 'Swap Now',
+    miningPhase: 'Transaction Minig Phase 1',
+    produced: 'BKB produced',
+    startTime: 'Start time',
+    overTime: 'Over time',
+    amountDay: 'Transaction amount a day',
+    producedDay: 'BKB produced a day',
+    miningRule: 'Transaction mining rule',
+    miningTitle: 'Transaction Mining（Phase 1）'
   }
 }

@@ -211,5 +211,23 @@ module.exports = {
       note: '* BitKeep 享有本次推广活动规则的最终决定权和解释权。我们保留取消任何作弊、疑似作弊或违反 BitKeep 任何规章制度的用户参与资格的权利。 ',
       airdropTitle: '领取 BKB 空投',
       notStart: '空投活动还未开始'
+    },
+    'mining':{
+      get: 'You got BKB total',
+      phase: ' ( Phase 1 )',
+      total: 'Total BKB rewards',
+      day: 'Your Transaction amount a day',
+      startCountdown: 'Start countdown ',
+      endCountdown: 'End countdown ',
+      toStart: 'To Start',
+      swapNow: 'Swap Now',
+      miningPhase: 'Transaction Minig Phase 1',
+      produced: 'BKB produced',
+      startTime: 'Start time',
+      overTime: 'Over time',
+      amountDay: 'Transaction amount a day',
+      producedDay: 'BKB produced a day',
+      miningRule: 'Transaction mining rule',
+      miningTitle: 'Transaction Mining（Phase 1）'
     }
 }
