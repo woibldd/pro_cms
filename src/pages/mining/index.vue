@@ -10,7 +10,7 @@
           alt="">
       </div>
       <div class="text" v-if="!status">
-        <p class="total">{{ $t('mining.total') }}<span class="phase">{{ $t('mining.phase') }}</span></p>
+        <p class="total">{{ $t('mining.total') }}<span class="phase">{{ $t('mining.phase',{v: phase}) }}</span></p>
         <p class="text-n"><span class="setH">{{ available }}</span> <span class="setFont">BKB</span></p>
         <div class="line border"></div>
         <p class="timeCount">{{ $t('mining.startCountdown') }}
@@ -19,10 +19,10 @@
           </span>
           <van-count-down v-else :time="startTime" :format="formatZh" class="time setFontFamily"/>
         </p>
-        <van-button class="swap-btn disabled" @click="swapBkb">{{ $t('mining.toStart') }}</van-button>
+        <van-button class="swap-btn disabled" @click="swap">{{ $t('mining.toStart') }}</van-button>
       </div>
       <div class="text" v-else>
-        <p class="total">{{ $t('mining.get') }}<span class="phase">{{ $t('mining.phase') }}</span></p>
+        <p class="total">{{ $t('mining.get') }}<span class="phase">{{ $t('mining.phase',{v:phase}) }}</span></p>
         <p class="text-n"><span class="setH">{{ available }}</span> <span class="setFont">BKB</span></p>
         <p class="setDarkColor">{{ $t('mining.day') }}<span class="setLightColor setFontFamily">${{ 123,123 }}</span></p>
         <div class="line border"></div>
@@ -32,10 +32,10 @@
           </span>
           <van-count-down v-else :time="endTime" :format="formatZh" class="time setFontFamily"/>
         </p>
-        <van-button class="swap-btn" @click="swapBkb">{{ $t('mining.swapNow') }}</van-button>
+        <van-button class="swap-btn" @click="swap">{{ $t('mining.swapNow') }}</van-button>
       </div>
       <div class="mining">
-        <p class="title setFontFamily">{{ $t('mining.miningPhase') }} </p>
+        <p class="title setFontFamily">{{ $t('mining.miningPhase',{v:phase}) }} </p>
         <div class="line"></div>
         <div class="mining-setP">
           <div class="produced">
@@ -55,11 +55,11 @@
           </div>
           <div class="produced mining_trans">
             <span>{{ $t('mining.startTime') }}</span>
-            <span class="setFontFamily">2021-10-18 12:00(UTC)</span>
+            <span class="setFontFamily">{{ fixdStartTime }}(UTC)</span>
           </div>
-          <div class="produced mining_trans" style="margin-bottom: 15px!important;">
+          <div class="produced mining_trans mbottom">
             <span>{{ $t('mining.overTime') }}</span>
-            <span class="setFontFamily">2021-10-21 12:00(UTC)</span>
+            <span class="setFontFamily">{{ fixdEndTime }}(UTC)</span>
           </div>
         </div>
       </div>
@@ -94,7 +94,7 @@
           <span>{{ $t('CbkbExchange.distribution') }}</span>
         </div>
         <div class="charts-img">
-          <img src="http://cdn.bitkeep.vip/u_b_3b815290-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
+          <img src="http://cdn.bitkeep.vip/u_b_c014c440-30d0-11ec-9e24-8d799844d18f.png" alt="">
           <p class="total">{{ $t('CbkbExchange.total') }}<span class="exchangeTotal">600,000,000</span></p>
         </div>
         <div class="distribution-man">
@@ -252,8 +252,11 @@ export default {
       isLoading: true,
       startTime: 0,
       endTime: 0,
+      fixdStartTime: '2021-10-21 12:00',
+      fixdEndTime: '2021-10-24 12:00',
       formatEn: 'DDD : HHH : mmM : ss',
       formatZh: 'DD 天 HH 时 mm 分 ss 秒',
+      phase: '1'
     }
   },
   computed: {
@@ -274,11 +277,12 @@ export default {
   },
   beforeMount() {
     this.isBitKeep &&
-    BitKeepInvoke.setTitle(this.$t("mining.miningTitle"));
+    BitKeepInvoke.setTitle(this.$t("mining.miningTitle",{v: this.phase}));
   },
   mounted() {
-    this.startTime = this.countDown('2021-10-20');
-    this.endTime = this.countDown('2021-10-28');
+    this.startTime = this.countDown(this.fixdStartTime);
+    this.endTime = this.countDown(this.fixdEndTime);
+    if(this.startTime<0) this.status = true;
   },
   methods: {
     // 获取地址cbkb地址
@@ -311,7 +315,8 @@ export default {
       return num && num.toString()
         .replace(/^\d+/g, (m) => m.replace(/(?=(?!^)(\d{3})+$)/g, ','))
     },
-    swapBkb: debounce(async function () {
+    swap: debounce(async function () {
+      // if(!this.status) return this.$toast(this.$t('mining.notStart'))
       const {data, status} = await USER_API.swapBkb({
         userid: window.ethereum.selectedAddress,
       });
@@ -341,7 +346,7 @@ export default {
     },
     countDown(times) {
       let nowTime = Date.now(); //当前时间
-      let setDate = new Date(times);
+      let setDate = new Date(times.replace(/-/g, '/'));
       let setTime = setDate.getTime(); //设定的时间
       //获取剩余时间总秒数
       return setTime - nowTime;
@@ -351,9 +356,15 @@ export default {
 </script>
 <style lang="scss">
 .van-dialog__message {
-  font-size: 17px !important;
-  padding: 0 !important;
+  font-size: 16px !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
   font-weight: 500;
+  line-height: 20px;
+}
+.van-dialog__confirm {
+  font-weight: 500;
+  font-size: 17px;
 }
 
 .mining {
@@ -476,6 +487,9 @@ export default {
 
   .mining_trans {
     margin: 20px 0 !important;
+  }
+  .mbottom{
+    margin-bottom: 15px!important;
   }
 
   .produced {
