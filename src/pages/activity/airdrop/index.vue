@@ -13,7 +13,7 @@
         <van-button class="swap-btn" @click="receive" :class="[!status? 'disabled': '']">{{$t('airdrop.receive')}}</van-button>
       </div>
       <div class="airdrop">
-        <p class="title">{{$t('airdrop.airdrop')}} </p>
+        <p class="title" style="font-size: 16px;">{{$t('airdrop.airdrop')}} </p>
         <p class="content">{{$t('airdrop.airdropContent')}}</p>
         <p class="title">{{$t('airdrop.time')}}</p>
         <p class="content">{{$t('airdrop.timeContent')}}</p>
@@ -29,7 +29,7 @@
           <p class="content">{{$t('airdrop.rules2')}}</p>
           <p class="content">{{$t('airdrop.rules3')}}</p>
         </div>
-        <p class="content note">{{$t('airdrop.note')}}</p>
+        <p class="content note" style="line-height: 18px">{{$t('airdrop.note')}}</p>
       </div>
       <div class="line"></div>
       <div class="about">
@@ -54,7 +54,7 @@
           <span>{{$t('CbkbExchange.distribution')}}</span>
         </div>
         <div class="charts-img">
-          <img src="http://cdn.bitkeep.vip/u_b_3b815290-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
+          <img src="http://cdn.bitkeep.vip/u_b_c014c440-30d0-11ec-9e24-8d799844d18f.png" alt="">
           <p class="total">{{$t('CbkbExchange.total')}}<span class="exchangeTotal">600,000,000</span></p>
         </div>
         <div class="distribution-man">
@@ -277,10 +277,15 @@ export default {
 </script>
 <style lang="scss">
 .van-dialog__message {
-  font-size: 17px !important;
-  padding: 0 !important;
+  font-size: 16px !important;
+  padding: 0 24px !important;
   font-weight: 500;
 }
+.van-dialog__confirm {
+  font-weight: 500;
+  font-size: 17px;
+}
+
 
 </style>
 <style lang="scss" scoped>
@@ -309,12 +314,12 @@ export default {
   .text-n{
     font-size: 30px;
     margin: 10px 0 0;
-    line-height: 18px;
+    line-height: 20px;
     font-family: "bitkeep DIN";
     color: #080D21;
-    height: 18px;
+    height: 20px;
     .setH{
-      height: 18px;
+      height: 20px;
     }
     .setFont{
       font-size: 16px;
@@ -343,9 +348,6 @@ export default {
   padding: 2px 15px;
   font-size: 14px;
   line-height: 16px;
-  :first-child{
-    font-size: 16px;
-  }
   .title{
     color: #080D21;
     font-weight: 600;
@@ -356,9 +358,10 @@ export default {
   .ruleContent{
     text-indent: -13px;
     padding-left: 13px;
+    line-height: 18px;
   }
   .note{
-    color: #999;
+    color: #97a0ad;
   }
 }
 .line{
@@ -520,7 +523,7 @@ export default {
         }
         span{
           font-size: 14px;
-          color: #4B5373;
+          color: #7F828F;
           width: 120px;
           margin-top: 5px;
         }
