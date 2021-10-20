@@ -1,12 +1,5 @@
 [
   {
-    "name": "mining",
-    "path": "/mining",
-    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/mining/index.vue",
-    "chunkName": "pages/mining/index",
-    "_name": "_fb69fa08"
-  },
-  {
     "name": "activity-airdrop",
     "path": "/activity/airdrop",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/airdrop/index.vue",
@@ -26,6 +19,13 @@
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/cbkbexchange/index.vue",
     "chunkName": "pages/activity/cbkbexchange/index",
     "_name": "_432e757a"
+  },
+  {
+    "name": "activity-mining",
+    "path": "/activity/mining",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/mining/index.vue",
+    "chunkName": "pages/activity/mining/index",
+    "_name": "_03bed5fa"
   },
   {
     "name": "activity-blindbox-detail",

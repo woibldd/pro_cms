@@ -1,0 +1,458 @@
+<template>
+  <div>
+    <div class="about">
+      <div class="about-title">
+        <img
+          src="http://cdn.bitkeep.vip/u_b_0978f140-2bec-11ec-b5c0-c1ce5b0a2535.png"
+          alt=""
+        />
+        <span>{{ $t("CbkbExchange.about") }}</span>
+      </div>
+      <div class="about-con">
+        <span>
+          {{ $t("CbkbExchange.aboutContent1") }}
+        </span>
+        <span>
+          {{ $t("CbkbExchange.aboutContent2") }}
+        </span>
+      </div>
+      <div class="viewAll" @click="viewAll">
+        {{
+          !this.flag ? $t("CbkbExchange.viewAll") : $t("CbkbExchange.pickUp")
+        }}
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="distribution">
+      <div class="distribution-title">
+        <img
+          src="http://cdn.bitkeep.vip/u_b_244b3eb0-2bec-11ec-b5c0-c1ce5b0a2535.png"
+          alt=""
+        />
+        <span>{{ $t("CbkbExchange.distribution") }}</span>
+      </div>
+      <div class="charts-img">
+        <img
+          src="http://cdn.bitkeep.vip/u_b_c014c440-30d0-11ec-9e24-8d799844d18f.png"
+          alt=""
+        />
+        <p class="total">
+          {{ $t("CbkbExchange.total")
+          }}<span class="exchangeTotal">600,000,000</span>
+        </p>
+      </div>
+      <div class="distribution-man">
+        <div class="data">
+          <div>
+            <span style="background: #495bff"></span>
+            <span>{{ $t("CbkbExchange.mining") }}</span>
+          </div>
+          <div>50%</div>
+        </div>
+        <div class="data">
+          <div>
+            <span style="background: #1cbdb5"></span>
+            <span>{{ $t("CbkbExchange.eco") }}</span>
+          </div>
+          <div>20%</div>
+        </div>
+        <div class="data">
+          <div>
+            <span style="background: #ff8146"></span>
+            <span>{{ $t("CbkbExchange.community") }} </span>
+          </div>
+          <div>15%</div>
+        </div>
+        <div class="data">
+          <div>
+            <span style="background: #f04e98"></span>
+            <span>{{ $t("CbkbExchange.partner") }}</span>
+          </div>
+          <div>10%</div>
+        </div>
+        <div class="data">
+          <div>
+            <span style="background: #080d21"></span>
+            <span>{{ $t("CbkbExchange.tram") }}</span>
+          </div>
+          <div>5%</div>
+        </div>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="hold">
+      <div class="hold-title">
+        <img
+          src="http://cdn.bitkeep.vip/u_b_5930f660-2bec-11ec-b5c0-c1ce5b0a2535.png"
+          alt=""
+        />
+        <span>{{ $t("CbkbExchange.hold") }}</span>
+      </div>
+      <div class="hold-content">
+        <p>{{ $t("CbkbExchange.hold1") }}</p>
+        <p>{{ $t("CbkbExchange.hold2") }}</p>
+        <p>{{ $t("CbkbExchange.hold3") }}</p>
+        <p>{{ $t("CbkbExchange.hold4") }}</p>
+        <p>{{ $t("CbkbExchange.hold5") }}</p>
+        <p>{{ $t("CbkbExchange.hold6") }}</p>
+        <p>{{ $t("CbkbExchange.hold7") }}</p>
+        <p>{{ $t("CbkbExchange.hold8") }}</p>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="appreciation">
+      <div class="appreciation-title">
+        <span>{{ $t("CbkbExchange.appreciation") }}</span>
+      </div>
+      <div class="appreciation-grid">
+        <div class="appreciation-grid-flex">
+          <div>
+            <img
+              src="http://cdn.bitkeep.vip/u_b_adf789c0-2bec-11ec-b5c0-c1ce5b0a2535.png"
+              alt=""
+            />
+            <span>{{ $t("CbkbExchange.appreciationSwap") }}</span>
+          </div>
+          <div>
+            <img
+              src="http://cdn.bitkeep.vip/u_b_adf71490-2bec-11ec-b5c0-c1ce5b0a2535.png"
+              alt=""
+            />
+            <span>{{ $t("CbkbExchange.appreciationCoin") }}</span>
+          </div>
+        </div>
+        <div class="appreciation-grid-flex">
+          <div>
+            <img
+              src="http://cdn.bitkeep.vip/u_b_adf789c1-2bec-11ec-b5c0-c1ce5b0a2535.png"
+              alt=""
+            />
+            <span>{{ $t("CbkbExchange.appreciationPool") }}</span>
+          </div>
+          <div>
+            <img
+              src="http://cdn.bitkeep.vip/u_b_adf7b0d0-2bec-11ec-b5c0-c1ce5b0a2535.png"
+              alt=""
+            />
+            <span>{{ $t("CbkbExchange.appreciationValut") }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="more">
+      <div class="more-title">{{ $t("CbkbExchange.more") }}</div>
+      <div class="more-line">
+        <a href="https://www.bitkeep.com/" target="_blank">
+          <img
+            src="http://cdn.bitkeep.vip/u_b_ddcf2860-2bec-11ec-b5c0-c1ce5b0a2535.png"
+            alt=""
+          /><span>{{ $t("CbkbExchange.website") }}</span>
+        </a>
+        <van-icon name="arrow" class="setIcon" />
+      </div>
+      <div class="more-line">
+        <a href="https://twitter.com/BitKeepOS" target="_blank">
+          <img
+            src="http://cdn.bitkeep.vip/u_b_ddcf4f71-2bec-11ec-b5c0-c1ce5b0a2535.png"
+            alt=""
+          />
+          <span>{{ $t("CbkbExchange.twitter") }}</span>
+        </a>
+        <van-icon name="arrow" class="setIcon" />
+      </div>
+      <div class="more-line">
+        <a href="https://t.me/bitkeep" target="_blank">
+          <img
+            src="http://cdn.bitkeep.vip/u_b_ddcf0150-2bec-11ec-b5c0-c1ce5b0a2535.png"
+            alt=""
+          />
+          <span>{{ $t("CbkbExchange.telegram") }}</span>
+        </a>
+        <van-icon name="arrow" class="setIcon" />
+      </div>
+      <div class="more-line">
+        <a :href="src" target="_blank">
+          <img
+            src="http://cdn.bitkeep.vip/u_b_ddceda40-2bec-11ec-b5c0-c1ce5b0a2535.png"
+            alt=""
+          />
+          <span>{{ $t("CbkbExchange.explorer") }}</span>
+        </a>
+        <van-icon name="arrow" class="setIcon" />
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+export default {
+  data() {
+    return {
+        src: 'https://cn.etherscan.com/address/0xa286035a1e60abf172524bdbfd224abeef6ce362',
+        flag: false,
+    };
+  },
+  methods: {
+    viewAll() {
+      this.flag = !this.flag;
+      let dom = document.getElementsByClassName("about-con")[0];
+      if (this.flag) {
+        dom.setAttribute("style", "-webkit-line-clamp:10");
+      } else {
+        dom.setAttribute("style", "-webkit-line-clamp:2");
+      }
+    },
+  },
+};
+</script>
+<style scoped lang="scss">
+.line {
+  border-bottom: 1px solid #F4F5FA;
+}
+.about {
+  margin: 12px 16px 30px;
+
+  .about-title {
+    img {
+      width: 20px;
+      height: 20px;
+      vertical-align: text-top;
+      margin-right: 5px;
+    }
+
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 600;
+    color: #080D21;
+    vertical-align: middle;
+  }
+
+  .about-con {
+    padding-top: 15px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #4B5373;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .viewAll {
+    text-align: right;
+    font-size: 14px;
+    line-height: 14px;
+    color: #495BFF;
+    margin-top: 6px;
+  }
+}
+
+.distribution {
+  margin: 12px 16px 30px;
+
+  .distribution-title {
+    img {
+      width: 20px;
+      height: 20px;
+      vertical-align: text-top;
+      margin-right: 5px;
+    }
+
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 600;
+    color: #080D21;
+    vertical-align: middle;
+  }
+
+  .charts-img {
+    text-align: center;
+    margin: 20px;
+
+    img {
+      width: 110px;
+      height: 110px;
+    }
+
+    .exchangeTotal {
+      font-family: bitkeep DIN;
+      font-size: 14px;
+      color: #4B5373;
+    }
+
+    .total {
+      font-size: 14px;
+      line-height: 20px;
+      color: #4B5373;
+
+      span {
+        color: #080D21;
+      }
+    }
+  }
+
+  .distribution-man {
+    margin-bottom: 30px;
+    background: #F3F5F6;
+    border-radius: 8px;
+    padding: 10px;
+
+    .data {
+      display: flex;
+      justify-content: space-between;
+
+      div:last-child {
+        font-family: bitkeep DIN;
+        font-size: 14px;
+        color: #080D21;
+      }
+
+      > div {
+        font-size: 14px;
+        line-height: 34px;
+        color: #4B5373;
+        vertical-align: middle;
+
+        span:first-child {
+          display: inline-block;
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          vertical-align: middle;
+          margin-right: 4px;
+        }
+
+        span:last-child {
+          color: #4B5373;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+.hold {
+  margin: 12px 16px 30px;
+
+  .hold-title {
+    img {
+      width: 20px;
+      height: 20px;
+      vertical-align: text-top;
+      margin-right: 5px;
+    }
+
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 600;
+    color: #080D21;
+    vertical-align: middle;
+  }
+
+  .hold-content {
+    font-size: 14px;
+    color: #4B5373;
+    text-indent: -14px;
+    padding-left: 15px;
+  }
+}
+
+.appreciation {
+  margin: 12px 16px 30px;
+
+  .appreciation-title {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 600;
+    color: #080D21;
+    vertical-align: middle;
+  }
+
+  .appreciation-grid {
+    width: 100%;
+    text-align: center;
+
+    .appreciation-grid-flex {
+      display: flex;
+      flex-direction: row;
+      margin-top: 20px;
+
+      div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+        float: left;
+
+        img {
+          margin-top: 5px;
+          width: 24px;
+          height: 24px;
+        }
+
+        span {
+          font-size: 14px;
+          color: #4B5373;
+          width: 120px;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}
+
+.setIcon {
+  color: #999BA3;
+}
+
+.setLightColor{
+  color: #080D21;
+}
+
+.setDarkColor {
+  color: #4B5373;
+}
+.setFontFamily {
+  font-family: "bitkeep DIN";
+}
+
+.more {
+  margin: 12px 16px 30px;
+
+  .more-title {
+    font-size: 16px;
+    line-height: 45px;
+    font-weight: 600;
+    color: #080D21;
+    border-bottom: 1px solid #F4F5FA;
+  }
+
+  .more-line {
+    font-size: 16px;
+    line-height: 50px;
+    height: 50px;
+    border-bottom: 1px solid #F4F5FA;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      flex: 1;
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+    }
+
+    span {
+      color: #080D21;
+      display: inline-block;
+      margin-left: 10px;
+    }
+  }
+}
+</style>

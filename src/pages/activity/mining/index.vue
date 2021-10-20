@@ -10,7 +10,7 @@
           alt="">
       </div>
       <div class="text" v-if="!status">
-        <p class="total">{{ $t('mining.total') }}<span class="phase">{{ $t('mining.phase') }}</span></p>
+        <p class="total">{{ $t('mining.total') }}<span class="phase">{{ $t('mining.phase',{v: phase}) }}</span></p>
         <p class="text-n"><span class="setH">{{ available }}</span> <span class="setFont">BKB</span></p>
         <div class="line border"></div>
         <p class="timeCount">{{ $t('mining.startCountdown') }}
@@ -19,10 +19,10 @@
           </span>
           <van-count-down v-else :time="startTime" :format="formatZh" class="time setFontFamily"/>
         </p>
-        <van-button class="swap-btn disabled" @click="swapBkb">{{ $t('mining.toStart') }}</van-button>
+        <van-button class="swap-btn disabled">{{ $t('mining.toStart') }}</van-button>
       </div>
       <div class="text" v-else>
-        <p class="total">{{ $t('mining.get') }}<span class="phase">{{ $t('mining.phase') }}</span></p>
+        <p class="total">{{ $t('mining.get') }}<span class="phase">{{ $t('mining.phase',{v:phase}) }}</span></p>
         <p class="text-n"><span class="setH">{{ available }}</span> <span class="setFont">BKB</span></p>
         <p class="setDarkColor">{{ $t('mining.day') }}<span class="setLightColor setFontFamily">${{ 123,123 }}</span></p>
         <div class="line border"></div>
@@ -32,10 +32,10 @@
           </span>
           <van-count-down v-else :time="endTime" :format="formatZh" class="time setFontFamily"/>
         </p>
-        <van-button class="swap-btn" @click="swapBkb">{{ $t('mining.swapNow') }}</van-button>
+        <van-button class="swap-btn" @click="swap">{{ $t('mining.swapNow') }}</van-button>
       </div>
       <div class="mining">
-        <p class="title setFontFamily">{{ $t('mining.miningPhase') }} </p>
+        <p class="title setFontFamily">{{ $t('mining.miningPhase',{v:phase}) }} </p>
         <div class="line"></div>
         <div class="mining-setP">
           <div class="produced">
@@ -55,11 +55,11 @@
           </div>
           <div class="produced mining_trans">
             <span>{{ $t('mining.startTime') }}</span>
-            <span class="setFontFamily">2021-10-18 12:00(UTC)</span>
+            <span class="setFontFamily">{{ fixdStartTime }}(UTC)</span>
           </div>
-          <div class="produced mining_trans" style="margin-bottom: 15px!important;">
+          <div class="produced mining_trans mbottom">
             <span>{{ $t('mining.overTime') }}</span>
-            <span class="setFontFamily">2021-10-21 12:00(UTC)</span>
+            <span class="setFontFamily">{{ fixdEndTime }}(UTC)</span>
           </div>
         </div>
       </div>
@@ -70,190 +70,32 @@
         <van-icon name="arrow" class="setIcon"/>
       </div>
       <div class="line"></div>
-      <div class="about">
-        <div class="about-title">
-          <img src="http://cdn.bitkeep.vip/u_b_0978f140-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-          <span>{{ $t('CbkbExchange.about') }}</span>
-        </div>
-        <div class="about-con">
-          <span>
-          {{ $t('CbkbExchange.aboutContent1') }}
-          </span>
-          <span>
-            {{ $t('CbkbExchange.aboutContent2') }}
-          </span>
-        </div>
-        <div class="viewAll" @click="viewAll">
-          {{ !this.flag ? $t('CbkbExchange.viewAll') : $t('CbkbExchange.pickUp') }}
-        </div>
-      </div>
-      <div class="line"></div>
-      <div class="distribution">
-        <div class="distribution-title">
-          <img src="http://cdn.bitkeep.vip/u_b_244b3eb0-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-          <span>{{ $t('CbkbExchange.distribution') }}</span>
-        </div>
-        <div class="charts-img">
-          <img src="http://cdn.bitkeep.vip/u_b_3b815290-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-          <p class="total">{{ $t('CbkbExchange.total') }}<span class="exchangeTotal">600,000,000</span></p>
-        </div>
-        <div class="distribution-man">
-          <div class="data">
-            <div>
-              <span style="background: #495BFF;"></span>
-              <span>{{ $t('CbkbExchange.mining') }}</span>
-            </div>
-            <div>50%</div>
-          </div>
-          <div class="data">
-            <div>
-              <span style="background: #1CBDB5;"></span>
-              <span>{{ $t('CbkbExchange.eco') }}</span>
-            </div>
-            <div>20%</div>
-          </div>
-          <div class="data">
-            <div>
-              <span style="background: #FF8146;"></span>
-              <span>{{ $t('CbkbExchange.community') }} </span>
-            </div>
-            <div>15%</div>
-          </div>
-          <div class="data">
-            <div>
-              <span style="background: #F04E98;"></span>
-              <span>{{ $t('CbkbExchange.partner') }}</span>
-            </div>
-            <div>10%</div>
-          </div>
-          <div class="data">
-            <div>
-              <span style="background: #080D21;"></span>
-              <span>{{ $t('CbkbExchange.tram') }}</span>
-            </div>
-            <div>5%</div>
-          </div>
-        </div>
-      </div>
-      <div class="line"></div>
-      <div class="hold">
-        <div class="hold-title">
-          <img src="http://cdn.bitkeep.vip/u_b_5930f660-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-          <span>{{ $t('CbkbExchange.hold') }}</span>
-        </div>
-        <div class="hold-content">
-          <p>{{ $t('CbkbExchange.hold1') }}</p>
-          <p>{{ $t('CbkbExchange.hold2') }}</p>
-          <p>{{ $t('CbkbExchange.hold3') }}</p>
-          <p>{{ $t('CbkbExchange.hold4') }}</p>
-          <p>{{ $t('CbkbExchange.hold5') }}</p>
-          <p>{{ $t('CbkbExchange.hold6') }}</p>
-          <p>{{ $t('CbkbExchange.hold7') }}</p>
-          <p>{{ $t('CbkbExchange.hold8') }}</p>
-        </div>
-      </div>
-      <div class="line"></div>
-      <div class="appreciation">
-        <div class="appreciation-title">
-          <span>{{ $t('CbkbExchange.appreciation') }}</span>
-        </div>
-        <div class="appreciation-grid">
-          <div class="appreciation-grid-flex">
-            <div>
-              <img src="http://cdn.bitkeep.vip/u_b_adf789c0-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-              <span>{{ $t('CbkbExchange.appreciationSwap') }}</span>
-            </div>
-            <div>
-              <img src="http://cdn.bitkeep.vip/u_b_adf71490-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-              <span>{{ $t('CbkbExchange.appreciationCoin') }}</span>
-            </div>
-          </div>
-          <div class="appreciation-grid-flex">
-            <div>
-              <img src="http://cdn.bitkeep.vip/u_b_adf789c1-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-              <span>{{ $t('CbkbExchange.appreciationPool') }}</span>
-            </div>
-            <div>
-              <img src="http://cdn.bitkeep.vip/u_b_adf7b0d0-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-              <span>{{ $t('CbkbExchange.appreciationValut') }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="line"></div>
-      <div class="more">
-        <div class="more-title">{{ $t('CbkbExchange.more') }}</div>
-        <div class="more-line">
-          <a href="https://www.bitkeep.com/" target="_blank">
-            <img src="http://cdn.bitkeep.vip/u_b_ddcf2860-2bec-11ec-b5c0-c1ce5b0a2535.png"
-                 alt=""><span>{{ $t('CbkbExchange.website') }}</span>
-          </a>
-          <van-icon name="arrow" class="setIcon"/>
-        </div>
-        <!--        <div class="more-line">-->
-        <!--          <a href="" target="_blank">-->
-        <!--            <img src="http://cdn.bitkeep.vip/u_b_ddf09310-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.paper')}}</span>-->
-        <!--          </a>-->
-        <!--          <van-icon name="arrow" class="setIcon"/>-->
-        <!--        </div>-->
-        <div class="more-line">
-          <a href="https://twitter.com/BitKeepOS" target="_blank">
-            <img src="http://cdn.bitkeep.vip/u_b_ddcf4f71-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-            <span>{{ $t('CbkbExchange.twitter') }}</span>
-          </a>
-          <van-icon name="arrow" class="setIcon"/>
-        </div>
-        <!--        <div class="more-line">-->
-        <!--          <a href="https://github.com/bitkeepcom" target="_blank">-->
-        <!--            <img src="http://cdn.bitkeep.vip/u_b_ddceb330-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.github')}}</span>-->
-        <!--          </a>-->
-        <!--          <van-icon name="arrow"/>-->
-        <!--        </div>-->
-        <div class="more-line">
-          <a href="https://t.me/bitkeep" target="_blank">
-            <img src="http://cdn.bitkeep.vip/u_b_ddcf0150-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-            <span>{{ $t('CbkbExchange.telegram') }}</span>
-          </a>
-          <van-icon name="arrow" class="setIcon"/>
-        </div>
-        <!--        <div class="more-line">-->
-        <!--          <a href="" target="_blank">-->
-        <!--            <img src="http://cdn.bitkeep.vip/u_b_ddcf4f70-2bec-11ec-b5c0-c1ce5b0a2535.png" alt=""> <span>{{$t('CbkbExchange.facebook')}}</span>-->
-        <!--          </a>-->
-        <!--          <van-icon name="arrow" class="setIcon"/>-->
-        <!--        </div>-->
-        <div class="more-line">
-          <a :href="src" target="_blank">
-            <img src="http://cdn.bitkeep.vip/u_b_ddceda40-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
-            <span>{{ $t('CbkbExchange.explorer') }}</span>
-          </a>
-          <van-icon name="arrow" class="setIcon"/>
-        </div>
-      </div>
     </div>
+    <activity-com/>
   </div>
 </template>
 
 
 <script>
 import {USER_API} from "@/api/client";
-import {debounce} from "../../tools/common";
+import {debounce} from "../../../tools/common";
 import {mapState} from "vuex";
-
+import activity from "@/components/activity"
 export default {
   name: "mining",
   data() {
     return {
       cbkbBalance: 0,
       available: 0,
-      src: 'https://cn.etherscan.com/address/0xa286035a1e60abf172524bdbfd224abeef6ce362',
-      flag: false,
       status: false,
       isLoading: true,
       startTime: 0,
       endTime: 0,
+      fixdStartTime: '2021-10-21 12:00',
+      fixdEndTime: '2021-10-24 14:24',
       formatEn: 'DDD : HHH : mmM : ss',
       formatZh: 'DD 天 HH 时 mm 分 ss 秒',
+      phase: '1'
     }
   },
   computed: {
@@ -265,6 +107,9 @@ export default {
       return this.local.UA.isBitKeep;
     }
   },
+  components: {
+    activityCom: activity
+  },
   async created() {
     process.client && window.addEventListener('load', () => {
       this.getBalance();
@@ -274,11 +119,12 @@ export default {
   },
   beforeMount() {
     this.isBitKeep &&
-    BitKeepInvoke.setTitle(this.$t("mining.miningTitle"));
+    BitKeepInvoke.setTitle(this.$t("mining.miningTitle",{v: this.phase}));
   },
   mounted() {
-    this.startTime = this.countDown('2021-10-20');
-    this.endTime = this.countDown('2021-10-28');
+    this.startTime = this.countDown(this.fixdStartTime);
+    this.endTime = this.countDown(this.fixdEndTime);
+    if(this.startTime<0) this.status = true;
   },
   methods: {
     // 获取地址cbkb地址
@@ -311,7 +157,8 @@ export default {
       return num && num.toString()
         .replace(/^\d+/g, (m) => m.replace(/(?=(?!^)(\d{3})+$)/g, ','))
     },
-    swapBkb: debounce(async function () {
+    swap: debounce(async function () {
+      // if(!this.status) return this.$toast(this.$t('mining.notStart'))
       const {data, status} = await USER_API.swapBkb({
         userid: window.ethereum.selectedAddress,
       });
@@ -330,18 +177,9 @@ export default {
         this.getCbkbSwapInfo(window.ethereum.selectedAddress);
       });
     }),
-    viewAll() {
-      this.flag = !this.flag;
-      let dom = document.getElementsByClassName('about-con')[0];
-      if (this.flag) {
-        dom.setAttribute('style', '-webkit-line-clamp:10')
-      } else {
-        dom.setAttribute('style', '-webkit-line-clamp:2')
-      }
-    },
     countDown(times) {
       let nowTime = Date.now(); //当前时间
-      let setDate = new Date(times);
+      let setDate = new Date(times.replace(/-/g, '/'));
       let setTime = setDate.getTime(); //设定的时间
       //获取剩余时间总秒数
       return setTime - nowTime;
@@ -351,9 +189,15 @@ export default {
 </script>
 <style lang="scss">
 .van-dialog__message {
-  font-size: 17px !important;
-  padding: 0 !important;
+  font-size: 16px !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
   font-weight: 500;
+  line-height: 20px;
+}
+.van-dialog__confirm {
+  font-weight: 500;
+  font-size: 17px;
 }
 
 .mining {
@@ -476,6 +320,9 @@ export default {
 
   .mining_trans {
     margin: 20px 0 !important;
+  }
+  .mbottom{
+    margin-bottom: 15px!important;
   }
 
   .produced {
@@ -722,44 +569,5 @@ export default {
 }
 .setFontFamily {
   font-family: "bitkeep DIN";
-}
-
-.more {
-  margin: 12px 16px 30px;
-
-  .more-title {
-    font-size: 16px;
-    line-height: 45px;
-    font-weight: 600;
-    color: #080D21;
-    border-bottom: 1px solid #F4F5FA;
-  }
-
-  .more-line {
-    font-size: 16px;
-    line-height: 50px;
-    height: 50px;
-    border-bottom: 1px solid #F4F5FA;
-    vertical-align: middle;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    a {
-      flex: 1;
-    }
-
-    img {
-      width: 24px;
-      height: 24px;
-      vertical-align: middle;
-    }
-
-    span {
-      color: #080D21;
-      display: inline-block;
-      margin-left: 10px;
-    }
-  }
 }
 </style>

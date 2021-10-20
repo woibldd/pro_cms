@@ -1,5 +1,6 @@
 import { wrapFunctional } from './utils'
 
+export { default as Activity } from '../../components/activity/index.vue'
 export { default as CommonCVueCountdown } from '../../components/common/c-vue-countdown.vue'
 export { default as CommonHeader } from '../../components/common/header.vue'
 export { default as Common } from '../../components/common/index.js'
@@ -16,6 +17,7 @@ export { default as VueCreatePosterLayoutPainter } from '../../components/vue-cr
 export { default as VueCreatePosterLayoutQrcode } from '../../components/vue-create-poster/layout/qrcode.js'
 export { default as VueCreatePosterLayoutUtil } from '../../components/vue-create-poster/layout/util.js'
 
+export const LazyActivity = import('../../components/activity/index.vue' /* webpackChunkName: "components/activity" */).then(c => wrapFunctional(c.default || c))
 export const LazyCommonCVueCountdown = import('../../components/common/c-vue-countdown.vue' /* webpackChunkName: "components/common-c-vue-countdown" */).then(c => wrapFunctional(c.default || c))
 export const LazyCommonHeader = import('../../components/common/header.vue' /* webpackChunkName: "components/common-header" */).then(c => wrapFunctional(c.default || c))
 export const LazyCommon = import('../../components/common/index.js' /* webpackChunkName: "components/common" */).then(c => wrapFunctional(c.default || c))

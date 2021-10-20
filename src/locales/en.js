@@ -211,20 +211,21 @@ module.exports = {
   },
   'mining':{
     get: 'You got BKB total',
-    phase: ' ( Phase 1 )',
+    phase: ' ( Phase {v} )',
     total: 'Total BKB rewards',
     day: 'Your Transaction amount a day',
     startCountdown: 'Start countdown ',
     endCountdown: 'End countdown ',
     toStart: 'To Start',
     swapNow: 'Swap Now',
-    miningPhase: 'Transaction Minig Phase 1',
+    miningPhase: 'Transaction Minig Phase {v}',
     produced: 'BKB produced',
     startTime: 'Start time',
     overTime: 'Over time',
     amountDay: 'Transaction amount a day',
     producedDay: 'BKB produced a day',
     miningRule: 'Transaction mining rule',
-    miningTitle: 'Transaction Mining（Phase 1）'
+    miningTitle: 'Transaction Mining（Phase {v}）',
+    notStart: 'Activity not yet started'
   }
 }
