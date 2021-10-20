@@ -49,7 +49,7 @@
           <span>{{$t('CbkbExchange.distribution')}}</span>
         </div>
         <div class="charts-img">
-          <img src="http://cdn.bitkeep.vip/u_b_3b815290-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
+          <img src="http://cdn.bitkeep.vip/u_b_c014c440-30d0-11ec-9e24-8d799844d18f.png" alt="">
           <p class="total">{{$t('CbkbExchange.total')}}<span class="exchangeTotal">600,000,000</span></p>
         </div>
         <div class="distribution-man">
@@ -273,9 +273,13 @@ export default {
 </script>
 <style lang="scss">
 .van-dialog__message {
-  font-size: 17px !important;
-  padding: 0 !important;
+  font-size: 16px !important;
+  padding: 0 24px !important;
   font-weight: 500;
+}
+.van-dialog__confirm {
+  font-weight: 500;
+  font-size: 17px;
 }
 
 </style>
@@ -516,7 +520,7 @@ export default {
         }
         span{
           font-size: 14px;
-          color: #4B5373;
+          color: #7F828F;
           width: 120px;
           margin-top: 5px;
         }
