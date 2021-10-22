@@ -13,20 +13,22 @@
         <p class="total">{{ $t('mining.total') }}<span class="phase">{{ $t('mining.phase',{v: phase}) }}</span></p>
         <p class="text-n"><span class="setH">{{ available }}</span> <span class="setFont">BKB</span></p>
         <div class="line border"></div>
-        <p class="timeCount">{{ $t('mining.startCountdown') }}
+        <p class="timeCount">
+          <span class="startCountdown">{{ $t('mining.startCountdown') }}</span>
           <span v-if="locale=='en'">
             <van-count-down :time="startTime" :format="formatEn" class="time setFontFamily"/><span class="setFontFamily time">S</span>
           </span>
           <van-count-down v-else :time="startTime" :format="formatZh" class="time setFontFamily"/>
         </p>
-        <van-button class="swap-btn disabled">{{ $t('mining.toStart') }}</van-button>
+        <van-button class="swap-btn disabled" @click="swap">{{ $t('mining.toStart') }}</van-button>
       </div>
       <div class="text" v-else>
         <p class="total">{{ $t('mining.get') }}<span class="phase">{{ $t('mining.phase',{v:phase}) }}</span></p>
         <p class="text-n"><span class="setH">{{ available }}</span> <span class="setFont">BKB</span></p>
         <p class="setDarkColor">{{ $t('mining.day') }}<span class="setLightColor setFontFamily">${{ 123,123 }}</span></p>
         <div class="line border"></div>
-        <p class="timeCount">{{ $t('mining.endCountdown') }}
+        <p class="timeCount">
+          <span class="startCountdown">{{ $t('mining.endCountdown') }}</span>
           <span v-if="locale=='en'">
             <van-count-down :time="endTime" :format="formatEn" class="time setFontFamily"/><span class="setFontFamily time">S</span>
           </span>
@@ -44,7 +46,7 @@
               <span style="color: #495BFF">7,866,780</span><span>  /  33,600,000BKB</span>
             </span>
           </div>
-          <van-progress :percentage="50" stroke-width="10" color="#495BFF" :show-pivot="false"/>
+          <van-progress :percentage="(30423220/33600000)*100" stroke-width="10" color="#495BFF" :show-pivot="false"/>
           <div class="produced mining_trans" v-if="status">
             <span>{{ $t('mining.amountDay') }}</span>
             <span class="setFontFamily">$2,441,930.32 </span>
@@ -70,8 +72,8 @@
         <van-icon name="arrow" class="setIcon"/>
       </div>
       <div class="line"></div>
+      <activity-com/>
     </div>
-    <activity-com/>
   </div>
 </template>
 
@@ -91,7 +93,7 @@ export default {
       isLoading: true,
       startTime: 0,
       endTime: 0,
-      fixdStartTime: '2021-10-21 12:00',
+      fixdStartTime: '2021-10-23 12:00',
       fixdEndTime: '2021-10-24 14:24',
       formatEn: 'DDD : HHH : mmM : ss',
       formatZh: 'DD 天 HH 时 mm 分 ss 秒',
@@ -149,7 +151,7 @@ export default {
         });
       }
       // let reg="/(\d)(?=(\d{3})+\b)/g"; //小数点也带有千位分隔符
-      let reg = "/(?<=^\d+)(?=(\d{3})+\b)/"; //小数点没有千位分隔符
+      // let reg = "/(?<=^\d+)(?=(\d{3})+\b)/"; //小数点没有千位分隔符
       this.cbkbBalance = this.milliFormat(data.cbkbBalance)
       this.available = this.milliFormat(data.available)
     },
@@ -158,7 +160,7 @@ export default {
         .replace(/^\d+/g, (m) => m.replace(/(?=(?!^)(\d{3})+$)/g, ','))
     },
     swap: debounce(async function () {
-      // if(!this.status) return this.$toast(this.$t('mining.notStart'))
+      if(!this.status) return this.$toast(this.$t('mining.notStart'))
       const {data, status} = await USER_API.swapBkb({
         userid: window.ethereum.selectedAddress,
       });
@@ -237,7 +239,7 @@ export default {
     color: #080D21;
     font-weight: 600;
     .phase {
-      color: #4B5373;
+      color: #9CA5B3;
     }
   }
 
@@ -256,6 +258,10 @@ export default {
       line-height: 14px;
       color: #080D21;
       display: inline-block;
+    }
+    .startCountdown{
+      display: inline-block;
+      margin-right: 10px;
     }
   }
 
