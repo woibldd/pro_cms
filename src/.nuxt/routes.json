@@ -49,6 +49,20 @@
     "_name": "_271da9c0"
   },
   {
+    "name": "activity-mining-history",
+    "path": "/activity/mining/history",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/mining/history.vue",
+    "chunkName": "pages/activity/mining/history",
+    "_name": "_133d3cbc"
+  },
+  {
+    "name": "activity-mining-miningRule",
+    "path": "/activity/mining/miningRule",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/mining/miningRule.vue",
+    "chunkName": "pages/activity/mining/miningRule",
+    "_name": "_3390fe74"
+  },
+  {
     "name": "activity-blindbox-detail-id",
     "path": "/activity/blindbox/detail/:id",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindbox/detail/_id.vue",

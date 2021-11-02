@@ -1,25 +1,35 @@
 <template>
-  <div>
+  <div class="wrap" :class="[status ? 'statusM' : '']">
     <div class="about">
-      <div class="about-title">
-        <img
-          src="http://cdn.bitkeep.vip/u_b_0978f140-2bec-11ec-b5c0-c1ce5b0a2535.png"
-          alt=""
-        />
-        <span>{{ $t("CbkbExchange.about") }}</span>
+      <div class="about-wrap">
+        <div class="about-wrap-pos">
+          <img
+            src="http://cdn.bitkeep.vip/u_b_0978f140-2bec-11ec-b5c0-c1ce5b0a2535.png"
+            alt=""
+          />
+          <p>{{ $t("CbkbExchange.about") }}</p>
+        </div>
       </div>
-      <div class="about-con">
-        <span>
-          {{ $t("CbkbExchange.aboutContent1") }}
-        </span>
-        <span>
-          {{ $t("CbkbExchange.aboutContent2") }}
-        </span>
-      </div>
-      <div class="viewAll" @click="viewAll">
-        {{
-          !this.flag ? $t("CbkbExchange.viewAll") : $t("CbkbExchange.pickUp")
-        }}
+      <div class="about-content">
+        <div class="about-title">
+          <img
+            src="http://cdn.bitkeep.vip/u_b_d9de0340-3b9e-11ec-8e63-1db435df936c.png"
+          />
+          <span>{{ $t("mining.Introduce") }}</span>
+        </div>
+        <div class="about-con">
+          <span>
+            {{ $t("CbkbExchange.aboutContent1") }}
+          </span>
+          <span>
+            {{ $t("CbkbExchange.aboutContent2") }}
+          </span>
+        </div>
+        <div class="viewAll" @click="viewAll">
+          {{
+            !this.flag ? $t("CbkbExchange.viewAll") : $t("CbkbExchange.pickUp")
+          }}
+        </div>
       </div>
     </div>
     <div class="line"></div>
@@ -188,10 +198,11 @@
 export default {
   data() {
     return {
-        src: 'https://cn.etherscan.com/address/0xa286035a1e60abf172524bdbfd224abeef6ce362',
-        flag: false,
+      src: "https://cn.etherscan.com/address/0xa286035a1e60abf172524bdbfd224abeef6ce362",
+      flag: false,
     };
   },
+  props: ["status"],
   methods: {
     viewAll() {
       this.flag = !this.flag;
@@ -207,11 +218,43 @@ export default {
 </script>
 <style scoped lang="scss">
 .line {
-  border-bottom: 1px solid #F4F5FA;
+  border-bottom: 1px solid #f4f5fa;
+}
+.statusM {
+  padding-bottom: 52px;
+}
+.wrap {
+  background: #fff;
 }
 .about {
-  margin: 12px 16px 30px;
-
+  .about-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    background: #f3f5f6;
+  }
+  .about-wrap-pos {
+    text-align: center;
+    font-size: 18px;
+    line-height: 18px;
+    color: #080d21;
+    direction: cloumn;
+    img {
+      width: 28px;
+      height: 28px;
+    }
+    p {
+      margin-top: 5px;
+      font-size: 18px;
+      line-height: 18px;
+      color: #080D21;
+      font-weight: 600;
+    }
+  }
+  .about-content {
+    margin: 12px 16px 30px;
+  }
   .about-title {
     img {
       width: 20px;
@@ -223,7 +266,7 @@ export default {
     font-size: 16px;
     line-height: 16px;
     font-weight: 600;
-    color: #080D21;
+    color: #080d21;
     vertical-align: middle;
   }
 
@@ -231,7 +274,7 @@ export default {
     padding-top: 15px;
     font-size: 14px;
     line-height: 20px;
-    color: #4B5373;
+    color: #4b5373;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -243,7 +286,7 @@ export default {
     text-align: right;
     font-size: 14px;
     line-height: 14px;
-    color: #495BFF;
+    color: #495bff;
     margin-top: 6px;
   }
 }
@@ -262,7 +305,7 @@ export default {
     font-size: 16px;
     line-height: 16px;
     font-weight: 600;
-    color: #080D21;
+    color: #080d21;
     vertical-align: middle;
   }
 
@@ -278,23 +321,23 @@ export default {
     .exchangeTotal {
       font-family: bitkeep DIN;
       font-size: 14px;
-      color: #4B5373;
+      color: #4b5373;
     }
 
     .total {
       font-size: 14px;
       line-height: 20px;
-      color: #4B5373;
+      color: #4b5373;
 
       span {
-        color: #080D21;
+        color: #080d21;
       }
     }
   }
 
   .distribution-man {
     margin-bottom: 30px;
-    background: #F3F5F6;
+    background: #f3f5f6;
     border-radius: 8px;
     padding: 10px;
 
@@ -305,13 +348,13 @@ export default {
       div:last-child {
         font-family: bitkeep DIN;
         font-size: 14px;
-        color: #080D21;
+        color: #080d21;
       }
 
       > div {
         font-size: 14px;
         line-height: 34px;
-        color: #4B5373;
+        color: #4b5373;
         vertical-align: middle;
 
         span:first-child {
@@ -324,7 +367,7 @@ export default {
         }
 
         span:last-child {
-          color: #4B5373;
+          color: #4b5373;
           vertical-align: middle;
         }
       }
@@ -346,13 +389,13 @@ export default {
     font-size: 16px;
     line-height: 16px;
     font-weight: 600;
-    color: #080D21;
+    color: #080d21;
     vertical-align: middle;
   }
 
   .hold-content {
     font-size: 14px;
-    color: #4B5373;
+    color: #4b5373;
     text-indent: -14px;
     padding-left: 15px;
   }
@@ -365,7 +408,7 @@ export default {
     font-size: 16px;
     line-height: 16px;
     font-weight: 600;
-    color: #080D21;
+    color: #080d21;
     vertical-align: middle;
   }
 
@@ -393,7 +436,7 @@ export default {
 
         span {
           font-size: 14px;
-          color: #4B5373;
+          color: #4b5373;
           width: 120px;
           margin-top: 5px;
         }
@@ -403,15 +446,15 @@ export default {
 }
 
 .setIcon {
-  color: #999BA3;
+  color: #999ba3;
 }
 
-.setLightColor{
-  color: #080D21;
+.setLightColor {
+  color: #080d21;
 }
 
 .setDarkColor {
-  color: #4B5373;
+  color: #4b5373;
 }
 .setFontFamily {
   font-family: "bitkeep DIN";
@@ -424,15 +467,15 @@ export default {
     font-size: 16px;
     line-height: 45px;
     font-weight: 600;
-    color: #080D21;
-    border-bottom: 1px solid #F4F5FA;
+    color: #080d21;
+    border-bottom: 1px solid #f4f5fa;
   }
 
   .more-line {
     font-size: 16px;
     line-height: 50px;
     height: 50px;
-    border-bottom: 1px solid #F4F5FA;
+    border-bottom: 1px solid #f4f5fa;
     vertical-align: middle;
     display: flex;
     align-items: center;
@@ -449,7 +492,7 @@ export default {
     }
 
     span {
-      color: #080D21;
+      color: #080d21;
       display: inline-block;
       margin-left: 10px;
     }

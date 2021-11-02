@@ -1,88 +1,211 @@
 <template>
-  <div class="exchange_cbkb">
+  <div class="mining">
     <div class="loading" v-if="isLoading">
-      <van-loading color="#1989fa" vertical>加载中...</van-loading>
+      <van-loading color="#1989fa" vertical
+        >{{ $t("base.loading") }}...</van-loading
+      >
     </div>
-    <div v-else>
+    <div v-else class="mining-wrap">
       <div class="img">
         <img
-          :src="locale=='en' ? 'http://cdn.bitkeep.vip/u_b_328c6660-30a2-11ec-87e4-f9eee9da401a.png': 'http://cdn.bitkeep.vip/u_b_328c6660-30a2-11ec-87e4-f9eee9da401a.png'"
-          alt="">
+          :src="
+            locale == 'en'
+              ? 'http://cdn.bitkeep.vip/u_b_62c2dea0-3baa-11ec-b6dc-f5798cff9565.png'
+              : 'http://cdn.bitkeep.vip/u_b_62c2dea0-3baa-11ec-b6dc-f5798cff9565.png'
+          "
+          alt=""
+        />
       </div>
-      <div class="text" v-if="!status">
-        <p class="total">{{ $t('mining.total') }}<span class="phase">{{ $t('mining.phase',{v: phase}) }}</span></p>
-        <p class="text-n"><span class="setH">{{ available }}</span> <span class="setFont">BKB</span></p>
-        <div class="line border"></div>
-        <p class="timeCount">
-          <span class="startCountdown">{{ $t('mining.startCountdown') }}</span>
-          <span v-if="locale=='en'">
-            <van-count-down :time="startTime" :format="formatEn" class="time setFontFamily"/><span class="setFontFamily time">S</span>
+      <!-- Countdown -->
+      <div class="mining-wrap-one">
+        <div class="mining-wrap-one-header">
+          <div class="mining-wrap-one-header-title">
+            <img
+              src="http://cdn.bitkeep.vip/u_b_d9de7871-3b9e-11ec-8e63-1db435df936c.png"
+              alt=""
+            />
+            <span class="setFontWeight">{{ $t("mining.coundown") }}</span>
+          </div>
+          <div class="mining-wrap-one-header-about">
+            <span v-if="status">{{ $t("mining.comingsoon") }}</span>
+            <span v-else>{{ $t("mining.inProgress") }}</span>
+          </div>
+        </div>
+        <div class="mining-wrap-one-body">
+          <p class="mining-wrap-one-body-startCountdown">
+            <span v-if="status">{{ $t("mining.startCountdown") }}</span>
+            <span v-else>{{ $t("mining.endCountdown") }}</span>
+          </p>
+          <span v-if="locale == 'en'">
+            <van-count-down
+              :time="startTime"
+              :format="formatEn"
+              class="mining-wrap-one-body-time setFontFamily time"
+            /><span class="setFontFamily time">S</span>
           </span>
-          <van-count-down v-else :time="startTime" :format="formatZh" class="time setFontFamily"/>
-        </p>
-        <van-button class="swap-btn disabled" @click="swap">{{ $t('mining.toStart') }}</van-button>
-      </div>
-      <div class="text" v-else>
-        <p class="total">{{ $t('mining.get') }}<span class="phase">{{ $t('mining.phase',{v:phase}) }}</span></p>
-        <p class="text-n"><span class="setH">{{ available }}</span> <span class="setFont">BKB</span></p>
-        <p class="setDarkColor">{{ $t('mining.day') }}<span class="setLightColor setFontFamily">${{ 123,123 }}</span></p>
-        <div class="line border"></div>
-        <p class="timeCount">
-          <span class="startCountdown">{{ $t('mining.endCountdown') }}</span>
-          <span v-if="locale=='en'">
-            <van-count-down :time="endTime" :format="formatEn" class="time setFontFamily"/><span class="setFontFamily time">S</span>
-          </span>
-          <van-count-down v-else :time="endTime" :format="formatZh" class="time setFontFamily"/>
-        </p>
-        <van-button class="swap-btn" @click="swap">{{ $t('mining.swapNow') }}</van-button>
-      </div>
-      <div class="mining">
-        <p class="title setFontFamily">{{ $t('mining.miningPhase',{v:phase}) }} </p>
-        <div class="line"></div>
+          <van-count-down
+            v-else
+            :time="startTime"
+            :format="formatZh"
+            class="time setFontFamily"
+          />
+        </div>
         <div class="mining-setP">
-          <div class="produced">
-            <span>{{ $t('mining.produced') }}</span>
-            <span class="setFontFamily">
-              <span style="color: #495BFF">7,866,780</span><span>  /  33,600,000BKB</span>
-            </span>
-          </div>
-          <van-progress :percentage="(30423220/33600000)*100" stroke-width="10" color="#495BFF" :show-pivot="false"/>
-          <div class="produced mining_trans" v-if="status">
-            <span>{{ $t('mining.amountDay') }}</span>
-            <span class="setFontFamily">$2,441,930.32 </span>
-          </div>
-          <div class="produced mining_trans" v-if="status">
-            <span>{{ $t('mining.producedDay') }}</span>
-            <span class="setFontFamily">327,385 BKB</span>
-          </div>
           <div class="produced mining_trans">
-            <span>{{ $t('mining.startTime') }}</span>
+            <span>{{ $t("mining.startTime") }}</span>
             <span class="setFontFamily">{{ fixdStartTime }}(UTC)</span>
           </div>
           <div class="produced mining_trans mbottom">
-            <span>{{ $t('mining.overTime') }}</span>
+            <span>{{ $t("mining.overTime") }}</span>
             <span class="setFontFamily">{{ fixdEndTime }}(UTC)</span>
           </div>
         </div>
       </div>
-      <div class="miningRule">
-        <a href="" target="_blank">
-          <span>{{ $t('mining.miningRule') }}</span>
-        </a>
-        <van-icon name="arrow" class="setIcon"/>
+      <!-- Reward Pool -->
+      <div class="mining-wrap-one">
+        <div class="mining-wrap-one-header">
+          <div class="mining-wrap-one-header-title">
+            <img
+              src="http://cdn.bitkeep.vip/u_b_d9ddb520-3b9e-11ec-8e63-1db435df936c.png"
+              alt=""
+            />
+            <span class="setFontWeight">{{ $t("mining.rewardPool") }}</span>
+          </div>
+          <div class="mining-wrap-one-header-update">
+            <span>{{ $t("mining.update") }} 2021-05-12 00:01</span>
+          </div>
+        </div>
+        <div class="mining-wrap-one-body">
+          <p class="mining-wrap-one-body-title setFontFamily">
+            <span class="setColor">1,632,234 /</span>33,600,000 BKB
+          </p>
+          <van-progress
+            :percentage="(30423220 / 33600000) * 100"
+            stroke-width="8"
+            color="#495BFF"
+            :show-pivot="false"
+          />
+          <div class="mining-wrap-one-body-amount">
+            <span>{{ $t("mining.will") }}</span>
+          </div>
+        </div>
+      </div>
+      <!-- Trading Volume -->
+      <div class="mining-wrap-one">
+        <div class="mining-wrap-one-header">
+          <div class="mining-wrap-one-header-title">
+            <img
+              src="http://cdn.bitkeep.vip/u_b_381594a0-3b9f-11ec-8e63-1db435df936c.png"
+              alt=""
+            />
+            <span class="setFontWeight">{{ $t("mining.tradingVolume") }}</span>
+          </div>
+          <div class="mining-wrap-one-header-update">
+            <span>{{ $t("mining.update") }} 2021-05-12 00:01</span>
+          </div>
+        </div>
+        <div class="mining-wrap-one-body">
+          <p class="mining-wrap-one-body-day">{{ $t("mining.tradingIn") }}</p>
+          <div class="mining-wrap-one-body-number">
+            <span class="setFontFamily">${{ 123 }}</span>
+          </div>
+        </div>
+      </div>
+      <!-- My Rewards -->
+      <div class="mining-wrap-one">
+        <div class="mining-wrap-one-header">
+          <div class="mining-wrap-one-header-title">
+            <img
+              src="http://cdn.bitkeep.vip/u_b_d9de5160-3b9e-11ec-8e63-1db435df936c.png"
+              alt=""
+            />
+            <span class="setFontWeight">{{ $t("mining.myRewards") }}</span>
+          </div>
+          <div class="mining-wrap-one-header-update">
+            <span>{{ $t("mining.update") }} 2021-05-12 00:01</span>
+          </div>
+        </div>
+        <div class="mining-wrap-one-body">
+          <div class="mining-wrap-one-body-trading">
+            <div>
+              <p class="mining-wrap-one-body-vol">
+                {{ $t("mining.totalTrading") }}
+              </p>
+              <div class="mining-wrap-one-body-vol-number setFontFamily">
+                ${{ 123 }}
+              </div>
+            </div>
+            <div>
+              <p class="mining-wrap-one-body-vol">
+                {{ $t("mining.todyVolue") }}
+              </p>
+              <div
+                class="mining-wrap-one-body-vol-number-todyVolue setFontFamily"
+              >
+                ${{ 123 }}
+              </div>
+            </div>
+          </div>
+          <div class="line mining-wrap-one-body-line"></div>
+          <div class="mining-wrap-one-body-rewards">
+            <div>
+              <p class="mining-wrap-one-body-vol">
+                {{ $t("mining.totalRewards") }}
+              </p>
+              <div class="mining-wrap-one-body-vol-number setFontFamily">
+                {{ 123 }}BKB
+              </div>
+            </div>
+            <div>
+              <p class="mining-wrap-one-body-vol">
+                {{ $t("mining.yesterdayRewards") }}
+              </p>
+              <div class="mining-wrap-one-body-vol-number-last setFontFamily">
+                +{{ 123 }}BKB
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Mining Rule -->
+      <div class="mining-wrap-one">
+        <div class="mining-wrap-one-header">
+          <div class="mining-wrap-one-header-title">
+            <img
+              src="http://cdn.bitkeep.vip/u_b_d9de7870-3b9e-11ec-8e63-1db435df936c.png"
+              alt=""
+            />
+            <span class="setFontWeight">{{
+              $t("mining.miningRuleTitle")
+            }}</span>
+          </div>
+          <div>
+            <span class="mining-wrap-one-header-right" @click="learnMore">{{
+              $t("mining.learnMore")
+            }}</span>
+          </div>
+        </div>
+        <div class="mining-wrap-one-body" @click="learnMore">
+          <p class="mining-wrap-one-body-text">{{ $t("mining.miningRule") }}</p>
+        </div>
       </div>
       <div class="line"></div>
-      <activity-com/>
+      <activity-com :status="status" />
+      <div class="wrap-bottom" v-if="status">
+        <van-button class="swap-btn" @click="swap">{{
+          $t("mining.swapNow")
+        }}</van-button>
+      </div>
     </div>
   </div>
 </template>
 
 
 <script>
-import {USER_API} from "@/api/client";
-import {debounce} from "../../../tools/common";
-import {mapState} from "vuex";
-import activity from "@/components/activity"
+import { USER_API } from "@/api/client";
+import { debounce } from "../../../tools/common";
+import { mapState } from "vuex";
+import activity from "@/components/activity";
 export default {
   name: "mining",
   data() {
@@ -91,14 +214,14 @@ export default {
       available: 0,
       status: false,
       isLoading: true,
-      startTime: 0,
+      startTime: "2021-10-23 12:00",
       endTime: 0,
-      fixdStartTime: '2021-10-23 12:00',
-      fixdEndTime: '2021-10-24 14:24',
-      formatEn: 'DDD : HHH : mmM : ss',
-      formatZh: 'DD 天 HH 时 mm 分 ss 秒',
-      phase: '1'
-    }
+      fixdStartTime: "2021-11-03 12:00",
+      fixdEndTime: "2021-12-24 14:24",
+      formatEn: "DDd HHh mmm ss",
+      formatZh: "DD 天 HH 时 mm 分 ss 秒",
+      phase: "1",
+    };
   },
   computed: {
     ...mapState(["local"]),
@@ -107,87 +230,103 @@ export default {
     },
     isBitKeep() {
       return this.local.UA.isBitKeep;
-    }
+    },
   },
   components: {
-    activityCom: activity
+    activityCom: activity,
   },
   async created() {
-    process.client && window.addEventListener('load', () => {
-      this.getBalance();
-    });
+    process.client &&
+      window.addEventListener("load", () => {
+        // this.getInfo();
+        this.isBitKeep &&
+          BitKeepInvoke.onLoadReady(() => {
+            BitKeepInvoke.setTitle(
+              this.$t("mining.miningTitle", { v: this.phase })
+            );
+            BitKeepInvoke.setIconAction(
+              "http://cdn.bitkeep.vip/u_b_2bb4fa20-3b86-11ec-8e63-1db435df936c.png",
+              () => {
+                this.$router.push("/activity/mining/history");
+              }
+            );
+          });
+      });
+
     await this.$nextTick();
     this.isLoading = false;
-  },
-  beforeMount() {
-    this.isBitKeep &&
-    BitKeepInvoke.setTitle(this.$t("mining.miningTitle",{v: this.phase}));
   },
   mounted() {
     this.startTime = this.countDown(this.fixdStartTime);
     this.endTime = this.countDown(this.fixdEndTime);
-    if(this.startTime<0) this.status = true;
+    if (this.startTime < 0) this.status = true;
   },
   methods: {
-    // 获取地址cbkb地址
-    async getBalance() {
+    // 获取信息
+    async getInfo() {
       if (!window.ethereum) {
-        return
+        return;
       } else {
-        await window.ethereum.request({method: "eth_requestAccounts"});
-        this.getCbkbSwapInfo(window.ethereum.selectedAddress);
-        // this.src = 'https://cn.etherscan.com/address/'+window.ethereum.selectedAddress
+        await window.ethereum.request({ method: "eth_requestAccounts" });
+        this.getSwapInfo(window.ethereum.selectedAddress);
       }
     },
-    async getCbkbSwapInfo(address) {
-      const {data, status} = await USER_API.getCbkbSwapInfo({
+    async getSwapInfo(address) {
+      const { data, status } = await USER_API.getCbkbSwapInfo({
         userid: address,
       });
       if (status == 1) {
         return this.$dialog.alert({
           message: data,
-          confirmButtonText: this.$t('CbkbExchange.know'),
-          confirmButtonColor: '#495BFF'
+          confirmButtonText: this.$t("CbkbExchange.know"),
+          confirmButtonColor: "#495BFF",
         });
       }
-      // let reg="/(\d)(?=(\d{3})+\b)/g"; //小数点也带有千位分隔符
-      // let reg = "/(?<=^\d+)(?=(\d{3})+\b)/"; //小数点没有千位分隔符
-      this.cbkbBalance = this.milliFormat(data.cbkbBalance)
-      this.available = this.milliFormat(data.available)
+      this.cbkbBalance = this.milliFormat(data.cbkbBalance);
+      this.available = this.milliFormat(data.available);
     },
     milliFormat(num) {
-      return num && num.toString()
-        .replace(/^\d+/g, (m) => m.replace(/(?=(?!^)(\d{3})+$)/g, ','))
+      return (
+        num &&
+        num
+          .toString()
+          .replace(/^\d+/g, (m) => m.replace(/(?=(?!^)(\d{3})+$)/g, ","))
+      );
     },
     swap: debounce(async function () {
-      if(!this.status) return this.$toast(this.$t('mining.notStart'))
-      const {data, status} = await USER_API.swapBkb({
+      if (!this.status) return this.$toast(this.$t("mining.notStart"));
+      const { data, status } = await USER_API.swapBkb({
         userid: window.ethereum.selectedAddress,
       });
       if (status == 1) {
         return this.$dialog.alert({
           message: data,
-          confirmButtonText: this.$t('CbkbExchange.know'),
-          confirmButtonColor: '#495BFF'
+          confirmButtonText: this.$t("CbkbExchange.know"),
+          confirmButtonColor: "#495BFF",
         });
       }
-      this.$dialog.alert({
-        message: data,
-        confirmButtonText: this.$t('CbkbExchange.know'),
-        confirmButtonColor: '#495BFF'
-      }).then(() => {
-        this.getCbkbSwapInfo(window.ethereum.selectedAddress);
-      });
+      this.$dialog
+        .alert({
+          message: data,
+          confirmButtonText: this.$t("CbkbExchange.know"),
+          confirmButtonColor: "#495BFF",
+        })
+        .then(() => {
+          this.getCbkbSwapInfo(window.ethereum.selectedAddress);
+        });
     }),
     countDown(times) {
       let nowTime = Date.now(); //当前时间
-      let setDate = new Date(times.replace(/-/g, '/'));
+      let setDate = new Date(times.replace(/-/g, "/"));
       let setTime = setDate.getTime(); //设定的时间
       //获取剩余时间总秒数
       return setTime - nowTime;
-    }
-  }
-}
+    },
+    learnMore() {
+      this.$router.push("/activity/mining/miningRule");
+    },
+  },
+};
 </script>
 <style lang="scss">
 .van-dialog__message {
@@ -206,374 +345,238 @@ export default {
   .van-progress {
     border-radius: 10px;
     background: #fff;
-    border: 1px solid #DADBDE;
+    border: 1px solid #dadbde;
   }
 }
-
 </style>
 <style lang="scss" scoped>
-
 .loading {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.img {
-  height: 240px;
-
-  img {
-    width: 100%;
-  }
-}
-
-.text {
-  margin-top: 20px;
-  text-align: center;
-
-  .total {
-    font-size: 14px;
-    line-height: 16px;
-    text-align: center;
-    color: #080D21;
-    font-weight: 600;
-    .phase {
-      color: #9CA5B3;
-    }
-  }
-
-  .border {
-    margin: 20px 16px;
-  }
-
-  .timeCount {
-    font-size: 14px;
-    line-height: 14px;
-    text-align: center;
-    color: #4B5373;
-
-    .time {
-      font-size: 14px;
-      line-height: 14px;
-      color: #080D21;
-      display: inline-block;
-    }
-    .startCountdown{
-      display: inline-block;
-      margin-right: 10px;
-    }
-  }
-
-  .text-t {
-    font-weight: 500;
-    font-size: 14px;
-    margin: 10px 0 0 0;
-    color: #080D21;
-  }
-
-  .text-n {
-    font-size: 30px;
-    margin: 10px 0 0;
-    line-height: 18px;
-    font-family: "bitkeep DIN";
-    color: #080D21;
-    height: 18px;
-
-    .setH {
-      height: 18px;
-    }
-
-    .setFont {
-      font-size: 16px;
-    }
-  }
-
-  .swap-btn {
-    width: 166px;
-    height: 50px;
-    color: #fff;
-    margin: 10px auto;
-    background: #495BFF;
-    border-radius: 10px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 50px;
-    display: block;
-  }
-
-  .disabled {
-    opacity: .3;
-  }
-}
-
 .mining {
-  margin: 50px 16px 0;
-  background: #F3F5F6;
-  border-radius: 8px;
-  font-size: 14px;
-  line-height: 16px;
-  .title{
-    margin: 10px 0 12px;
-    padding: 10px 15px 0;
-  }
-  .mining-setP{
-    padding: 0 15px 1px;
-  }
-  .line {
-    border-bottom: 1px solid #DADBDE;
-  }
-
-  .mining_trans {
-    margin: 20px 0 !important;
-  }
-  .mbottom{
-    margin-bottom: 15px!important;
-  }
-
-  .produced {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    line-height: 14px;
-    margin: 15px 0 10px;
-
-    :first-child {
-      color: #4B5373;
+  background: #f3f5f6;
+  .mining-wrap {
+    .img {
+      img {
+        width: 100%;
+      }
     }
-
-    :last-child {
-      color: #080D21;
-    }
-  }
-}
-
-.miningRule {
-  margin: 10px 16px;
-  background: #F3F5F6;
-  border-radius: 8px;
-  padding: 18px 15px;
-  font-size: 14px;
-  line-height: 16px;
-  vertical-align: middle;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  a {
-    color: #4B5373;
-  }
-}
-
-.line {
-  border-bottom: 1px solid #F4F5FA;
-}
-
-.about {
-  margin: 12px 16px 30px;
-
-  .about-title {
-    img {
-      width: 20px;
-      height: 20px;
-      vertical-align: text-top;
-      margin-right: 5px;
-    }
-
-    font-size: 16px;
-    line-height: 16px;
-    font-weight: 600;
-    color: #080D21;
-    vertical-align: middle;
-  }
-
-  .about-con {
-    padding-top: 15px;
-    font-size: 14px;
-    line-height: 20px;
-    color: #4B5373;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-  }
-
-  .viewAll {
-    text-align: right;
-    font-size: 14px;
-    line-height: 14px;
-    color: #495BFF;
-    margin-top: 6px;
-  }
-}
-
-.distribution {
-  margin: 12px 16px 30px;
-
-  .distribution-title {
-    img {
-      width: 20px;
-      height: 20px;
-      vertical-align: text-top;
-      margin-right: 5px;
-    }
-
-    font-size: 16px;
-    line-height: 16px;
-    font-weight: 600;
-    color: #080D21;
-    vertical-align: middle;
-  }
-
-  .charts-img {
-    text-align: center;
-    margin: 20px;
-
-    img {
-      width: 110px;
-      height: 110px;
-    }
-
-    .exchangeTotal {
-      font-family: bitkeep DIN;
+    .mining-wrap-one {
+      margin: 15px 16px 0;
+      background: #fff;
+      border-radius: 8px;
       font-size: 14px;
-      color: #4B5373;
-    }
-
-    .total {
-      font-size: 14px;
-      line-height: 20px;
-      color: #4B5373;
-
-      span {
-        color: #080D21;
-      }
-    }
-  }
-
-  .distribution-man {
-    margin-bottom: 30px;
-    background: #F3F5F6;
-    border-radius: 8px;
-    padding: 10px;
-
-    .data {
-      display: flex;
-      justify-content: space-between;
-
-      div:last-child {
-        font-family: bitkeep DIN;
+      line-height: 16px;
+      .produced {
         font-size: 14px;
-        color: #080D21;
-      }
-
-      > div {
-        font-size: 14px;
-        line-height: 34px;
-        color: #4B5373;
-        vertical-align: middle;
-
-        span:first-child {
-          display: inline-block;
-          width: 6px;
-          height: 6px;
-          border-radius: 50%;
-          vertical-align: middle;
-          margin-right: 4px;
-        }
-
-        span:last-child {
-          color: #4B5373;
-          vertical-align: middle;
-        }
-      }
-    }
-  }
-}
-
-.hold {
-  margin: 12px 16px 30px;
-
-  .hold-title {
-    img {
-      width: 20px;
-      height: 20px;
-      vertical-align: text-top;
-      margin-right: 5px;
-    }
-
-    font-size: 16px;
-    line-height: 16px;
-    font-weight: 600;
-    color: #080D21;
-    vertical-align: middle;
-  }
-
-  .hold-content {
-    font-size: 14px;
-    color: #4B5373;
-    text-indent: -14px;
-    padding-left: 15px;
-  }
-}
-
-.appreciation {
-  margin: 12px 16px 30px;
-
-  .appreciation-title {
-    font-size: 16px;
-    line-height: 16px;
-    font-weight: 600;
-    color: #080D21;
-    vertical-align: middle;
-  }
-
-  .appreciation-grid {
-    width: 100%;
-    text-align: center;
-
-    .appreciation-grid-flex {
-      display: flex;
-      flex-direction: row;
-      margin-top: 20px;
-
-      div {
         display: flex;
-        align-items: center;
-        flex-direction: column;
-        width: 50%;
-        float: left;
-
-        img {
-          margin-top: 5px;
-          width: 24px;
+        justify-content: space-between;
+        :first-child {
+          color: #7f828f;
+        }
+      }
+      .mining-wrap-one-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #f4f5fa;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 8px 0 15px;
+        .mining-wrap-one-header-title {
+          img {
+            width: 20px;
+            height: 20px;
+            vertical-align: sub;
+            margin-right: 4px;
+          }
+          span {
+            font-size: 16px;
+            line-height: 16px;
+            color: #080d21;
+            vertical-align: text-bottom;
+          }
+        }
+        .mining-wrap-one-header-right {
+          color: #495bff;
+          padding-right: 7px;
+        }
+        .mining-wrap-one-header-update {
+          font-size: 10px;
+          color: #9ca5b3;
+          margin: 3px 2px 0 0;
+        }
+        .mining-wrap-one-header-about {
+          width: 96px;
           height: 24px;
+          line-height: 24px;
+          text-align: center;
+          color: #ff8146;
+          padding: 2px 8px;
+          background: rgba(255, 129, 70, 0.1);
+          border-radius: 4px;
+          margin-top: 7px;
         }
-
-        span {
+      }
+      .mining-wrap-one-body {
+        padding: 0 15px 7px;
+        .mining-wrap-one-body-line {
+          margin-top: 15px;
+        }
+        .mining-wrap-one-body-startCountdown {
           font-size: 14px;
-          color: #4B5373;
-          width: 120px;
-          margin-top: 5px;
+          line-height: 14px;
+          color: #7f828f;
         }
+        .mining-wrap-one-body-time {
+          font-size: 20px;
+          line-height: 20px;
+          color: #080d21;
+          display: inline-block;
+        }
+        .mining-wrap-one-body-day {
+          font-size: 12px;
+          line-height: 14px;
+          color: #7f828f;
+        }
+        .mining-wrap-one-body-title {
+          font-size: 14px;
+          color: #080d21;
+        }
+        .mining-wrap-one-body-amount {
+          font-size: 14px;
+          line-height: 14px;
+          color: #7f828f;
+          margin: 20px 0 15px;
+        }
+        .mining-wrap-one-body-number {
+          font-size: 20px;
+          line-height: 20px;
+          color: #080d21;
+          font-family: "bitkeep DIN";
+          padding-bottom: 10px;
+        }
+        .mining-wrap-one-body-trading {
+          display: flex;
+          justify-content: space-between;
+          .mining-wrap-one-body-vol {
+            font-size: 12px;
+            line-height: 14px;
+            color: #7f828f;
+          }
+          .mining-wrap-one-body-vol-number {
+            font-size: 16px;
+            line-height: 16px;
+            color: #080d21;
+          }
+          .mining-wrap-one-body-vol-number-last {
+            text-align: right;
+          }
+          .mining-wrap-one-body-vol-number-todyVolue {
+            text-align: right;
+            font-size: 16px;
+            color: #080d21;
+          }
+        }
+        .mining-wrap-one-body-rewards {
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 10px;
+          .mining-wrap-one-body-vol {
+            font-size: 12px;
+            line-height: 14px;
+            color: #7f828f;
+          }
+          .mining-wrap-one-body-vol-number {
+            font-size: 16px;
+            line-height: 16px;
+            color: #495bff;
+          }
+          .mining-wrap-one-body-vol-number-last {
+            text-align: right;
+            font-size: 16px;
+            color: #495bff;
+          }
+        }
+        .mining-wrap-one-body-text {
+          font-size: 14px;
+          line-height: 18px;
+          color: #4b5373;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+        }
+      }
+      .mining-setP {
+        padding: 0 15px 1px;
+      }
+      .line {
+        border-bottom: 1px solid #f4f5fa;
+      }
+
+      .mining_trans {
+        margin: 20px 0 !important;
+      }
+      .mbottom {
+        margin-bottom: 15px !important;
       }
     }
   }
+}
+.line {
+  border-bottom: 1px solid #f4f5fa;
 }
 
 .setIcon {
-  color: #999BA3;
+  color: #999ba3;
 }
 
-.setLightColor{
-  color: #080D21;
+.setLightColor {
+  color: #4b5373;
 }
 
 .setDarkColor {
-  color: #4B5373;
+  color: #080d21;
+}
+.setColor {
+  color: #495bff;
 }
 .setFontFamily {
   font-family: "bitkeep DIN";
+}
+.setFontWeight {
+  font-size: 16px;
+  font-weight: 600;
+  color: #080d21;
+}
+.wrap-bottom {
+  height: 48px;
+  background: #fff;
+  width: 100%;
+  bottom: 0;
+  z-index: 99;
+  position: fixed;
+  padding-bottom: 34px;
+  border-top: 1px solid #f3f5f6;
+  .swap-btn {
+    height: 44px;
+    background: #495bff;
+    border-radius: 10px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 44px;
+    position: fixed;
+    font-weight: 500;
+    bottom: 28px;
+    font-size: 16px;
+    width: 284px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
 }
 </style>
