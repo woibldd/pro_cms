@@ -91,6 +91,10 @@ export const USER_API = {
   swapBkb: (data,headers={}) => host_user_instance.get("user/cloudwallet/swapBkb", { params: data }),
   //BKB空投
   getAirDropCount: (data,headers={}) => host_user_instance.post("user/cloudwallet/getAirDropCount", data),
-  getAirDrop: (data,headers={}) => host_user_instance.post("user/cloudwallet/getAirDrop", data)
+  getAirDrop: (data,headers={}) => host_user_instance.post("user/cloudwallet/getAirDrop", data),
+  
+  // 交易挖矿
+  miningInfo: (data,headers={}) => host_user_instance.post("mining/info", data),
+  historyPhase: (data,headers={}) => host_user_instance.post("/mining/historyPhase", data)
 
 };

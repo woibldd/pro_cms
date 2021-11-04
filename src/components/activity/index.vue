@@ -7,7 +7,7 @@
             src="http://cdn.bitkeep.vip/u_b_0978f140-2bec-11ec-b5c0-c1ce5b0a2535.png"
             alt=""
           />
-          <p>{{ $t("CbkbExchange.about") }}</p>
+          <p>{{ $t("mining.about") }}</p>
         </div>
       </div>
       <div class="about-content">
@@ -19,15 +19,15 @@
         </div>
         <div class="about-con">
           <span>
-            {{ $t("CbkbExchange.aboutContent1") }}
+            {{ $t("mining.aboutContent1") }}
           </span>
           <span>
-            {{ $t("CbkbExchange.aboutContent2") }}
+            {{ $t("mining.aboutContent2") }}
           </span>
         </div>
         <div class="viewAll" @click="viewAll">
           {{
-            !this.flag ? $t("CbkbExchange.viewAll") : $t("CbkbExchange.pickUp")
+            !this.flag ? $t("mining.viewAll") : $t("mining.pickUp")
           }}
         </div>
       </div>
@@ -39,7 +39,7 @@
           src="http://cdn.bitkeep.vip/u_b_244b3eb0-2bec-11ec-b5c0-c1ce5b0a2535.png"
           alt=""
         />
-        <span>{{ $t("CbkbExchange.distribution") }}</span>
+        <span>{{ $t("mining.distribution") }}</span>
       </div>
       <div class="charts-img">
         <img
@@ -47,7 +47,7 @@
           alt=""
         />
         <p class="total">
-          {{ $t("CbkbExchange.total")
+          {{ $t("mining.total")
           }}<span class="exchangeTotal">600,000,000</span>
         </p>
       </div>
@@ -55,35 +55,35 @@
         <div class="data">
           <div>
             <span style="background: #495bff"></span>
-            <span>{{ $t("CbkbExchange.mining") }}</span>
+            <span>{{ $t("mining.mining") }}</span>
           </div>
           <div>50%</div>
         </div>
         <div class="data">
           <div>
             <span style="background: #1cbdb5"></span>
-            <span>{{ $t("CbkbExchange.eco") }}</span>
+            <span>{{ $t("mining.eco") }}</span>
           </div>
           <div>20%</div>
         </div>
         <div class="data">
           <div>
             <span style="background: #ff8146"></span>
-            <span>{{ $t("CbkbExchange.community") }} </span>
+            <span>{{ $t("mining.community") }} </span>
           </div>
           <div>15%</div>
         </div>
         <div class="data">
           <div>
             <span style="background: #f04e98"></span>
-            <span>{{ $t("CbkbExchange.partner") }}</span>
+            <span>{{ $t("mining.partner") }}</span>
           </div>
           <div>10%</div>
         </div>
         <div class="data">
           <div>
             <span style="background: #080d21"></span>
-            <span>{{ $t("CbkbExchange.tram") }}</span>
+            <span>{{ $t("mining.tram") }}</span>
           </div>
           <div>5%</div>
         </div>
@@ -96,23 +96,23 @@
           src="http://cdn.bitkeep.vip/u_b_5930f660-2bec-11ec-b5c0-c1ce5b0a2535.png"
           alt=""
         />
-        <span>{{ $t("CbkbExchange.hold") }}</span>
+        <span>{{ $t("mining.hold") }}</span>
       </div>
       <div class="hold-content">
-        <p>{{ $t("CbkbExchange.hold1") }}</p>
-        <p>{{ $t("CbkbExchange.hold2") }}</p>
-        <p>{{ $t("CbkbExchange.hold3") }}</p>
-        <p>{{ $t("CbkbExchange.hold4") }}</p>
-        <p>{{ $t("CbkbExchange.hold5") }}</p>
-        <p>{{ $t("CbkbExchange.hold6") }}</p>
-        <p>{{ $t("CbkbExchange.hold7") }}</p>
-        <p>{{ $t("CbkbExchange.hold8") }}</p>
+        <p>{{ $t("mining.hold1") }}</p>
+        <p>{{ $t("mining.hold2") }}</p>
+        <p>{{ $t("mining.hold3") }}</p>
+        <p>{{ $t("mining.hold4") }}</p>
+        <p>{{ $t("mining.hold5") }}</p>
+        <p>{{ $t("mining.hold6") }}</p>
+        <p>{{ $t("mining.hold7") }}</p>
+        <p>{{ $t("mining.hold8") }}</p>
       </div>
     </div>
     <div class="line"></div>
     <div class="appreciation">
       <div class="appreciation-title">
-        <span>{{ $t("CbkbExchange.appreciation") }}</span>
+        <span>{{ $t("mining.appreciation") }}</span>
       </div>
       <div class="appreciation-grid">
         <div class="appreciation-grid-flex">
@@ -121,14 +121,14 @@
               src="http://cdn.bitkeep.vip/u_b_adf789c0-2bec-11ec-b5c0-c1ce5b0a2535.png"
               alt=""
             />
-            <span>{{ $t("CbkbExchange.appreciationSwap") }}</span>
+            <span>{{ $t("mining.appreciationSwap") }}</span>
           </div>
           <div>
             <img
               src="http://cdn.bitkeep.vip/u_b_adf71490-2bec-11ec-b5c0-c1ce5b0a2535.png"
               alt=""
             />
-            <span>{{ $t("CbkbExchange.appreciationCoin") }}</span>
+            <span>{{ $t("mining.appreciationCoin") }}</span>
           </div>
         </div>
         <div class="appreciation-grid-flex">
@@ -137,27 +137,27 @@
               src="http://cdn.bitkeep.vip/u_b_adf789c1-2bec-11ec-b5c0-c1ce5b0a2535.png"
               alt=""
             />
-            <span>{{ $t("CbkbExchange.appreciationPool") }}</span>
+            <span>{{ $t("mining.appreciationPool") }}</span>
           </div>
           <div>
             <img
               src="http://cdn.bitkeep.vip/u_b_adf7b0d0-2bec-11ec-b5c0-c1ce5b0a2535.png"
               alt=""
             />
-            <span>{{ $t("CbkbExchange.appreciationValut") }}</span>
+            <span>{{ $t("mining.appreciationValut") }}</span>
           </div>
         </div>
       </div>
     </div>
     <div class="line"></div>
     <div class="more">
-      <div class="more-title">{{ $t("CbkbExchange.more") }}</div>
+      <div class="more-title">{{ $t("mining.more") }}</div>
       <div class="more-line">
         <a href="https://www.bitkeep.com/" target="_blank">
           <img
             src="http://cdn.bitkeep.vip/u_b_ddcf2860-2bec-11ec-b5c0-c1ce5b0a2535.png"
             alt=""
-          /><span>{{ $t("CbkbExchange.website") }}</span>
+          /><span>{{ $t("mining.website") }}</span>
         </a>
         <van-icon name="arrow" class="setIcon" />
       </div>
@@ -167,7 +167,7 @@
             src="http://cdn.bitkeep.vip/u_b_ddcf4f71-2bec-11ec-b5c0-c1ce5b0a2535.png"
             alt=""
           />
-          <span>{{ $t("CbkbExchange.twitter") }}</span>
+          <span>{{ $t("mining.twitter") }}</span>
         </a>
         <van-icon name="arrow" class="setIcon" />
       </div>
@@ -177,7 +177,7 @@
             src="http://cdn.bitkeep.vip/u_b_ddcf0150-2bec-11ec-b5c0-c1ce5b0a2535.png"
             alt=""
           />
-          <span>{{ $t("CbkbExchange.telegram") }}</span>
+          <span>{{ $t("mining.telegram") }}</span>
         </a>
         <van-icon name="arrow" class="setIcon" />
       </div>
@@ -187,7 +187,7 @@
             src="http://cdn.bitkeep.vip/u_b_ddceda40-2bec-11ec-b5c0-c1ce5b0a2535.png"
             alt=""
           />
-          <span>{{ $t("CbkbExchange.explorer") }}</span>
+          <span>{{ $t("mining.explorer") }}</span>
         </a>
         <van-icon name="arrow" class="setIcon" />
       </div>

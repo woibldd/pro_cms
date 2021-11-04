@@ -6,6 +6,9 @@ Vue.use(VueI18n)
 const messages = {
     'en': require('@/locales/en.js'),
     'fr': require('@/locales/fr.js'),
+    'ja': require('@/locales/ja.js'),
+    'ko': require('@/locales/ko.js'),
+    'vi': require('@/locales/vi.js'),
     'zh': require('@/locales/zh.js')
 }
 let i18n = null

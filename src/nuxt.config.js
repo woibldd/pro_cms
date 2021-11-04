@@ -132,6 +132,23 @@ export default {
       pathRewrite: {
         '^/poster': ''
       }
+    },
+    '/mining': {
+      target: "http://118.193.40.6:8812",
+      changeOrigin: true,
+      onProxyReq(proxyReq,req,res){
+        // console.log("proxy_____",arguments)
+        const  xforwardedFor  =  (req.headers['x-forwarded-for'] ||
+        req.connection.remoteAddress ||
+        req.socket.remoteAddress ||
+        req.connection.socket.remoteAddress).replace('::ffff:', '')
+
+        proxyReq.setHeader('x-forwarded-for', xforwardedFor);
+        proxyReq.setHeader('host', xforwardedFor);
+      },
+      pathRewrite: {
+        '^/mining': '/mining'
+      }
     }
   },
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules

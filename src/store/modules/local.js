@@ -9,7 +9,7 @@ const log = process.env.BUILD_ENV == 'pro' ? (...arg) => {
 } : debug('bit-vuex-local')
 const INIT_STATE = {
   locale: "en", //  语言设置
-  locales: ['zh','en'],
+  locales: ['zh','en','ja','ko','vi'],
   bitkeep: {
     language: 'en',
     currency: 'cny',
