@@ -63,36 +63,36 @@ export default {
     font-size: 24px;
     font-weight: 700;
     line-height: 36px;
-    color: rgba(59, 69, 78, 1);
+    color: #080D21;
   }
   .mining-rule-content-oneTitle {
-    color: rgba(136, 153, 168, 1);
+    color: #9CA5B3;;
     font-size: 16px;
     line-height: 24px;
     padding: 16px 0;
-    border-bottom: 1px solid rgba(227, 232, 237, 1);
+    border-bottom: 1px solid #F4F5FA;
   }
   .mining-rule-title {
     font-weight: 500;
     font-size: 18px;
-    color: rgba(59,69,78,1.00);;
+    color: #080D21;
     margin: 16px 0;
   }
   .setM{
     margin-top: 20px;
     padding-top: 20px;
     width: 100%;
-    border-top: 1px solid rgba(227, 232, 237, 1);
+    border-top: 1px solid #F4F5FA;
   }
   .setC{
-    color: #000;
+    color: #080D21;
   }
   .mining-rule-content-ul{
     margin-left: 30px;
   }
   .mining-rule-content-li {
     list-style: disc;
-    color: #3b454e;
+    color: #4B5373;
     font-size: 16px;
     line-height: 28px;
   }
@@ -101,7 +101,7 @@ export default {
     font-weight: 400;
     line-height: 24px;
     margin-top: 16px;
-    color: rgba(59, 69, 78, 1);
+    color: #4B5373;
   }
   .mining-rule-content {
     font-size: 16px;
@@ -118,7 +118,7 @@ export default {
   }
   .mining-rule-faq-content {
     font-size: 16px;
-    color: #7F828F;
+    color: #9CA5B3;
   }
 }
 </style>

@@ -3,10 +3,12 @@
     <div class="mining-wrap-one" v-for="(item, index) in historyPhaseList" :key="index">
       <div class="mining-wrap-one-header">
         <div class="mining-wrap-one-header-title">
-          <span class="setFontFamily">{{ item.phase }}</span>
+          <span class="setFontFamily">{{$t('mining.phase',{v:item.phase})  }}</span>
         </div>
         <div class="mining-wrap-one-header-about">
-          <span>{{ $t("mining.activity") }}</span>
+          <span v-if='item.isActivity == 0'>{{ $t("mining.comingsoon") }}</span>
+          <span v-if='item.isActivity == 1'>{{ $t("mining.inProgress") }}</span>
+          <span v-if='item.isActivity == 2'>{{ $t("mining.activity") }}</span>
         </div>
       </div>
       <div class="mining-setP">
@@ -22,15 +24,15 @@
       <div class="mining-setP">
         <div class="produced mining_trans">
           <span>{{ $t("mining.tradeValue") }}</span>
-          <span class="setFontFamily">{{ item.tradeValue }}(UTC)</span>
+          <span class="setFontFamily">{{ item.tradeValue }}</span>
         </div>
         <div class="produced mining_trans">
           <span>{{ $t("mining.tradeReward") }}</span>
-          <span class="setFontFamily">{{ item.tradeReward }}(UTC)</span>
+          <span class="setFontFamily">{{ item.tradeReward }}</span>
         </div>
         <div class="produced mining_trans mbottom">
           <span>{{ $t("mining.tradeUser") }}</span>
-          <span class="setFontFamily">{{ item.tradeUser }}(UTC)</span>
+          <span class="setFontFamily">{{ item.tradeUser }}</span>
         </div>
       </div>
     </div>
@@ -82,7 +84,7 @@ export default {
     .mining-wrap-one-header {
       display: flex;
       justify-content: space-between;
-      border-bottom: 1px solid #dadbde;
+      border-bottom: 1px solid #F4F5FA;
       height: 36px;
       line-height: 36px;
       padding: 0 8px 0 17px;

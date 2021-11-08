@@ -8,8 +8,9 @@
     <van-pull-refresh
       v-model="refreshLoading"
       v-else
-      :success-text="$t('base.success')"
-      :loading-text="$t('base.loading')+'...'"
+      :success-text="$t('mining.success')"
+      :loading-text="$t('mining.loading')"
+      :loosing-text="$t('mining.loading')"
       @refresh="getInfo"
     >
       <div class="mining-wrap">
@@ -69,11 +70,11 @@
           <div class="mining-setP">
             <div class="produced mining_trans">
               <span>{{ $t("mining.startTime") }}</span>
-              <span class="setFontFamily">{{ fixdStartTime }}(UTC-8)</span>
+              <span class="setFontFamily">{{ fixdStartTime }}(UTC+8)</span>
             </div>
             <div class="produced mining_trans mbottom">
               <span>{{ $t("mining.overTime") }}</span>
-              <span class="setFontFamily">{{ fixdEndTime }}(UTC-8)</span>
+              <span class="setFontFamily">{{ fixdEndTime }}(UTC+8)</span>
             </div>
           </div>
         </div>
@@ -93,8 +94,8 @@
           </div>
           <div class="mining-wrap-one-body">
             <p class="mining-wrap-one-body-title setFontFamily">
-              <span class="setColor" v-if="status">{{ currencyPool }} /</span>
-              {{ rewardPool }} BKB
+              <span class="setColor" v-if="status">{{ currencyPool }}</span>
+               / {{ rewardPool }} BKB
             </p>
             <van-progress
               :percentage="(currencyPooln / rewardPooln) * 100"
