@@ -1,0 +1,418 @@
+.theme-light {
+    .mining {
+      background: $theme-light-colorBackground3;
+      .van-progress {
+        border-radius: 10px;
+        background: $theme-light-colorLine;
+      }
+      .mining-wrap-one {
+        background: $theme-light-colorwhite;
+        .produced {
+          :first-child {
+            color: $theme-light-textSecond2;
+          }
+        }
+        .mining-wrap-one-header {
+          border-bottom: 1px solid $theme-light-colorLine;
+          .mining-wrap-one-header-title {
+            span {
+              color: $theme-light-textPrimary0;
+            }
+          }
+          .mining-wrap-one-header-right {
+            color: $theme-light-colorPrimary;
+          }
+          .mining-wrap-one-header-update {
+            color: $theme-light-textSecond3;
+          }
+          .inProgress {
+            color: $theme-light-colorSecond03;
+            background: $theme-light-colorSecond13;
+          }
+          .comingsoon {
+            color: $theme-light-colorSecond04;
+            background: $theme-light-colorSecond14;
+          }
+          .activityEnd {
+            color: $theme-light-textSecond3;
+            background: $theme-light-colorBackground3;
+          }
+        }
+        .mining-wrap-one-body {
+          .mining-wrap-one-body-startCountdown {
+            color: $theme-light-textSecond2;
+          }
+          .mining-wrap-one-body-time {
+            color: $theme-light-textPrimary0;
+          }
+          .mining-wrap-one-body-day {
+            color: $theme-light-textSecond2;
+          }
+          .mining-wrap-one-body-title {
+            color: $theme-light-textPrimary0;
+          }
+          .mining-wrap-one-body-amount {
+            color: $theme-light-textSecond2;
+          }
+          .mining-wrap-one-body-number {
+            color: $theme-light-textPrimary0;
+          }
+          .mining-wrap-one-body-trading {
+            .mining-wrap-one-body-vol {
+              color: $theme-light-textSecond2;
+            }
+            .mining-wrap-one-body-vol-number {
+              color: $theme-light-textPrimary0;
+            }
+            .mining-wrap-one-body-vol-number-todyVolue {
+              color: $theme-light-textPrimary0;
+            }
+          }
+          .mining-wrap-one-body-rewards {
+            .mining-wrap-one-body-vol {
+              color: $theme-light-textSecond2;
+            }
+            .mining-wrap-one-body-vol-number {
+              color: $theme-light-colorPrimary;
+            }
+            .mining-wrap-one-body-vol-number-last {
+              color: $theme-light-colorPrimary;
+            }
+          }
+          .mining-wrap-one-body-text {
+            color: $theme-light-textSecond1;
+          }
+        }
+      }
+    }
+    .line {
+      border-bottom: 1px solid $theme-light-colorLine;
+    }
+  
+    .setLightColor {
+      color: $theme-light-textSecond1;
+    }
+  
+    .setDarkColor {
+      color: $theme-light-textPrimary0;
+    }
+    .setColor {
+      color: $theme-light-colorPrimary;
+    }
+    .setFontFamily {
+      font-family: "bitkeep DIN";
+    }
+    .setFontWeight {
+      font-size: 16px;
+      font-weight: 600;
+      color: $theme-light-textPrimary0;
+    }
+    .wrap-bottom {
+      background: $theme-light-colorwhite;
+      border-top: 1px solid $theme-light-colorBackground3;
+      .swap-btn {
+        background: $theme-light-colorPrimary;
+        color: $theme-light-colorwhite;
+      }
+    }
+  }
+  .theme-dark {
+    .mining {
+      .van-progress {
+        border-radius: 10px;
+        background: $theme-dark-colorLine;
+      }
+      background: $theme-dark-colorBackground0;
+      .mining-wrap-one {
+        background: $theme-dark-colorBackground1;
+        .produced {
+          :first-child {
+            color: $theme-dark-textSecond2;
+          }
+        }
+        .mining_trans{
+            color: $theme-dark-textPrimary0;
+        }
+        .mining-wrap-one-header {
+          border-bottom: 1px solid $theme-dark-colorLine;
+          .mining-wrap-one-header-title {
+            span {
+              color: $theme-dark-textPrimary0;
+            }
+          }
+          .mining-wrap-one-header-right {
+            color: $theme-dark-colorPrimary;
+          }
+          .mining-wrap-one-header-update {
+            color: $theme-dark-textSecond3;
+          }
+          .inProgress {
+            color: $theme-dark-colorSecond03;
+            background: $theme-dark-colorSecond13;
+          }
+          .comingsoon {
+            color: $theme-dark-colorSecond04;
+            background: $theme-dark-colorSecond14;
+          }
+          .activityEnd {
+            color: $theme-dark-textSecond3;
+            background: $theme-dark-colorBackground3;
+          }
+        }
+        .mining-wrap-one-body {
+          .mining-wrap-one-body-startCountdown {
+            color: $theme-dark-textSecond2;
+          }
+          .mining-wrap-one-body-time {
+            color: $theme-dark-textPrimary0;
+          }
+          .mining-wrap-one-body-day {
+            color: $theme-dark-textSecond2;
+          }
+          .mining-wrap-one-body-title {
+            color: $theme-dark-textPrimary0;
+          }
+          .mining-wrap-one-body-amount {
+            color: $theme-dark-textSecond2;
+          }
+          .mining-wrap-one-body-number {
+            color: $theme-dark-textPrimary0;
+          }
+          .mining-wrap-one-body-trading {
+            .mining-wrap-one-body-vol {
+              color: $theme-dark-textSecond2;
+            }
+            .mining-wrap-one-body-vol-number {
+              color: $theme-dark-textPrimary0;
+            }
+            .mining-wrap-one-body-vol-number-todyVolue {
+              color: $theme-dark-textPrimary0;
+            }
+          }
+          .mining-wrap-one-body-rewards {
+            .mining-wrap-one-body-vol {
+              color: $theme-dark-textSecond2;
+            }
+            .mining-wrap-one-body-vol-number {
+              color: $theme-dark-colorPrimary;
+            }
+            .mining-wrap-one-body-vol-number-last {
+              color: $theme-dark-colorPrimary;
+            }
+          }
+          .mining-wrap-one-body-text {
+            color: $theme-dark-textSecond1;
+          }
+        }
+      }
+    }
+    .line {
+      border-bottom: 1px solid $theme-dark-colorLine;
+    }
+  
+    .setdarkColor {
+      color: $theme-dark-textSecond1;
+    }
+  
+    .setDarkColor {
+      color: $theme-dark-textPrimary0;
+    }
+    .setColor {
+      color: $theme-dark-colorPrimary;
+    }
+    .setFontFamily {
+      font-family: "bitkeep DIN";
+    }
+    .setFontWeight {
+      font-size: 16px;
+      font-weight: 600;
+      color: $theme-dark-textPrimary0;
+    }
+    .wrap-bottom {
+      background: $theme-dark-colorBackground1;
+      border-top: 1px solid $theme-dark-colorBackground3;
+      .swap-btn {
+        background: $theme-dark-colorPrimary;
+        color: $theme-dark-colorwhite;
+      }
+    }
+  }
+  .loading {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mining {
+    .mining-wrap {
+      .img {
+        img {
+          width: 100%;
+        }
+      }
+      .mining-wrap-one {
+        margin: 15px 16px 0;
+        border-radius: 8px;
+        font-size: 14px;
+        line-height: 16px;
+        .produced {
+          font-size: 14px;
+          display: flex;
+          justify-content: space-between;
+        }
+        .mining-wrap-one-header {
+          display: flex;
+          justify-content: space-between;
+          height: 40px;
+          line-height: 40px;
+          padding: 0 8px 0 15px;
+          .mining-wrap-one-header-title {
+            img {
+              width: 20px;
+              height: 20px;
+              vertical-align: sub;
+              margin-right: 4px;
+            }
+            span {
+              font-size: 16px;
+              line-height: 16px;
+              vertical-align: text-bottom;
+            }
+          }
+          .mining-wrap-one-header-right {
+            padding-right: 7px;
+          }
+          .mining-wrap-one-header-update {
+            font-size: 10px;
+            margin: 3px 2px 0 0;
+          }
+  
+          .mining-wrap-one-header-about {
+            width: 96px;
+            height: 24px;
+            line-height: 24px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            text-align: center;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-top: 7px;
+          }
+        }
+        .mining-wrap-one-body {
+          padding: 0 15px 7px;
+          .mining-wrap-one-body-line {
+            margin-top: 15px;
+          }
+          .mining-wrap-one-body-startCountdown {
+            font-size: 14px;
+            line-height: 14px;
+          }
+          .mining-wrap-one-body-time {
+            font-size: 20px;
+            line-height: 20px;
+            display: inline-block;
+          }
+          .mining-wrap-one-body-day {
+            font-size: 12px;
+            line-height: 14px;
+          }
+          .mining-wrap-one-body-title {
+            font-size: 14px;
+          }
+          .mining-wrap-one-body-amount {
+            font-size: 14px;
+            line-height: 14px;
+            margin: 20px 0 15px;
+          }
+          .mining-wrap-one-body-number {
+            font-size: 20px;
+            line-height: 20px;
+            font-family: "bitkeep DIN";
+            padding-bottom: 10px;
+          }
+          .mining-wrap-one-body-trading {
+            display: flex;
+            justify-content: space-between;
+            .mining-wrap-one-body-vol {
+              font-size: 12px;
+              line-height: 14px;
+              text-align: right;
+            }
+            .mining-wrap-one-body-vol-number {
+              font-size: 16px;
+              line-height: 16px;
+            }
+            .mining-wrap-one-body-vol-number-last {
+              text-align: right;
+            }
+            .mining-wrap-one-body-vol-number-todyVolue {
+              text-align: right;
+              font-size: 16px;
+            }
+          }
+          .mining-wrap-one-body-rewards {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+            .mining-wrap-one-body-vol {
+              font-size: 12px;
+              line-height: 14px;
+            }
+            .mining-wrap-one-body-vol-number {
+              font-size: 16px;
+              line-height: 16px;
+            }
+            .mining-wrap-one-body-vol-number-last {
+              text-align: right;
+              font-size: 16px;
+            }
+          }
+          .mining-wrap-one-body-text {
+            font-size: 14px;
+            line-height: 18px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+          }
+        }
+        .mining-setP {
+          padding: 0 15px 1px;
+        }
+  
+        .mining_trans {
+          margin: 20px 0 !important;
+        }
+        .mbottom {
+          margin-bottom: 15px !important;
+        }
+      }
+    }
+  }
+  
+  .wrap-bottom {
+    height: 48px;
+    width: 100%;
+    bottom: 0;
+    z-index: 99;
+    position: fixed;
+    padding-bottom: 34px;
+    .swap-btn {
+      height: 44px;
+      border-radius: 10px;
+      text-align: center;
+      line-height: 44px;
+      border: none;
+      position: fixed;
+      font-weight: 500;
+      bottom: 28px;
+      font-size: 16px;
+      width: 284px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 0;
+    }
+  }

@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap" :class="[status ? 'statusM' : '']">
+  <div class="wrap-min" :class="[status ? 'statusM' : '']">
     <div class="about">
       <div class="about-wrap">
         <div class="about-wrap-pos">
@@ -26,9 +26,7 @@
           </span>
         </div>
         <div class="viewAll" @click="viewAll">
-          {{
-            !this.flag ? $t("mining.viewAll") : $t("mining.pickUp")
-          }}
+          {{ !this.flag ? $t("mining.viewAll") : $t("mining.pickUp") }}
         </div>
       </div>
     </div>
@@ -47,8 +45,7 @@
           alt=""
         />
         <p class="total">
-          {{ $t("mining.total")
-          }}<span class="exchangeTotal">600,000,000</span>
+          {{ $t("mining.total") }}<span class="exchangeTotal">600,000,000</span>
         </p>
       </div>
       <div class="distribution-man">
@@ -179,7 +176,8 @@
     <div class="appreciation">
       <div class="appreciation-title">
         <img
-          src="http://cdn.bitkeep.vip/u_b_dfdfdf40-3e1c-11ec-9b39-4f7f91c175c3.png"/>
+          src="http://cdn.bitkeep.vip/u_b_dfdfdf40-3e1c-11ec-9b39-4f7f91c175c3.png"
+        />
         <span>{{ $t("mining.appreciation") }}</span>
       </div>
       <div class="appreciation-grid">
@@ -285,290 +283,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-.line {
-  border-bottom: 1px solid #f4f5fa;
-}
-.statusM {
-  padding-bottom: 52px;
-}
-.wrap {
-  background: #fff;
-}
-.hold-content{
-  img{
-    width: 40px!important;
-    height: 40px!important;
-  }
-}
-.about {
-  .about-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-    background: #f3f5f6;
-  }
-  .about-wrap-pos {
-    text-align: center;
-    font-size: 18px;
-    line-height: 18px;
-    color: #080d21;
-    direction: cloumn;
-    img {
-      width: 28px;
-      height: 28px;
-    }
-    p {
-      margin-top: 5px;
-      font-size: 18px;
-      line-height: 18px;
-      color: #080D21;
-      font-weight: 600;
-    }
-  }
-  .about-content {
-    margin: 12px 16px 30px;
-  }
-  .about-title {
-    img {
-      width: 20px;
-      height: 20px;
-      vertical-align: text-top;
-      margin-right: 5px;
-    }
+@import "@/assets/css/theme.scss";
+@import "./index.scss";
 
-    font-size: 16px;
-    line-height: 16px;
-    font-weight: 600;
-    color: #080d21;
-    vertical-align: middle;
-  }
-
-  .about-con {
-    padding-top: 15px;
-    font-size: 14px;
-    line-height: 20px;
-    color: #4b5373;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-  }
-
-  .viewAll {
-    text-align: right;
-    font-size: 14px;
-    line-height: 14px;
-    color: #495bff;
-    margin-top: 6px;
-  }
-}
-
-.distribution {
-  margin: 12px 16px 30px;
-
-  .distribution-title {
-    img {
-      width: 20px;
-      height: 20px;
-      vertical-align: text-top;
-      margin-right: 5px;
-    }
-
-    font-size: 16px;
-    line-height: 16px;
-    font-weight: 600;
-    color: #080d21;
-    vertical-align: middle;
-  }
-
-  .charts-img {
-    text-align: center;
-    margin: 20px;
-
-    img {
-      width: 110px;
-      height: 110px;
-    }
-
-    .exchangeTotal {
-      font-family: bitkeep DIN;
-      font-size: 14px;
-      color: #4b5373;
-    }
-
-    .total {
-      font-size: 14px;
-      line-height: 20px;
-      color: #4b5373;
-
-      span {
-        color: #080d21;
-      }
-    }
-  }
-
-  .distribution-man {
-    margin-bottom: 30px;
-    background: #f3f5f6;
-    border-radius: 8px;
-    padding: 10px;
-
-    .data {
-      display: flex;
-      justify-content: space-between;
-
-      div:last-child {
-        font-family: bitkeep DIN;
-        font-size: 14px;
-        color: #080d21;
-      }
-
-      > div {
-        font-size: 14px;
-        line-height: 34px;
-        color: #4b5373;
-        vertical-align: middle;
-
-        span:first-child {
-          display: inline-block;
-          width: 6px;
-          height: 6px;
-          border-radius: 50%;
-          vertical-align: middle;
-          margin-right: 4px;
-        }
-
-        span:last-child {
-          color: #4b5373;
-          vertical-align: middle;
-        }
-      }
-    }
-  }
-}
-
-.hold {
-  margin: 12px 16px 30px;
-
-  .hold-title {
-    img {
-      width: 20px;
-      height: 20px;
-      vertical-align: text-top;
-      margin-right: 5px;
-    }
-
-    font-size: 16px;
-    line-height: 16px;
-    font-weight: 600;
-    color: #080d21;
-    vertical-align: middle;
-  }
-}
-
-.appreciation {
-  margin: 12px 16px 30px;
-
-  .appreciation-title {
-    img {
-      width: 20px;
-      height: 20px;
-      vertical-align: text-top;
-      margin-right: 5px;
-    }
-    font-size: 16px;
-    line-height: 16px;
-    font-weight: 600;
-    color: #080d21;
-    vertical-align: middle;
-  }
-}
-.appreciation-grid {
-    width: 100%;
-    text-align: center;
-
-    .appreciation-grid-flex {
-      display: flex;
-      flex-direction: row;
-      margin-top: 20px;
-
-      div {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        width: 50%;
-        float: left;
-
-        img {
-          margin-top: 5px;
-          width: 24px;
-          height: 24px;
-        }
-
-        span {
-          font-size: 14px;
-          color: #4b5373;
-          width: 140px;
-          margin-top: 5px;
-          line-height: 18px;
-        }
-      }
-    }
-  }
-
-.setIcon {
-  color: #999ba3;
-}
-
-.setLightColor {
-  color: #080d21;
-}
-
-.setDarkColor {
-  color: #4b5373;
-}
-.setFontFamily {
-  font-family: "bitkeep DIN";
-}
-
-.more {
-  margin: 12px 16px 30px;
-
-  .more-title {
-    font-size: 16px;
-    line-height: 45px;
-    font-weight: 600;
-    color: #080d21;
-    border-bottom: 1px solid #f4f5fa;
-  }
-
-  .more-line {
-    font-size: 16px;
-    line-height: 50px;
-    height: 50px;
-    border-bottom: 1px solid #f4f5fa;
-    vertical-align: middle;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    a {
-      flex: 1;
-    }
-
-    img {
-      width: 24px;
-      height: 24px;
-      vertical-align: middle;
-    }
-
-    span {
-      color: #080d21;
-      display: inline-block;
-      margin-left: 10px;
-    }
-  }
-}
 </style>

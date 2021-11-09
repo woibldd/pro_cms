@@ -126,6 +126,18 @@
 			}
 		});
 	}
+	
+
+	BitKeepInvoke.prototype.appMode = function(callback){
+		this.jHost(['appMode'], function(err, data){
+			if(err){
+				if(callback) callback(err);	
+			} else {
+				data = JSON.parse(data);
+				if(callback) callback(err, data);	
+			}
+		});
+	}
 
 	BitKeepInvoke.prototype.selectCoin = function(callback){
 		this.jHost(['selectCoin'], function(err, data){

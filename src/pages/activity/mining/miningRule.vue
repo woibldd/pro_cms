@@ -57,42 +57,111 @@ export default {
 };
 </script>
 <style lang='scss' scoped>
+@import "@/assets/css/theme.scss";
+.theme-light{
+  .mining-rule{
+    background: $theme-light-colorBackground0;
+  }
+  .mining-rule-title-one {
+    color: $theme-light-textPrimary0;
+  }
+  .mining-rule-content-oneTitle {
+    color: $theme-light-textSecond3;
+    border-bottom: 1px solid $theme-light-colorLine;
+  }
+  .mining-rule-title{
+    color: $theme-light-textPrimary0;
+  }
+  .setC{
+    color: $theme-light-textPrimary0;
+  }
+  .setM{
+    border-top: 1px solid $theme-light-colorLine;
+
+  }
+  .mining-rule-content-li{
+    color: $theme-light-textSecond1;
+
+  }
+  .mining-rule-content-one{
+    color: $theme-light-textSecond1;
+
+  }
+  .mining-rule-content{
+    color: $theme-light-textSecond1;
+
+  }
+  .mining-rule-faq-content{
+    color: $theme-light-textSecond3;
+
+  }
+}
+.theme-dark{
+  .mining-rule{
+    background: $theme-dark-colorBackground0;
+  }
+  .mining-rule-title-one {
+    color: $theme-dark-textPrimary0;
+  }
+  .mining-rule-content-oneTitle {
+    color: $theme-dark-textSecond3;
+    border-bottom: 1px solid $theme-dark-colorLine;
+  }
+  .mining-rule-title{
+    color: $theme-dark-textPrimary0;
+  }
+  .setC{
+    color: $theme-dark-textPrimary0;
+  }
+  .setM{
+    border-top: 1px solid $theme-dark-colorLine;
+
+  }
+  .mining-rule-content-li{
+    color: $theme-dark-textSecond1;
+
+  }
+  .mining-rule-content-one{
+    color: $theme-dark-textSecond1;
+
+  }
+  .mining-rule-content{
+    color: $theme-dark-textSecond1;
+
+  }
+  .mining-rule-faq-content{
+    color: $theme-dark-textSecond3;
+
+  }
+}
 .mining-rule {
   padding: 16px;
   .mining-rule-title-one {
     font-size: 24px;
     font-weight: 700;
     line-height: 36px;
-    color: #080D21;
   }
   .mining-rule-content-oneTitle {
-    color: #9CA5B3;;
     font-size: 16px;
     line-height: 24px;
     padding: 16px 0;
-    border-bottom: 1px solid #F4F5FA;
   }
   .mining-rule-title {
     font-weight: 500;
     font-size: 18px;
-    color: #080D21;
     margin: 16px 0;
   }
   .setM{
     margin-top: 20px;
     padding-top: 20px;
     width: 100%;
-    border-top: 1px solid #F4F5FA;
   }
-  .setC{
-    color: #080D21;
-  }
+  
   .mining-rule-content-ul{
     margin-left: 30px;
   }
   .mining-rule-content-li {
     list-style: disc;
-    color: #4B5373;
     font-size: 16px;
     line-height: 28px;
   }
@@ -101,12 +170,10 @@ export default {
     font-weight: 400;
     line-height: 24px;
     margin-top: 16px;
-    color: #4B5373;
   }
   .mining-rule-content {
     font-size: 16px;
     line-height: 22px;
-    color: #4b5373;
     margin-top: 16px;
   }
   .mining-rule-title-flex {
@@ -118,7 +185,6 @@ export default {
   }
   .mining-rule-faq-content {
     font-size: 16px;
-    color: #9CA5B3;
   }
 }
 </style>

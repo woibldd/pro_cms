@@ -95,12 +95,12 @@
           <div class="mining-wrap-one-body">
             <p class="mining-wrap-one-body-title setFontFamily">
               <span class="setColor" v-if="status">{{ currencyPool }}</span>
-               / {{ rewardPool }} BKB
+              / {{ rewardPool }} BKB
             </p>
             <van-progress
               :percentage="(currencyPooln / rewardPooln) * 100"
               stroke-width="8"
-              color="#495BFF"
+              color="$theme-light-colorPrimary"
               :show-pivot="false"
             />
             <div class="mining-wrap-one-body-amount">
@@ -220,7 +220,6 @@
             </p>
           </div>
         </div>
-        <div class="line"></div>
         <activity-com :status="status" />
         <div class="wrap-bottom" v-if="status">
           <van-button class="swap-btn" @click="swap">{{
@@ -284,6 +283,16 @@ export default {
             BitKeepInvoke.setTitle(
               this.$t("mining.miningTitle", { v: this.phase })
             );
+            this.$nextTick(() => {
+                BitKeepInvoke.appMode((res) => {
+                  let body = document.getElementsByTagName("body");
+                  if(res == 1){
+                    body.setAttribute('class','theme-dark')
+                  }else{
+                    body.setAttribute('class','theme-light')
+                  }
+                });
+            });
             BitKeepInvoke.setIconAction(
               "http://cdn.bitkeep.vip/u_b_2bb4fa20-3b86-11ec-8e63-1db435df936c.png",
               () => {
@@ -291,7 +300,7 @@ export default {
               }
             );
           });
-      });    
+      });
   },
   mounted() {
     this.startTime = this.countDown(this.fixdStartTime);
@@ -311,7 +320,7 @@ export default {
         return this.$dialog.alert({
           message: data,
           confirmButtonText: this.$t("CbkbExchange.know"),
-          confirmButtonColor: "#495BFF",
+          confirmButtonColor: "$theme-light-colorPrimary",
         });
       }
       this.fixdStartTime = data.miningStartTime;
@@ -370,254 +379,9 @@ export default {
   font-size: 17px;
 }
 
-.mining {
-  .van-progress {
-    border-radius: 10px;
-    background: #f4f5fa;
-  }
-}
+
 </style>
 <style lang="scss" scoped>
-.loading {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.mining {
-  background: #f3f5f6;
-  .mining-wrap {
-    .img {
-      img {
-        width: 100%;
-      }
-    }
-    .mining-wrap-one {
-      margin: 15px 16px 0;
-      background: #fff;
-      border-radius: 8px;
-      font-size: 14px;
-      line-height: 16px;
-      .produced {
-        font-size: 14px;
-        display: flex;
-        justify-content: space-between;
-        :first-child {
-          color: #7f828f;
-        }
-      }
-      .mining-wrap-one-header {
-        display: flex;
-        justify-content: space-between;
-        border-bottom: 1px solid #f4f5fa;
-        height: 40px;
-        line-height: 40px;
-        padding: 0 8px 0 15px;
-        .mining-wrap-one-header-title {
-          img {
-            width: 20px;
-            height: 20px;
-            vertical-align: sub;
-            margin-right: 4px;
-          }
-          span {
-            font-size: 16px;
-            line-height: 16px;
-            color: #080d21;
-            vertical-align: text-bottom;
-          }
-        }
-        .mining-wrap-one-header-right {
-          color: #495bff;
-          padding-right: 7px;
-        }
-        .mining-wrap-one-header-update {
-          font-size: 10px;
-          color: #9ca5b3;
-          margin: 3px 2px 0 0;
-        }
-        .inProgress {
-          color: #26bc80;
-          background: rgba(38, 188, 128, 0.1);
-        }
-        .comingsoon {
-          color: #ff8146;
-          background: rgba(255, 129, 70, 0.1);
-        }
-        .activityEnd {
-          color: #9ca5b3;
-          background: #f3f5f6;
-        }
-        .mining-wrap-one-header-about {
-          width: 96px;
-          height: 24px;
-          line-height: 24px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          text-align: center;
-          padding: 2px 8px;
-          border-radius: 4px;
-          margin-top: 7px;
-        }
-      }
-      .mining-wrap-one-body {
-        padding: 0 15px 7px;
-        .mining-wrap-one-body-line {
-          margin-top: 15px;
-        }
-        .mining-wrap-one-body-startCountdown {
-          font-size: 14px;
-          line-height: 14px;
-          color: #7f828f;
-        }
-        .mining-wrap-one-body-time {
-          font-size: 20px;
-          line-height: 20px;
-          color: #080d21;
-          display: inline-block;
-        }
-        .mining-wrap-one-body-day {
-          font-size: 12px;
-          line-height: 14px;
-          color: #7f828f;
-        }
-        .mining-wrap-one-body-title {
-          font-size: 14px;
-          color: #080d21;
-        }
-        .mining-wrap-one-body-amount {
-          font-size: 14px;
-          line-height: 14px;
-          color: #7f828f;
-          margin: 20px 0 15px;
-        }
-        .mining-wrap-one-body-number {
-          font-size: 20px;
-          line-height: 20px;
-          color: #080d21;
-          font-family: "bitkeep DIN";
-          padding-bottom: 10px;
-        }
-        .mining-wrap-one-body-trading {
-          display: flex;
-          justify-content: space-between;
-          .mining-wrap-one-body-vol {
-            font-size: 12px;
-            line-height: 14px;
-            color: #7f828f;
-          }
-          .mining-wrap-one-body-vol-number {
-            font-size: 16px;
-            line-height: 16px;
-            color: #080d21;
-          }
-          .mining-wrap-one-body-vol-number-last {
-            text-align: right;
-          }
-          .mining-wrap-one-body-vol-number-todyVolue {
-            text-align: right;
-            font-size: 16px;
-            color: #080d21;
-          }
-        }
-        .mining-wrap-one-body-rewards {
-          display: flex;
-          justify-content: space-between;
-          padding-bottom: 10px;
-          .mining-wrap-one-body-vol {
-            font-size: 12px;
-            line-height: 14px;
-            color: #7f828f;
-          }
-          .mining-wrap-one-body-vol-number {
-            font-size: 16px;
-            line-height: 16px;
-            color: #495bff;
-          }
-          .mining-wrap-one-body-vol-number-last {
-            text-align: right;
-            font-size: 16px;
-            color: #495bff;
-          }
-        }
-        .mining-wrap-one-body-text {
-          font-size: 14px;
-          line-height: 18px;
-          color: #4b5373;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          display: -webkit-box;
-          -webkit-box-orient: vertical;
-          -webkit-line-clamp: 3;
-        }
-      }
-      .mining-setP {
-        padding: 0 15px 1px;
-      }
-      .line {
-        border-bottom: 1px solid #f4f5fa;
-      }
-
-      .mining_trans {
-        margin: 20px 0 !important;
-      }
-      .mbottom {
-        margin-bottom: 15px !important;
-      }
-    }
-  }
-}
-.line {
-  border-bottom: 1px solid #f4f5fa;
-}
-
-.setIcon {
-  color: #999ba3;
-}
-
-.setLightColor {
-  color: #4b5373;
-}
-
-.setDarkColor {
-  color: #080d21;
-}
-.setColor {
-  color: #495bff;
-}
-.setFontFamily {
-  font-family: "bitkeep DIN";
-}
-.setFontWeight {
-  font-size: 16px;
-  font-weight: 600;
-  color: #080d21;
-}
-.wrap-bottom {
-  height: 48px;
-  background: #fff;
-  width: 100%;
-  bottom: 0;
-  z-index: 99;
-  position: fixed;
-  padding-bottom: 34px;
-  border-top: 1px solid #f3f5f6;
-  .swap-btn {
-    height: 44px;
-    background: #495bff;
-    border-radius: 10px;
-    color: #ffffff;
-    text-align: center;
-    line-height: 44px;
-    position: fixed;
-    font-weight: 500;
-    bottom: 28px;
-    font-size: 16px;
-    width: 284px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 0;
-  }
-}
+@import "@/assets/css/theme.scss";
+@import "./index.scss";
 </style>
