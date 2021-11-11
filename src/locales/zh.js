@@ -298,5 +298,24 @@ module.exports = {
         facebook: 'Facebook',
         explorer: 'Block explorer',
         know: 'OK', 
+        myTraded: 'My traded value'
+    },
+    'nft':{
+        nftTitle: 'NFT 抽奖',
+        lotteryTime: '抽奖时间',
+        qualificationTime: '获取资格时间',
+        not: '没有中奖',
+        getNft: '领取 NFT',
+        drawNow: '立即抽奖',
+        getEligibility: '获取资格',
+        rules: '活动规则',
+        rule1: '在NFT版块做抽奖活动，参与的用户需满足以下两个条件：',
+        rule2: '1.用户必须持有BKB（可通过空投、邀请好友获得BKB）',
+        rule3: '2.必须存入NFT资产',
+        rule4: '满足以上两个条件用户，即拥有BK每次NFT抽奖活动的资格',
+        note: '* BitKeep 享有本次推广活动规则的最终决定权和解释权。我们保留取消任何作弊、疑似作弊或违反 BitKeep 任何规章制度的用户参与资格的权利。',
+        dialogTitle: '恭喜您抽中一张 NFT！',
+        btn: '知道了',
+        endCountdown : '到计时'
     }
 }

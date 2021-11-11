@@ -133,7 +133,6 @@
 			if(err){
 				if(callback) callback(err);	
 			} else {
-				data = JSON.parse(data);
 				if(callback) callback(err, data);	
 			}
 		});

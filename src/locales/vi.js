@@ -297,5 +297,6 @@ module.exports = {
     facebook: 'Facebook',
     explorer: 'Trình khám phá khối',
     know: 'VÂNG', 
+    myTraded: 'Giá trị giao dịch của tôi'
   }
 }

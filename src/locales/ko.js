@@ -296,5 +296,6 @@ module.exports = {
     facebook: '페이스북',
     explorer: '블록 탐색기',
     know: '좋아요', 
+    myTraded: '나의 거래 가치'
   }
 }

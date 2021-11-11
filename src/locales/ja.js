@@ -296,5 +296,6 @@ module.exports = {
     facebook: 'フェイスブック',
     explorer: 'ブロックエクスプローラー',
     know: 'わかった', 
+    myTraded: '私の取引額'
   }
 }

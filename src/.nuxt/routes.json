@@ -28,6 +28,13 @@
     "_name": "_03bed5fa"
   },
   {
+    "name": "activity-nftLottery",
+    "path": "/activity/nftLottery",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/nftLottery/index.vue",
+    "chunkName": "pages/activity/nftLottery/index",
+    "_name": "_e16d1052"
+  },
+  {
     "name": "activity-blindbox-detail",
     "path": "/activity/blindbox/detail",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindbox/detail/index.vue",

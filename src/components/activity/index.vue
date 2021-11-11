@@ -54,35 +54,35 @@
             <span style="background: #495bff"></span>
             <span>{{ $t("mining.mining") }}</span>
           </div>
-          <div>50%</div>
+          <div class="textPrimary0">50%</div>
         </div>
         <div class="data">
           <div>
             <span style="background: #1cbdb5"></span>
             <span>{{ $t("mining.eco") }}</span>
           </div>
-          <div>20%</div>
+          <div class="textPrimary0">20%</div>
         </div>
         <div class="data">
           <div>
             <span style="background: #ff8146"></span>
             <span>{{ $t("mining.community") }} </span>
           </div>
-          <div>15%</div>
+          <div class="textPrimary0">15%</div>
         </div>
         <div class="data">
           <div>
             <span style="background: #f04e98"></span>
             <span>{{ $t("mining.partner") }}</span>
           </div>
-          <div>10%</div>
+          <div class="textPrimary0">10%</div>
         </div>
         <div class="data">
           <div>
             <span style="background: rgba(191, 203, 224, 0.7)"></span>
             <span>{{ $t("mining.tram") }}</span>
           </div>
-          <div>5%</div>
+          <div class="textPrimary0">5%</div>
         </div>
       </div>
     </div>

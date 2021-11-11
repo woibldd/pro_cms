@@ -298,5 +298,24 @@ module.exports = {
     facebook: 'Facebook',
     explorer: 'Block explorer',
     know: 'OK', 
+    myTraded: 'My traded value'
+  },
+  'nft':{
+    nftTitle: 'NFT Lottery',
+    getEligibility: 'Get eligibility',
+    drawNow: 'Draw now',
+    getNft: 'Get NFT',
+    not: 'Did not win',
+    qualificationTime: 'Qualification time',
+    lotteryTime: 'Lottery time',
+    rules: 'Activity Rules',
+    rule1: 'To participate in the lucky draw in the NFT section, the participating users must meet the following two conditions:',
+    rule2: '1. Users must hold BKB (BKB can be obtained through airdrops and inviting friends)',
+    rule3: '2. Must deposit NFT assets',
+    rule4: 'Users who meet the above two conditions are eligible for each NFT sweepstakes by BK',
+    note: '* BitKeep has the final decision right and the right to interpret the rules of this promotion. We reserve the right to disqualify any users who cheat, suspected of cheating, or violate any of BitKeep\'s rules and regulations.',
+    dialogTitle: 'Congratulations on your winning an NFT!',
+    btn: 'OK',
+    endCountdown : 'End countdown'
   }
 }

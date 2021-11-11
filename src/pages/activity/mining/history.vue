@@ -20,25 +20,29 @@
       <div class="mining-setP">
         <div class="produced mining_trans">
           <span>{{ $t("mining.startTime") }}</span>
-          <span class="setFontFamily">{{ item.startTime }}(UTC)</span>
+          <span class="setFontFamily textPrimary0">{{ item.startTime }}(UTC)</span>
         </div>
         <div class="produced">
           <span>{{ $t("mining.overTime") }}</span>
-          <span class="setFontFamily">{{ item.endTime }}(UTC)</span>
+          <span class="setFontFamily textPrimary0">{{ item.endTime }}(UTC)</span>
         </div>
       </div>
       <div class="mining-setP">
         <div class="produced mining_trans">
           <span>{{ $t("mining.tradeValue") }}</span>
-          <span class="setFontFamily">{{ item.tradeValue }}</span>
+          <span class="setFontFamily textPrimary0">{{ item.tradeValue }}</span>
         </div>
         <div class="produced mining_trans">
           <span>{{ $t("mining.tradeReward") }}</span>
-          <span class="setFontFamily">{{ item.tradeReward }}</span>
+          <span class="setFontFamily textPrimary0">{{ item.tradeReward }}</span>
+        </div>
+        <div class="produced mining_trans">
+          <span>{{ $t("mining.tradeUser") }}</span>
+          <span class="setFontFamily textPrimary0">{{ item.tradeUser }}</span>
         </div>
         <div class="produced mining_trans mbottom">
-          <span>{{ $t("mining.tradeUser") }}</span>
-          <span class="setFontFamily">{{ item.tradeUser }}</span>
+          <span>{{ $t("mining.myTraded") }}</span>
+          <span class="setFontFamily textPrimary0">{{ item.userReward }}</span>
         </div>
       </div>
     </div>
@@ -178,15 +182,15 @@ export default {
       }
       .mining-wrap-one-header-about {
         width: 96px;
-        height: 24px;
+        height: 20px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        line-height: 24px;
+        line-height: 20px;
         text-align: center;
-        padding: 2px 8px;
+        padding: 2px 7px;
         border-radius: 4px;
-        margin-top: 4px;
+        margin-top: 6.5px;
       }
     }
     .produced {

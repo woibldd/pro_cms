@@ -45,6 +45,7 @@
   $theme-dark-colorSecond06: #4A2FD2;
   $theme-dark-colorSecond07: #F04E98;
   $theme-dark-colorwhite: #FFFFFF;
+  $theme-dark-colorBlack: #000000;
   $theme-dark-colorSecond10: rgba(73, 91, 255, 0.1);;
   $theme-dark-colorSecond11: rgba(28, 189, 181, 0.1);
   $theme-dark-colorSecond12: rgba(240, 74, 74, 0.1);
@@ -52,6 +53,163 @@
   $theme-dark-colorSecond14: rgba(255, 129, 70, 0.1);
   $theme-dark-colorSecond15: rgba(47, 128, 237, 0.1);
 
-    
-  
-  
+  .theme-light{
+    .textPrimary0{
+      color: $theme-light-textPrimary0;
+    }
+    .textSecond1{
+      color: $theme-light-textSecond1;
+    }
+    .textSecond2{
+      color: $theme-light-textSecond2;
+    }
+    .textSecond3{
+      color: $theme-light-textSecond3;
+    }
+    .colorDisable{
+      background-color: $theme-light-colorDisable;
+    }
+    .colorBackground0{
+      background-color: $theme-light-colorBackground0;
+    }
+    .colorBackground1{
+      background-color: $theme-light-colorBackground1;
+    }
+    .colorBackground2{
+      background-color: $theme-light-colorBackground2;
+    }
+    .colorBackground3{
+      background-color: $theme-light-colorBackground3;
+    }
+    .colorBackgroundPrimary{
+      background-color: $theme-light-colorPrimary;
+    }
+    .colorPrimary{
+      color: $theme-light-colorPrimary;
+    }
+    .colorSecond01{
+      color: $theme-light-colorSecond01;
+    }
+    .colorSecond02{
+      color: $theme-light-colorSecond02;
+    }
+    .colorSecond03{
+      color: $theme-light-colorSecond03;
+    }
+    .colorSecond04{
+      color: $theme-light-colorSecond04;
+    }
+    .colorSecond05{
+      color: $theme-light-colorSecond05;
+    }
+    .colorSecond06{
+      color: $theme-light-colorSecond06;
+    }
+    .colorSecond07{
+      color: $theme-light-colorSecond07;
+    }
+    .colorBlack{
+      color: $theme-light-colorBlack;
+    }
+    .colorwhite{
+      color: $theme-light-colorwhite;
+    }
+    .colorSecond10{
+      color: $theme-light-colorSecond10;
+    }
+    .colorSecond11{
+      color: $theme-light-colorSecond11;
+    }
+    .colorSecond12{
+      color: $theme-light-colorSecond12;
+    }
+    .colorSecond13{
+      color: $theme-light-colorSecond13;
+    }
+    .colorSecond14{
+      color: $theme-light-colorSecond14;
+    }
+    .colorSecond15{
+      color: $theme-light-colorSecond15;
+    }
+  }
+  .theme-dark{
+    .textPrimary0{
+      color: $theme-dark-textPrimary0;
+    }
+    .textSecond1{
+      color: $theme-dark-textSecond1;
+    }
+    .textSecond2{
+      color: $theme-dark-textSecond2;
+    }
+    .textSecond3{
+      color: $theme-dark-textSecond3;
+    }
+    .colorDisable{
+      background-color: $theme-dark-colorDisable;
+    }
+    .colorBackground0{
+      background-color: $theme-dark-colorBackground0;
+    }
+    .colorBackground1{
+      background-color: $theme-dark-colorBackground1;
+    }
+    .colorBackground2{
+      background-color: $theme-dark-colorBackground2;
+    }
+    .colorBackground3{
+      background-color: $theme-dark-colorBackground3;
+    }
+    .colorBackgroundPrimary{
+      background-color: $theme-dark-colorPrimary;
+    }
+    .colorPrimary{
+      color: $theme-dark-colorPrimary;
+    }
+    .colorSecond01{
+      color: $theme-dark-colorSecond01;
+    }
+    .colorSecond02{
+      color: $theme-dark-colorSecond02;
+    }
+    .colorSecond03{
+      color: $theme-dark-colorSecond03;
+    }
+    .colorSecond04{
+      color: $theme-dark-colorSecond04;
+    }
+    .colorSecond05{
+      color: $theme-dark-colorSecond05;
+    }
+    .colorSecond06{
+      color: $theme-dark-colorSecond06;
+    }
+    .colorSecond07{
+      color: $theme-dark-colorSecond07;
+    }
+    .colorBlack{
+      color: $theme-dark-colorBlack;
+    }
+    .colorwhite{
+      color: $theme-dark-colorwhite;
+    }
+    .colorSecond10{
+      color: $theme-dark-colorSecond10;
+    }
+    .colorSecond11{
+      color: $theme-dark-colorSecond11;
+    }
+    .colorSecond12{
+      color: $theme-dark-colorSecond12;
+    }
+    .colorSecond13{
+      color: $theme-dark-colorSecond13;
+    }
+    .colorSecond14{
+      color: $theme-dark-colorSecond14;
+    }
+    .colorSecond15{
+      color: $theme-dark-colorSecond15;
+    }
+  }

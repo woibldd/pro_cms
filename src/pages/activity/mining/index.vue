@@ -61,11 +61,11 @@
                 <van-count-down
                   :time="startTime"
                   :format="formatEn"
-                  class="mining-wrap-one-body-time setFontFamily time"
-                /><span class="setFontFamily time">S</span>
+                  class="mining-wrap-one-body-time setFontFamily"
+                /><span class="setFontFamily textPrimary0">S</span>
               </span>
             </div>
-            <div v-else>--</div>
+            <div class="textPrimary0" v-else>--</div>
           </div>
           <div class="mining-setP">
             <div class="produced mining_trans">
@@ -128,7 +128,7 @@
             <p class="mining-wrap-one-body-day">{{ $t("mining.tradingIn") }}</p>
             <div class="mining-wrap-one-body-number">
               <span class="setFontFamily">{{
-                status && startTime > 0 ? "$" + allTodayTrading : "--"
+                status ? "$" + allTodayTrading : "--"
               }}</span>
             </div>
           </div>
@@ -167,7 +167,7 @@
                     setFontFamily
                   "
                 >
-                  {{ status && startTime > 0 ? "$" + userTodayValue : "--" }}
+                  {{ status ? "$" + userTodayValue : "--" }}
                 </div>
               </div>
             </div>
@@ -186,11 +186,7 @@
                   {{ $t("mining.yesterdayRewards") }}
                 </p>
                 <div class="mining-wrap-one-body-vol-number-last setFontFamily">
-                  {{
-                    status && startTime > 0
-                      ? "+" + userTodayDayBkbReward + "BKB"
-                      : "--"
-                  }}
+                  {{ status ? "+" + userTodayDayBkbReward + "BKB" : "--" }}
                 </div>
               </div>
             </div>
@@ -256,7 +252,7 @@ export default {
       startTime: null,
       endTime: null,
       fixdStartTime: "2021-11-03 11:00",
-      fixdEndTime: "2021-11-04 14:24",
+      fixdEndTime: "2021-11-12 14:24",
       formatEn: "DDd HHh mmm ss",
       formatZh: "DD 天 HH 时 mm 分 ss 秒",
       phase: "1",
@@ -284,15 +280,15 @@ export default {
               this.$t("mining.miningTitle", { v: this.phase })
             );
             this.$nextTick(() => {
-                BitKeepInvoke.appMode((res) => {
-                  let body = document.getElementsByTagName("body");
-                  if(res == 1){
-                    body.setAttribute('class','theme-dark')
-                  }else{
-                    body.setAttribute('class','theme-light')
-                  }
-                });
-            });
+              BitKeepInvoke.appMode((err, res) => {
+                let body = document.getElementsByTagName("body")[0];
+                if (res == 1) {
+                  body.setAttribute("class", "theme-dark");
+                } else {
+                  body.setAttribute("class", "theme-light");
+                }
+              });
+          });
             BitKeepInvoke.setIconAction(
               "http://cdn.bitkeep.vip/u_b_2bb4fa20-3b86-11ec-8e63-1db435df936c.png",
               () => {
@@ -310,6 +306,7 @@ export default {
       this.startTime = this.endTime;
     }
     this.getInfo();
+    this.$nextTick();
     this.isLoading = false;
   },
   methods: {
@@ -378,8 +375,6 @@ export default {
   font-weight: 500;
   font-size: 17px;
 }
-
-
 </style>
 <style lang="scss" scoped>
 @import "@/assets/css/theme.scss";
