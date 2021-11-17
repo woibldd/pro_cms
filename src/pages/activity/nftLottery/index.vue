@@ -1,7 +1,9 @@
 <template>
   <div class="warp-nft">
     <div class="loading" v-if="isLoading">
-      <van-loading color="#1989fa" vertical>{{ $t("base.loading") }}...</van-loading>
+      <van-loading color="#1989fa" vertical
+        >{{ $t("base.loading") }}...</van-loading
+      >
     </div>
     <div v-else>
       <div class="warp">
@@ -15,7 +17,9 @@
           />
         </div>
         <div class="countdown">
-          <div class="countdown-con textSecond2">{{$t('nft.endCountdown')}}</div>
+          <div class="countdown-con textSecond2">
+            {{ $t("nft.endCountdown") }}
+          </div>
           <div class="countdown-time">
             <van-count-down
               :time="startTime"
@@ -44,21 +48,24 @@
             <p class="warp-content-title textPrimary0">
               {{ $t("nft.qualificationTime") }}
             </p>
-            <p class="textSecond1">{{fixdStartTime}}</p>
+            <p class="textSecond1">{{ fixdStartTime }}</p>
           </div>
           <div class="warp-content-con">
             <p class="warp-content-title textPrimary0">
               {{ $t("nft.lotteryTime") }}
             </p>
-            <p class="textSecond1">{{fixdEndTime}}</p>
+            <p class="textSecond1">{{ fixdEndTime }}</p>
           </div>
         </div>
         <div class="warp-content colorBackground3">
           <p class="warp-content-title textPrimary0">{{ $t("nft.rules") }}</p>
           <div class="ruleContent">
             <p class="textSecond1">{{ $t("nft.rule1") }}</p>
-            <p class="textSecond1">{{ $t("nft.rule2") }}</p>
-            <p class="textSecond1">{{ $t("nft.rule3") }}</p>
+            <div class="ruleContent-list">
+              <p class="textSecond1">{{ $t("nft.rule2") }}</p>
+              <p class="textSecond1">{{ $t("nft.rule3") }}</p>
+            </div>
+            <p class="textSecond1">{{ $t("nft.rule4") }}</p>
           </div>
           <p class="textSecond3" style="line-height: 18px">
             {{ $t("nft.note") }}
@@ -82,7 +89,7 @@ export default {
       isLoading: true,
       formatEn: "DDd HHh mmm ss",
       fixdStartTime: "2021/11/12 12:00 - 2021/11/12 12:00",
-      fixdEndTime: "2021/11/12 12:00 - 2021/11/14 12:00",
+      fixdEndTime: "2021/11/12 12:00 - 2021/11/13 12:00",
       startTime: null,
       endTime: null,
       status: false,
@@ -121,12 +128,6 @@ export default {
             }
           });
         });
-        BitKeepInvoke.setIconAction(
-          "http://cdn.bitkeep.vip/u_b_2bb4fa20-3b86-11ec-8e63-1db435df936c.png",
-          () => {
-            that.$router.push("/activity/mining/history");
-          }
-        );
       });
   },
   methods: {
@@ -142,7 +143,7 @@ export default {
       });
     },
     countDown(times) {
-      let time = times.split('-')[1]
+      let time = times.split("-")[1];
       let nowTime = Date.now(); //当前时间
       let setDate = new Date(time.replace(/-/g, "/"));
       let setTime = setDate.getTime(); //设定的时间
@@ -254,6 +255,9 @@ export default {
       font-weight: 600;
     }
     .ruleContent {
+      line-height: 18px;
+    }
+    .ruleContent-list{
       text-indent: -13px;
       padding-left: 13px;
       line-height: 18px;
