@@ -1,7 +1,4 @@
 {
-  "Activity": {
-    "description": "Auto imported from components/activity/index.vue"
-  },
   "CommonCVueCountdown": {
     "description": "Auto imported from components/common/c-vue-countdown.vue"
   },
@@ -25,6 +22,9 @@
   },
   "BlindboxTitleImage": {
     "description": "Auto imported from components/blindbox/titleImage.vue"
+  },
+  "Activity": {
+    "description": "Auto imported from components/activity/index.vue"
   },
   "VueCreatePosterLayoutCanvasPoster": {
     "description": "Auto imported from components/vue-create-poster/layout/canvas-poster.vue"

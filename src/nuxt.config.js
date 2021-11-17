@@ -42,7 +42,7 @@ export default {
       lang: 'en'
     },
     bodyAttrs:{
-      class: 'theme-dark'
+      class: 'theme-light'
     },
     meta: [
       { charset: 'utf-8' },
