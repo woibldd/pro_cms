@@ -2781,13 +2781,9 @@ module.exports = {
         content: "It is said that Using BitSwap or cross-chain swap sucessfully will get a chance to receive blind box and get digital assets"
       },
       end: {
-        title: "Blind box beta event has finished",
+        title: "No blind box",
         subtitle: "please stay tuned for next event",
-        content: `You can also follow <br/>
-        Twitter：@BitKeepOS <br/>
-        or join Telegram：<br/>
-        https://t.me/bitkeep <br/>
-        to know more updates.`
+        content: `Follow @BitKeepOS to learn more details`
       }
     },
     ActivityBlindboxDetail: {
@@ -3944,12 +3940,7 @@ module.exports = {
       end: {
         title: "本期盲盒活动已结束",
         subtitle: "敬请期待下期盲盒活动",
-        content: `您也可关注我们官方<br/>
-                Twitter：@BitKeepOS <br/>
-                或<br/>
-                Telegram：<br/>
-                https://0.plus/BitKeep_Official<br/>
-                了解最新空投活动`
+        content: `关注@BitKeepOS 了解更多详情`
       }
     },
     ActivityBlindboxDetail: {
@@ -5953,14 +5944,14 @@ function wrapFunctional(options) {
 
 const components = {
   Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 134)).then(c => wrapFunctional(c.default || c)),
-  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 74)).then(c => wrapFunctional(c.default || c)),
-  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 69)).then(c => wrapFunctional(c.default || c)),
-  Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 70)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 136)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 191)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 89)).then(c => wrapFunctional(c.default || c)),
   BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 137)).then(c => wrapFunctional(c.default || c)),
   BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 135)).then(c => wrapFunctional(c.default || c)),
+  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 74)).then(c => wrapFunctional(c.default || c)),
+  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 69)).then(c => wrapFunctional(c.default || c)),
+  Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 70)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 11).then(__webpack_require__.bind(null, 116)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 12).then(__webpack_require__.bind(null, 76)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 13).then(__webpack_require__.bind(null, 192)).then(c => wrapFunctional(c.default || c)),
