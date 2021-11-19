@@ -71,12 +71,7 @@ module.exports = {
             end:{
                 title:"本期盲盒活动已结束",
                 subtitle:"敬请期待下期盲盒活动",
-                content:`您也可关注我们官方<br/>
-                Twitter：@BitKeepOS <br/>
-                或<br/>
-                Telegram：<br/>
-                https://0.plus/BitKeep_Official<br/>
-                了解最新空投活动`
+                content:`关注@BitKeepOS 了解更多详情`
               }
 
         },

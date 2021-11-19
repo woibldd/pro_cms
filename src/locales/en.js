@@ -67,13 +67,9 @@ module.exports = {
         content:"It is said that Using BitSwap or cross-chain swap sucessfully will get a chance to receive blind box and get digital assets"
       },
       end:{
-        title:"Blind box beta event has finished",
+        title:"No blind box",
         subtitle:"please stay tuned for next event",
-        content:`You can also follow <br/>
-        Twitter：@BitKeepOS <br/>
-        or join Telegram：<br/>
-        https://t.me/bitkeep <br/>
-        to know more updates.`
+        content:`Follow @BitKeepOS to learn more details`
       }
     },
     ActivityBlindboxDetail: {

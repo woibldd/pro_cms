@@ -176,9 +176,9 @@
             <div class="title">
               {{ $t("ActivityBlindbox.ActivityBlindboxList.end.title") }}
             </div>
-            <div class="subtitle">
+            <!-- <div class="subtitle">
               {{ $t("ActivityBlindbox.ActivityBlindboxList.end.subtitle") }}
-            </div>
+            </div> -->
             <div
               class="content"
               v-html="$t('ActivityBlindbox.ActivityBlindboxList.end.content')"
