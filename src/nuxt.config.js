@@ -137,7 +137,7 @@ export default {
       }
     },
     '/mining': {
-      target: "http://118.193.40.6:8812",
+      target: "http://118.193.40.6:8882",
       changeOrigin: true,
       onProxyReq(proxyReq,req,res){
         // console.log("proxy_____",arguments)

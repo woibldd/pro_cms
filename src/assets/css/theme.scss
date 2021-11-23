@@ -4,10 +4,10 @@
   $theme-light-textSecond3: #9CA5B3;
   $theme-light-colorDisable: #DADBDE;
   $theme-light-colorLine: #F4F5FA;
-  $theme-light-colorBackground0: #F3F5F6;
+  $theme-light-colorBackground0: #F8F9FA;
   $theme-light-colorBackground1: #FFFFFF;
-  $theme-light-colorBackground2: #ECEDEE;
-  $theme-light-colorBackground3: #F3F5F6;
+  $theme-light-colorBackground2: #F3F5F6;
+  $theme-light-colorBackground3: #F8F9FA;
   $theme-light-colorPrimary: #495BFF;
   $theme-light-colorSecond01: #1CBDB5;
   $theme-light-colorSecond02: #F04A4A;
@@ -68,6 +68,9 @@
     }
     .colorDisable{
       background-color: $theme-light-colorDisable;
+    }
+    .colorLine{
+      background-color: $theme-light-colorLine;
     }
     .colorBackground0{
       background-color: $theme-light-colorBackground0;
@@ -148,6 +151,9 @@
     }
     .colorDisable{
       background-color: $theme-dark-colorDisable;
+    }
+    .colorLine{
+      background-color: $theme-dark-colorLine;
     }
     .colorBackground0{
       background-color: $theme-dark-colorBackground0;

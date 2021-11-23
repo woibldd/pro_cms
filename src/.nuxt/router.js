@@ -14,6 +14,7 @@ const _51b48dec = () => interopDefault(import('../pages/activity/blindbox/downlo
 const _271da9c0 = () => interopDefault(import('../pages/activity/blindbox/list.vue' /* webpackChunkName: "pages/activity/blindbox/list" */))
 const _133d3cbc = () => interopDefault(import('../pages/activity/mining/history.vue' /* webpackChunkName: "pages/activity/mining/history" */))
 const _3390fe74 = () => interopDefault(import('../pages/activity/mining/miningRule.vue' /* webpackChunkName: "pages/activity/mining/miningRule" */))
+const _54d1d0c0 = () => interopDefault(import('../pages/activity/mining/protocol.vue' /* webpackChunkName: "pages/activity/mining/protocol" */))
 const _24381afe = () => interopDefault(import('../pages/activity/blindbox/detail/_id.vue' /* webpackChunkName: "pages/activity/blindbox/detail/_id" */))
 const _262ca6c4 = () => interopDefault(import('../pages/article/detail/_id.vue' /* webpackChunkName: "pages/article/detail/_id" */))
 const _18d2f8a1 = () => interopDefault(import('../pages/_id.vue' /* webpackChunkName: "pages/_id" */))
@@ -69,6 +70,10 @@ export const routerOptions = {
     path: "/activity/mining/miningRule",
     component: _3390fe74,
     name: "activity-mining-miningRule"
+  }, {
+    path: "/activity/mining/protocol",
+    component: _54d1d0c0,
+    name: "activity-mining-protocol"
   }, {
     path: "/activity/blindbox/detail/:id",
     component: _24381afe,

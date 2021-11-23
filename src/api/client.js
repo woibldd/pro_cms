@@ -95,6 +95,7 @@ export const USER_API = {
   
   // 交易挖矿
   miningInfo: (data,headers={}) => host_user_instance.post("mining/info", data),
-  historyPhase: (data,headers={}) => host_user_instance.post("/mining/historyPhase", data)
+  historyPhase: (data,headers={}) => host_user_instance.post("/mining/historyPhase", data),
+  receiveAward: (data,headers={}) => host_user_instance.post("/mining/receiveAward", data),
 
 };

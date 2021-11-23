@@ -220,13 +220,14 @@ module.exports = {
     inProgress: '진행 중',
     startCountdown: '카운트다운 시작',
     endCountdown: '카운트다운 종료',
-    rewardPool: '보상 풀',
+    rewardPool: '거래 데이터',
     update: '업데이트',
     will: '이번주 내 보상 지급',
     activity: '활동 종료',
     tradingVolume: '거래량',
-    tradingIn: '오늘의 거래량',
-    myRewards: '내 무역 보상',
+    tradingIn: '요즘 거래',
+    userTodayValue: '오늘 볼륨',
+    myRewards: '내 보상',
     totalTrading: '총 거래량',
     todyVolue: '오늘의 가치',
     totalRewards: '총 보상',
@@ -296,6 +297,11 @@ module.exports = {
     facebook: '페이스북',
     explorer: '블록 탐색기',
     know: '좋아요', 
-    myTraded: '나의 거래 가치'
+    myTraded: '나의 거래 가치',
+    totalDistributed: '총 분배',
+    yesterday: '어제',
+    claim: '주장하다',
+    ClaimRewards: '보상 청구',
+    confirm: '확인하다'
   }
 }

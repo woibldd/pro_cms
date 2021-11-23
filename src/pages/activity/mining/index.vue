@@ -26,7 +26,7 @@
         </div>
         <!-- Countdown -->
         <div class="mining-wrap-one">
-          <div class="mining-wrap-one-header">
+          <div class="mining-wrap-one-header" style="padding-right: 0">
             <div class="mining-wrap-one-header-title">
               <img
                 src="http://cdn.bitkeep.vip/u_b_d9de7871-3b9e-11ec-8e63-1db435df936c.png"
@@ -78,7 +78,7 @@
             </div>
           </div>
         </div>
-        <!-- Reward Pool -->
+        <!-- Trading Data -->
         <div class="mining-wrap-one">
           <div class="mining-wrap-one-header">
             <div class="mining-wrap-one-header-title">
@@ -93,7 +93,27 @@
             </div>
           </div>
           <div class="mining-wrap-one-body">
-            <p class="mining-wrap-one-body-title setFontFamily">
+            <div class="mining-wrap-one-body-trading mbottom">
+              <div>
+                <p class="mining-wrap-one-body-vol" style="text-align: left">
+                  {{ $t("mining.totalDistributed") }}
+                </p>
+                <div class="mining-wrap-one-body-vol-number setFontFamily">
+                  {{ currencyPool }} BKB
+                </div>
+              </div>
+              <div>
+                <p class="mining-wrap-one-body-vol">
+                  {{ $t("mining.yesterday") }}
+                </p>
+                <div
+                  class="mining-wrap-one-body-vol-number-todyVolue
+                    setFontFamily">
+                  {{ status ? yesCurrencyPool : "--" }} BKB
+                </div>
+              </div>
+            </div>
+            <!-- <p class="mining-wrap-one-body-title setFontFamily">
               <span class="setColor" v-if="status">{{ currencyPool }}</span>
               / {{ rewardPool }} BKB
             </p>
@@ -102,10 +122,10 @@
               stroke-width="8"
               color="$theme-light-colorPrimary"
               :show-pivot="false"
-            />
-            <div class="mining-wrap-one-body-amount">
+            /> -->
+            <!-- <div class="mining-wrap-one-body-amount">
               <span>{{ $t("mining.will") }}</span>
-            </div>
+            </div> -->
           </div>
         </div>
         <!-- Trading Volume -->
@@ -150,7 +170,7 @@
           <div class="mining-wrap-one-body">
             <div class="mining-wrap-one-body-trading">
               <div>
-                <p class="mining-wrap-one-body-vol">
+                <p class="mining-wrap-one-body-vol" style="text-align: left">
                   {{ $t("mining.totalTrading") }}
                 </p>
                 <div class="mining-wrap-one-body-vol-number setFontFamily">
@@ -159,7 +179,7 @@
               </div>
               <div>
                 <p class="mining-wrap-one-body-vol">
-                  {{ $t("mining.tradingIn") }}
+                  {{ $t("mining.userTodayValue") }}
                 </p>
                 <div
                   class="
@@ -178,7 +198,7 @@
                   {{ $t("mining.totalRewards") }}
                 </p>
                 <div class="mining-wrap-one-body-vol-number setFontFamily">
-                  {{ userTotalBkbReward }}BKB
+                  {{ userTotalBkbReward }} BKB
                 </div>
               </div>
               <div>
@@ -186,7 +206,7 @@
                   {{ $t("mining.yesterdayRewards") }}
                 </p>
                 <div class="mining-wrap-one-body-vol-number-last setFontFamily">
-                  {{ status ? "+" + userTodayDayBkbReward + "BKB" : "--" }}
+                  {{ status ? "+" + userTodayDayBkbReward + " BKB" : "--" }}
                 </div>
               </div>
             </div>
@@ -217,45 +237,49 @@
           </div>
         </div>
         <activity-com :status="status" />
-        <div class="wrap-bottom" v-if="status">
-          <van-button class="swap-btn" @click="swap">{{
+        <div class="wrap-bottom" >
+          <van-button class="swap-btn setColorClaim" @click="claim">{{
+            $t("mining.claim")
+          }}</van-button>
+          <van-button class="swap-btn setColorSwap" @click="swap">{{
             $t("mining.swapNow")
           }}</van-button>
         </div>
       </div>
     </van-pull-refresh>
+    <pup-protocol :show='show' @close='close' :unclaimReward='unclaimReward' :theme='theme'></pup-protocol>
   </div>
 </template>
-
-
 <script>
 import { USER_API } from "@/api/client";
-import { debounce } from "../../../tools/common";
 import { mapState } from "vuex";
 import activity from "@/components/activity";
+import pupProtocol from './protocol.vue';
 export default {
   name: "mining",
   data() {
     return {
       currencyPool: 0,
-      currencyPooln: 0,
-      rewardPool: 0,
+      yesCurrencyPool: 0,
       rewardPooln: 33600000,
       allTodayTrading: 0,
       userTodayTrading: 0,
       userTodayValue: 0,
       userTotalBkbReward: 0,
       userTodayDayBkbReward: 0,
+      unclaimReward: 0,
       status: false,
+      show: false,
       isLoading: true,
       refreshLoading: false,
       startTime: null,
       endTime: null,
-      fixdStartTime: "2021-11-03 11:00",
-      fixdEndTime: "2021-11-12 14:24",
+      fixdStartTime: "2021-11-22 18:00",
+      fixdEndTime: "2021-11-24 14:24",
       formatEn: "DDd HHh mmm ss",
       formatZh: "DD 天 HH 时 mm 分 ss 秒",
       phase: "1",
+      theme: 0
     };
   },
   computed: {
@@ -269,33 +293,28 @@ export default {
   },
   components: {
     activityCom: activity,
+    pupProtocol
   },
-  async created() {
-    process.client &&
-      window.addEventListener("load", () => {
-        let that = this;
+  
+  beforeMount() {
+    window.addEventListener("load", () => {
         this.isBitKeep &&
           BitKeepInvoke.onLoadReady(() => {
-            BitKeepInvoke.setTitle(
-              this.$t("mining.miningTitle", { v: this.phase })
-            );
+            this.setIcon();
+          //设置主题
             this.$nextTick(() => {
               BitKeepInvoke.appMode((err, res) => {
                 let body = document.getElementsByTagName("body")[0];
                 if (res == 1) {
+                  this.theme = 1;
                   body.setAttribute("class", "theme-dark");
                 } else {
+                  this.theme = 0;
                   body.setAttribute("class", "theme-light");
                 }
               });
-          });
-            BitKeepInvoke.setIconAction(
-              "http://cdn.bitkeep.vip/u_b_2bb4fa20-3b86-11ec-8e63-1db435df936c.png",
-              () => {
-                that.$router.push("/activity/mining/history");
-              }
-            );
-          });
+          })
+        });
       });
   },
   mounted() {
@@ -307,13 +326,13 @@ export default {
     }
     this.getInfo();
     this.$nextTick();
-    this.isLoading = false;
   },
   methods: {
     // 获取信息
     async getInfo() {
       const { data, status } = await USER_API.miningInfo();
       if (status == 1) {
+        this.isLoading = false;
         return this.$dialog.alert({
           message: data,
           confirmButtonText: this.$t("CbkbExchange.know"),
@@ -323,21 +342,32 @@ export default {
       this.fixdStartTime = data.miningStartTime;
       this.fixdEndTime = data.miningEndTime;
       this.currencyPool = this.milliFormat(data.currencyPool);
-      this.currencyPooln = data.currencyPool;
-      this.rewardPooln = data.rewardPool;
-      this.rewardPool = this.milliFormat(data.rewardPool);
+      this.yesCurrencyPool = this.milliFormat(data.yesCurrencyPool);
       this.allTodayTrading = this.milliFormat(data.AllTodayTrading);
       this.userTodayTrading = this.milliFormat(data.userTodayTrading);
       this.userTodayValue = this.milliFormat(data.userTodayValue);
       this.userTotalBkbReward = this.milliFormat(data.userTotalBkbReward);
       this.userTodayDayBkbReward = this.milliFormat(data.userTodayDayBkbReward);
+      this.unclaimReward = this.milliFormat(data.unclaimReward);
       this.startTime = this.countDown(data.miningStartTime);
       this.endTime = this.countDown(data.miningEndTime);
       if (this.startTime < 0) {
         this.status = true;
         this.startTime = this.endTime;
       }
+      this.isLoading = false;
       this.refreshLoading = false;
+    },
+    setIcon(){
+      BitKeepInvoke.setTitle(
+        this.$t("mining.miningTitle")
+      );
+      BitKeepInvoke.setIconAction(
+        "http://cdn.bitkeep.vip/u_b_2bb4fa20-3b86-11ec-8e63-1db435df936c.png",
+        () => {
+          this.$router.push("/activity/mining/history");
+        }
+      );
     },
     milliFormat(num) {
       return (
@@ -347,9 +377,16 @@ export default {
           .replace(/^\d+/g, (m) => m.replace(/(?=(?!^)(\d{3})+$)/g, ","))
       );
     },
-    swap: debounce(async function () {
+    claim(){
+      this.show = true;
+    },
+    close(val){
+      if(val) this.getInfo();
+      this.show = false;
+    },
+    swap(){
       BitKeepInvoke.nativeApp();
-    }),
+    },
     countDown(times) {
       let nowTime = Date.now(); //当前时间
       let setDate = new Date(times.replace(/-/g, "/"));

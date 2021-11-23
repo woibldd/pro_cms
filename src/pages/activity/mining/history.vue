@@ -11,10 +11,14 @@
             $t("mining.phase", { v: item.phase })
           }}</span>
         </div>
-        <div class="mining-wrap-one-header-about">
-          <span v-if="item.isActivity == 0">{{ $t("mining.comingsoon") }}</span>
-          <span v-if="item.isActivity == 1">{{ $t("mining.inProgress") }}</span>
-          <span v-if="item.isActivity == 2">{{ $t("mining.activity") }}</span>
+        <div class="mining-wrap-one-header-about comingsoon" v-if="item.isActivity == 0">
+          <span>{{ $t("mining.comingsoon") }}</span>
+        </div>
+        <div class="mining-wrap-one-header-about inProgress" v-if="item.isActivity == 1">
+          <span>{{ $t("mining.inProgress") }}</span>
+        </div>
+        <div class="mining-wrap-one-header-about activityEnd" v-if="item.isActivity == 2">
+          <span>{{ $t("mining.activity") }}</span>
         </div>
       </div>
       <div class="mining-setP">
@@ -58,7 +62,8 @@ export default {
     };
   },
   beforeMount() {
-    BitKeepInvoke.setTitle(this.$t("mining.historyTitle", { v: this.phase }));
+    BitKeepInvoke.setTitle(this.$t("mining.historyTitle"));
+    BitKeepInvoke.setIconAction();
   },
   mounted() {
     this.historyPhase();
@@ -101,7 +106,19 @@ export default {
         }
         .mining-wrap-one-header-about{
           color: $theme-light-textSecond3;
-          background: $theme-light-colorBackground3;
+          background: $theme-light-colorBackground2;
+        }
+        .inProgress {
+          color: $theme-light-colorSecond01;
+          background: $theme-light-colorSecond11;
+        }
+        .comingsoon {
+          color: $theme-light-colorSecond04;
+          background: $theme-light-colorSecond14;
+        }
+        .activityEnd {
+          color: $theme-light-textSecond3;
+          background: $theme-light-colorBackground2;
         }
       }
       .produced{
@@ -134,7 +151,19 @@ export default {
         }
         .mining-wrap-one-header-about{
           color: $theme-dark-textSecond3;
-          background: $theme-dark-colorBackground3;
+          background: $theme-dark-colorBackground2;
+        }
+        .inProgress {
+          color: $theme-dark-colorSecond01;
+          background: $theme-dark-colorSecond11;
+        }
+        .comingsoon {
+          color: $theme-dark-colorSecond04;
+          background: $theme-dark-colorSecond14;
+        }
+        .activityEnd {
+          color: $theme-dark-textSecond3;
+          background: $theme-dark-colorBackground2;
         }
       }
       .produced{
@@ -161,7 +190,7 @@ export default {
       justify-content: space-between;
       height: 36px;
       line-height: 36px;
-      padding: 0 8px 0 17px;
+      padding-left: 17px;
       .mining-wrap-one-header-title {
         img {
           width: 15px;
@@ -181,16 +210,16 @@ export default {
         font-size: 10px;
       }
       .mining-wrap-one-header-about {
-        width: 96px;
-        height: 20px;
+        width: 90px;
+        height: 24px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-        line-height: 20px;
+        line-height: 24px;
         text-align: center;
         padding: 2px 7px;
-        border-radius: 4px;
-        margin-top: 6.5px;
+        border-top-right-radius: 8px;
+        border-bottom-left-radius: 8px;   
       }
     }
     .produced {

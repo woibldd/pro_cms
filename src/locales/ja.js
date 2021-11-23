@@ -220,14 +220,15 @@ module.exports = {
     inProgress: '進行中',
     startCountdown: 'カウントダウンを開始',
     endCountdown: 'カウントダウン終了',
-    rewardPool: '報酬プール',
+    rewardPool: '取引データ',
     update: 'アップデート',
     will: '今週内の報酬の分配',
     activity: 'アクティビティは終了します',
     Introduce: '導入',
     tradingVolume: '取引高',
-    tradingIn: '今日の取引量',
-    myRewards: '私の貿易報酬',
+    tradingIn: 'この日の取引',
+    userTodayValue: '今日のボリューム',
+    myRewards: '私の報酬',
     totalTrading: '総取引量',
     todyVolue: '今日の価値',
     totalRewards: 'トータルリワード',
@@ -296,6 +297,11 @@ module.exports = {
     facebook: 'フェイスブック',
     explorer: 'ブロックエクスプローラー',
     know: 'わかった', 
-    myTraded: '私の取引額'
+    myTraded: '私の取引額',
+    totalDistributed: '配布された合計',
+    yesterday: '昨日',
+    claim: '請求',
+    ClaimRewards: '報酬を請求する',
+    confirm: '確認'
   }
 }

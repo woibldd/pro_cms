@@ -220,14 +220,15 @@ module.exports = {
     inProgress: 'Trong tiến trình',
     startCountdown: 'Bắt đầu đếm ngược',
     endCountdown: 'Kết thúc đếm ngược',
-    rewardPool: 'Nhóm phần thưởng',
+    rewardPool: 'Dữ liệu giao dịch',
     update: 'Cập nhật',
     will: 'Phân phối phần thưởng trong tuần này',
     activity: 'Hoạt động kết thúc',
     Introduce: 'Giới thiệu',
     tradingVolume: 'Khối lượng giao dịch',
-    tradingIn: 'Khối lượng giao dịch hôm nay',
-    myRewards: 'Phần thưởng giao dịch của tôi',
+    tradingIn: 'Giao dịch trong những ngày này',
+    userTodayValue: 'Khối lượng hôm nay',
+    myRewards: 'Giải thưởng của tôi',
     totalTrading: 'Tổng khối lượng giao dịch',
     todyVolue: 'Giá trị ngày nay',
     totalRewards: 'Tổng giải thưởng',
@@ -297,6 +298,11 @@ module.exports = {
     facebook: 'Facebook',
     explorer: 'Trình khám phá khối',
     know: 'VÂNG', 
-    myTraded: 'Giá trị giao dịch của tôi'
+    myTraded: 'Giá trị giao dịch của tôi',
+    totalDistributed: 'Tổng số đã phân phối',
+    yesterday: 'Hôm qua',
+    claim: 'Yêu cầu',
+    ClaimRewards: 'Yêu cầu phần thưởng',
+    confirm: 'Xác nhận'
   }
 }
