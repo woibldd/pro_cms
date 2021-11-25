@@ -264,7 +264,7 @@
 export default {
   data() {
     return {
-      src: "https://cn.etherscan.com/address/0xa286035a1e60abf172524bdbfd224abeef6ce362",
+      src: "https://cn.etherscan.com/token/0xcadd468f1bca4b0d637d6051cbc576a830f00000",
       flag: false,
     };
   },

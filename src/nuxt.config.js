@@ -136,8 +136,8 @@ export default {
         '^/poster': ''
       }
     },
-    '/mining': {
-      target: "http://118.193.40.6:8882",
+    '/swap': {
+      target: HOST_API,
       changeOrigin: true,
       onProxyReq(proxyReq,req,res){
         // console.log("proxy_____",arguments)

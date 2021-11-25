@@ -36,14 +36,14 @@
             </div>
             <div
               class="mining-wrap-one-header-about inProgress"
-              v-if="status && startTime > 0"
+              v-if="activityStatus == 1"
             >
               <span>{{ $t("mining.inProgress") }}</span>
             </div>
 
             <div
               class="mining-wrap-one-header-about comingsoon"
-              v-else-if="!status"
+              v-else-if="activityStatus == 0"
             >
               <span>{{ $t("mining.comingsoon") }}</span>
             </div>
@@ -56,10 +56,10 @@
               <span v-if="!status">{{ $t("mining.startCountdown") }}</span>
               <span v-else>{{ $t("mining.endCountdown") }}</span>
             </p>
-            <div v-if="startTime > 0">
+            <div v-if="countDown > 0">
               <span>
                 <van-count-down
-                  :time="startTime"
+                  :time="countDown"
                   :format="formatEn"
                   class="mining-wrap-one-body-time setFontFamily"
                 />
@@ -70,11 +70,11 @@
           <div class="mining-setP">
             <div class="produced mining_trans">
               <span>{{ $t("mining.startTime") }}</span>
-              <span class="setFontFamily">{{ fixdStartTime }}(UTC+8)</span>
+              <span class="setFontFamily">{{ fixdStartTime }}(GMT+8)</span>
             </div>
             <div class="produced mining_trans mbottom">
               <span>{{ $t("mining.overTime") }}</span>
-              <span class="setFontFamily">{{ fixdEndTime }}(UTC+8)</span>
+              <span class="setFontFamily">{{ fixdEndTime }}(GMT+8)</span>
             </div>
           </div>
         </div>
@@ -270,11 +270,12 @@ export default {
       refreshLoading: false,
       startTime: null,
       endTime: null,
-      fixdStartTime: "2021-11-25 18:00",
-      fixdEndTime: "2021-11-26 14:24",
+      fixdStartTime: '--',
+      fixdEndTime: '--',
       formatEn: "DDd HHh mmm sss",
-      formatZh: "DD 天 HH 时 mm 分 ss 秒",
       phase: "1",
+      countDown: 0,
+      activityStatus: 0,
       theme: 0
     };
   },
@@ -316,12 +317,12 @@ export default {
       });
   },
   mounted() {
-    this.startTime = this.countDown(this.fixdStartTime);
-    this.endTime = this.countDown(this.fixdEndTime);
-    if (this.startTime < 0) {
-      this.status = true;
-      this.startTime = this.endTime;
-    }
+    // this.startTime = this.countDown(this.fixdStartTime);
+    // this.endTime = this.countDown(this.fixdEndTime);
+    // if (this.startTime < 0) {
+    //   this.status = true;
+    //   this.startTime = this.endTime;
+    // }
     this.getInfo();
   },
   methods: {
@@ -346,12 +347,14 @@ export default {
       this.userTotalBkbReward = this.milliFormat(data.userTotalBkbReward);
       this.userTodayDayBkbReward = this.milliFormat(data.userTodayDayBkbReward);
       this.unclaimReward = this.milliFormat(data.unclaimReward);
-      this.startTime = this.countDown(data.miningStartTime);
-      this.endTime = this.countDown(data.miningEndTime);
-      if (this.startTime < 0) {
-        this.status = true;
-        this.startTime = this.endTime;
-      }
+      this.countDown = data.countdown;
+      this.activityStatus = data.activityStatus;
+      // this.startTime = this.countDown(data.miningStartTime);
+      // this.endTime = this.countDown(data.miningEndTime);
+      // if (this.countDown < 0) {
+      //   this.status = true;
+      //   this.startTime = this.endTime;
+      // }
       this.setIcon();
       this.isLoading = false;
       this.refreshLoading = false;
@@ -390,13 +393,13 @@ export default {
     swap(){
       BitKeepInvoke.nativeApp();
     },
-    countDown(times) {
-      let nowTime = Date.now(); //当前时间
-      let setDate = new Date(times.replace(/-/g, "/"));
-      let setTime = setDate.getTime(); //设定的时间
-      //获取剩余时间总秒数
-      return setTime - nowTime;
-    },
+    // countDown(times) {
+    //   let nowTime = Date.now(); //当前时间
+    //   let setDate = new Date(times.replace(/-/g, "/"));
+    //   let setTime = setDate.getTime(); //设定的时间
+    //   //获取剩余时间总秒数
+    //   return setTime - nowTime;
+    // },
     learnMore() {
       this.$router.push("/activity/mining/miningRule");
     },
