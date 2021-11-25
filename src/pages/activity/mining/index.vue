@@ -294,27 +294,7 @@ export default {
   },
   
   beforeMount() {
-    BitKeepInvoke.setTitle(
-      this.$t("mining.miningTitle")
-    );
-    window.addEventListener("load", () => {
-        this.isBitKeep &&
-          BitKeepInvoke.onLoadReady(() => {
-          //设置主题
-            this.$nextTick(() => {
-              BitKeepInvoke.appMode((err, res) => {
-                let body = document.getElementsByTagName("body")[0];
-                if (res == 1) {
-                  this.theme = 1;
-                  body.setAttribute("class", "theme-dark");
-                } else {
-                  this.theme = 0;
-                  body.setAttribute("class", "theme-light");
-                }
-              });
-          })
-        });
-      });
+    
   },
   mounted() {
     // this.startTime = this.countDown(this.fixdStartTime);
@@ -356,7 +336,6 @@ export default {
       //   this.status = true;
       //   this.startTime = this.endTime;
       // }
-      this.setIcon();
       this.isLoading = false;
       this.refreshLoading = false;
     },
@@ -364,28 +343,45 @@ export default {
       BitKeepInvoke.setTitle(
         this.$t("mining.miningTitle")
       );
-      if(this.theme == 1){
-        setTimeout(()=>{
-          BitKeepInvoke.setIconAction(
-          "http://cdn.bitkeep.vip/u_b_09035ca0-4dd9-11ec-a555-07d5354e6fab.png",
-          ()=>{
-            this.$router.push("/activity/mining/history")
-          });
-        },800)
-      }else{
-        setTimeout(()=>{
-          BitKeepInvoke.setIconAction(
-          "http://cdn.bitkeep.vip/u_b_2bb4fa20-3b86-11ec-8e63-1db435df936c.png",
-          ()=>{
-            this.$router.push("/activity/mining/history")
-          //   let routeUrl = this.$router.resolve({
-          //      path: "/activity/mining/history"
-          //    });
-          //    window.open(routeUrl.href, '_blank');
-          });
-        },800)
-      }
-      
+      // window.addEventListener("load", () => {
+        this.isBitKeep &&
+          BitKeepInvoke.onLoadReady(() => {
+            BitKeepInvoke.setTitle(
+              this.$t("mining.miningTitle")
+            );
+          //设置主题
+            this.$nextTick(() => {
+              BitKeepInvoke.appMode((err, res) => {
+                let body = document.getElementsByTagName("body")[0];
+                if (res == 1) {
+                  this.theme = 1;
+                  body.setAttribute("class", "theme-dark");
+                  setTimeout(()=>{
+                    BitKeepInvoke.setIconAction(
+                    "http://cdn.bitkeep.vip/u_b_09035ca0-4dd9-11ec-a555-07d5354e6fab.png",
+                    ()=>{
+                      this.$router.push("/activity/mining/history")
+                    });
+                  },500)
+                } else {
+                  this.theme = 0;
+                  body.setAttribute("class", "theme-light");
+                  setTimeout(()=>{
+                    BitKeepInvoke.setIconAction(
+                    "http://cdn.bitkeep.vip/u_b_2bb4fa20-3b86-11ec-8e63-1db435df936c.png",
+                    ()=>{
+                      this.$router.push("/activity/mining/history")
+                    //   let routeUrl = this.$router.resolve({
+                    //      path: "/activity/mining/history"
+                    //    });
+                    //    window.open(routeUrl.href, '_blank');
+                    });
+                  },500)
+                }
+              });
+          })
+        });
+      // });
     },
     milliFormat(num) {
       return (
