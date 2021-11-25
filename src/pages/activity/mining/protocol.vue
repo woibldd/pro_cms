@@ -41,20 +41,7 @@ export default {
       }  
     }
   },
-  props: {
-    show: {
-      type: Boolean,
-      dafault: false,
-    },
-    unclaimReward:{
-      type: Number,
-      dafault: 0
-    },
-    theme:{
-      type: Number,
-      dafault: 0
-    }
-  },
+  props: ['show', 'theme', 'unclaimReward'],
   methods: {
     swapConfirm: debounce(async function () {
       const { data, status } = await USER_API.receiveAward();

@@ -62,8 +62,25 @@ export default {
     };
   },
   beforeMount() {
-    BitKeepInvoke.setTitle(this.$t("mining.historyTitle"));
-    BitKeepInvoke.setIconAction();
+    window.addEventListener("load", () => {
+        BitKeepInvoke.onLoadReady(() => {
+        BitKeepInvoke.setTitle(this.$t("mining.historyTitle"));
+        BitKeepInvoke.setIconAction();
+        //设置主题
+          this.$nextTick(() => {
+            BitKeepInvoke.appMode((err, res) => {
+              let body = document.getElementsByTagName("body")[0];
+              if (res == 1) {
+                this.theme = 1;
+                body.setAttribute("class", "theme-dark");
+              } else {
+                this.theme = 0;
+                body.setAttribute("class", "theme-light");
+              }
+            });
+        })
+      });
+    });
   },
   mounted() {
     this.historyPhase();
@@ -210,14 +227,13 @@ export default {
         font-size: 10px;
       }
       .mining-wrap-one-header-about {
-        width: 90px;
         height: 24px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
         line-height: 24px;
         text-align: center;
-        padding: 2px 7px;
+        padding: 2px 12px;
         border-top-right-radius: 8px;
         border-bottom-left-radius: 8px;   
       }

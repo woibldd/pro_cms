@@ -18,8 +18,8 @@
           <img
             :src="
               locale == 'en'
-                ? 'http://cdn.bitkeep.vip/u_b_62c2dea0-3baa-11ec-b6dc-f5798cff9565.png'
-                : 'http://cdn.bitkeep.vip/u_b_62c2dea0-3baa-11ec-b6dc-f5798cff9565.png'
+                ? 'http://cdn.bitkeep.vip/u_b_3f7ff950-4d1b-11ec-9af0-83b391500e95.png'
+                : 'http://cdn.bitkeep.vip/u_b_3f7ff950-4d1b-11ec-9af0-83b391500e95.png'
             "
             alt=""
           />
@@ -62,7 +62,7 @@
                   :time="startTime"
                   :format="formatEn"
                   class="mining-wrap-one-body-time setFontFamily"
-                /><span class="setFontFamily textPrimary0">S</span>
+                />
               </span>
             </div>
             <div class="textPrimary0" v-else>--</div>
@@ -99,7 +99,7 @@
                   {{ $t("mining.totalDistributed") }}
                 </p>
                 <div class="mining-wrap-one-body-vol-number setFontFamily">
-                  {{ currencyPool }} BKB
+                  <span class="setW">{{ currencyPool }}</span> BKB
                 </div>
               </div>
               <div>
@@ -109,7 +109,7 @@
                 <div
                   class="mining-wrap-one-body-vol-number-todyVolue
                     setFontFamily">
-                  {{ status ? yesCurrencyPool : "--" }} BKB
+                  <span class="setW">{{ yesCurrencyPool }}</span> BKB
                 </div>
               </div>
             </div>
@@ -174,20 +174,16 @@
                   {{ $t("mining.totalTrading") }}
                 </p>
                 <div class="mining-wrap-one-body-vol-number setFontFamily">
-                  ${{ userTodayTrading }}
+                  <span class="setW">${{ userTodayTrading }}</span>
                 </div>
               </div>
               <div>
                 <p class="mining-wrap-one-body-vol">
                   {{ $t("mining.userTodayValue") }}
                 </p>
-                <div
-                  class="
+                <div class="
                     mining-wrap-one-body-vol-number-todyVolue
-                    setFontFamily
-                  "
-                >
-                  {{ status ? "$" + userTodayValue : "--" }}
+                    setFontFamily">{{ status ? "$" + userTodayValue : "--" }}
                 </div>
               </div>
             </div>
@@ -198,7 +194,7 @@
                   {{ $t("mining.totalRewards") }}
                 </p>
                 <div class="mining-wrap-one-body-vol-number setFontFamily">
-                  {{ userTotalBkbReward }} BKB
+                  <span class="setW">{{ userTotalBkbReward }}</span> BKB
                 </div>
               </div>
               <div>
@@ -274,9 +270,9 @@ export default {
       refreshLoading: false,
       startTime: null,
       endTime: null,
-      fixdStartTime: "2021-11-22 18:00",
-      fixdEndTime: "2021-11-24 14:24",
-      formatEn: "DDd HHh mmm ss",
+      fixdStartTime: "2021-11-25 18:00",
+      fixdEndTime: "2021-11-26 14:24",
+      formatEn: "DDd HHh mmm sss",
       formatZh: "DD 天 HH 时 mm 分 ss 秒",
       phase: "1",
       theme: 0
@@ -297,10 +293,12 @@ export default {
   },
   
   beforeMount() {
+    BitKeepInvoke.setTitle(
+      this.$t("mining.miningTitle")
+    );
     window.addEventListener("load", () => {
         this.isBitKeep &&
           BitKeepInvoke.onLoadReady(() => {
-            this.setIcon();
           //设置主题
             this.$nextTick(() => {
               BitKeepInvoke.appMode((err, res) => {
@@ -325,7 +323,6 @@ export default {
       this.startTime = this.endTime;
     }
     this.getInfo();
-    this.$nextTick();
   },
   methods: {
     // 获取信息
@@ -355,6 +352,7 @@ export default {
         this.status = true;
         this.startTime = this.endTime;
       }
+      this.setIcon();
       this.isLoading = false;
       this.refreshLoading = false;
     },
@@ -362,12 +360,17 @@ export default {
       BitKeepInvoke.setTitle(
         this.$t("mining.miningTitle")
       );
-      BitKeepInvoke.setIconAction(
+      setTimeout(()=>{
+        BitKeepInvoke.setIconAction(
         "http://cdn.bitkeep.vip/u_b_2bb4fa20-3b86-11ec-8e63-1db435df936c.png",
-        () => {
-          this.$router.push("/activity/mining/history");
-        }
-      );
+        ()=>{
+          //打开一个新的页面，会返回上一页面 
+          let routeUrl = this.$router.resolve({
+             path: "/activity/mining/history"
+           });
+           window.open(routeUrl.href, '_blank');
+        });
+      },100)
     },
     milliFormat(num) {
       return (

@@ -1,58 +1,130 @@
 <template>
   <div class="mining-rule">
     <div class="mining-rule-title-one">{{$t('mining.ruleTitle')}}</div>
-    <div class="mining-rule-content-oneTitle">
+    <div class="mining-rule-content">
       {{$t('mining.ruleContent')}}
     </div>
-    <div class="mining-rule-content-one">
-      {{$t('mining.ruleRewards')}}
+    <div class="mining-rule-title-one setM">{{$t('mining.how')}}</div>
+    <div class="mining-rule-title" v-html="$t('mining.how1')"></div>
+    <div class="mining-rule-title">{{$t('mining.how2')}}</div>
+    <div class="mining-rule-content">
+      {{$t('mining.howContent')}}
     </div>
-    <div class="mining-rule-title">{{$t('mining.ObjectivesTitle')}}</div>
     <ul class="mining-rule-content-ul">
       <li class="mining-rule-content-li">{{$t('mining.Objectives1')}}</li>
       <li class="mining-rule-content-li">{{$t('mining.Objectives2')}}</li>
+      <li class="mining-rule-content-li">{{$t('mining.Objectives3')}}</li>
     </ul>
-    <div class="mining-rule-title-flex">
-      <div class="mining-rule-title-one setM"> {{$t('mining.OverviewTitle')}}</div>
-    </div>
+    <div class="mining-rule-title-one"> {{$t('mining.how3')}}</div>
     <div class="mining-rule-content">
       {{$t('mining.OverviewContent')}}
     </div>
+    <div class="mining-rule-title-one"> {{$t('mining.how4')}}</div>
+    <div class="mining-rule-content">
+      {{$t('mining.how4Content')}}
+    </div>
+    <div class="mining-rule-title-one"> {{$t('mining.how5')}}</div>
+    <div class="mining-rule-content">
+      {{$t('mining.how5Content')}}
+    </div>
+    <div class="mining-rule-title-one"> {{$t('mining.how6')}}</div>
+    <div class="mining-rule-content">
+      {{$t('mining.how6Content')}}
+    </div>
     <div class="mining-rule-faq">
       <div class="mining-rule-title-one setM"> {{$t('mining.FQATitle')}}</div>
-      <p class="mining-rule-faq-title setC">
+      <p class="mining-rule-title setC">
         {{$t('mining.FQATitle1')}}
       </p>
-      <p class="mining-rule-faq-content">
+      <div class="mining-rule-content">
+        {{$t('mining.howContent')}}
+      </div>
+      <ul class="mining-rule-content-ul">
+        <li class="mining-rule-content-li">{{$t('mining.Objectives1')}}</li>
+        <li class="mining-rule-content-li">{{$t('mining.Objectives2')}}</li>
+        <li class="mining-rule-content-li">{{$t('mining.Objectives3')}}</li>
+      </ul>
+      <div class="mining-rule-content">
         {{$t('mining.FQAContent1')}}
-       
-      </p>
-      <p class="mining-rule-faq-title setC">
+      </div>
+      <p class="mining-rule-title setC">
         {{$t('mining.FQATitle2')}}
       </p>
-      <p class="mining-rule-faq-content">
+      <p class="mining-rule-content">
         {{$t('mining.FQAContent2')}}
-        
       </p>
-      <p class="mining-rule-faq-title setC">
+      <p class="mining-rule-title setC">
         {{$t('mining.FQATitle3')}}
       </p>
-      <p class="mining-rule-faq-content">
+      <p class="mining-rule-content">
         {{$t('mining.FQAContent3')}}
+      </p>
+      <p class="mining-rule-title setC">
+        {{$t('mining.FQATitle4')}}
+      </p>
+      <p class="mining-rule-content">
+        {{$t('mining.FQAContent4')}}
+      </p>
+      <p class="mining-rule-title setC">
+        {{$t('mining.FQATitle5')}}
+      </p>
+      <p class="mining-rule-content">
+        {{$t('mining.FQAContent5')}}
+      </p>
+      <p class="mining-rule-title setC">
+        {{$t('mining.FQATitle6')}}
+      </p>
+      <p class="mining-rule-content">
+        {{$t('mining.FQAContent6')}}
+      </p>
+      <p class="mining-rule-content">
+        {{$t('mining.FQAContent61')}}
+      </p>
+      <p class="mining-rule-content">
+        {{$t('mining.FQAContent62')}}
+      </p>
+      <p class="mining-rule-content">
+        {{$t('mining.FQAContent63')}}
+      </p>
+      <p class="mining-rule-content">
+        {{$t('mining.FQAContent64')}}
+      </p>
+      <p class="mining-rule-content">
+        {{$t('mining.FQAContent65')}}
+      </p>
+      <p class="mining-rule-content">
+        {{$t('mining.FQAContent66')}}
+      </p>
+      <p class="mining-rule-content">
+        {{$t('mining.FQAContent67')}}
+      </p>
+      <p class="mining-rule-content">
+        {{$t('mining.FQAContent68')}}
+      </p>
+      <p class="mining-rule-content">
+        {{$t('mining.FQAContentNote')}}
       </p>
     </div>
   </div>
 </template>
 <script>
+import { mapState } from "vuex";
+
 export default {
   data() {
     return {};
   },
+  computed: {
+    ...mapState(["local"]),
+    isBitKeep() {
+      return this.local.UA.isBitKeep;
+    },
+  },
   created() {
-    // BitKeepInvoke.onLoadReady(() => {
-      // BitKeepInvoke.setTitle(this.$t("mining.miningRuleTitle", { v: this.phase }));
-    //   BitKeepInvoke.setIconAction();
-    // });
+    this.isBitKeep && BitKeepInvoke.onLoadReady(() => {
+      BitKeepInvoke.setTitle(this.$t("mining.miningRuleTitle"));
+      BitKeepInvoke.setIconAction();
+    });
   },
 };
 </script>
@@ -64,10 +136,6 @@ export default {
   }
   .mining-rule-title-one {
     color: $theme-light-textPrimary0;
-  }
-  .mining-rule-content-oneTitle {
-    color: $theme-light-textSecond3;
-    border-bottom: 1px solid $theme-light-colorLine;
   }
   .mining-rule-title{
     color: $theme-light-textPrimary0;
@@ -83,16 +151,8 @@ export default {
     color: $theme-light-textSecond1;
 
   }
-  .mining-rule-content-one{
-    color: $theme-light-textSecond1;
-
-  }
   .mining-rule-content{
     color: $theme-light-textSecond1;
-
-  }
-  .mining-rule-faq-content{
-    color: $theme-light-textSecond3;
 
   }
 }
@@ -102,10 +162,6 @@ export default {
   }
   .mining-rule-title-one {
     color: $theme-dark-textPrimary0;
-  }
-  .mining-rule-content-oneTitle {
-    color: $theme-dark-textSecond3;
-    border-bottom: 1px solid $theme-dark-colorLine;
   }
   .mining-rule-title{
     color: $theme-dark-textPrimary0;
@@ -121,34 +177,21 @@ export default {
     color: $theme-dark-textSecond1;
 
   }
-  .mining-rule-content-one{
-    color: $theme-dark-textSecond1;
-
-  }
   .mining-rule-content{
     color: $theme-dark-textSecond1;
-
-  }
-  .mining-rule-faq-content{
-    color: $theme-dark-textSecond3;
 
   }
 }
 .mining-rule {
   padding: 16px;
   .mining-rule-title-one {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 36px;
   }
-  .mining-rule-content-oneTitle {
-    font-size: 16px;
-    line-height: 24px;
-    padding: 16px 0;
-  }
   .mining-rule-title {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
     margin: 16px 0;
   }
   .setM{
@@ -162,29 +205,17 @@ export default {
   }
   .mining-rule-content-li {
     list-style: disc;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 28px;
   }
-  .mining-rule-content-one {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    margin-top: 16px;
-  }
   .mining-rule-content {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 22px;
-    margin-top: 16px;
+    margin-top: 8px;
   }
   .mining-rule-title-flex {
     display: flex;
     justify-content: space-between;
-  }
-  .mining-rule-faq-title {
-    font-size: 16px;
-  }
-  .mining-rule-faq-content {
-    font-size: 16px;
   }
 }
 </style>
