@@ -1,12 +1,17 @@
 import axios from "axios";
 import  Vue  from "vue"
 import { getI18n } from "../locales"
-// import { debug } from 'debug'
+import { debug } from 'debug'
 // const requestlog = debug('bit-activity-request')
 // const responselog = debug('bit-activity-response')
 // const isProduction = process.env.NODE_ENV == "production";
 // const HOST_URL = process.env.HOST_URL || process.env.baseURL
-
+const requestlog = process.env.BUILD_ENV == 'pro' ? (...arg) => {
+  console.log("bit-activity-request:", ...arg)
+} : debug('bit-activity-request')
+const responselog = process.env.BUILD_ENV == 'pro' ? (...arg) => {
+  console.log("bit-activity-response:", ...arg)
+} : debug('bit-activity-response')
 const host_user_instance = axios.create({
   baseURL: "/",
   timeout: 60000,
@@ -26,6 +31,7 @@ const host_user_instance = axios.create({
 
 host_user_instance.interceptors.request.use(
   function (config) {
+    requestlog('requestlog:',config)
     if(process.client && Vue.prototype.$store){
         const state  = Vue.prototype.$store.state
         const { UA, locale } = state.local
@@ -38,8 +44,6 @@ host_user_instance.interceptors.request.use(
             language: locale
           })
         }
-
-
     }
 
     return config;
@@ -58,11 +62,9 @@ host_user_instance.interceptors.response.use(
     return response.data
   },
   function (error) {
-    console.error("___",error)
-    console.log("_--------------------------+++++=====",error)
+    responselog('responselog:',error)
     // Do omething with response error
     let message = '网路开了小差'
-    console.log('23423432-------------------------------------------')
     if(process.client){
       const  i18n = getI18n() || {}
       message =  i18n.t? i18n.t("base.networkErro") :  message

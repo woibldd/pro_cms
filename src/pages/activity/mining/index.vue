@@ -369,23 +369,21 @@ export default {
           BitKeepInvoke.setIconAction(
           "http://cdn.bitkeep.vip/u_b_09035ca0-4dd9-11ec-a555-07d5354e6fab.png",
           ()=>{
-            //打开一个新的页面，会返回上一页面 
             this.$router.push("/activity/mining/history")
           });
-        },500)
+        },800)
       }else{
         setTimeout(()=>{
           BitKeepInvoke.setIconAction(
           "http://cdn.bitkeep.vip/u_b_2bb4fa20-3b86-11ec-8e63-1db435df936c.png",
           ()=>{
-            //打开一个新的页面，会返回上一页面 
             this.$router.push("/activity/mining/history")
           //   let routeUrl = this.$router.resolve({
           //      path: "/activity/mining/history"
           //    });
           //    window.open(routeUrl.href, '_blank');
           });
-        },500)
+        },800)
       }
       
     },
