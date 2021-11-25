@@ -290,9 +290,9 @@ const USER_API = {
   getAirDropCount: (data, headers = {}) => host_user_instance.post("user/cloudwallet/getAirDropCount", data),
   getAirDrop: (data, headers = {}) => host_user_instance.post("user/cloudwallet/getAirDrop", data),
   // 交易挖矿
-  miningInfo: (data, headers = {}) => host_user_instance.post("mining/info", data),
-  historyPhase: (data, headers = {}) => host_user_instance.post("/mining/historyPhase", data),
-  receiveAward: (data, headers = {}) => host_user_instance.post("/mining/receiveAward", data)
+  miningInfo: (data, headers = {}) => host_user_instance.post("swap/mining/info", data),
+  historyPhase: (data, headers = {}) => host_user_instance.post("swap/mining/historyPhase", data),
+  receiveAward: (data, headers = {}) => host_user_instance.post("swap/mining/receiveAward", data)
 };
 
 /***/ })
