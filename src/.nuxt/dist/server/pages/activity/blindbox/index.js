@@ -367,7 +367,8 @@ const host_user_instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
     os: "",
     package: "",
     clientversion: "",
-    im: ""
+    im: "",
+    clientVersion: 1
   }
 });
 host_user_instance.interceptors.request.use(function (config) {
