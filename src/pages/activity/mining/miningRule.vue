@@ -77,30 +77,16 @@
       <p class="mining-rule-content">
         {{$t('mining.FQAContent6')}}
       </p>
-      <p class="mining-rule-content">
-        {{$t('mining.FQAContent61')}}
-      </p>
-      <p class="mining-rule-content">
-        {{$t('mining.FQAContent62')}}
-      </p>
-      <p class="mining-rule-content">
-        {{$t('mining.FQAContent63')}}
-      </p>
-      <p class="mining-rule-content">
-        {{$t('mining.FQAContent64')}}
-      </p>
-      <p class="mining-rule-content">
-        {{$t('mining.FQAContent65')}}
-      </p>
-      <p class="mining-rule-content">
-        {{$t('mining.FQAContent66')}}
-      </p>
-      <p class="mining-rule-content">
-        {{$t('mining.FQAContent67')}}
-      </p>
-      <p class="mining-rule-content">
-        {{$t('mining.FQAContent68')}}
-      </p>
+      <ul class="mining-rule-content-ul">
+        <li class="mining-rule-content-li">{{$t('mining.FQAContent61')}}</li>
+        <li class="mining-rule-content-li">{{$t('mining.FQAContent62')}}</li>
+        <li class="mining-rule-content-li">{{$t('mining.FQAContent63')}}</li>
+        <li class="mining-rule-content-li">{{$t('mining.FQAContent64')}}</li>
+        <li class="mining-rule-content-li">{{$t('mining.FQAContent65')}}</li>
+        <li class="mining-rule-content-li">{{$t('mining.FQAContent66')}}</li>
+        <li class="mining-rule-content-li">{{$t('mining.FQAContent67')}}</li>
+        <li class="mining-rule-content-li">{{$t('mining.FQAContent68')}}</li>
+      </ul>
       <p class="mining-rule-content">
         {{$t('mining.FQAContentNote')}}
       </p>
