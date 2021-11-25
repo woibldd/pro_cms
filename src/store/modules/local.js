@@ -63,7 +63,6 @@ const actions = {
         currency: req.headers.currency,
         os: req.headers.os,
         package: req.headers.package,
-        clientversion: req.headers.clientversion,
         ua: req.headers.ua,
         token: req.headers.token,
         mylanguage: req.headers.mylanguage,
