@@ -11,7 +11,7 @@
       <p class="textPrimary0">{{unclaimReward}} BKB</p>
     </div>
     <div class="confirm-bottom">
-      <van-button class="swap-btn colorBackgroundPrimary" @click="swapConfirm">{{
+      <van-button class="swap-btn colorBackgroundPrimary" :class="unclaimReward==0? 'setOpactive' : ''" @click="swapConfirm">{{
             $t("mining.confirm")
           }}</van-button>
     </div>
@@ -44,9 +44,10 @@ export default {
   props: ['show', 'theme', 'unclaimReward'],
   methods: {
     swapConfirm: debounce(async function () {
+      if(this.unclaimReward== 0) return 
       const { data, status } = await USER_API.receiveAward();
       if (status == 1) {
-        this.$emit('close', false);
+        this.close();
         return this.$toast(data);
       }
       this.$toast(data);
@@ -82,6 +83,9 @@ export default {
   text-align: center;
   font-size: 16px;
   font-weight: 500;
+}
+.setOpactive{
+  opacity: 0.3;
 }
 .line{
   width: 100%;
