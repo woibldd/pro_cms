@@ -53,7 +53,7 @@
           </div>
           <div class="mining-wrap-one-body">
             <p class="mining-wrap-one-body-startCountdown">
-              <span v-if="!status">{{ $t("mining.startCountdown") }}</span>
+              <span v-if="activityStatus == 0">{{ $t("mining.startCountdown") }}</span>
               <span v-else>{{ $t("mining.endCountdown") }}</span>
             </p>
             <div v-if="countDown > 0">
@@ -148,7 +148,7 @@
             <p class="mining-wrap-one-body-day">{{ $t("mining.tradingIn") }}</p>
             <div class="mining-wrap-one-body-number">
               <span class="setFontFamily">{{
-                status ? "$" + allTodayTrading : "--"
+                activityStatus != 0 ? "$" + allTodayTrading : '--'
               }}</span>
             </div>
           </div>
@@ -183,7 +183,7 @@
                 </p>
                 <div class="
                     mining-wrap-one-body-vol-number-todyVolue
-                    setFontFamily">{{ status ? "$" + userTodayValue : "--" }}
+                    setFontFamily">{{ activityStatus != 0 ? "$" + userTodayValue: '--'}}
                 </div>
               </div>
             </div>
@@ -202,7 +202,7 @@
                   {{ $t("mining.yesterdayRewards") }}
                 </p>
                 <div class="mining-wrap-one-body-vol-number-last setFontFamily">
-                  {{ status ? "+" + userTodayDayBkbReward + " BKB" : "--" }}
+                  {{ activityStatus != 0 ? "+" + userTodayDayBkbReward + " BKB" : "--" }}
                 </div>
               </div>
             </div>
@@ -232,7 +232,7 @@
             </p>
           </div>
         </div>
-        <activity-com :status="status" />
+        <activity-com :status="countDown > 0" />
         <div class="wrap-bottom" >
           <van-button class="swap-btn setColorClaim" @click="claim">{{
             $t("mining.claim")
@@ -324,6 +324,7 @@ export default {
     //   this.startTime = this.endTime;
     // }
     this.getInfo();
+    this.setIcon();
   },
   methods: {
     // 获取信息
@@ -363,17 +364,30 @@ export default {
       BitKeepInvoke.setTitle(
         this.$t("mining.miningTitle")
       );
-      setTimeout(()=>{
-        BitKeepInvoke.setIconAction(
-        "http://cdn.bitkeep.vip/u_b_2bb4fa20-3b86-11ec-8e63-1db435df936c.png",
-        ()=>{
-          //打开一个新的页面，会返回上一页面 
-          let routeUrl = this.$router.resolve({
-             path: "/activity/mining/history"
-           });
-           window.open(routeUrl.href, '_blank');
-        });
-      },100)
+      if(this.theme == 1){
+        setTimeout(()=>{
+          BitKeepInvoke.setIconAction(
+          "http://cdn.bitkeep.vip/u_b_09035ca0-4dd9-11ec-a555-07d5354e6fab.png",
+          ()=>{
+            //打开一个新的页面，会返回上一页面 
+            this.$router.push("/activity/mining/history")
+          });
+        },500)
+      }else{
+        setTimeout(()=>{
+          BitKeepInvoke.setIconAction(
+          "http://cdn.bitkeep.vip/u_b_2bb4fa20-3b86-11ec-8e63-1db435df936c.png",
+          ()=>{
+            //打开一个新的页面，会返回上一页面 
+            this.$router.push("/activity/mining/history")
+          //   let routeUrl = this.$router.resolve({
+          //      path: "/activity/mining/history"
+          //    });
+          //    window.open(routeUrl.href, '_blank');
+          });
+        },500)
+      }
+      
     },
     milliFormat(num) {
       return (

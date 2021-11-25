@@ -58,11 +58,11 @@ host_user_instance.interceptors.response.use(
     return response.data
   },
   function (error) {
-
-
     console.error("___",error)
+    console.log("_--------------------------+++++=====",error)
     // Do omething with response error
     let message = '网路开了小差'
+    console.log('23423432-------------------------------------------')
     if(process.client){
       const  i18n = getI18n() || {}
       message =  i18n.t? i18n.t("base.networkErro") :  message

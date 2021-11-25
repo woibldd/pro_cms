@@ -54,6 +54,7 @@
 </template>
 <script>
 import { USER_API } from "@/api/client";
+import { mapState } from "vuex";
 
 export default {
   data() {
@@ -61,27 +62,50 @@ export default {
       historyPhaseList: [],
     };
   },
+  computed: {
+    ...mapState(["local"]),
+    isBitKeep() {
+      return this.local.UA.isBitKeep;
+    },
+  },
   beforeMount() {
-    window.addEventListener("load", () => {
-        BitKeepInvoke.onLoadReady(() => {
-        BitKeepInvoke.setTitle(this.$t("mining.historyTitle"));
-        BitKeepInvoke.setIconAction();
-        //设置主题
-          this.$nextTick(() => {
-            BitKeepInvoke.appMode((err, res) => {
-              let body = document.getElementsByTagName("body")[0];
-              if (res == 1) {
-                this.theme = 1;
-                body.setAttribute("class", "theme-dark");
-              } else {
-                this.theme = 0;
-                body.setAttribute("class", "theme-light");
-              }
-            });
-        })
+    this.isBitKeep && BitKeepInvoke.onLoadReady(() => {
+      BitKeepInvoke.setTitle(this.$t("mining.historyTitle"));
+      BitKeepInvoke.setIconAction();
+      BitKeepInvoke.appMode((err, res) => {
+        let body = document.getElementsByTagName("body")[0];
+        if (res == 1) {
+          this.theme = 1;
+          body.setAttribute("class", "theme-dark");
+        } else {
+          this.theme = 0;
+          body.setAttribute("class", "theme-light");
+        }
       });
     });
   },
+  // beforeMount() {
+    // BitKeepInvoke.setTitle(this.$t("mining.historyTitle"));
+    //     BitKeepInvoke.setIconAction();
+    // window.addEventListener("load", () => {
+    //     BitKeepInvoke.onLoadReady(() => {
+        
+    //     //设置主题
+    //       this.$nextTick(() => {
+    //         BitKeepInvoke.appMode((err, res) => {
+    //           let body = document.getElementsByTagName("body")[0];
+    //           if (res == 1) {
+    //             this.theme = 1;
+    //             body.setAttribute("class", "theme-dark");
+    //           } else {
+    //             this.theme = 0;
+    //             body.setAttribute("class", "theme-light");
+    //           }
+    //         });
+    //     })
+    //   });
+    // });
+  // },
   mounted() {
     this.historyPhase();
   },
