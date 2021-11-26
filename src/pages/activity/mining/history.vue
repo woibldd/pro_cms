@@ -1,6 +1,11 @@
 <template>
   <div class="hisory-wrap">
-    <div v-if="historyPhaseList.length>0">
+    <div class="loading" v-if="isLoading">
+      <van-loading color="#1989fa" vertical
+        >{{ $t("base.loading") }}...</van-loading
+      >
+    </div>
+    <div v-else-if="historyPhaseList.length>0">
       <div
       class="mining-wrap-one"
       v-for="(item, index) in historyPhaseList"
@@ -66,6 +71,7 @@ export default {
   data() {
     return {
       historyPhaseList: [],
+      isLoading: true
     };
   },
   computed: {
@@ -119,6 +125,7 @@ export default {
     async historyPhase() {
       const { data, status } = await USER_API.historyPhase();
       if (status == 1) {
+        this.isLoading = false;
         return this.$dialog.alert({
           message: data,
           confirmButtonText: this.$t("CbkbExchange.know"),
@@ -126,6 +133,7 @@ export default {
         });
       }
       this.historyPhaseList = data;
+      this.isLoading = false;
     },
   },
 };
@@ -290,6 +298,12 @@ export default {
       font-family: "bitkeep DIN";
     }
   }
+}
+.loading {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .noData{
   min-height: 80vh;
