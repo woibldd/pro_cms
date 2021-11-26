@@ -11,7 +11,7 @@
       <p class="textPrimary0">{{unclaimReward}} BKB</p>
     </div>
     <div class="confirm-bottom">
-      <van-button class="swap-btn colorBackgroundPrimary" :class="unclaimReward==0? 'setOpactive' : ''" @click="swapConfirm">{{
+      <van-button class="swap-btn colorBackgroundPrimary" :disabled='btnStatus' :class="unclaimReward==0? 'setOpactive' : ''" @click="swapConfirm">{{
             $t("mining.confirm")
           }}</van-button>
     </div>
@@ -26,6 +26,7 @@ export default {
     return {
       addAllContent: "",
       visables: this.show,
+      btnStatus: false,
       closeIcon: 'http://cdn.bitkeep.vip/u_b_991190f0-356f-11ec-8c2d-251a27ef7eba.png'
     };
   },
@@ -45,6 +46,7 @@ export default {
   methods: {
     swapConfirm: debounce(async function () {
       if(this.unclaimReward== 0) return 
+      this.btnStatus = true;
       const { data, status } = await USER_API.receiveAward();
       if (status == 1) {
         this.close();
@@ -52,7 +54,10 @@ export default {
       }
       this.$toast(data);
       this.$emit('close', true);
-    },800),
+      setTimeout(()=>{
+        this.btnStatus = false;
+      },1000)
+    }),
     close(){
       this.$emit('close', false);
     }
