@@ -52,7 +52,7 @@ export default {
       }
       this.$toast(data);
       this.$emit('close', true);
-    }),
+    },800),
     close(){
       this.$emit('close', false);
     }
