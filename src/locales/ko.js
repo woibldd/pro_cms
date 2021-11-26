@@ -226,7 +226,7 @@ module.exports = {
     activity: '끝',
     tradingVolume: '거래량',
     tradingIn: '요즘 거래',
-    userTodayValue: '오늘 볼륨',
+    userTodayValue: '오늘 거래량',
     myRewards: '내 보상',
     totalTrading: '총 거래량',
     todyVolue: '오늘의 가치',
@@ -250,7 +250,9 @@ module.exports = {
     ruleTitle: 'BKSwap 거래 보상이란 무엇입니까?',
     ruleContent: 'BKB 보상 사용자는 BKSap 거래를 완료할 때 획득합니다. BitKeep은 사용자가 BKB를 채택하고 관련 이벤트에 참여하도록 장려하기 위해 스마트 계약 배포 규칙에 따라 BKSwap에서 거래하는 사용자에게 보상합니다. 동시에 BKB의 응용 시나리오를 확장하여 Web3.0 시대의 블록체인 지갑 생태계를 더욱 발전시킬 것입니다.',
     how: 'BKSwap 거래 보상은 어떻게 받나요?',
-    how1: `1. 최신 BKSwap 튜토리얼은 <a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a>을 참조하세요.`,
+    how1: '1. 최신 BKSwap 튜토리얼은 ',
+    how11: '을 참조하세요.',
+    // how1: `1. 최신 BKSwap 튜토리얼은 <a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a>을 참조하세요.`,
     how2: '2. 거래 보상에 대한 규칙:',
     howContent: 'BKSwap 거래 보상에는 3가지 레벨이 있습니다.',
     Objectives1: '특정 날짜에 BKSwap의 총 거래 금액이 ≤ 5백만 USDT에 해당하는 경우 BitKeep은 계약 규칙에 따라 당일 거래 수수료의 300%에 해당하는 BKB 합계를 당일 보상으로 제공합니다. 당일 BKSwap 거래에 참여한 모든 사용자는 비례 지분을 얻습니다 (각 개별 사용자의 거래 금액에 따라 다름)',
@@ -327,6 +329,7 @@ module.exports = {
     yesterday: '어제',
     claim: '주장하다',
     ClaimRewards: '보상 청구',
-    confirm: '확인하다'
+    confirm: '확인하다',
+    noData: '데이터 없음'
   }
 }

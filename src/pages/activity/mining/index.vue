@@ -198,7 +198,7 @@
                 </div>
               </div>
               <div>
-                <p class="mining-wrap-one-body-vol">
+                <p class="mining-wrap-one-body-vol" style="text-align: right">
                   {{ $t("mining.yesterdayRewards") }}
                 </p>
                 <div class="mining-wrap-one-body-vol-number-last setFontFamily">
@@ -232,7 +232,7 @@
             </p>
           </div>
         </div>
-        <activity-com :status="countDown > 0" />
+        <activity-com/>
         <div class="wrap-bottom" >
           <van-button class="swap-btn setColorClaim" @click="claim">{{
             $t("mining.claim")

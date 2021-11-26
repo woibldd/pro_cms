@@ -5,7 +5,7 @@
       {{$t('mining.ruleContent')}}
     </div>
     <div class="mining-rule-title-one setM">{{$t('mining.how')}}</div>
-    <div class="mining-rule-title" v-html="$t('mining.how1')"></div>
+    <div class="mining-rule-title">{{$t('mining.how1')}}<span style="color: #495BFF" @click="openUrl"> https://www.youtube.com</span>{{$t('mining.how11')}}</div>
     <div class="mining-rule-title">{{$t('mining.how2')}}</div>
     <div class="mining-rule-content">
       {{$t('mining.howContent')}}
@@ -106,12 +106,25 @@ export default {
       return this.local.UA.isBitKeep;
     },
   },
-  created() {
+  beforeMount() {
     this.isBitKeep && BitKeepInvoke.onLoadReady(() => {
       BitKeepInvoke.setTitle(this.$t("mining.miningRuleTitle"));
       BitKeepInvoke.setIconAction();
+      BitKeepInvoke.appMode((err, res) => {
+        let body = document.getElementsByTagName("body")[0];
+        if (res == 1) {
+          body.setAttribute("class", "theme-dark");
+        } else {
+          body.setAttribute("class", "theme-light");
+        }
+      });
     });
   },
+  methods: {
+    openUrl(){
+      BitKeepInvoke.openUrl('https://www.youtube.com/watch?v=_5expUiioV8')
+    }
+  }
 };
 </script>
 <style lang='scss' scoped>

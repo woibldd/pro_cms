@@ -251,7 +251,9 @@ module.exports = {
     ruleTitle: 'Phần thưởng giao dịch BKSwap là gì?',
     ruleContent: 'Phần thưởng BKB mà người dùng nhận được khi họ hoàn thành giao dịch hoán đổi BKS. BitKeep sẽ thưởng cho người dùng giao dịch trên BKSwap theo quy tắc phân phối hợp đồng thông minh để khuyến khích người dùng thông qua BKB và tham gia vào các sự kiện liên quan. Đồng thời, chúng tôi sẽ mở rộng các kịch bản ứng dụng của BKB để phát triển hơn nữa hệ sinh thái ví blockchain trong kỷ nguyên Web3.0.',
     how: 'Làm thế nào để nhận được Phần thưởng giao dịch BKSwap?',
-    how1: `1. Vui lòng tham khảo <a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a> để biết hướng dẫn về BKSwap mới nhất.`,
+    how1: '1. Vui lòng tham khảo ',
+    how11: ' để biết hướng dẫn về BKSwap mới nhất.',
+    // how1: `<a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a> để biết hướng dẫn về BKSwap mới nhất.`,
     how2: '2. Quy tắc về phần thưởng giao dịch:',
     howContent: 'Có 3 mức phần thưởng giao dịch BKSwap:',
     Objectives1: 'Tổng số tiền giao dịch của BKSwap trong ngày nhỏ hơn hoặc bằng 5 triệu USDT, theo quy định của hợp đồng, BKB sẽ được phát hành 300% phí giao dịch trong ngày làm tổng phần thưởng trong ngày, và tất cả người dùng tham gia giao dịch trong ngày sẽ được chia theo tỷ lệ.',
@@ -328,6 +330,7 @@ module.exports = {
     yesterday: 'Hôm qua',
     claim: 'Yêu cầu',
     ClaimRewards: 'Yêu cầu phần thưởng',
-    confirm: 'Xác nhận'
+    confirm: 'Xác nhận',
+    noData: 'Không có dữ liệu'
   }
 }

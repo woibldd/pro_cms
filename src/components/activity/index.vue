@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap-min" :class="[status ? 'statusM' : '']">
+  <div class="wrap-min statusM">
     <div class="about">
       <div class="about-wrap">
         <div class="about-wrap-pos">
@@ -268,7 +268,6 @@ export default {
       flag: false,
     };
   },
-  props: ["status"],
   methods: {
     viewAll() {
       this.flag = !this.flag;

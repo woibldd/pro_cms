@@ -227,7 +227,7 @@ module.exports = {
     Introduce: '導入',
     tradingVolume: '取引高',
     tradingIn: 'この日の取引',
-    userTodayValue: '今日のボリューム',
+    userTodayValue: '今日の取引量',
     myRewards: '私の報酬',
     totalTrading: '総取引量',
     todyVolue: '今日の価値',
@@ -250,7 +250,9 @@ module.exports = {
     ruleTitle: 'BKSwapトレーディングリワードとは何ですか？',
     ruleContent: 'ユーザーがBKSwapトランザクションを完了したときに取得するBKB報酬。 BitKeepは、スマートコントラクト配布ルールに従ってBKSwapで取引するユーザーに報酬を与え、ユーザーがBKBを採用して関連イベントに参加することを奨励します。 同時に、BKBのアプリケーションシナリオを拡張して、Web3.0時代のブロックチェーンウォレットエコシステムをさらに発展させます。',
     how: 'BKSwap Trading Rewardを取得するにはどうすればよいですか？',
-    how1: `1.最新のBKSwapチュートリアルについては、<a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a>を参照してください。`,
+    how1: '1.最新のBKSwapチュートリアルについては、',
+    how11: ' を参照してください。',
+    // how1: `<a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a>を参照してください。`,
     how2: '2.取引報酬に関するルール：',
     howContent: 'BKSwap取引報酬には3つのレベルがあります。',
     Objectives1: '当日のBKSwapの合計取引金額は500万USDT以下であり、契約ルールによれば、BKBはその日の合計報酬としてその日の取引手数料の300％でリリースされ、すべてのユーザーが当日の取引への参加は比例配分されます。',
@@ -327,6 +329,7 @@ module.exports = {
     yesterday: '昨日',
     claim: '請求',
     ClaimRewards: '報酬を請求する',
-    confirm: '確認'
+    confirm: '確認',
+    noData: 'データなし',
   }
 }

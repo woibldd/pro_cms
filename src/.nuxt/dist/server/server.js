@@ -2917,7 +2917,7 @@ module.exports = {
     Introduce: 'Introduce',
     tradingVolume: 'Trading Volume',
     tradingIn: 'Trading in this Days',
-    userTodayValue: 'Today Volume',
+    userTodayValue: 'Today Trade Volume',
     myRewards: 'My Rewards',
     totalTrading: 'Total Trade Volume',
     todyVolue: 'Today Volue',
@@ -2941,7 +2941,9 @@ module.exports = {
     ruleTitle: 'What is BKSwap Trading Reward?',
     ruleContent: 'The BKB reward users obtain when they finish a BKSwap transaction. BitKeep will reward users who trade on BKSwap according to the smart contract distribution rules to encourage users to adopt BKB and participate in related events. At the same time, we will extend the application scenarios of BKB to further develop the blockchain wallet ecosystem in the Web3.0 era.',
     how: 'How to get BKSwap Trading Reward?',
-    how1: `1. Please refer to <a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a> for the latest BKSwap tutorial.`,
+    how1: '1. Please refer to',
+    how11: ' for the latest BKSwap tutorial.',
+    // how1: `1. Please refer to <a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a> for the latest BKSwap tutorial.`,
     how2: '2. Rules about the trading rewards:',
     howContent: 'There are 3 levels of BKSwap trading rewards:',
     Objectives1: 'When the total transaction amount on BKSwap on a given day is ≤ 5 million USDT equivalent, then according to the contract rules, BitKeep will provide a sum of BKB equal to 300% of the transaction fee of the day as the reward of the day. All users participated in BKSwap transactions on the day will get a proportionate share (depending on each individual user’s transaction amount)',
@@ -3018,7 +3020,8 @@ module.exports = {
     yesterday: 'Yesterday',
     claim: 'Claim',
     ClaimRewards: 'Claim Rewards',
-    confirm: 'Confirm'
+    confirm: 'Confirm',
+    noData: 'No data'
   },
   'nft': {
     nftTitle: 'NFT Lottery',
@@ -3266,7 +3269,7 @@ module.exports = {
     Introduce: '導入',
     tradingVolume: '取引高',
     tradingIn: 'この日の取引',
-    userTodayValue: '今日のボリューム',
+    userTodayValue: '今日の取引量',
     myRewards: '私の報酬',
     totalTrading: '総取引量',
     todyVolue: '今日の価値',
@@ -3289,7 +3292,9 @@ module.exports = {
     ruleTitle: 'BKSwapトレーディングリワードとは何ですか？',
     ruleContent: 'ユーザーがBKSwapトランザクションを完了したときに取得するBKB報酬。 BitKeepは、スマートコントラクト配布ルールに従ってBKSwapで取引するユーザーに報酬を与え、ユーザーがBKBを採用して関連イベントに参加することを奨励します。 同時に、BKBのアプリケーションシナリオを拡張して、Web3.0時代のブロックチェーンウォレットエコシステムをさらに発展させます。',
     how: 'BKSwap Trading Rewardを取得するにはどうすればよいですか？',
-    how1: `1.最新のBKSwapチュートリアルについては、<a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a>を参照してください。`,
+    how1: '1.最新のBKSwapチュートリアルについては、',
+    how11: ' を参照してください。',
+    // how1: `<a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a>を参照してください。`,
     how2: '2.取引報酬に関するルール：',
     howContent: 'BKSwap取引報酬には3つのレベルがあります。',
     Objectives1: '当日のBKSwapの合計取引金額は500万USDT以下であり、契約ルールによれば、BKBはその日の合計報酬としてその日の取引手数料の300％でリリースされ、すべてのユーザーが当日の取引への参加は比例配分されます。',
@@ -3366,7 +3371,8 @@ module.exports = {
     yesterday: '昨日',
     claim: '請求',
     ClaimRewards: '報酬を請求する',
-    confirm: '確認'
+    confirm: '確認',
+    noData: 'データなし'
   }
 };
 
@@ -3577,7 +3583,7 @@ module.exports = {
     activity: '끝',
     tradingVolume: '거래량',
     tradingIn: '요즘 거래',
-    userTodayValue: '오늘 볼륨',
+    userTodayValue: '오늘 거래량',
     myRewards: '내 보상',
     totalTrading: '총 거래량',
     todyVolue: '오늘의 가치',
@@ -3601,7 +3607,9 @@ module.exports = {
     ruleTitle: 'BKSwap 거래 보상이란 무엇입니까?',
     ruleContent: 'BKB 보상 사용자는 BKSap 거래를 완료할 때 획득합니다. BitKeep은 사용자가 BKB를 채택하고 관련 이벤트에 참여하도록 장려하기 위해 스마트 계약 배포 규칙에 따라 BKSwap에서 거래하는 사용자에게 보상합니다. 동시에 BKB의 응용 시나리오를 확장하여 Web3.0 시대의 블록체인 지갑 생태계를 더욱 발전시킬 것입니다.',
     how: 'BKSwap 거래 보상은 어떻게 받나요?',
-    how1: `1. 최신 BKSwap 튜토리얼은 <a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a>을 참조하세요.`,
+    how1: '1. 최신 BKSwap 튜토리얼은 ',
+    how11: '을 참조하세요.',
+    // how1: `1. 최신 BKSwap 튜토리얼은 <a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a>을 참조하세요.`,
     how2: '2. 거래 보상에 대한 규칙:',
     howContent: 'BKSwap 거래 보상에는 3가지 레벨이 있습니다.',
     Objectives1: '특정 날짜에 BKSwap의 총 거래 금액이 ≤ 5백만 USDT에 해당하는 경우 BitKeep은 계약 규칙에 따라 당일 거래 수수료의 300%에 해당하는 BKB 합계를 당일 보상으로 제공합니다. 당일 BKSwap 거래에 참여한 모든 사용자는 비례 지분을 얻습니다 (각 개별 사용자의 거래 금액에 따라 다름)',
@@ -3678,7 +3686,8 @@ module.exports = {
     yesterday: '어제',
     claim: '주장하다',
     ClaimRewards: '보상 청구',
-    confirm: '확인하다'
+    confirm: '확인하다',
+    noData: '데이터 없음'
   }
 };
 
@@ -3914,7 +3923,9 @@ module.exports = {
     ruleTitle: 'Phần thưởng giao dịch BKSwap là gì?',
     ruleContent: 'Phần thưởng BKB mà người dùng nhận được khi họ hoàn thành giao dịch hoán đổi BKS. BitKeep sẽ thưởng cho người dùng giao dịch trên BKSwap theo quy tắc phân phối hợp đồng thông minh để khuyến khích người dùng thông qua BKB và tham gia vào các sự kiện liên quan. Đồng thời, chúng tôi sẽ mở rộng các kịch bản ứng dụng của BKB để phát triển hơn nữa hệ sinh thái ví blockchain trong kỷ nguyên Web3.0.',
     how: 'Làm thế nào để nhận được Phần thưởng giao dịch BKSwap?',
-    how1: `1. Vui lòng tham khảo <a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a> để biết hướng dẫn về BKSwap mới nhất.`,
+    how1: '1. Vui lòng tham khảo ',
+    how11: ' để biết hướng dẫn về BKSwap mới nhất.',
+    // how1: `<a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a> để biết hướng dẫn về BKSwap mới nhất.`,
     how2: '2. Quy tắc về phần thưởng giao dịch:',
     howContent: 'Có 3 mức phần thưởng giao dịch BKSwap:',
     Objectives1: 'Tổng số tiền giao dịch của BKSwap trong ngày nhỏ hơn hoặc bằng 5 triệu USDT, theo quy định của hợp đồng, BKB sẽ được phát hành 300% phí giao dịch trong ngày làm tổng phần thưởng trong ngày, và tất cả người dùng tham gia giao dịch trong ngày sẽ được chia theo tỷ lệ.',
@@ -3991,7 +4002,8 @@ module.exports = {
     yesterday: 'Hôm qua',
     claim: 'Yêu cầu',
     ClaimRewards: 'Yêu cầu phần thưởng',
-    confirm: 'Xác nhận'
+    confirm: 'Xác nhận',
+    noData: 'Không có dữ liệu'
   }
 };
 
@@ -4196,7 +4208,7 @@ module.exports = {
     will: 'Reward distribution within this week',
     tradingVolume: 'Trading Volume',
     tradingIn: 'Trading in this Days',
-    userTodayValue: 'Today Volume',
+    userTodayValue: 'Today Trade Volume',
     myRewards: 'My Rewards',
     totalTrading: 'Total Trade Volume',
     activity: 'End',
@@ -4220,7 +4232,9 @@ module.exports = {
     ruleTitle: 'What is BKSwap Trading Reward?',
     ruleContent: 'The BKB reward users obtain when they finish a BKSwap transaction. BitKeep will reward users who trade on BKSwap according to the smart contract distribution rules to encourage users to adopt BKB and participate in related events. At the same time, we will extend the application scenarios of BKB to further develop the blockchain wallet ecosystem in the Web3.0 era.',
     how: 'How to get BKSwap Trading Reward?',
-    how1: `1. Please refer to <a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a> for the latest BKSwap tutorial.`,
+    how1: '1. Please refer to',
+    how11: ' for the latest BKSwap tutorial.',
+    // how1: `1. Please refer to <a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a> for the latest BKSwap tutorial.`,
     how2: '2. Rules about the trading rewards:',
     howContent: 'There are 3 levels of BKSwap trading rewards:',
     Objectives1: 'When the total transaction amount on BKSwap on a given day is ≤ 5 million USDT equivalent, then according to the contract rules, BitKeep will provide a sum of BKB equal to 300% of the transaction fee of the day as the reward of the day. All users participated in BKSwap transactions on the day will get a proportionate share (depending on each individual user’s transaction amount)',
@@ -4297,7 +4311,8 @@ module.exports = {
     yesterday: 'Yesterday',
     claim: 'Claim',
     ClaimRewards: 'Claim Rewards',
-    confirm: 'Confirm'
+    confirm: 'Confirm',
+    noData: 'No data'
   },
   'nft': {
     nftTitle: 'NFT 抽奖',
@@ -6102,12 +6117,12 @@ function wrapFunctional(options) {
 
 
 const components = {
+  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 140)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 143)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 198)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 91)).then(c => wrapFunctional(c.default || c)),
   BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 144)).then(c => wrapFunctional(c.default || c)),
   BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 142)).then(c => wrapFunctional(c.default || c)),
-  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 140)).then(c => wrapFunctional(c.default || c)),
   CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 74)).then(c => wrapFunctional(c.default || c)),
   CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 69)).then(c => wrapFunctional(c.default || c)),
   Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 70)).then(c => wrapFunctional(c.default || c)),

@@ -1,54 +1,60 @@
 <template>
   <div class="hisory-wrap">
-    <div
+    <div v-if="historyPhaseList.length>0">
+      <div
       class="mining-wrap-one"
       v-for="(item, index) in historyPhaseList"
       :key="index"
     >
-      <div class="mining-wrap-one-header">
-        <div class="mining-wrap-one-header-title">
-          <span class="setFontFamily">{{
-            $t("mining.phase", { v: item.phase })
-          }}</span>
+        <div class="mining-wrap-one-header">
+          <div class="mining-wrap-one-header-title">
+            <span class="setFontFamily">{{
+              $t("mining.phase", { v: item.phase })
+            }}</span>
+          </div>
+          <div class="mining-wrap-one-header-about comingsoon" v-if="item.isActivity == 0">
+            <span>{{ $t("mining.comingsoon") }}</span>
+          </div>
+          <div class="mining-wrap-one-header-about inProgress" v-if="item.isActivity == 1">
+            <span>{{ $t("mining.inProgress") }}</span>
+          </div>
+          <div class="mining-wrap-one-header-about activityEnd" v-if="item.isActivity == 2">
+            <span>{{ $t("mining.activity") }}</span>
+          </div>
         </div>
-        <div class="mining-wrap-one-header-about comingsoon" v-if="item.isActivity == 0">
-          <span>{{ $t("mining.comingsoon") }}</span>
+        <div class="mining-setP">
+          <div class="produced mining_trans">
+            <span>{{ $t("mining.startTime") }}</span>
+            <span class="setFontFamily textPrimary0">{{ item.startTime }}(UTC)</span>
+          </div>
+          <div class="produced">
+            <span>{{ $t("mining.overTime") }}</span>
+            <span class="setFontFamily textPrimary0">{{ item.endTime }}(UTC)</span>
+          </div>
         </div>
-        <div class="mining-wrap-one-header-about inProgress" v-if="item.isActivity == 1">
-          <span>{{ $t("mining.inProgress") }}</span>
-        </div>
-        <div class="mining-wrap-one-header-about activityEnd" v-if="item.isActivity == 2">
-          <span>{{ $t("mining.activity") }}</span>
+        <div class="mining-setP">
+          <div class="produced mining_trans">
+            <span>{{ $t("mining.tradeValue") }}</span>
+            <span class="setFontFamily textPrimary0">{{ item.tradeValue }}</span>
+          </div>
+          <div class="produced mining_trans">
+            <span>{{ $t("mining.tradeReward") }}</span>
+            <span class="setFontFamily textPrimary0">{{ item.tradeReward }}</span>
+          </div>
+          <div class="produced mining_trans">
+            <span>{{ $t("mining.tradeUser") }}</span>
+            <span class="setFontFamily textPrimary0">{{ item.tradeUser }}</span>
+          </div>
+          <div class="produced mining_trans mbottom">
+            <span>{{ $t("mining.myTraded") }}</span>
+            <span class="setFontFamily textPrimary0">{{ item.userReward }}</span>
+          </div>
         </div>
       </div>
-      <div class="mining-setP">
-        <div class="produced mining_trans">
-          <span>{{ $t("mining.startTime") }}</span>
-          <span class="setFontFamily textPrimary0">{{ item.startTime }}(UTC)</span>
-        </div>
-        <div class="produced">
-          <span>{{ $t("mining.overTime") }}</span>
-          <span class="setFontFamily textPrimary0">{{ item.endTime }}(UTC)</span>
-        </div>
-      </div>
-      <div class="mining-setP">
-        <div class="produced mining_trans">
-          <span>{{ $t("mining.tradeValue") }}</span>
-          <span class="setFontFamily textPrimary0">{{ item.tradeValue }}</span>
-        </div>
-        <div class="produced mining_trans">
-          <span>{{ $t("mining.tradeReward") }}</span>
-          <span class="setFontFamily textPrimary0">{{ item.tradeReward }}</span>
-        </div>
-        <div class="produced mining_trans">
-          <span>{{ $t("mining.tradeUser") }}</span>
-          <span class="setFontFamily textPrimary0">{{ item.tradeUser }}</span>
-        </div>
-        <div class="produced mining_trans mbottom">
-          <span>{{ $t("mining.myTraded") }}</span>
-          <span class="setFontFamily textPrimary0">{{ item.userReward }}</span>
-        </div>
-      </div>
+    </div>
+    <div class="noData" v-else>
+      <img src="http://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png" alt="">
+      <p class="textSecond3">{{ $t('mining.noData') }}</p>
     </div>
   </div>
 </template>
@@ -283,6 +289,20 @@ export default {
     .setFontFamily {
       font-family: "bitkeep DIN";
     }
+  }
+}
+.noData{
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  img{
+    width: 100px;
+    height: 100px;
+  }
+  p{
+    font-size: 14px;
   }
 }
 </style>
