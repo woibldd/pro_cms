@@ -280,8 +280,14 @@
             img {
               width: 20px;
               height: 20px;
-              vertical-align: sub;
+              vertical-align: middle;
               margin-right: 4px;
+            }
+            .setImg{
+              width: 18px;
+              height: 18px;
+              vertical-align: middle;
+              margin-left: 6px;
             }
             span {
               font-size: 16px;

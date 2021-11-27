@@ -328,6 +328,9 @@ module.exports = {
     ClaimRewards: 'Claim Rewards',
     confirm: 'Confirm',
     noData: 'No data',
+    ruleDetail: 'Note: The following transactions are not considered eligible for trading rewards',
+    ruleDetail1: `1. Cross-chain swaps, including：<br/>  (1) swapping the same coin on different chains, e.g. BSC-USDT to ETH-USDT swaps;<br/>  (2) swapping different coins on different chains, such as through Swft channels, or BNB to ETH swaps.`,
+    ruleDetail2: '2. Burning coin transactions. Some coins are based on a burning mechanism, and they might be requited to be partially burnt whenever there is a transaction, which makes it different to count the exact transaction amount. Theses coins are therefore excluded from this BKSwap Trading Reward event.',
   },
   'nft':{
     nftTitle: 'NFT Lottery',

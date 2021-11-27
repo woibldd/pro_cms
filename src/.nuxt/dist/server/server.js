@@ -43,7 +43,7 @@ module.exports =
 /******/
 /******/ 		// "0" is the signal for "already loaded"
 /******/ 		if(installedChunks[chunkId] !== 0) {
-/******/ 			var chunk = require("./" + ({"1":"components/activity","2":"components/blindbox-blind-button","3":"components/blindbox-blind-strategy","4":"components/blindbox-blind-time-text","5":"components/blindbox-create-poster","6":"components/blindbox-title-image","7":"components/common","8":"components/common-c-vue-countdown","9":"components/common-header","10":"components/vue-create-poster-layout","11":"components/vue-create-poster-layout-canvas-poster","12":"components/vue-create-poster-layout-gradient","13":"components/vue-create-poster-layout-header","14":"components/vue-create-poster-layout-painter","15":"components/vue-create-poster-layout-qrcode","16":"components/vue-create-poster-layout-util","17":"pages/_id","18":"pages/activity/airdrop/index","19":"pages/activity/blindbox/detail/_id","20":"pages/activity/blindbox/detail/index","21":"pages/activity/blindbox/download","22":"pages/activity/blindbox/index","23":"pages/activity/blindbox/list","24":"pages/activity/cbkbexchange/index","25":"pages/activity/mining/history","26":"pages/activity/mining/index","27":"pages/activity/mining/miningRule","28":"pages/activity/mining/protocol","29":"pages/activity/nftLottery/index","30":"pages/article/detail/_id"}[chunkId]||chunkId) + ".js");
+/******/ 			var chunk = require("./" + ({"1":"components/activity","2":"components/blindbox-blind-button","3":"components/blindbox-blind-strategy","4":"components/blindbox-blind-time-text","5":"components/blindbox-create-poster","6":"components/blindbox-title-image","7":"components/common","8":"components/common-c-vue-countdown","9":"components/common-header","10":"components/vue-create-poster-layout","11":"components/vue-create-poster-layout-canvas-poster","12":"components/vue-create-poster-layout-gradient","13":"components/vue-create-poster-layout-header","14":"components/vue-create-poster-layout-painter","15":"components/vue-create-poster-layout-qrcode","16":"components/vue-create-poster-layout-util","17":"pages/_id","18":"pages/activity/airdrop/index","19":"pages/activity/blindbox/detail/_id","20":"pages/activity/blindbox/detail/index","21":"pages/activity/blindbox/download","22":"pages/activity/blindbox/index","23":"pages/activity/blindbox/list","24":"pages/activity/cbkbexchange/index","25":"pages/activity/mining/RuleDetail","26":"pages/activity/mining/history","27":"pages/activity/mining/index","28":"pages/activity/mining/miningRule","29":"pages/activity/mining/protocol","30":"pages/activity/nftLottery/index","31":"pages/article/detail/_id"}[chunkId]||chunkId) + ".js");
 /******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				modules[moduleId] = moreModules[moduleId];
@@ -3021,7 +3021,10 @@ module.exports = {
     claim: 'Claim',
     ClaimRewards: 'Claim Rewards',
     confirm: 'Confirm',
-    noData: 'No data'
+    noData: 'No data',
+    ruleDetail: 'Note: The following transactions are not considered eligible for trading rewards',
+    ruleDetail1: `1. Cross-chain swaps, including：<br/>  (1) swapping the same coin on different chains, e.g. BSC-USDT to ETH-USDT swaps;<br/>  (2) swapping different coins on different chains, such as through Swft channels, or BNB to ETH swaps.`,
+    ruleDetail2: '2. Burning coin transactions. Some coins are based on a burning mechanism, and they might be requited to be partially burnt whenever there is a transaction, which makes it different to count the exact transaction amount. Theses coins are therefore excluded from this BKSwap Trading Reward event.'
   },
   'nft': {
     nftTitle: 'NFT Lottery',
@@ -3372,7 +3375,10 @@ module.exports = {
     claim: '請求',
     ClaimRewards: '報酬を請求する',
     confirm: '確認',
-    noData: 'データなし'
+    noData: 'データなし',
+    ruleDetail: '注：以下の取引は、取引報酬の対象とは見なされません',
+    ruleDetail1: `1.クロスチェーンスワップ:<br/> （1）同じコインを異なるチェーンでスワップすることを含みます。 BSC-USDTからETH-USDTへのスワップ。<br/> （2）Swftチャネル、またはBNBからETHへのスワップなど、さまざまなチェーンでさまざまなコインを交換する。`,
+    ruleDetail2: '2.コイン取引を燃やす。 一部のコインは燃焼メカニズムに基づいており、トランザクションが発生するたびに部分的に燃焼する必要がある場合があります。これにより、正確なトランザクション量をカウントするのが異なります。 したがって、これらのコインはこのBKSwap TradingRewardイベントから除外されます。'
   }
 };
 
@@ -3687,7 +3693,10 @@ module.exports = {
     claim: '주장하다',
     ClaimRewards: '보상 청구',
     confirm: '확인하다',
-    noData: '데이터 없음'
+    noData: '데이터 없음',
+    ruleDetail: '참고: 다음 거래는 거래 보상을 받을 수 있는 것으로 간주되지 않습니다.',
+    ruleDetail1: `1. 다른 체인에서 동일한 코인을 교환하는 것을 포함하는 교차 체인 스왑, 예: <br/> (1) BSC-USDT에서 ETH-USDT로의 스왑; <br/> (2) Swft 채널을 통해 또는 BNB에서 ETH로의 스왑과 같이 서로 다른 체인에서 서로 다른 코인을 스왑합니다.`,
+    ruleDetail2: '2. 코인 거래 소각. 일부 코인은 소각 메커니즘을 기반으로 하며 거래가 있을 때마다 부분적으로 소각될 수 있으므로 정확한 거래 금액을 계산하는 데 차이가 있습니다. 따라서 이 코인은 이 BKSwap 거래 보상 이벤트에서 제외됩니다.'
   }
 };
 
@@ -4003,7 +4012,10 @@ module.exports = {
     claim: 'Yêu cầu',
     ClaimRewards: 'Yêu cầu phần thưởng',
     confirm: 'Xác nhận',
-    noData: 'Không có dữ liệu'
+    noData: 'Không có dữ liệu',
+    ruleDetail: 'Lưu ý: Các giao dịch sau đây không được coi là đủ điều kiện để nhận phần thưởng giao dịch',
+    ruleDetail1: `1. Hoán đổi chuỗi chéo, bao gồm: <br/> (1) hoán đổi cùng một đồng tiền trên các chuỗi khác nhau, ví dụ: Hoán đổi BSC-USDT sang ETH-USDT;<br/> (2) hoán đổi các đồng tiền khác nhau trên các chuỗi khác nhau, chẳng hạn như thông qua các kênh Swft hoặc hoán đổi BNB sang ETH.`,
+    ruleDetail2: '2. Đốt coin giao dịch. Một số đồng tiền dựa trên cơ chế đốt và chúng có thể được yêu cầu đốt một phần bất cứ khi nào có giao dịch, điều này khiến việc đếm số tiền giao dịch chính xác sẽ khác. Do đó, những đồng tiền của luận án này không được tham gia sự kiện Phần thưởng giao dịch BKSwap này.'
   }
 };
 
@@ -4312,7 +4324,10 @@ module.exports = {
     claim: 'Claim',
     ClaimRewards: 'Claim Rewards',
     confirm: 'Confirm',
-    noData: 'No data'
+    noData: 'No data',
+    ruleDetail: 'Note: The following transactions are not considered eligible for trading rewards',
+    ruleDetail1: `1. Cross-chain swaps, including：<br/>  (1) swapping the same coin on different chains, e.g. BSC-USDT to ETH-USDT swaps;<br/>  (2) swapping different coins on different chains, such as through Swft channels, or BNB to ETH swaps.`,
+    ruleDetail2: '2. Burning coin transactions. Some coins are based on a burning mechanism, and they might be requited to be partially burnt whenever there is a transaction, which makes it different to count the exact transaction amount. Theses coins are therefore excluded from this BKSwap Trading Reward event.'
   },
   'nft': {
     nftTitle: 'NFT 抽奖',
@@ -5141,33 +5156,35 @@ function shouldScrollToTop(route) {
 
 
 
-const _214ac336 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/airdrop/index */ 18).then(__webpack_require__.bind(null, 186)));
+const _214ac336 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/airdrop/index */ 18).then(__webpack_require__.bind(null, 193)));
 
-const _85ae8e80 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 22).then(__webpack_require__.bind(null, 187)));
+const _85ae8e80 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 22).then(__webpack_require__.bind(null, 194)));
 
-const _432e757a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/cbkbexchange/index */ 24).then(__webpack_require__.bind(null, 188)));
+const _432e757a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/cbkbexchange/index */ 24).then(__webpack_require__.bind(null, 195)));
 
-const _03bed5fa = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/index */ 26).then(__webpack_require__.bind(null, 189)));
+const _03bed5fa = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/index */ 27).then(__webpack_require__.bind(null, 196)));
 
-const _e16d1052 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/nftLottery/index */ 29).then(__webpack_require__.bind(null, 190)));
+const _e16d1052 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/nftLottery/index */ 30).then(__webpack_require__.bind(null, 197)));
 
-const _26864b16 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/index */ 20).then(__webpack_require__.bind(null, 184)));
+const _26864b16 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/index */ 20).then(__webpack_require__.bind(null, 191)));
 
-const _51b48dec = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 21).then(__webpack_require__.bind(null, 191)));
+const _51b48dec = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 21).then(__webpack_require__.bind(null, 198)));
 
-const _271da9c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 23).then(__webpack_require__.bind(null, 192)));
+const _271da9c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 23).then(__webpack_require__.bind(null, 199)));
 
-const _133d3cbc = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/history */ 25).then(__webpack_require__.bind(null, 193)));
+const _133d3cbc = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/history */ 26).then(__webpack_require__.bind(null, 200)));
 
-const _3390fe74 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/miningRule */ 27).then(__webpack_require__.bind(null, 194)));
+const _3390fe74 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/miningRule */ 28).then(__webpack_require__.bind(null, 201)));
 
-const _54d1d0c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/protocol */ 28).then(__webpack_require__.bind(null, 141)));
+const _54d1d0c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/protocol */ 29).then(__webpack_require__.bind(null, 147)));
 
-const _24381afe = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/_id */ 19).then(__webpack_require__.bind(null, 195)));
+const _d61615d6 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/RuleDetail */ 25).then(__webpack_require__.bind(null, 148)));
 
-const _262ca6c4 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 30).then(__webpack_require__.bind(null, 196)));
+const _24381afe = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/_id */ 19).then(__webpack_require__.bind(null, 202)));
 
-const _18d2f8a1 = () => interopDefault(__webpack_require__.e(/* import() | pages/_id */ 17).then(__webpack_require__.bind(null, 197)));
+const _262ca6c4 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 31).then(__webpack_require__.bind(null, 203)));
+
+const _18d2f8a1 = () => interopDefault(__webpack_require__.e(/* import() | pages/_id */ 17).then(__webpack_require__.bind(null, 204)));
 
 const emptyFn = () => {};
 
@@ -5222,6 +5239,10 @@ const routerOptions = {
     path: "/activity/mining/protocol",
     component: _54d1d0c0,
     name: "activity-mining-protocol"
+  }, {
+    path: "/activity/mining/RuleDetail",
+    component: _d61615d6,
+    name: "activity-mining-RuleDetail"
   }, {
     path: "/activity/blindbox/detail/:id",
     component: _24381afe,
@@ -6117,22 +6138,22 @@ function wrapFunctional(options) {
 
 
 const components = {
-  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 140)).then(c => wrapFunctional(c.default || c)),
-  BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 143)).then(c => wrapFunctional(c.default || c)),
-  BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 198)).then(c => wrapFunctional(c.default || c)),
-  BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 91)).then(c => wrapFunctional(c.default || c)),
-  BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 144)).then(c => wrapFunctional(c.default || c)),
-  BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 142)).then(c => wrapFunctional(c.default || c)),
+  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 146)).then(c => wrapFunctional(c.default || c)),
   CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 74)).then(c => wrapFunctional(c.default || c)),
   CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 69)).then(c => wrapFunctional(c.default || c)),
   Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 70)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 11).then(__webpack_require__.bind(null, 122)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 150)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 205)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 93)).then(c => wrapFunctional(c.default || c)),
+  BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 151)).then(c => wrapFunctional(c.default || c)),
+  BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 149)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 11).then(__webpack_require__.bind(null, 128)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 12).then(__webpack_require__.bind(null, 76)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 13).then(__webpack_require__.bind(null, 199)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 10).then(__webpack_require__.bind(null, 185)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutPainter: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-painter */ 14).then(__webpack_require__.bind(null, 93)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 13).then(__webpack_require__.bind(null, 206)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 10).then(__webpack_require__.bind(null, 192)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutPainter: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-painter */ 14).then(__webpack_require__.bind(null, 95)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutQrcode: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-qrcode */ 15).then(__webpack_require__.bind(null, 75)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 16).then(__webpack_require__.bind(null, 94)).then(c => wrapFunctional(c.default || c))
+  VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 16).then(__webpack_require__.bind(null, 96)).then(c => wrapFunctional(c.default || c))
 };
 
 for (const name in components) {

@@ -162,6 +162,7 @@
                 alt=""
               />
               <span class="setFontWeight">{{ $t("mining.myRewards") }}</span>
+              <img :src="question" class="setImg" @click="ruleDetail" alt="">
             </div>
             <div class="mining-wrap-one-header-update">
               <!-- <span>{{ $t("mining.update") }} 2021-05-12 00:01</span> -->
@@ -244,6 +245,7 @@
       </div>
     </van-pull-refresh>
     <pup-protocol :show='show' @close='close' :unclaimReward='unclaimReward' :theme='theme'></pup-protocol>
+    <ruleDetail :ruleDetailFlag='ruleDetailFlag' :theme='theme' @close='ruleDetailClose'></ruleDetail>
   </div>
 </template>
 <script>
@@ -251,6 +253,7 @@ import { USER_API } from "@/api/client";
 import { mapState } from "vuex";
 import activity from "@/components/activity";
 import pupProtocol from './protocol.vue';
+import ruleDetail from './RuleDetail.vue';
 export default {
   name: "mining",
   data() {
@@ -266,6 +269,7 @@ export default {
       unclaimReward: 0,
       status: false,
       show: false,
+      ruleDetailFlag: false,
       isLoading: true,
       refreshLoading: false,
       startTime: null,
@@ -276,7 +280,8 @@ export default {
       phase: "1",
       countDown: 0,
       activityStatus: 0,
-      theme: 0
+      theme: 0,
+      question: 'http://cdn.bitkeep.vip/u_b_99107f80-356f-11ec-8c2d-251a27ef7eba.png'
     };
   },
   computed: {
@@ -290,7 +295,8 @@ export default {
   },
   components: {
     activityCom: activity,
-    pupProtocol
+    pupProtocol,
+    ruleDetail
   },
   
   beforeMount() {
@@ -339,6 +345,12 @@ export default {
       this.isLoading = false;
       this.refreshLoading = false;
     },
+    ruleDetail(){
+      this.ruleDetailFlag = true;
+    },
+    ruleDetailClose(){
+      this.ruleDetailFlag = false;
+    },
     setIcon(){
       BitKeepInvoke.setTitle(
         this.$t("mining.miningTitle")
@@ -355,6 +367,7 @@ export default {
                 let body = document.getElementsByTagName("body")[0];
                 if (res == 1) {
                   this.theme = 1;
+                  this.question = 'http://cdn.bitkeep.vip/u_b_47485390-4f90-11ec-ace3-97579b99c357.png';
                   body.setAttribute("class", "theme-dark");
                   setTimeout(()=>{
                     BitKeepInvoke.setIconAction(
@@ -365,6 +378,7 @@ export default {
                   },500)
                 } else {
                   this.theme = 0;
+                  this.question = 'http://cdn.bitkeep.vip/u_b_99107f80-356f-11ec-8c2d-251a27ef7eba.png';
                   body.setAttribute("class", "theme-light");
                   setTimeout(()=>{
                     BitKeepInvoke.setIconAction(
