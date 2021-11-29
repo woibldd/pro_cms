@@ -8,8 +8,8 @@
     <div class="line colorLine"></div>
     <div class="ruleDetailcontent">
       <p class="textPrimary0 setF">{{$t('mining.ruleDetail')}}</p>
-      <p class="textSecond2 setLineHeight" v-html="$t('mining.ruleDetail1')"></p>
-      <p class="textSecond2">{{$t('mining.ruleDetail2')}}</p>
+      <p class="textSecond1 setLineHeight" v-html="$t('mining.ruleDetail1')"></p>
+      <p class="textSecond1">{{$t('mining.ruleDetail2')}}</p>
     </div>
   </van-popup>
 </template>
@@ -89,11 +89,12 @@ export default {
     font-size: 16px;
   }
   .setLineHeight{
-    line-height: 20px;
+    line-height: 18px;
   }
   p{
     // font-family: bitkeep DIN;
     font-size: 14px;
+    line-height: 18px;
     margin: 10px;
   }
 }

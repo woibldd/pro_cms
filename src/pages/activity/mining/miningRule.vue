@@ -15,19 +15,19 @@
       <li class="mining-rule-content-li">{{$t('mining.Objectives2')}}</li>
       <li class="mining-rule-content-li">{{$t('mining.Objectives3')}}</li>
     </ul>
-    <div class="mining-rule-title-one"> {{$t('mining.how3')}}</div>
+    <div class="mining-rule-title"> {{$t('mining.how3')}}</div>
     <div class="mining-rule-content">
       {{$t('mining.OverviewContent')}}
     </div>
-    <div class="mining-rule-title-one"> {{$t('mining.how4')}}</div>
+    <div class="mining-rule-title"> {{$t('mining.how4')}}</div>
     <div class="mining-rule-content">
       {{$t('mining.how4Content')}}
     </div>
-    <div class="mining-rule-title-one"> {{$t('mining.how5')}}</div>
+    <div class="mining-rule-title"> {{$t('mining.how5')}}</div>
     <div class="mining-rule-content">
       {{$t('mining.how5Content')}}
     </div>
-    <div class="mining-rule-title-one"> {{$t('mining.how6')}}</div>
+    <div class="mining-rule-title"> {{$t('mining.how6')}}</div>
     <div class="mining-rule-content">
       {{$t('mining.how6Content')}}
     </div>
@@ -205,11 +205,11 @@ export default {
   .mining-rule-content-li {
     list-style: disc;
     font-size: 14px;
-    line-height: 28px;
+    line-height: 20px;
   }
   .mining-rule-content {
     font-size: 14px;
-    line-height: 22px;
+    line-height: 20px;
     margin-top: 8px;
   }
   .mining-rule-title-flex {
