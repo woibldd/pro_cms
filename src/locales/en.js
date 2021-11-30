@@ -222,7 +222,7 @@ module.exports = {
     activity: 'End',
     Introduce: 'Introduce',
     tradingVolume: 'Trading Volume',
-    tradingIn: 'Trading in this Days',
+    tradingIn: 'Trading in today',
     userTodayValue: 'Today Trade Volume',
     myRewards: 'My Rewards',
     totalTrading: 'Total Trade Volume',

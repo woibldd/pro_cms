@@ -225,7 +225,7 @@ module.exports = {
     will: '이번주 내 보상 지급',
     activity: '끝',
     tradingVolume: '거래량',
-    tradingIn: '요즘 거래',
+    tradingIn: '오늘 거래',
     userTodayValue: '오늘 거래량',
     myRewards: '내 보상',
     totalTrading: '총 거래량',

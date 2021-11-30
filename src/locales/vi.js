@@ -226,7 +226,7 @@ module.exports = {
     activity: 'Kết thúc',
     Introduce: 'Giới thiệu',
     tradingVolume: 'Khối lượng giao dịch',
-    tradingIn: 'Giao dịch trong những ngày này',
+    tradingIn: 'Giao dịch hôm nay',
     userTodayValue: 'Khối lượng hôm nay',
     myRewards: 'Giải thưởng của tôi',
     totalTrading: 'Tổng khối lượng giao dịch',

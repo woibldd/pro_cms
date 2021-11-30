@@ -226,7 +226,7 @@ module.exports = {
     activity: '終わり',
     Introduce: '導入',
     tradingVolume: '取引高',
-    tradingIn: 'この日の取引',
+    tradingIn: '今日の下取り',
     userTodayValue: '今日の取引量',
     myRewards: '私の報酬',
     totalTrading: '総取引量',
