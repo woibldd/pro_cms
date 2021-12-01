@@ -198,7 +198,7 @@ var external_vuex_ = __webpack_require__(5);
 // CONCATENATED MODULE: ./pages/activity/mining/miningRule.vue?vue&type=script&lang=js&
  /* harmony default export */ var mining_miningRulevue_type_script_lang_js_ = (miningRulevue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(3);
+var componentNormalizer = __webpack_require__(4);
 
 // CONCATENATED MODULE: ./pages/activity/mining/miningRule.vue
 

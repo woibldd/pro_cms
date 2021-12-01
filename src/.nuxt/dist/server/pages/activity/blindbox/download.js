@@ -145,7 +145,7 @@ var external_vuex_ = __webpack_require__(5);
 // CONCATENATED MODULE: ./pages/activity/blindbox/download.vue?vue&type=script&lang=js&
  /* harmony default export */ var blindbox_downloadvue_type_script_lang_js_ = (downloadvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(3);
+var componentNormalizer = __webpack_require__(4);
 
 // CONCATENATED MODULE: ./pages/activity/blindbox/download.vue
 
@@ -279,7 +279,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./components/common/header.vue?vue&type=script&lang=js&
  /* harmony default export */ var common_headervue_type_script_lang_js_ = (headervue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(3);
+var componentNormalizer = __webpack_require__(4);
 
 // CONCATENATED MODULE: ./components/common/header.vue
 
