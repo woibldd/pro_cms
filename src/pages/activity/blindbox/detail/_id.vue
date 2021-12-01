@@ -436,7 +436,7 @@ export default {
       console.log(111);
       clearTimeout(this.timer);
     },
-    chountChange({ dd, hh, mm, ss, ms, yy }) {},
+    chountChange({ dd, hh, mm, ss, ms, yy }) {}, 
     end() {},
     onChange() {},
     onclose() {

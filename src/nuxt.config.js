@@ -5,7 +5,7 @@ const Path = require("path")
 
 const isPro = process.env.NODE_ENV === 'production'
 const BUILD_ENV = process.env.BUILD_ENV
-const drop_console =   isPro && BUILD_ENV!='env'
+const drop_console =   isPro && BUILD_ENV!='dev'
 
 const CONFIG = require(Path.resolve(__dirname, "./conf/config.json"))
 
@@ -149,9 +149,9 @@ export default {
         proxyReq.setHeader('x-forwarded-for', xforwardedFor);
         proxyReq.setHeader('host', xforwardedFor);
       },
-      pathRewrite: {
-        '^/mining': '/mining'
-      }
+      // pathRewrite: {
+        // '^/mining': '/mining'
+      // }
     }
   },
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
