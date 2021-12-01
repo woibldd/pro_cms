@@ -173,9 +173,9 @@ export default {
   devtools: BUILD_ENV=='dev',
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    terser: {
-      sourceMap: BUILD_ENV=='dev',
-    },
+    // terser: {
+    //   sourceMap: BUILD_ENV=='dev',
+    // },
     postcss: [
       require('postcss-px2rem-exclude')({
         // remUnit: 37.5,
@@ -209,6 +209,7 @@ export default {
     },
     extend(config, ctx) {
       if (!ctx.isDev && ctx.isClient) {
+        config.devtool = 'source-map'
         console.log('drop_console', drop_console)
         config.plugins.push(
           new UglifyJsPlugin({
