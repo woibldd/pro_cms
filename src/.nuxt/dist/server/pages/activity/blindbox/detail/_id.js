@@ -27,7 +27,7 @@ module.exports.__inject__ = function (context) {
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_3__);
 
 
@@ -37,8 +37,12 @@ module.exports.__inject__ = function (context) {
 // const isProduction = process.env.NODE_ENV == "production";
 // const HOST_URL = process.env.HOST_URL || process.env.baseURL
 
-const requestlog =  false ? undefined : Object(debug__WEBPACK_IMPORTED_MODULE_3__["debug"])('bit-activity-request');
-const responselog =  false ? undefined : Object(debug__WEBPACK_IMPORTED_MODULE_3__["debug"])('bit-activity-response');
+const requestlog =  true ? (...arg) => {
+  console.log("bit-activity-request:", ...arg);
+} : undefined;
+const responselog =  true ? (...arg) => {
+  console.log("bit-activity-response:", ...arg);
+} : undefined;
 const host_user_instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
   baseURL: "/",
   timeout: 60000,
@@ -215,7 +219,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./components/common/header.vue?vue&type=script&lang=js&
  /* harmony default export */ var common_headervue_type_script_lang_js_ = (headervue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(4);
+var componentNormalizer = __webpack_require__(3);
 
 // CONCATENATED MODULE: ./components/common/header.vue
 
@@ -511,7 +515,7 @@ const REG = {
 // CONCATENATED MODULE: ./components/common/c-vue-countdown.vue?vue&type=script&lang=js&
  /* harmony default export */ var common_c_vue_countdownvue_type_script_lang_js_ = (c_vue_countdownvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(4);
+var componentNormalizer = __webpack_require__(3);
 
 // CONCATENATED MODULE: ./components/common/c-vue-countdown.vue
 
@@ -739,7 +743,7 @@ var c_vue_countdown = __webpack_require__(74);
 // CONCATENATED MODULE: ./components/blindbox/blindTimeText.vue?vue&type=script&lang=js&
  /* harmony default export */ var blindbox_blindTimeTextvue_type_script_lang_js_ = (blindTimeTextvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(4);
+var componentNormalizer = __webpack_require__(3);
 
 // CONCATENATED MODULE: ./components/blindbox/blindTimeText.vue
 
@@ -1118,7 +1122,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./components/blindbox/titleImage.vue?vue&type=script&lang=js&
  /* harmony default export */ var blindbox_titleImagevue_type_script_lang_js_ = (titleImagevue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(4);
+var componentNormalizer = __webpack_require__(3);
 
 // CONCATENATED MODULE: ./components/blindbox/titleImage.vue
 
@@ -1224,7 +1228,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./components/blindbox/BlindButton.vue?vue&type=script&lang=js&
  /* harmony default export */ var blindbox_BlindButtonvue_type_script_lang_js_ = (BlindButtonvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(4);
+var componentNormalizer = __webpack_require__(3);
 
 // CONCATENATED MODULE: ./components/blindbox/BlindButton.vue
 
@@ -1523,7 +1527,7 @@ var common = __webpack_require__(16);
 // CONCATENATED MODULE: ./components/blindbox/createPoster.vue?vue&type=script&lang=js&
  /* harmony default export */ var blindbox_createPostervue_type_script_lang_js_ = (createPostervue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(4);
+var componentNormalizer = __webpack_require__(3);
 
 // CONCATENATED MODULE: ./components/blindbox/createPoster.vue
 
@@ -2173,7 +2177,7 @@ var base = __webpack_require__(94);
 // CONCATENATED MODULE: ./pages/activity/blindbox/detail/_id.vue?vue&type=script&lang=js&
  /* harmony default export */ var detail_idvue_type_script_lang_js_ = (_idvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(4);
+var componentNormalizer = __webpack_require__(3);
 
 // CONCATENATED MODULE: ./pages/activity/blindbox/detail/_id.vue
 

@@ -277,7 +277,7 @@ var external_vuex_ = __webpack_require__(5);
 // CONCATENATED MODULE: ./pages/activity/nftLottery/index.vue?vue&type=script&lang=js&
  /* harmony default export */ var activity_nftLotteryvue_type_script_lang_js_ = (nftLotteryvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(4);
+var componentNormalizer = __webpack_require__(3);
 
 // CONCATENATED MODULE: ./pages/activity/nftLottery/index.vue
 
