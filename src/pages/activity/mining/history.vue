@@ -50,10 +50,10 @@
             <span>{{ $t("mining.tradeUser") }}</span>
             <span class="setFontFamily textPrimary0">{{ item.tradeUser }}</span>
           </div>
-          <div class="produced mining_trans mbottom">
-            <span>{{ $t("mining.myTraded") }}</span>
-            <span class="setFontFamily textPrimary0">{{ item.userReward }}</span>
-          </div>
+<!--          <div class="produced mining_trans mbottom">-->
+<!--            <span>{{ $t("mining.myTraded") }}</span>-->
+<!--            <span class="setFontFamily textPrimary0">{{ item.userReward }}</span>-->
+<!--          </div>-->
         </div>
       </div>
     </div>
@@ -101,7 +101,7 @@ export default {
     //     BitKeepInvoke.setIconAction();
     // window.addEventListener("load", () => {
     //     BitKeepInvoke.onLoadReady(() => {
-        
+
     //     //设置主题
     //       this.$nextTick(() => {
     //         BitKeepInvoke.appMode((err, res) => {
@@ -273,7 +273,7 @@ export default {
         text-align: center;
         padding: 2px 12px;
         border-top-right-radius: 8px;
-        border-bottom-left-radius: 8px;   
+        border-bottom-left-radius: 8px;
       }
     }
     .produced {

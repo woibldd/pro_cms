@@ -10,7 +10,9 @@
       "error_file": "./log/api_error.log",
       "out_file":  "./log/api_runtime.log",
       "env": {
+        "BUILD_ENV":"dev",
         "DEBUG":"bit*",
+        "NODE_ENV": "development",
         "NUXT_ENV_operation_api": "http://dev.bitkeep.top:8898",
         "HOST_API":"http://dev.bitkeep.top:8880"
       }
