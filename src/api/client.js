@@ -85,6 +85,8 @@ export const USER_API = {
 
   //盲盒助力提交
   helpMBox: (data,headers={}) => host_user_instance.get("user/activity/helpMBox", { params: data }),
+  //助力邀请好友列表
+  userInviteList: (data,headers={}) => host_user_instance.get("user/activity/inviteList", { params: data }),
 
 
   mBoxDetail: (data,headers={}) => host_user_instance.get("user/activity/mBoxDetail", { params: data }),
@@ -98,6 +100,8 @@ export const USER_API = {
   // 交易挖矿
   miningInfo: (data,headers={}) => host_user_instance.post("swap/mining/info", data),
   historyPhase: (data,headers={}) => host_user_instance.post("swap/mining/historyPhase", data),
-  receiveAward: (data,headers={}) => host_user_instance.post("swap/mining/receiveAward", data)
-
+  receiveAward: (data,headers={}) => host_user_instance.post("swap/mining/receiveAward", data),
+  // 盲盒（新）
+  getInviteList: (data,headers={}) => host_user_instance.post('friendship/getInviteList',data),
+  certifyFriendship: (data,headers={}) => host_user_instance.post('friendship/certifyFriendship',data),
 };

@@ -53,16 +53,20 @@ module.exports = {
             "blindBoxNumText": "距离开启盲盒仅差 <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> 人助力",
             "blindBoxSurpriseText": "开启后将获得惊喜数字资产",
             "ValidUntilText": "有效期至",
-
+            "inviteContent": "已邀请  {invite} 位好友，{helper} 位已助力",
             "GoOpenText": "去开启",
             "GoShareText": "去分享",
             "TurnedOnText": "已开启",
             "SuccessfullyOpenedText": "成功开启",
             "expiredText": "已过期",
-
+            "friendList": '好友列表',
+            "inviteContent": "已邀请 {invite} 位好友，{helper} 位已助力",
             "ShareWithMe": "分享给我的",
+            "noHelper": "暂时没有已助力好友",
+            "noInvite": "暂时没有已邀请好友",
              willOpened:"待开启",
-
+             inviteFirends: '已邀请好友',
+             HelpFirends: '已助力好友',
 
             noData:{
                 title:"暂时没有盲盒",
@@ -79,7 +83,8 @@ module.exports = {
             "blindBoxNumText": "距离开启盲盒仅差 <span class='color_red font-20'>{surplus}</span>/<span class='color_blod'>{invite}</span> 人助力",
             "inputAddressPlaceholader": "点即此处输入 ETH 地址即可助力",
             "NoAddressDownload": "没有地址？点击下载 BitKeep 创建地址",
-            "HelpSuccessETH": "助力成功 ETH 地址",
+            "HelpSuccessETH": "助力成功 ETH 地址：",
+            "InviteSuccessETH": "已邀请 ETH 地址：",
             "FinalInterpretation": "本活动最终解释权归 BitKeep 所有",
 
 
@@ -349,5 +354,24 @@ module.exports = {
         dialogTitle: '恭喜您抽中一张 NFT！',
         btn: '知道了',
         endCountdown : '到计时'
+    },
+    'blindboxInvite': {
+        inviteTitle: 'Invite Friends',
+        myRewards: 'My Rewards',
+        invitedNumber: 'Invited number',
+        tokenRewards: 'Token Rewards',
+        NFTRewards: 'NFT Rewards',
+        boxRewards: 'Blind Box Rewards',
+        inviteFriend: 'Invite Friend',
+        inviteFriends: 'Invite Friends',
+        inviteLink: 'Invite Link',
+        inviteFriendsNow: 'Invite friends now',
+        inforce: 'In force',
+        inactivated: 'Inactivated',
+        Address: 'Address',
+        State: 'State',
+        Time: 'Time',
+        nomore: 'No More',
+        loading: 'Loading...',
     }
 }

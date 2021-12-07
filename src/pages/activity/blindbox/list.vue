@@ -11,6 +11,13 @@
           </span>
         </div>
       </Header> -->
+      <!-- v-if='blindbox_list.length>0' -->
+      <div class="blindbox_list_firends" v-if='blindbox_list.length > 0' @click='goFriendList'>
+        <van-icon name='http://cdn.bitkeep.vip/u_b_78569440-5721-11ec-84e8-3b41e43dd21d.png' color='#fff'/>
+        {{$t('ActivityBlindbox.ActivityBlindboxList.inviteContent', {
+                  invite: this.inviteNum || 0,
+                  helper: this.helpNum || 0
+                })}}<van-icon name='arrow' color='#fff'/></div>
       <div class="blindbox_list_body">
         <van-pull-refresh
           class="blindbox_list_content"
@@ -227,7 +234,8 @@ export default {
   data() {
     return {
       isLoading: true,
-
+      inviteNum: 0,
+      helpNum: 0,
       listLoading: false,
       finished: false,
       refreshing: false,
@@ -263,6 +271,8 @@ export default {
         return this.$toast.fail(data);
       }
       this.total = data.total;
+      this.inviteNum = data.invite_number;
+      this.helpNum = data.help_number;
       const list = data.list.map(item => {
         item.bg_icon = `url(${item.cover_image}) no-repeat  center center/cover`;
         return item;
@@ -278,12 +288,17 @@ export default {
         this.blindbox_list = [...this.blindbox_list, ...list];
       }
     },
+    goFriendList(){
+      this.$router.push({
+        path: `/activity/blindbox/firendList`
+      });
+    },
     handlerBtn(item, type) {
       this.$router.push({
-        path: `/activity/blindbox/detail/${item.id}`
-        // query: {
-        //   id: item.id,
-        // }
+        path: `/activity/blindbox/detail/${item.id}`,
+        query: {
+          ownerIdentity: item.ownerIdentity,
+        }
       });
     },
     showLoading() {
@@ -421,6 +436,22 @@ export default {
       &.en {
         width: 95px;
       }
+    }
+  }
+  .blindbox_list_firends{
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    height: 44px;
+    line-height: 44px;
+    font-weight: 500;
+    overflow: hidden;
+    background: linear-gradient(90.35deg, rgba(182, 170, 255, 0.5) 1.43%, rgba(182, 170, 255, 0) 100%);
+    i{
+      vertical-align: middle;
+      font-weight: 1000;
+      display: inline-block;
+      margin-left: 4px;
     }
   }
   .blindbox_list_header {

@@ -1,49 +1,49 @@
 exports.ids = [6];
 exports.modules = {
 
-/***/ 107:
+/***/ 108:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/openTextTitle@2.eea2ac4.png";
 
 /***/ }),
 
-/***/ 108:
+/***/ 109:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/openTextTitle@2.en.6afb738.png";
 
 /***/ }),
 
-/***/ 109:
+/***/ 110:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/inviteTextTitle@2.1a70c3e.png";
 
 /***/ }),
 
-/***/ 110:
+/***/ 111:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/inviteTextTitle@2.en.5267b37.png";
 
 /***/ }),
 
-/***/ 111:
+/***/ 112:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/helperTextTitle@2.42f4cc9.png";
 
 /***/ }),
 
-/***/ 112:
+/***/ 113:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/helperTextTitle@2.en.6c9b040.png";
 
 /***/ }),
 
-/***/ 113:
+/***/ 114:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -55,7 +55,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 114:
+/***/ 115:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -69,7 +69,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 149:
+/***/ 155:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -77,7 +77,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 __webpack_require__.r(__webpack_exports__);
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/blindbox/titleImage.vue?vue&type=template&id=7eb16f9e&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.type == 'helper')?_c('div',{staticClass:"titleImage"},[_vm._ssrNode(((_vm.status == 2 && _vm.isOwner)?("<div class=\"item\" data-v-7eb16f9e>"+((_vm.locale == 'zh')?("<img"+(_vm._ssrAttr("src",__webpack_require__(107)))+" class=\"openTextTitle_zh\" data-v-7eb16f9e>"):("<img"+(_vm._ssrAttr("src",__webpack_require__(108)))+" class=\"openTextTitle_en\" data-v-7eb16f9e>"))+"</div>"):(_vm.isOwner)?("<div class=\"item\" data-v-7eb16f9e>"+((_vm.locale == 'zh')?("<img"+(_vm._ssrAttr("src",__webpack_require__(109)))+" class=\"inviteTextTitle_zh\" data-v-7eb16f9e>"):("<img"+(_vm._ssrAttr("src",__webpack_require__(110)))+" class=\"inviteTextTitle_en\" data-v-7eb16f9e>"))+"</div>"):("<div class=\"item\" data-v-7eb16f9e>"+((_vm.locale == 'zh')?("<img"+(_vm._ssrAttr("src",__webpack_require__(111)))+" class=\"helperTextTitle_zh\" data-v-7eb16f9e>"):("<img"+(_vm._ssrAttr("src",__webpack_require__(112)))+" class=\"helperTextTitle_en\" data-v-7eb16f9e>"))+"</div>")))],2):(_vm.type == 'footer')?_c('div',{staticClass:"titleImage footer "},[_vm._ssrNode("<div class=\"item\" data-v-7eb16f9e>"+((_vm.locale == 'zh')?("<img"+(_vm._ssrAttr("src",__webpack_require__(85)))+" class=\"rulesTextTitle_zh\" data-v-7eb16f9e>"):("<img"+(_vm._ssrAttr("src",__webpack_require__(86)))+" class=\"rulesTextTitle_en\" data-v-7eb16f9e>"))+"</div>")]):(_vm.type == 'strategy')?_c('div',{staticClass:"titleImage"},[_vm._ssrNode("<div class=\"item\" data-v-7eb16f9e>"+((_vm.locale == 'zh')?("<img"+(_vm._ssrAttr("src",__webpack_require__(85)))+" class=\"strategyTextTitle_zh\" data-v-7eb16f9e>"):("<img"+(_vm._ssrAttr("src",__webpack_require__(86)))+" class=\"strategyTextTitle_en\" data-v-7eb16f9e>"))+"</div>")]):_vm._e()}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return (_vm.type == 'helper')?_c('div',{staticClass:"titleImage"},[_vm._ssrNode(((_vm.status == 2 && _vm.isOwner)?("<div class=\"item\" data-v-7eb16f9e>"+((_vm.locale == 'zh')?("<img"+(_vm._ssrAttr("src",__webpack_require__(108)))+" class=\"openTextTitle_zh\" data-v-7eb16f9e>"):("<img"+(_vm._ssrAttr("src",__webpack_require__(109)))+" class=\"openTextTitle_en\" data-v-7eb16f9e>"))+"</div>"):(_vm.isOwner)?("<div class=\"item\" data-v-7eb16f9e>"+((_vm.locale == 'zh')?("<img"+(_vm._ssrAttr("src",__webpack_require__(110)))+" class=\"inviteTextTitle_zh\" data-v-7eb16f9e>"):("<img"+(_vm._ssrAttr("src",__webpack_require__(111)))+" class=\"inviteTextTitle_en\" data-v-7eb16f9e>"))+"</div>"):("<div class=\"item\" data-v-7eb16f9e>"+((_vm.locale == 'zh')?("<img"+(_vm._ssrAttr("src",__webpack_require__(112)))+" class=\"helperTextTitle_zh\" data-v-7eb16f9e>"):("<img"+(_vm._ssrAttr("src",__webpack_require__(113)))+" class=\"helperTextTitle_en\" data-v-7eb16f9e>"))+"</div>")))],2):(_vm.type == 'footer')?_c('div',{staticClass:"titleImage footer "},[_vm._ssrNode("<div class=\"item\" data-v-7eb16f9e>"+((_vm.locale == 'zh')?("<img"+(_vm._ssrAttr("src",__webpack_require__(85)))+" class=\"rulesTextTitle_zh\" data-v-7eb16f9e>"):("<img"+(_vm._ssrAttr("src",__webpack_require__(86)))+" class=\"rulesTextTitle_en\" data-v-7eb16f9e>"))+"</div>")]):(_vm.type == 'strategy')?_c('div',{staticClass:"titleImage"},[_vm._ssrNode("<div class=\"item\" data-v-7eb16f9e>"+((_vm.locale == 'zh')?("<img"+(_vm._ssrAttr("src",__webpack_require__(85)))+" class=\"strategyTextTitle_zh\" data-v-7eb16f9e>"):("<img"+(_vm._ssrAttr("src",__webpack_require__(86)))+" class=\"strategyTextTitle_en\" data-v-7eb16f9e>"))+"</div>")]):_vm._e()}
 var staticRenderFns = []
 
 
@@ -191,7 +191,7 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(113)
+  var style0 = __webpack_require__(114)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -233,7 +233,7 @@ module.exports = __webpack_require__.p + "img/rulesTextTitle@2.en.7822552.png";
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(114);
+var content = __webpack_require__(115);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;

@@ -14,6 +14,13 @@
     "_name": "_85ae8e80"
   },
   {
+    "name": "activity-blindboxInvite",
+    "path": "/activity/blindboxInvite",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindboxInvite/index.vue",
+    "chunkName": "pages/activity/blindboxInvite/index",
+    "_name": "_423e24e9"
+  },
+  {
     "name": "activity-cbkbexchange",
     "path": "/activity/cbkbexchange",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/cbkbexchange/index.vue",
@@ -49,11 +56,32 @@
     "_name": "_51b48dec"
   },
   {
+    "name": "activity-blindbox-firendList",
+    "path": "/activity/blindbox/firendList",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindbox/firendList.vue",
+    "chunkName": "pages/activity/blindbox/firendList",
+    "_name": "_1e254ba8"
+  },
+  {
     "name": "activity-blindbox-list",
     "path": "/activity/blindbox/list",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindbox/list.vue",
     "chunkName": "pages/activity/blindbox/list",
     "_name": "_271da9c0"
+  },
+  {
+    "name": "activity-blindboxInvite-copy",
+    "path": "/activity/blindboxInvite/copy",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindboxInvite/copy.js",
+    "chunkName": "pages/activity/blindboxInvite/copy",
+    "_name": "_d75b1ebe"
+  },
+  {
+    "name": "activity-blindboxInvite-inviteList",
+    "path": "/activity/blindboxInvite/inviteList",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindboxInvite/inviteList.vue",
+    "chunkName": "pages/activity/blindboxInvite/inviteList",
+    "_name": "_1e5dd980"
   },
   {
     "name": "activity-mining-history",

@@ -31,7 +31,11 @@ import {
     Overlay,
     Skeleton,
     Button,
-    Progress
+    Progress,
+    Col,
+    Row,
+    Tab,
+    Tabs
 } from "vant";
 
 const components = [
@@ -52,7 +56,11 @@ const components = [
     Field,
     Form,
     Skeleton,
-    Button
+    Button,
+    Col,
+    Row,
+    Tab,
+    Tabs
     // Lazyload
     // VueCanvasPoster
 ];

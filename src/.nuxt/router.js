@@ -6,12 +6,16 @@ import scrollBehavior from './router.scrollBehavior.js'
 
 const _214ac336 = () => interopDefault(import('../pages/activity/airdrop/index.vue' /* webpackChunkName: "pages/activity/airdrop/index" */))
 const _85ae8e80 = () => interopDefault(import('../pages/activity/blindbox/index.vue' /* webpackChunkName: "pages/activity/blindbox/index" */))
+const _423e24e9 = () => interopDefault(import('../pages/activity/blindboxInvite/index.vue' /* webpackChunkName: "pages/activity/blindboxInvite/index" */))
 const _432e757a = () => interopDefault(import('../pages/activity/cbkbexchange/index.vue' /* webpackChunkName: "pages/activity/cbkbexchange/index" */))
 const _03bed5fa = () => interopDefault(import('../pages/activity/mining/index.vue' /* webpackChunkName: "pages/activity/mining/index" */))
 const _e16d1052 = () => interopDefault(import('../pages/activity/nftLottery/index.vue' /* webpackChunkName: "pages/activity/nftLottery/index" */))
 const _26864b16 = () => interopDefault(import('../pages/activity/blindbox/detail/index.vue' /* webpackChunkName: "pages/activity/blindbox/detail/index" */))
 const _51b48dec = () => interopDefault(import('../pages/activity/blindbox/download.vue' /* webpackChunkName: "pages/activity/blindbox/download" */))
+const _1e254ba8 = () => interopDefault(import('../pages/activity/blindbox/firendList.vue' /* webpackChunkName: "pages/activity/blindbox/firendList" */))
 const _271da9c0 = () => interopDefault(import('../pages/activity/blindbox/list.vue' /* webpackChunkName: "pages/activity/blindbox/list" */))
+const _d75b1ebe = () => interopDefault(import('../pages/activity/blindboxInvite/copy.js' /* webpackChunkName: "pages/activity/blindboxInvite/copy" */))
+const _1e5dd980 = () => interopDefault(import('../pages/activity/blindboxInvite/inviteList.vue' /* webpackChunkName: "pages/activity/blindboxInvite/inviteList" */))
 const _133d3cbc = () => interopDefault(import('../pages/activity/mining/history.vue' /* webpackChunkName: "pages/activity/mining/history" */))
 const _3390fe74 = () => interopDefault(import('../pages/activity/mining/miningRule.vue' /* webpackChunkName: "pages/activity/mining/miningRule" */))
 const _54d1d0c0 = () => interopDefault(import('../pages/activity/mining/protocol.vue' /* webpackChunkName: "pages/activity/mining/protocol" */))
@@ -40,6 +44,10 @@ export const routerOptions = {
     component: _85ae8e80,
     name: "activity-blindbox"
   }, {
+    path: "/activity/blindboxInvite",
+    component: _423e24e9,
+    name: "activity-blindboxInvite"
+  }, {
     path: "/activity/cbkbexchange",
     component: _432e757a,
     name: "activity-cbkbexchange"
@@ -60,9 +68,21 @@ export const routerOptions = {
     component: _51b48dec,
     name: "activity-blindbox-download"
   }, {
+    path: "/activity/blindbox/firendList",
+    component: _1e254ba8,
+    name: "activity-blindbox-firendList"
+  }, {
     path: "/activity/blindbox/list",
     component: _271da9c0,
     name: "activity-blindbox-list"
+  }, {
+    path: "/activity/blindboxInvite/copy",
+    component: _d75b1ebe,
+    name: "activity-blindboxInvite-copy"
+  }, {
+    path: "/activity/blindboxInvite/inviteList",
+    component: _1e5dd980,
+    name: "activity-blindboxInvite-inviteList"
   }, {
     path: "/activity/mining/history",
     component: _133d3cbc,

@@ -311,6 +311,7 @@ export default {
     },
     async getDetails(refresh) {
       const id = this.$route.params.id || this.$route.query.id;
+      const ownerIdentity = this.$route.params.ownerIdentity || this.$route.query.ownerIdentity;
       if (!id) {
         // this.$toast.fail("params id is not found");
         return false;
@@ -318,7 +319,7 @@ export default {
       if (this.info.status > 1) return;
       !refresh && this.showLoading(this.$t("ActivityBlindbox.toast.loading"));
       const { data, status } = await USER_API.mBoxDetail({
-        id
+        id,ownerIdentity
       });
       !refresh && this.hideLoading();
 
@@ -402,7 +403,8 @@ export default {
         this.showLoading();
         const HelpR = await USER_API.helpMBox({
           address: this.address,
-          id: this.$route.params.id || this.$route.query.id
+          id: this.$route.params.id || this.$route.query.id,
+          scene: this.info.scene
         });
         this.hideLoading();
         if (HelpR.status != 0) {
