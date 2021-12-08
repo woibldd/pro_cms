@@ -53,7 +53,7 @@ module.exports = {
             "blindBoxNumText": "距离开启盲盒仅差 <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> 人助力",
             "blindBoxSurpriseText": "开启后将获得惊喜数字资产",
             "ValidUntilText": "有效期至",
-            "inviteContent": "已邀请  {invite} 位好友，{helper} 位已助力",
+            "inviteContent": "{helper} 位已助力",
             "GoOpenText": "去开启",
             "GoShareText": "去分享",
             "TurnedOnText": "已开启",

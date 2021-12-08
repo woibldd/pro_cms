@@ -57,7 +57,7 @@ module.exports = {
       "inviteFirends": 'Invited',
       "HelpFirends": 'Be helped',
       "friendList": 'Friends List',
-      "inviteContent": `You have invited {invite} friends，{helper} have been assisted `,
+      "inviteContent": `{helper} have been assisted `,
       "GoOpenText": "Go open",
       "GoShareText": "Go share",
       "TurnedOnText": "Turned on",

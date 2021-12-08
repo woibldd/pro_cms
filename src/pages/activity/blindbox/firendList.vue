@@ -1,8 +1,11 @@
 <template>
   <div class="firenddivst">
-    <div class="firenddivst-tab">
+    <div class="loading" v-if="isLoading">
+      <van-loading color="#1989fa" />
+    </div>
+    <div class="firenddivst-tab" v-else>
       <van-tabs v-model="active" @click="userInvite">
-        <van-tab
+        <!-- <van-tab
           :title="
             $t('ActivityBlindbox.ActivityBlindboxList.inviteFirends') +
             '\xa0' +
@@ -21,9 +24,9 @@
               </div>
             </div>
           </div>
-          <!-- 暂时没有已助力好友 -->
-          <div v-else class="noData"><p>{{$t("ActivityBlindbox.ActivityBlindboxList.noInvite")}}</p></div>
-        </van-tab>
+          暂时没有已助力好友 -->
+          <!-- <div v-else class="noData"><p>{{$t("ActivityBlindbox.ActivityBlindboxList.noInvite")}}</p></div> -->
+        <!--</van-tab> -->
         <van-tab
           :title="
             $t('ActivityBlindbox.ActivityBlindboxList.HelpFirends') +
@@ -67,6 +70,7 @@ export default {
       active: 0,
       inviteNum: 0,
       helpNum: 0,
+      isLoading: true,
       inviteList: [],
     };
   },
@@ -94,11 +98,10 @@ export default {
       if (status == 1) {
         return this.$toast(data);
       }
-      this.inviteList = data.list;
-      console.log(this.inviteList.length);
-      
+      this.inviteList = data.list;      
       this.inviteNum = data.invite_number;
       this.helpNum = data.help_number;
+      this.isLoading = false;
     },
   },
 };
@@ -123,6 +126,12 @@ export default {
 </style>
 <style scoped lang='scss'>
 .firenddivst {
+  .loading {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   background: #3d0b88;
   min-height: 100vh;
   .firenddivst-tab {

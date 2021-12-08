@@ -5,7 +5,7 @@
     {
       "name": "ProCms",
       "script": "nuxt start",
-      "watch": true,
+      "watch": false,
       "log_date_format": "YYYY-MM-DD HH:mm:ss",
       "error_file": "./log/api_error.log",
       "out_file":  "./log/api_runtime.log",
@@ -19,6 +19,7 @@
     }
   ]
 }
+
 
 
 
