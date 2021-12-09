@@ -54,7 +54,6 @@
           <div v-else class="noData"><p>{{$t("ActivityBlindbox.ActivityBlindboxList.noHelper")}}</p></div>
         <!-- </van-tab> -->
       <!-- </van-tabs> -->
-      </van-pull-refresh>
       <div class="block_page_footer" v-if="inviteList.length > 0">
         <div class="block_warpper">
           <div class="block_header">
@@ -62,6 +61,7 @@
           </div>
         </div>
       </div>
+      </van-pull-refresh>
     </div>
   </div>
 </template>
