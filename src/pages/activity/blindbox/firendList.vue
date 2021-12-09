@@ -78,7 +78,7 @@ export default {
       active: 0,
       inviteNum: 0,
       helpNum: 0,
-      isLoading: false,
+      isLoading: true,
       refreshing: false,
       inviteList: [],
     };
