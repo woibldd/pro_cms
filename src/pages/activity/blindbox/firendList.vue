@@ -42,9 +42,7 @@
           <div class="firenddivst-tab-con" v-if="inviteList.length > 0">
             <div class="firenddivst-tab-divst">
               <span>{{
-                $t("ActivityBlindbox.ActivityBlindboxDetail.HelpSuccessETH")+
-            '\xa0' +
-            (helpNum)
+                $t("ActivityBlindbox.ActivityBlindboxDetail.HelpSuccessETH")+ '（'+ helpNum + '）'
               }}</span>
               <div class="firenddivst-tab-address">
                 <div v-for="(item, index) in inviteList" :key="index">

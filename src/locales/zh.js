@@ -82,7 +82,7 @@ module.exports = {
             "blindBoxNumText": "已有 <span class='color_red'>{surplus}</span> 人助力(还需 {invite} 人)",
             "inputAddressPlaceholader": "点即此处输入 BitKeep 云钱包地址",
             "NoAddressDownload": "没有云钱包地址？点击下载 BitKeep 创建",
-            "HelpSuccessETH": "助力成功的BitKeep云钱包地址",
+            "HelpSuccessETH": "助力成功的 BitKeep 云钱包地址",
             "InviteSuccessETH": "已邀请的 ETH 地址：",
             "FinalInterpretation": "本活动最终解释权归 BitKeep 所有",
 
