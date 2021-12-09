@@ -84,25 +84,12 @@
                     </div>
                     <div class="content">
                       <span
-                        v-if='local == en'
                         v-html="
                           $t(
                             'ActivityBlindbox.ActivityBlindboxList.blindBoxNumText',
                             {
-                              surplus: item.invite - item.already_invite,
-                              invite: item.already_invite
-                            }
-                          )
-                        "
-                      ></span>
-                      <span
-                        v-else
-                        v-html="
-                          $t(
-                            'ActivityBlindbox.ActivityBlindboxList.blindBoxNumText',
-                            {
-                              surplus: item.invite - item.already_invite,
-                              invite: item.invite
+                              surplus: item.already_invite,
+                              invite: item.invite - item.already_invite
                             }
                           )
                         "

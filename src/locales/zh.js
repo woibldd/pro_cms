@@ -50,7 +50,7 @@ module.exports = {
             "myBlindboxText": "我的盲盒",
             "RaidersText": "攻略",
             "DigitalBlindBoxText": "数字盲盒",
-            "blindBoxNumText": "距离开启盲盒仅差 <span class='color_red font-20'>{surplus}</span> 人助力<br/>(共需 {invite} 人)",
+            "blindBoxNumText": "已有 <span class='color_red'>{surplus}</span> 人助力(还需 {invite} 人)",
             "blindBoxSurpriseText": "开启后将获得惊喜数字资产",
             "ValidUntilText": "有效期至",
             "inviteContent": "{helper} 位已助力",
@@ -79,7 +79,7 @@ module.exports = {
 
         },
         ActivityBlindboxDetail: {
-            "blindBoxNumText": "距离开启盲盒仅差 <span class='color_red font-20'>{surplus}</span> 人助力(共需 {invite} 人)",
+            "blindBoxNumText": "已有 <span class='color_red'>{surplus}</span> 人助力(还需 {invite} 人)",
             "inputAddressPlaceholader": "点即此处输入 BitKeep 云钱包地址",
             "NoAddressDownload": "没有云钱包地址？点击下载 BitKeep 创建",
             "HelpSuccessETH": "助力成功的BitKeep云钱包地址",

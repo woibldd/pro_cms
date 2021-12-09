@@ -2765,7 +2765,7 @@ module.exports = {
       "myBlindboxText": "My blind box",
       "RaidersText": "Raiders",
       "DigitalBlindBoxText": "Digital blind box",
-      "blindBoxNumText": "{invite} done <span class='color_red font-20'>{surplus}</span> to go",
+      "blindBoxNumText": "{surplus} done <span class='color_red'>{invite}</span> to go",
       "blindBoxSurpriseText": "",
       "ValidUntilText": "Valid until",
       "inviteFirends": 'Invited',
@@ -2792,7 +2792,7 @@ module.exports = {
       }
     },
     ActivityBlindboxDetail: {
-      "blindBoxNumText": "{invite} done <span class='color_red font-20'>{surplus}</span> to go",
+      "blindBoxNumText": "{surplus} done <span class='color_red'>{invite}</span> to go",
       "inputAddressPlaceholader": "Click here to input eth address",
       "NoAddressDownload": "Tap here to create your BitKeep Cloud Wallet",
       "HelpSuccessETH": "BitKeep Cloud Wallet address with success contribution",
@@ -4095,7 +4095,7 @@ module.exports = {
       "myBlindboxText": "我的盲盒",
       "RaidersText": "攻略",
       "DigitalBlindBoxText": "数字盲盒",
-      "blindBoxNumText": "距离开启盲盒仅差 <span class='color_red font-20'>{surplus}</span> 人助力<br/>(共需 {invite} 人)",
+      "blindBoxNumText": "已有 <span class='color_red'>{surplus}</span> 人助力(还需 {invite} 人)",
       "blindBoxSurpriseText": "开启后将获得惊喜数字资产",
       "ValidUntilText": "有效期至",
       "inviteContent": "{helper} 位已助力",
@@ -4122,7 +4122,7 @@ module.exports = {
       }
     },
     ActivityBlindboxDetail: {
-      "blindBoxNumText": "距离开启盲盒仅差 <span class='color_red font-20'>{surplus}</span> 人助力(共需 {invite} 人)",
+      "blindBoxNumText": "已有 <span class='color_red'>{surplus}</span> 人助力(还需 {invite} 人)",
       "inputAddressPlaceholader": "点即此处输入 BitKeep 云钱包地址",
       "NoAddressDownload": "没有云钱包地址？点击下载 BitKeep 创建",
       "HelpSuccessETH": "助力成功的BitKeep云钱包地址",
@@ -6214,15 +6214,15 @@ function wrapFunctional(options) {
 
 
 const components = {
-  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 74)).then(c => wrapFunctional(c.default || c)),
-  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 69)).then(c => wrapFunctional(c.default || c)),
-  Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 70)).then(c => wrapFunctional(c.default || c)),
+  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 152)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 156)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 221)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 93)).then(c => wrapFunctional(c.default || c)),
   BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 157)).then(c => wrapFunctional(c.default || c)),
   BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 155)).then(c => wrapFunctional(c.default || c)),
-  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 152)).then(c => wrapFunctional(c.default || c)),
+  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 74)).then(c => wrapFunctional(c.default || c)),
+  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 69)).then(c => wrapFunctional(c.default || c)),
+  Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 70)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 11).then(__webpack_require__.bind(null, 129)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 12).then(__webpack_require__.bind(null, 76)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 13).then(__webpack_require__.bind(null, 222)).then(c => wrapFunctional(c.default || c)),

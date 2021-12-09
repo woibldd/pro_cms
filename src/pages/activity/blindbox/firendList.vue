@@ -44,7 +44,7 @@
               <span>{{
                 $t("ActivityBlindbox.ActivityBlindboxDetail.HelpSuccessETH")+
             '\xa0' +
-            helpNum
+            (helpNum)
               }}</span>
               <div class="firenddivst-tab-address">
                 <div v-for="(item, index) in inviteList" :key="index">
@@ -78,7 +78,7 @@ export default {
       active: 0,
       inviteNum: 0,
       helpNum: 0,
-      isLoading: true,
+      isLoading: false,
       refreshing: false,
       inviteList: [],
     };
@@ -141,6 +141,9 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .blindbox_list_content{
+      min-height: 100vh;
   }
   background: #3d0b88;
   min-height: 100vh;

@@ -71,7 +71,7 @@
               class="block_invite_num color_text"
               v-html="
                 $t('ActivityBlindbox.ActivityBlindboxDetail.blindBoxNumText', {
-                  surplus: this.info.surplus || 0,
+                  surplus: this.info.already_number || 0,
                   invite: this.info.invite || 0
                 })
               "

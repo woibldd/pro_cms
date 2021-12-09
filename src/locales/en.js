@@ -51,7 +51,7 @@ module.exports = {
       "RaidersText": "Raiders",
       "DigitalBlindBoxText": "Digital blind box",
 
-      "blindBoxNumText": "{invite} done <span class='color_red font-20'>{surplus}</span> to go",
+      "blindBoxNumText": "{surplus} done <span class='color_red'>{invite}</span> to go",
       "blindBoxSurpriseText": "",
       "ValidUntilText": "Valid until",
       "inviteFirends": 'Invited',
@@ -78,7 +78,7 @@ module.exports = {
       }
     },
     ActivityBlindboxDetail: {
-      "blindBoxNumText": "{invite} done <span class='color_red font-20'>{surplus}</span> to go",
+      "blindBoxNumText": "{surplus} done <span class='color_red'>{invite}</span> to go",
       "inputAddressPlaceholader": "Click here to input eth address",
       "NoAddressDownload": "Tap here to create your BitKeep Cloud Wallet",
       "HelpSuccessETH":"BitKeep Cloud Wallet address with success contribution",
