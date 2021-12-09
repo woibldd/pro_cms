@@ -174,7 +174,7 @@ module.exports = __webpack_require__.p + "img/02@2.99f41d8.png";
 /***/ 125:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/02@2.en.99f41d8.png";
+module.exports = __webpack_require__.p + "img/02@2.en.c24fa45.png";
 
 /***/ }),
 
