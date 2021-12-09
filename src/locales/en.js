@@ -33,7 +33,7 @@ module.exports = {
     button:{
 
       "OpenimmediatelyText": "Open the blind box immediately",
-      "InviteFriendsNow": "Invite friends to help now",
+      "InviteFriendsNow": "Invite my friends now",
       "OpenFriendsImmediately": "Help open the blind box",
       "ViewAssets":"View assets",
       "SuccessView":"Success! Please view assets", //
@@ -51,7 +51,7 @@ module.exports = {
       "RaidersText": "Raiders",
       "DigitalBlindBoxText": "Digital blind box",
 
-      "blindBoxNumText": "The box is still short of <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> people,you will get  digital assets",
+      "blindBoxNumText": "{invite} done <span class='color_red font-20'>{surplus}</span> to go",
       "blindBoxSurpriseText": "",
       "ValidUntilText": "Valid until",
       "inviteFirends": 'Invited',
@@ -78,12 +78,12 @@ module.exports = {
       }
     },
     ActivityBlindboxDetail: {
-      "blindBoxNumText": "The box is still short of <span class='color_red font-20'>{surplus}</span>/<span class='color_blod'>{invite}</span> people,you will get  digital assets",
+      "blindBoxNumText": "{invite} done <span class='color_red font-20'>{surplus}</span> to go",
       "inputAddressPlaceholader": "Click here to input eth address",
-      "NoAddressDownload": "No address? Click download bitkeep to create an address",
-      "HelpSuccessETH":"Help success eth address：",
+      "NoAddressDownload": "Tap here to create your BitKeep Cloud Wallet",
+      "HelpSuccessETH":"BitKeep Cloud Wallet address with success contribution",
       "InviteSuccessETH": "The ETH address has been invited",
-     "FinalInterpretation": "The final interpretation of this activity belongs to BitKeep",
+     "FinalInterpretation": "BitKeep owns the final interpretation right of this event.",
 
      "invalidTimeText": "Distance blind box failure",
      "successfullyTimeText" :"The blind box has been opened successfully!",
@@ -112,11 +112,10 @@ module.exports = {
       "CanViewAssetsTocloudWallet": "盲盒开启后您和助力好友均可在 BitKeep 云钱包中查看获得的数字资产",
 
       rules: [
-        "Each blind box has random number of digital assets",
-        "Friends fill in a valid ETH address to help",
-        "Blind box will open when invitations reaching certain amount, you and your friends can get the rewards",
-        "Invitee should download BitKeep, import the previous ETH address to get rewards",
-        "Rewards will be sent to your BitKeep cloud wallet, activate it to claim"
+        "Each blind box contains a random number of BKB",
+        `Share this link to invite your friends, and ask them to fill in valid BitKeep Cloud Wallet address (Click the link to create a BitKeep Cloud Wallet <a href='https://bit.ly/BitKeepCloudWallet'>https://bit.ly/BitKeepCloudWallet</a> )`,
+        "With five friends manage to make contribution, the blind box will unlock, and you and your friends will get a share of the BKB inside.",
+        "These BKB will be deposited in your Cloud Wallet. If you have’t activated your Cloud Wallet, please tap Cloud Wallet in the NAV bar to activate it.",
       ],
 
       modal: {

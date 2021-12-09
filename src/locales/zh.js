@@ -50,7 +50,7 @@ module.exports = {
             "myBlindboxText": "我的盲盒",
             "RaidersText": "攻略",
             "DigitalBlindBoxText": "数字盲盒",
-            "blindBoxNumText": "距离开启盲盒仅差 <span class='color_red'>{surplus}</span>/<span class='color_blod'>{invite}</span> 人助力",
+            "blindBoxNumText": "距离开启盲盒仅差 <span class='color_red font-20'>{surplus}</span> 人助力<br/>(共需 {invite} 人)",
             "blindBoxSurpriseText": "开启后将获得惊喜数字资产",
             "ValidUntilText": "有效期至",
             "inviteContent": "{helper} 位已助力",
@@ -60,7 +60,6 @@ module.exports = {
             "SuccessfullyOpenedText": "成功开启",
             "expiredText": "已过期",
             "friendList": '好友列表',
-            "inviteContent": "已邀请 {invite} 位好友，{helper} 位已助力",
             "ShareWithMe": "分享给我的",
             "noHelper": "暂时没有已助力好友",
             "noInvite": "暂时没有已邀请好友",
@@ -80,11 +79,11 @@ module.exports = {
 
         },
         ActivityBlindboxDetail: {
-            "blindBoxNumText": "距离开启盲盒仅差 <span class='color_red font-20'>{surplus}</span>/<span class='color_blod'>{invite}</span> 人助力",
-            "inputAddressPlaceholader": "点即此处输入 ETH 地址即可助力",
-            "NoAddressDownload": "没有地址？点击下载 BitKeep 创建地址",
-            "HelpSuccessETH": "助力成功 ETH 地址：",
-            "InviteSuccessETH": "已邀请 ETH 地址：",
+            "blindBoxNumText": "距离开启盲盒仅差 <span class='color_red font-20'>{surplus}</span> 人助力(共需 {invite} 人)",
+            "inputAddressPlaceholader": "点即此处输入 BitKeep 云钱包地址",
+            "NoAddressDownload": "没有云钱包地址？点击下载 BitKeep 创建",
+            "HelpSuccessETH": "助力成功的BitKeep云钱包地址",
+            "InviteSuccessETH": "已邀请的 ETH 地址：",
             "FinalInterpretation": "本活动最终解释权归 BitKeep 所有",
 
 
@@ -116,9 +115,8 @@ module.exports = {
             "CanViewAssetsTocloudWallet": "盲盒开启后您和助力好友均可在 BitKeep 云钱包中查看获得的数字资产",
             rules: [
                 "每个盲盒里面有随机数量的数字资产",
-                "分享给好友后，好友填写有效的 ETH 地址后即可成功助力",
-                "足够数量的好友助力成功后，即可点击开启盲盒，盲盒开启后您和助力好友均可获得盲盒中的数字资产",
-                "助力用户若无BitKeep 钱包，需下载 BitKeep 钱包并导入该 ETH 地址，方可领取盲盒奖励",
+                `分享给好友后，好友填写有效的 BitKeep 云钱包地址即可成功助力，点击链接<a href='https://bit.ly/BitKeepCloudWallet'>https://bit.ly/BitKeepCloudWallet</a>创建 BitKeep 云钱包`,
+                "足够数量的好友助力成功后，盲盒将自动开启，盲盒开启后您和助力好友均可获得盲盒中的数字资产",
                 "盲盒奖品发放至云钱包，若未激活云钱包，可在 <span class='word_keep'>BitKeep</span> 菜单栏「云钱包」中激活，便可查看获得的数字资产"
             ],
 

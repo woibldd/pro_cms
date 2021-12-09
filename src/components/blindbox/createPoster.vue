@@ -209,7 +209,7 @@ export default {
     },
     shareImage() {
       BitKeepInvoke.shareUrl(
-        this.info.title,
+        '',
         this.$t("ActivityBlindbox.shared.content"),
         location.href,
         this.info.cover_image,

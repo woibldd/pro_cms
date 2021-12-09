@@ -133,7 +133,7 @@ export default {
   height: 24px;
 }
 .rulesTextTitle_en {
-  width: 187px;
+  width: 110px;
   height: 20px;
 }
 </style>

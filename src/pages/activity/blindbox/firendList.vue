@@ -4,7 +4,12 @@
       <van-loading color="#1989fa" />
     </div>
     <div class="firenddivst-tab" v-else>
-      <van-tabs v-model="active" @click="userInvite">
+      <van-pull-refresh
+          class="blindbox_list_content"
+          v-model="refreshing"
+          @refresh="userInvite"
+        >
+      <!-- <van-tabs v-model="active" @click="userInvite"> -->
         <!-- <van-tab
           :title="
             $t('ActivityBlindbox.ActivityBlindboxList.inviteFirends') +
@@ -27,17 +32,19 @@
           暂时没有已助力好友 -->
           <!-- <div v-else class="noData"><p>{{$t("ActivityBlindbox.ActivityBlindboxList.noInvite")}}</p></div> -->
         <!--</van-tab> -->
-        <van-tab
+        <!-- <van-tab
           :title="
             $t('ActivityBlindbox.ActivityBlindboxList.HelpFirends') +
             '\xa0' +
             helpNum
           "
-        >
+        > -->
           <div class="firenddivst-tab-con" v-if="inviteList.length > 0">
             <div class="firenddivst-tab-divst">
               <span>{{
-                $t("ActivityBlindbox.ActivityBlindboxDetail.HelpSuccessETH")
+                $t("ActivityBlindbox.ActivityBlindboxDetail.HelpSuccessETH")+
+            '\xa0' +
+            helpNum
               }}</span>
               <div class="firenddivst-tab-address">
                 <div v-for="(item, index) in inviteList" :key="index">
@@ -47,8 +54,9 @@
             </div>
           </div>
           <div v-else class="noData"><p>{{$t("ActivityBlindbox.ActivityBlindboxList.noHelper")}}</p></div>
-        </van-tab>
-      </van-tabs>
+        <!-- </van-tab> -->
+      <!-- </van-tabs> -->
+      </van-pull-refresh>
       <div class="block_page_footer" v-if="inviteList.length > 0">
         <div class="block_warpper">
           <div class="block_header">
@@ -71,6 +79,7 @@ export default {
       inviteNum: 0,
       helpNum: 0,
       isLoading: true,
+      refreshing: false,
       inviteList: [],
     };
   },
@@ -102,6 +111,7 @@ export default {
       this.inviteNum = data.invite_number;
       this.helpNum = data.help_number;
       this.isLoading = false;
+      this.refreshing = false;
     },
   },
 };

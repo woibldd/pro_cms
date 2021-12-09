@@ -117,7 +117,7 @@
           />
           <!-- 下载地址 -->
           <div v-if="!isBitKeep" class="block_invite_down">
-            <a href="https://bitkeep.org">{{
+            <a href="https://bitkeep.com/download.html?type=2">{{
               $t("ActivityBlindbox.ActivityBlindboxDetail.NoAddressDownload")
             }}</a>
           </div>
@@ -134,7 +134,7 @@
             <div class="title">
               {{
                 $t("ActivityBlindbox.ActivityBlindboxDetail.HelpSuccessETH")
-              }}：
+              }} （{{invite_list.length}}）：
             </div>
             <div
               v-for="(item, index) in invite_list"
@@ -633,7 +633,7 @@ export default {
   }
 
   // width: 348px;
-  height: 426px;
+  height: 364px;
 }
 
 .block_acitve_strategy {
