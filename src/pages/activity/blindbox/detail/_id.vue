@@ -117,8 +117,7 @@
           />
           <!-- 下载地址 -->
           <div v-if="!isBitKeep" class="block_invite_down">
-            <a @click="openUrl">{{
-              $t("ActivityBlindbox.ActivityBlindboxDetail.NoAddressDownload")
+            <a @click="openUrl" v-html='$t("ActivityBlindbox.ActivityBlindboxDetail.NoAddressDownload")'> {{
             }}</a>
           </div>
           <!-- 邀请人地址 -->
@@ -587,6 +586,7 @@ export default {
       font-weight: 500;
       font-size: 16px;
       line-height: 20px;
+      word-break: break-word;
       a {
         color: #495bff;
       }
@@ -625,9 +625,9 @@ export default {
     background: url("@/assets/activity/blindbox/own02@2.png") center center
       no-repeat;
     background-size: 100% 100%;
-    height: 343px;
+    height: 368px;
     &.en {
-      height: 400px;
+      height: 451px;
       background: url("@/assets/activity/blindbox/own02@2.en.png") center center
         no-repeat;
       background-size: 100% 100%;

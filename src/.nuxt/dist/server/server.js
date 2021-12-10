@@ -2768,7 +2768,7 @@ module.exports = {
       img: 'http://cdn.bitkeep.vip/u_b_f12174a0-599a-11ec-bdbc-7722494dfa58.jpeg'
     }, {
       title: 'Step 3 <br/>Copy your Cloud Wallet address',
-      content: 'Tap Deposit to go to transfer page, and choose “Copy Address”,Go back to the contribution page and fill in yourBitKeep Cloud Wallet address, then tap Contribute Now.',
+      content: 'Tap Deposit to go to transfer page, and choose “Copy Address”,go back to the contribution page and fill in yourBitKeep Cloud Wallet address, then tap Contribute Now.',
       img: 'http://cdn.bitkeep.vip/u_b_f11f03a0-599a-11ec-bdbc-7722494dfa58.jpeg'
     }],
     title: {
@@ -2807,7 +2807,7 @@ module.exports = {
     ActivityBlindboxDetail: {
       "blindBoxNumText": "{surplus} done <span class='color_red font-20'>{invite}</span> to go",
       "inputAddressPlaceholader": "Entry BitKeep Cloud Wallet adress",
-      "NoAddressDownload": "Tap here to create your BitKeep Cloud Wallet",
+      "NoAddressDownload": "Tap here to create <br/>👉   your BitKeep Cloud Wallet 👈",
       "HelpSuccessETH": "BitKeep Cloud Wallet adress",
       "InviteSuccessETH": "The ETH address has been invited",
       "FinalInterpretation": "BitKeep owns the final interpretation right of this event.",
@@ -4102,7 +4102,7 @@ module.exports = {
       img: 'http://cdn.bitkeep.vip/u_b_f12174a0-599a-11ec-bdbc-7722494dfa58.jpeg'
     }, {
       title: 'Step 3 <br/>Copy your Cloud Wallet address',
-      content: 'Tap Deposit to go to transfer page, and choose “Copy Address”,Go back to the contribution page and fill in yourBitKeep Cloud Wallet address, then tap Contribute Now.',
+      content: 'Tap Deposit to go to transfer page, and choose “Copy Address”,go back to the contribution page and fill in yourBitKeep Cloud Wallet address, then tap Contribute Now.',
       img: 'http://cdn.bitkeep.vip/u_b_f11f03a0-599a-11ec-bdbc-7722494dfa58.jpeg'
     }],
     button: {
@@ -4153,7 +4153,7 @@ module.exports = {
     ActivityBlindboxDetail: {
       "blindBoxNumText": "已有 <span class='color_red font-20'>{surplus}</span> 人助力(还需 {invite} 人)",
       "inputAddressPlaceholader": "点即此处输入 BitKeep 云钱包地址",
-      "NoAddressDownload": "没有云钱包地址？点击下载 BitKeep 创建",
+      "NoAddressDownload": "没有云钱包地址？<br/>👉  点击下载 BitKeep 创建   👈",
       "HelpSuccessETH": "助力成功的 BitKeep 云钱包地址",
       "InviteSuccessETH": "已邀请的 ETH 地址：",
       "FinalInterpretation": "本活动最终解释权归 BitKeep 所有",
@@ -6276,7 +6276,6 @@ function wrapFunctional(options) {
 
 
 const components = {
-  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 161)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 165)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 243)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 98)).then(c => wrapFunctional(c.default || c)),
@@ -6285,6 +6284,7 @@ const components = {
   CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 79)).then(c => wrapFunctional(c.default || c)),
   CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 68)).then(c => wrapFunctional(c.default || c)),
   Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 72)).then(c => wrapFunctional(c.default || c)),
+  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 161)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 11).then(__webpack_require__.bind(null, 133)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 12).then(__webpack_require__.bind(null, 81)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 13).then(__webpack_require__.bind(null, 244)).then(c => wrapFunctional(c.default || c)),

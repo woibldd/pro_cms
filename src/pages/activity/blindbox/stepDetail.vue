@@ -45,7 +45,7 @@
       </div> -->
       <div class="left">
         <a
-          href="https://play.google.com/store/apps/details?id=com.bitkeep.wallet"
+          href="https://www.bitkeep.com/"
           target="_blank"
         >
           <img

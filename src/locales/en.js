@@ -53,7 +53,7 @@ module.exports = {
       img: 'http://cdn.bitkeep.vip/u_b_f12174a0-599a-11ec-bdbc-7722494dfa58.jpeg',
     },{
       title: 'Step 3 <br/>Copy your Cloud Wallet address',
-      content: 'Tap Deposit to go to transfer page, and choose “Copy Address”,Go back to the contribution page and fill in yourBitKeep Cloud Wallet address, then tap Contribute Now.',
+      content: 'Tap Deposit to go to transfer page, and choose “Copy Address”,go back to the contribution page and fill in yourBitKeep Cloud Wallet address, then tap Contribute Now.',
       img: 'http://cdn.bitkeep.vip/u_b_f11f03a0-599a-11ec-bdbc-7722494dfa58.jpeg',
     }
   ],
@@ -94,7 +94,7 @@ module.exports = {
     ActivityBlindboxDetail: {
       "blindBoxNumText": "{surplus} done <span class='color_red font-20'>{invite}</span> to go",
       "inputAddressPlaceholader": "Entry BitKeep Cloud Wallet adress",
-      "NoAddressDownload": "Tap here to create your BitKeep Cloud Wallet",
+      "NoAddressDownload": "Tap here to create <br/>👉   your BitKeep Cloud Wallet 👈",
       "HelpSuccessETH":"BitKeep Cloud Wallet adress",
       "InviteSuccessETH": "The ETH address has been invited",
      "FinalInterpretation": "BitKeep owns the final interpretation right of this event.",

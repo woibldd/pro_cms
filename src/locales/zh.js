@@ -40,7 +40,7 @@ module.exports = {
             img: 'http://cdn.bitkeep.vip/u_b_f12174a0-599a-11ec-bdbc-7722494dfa58.jpeg',
             },{
             title: 'Step 3 <br/>Copy your Cloud Wallet address',
-            content: 'Tap Deposit to go to transfer page, and choose “Copy Address”,Go back to the contribution page and fill in yourBitKeep Cloud Wallet address, then tap Contribute Now.',
+            content: 'Tap Deposit to go to transfer page, and choose “Copy Address”,go back to the contribution page and fill in yourBitKeep Cloud Wallet address, then tap Contribute Now.',
             img: 'http://cdn.bitkeep.vip/u_b_f11f03a0-599a-11ec-bdbc-7722494dfa58.jpeg',
             }
         ],
@@ -94,7 +94,7 @@ module.exports = {
         ActivityBlindboxDetail: {
             "blindBoxNumText": "已有 <span class='color_red font-20'>{surplus}</span> 人助力(还需 {invite} 人)",
             "inputAddressPlaceholader": "点即此处输入 BitKeep 云钱包地址",
-            "NoAddressDownload": "没有云钱包地址？点击下载 BitKeep 创建",
+            "NoAddressDownload": "没有云钱包地址？<br/>👉  点击下载 BitKeep 创建   👈",
             "HelpSuccessETH": "助力成功的 BitKeep 云钱包地址",
             "InviteSuccessETH": "已邀请的 ETH 地址：",
             "FinalInterpretation": "本活动最终解释权归 BitKeep 所有",
