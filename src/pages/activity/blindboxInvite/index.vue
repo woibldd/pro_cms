@@ -33,7 +33,7 @@
               </span>
             </div>
           </div>
-          <div class="invite-setP">
+          <!-- <div class="invite-setP">
             <div class="warp-invite-produced">
               <span><img src="http://cdn.bitkeep.vip/u_b_e7b63ae0-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.NFTRewards") }}</span>
               <span class="setFontFamily">0
@@ -46,7 +46,7 @@
                 <van-icon name="arrow" color='#999BA3'/>
               </span>
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="warp-invite-one colorBackgroundWhite setTop">
           <div class="warp-invite-one-header" style="padding-right: 0">
@@ -75,6 +75,12 @@
         </div>
       </div>
     </div>
+    <CreatePoster
+      :locale="locale"
+      :zIndex="100"
+      ref="CreatePoster"
+      :isBitKeep="isBitKeep"
+    />
   </div>
 </template>
 
@@ -83,6 +89,7 @@
 // import { USER_API } from "@/api/client";
 // import { debounce } from "../../../tools/common";
 import { mapState } from "vuex";
+import CreatePoster from "./component/createPoster.vue";
 import copy from "./copy";
 
 export default {
@@ -96,6 +103,9 @@ export default {
   },
   directives: {
     copy
+  },
+  components: {
+    CreatePoster
   },
   computed: {
     ...mapState(["local"]),
@@ -142,6 +152,7 @@ export default {
       this.inviteLink = fisrt + " .... " + copy.substr(-15); 
     },
     inviteFirends(){
+      // this.$refs.CreatePoster && this.$refs.CreatePoster.init();
       this.$router.push('/activity/blindboxInvite/inviteList')
     }
   },

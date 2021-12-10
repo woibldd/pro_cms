@@ -14,12 +14,17 @@ const _26864b16 = () => interopDefault(import('../pages/activity/blindbox/detail
 const _51b48dec = () => interopDefault(import('../pages/activity/blindbox/download.vue' /* webpackChunkName: "pages/activity/blindbox/download" */))
 const _1e254ba8 = () => interopDefault(import('../pages/activity/blindbox/firendList.vue' /* webpackChunkName: "pages/activity/blindbox/firendList" */))
 const _271da9c0 = () => interopDefault(import('../pages/activity/blindbox/list.vue' /* webpackChunkName: "pages/activity/blindbox/list" */))
+const _a5580482 = () => interopDefault(import('../pages/activity/blindbox/stepDetail.vue' /* webpackChunkName: "pages/activity/blindbox/stepDetail" */))
 const _d75b1ebe = () => interopDefault(import('../pages/activity/blindboxInvite/copy.js' /* webpackChunkName: "pages/activity/blindboxInvite/copy" */))
+const _c44cf06c = () => interopDefault(import('../pages/activity/blindboxInvite/detail.vue' /* webpackChunkName: "pages/activity/blindboxInvite/detail" */))
+const _21c91f7e = () => interopDefault(import('../pages/activity/blindboxInvite/download.vue' /* webpackChunkName: "pages/activity/blindboxInvite/download" */))
 const _1e5dd980 = () => interopDefault(import('../pages/activity/blindboxInvite/inviteList.vue' /* webpackChunkName: "pages/activity/blindboxInvite/inviteList" */))
+const _62b6ad66 = () => interopDefault(import('../pages/activity/blindboxInvite/rewardList.vue' /* webpackChunkName: "pages/activity/blindboxInvite/rewardList" */))
 const _133d3cbc = () => interopDefault(import('../pages/activity/mining/history.vue' /* webpackChunkName: "pages/activity/mining/history" */))
 const _3390fe74 = () => interopDefault(import('../pages/activity/mining/miningRule.vue' /* webpackChunkName: "pages/activity/mining/miningRule" */))
 const _54d1d0c0 = () => interopDefault(import('../pages/activity/mining/protocol.vue' /* webpackChunkName: "pages/activity/mining/protocol" */))
 const _d61615d6 = () => interopDefault(import('../pages/activity/mining/RuleDetail.vue' /* webpackChunkName: "pages/activity/mining/RuleDetail" */))
+const _5d08bdb4 = () => interopDefault(import('../pages/activity/blindboxInvite/component/createPoster.vue' /* webpackChunkName: "pages/activity/blindboxInvite/component/createPoster" */))
 const _24381afe = () => interopDefault(import('../pages/activity/blindbox/detail/_id.vue' /* webpackChunkName: "pages/activity/blindbox/detail/_id" */))
 const _262ca6c4 = () => interopDefault(import('../pages/article/detail/_id.vue' /* webpackChunkName: "pages/article/detail/_id" */))
 const _18d2f8a1 = () => interopDefault(import('../pages/_id.vue' /* webpackChunkName: "pages/_id" */))
@@ -76,13 +81,29 @@ export const routerOptions = {
     component: _271da9c0,
     name: "activity-blindbox-list"
   }, {
+    path: "/activity/blindbox/stepDetail",
+    component: _a5580482,
+    name: "activity-blindbox-stepDetail"
+  }, {
     path: "/activity/blindboxInvite/copy",
     component: _d75b1ebe,
     name: "activity-blindboxInvite-copy"
   }, {
+    path: "/activity/blindboxInvite/detail",
+    component: _c44cf06c,
+    name: "activity-blindboxInvite-detail"
+  }, {
+    path: "/activity/blindboxInvite/download",
+    component: _21c91f7e,
+    name: "activity-blindboxInvite-download"
+  }, {
     path: "/activity/blindboxInvite/inviteList",
     component: _1e5dd980,
     name: "activity-blindboxInvite-inviteList"
+  }, {
+    path: "/activity/blindboxInvite/rewardList",
+    component: _62b6ad66,
+    name: "activity-blindboxInvite-rewardList"
   }, {
     path: "/activity/mining/history",
     component: _133d3cbc,
@@ -99,6 +120,10 @@ export const routerOptions = {
     path: "/activity/mining/RuleDetail",
     component: _d61615d6,
     name: "activity-mining-RuleDetail"
+  }, {
+    path: "/activity/blindboxInvite/component/createPoster",
+    component: _5d08bdb4,
+    name: "activity-blindboxInvite-component-createPoster"
   }, {
     path: "/activity/blindbox/detail/:id",
     component: _24381afe,

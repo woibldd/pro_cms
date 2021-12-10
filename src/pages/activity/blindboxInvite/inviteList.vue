@@ -6,15 +6,15 @@
       >
     </div>
     <div v-else class="invite-list-box">
-      <div class="invite-list-header colorBackgroundPrimary">
+      <div class="invite-list-header">
         <div class="invite-list-header-left">
           <div>{{ $t("blindboxInvite.inforce") }}</div>
-          <div>{{activeCount}}</div>
+          <div class="setFontFamily">{{activeCount || 111}}</div>
         </div>
         <div class="color-line colorLine"></div>
         <div class="invite-list-header-right">
           <div>{{ $t("blindboxInvite.inactivated") }}</div>
-          <div>{{unActiveCount}}</div>
+          <div class="setFontFamily">{{unActiveCount || 98}}</div>
         </div>
       </div>
       <van-list
@@ -162,10 +162,11 @@ export default {
   .invite-list-header {
     margin: 16px;
     border-radius: 8px 8px 0px 0px;
-    color: #fff;
+    color: #495BFF;
     display: flex;
     padding: 10px 15px 15px;
     line-height: 28px;
+    background-color: rgba(73, 91, 255, 0.1);
     .color-line {
       width: 1px;
       height: 36px;

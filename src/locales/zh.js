@@ -30,7 +30,20 @@ module.exports = {
             "开启获得惊喜数字资产",
             "查看数字盲盒"
         ],
-
+        stepDetail:[{
+            title: 'Step 1 <br/>Open your Cloud Wallet',
+            content: 'Download BitKeep App. In BitKeep app, tap the Nav-bar in the upper right corner, click “Cloud Wallet” to enter the cloud wallet page.',
+            img: 'http://cdn.bitkeep.vip/u_b_f11e6760-599a-11ec-bdbc-7722494dfa58.jpeg',
+            },{
+            title: 'Step 2 <br/>Activate your Cloud Wallet',
+            content: 'Enter the password as prompted to activate the cloud wallet,Tap BKB to go to BKB page.',
+            img: 'http://cdn.bitkeep.vip/u_b_f12174a0-599a-11ec-bdbc-7722494dfa58.jpeg',
+            },{
+            title: 'Step 3 <br/>Copy your Cloud Wallet address',
+            content: 'Tap Deposit to go to transfer page, and choose “Copy Address”,Go back to the contribution page and fill in yourBitKeep Cloud Wallet address, then tap Contribute Now.',
+            img: 'http://cdn.bitkeep.vip/u_b_f11f03a0-599a-11ec-bdbc-7722494dfa58.jpeg',
+            }
+        ],
         button: {
             "OpenimmediatelyText": "立即开启盲盒",
             "InviteFriendsNow": "立即邀请好友助力",
@@ -79,7 +92,7 @@ module.exports = {
 
         },
         ActivityBlindboxDetail: {
-            "blindBoxNumText": "已有 <span class='color_red'>{surplus}</span> 人助力(还需 {invite} 人)",
+            "blindBoxNumText": "已有 <span class='color_red font-20'>{surplus}</span> 人助力(还需 {invite} 人)",
             "inputAddressPlaceholader": "点即此处输入 BitKeep 云钱包地址",
             "NoAddressDownload": "没有云钱包地址？点击下载 BitKeep 创建",
             "HelpSuccessETH": "助力成功的 BitKeep 云钱包地址",
@@ -115,7 +128,7 @@ module.exports = {
             "CanViewAssetsTocloudWallet": "盲盒开启后您和助力好友均可在 BitKeep 云钱包中查看获得的数字资产",
             rules: [
                 "每个盲盒里面有随机数量的数字资产",
-                `分享给好友后，好友填写有效的 BitKeep 云钱包地址即可成功助力，点击链接<a href='https://bit.ly/BitKeepCloudWallet'>https://bit.ly/BitKeepCloudWallet</a>创建 BitKeep 云钱包`,
+                `分享给好友后，好友填写有效的 BitKeep 云钱包地址即可成功助力，点击链接<a href='https://bit.ly/BitKeepCloudWallet' class='color_red'>https://bit.ly/BitKeepCloudWallet</a>创建 BitKeep 云钱包`,
                 "足够数量的好友助力成功后，盲盒将自动开启，盲盒开启后您和助力好友均可获得盲盒中的数字资产",
                 "盲盒奖品发放至云钱包，若未激活云钱包，可在 <span class='word_keep'>BitKeep</span> 菜单栏「云钱包」中激活，便可查看获得的数字资产"
             ],
@@ -371,5 +384,8 @@ module.exports = {
         Time: 'Time',
         nomore: 'No More',
         loading: 'Loading...',
+        rewardTitle: 'Token Rewards',
+        downText: '🎉 恭喜您，您已经成功接受邀请！快去享受加密货币之旅',
+        know: '我知道了',
     }
 }

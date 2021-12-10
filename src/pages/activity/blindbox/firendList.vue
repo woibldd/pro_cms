@@ -39,10 +39,10 @@
             helpNum
           "
         > -->
-          <div class="firenddivst-tab-con" v-if="inviteList.length > 0">
+          <div class="firenddivst-tab-con radial-gradient" v-if="inviteList.length > 0">
             <div class="firenddivst-tab-divst">
               <span>{{
-                $t("ActivityBlindbox.ActivityBlindboxDetail.HelpSuccessETH")+ '（'+ helpNum + '）'
+                $t("ActivityBlindbox.ActivityBlindboxDetail.HelpSuccessETH")+ '（'+ helpNum + '）:'
               }}</span>
               <div class="firenddivst-tab-address">
                 <div v-for="(item, index) in inviteList" :key="index">
@@ -51,7 +51,9 @@
               </div>
             </div>
           </div>
-          <div v-else class="noData"><p>{{$t("ActivityBlindbox.ActivityBlindboxList.noHelper")}}</p></div>
+          <div v-else class="noDataBox">
+          <div class="noData"><p>{{$t("ActivityBlindbox.ActivityBlindboxList.noHelper")}}</p></div>
+          </div>
         <!-- </van-tab> -->
       <!-- </van-tabs> -->
       <div class="block_page_footer" v-if="inviteList.length > 0">
@@ -147,7 +149,7 @@ export default {
   min-height: 100vh;
   .firenddivst-tab {
     .firenddivst-tab-con {
-      background-image: linear-gradient(to bottom right, #FFF0F6, #D5C6FF);
+      // background-image: linear-gradient(to bottom right, #FFF0F6, #D5C6FF);
       border-radius: 16px;
       margin: 16px;
       padding: 20px;
@@ -184,13 +186,18 @@ export default {
       }
     }
   }
+  .noDataBox{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .noData {
     background: url("http://cdn.bitkeep.vip/u_b_652ddc30-572a-11ec-9c68-896cd381f4ca.png")
       center center no-repeat;
     background-size: 100% 100%;
     height: 198px;
     width: 200px;
-    margin: 100px auto;
     position: relative;
     p{
       width: 136px;

@@ -62,7 +62,7 @@ export default {
   &>div::after {
       position: absolute;
       width: 303px;
-      height: 84px;
+      height: 69px;
       background: url("@/assets/activity/blindbox/BTN@3.png") center center
         no-repeat;
       background-size: 100% 100%;

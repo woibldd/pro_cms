@@ -3,114 +3,168 @@
     "name": "activity-airdrop",
     "path": "/activity/airdrop",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/airdrop/index.vue",
-    "chunkName": "pages/activity/airdrop/index"
+    "chunkName": "pages/activity/airdrop/index",
+    "_name": "_214ac336"
   },
   {
     "name": "activity-blindbox",
     "path": "/activity/blindbox",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindbox/index.vue",
-    "chunkName": "pages/activity/blindbox/index"
+    "chunkName": "pages/activity/blindbox/index",
+    "_name": "_85ae8e80"
   },
   {
     "name": "activity-blindboxInvite",
     "path": "/activity/blindboxInvite",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindboxInvite/index.vue",
-    "chunkName": "pages/activity/blindboxInvite/index"
+    "chunkName": "pages/activity/blindboxInvite/index",
+    "_name": "_423e24e9"
   },
   {
     "name": "activity-cbkbexchange",
     "path": "/activity/cbkbexchange",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/cbkbexchange/index.vue",
-    "chunkName": "pages/activity/cbkbexchange/index"
+    "chunkName": "pages/activity/cbkbexchange/index",
+    "_name": "_432e757a"
   },
   {
     "name": "activity-mining",
     "path": "/activity/mining",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/mining/index.vue",
-    "chunkName": "pages/activity/mining/index"
+    "chunkName": "pages/activity/mining/index",
+    "_name": "_03bed5fa"
   },
   {
     "name": "activity-nftLottery",
     "path": "/activity/nftLottery",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/nftLottery/index.vue",
-    "chunkName": "pages/activity/nftLottery/index"
+    "chunkName": "pages/activity/nftLottery/index",
+    "_name": "_e16d1052"
   },
   {
     "name": "activity-blindbox-detail",
     "path": "/activity/blindbox/detail",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindbox/detail/index.vue",
-    "chunkName": "pages/activity/blindbox/detail/index"
+    "chunkName": "pages/activity/blindbox/detail/index",
+    "_name": "_26864b16"
   },
   {
     "name": "activity-blindbox-download",
     "path": "/activity/blindbox/download",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindbox/download.vue",
-    "chunkName": "pages/activity/blindbox/download"
+    "chunkName": "pages/activity/blindbox/download",
+    "_name": "_51b48dec"
   },
   {
     "name": "activity-blindbox-firendList",
     "path": "/activity/blindbox/firendList",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindbox/firendList.vue",
-    "chunkName": "pages/activity/blindbox/firendList"
+    "chunkName": "pages/activity/blindbox/firendList",
+    "_name": "_1e254ba8"
   },
   {
     "name": "activity-blindbox-list",
     "path": "/activity/blindbox/list",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindbox/list.vue",
-    "chunkName": "pages/activity/blindbox/list"
+    "chunkName": "pages/activity/blindbox/list",
+    "_name": "_271da9c0"
+  },
+  {
+    "name": "activity-blindbox-stepDetail",
+    "path": "/activity/blindbox/stepDetail",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindbox/stepDetail.vue",
+    "chunkName": "pages/activity/blindbox/stepDetail",
+    "_name": "_a5580482"
   },
   {
     "name": "activity-blindboxInvite-copy",
     "path": "/activity/blindboxInvite/copy",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindboxInvite/copy.js",
-    "chunkName": "pages/activity/blindboxInvite/copy"
+    "chunkName": "pages/activity/blindboxInvite/copy",
+    "_name": "_d75b1ebe"
+  },
+  {
+    "name": "activity-blindboxInvite-detail",
+    "path": "/activity/blindboxInvite/detail",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindboxInvite/detail.vue",
+    "chunkName": "pages/activity/blindboxInvite/detail",
+    "_name": "_c44cf06c"
+  },
+  {
+    "name": "activity-blindboxInvite-download",
+    "path": "/activity/blindboxInvite/download",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindboxInvite/download.vue",
+    "chunkName": "pages/activity/blindboxInvite/download",
+    "_name": "_21c91f7e"
   },
   {
     "name": "activity-blindboxInvite-inviteList",
     "path": "/activity/blindboxInvite/inviteList",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindboxInvite/inviteList.vue",
-    "chunkName": "pages/activity/blindboxInvite/inviteList"
+    "chunkName": "pages/activity/blindboxInvite/inviteList",
+    "_name": "_1e5dd980"
+  },
+  {
+    "name": "activity-blindboxInvite-rewardList",
+    "path": "/activity/blindboxInvite/rewardList",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindboxInvite/rewardList.vue",
+    "chunkName": "pages/activity/blindboxInvite/rewardList",
+    "_name": "_62b6ad66"
   },
   {
     "name": "activity-mining-history",
     "path": "/activity/mining/history",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/mining/history.vue",
-    "chunkName": "pages/activity/mining/history"
+    "chunkName": "pages/activity/mining/history",
+    "_name": "_133d3cbc"
   },
   {
     "name": "activity-mining-miningRule",
     "path": "/activity/mining/miningRule",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/mining/miningRule.vue",
-    "chunkName": "pages/activity/mining/miningRule"
+    "chunkName": "pages/activity/mining/miningRule",
+    "_name": "_3390fe74"
   },
   {
     "name": "activity-mining-protocol",
     "path": "/activity/mining/protocol",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/mining/protocol.vue",
-    "chunkName": "pages/activity/mining/protocol"
+    "chunkName": "pages/activity/mining/protocol",
+    "_name": "_54d1d0c0"
   },
   {
     "name": "activity-mining-RuleDetail",
     "path": "/activity/mining/RuleDetail",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/mining/RuleDetail.vue",
-    "chunkName": "pages/activity/mining/RuleDetail"
+    "chunkName": "pages/activity/mining/RuleDetail",
+    "_name": "_d61615d6"
+  },
+  {
+    "name": "activity-blindboxInvite-component-createPoster",
+    "path": "/activity/blindboxInvite/component/createPoster",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindboxInvite/component/createPoster.vue",
+    "chunkName": "pages/activity/blindboxInvite/component/createPoster",
+    "_name": "_5d08bdb4"
   },
   {
     "name": "activity-blindbox-detail-id",
     "path": "/activity/blindbox/detail/:id",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindbox/detail/_id.vue",
-    "chunkName": "pages/activity/blindbox/detail/_id"
+    "chunkName": "pages/activity/blindbox/detail/_id",
+    "_name": "_24381afe"
   },
   {
     "name": "article-detail-id",
     "path": "/article/detail/:id?",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/article/detail/_id.vue",
-    "chunkName": "pages/article/detail/_id"
+    "chunkName": "pages/article/detail/_id",
+    "_name": "_262ca6c4"
   },
   {
     "name": "id",
     "path": "/:id?",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/_id.vue",
-    "chunkName": "pages/_id"
+    "chunkName": "pages/_id",
+    "_name": "_18d2f8a1"
   }
 ]

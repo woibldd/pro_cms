@@ -117,7 +117,7 @@
           />
           <!-- 下载地址 -->
           <div v-if="!isBitKeep" class="block_invite_down">
-            <a href="https://bitkeep.com/download.html?type=2">{{
+            <a @click="openUrl">{{
               $t("ActivityBlindbox.ActivityBlindboxDetail.NoAddressDownload")
             }}</a>
           </div>
@@ -149,9 +149,8 @@
 
       <!-- 开启盲盒攻略 -->
       <div class="block_open_strategy">
-        <div
-          :class="{ block_open_strategy_warpper: true, [locale]: true }"
-        ></div>
+        <div @click='openUrl' v-if="info.is_owner != 1 && info.status == 0" :class="{ block_open_is_owner: true, [locale]: true }"></div>
+        <div v-else :class="{ block_open_strategy_warpper: true, [locale]: true }"></div>
       </div>
 
       <!-- 底部规则÷ -->
@@ -308,6 +307,9 @@ export default {
     },
     handlerBlur() {
       this.focus = false;
+    },
+    openUrl(){
+      this.$router.push('/activity/blindbox/stepDetail')
     },
     async getDetails(refresh) {
       const id = this.$route.params.id || this.$route.query.id;
@@ -582,10 +584,9 @@ export default {
       margin: 20px auto 0px;
       width: 100%;
       text-align: center;
-      height: 16px;
       font-weight: 500;
-      font-size: 12px;
-      line-height: 16px;
+      font-size: 16px;
+      line-height: 20px;
       a {
         color: #495bff;
       }
@@ -619,13 +620,27 @@ export default {
   padding: 0px 16px 0px 11px;
   box-sizing: border-box;
   width: 100%;
+  .block_open_is_owner {
+    width: 100%;
+    background: url("@/assets/activity/blindbox/own02@2.png") center center
+      no-repeat;
+    background-size: 100% 100%;
+    height: 343px;
+    &.en {
+      height: 400px;
+      background: url("@/assets/activity/blindbox/own02@2.en.png") center center
+        no-repeat;
+      background-size: 100% 100%;
+    }
+  }
   .block_open_strategy_warpper {
     width: 100%;
-    height: 100%;
+    height: 364px;
     background: url("@/assets/activity/blindbox/02@2.png") center center
       no-repeat;
     background-size: 100% 100%;
     &.en {
+      height: 364px;
       background: url("@/assets/activity/blindbox/02@2.en.png") center center
         no-repeat;
       background-size: 100% 100%;
@@ -633,7 +648,7 @@ export default {
   }
 
   // width: 348px;
-  height: 364px;
+  // height: 364px;
 }
 
 .block_acitve_strategy {
@@ -653,7 +668,7 @@ export default {
       }
     }
     .block_footer {
-      color: #0c099899;
+      color: #0c0998;
       // word-wrap:break-word;
       word-break: keep-all;
     }

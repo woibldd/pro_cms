@@ -43,6 +43,20 @@ module.exports = {
       "Downloadnow":"Download now",
 
     },
+    stepDetail:[{
+      title: 'Step 1 <br/>Open your Cloud Wallet',
+      content: 'Download BitKeep App. In BitKeep app, tap the Nav-bar in the upper right corner, click “Cloud Wallet” to enter the cloud wallet page.',
+      img: 'http://cdn.bitkeep.vip/u_b_f11e6760-599a-11ec-bdbc-7722494dfa58.jpeg',
+    },{
+      title: 'Step 2 <br/>Activate your Cloud Wallet',
+      content: 'Enter the password as prompted to activate the cloud wallet,Tap BKB to go to BKB page.',
+      img: 'http://cdn.bitkeep.vip/u_b_f12174a0-599a-11ec-bdbc-7722494dfa58.jpeg',
+    },{
+      title: 'Step 3 <br/>Copy your Cloud Wallet address',
+      content: 'Tap Deposit to go to transfer page, and choose “Copy Address”,Go back to the contribution page and fill in yourBitKeep Cloud Wallet address, then tap Contribute Now.',
+      img: 'http://cdn.bitkeep.vip/u_b_f11f03a0-599a-11ec-bdbc-7722494dfa58.jpeg',
+    }
+  ],
     title:{
       "myBlindboxText": "My blind box"
     },
@@ -78,10 +92,10 @@ module.exports = {
       }
     },
     ActivityBlindboxDetail: {
-      "blindBoxNumText": "{surplus} done <span class='color_red'>{invite}</span> to go",
-      "inputAddressPlaceholader": "Click here to input eth address",
+      "blindBoxNumText": "{surplus} done <span class='color_red font-20'>{invite}</span> to go",
+      "inputAddressPlaceholader": "Entry BitKeep Cloud Wallet adress",
       "NoAddressDownload": "Tap here to create your BitKeep Cloud Wallet",
-      "HelpSuccessETH":"BitKeep Cloud Wallet address with success contribution",
+      "HelpSuccessETH":"BitKeep Cloud Wallet adress",
       "InviteSuccessETH": "The ETH address has been invited",
      "FinalInterpretation": "BitKeep owns the final interpretation right of this event.",
 
@@ -113,7 +127,7 @@ module.exports = {
 
       rules: [
         "Each blind box contains a random number of BKB",
-        `Share this link to invite your friends, and ask them to fill in valid BitKeep Cloud Wallet address (Click the link to create a BitKeep Cloud Wallet <a href='https://bit.ly/BitKeepCloudWallet'>https://bit.ly/BitKeepCloudWallet</a> )`,
+        `Share this link to invite your friends, and ask them to fill in valid BitKeep Cloud Wallet address (Click the link to create a BitKeep Cloud Wallet <a href='https://bit.ly/BitKeepCloudWallet' class='color_red'>https://bit.ly/BitKeepCloudWallet</a> )`,
         "With five friends manage to make contribution, the blind box will unlock, and you and your friends will get a share of the BKB inside.",
         "These BKB will be deposited in your Cloud Wallet. If you have’t activated your Cloud Wallet, please tap Cloud Wallet in the NAV bar to activate it.",
       ],
@@ -373,5 +387,9 @@ module.exports = {
     Time: 'Time',
     nomore: 'No More',
     loading: 'Loading...',
+    rewardTitle: 'Token Rewards',
+    downText: '🎉 恭喜您，您已经成功接受邀请！快去享受加密货币之旅',
+    know: '我知道了',
+
   }
 }
