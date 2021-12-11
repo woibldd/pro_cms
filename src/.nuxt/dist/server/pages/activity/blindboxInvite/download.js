@@ -7,7 +7,7 @@ exports.modules = {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(203);
+var content = __webpack_require__(204);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -19,7 +19,7 @@ module.exports.__inject__ = function (context) {
 
 /***/ }),
 
-/***/ 202:
+/***/ 203:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31,7 +31,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 203:
+/***/ 204:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -45,7 +45,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 235:
+/***/ 236:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -55,7 +55,7 @@ __webpack_require__.r(__webpack_exports__);
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/blindboxInvite/download.vue?vue&type=template&id=d6915742&
 var render = function () {
 var _obj;
-var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"download"}},[_c('Header',[_c('div',{staticClass:"blindbox_header"},[_c('span',{staticClass:"logo"},[_c('img',{attrs:{"src":__webpack_require__(88)}})])])]),_vm._ssrNode(" <div class=\"block_body\"><img src=\"http://cdn.bitkeep.vip/u_b_95224b10-596e-11ec-bdbc-7722494dfa58.png\""+(_vm._ssrClass(null,( _obj = {}, _obj[_vm.locale] = true, _obj )))+"> <div class=\"textBox textPrimary0\"><p>"+_vm._ssrEscape(_vm._s(_vm.$t("blindboxInvite.downText")))+"</p></div> <a href=\"https://bitkeep.org\" class=\"btn\">"+_vm._ssrEscape(_vm._s(_vm.$t("blindboxInvite.know")))+"</a></div>")],2)}
+var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"download"}},[_c('Header',[_c('div',{staticClass:"blindbox_header"},[_c('span',{staticClass:"logo"},[_c('img',{attrs:{"src":__webpack_require__(80)}})])])]),_vm._ssrNode(" <div class=\"block_body\"><img src=\"http://cdn.bitkeep.vip/u_b_95224b10-596e-11ec-bdbc-7722494dfa58.png\""+(_vm._ssrClass(null,( _obj = {}, _obj[_vm.locale] = true, _obj )))+"> <div class=\"textBox textPrimary0\"><p>"+_vm._ssrEscape(_vm._s(_vm.$t("blindboxInvite.downText")))+"</p></div> <a href=\"https://bitkeep.org\" class=\"btn\">"+_vm._ssrEscape(_vm._s(_vm.$t("blindboxInvite.know")))+"</a></div>")],2)}
 var staticRenderFns = []
 
 
@@ -132,7 +132,7 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(202)
+  var style0 = __webpack_require__(203)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -303,7 +303,7 @@ const Header = _header_vue__WEBPACK_IMPORTED_MODULE_0__["default"];
 
 /***/ }),
 
-/***/ 88:
+/***/ 80:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/logo@2.ca1f304.png";

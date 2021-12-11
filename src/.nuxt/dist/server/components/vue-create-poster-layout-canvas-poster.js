@@ -382,7 +382,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 80:
+/***/ 81:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1071,7 +1071,7 @@ const api = {
 
 /***/ }),
 
-/***/ 81:
+/***/ 82:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1222,9 +1222,9 @@ module.exports.__inject__ = function (context) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Painter; });
-const QR = __webpack_require__(80);
+const QR = __webpack_require__(81);
 
-const GD = __webpack_require__(81);
+const GD = __webpack_require__(82);
 
 class Painter {
   constructor(ctx, data) {

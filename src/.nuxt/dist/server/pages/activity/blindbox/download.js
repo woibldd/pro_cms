@@ -59,7 +59,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 230:
+/***/ 231:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69,7 +69,7 @@ __webpack_require__.r(__webpack_exports__);
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/blindbox/download.vue?vue&type=template&id=039a7e0d&
 var render = function () {
 var _obj, _obj$1;
-var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"download"}},[_c('Header',[_c('div',{staticClass:"blindbox_header"},[_c('span',{staticClass:"logo"},[_c('img',{attrs:{"src":__webpack_require__(88)}})])])]),_vm._ssrNode(" <div class=\"block_body\">"+((_vm.locale=='zh')?("<img"+(_vm._ssrAttr("src",__webpack_require__(187)))+(_vm._ssrClass(null,( _obj = {}, _obj[_vm.locale] = true, _obj )))+">"):("<img"+(_vm._ssrAttr("src",__webpack_require__(188)))+(_vm._ssrClass(null,( _obj$1 = {}, _obj$1[_vm.locale] = true, _obj$1 )))+">"))+" <a href=\"https://bitkeep.org\" class=\"btn\">"+_vm._ssrEscape(_vm._s(_vm.$t("ActivityBlindbox.button.Downloadnow")))+"</a></div>")],2)}
+var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"download"}},[_c('Header',[_c('div',{staticClass:"blindbox_header"},[_c('span',{staticClass:"logo"},[_c('img',{attrs:{"src":__webpack_require__(80)}})])])]),_vm._ssrNode(" <div class=\"block_body\">"+((_vm.locale=='zh')?("<img"+(_vm._ssrAttr("src",__webpack_require__(187)))+(_vm._ssrClass(null,( _obj = {}, _obj[_vm.locale] = true, _obj )))+">"):("<img"+(_vm._ssrAttr("src",__webpack_require__(188)))+(_vm._ssrClass(null,( _obj$1 = {}, _obj$1[_vm.locale] = true, _obj$1 )))+">"))+" <a href=\"https://bitkeep.org\" class=\"btn\">"+_vm._ssrEscape(_vm._s(_vm.$t("ActivityBlindbox.button.Downloadnow")))+"</a></div>")],2)}
 var staticRenderFns = []
 
 
@@ -317,7 +317,7 @@ const Header = _header_vue__WEBPACK_IMPORTED_MODULE_0__["default"];
 
 /***/ }),
 
-/***/ 88:
+/***/ 80:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/logo@2.ca1f304.png";
