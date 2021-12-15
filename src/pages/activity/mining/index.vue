@@ -225,7 +225,7 @@
           <div class="mining-wrap-one-body">
             <div class="setMingMargin">
               <span class="setFontFamily">{{
-                activityStatus != 0 ? "$" + allTodayTrading + BKB : '--'
+                activityStatus != 0 && activity_rewardPool ? activity_rewardPool + ' BKB' : '--'
               }}</span>
             </div>
             <p class="mining-wrap-one-body-day" style="color: #080D21">{{ $t("mining.invitationPoolContent") }}</p>
@@ -252,7 +252,7 @@
                   {{ $t("mining.inviteNumber1") }}
                 </p>
                 <div class="mining-wrap-one-body-vol-number setFontFamily">
-                  <span class="setW">{{ activityDoneTradingBkbReward }}</span>
+                  <span class="setW" style="color: #495BFF">{{ activityDoneTradingBkbReward }}</span>
                 </div>
               </div>
               <div>
@@ -261,7 +261,7 @@
                 </p>
                 <div class="
                     mining-wrap-one-body-vol-number-todyVolue
-                    setFontFamily">{{ activityTradingBkbReward }}
+                    setFontFamily" style="color: #495BFF">{{ activityStatus != 0 ? "+" + activityTradingBkbReward : '--' }}
                 </div>
               </div>
             </div>
@@ -286,7 +286,7 @@
             </div>
           </div>
           <div class="warp-invite-link-btn colorBackgroundPrimary" @click="inviteFirends">
-            {{$t("blindboxInvite.inviteFriendsNow")}}
+            {{$t("mining.inviteFriendsNow")}}
           </div>
         </div>
         <!-- Mining Rule -->
@@ -349,6 +349,7 @@ export default {
       unclaimReward: 0,
       activityTradingBkbReward: 0,
       activityDoneTradingBkbReward: 0,
+      activity_rewardPool: 0,
       activityInviteReward: 0,
       activityInviteDonereward: 0,
       sum_activity_today_reward: 0,
@@ -425,6 +426,7 @@ export default {
       this.activityDoneTradingBkbReward = this.milliFormat(data.activity_DoneTradingBkbReward);
       this.activityInviteDonereward = this.milliFormat(data.activity_invite_Donereward);
       this.sum_activity_today_reward = data.sum_activity_today_reward;
+      this.activity_rewardPool = this.milliFormat(data.activity_rewardPool);
 
       this.countDown = data.countdown;
       this.activityStatus = data.activityStatus;

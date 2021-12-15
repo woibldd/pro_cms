@@ -15,7 +15,6 @@
           <van-icon name="play" class="icon setFont" />
         </div>
         <ul class="langList" id="langList" v-show='langShow'>
-          <li class="langItem" data-val="zh" data="中文">中文</li>
           <li class="langItem" data-val="en" data="English">English</li>
           <li class="langItem" data-val="ko" data="韩语">韩语</li>
           <li class="langItem" data-val="ja" data="日语">日语</li>
@@ -242,9 +241,6 @@ export default {
     isIos() {
       return this.local.UA.ios;
     },
-    userInfo() {
-      return this.local.userInfo.token;
-    },
   },
   mounted () {
     this.$nextTick(()=>{
@@ -262,7 +258,7 @@ export default {
     submitAddress:debounce(async function () {
       const { data, status } = await USER_API.certifyFriendship({
         address: this.address,
-        token: this.userInfo
+        token: this.$route.query.token
       });
       if (status == 1) {
         this.isLoading = false;
@@ -275,7 +271,6 @@ export default {
       switch (data) {
         case 0:
           return this.$toast('认证不成功');
-          break
         case 1:
           this.$toast('成功');
           this.$router.push('/activity/blindboxInvite/download')

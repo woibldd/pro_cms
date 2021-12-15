@@ -343,5 +343,12 @@ module.exports = {
     ruleDetail: '참고: 다음 거래는 거래 보상을 받을 수 있는 것으로 간주되지 않습니다.',
     ruleDetail1: `1. 다른 체인에서 동일한 코인을 교환하는 것을 포함하는 교차 체인 스왑, 예: <br/> (1) BSC-USDT에서 ETH-USDT로의 스왑; <br/> (2) Swft 채널을 통해 또는 BNB에서 ETH로의 스왑과 같이 서로 다른 체인에서 서로 다른 코인을 스왑합니다.`,
     ruleDetail2: '2. 코인 거래 소각. 일부 코인은 소각 메커니즘을 기반으로 하며 거래가 있을 때마다 부분적으로 소각될 수 있으므로 정확한 거래 금액을 계산하는 데 차이가 있습니다. 따라서 이 코인은 이 BKSwap 거래 보상 이벤트에서 제외됩니다.',
+    invitationReward: "나의 초대 보상",
+    inviteNumber1: '총 초대 보상',
+    inviteNumber2: '어제 초대 보상',
+    inviteNumber3: '총 초대 거래 보상',
+    inviteNumber4: '어제 보상',
+    invitationPool: '초대 보너스 풀',
+    invitationPoolContent: '초대 및 적립 이벤트의 두 번째 단계에 사용',  
   }
 }

@@ -352,7 +352,6 @@ module.exports = {
     inviteNumber2: 'Yesterday invite Rewards',
     inviteNumber3: 'Total invite Trading Rewards',
     inviteNumber4: 'Yesterday Rewards',
-    myInvitationRewards: "My Invitation Rewards",
     tradingRewards: "Trading Rewards",
     invitationRewards: "Invitation Rewards",
     viewDetails: "View Dtails",
@@ -360,7 +359,7 @@ module.exports = {
     ruleDetail: 'Note: The following transactions are not considered eligible for trading rewards',
     ruleDetail1: `1. Cross-chain swaps, including：<br/>  (1) swapping the same coin on different chains, e.g. BSC-USDT to ETH-USDT swaps;<br/>  (2) swapping different coins on different chains, such as through Swft channels, or BNB to ETH swaps.`,
     ruleDetail2: '2. Burning coin transactions. Some coins are based on a burning mechanism, and they might be requited to be partially burnt whenever there is a transaction, which makes it different to count the exact transaction amount. Theses coins are therefore excluded from this BKSwap Trading Reward event.',
-    invitationPool: 'Reward pool',
+    invitationPool: 'Invitation Rewards Pool',
     invitationPoolContent: 'Used for the second phase of the invite-and-earn event',
   },
   'nft':{

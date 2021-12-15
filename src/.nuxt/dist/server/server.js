@@ -3058,7 +3058,6 @@ module.exports = {
     inviteNumber2: 'Yesterday invite Rewards',
     inviteNumber3: 'Total invite Trading Rewards',
     inviteNumber4: 'Yesterday Rewards',
-    myInvitationRewards: "My Invitation Rewards",
     tradingRewards: "Trading Rewards",
     invitationRewards: "Invitation Rewards",
     viewDetails: "View Dtails",
@@ -3066,7 +3065,7 @@ module.exports = {
     ruleDetail: 'Note: The following transactions are not considered eligible for trading rewards',
     ruleDetail1: `1. Cross-chain swaps, including：<br/>  (1) swapping the same coin on different chains, e.g. BSC-USDT to ETH-USDT swaps;<br/>  (2) swapping different coins on different chains, such as through Swft channels, or BNB to ETH swaps.`,
     ruleDetail2: '2. Burning coin transactions. Some coins are based on a burning mechanism, and they might be requited to be partially burnt whenever there is a transaction, which makes it different to count the exact transaction amount. Theses coins are therefore excluded from this BKSwap Trading Reward event.',
-    invitationPool: 'Reward pool',
+    invitationPool: 'Invitation Rewards Pool',
     invitationPoolContent: 'Used for the second phase of the invite-and-earn event'
   },
   'nft': {
@@ -3478,7 +3477,14 @@ module.exports = {
     inviteFriendsNow: "友達を招待",
     ruleDetail: '注：以下の取引は、取引報酬の対象とは見なされません',
     ruleDetail1: `1.クロスチェーンスワップ:<br/> （1）同じコインを異なるチェーンでスワップすることを含みます。 BSC-USDTからETH-USDTへのスワップ。<br/> （2）Swftチャネル、またはBNBからETHへのスワップなど、さまざまなチェーンでさまざまなコインを交換する。`,
-    ruleDetail2: '2.コイン取引を燃やす。 一部のコインは燃焼メカニズムに基づいており、トランザクションが発生するたびに部分的に燃焼する必要がある場合があります。これにより、正確なトランザクション量をカウントするのが異なります。 したがって、これらのコインはこのBKSwap TradingRewardイベントから除外されます。'
+    ruleDetail2: '2.コイン取引を燃やす。 一部のコインは燃焼メカニズムに基づいており、トランザクションが発生するたびに部分的に燃焼する必要がある場合があります。これにより、正確なトランザクション量をカウントするのが異なります。 したがって、これらのコインはこのBKSwap TradingRewardイベントから除外されます。',
+    invitationReward: "私の招待報酬",
+    inviteNumber1: '合計招待報酬',
+    inviteNumber2: '昨日リワードを招待',
+    inviteNumber3: 'トータル招待トレーディングリワード',
+    inviteNumber4: '昨日の報酬',
+    invitationPool: '招待ボーナスプール',
+    invitationPoolContent: '招待して獲得するイベントの第2フェーズに使用されます'
   }
 };
 
@@ -3805,7 +3811,14 @@ module.exports = {
     inviteFriendsNow: "친구를 초대",
     ruleDetail: '참고: 다음 거래는 거래 보상을 받을 수 있는 것으로 간주되지 않습니다.',
     ruleDetail1: `1. 다른 체인에서 동일한 코인을 교환하는 것을 포함하는 교차 체인 스왑, 예: <br/> (1) BSC-USDT에서 ETH-USDT로의 스왑; <br/> (2) Swft 채널을 통해 또는 BNB에서 ETH로의 스왑과 같이 서로 다른 체인에서 서로 다른 코인을 스왑합니다.`,
-    ruleDetail2: '2. 코인 거래 소각. 일부 코인은 소각 메커니즘을 기반으로 하며 거래가 있을 때마다 부분적으로 소각될 수 있으므로 정확한 거래 금액을 계산하는 데 차이가 있습니다. 따라서 이 코인은 이 BKSwap 거래 보상 이벤트에서 제외됩니다.'
+    ruleDetail2: '2. 코인 거래 소각. 일부 코인은 소각 메커니즘을 기반으로 하며 거래가 있을 때마다 부분적으로 소각될 수 있으므로 정확한 거래 금액을 계산하는 데 차이가 있습니다. 따라서 이 코인은 이 BKSwap 거래 보상 이벤트에서 제외됩니다.',
+    invitationReward: "나의 초대 보상",
+    inviteNumber1: '총 초대 보상',
+    inviteNumber2: '어제 초대 보상',
+    inviteNumber3: '총 초대 거래 보상',
+    inviteNumber4: '어제 보상',
+    invitationPool: '초대 보너스 풀',
+    invitationPoolContent: '초대 및 적립 이벤트의 두 번째 단계에 사용'
   }
 };
 
@@ -4123,7 +4136,6 @@ module.exports = {
     confirm: 'Xác nhận',
     noData: 'Không có dữ liệu',
     invitationReward: "Phần thưởng lời mời",
-    myInvitationRewards: "Phần thưởng lời mời của tôi",
     totalBonusPool: "Tổng giải thưởng",
     todayBonusPool: "Tiền thưởng hôm nay",
     myTodayRewards: "phần thưởng hôm nay",
@@ -4133,7 +4145,14 @@ module.exports = {
     inviteFriendsNow: "mời bạn bè",
     ruleDetail: 'Lưu ý: Các giao dịch sau đây không được coi là đủ điều kiện để nhận phần thưởng giao dịch',
     ruleDetail1: `1. Hoán đổi chuỗi chéo, bao gồm: <br/> (1) hoán đổi cùng một đồng tiền trên các chuỗi khác nhau, ví dụ: Hoán đổi BSC-USDT sang ETH-USDT;<br/> (2) hoán đổi các đồng tiền khác nhau trên các chuỗi khác nhau, chẳng hạn như thông qua các kênh Swft hoặc hoán đổi BNB sang ETH.`,
-    ruleDetail2: '2. Đốt coin giao dịch. Một số đồng tiền dựa trên cơ chế đốt và chúng có thể được yêu cầu đốt một phần bất cứ khi nào có giao dịch, điều này khiến việc đếm số tiền giao dịch chính xác sẽ khác. Do đó, những đồng tiền của luận án này không được tham gia sự kiện Phần thưởng giao dịch BKSwap này.'
+    ruleDetail2: '2. Đốt coin giao dịch. Một số đồng tiền dựa trên cơ chế đốt và chúng có thể được yêu cầu đốt một phần bất cứ khi nào có giao dịch, điều này khiến việc đếm số tiền giao dịch chính xác sẽ khác. Do đó, những đồng tiền của luận án này không được tham gia sự kiện Phần thưởng giao dịch BKSwap này.',
+    invitationReward: "Phần thưởng lời mời của tôi",
+    inviteNumber1: 'Tổng số Phần thưởng cho lời mời',
+    inviteNumber2: 'Phần thưởng mời hôm qua',
+    inviteNumber3: 'Tổng số phần thưởng giao dịch mời',
+    inviteNumber4: 'Phần thưởng hôm qua',
+    invitationPool: 'Tiền thưởng lời mời',
+    invitationPoolContent: 'Được sử dụng cho giai đoạn thứ hai của sự kiện mời và kiếm tiền'
   }
 };
 
@@ -4464,18 +4483,20 @@ module.exports = {
     ClaimRewards: 'Claim Rewards',
     confirm: 'Confirm',
     noData: 'No data',
-    invitationReward: "Invitation Reward",
-    myInvitationRewards: "My Invitation Rewards",
-    totalBonusPool: "Total Bonus Pool",
-    todayBonusPool: "Today Bonus Pool",
-    myTodayRewards: "My today Rewards",
+    invitationReward: "My Invitation Reward",
+    inviteNumber1: 'Total invite Rewards',
+    inviteNumber2: 'Yesterday invite Rewards',
+    inviteNumber3: 'Total invite Trading Rewards',
+    inviteNumber4: 'Yesterday Rewards',
     tradingRewards: "Trading Rewards",
     invitationRewards: "Invitation Rewards",
     viewDetails: "View Dtails",
     inviteFriendsNow: "Invite friends now",
     ruleDetail: 'Note: The following transactions are not considered eligible for trading rewards',
     ruleDetail1: `1. Cross-chain swaps, including：<br/>  (1) swapping the same coin on different chains, e.g. BSC-USDT to ETH-USDT swaps;<br/>  (2) swapping different coins on different chains, such as through Swft channels, or BNB to ETH swaps.`,
-    ruleDetail2: '2. Burning coin transactions. Some coins are based on a burning mechanism, and they might be requited to be partially burnt whenever there is a transaction, which makes it different to count the exact transaction amount. Theses coins are therefore excluded from this BKSwap Trading Reward event.'
+    ruleDetail2: '2. Burning coin transactions. Some coins are based on a burning mechanism, and they might be requited to be partially burnt whenever there is a transaction, which makes it different to count the exact transaction amount. Theses coins are therefore excluded from this BKSwap Trading Reward event.',
+    invitationPool: 'Invitation Rewards Pool',
+    invitationPoolContent: 'Used for the second phase of the invite-and-earn event'
   },
   'nft': {
     nftTitle: 'NFT 抽奖',
@@ -6370,15 +6391,15 @@ function wrapFunctional(options) {
 
 
 const components = {
-  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 162)).then(c => wrapFunctional(c.default || c)),
+  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 79)).then(c => wrapFunctional(c.default || c)),
+  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 68)).then(c => wrapFunctional(c.default || c)),
+  Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 72)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 167)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 246)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 99)).then(c => wrapFunctional(c.default || c)),
   BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 168)).then(c => wrapFunctional(c.default || c)),
   BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 166)).then(c => wrapFunctional(c.default || c)),
-  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 79)).then(c => wrapFunctional(c.default || c)),
-  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 68)).then(c => wrapFunctional(c.default || c)),
-  Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 72)).then(c => wrapFunctional(c.default || c)),
+  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 162)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 11).then(__webpack_require__.bind(null, 134)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 12).then(__webpack_require__.bind(null, 82)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 13).then(__webpack_require__.bind(null, 247)).then(c => wrapFunctional(c.default || c)),

@@ -343,5 +343,12 @@ module.exports = {
     ruleDetail: '注：以下の取引は、取引報酬の対象とは見なされません',
     ruleDetail1: `1.クロスチェーンスワップ:<br/> （1）同じコインを異なるチェーンでスワップすることを含みます。 BSC-USDTからETH-USDTへのスワップ。<br/> （2）Swftチャネル、またはBNBからETHへのスワップなど、さまざまなチェーンでさまざまなコインを交換する。`,
     ruleDetail2: '2.コイン取引を燃やす。 一部のコインは燃焼メカニズムに基づいており、トランザクションが発生するたびに部分的に燃焼する必要がある場合があります。これにより、正確なトランザクション量をカウントするのが異なります。 したがって、これらのコインはこのBKSwap TradingRewardイベントから除外されます。',
+    invitationReward: "私の招待報酬",
+    inviteNumber1: '合計招待報酬',
+    inviteNumber2: '昨日リワードを招待',
+    inviteNumber3: 'トータル招待トレーディングリワード',
+    inviteNumber4: '昨日の報酬',
+    invitationPool: '招待ボーナスプール',
+    invitationPoolContent: '招待して獲得するイベントの第2フェーズに使用されます',  
   }
 }

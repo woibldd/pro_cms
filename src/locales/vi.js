@@ -333,7 +333,6 @@ module.exports = {
     confirm: 'Xác nhận',
     noData: 'Không có dữ liệu',
     invitationReward: "Phần thưởng lời mời",
-    myInvitationRewards: "Phần thưởng lời mời của tôi",
     totalBonusPool: "Tổng giải thưởng",
     todayBonusPool: "Tiền thưởng hôm nay",
     myTodayRewards: "phần thưởng hôm nay",
@@ -344,5 +343,12 @@ module.exports = {
     ruleDetail: 'Lưu ý: Các giao dịch sau đây không được coi là đủ điều kiện để nhận phần thưởng giao dịch',
     ruleDetail1: `1. Hoán đổi chuỗi chéo, bao gồm: <br/> (1) hoán đổi cùng một đồng tiền trên các chuỗi khác nhau, ví dụ: Hoán đổi BSC-USDT sang ETH-USDT;<br/> (2) hoán đổi các đồng tiền khác nhau trên các chuỗi khác nhau, chẳng hạn như thông qua các kênh Swft hoặc hoán đổi BNB sang ETH.`,
     ruleDetail2: '2. Đốt coin giao dịch. Một số đồng tiền dựa trên cơ chế đốt và chúng có thể được yêu cầu đốt một phần bất cứ khi nào có giao dịch, điều này khiến việc đếm số tiền giao dịch chính xác sẽ khác. Do đó, những đồng tiền của luận án này không được tham gia sự kiện Phần thưởng giao dịch BKSwap này.',
+    invitationReward: "Phần thưởng lời mời của tôi",
+    inviteNumber1: 'Tổng số Phần thưởng cho lời mời',
+    inviteNumber2: 'Phần thưởng mời hôm qua',
+    inviteNumber3: 'Tổng số phần thưởng giao dịch mời',
+    inviteNumber4: 'Phần thưởng hôm qua',
+    invitationPool: 'Tiền thưởng lời mời',
+    invitationPoolContent: 'Được sử dụng cho giai đoạn thứ hai của sự kiện mời và kiếm tiền',
   }
 }
