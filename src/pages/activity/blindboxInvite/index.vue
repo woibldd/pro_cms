@@ -51,7 +51,7 @@
         <div class="warp-invite-one colorBackgroundWhite setTop">
           <div class="warp-invite-one-header" style="padding-right: 0">
             <div class="warp-invite-one-header-title">
-              <span>{{ $t("blindboxInvite.inviteFriend") }}</span>
+              <span>{{ $t("blindboxInvite.inviteFriends") }}</span>
             </div>
           </div>
           <!-- <div class="borderBottom colorLine"></div> -->

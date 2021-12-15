@@ -384,9 +384,11 @@ module.exports = {
         boxRewards: 'Blind Box Rewards',
         inviteFriend: 'Invite Friend',
         inviteFriends: 'Invite Friends',
-        inviteLink: 'Invite Link',
-        inviteFriendsNow: 'Invite friends now',
-        inforce: 'In force',
+        inviteLink: 'Invitation Link',
+        inviteFriendsNow: 'Invite your friends now',
+        savePicture: 'Save picture',
+        ShareLink:"Share Link",  
+        inforce: 'Activated',
         inactivated: 'Inactivated',
         Address: 'Address',
         State: 'State',
@@ -395,6 +397,6 @@ module.exports = {
         loading: 'Loading...',
         rewardTitle: 'Token Rewards',
         downText: '🎉 恭喜您，您已经成功接受邀请！快去享受加密货币之旅',
-        know: '我知道了',
+        know: 'OK',
     }
 }

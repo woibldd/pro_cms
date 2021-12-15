@@ -76,11 +76,13 @@
         <p class="textSecond3">No Data</p>
       </div>
     </div>
+    <ruleDetail :ruleDetailFlag='ruleDetailFlag' :theme='theme' @close='ruleDetailClose'></ruleDetail>
   </div>
 </template>
 <script>
 import { mapState } from "vuex";
 import { USER_API } from "@/api/client";
+import ruleDetail from './RuleDetail.vue';
 
 export default {
   data() {
@@ -89,12 +91,18 @@ export default {
       finished: false,
       loading: false,
       refreshing: false,
+      ruleDetailFlag: false,
       inviteList: [],
       activeCount: 0,
       unActiveCount: 0,
+      theme: 0,
       start: 0,
       limit: 20,
+      question: 'http://cdn.bitkeep.vip/u_b_99107f80-356f-11ec-8c2d-251a27ef7eba.png'
     };
+  },
+  components: {
+    ruleDetail
   },
   filters: {
     address(item) {
@@ -127,13 +135,19 @@ export default {
     this.isBitKeep &&
       BitKeepInvoke.onLoadReady(() => {
         BitKeepInvoke.setTitle(this.$t("blindboxInvite.inviteFriends"));
-        BitKeepInvoke.setIconAction();
+        BitKeepInvoke.setIconAction(this.question,()=>{
+          this.ruleDetailFlag = true;
+        });
         this.$nextTick(() => {
           BitKeepInvoke.appMode((err, res) => {
             let body = document.getElementsByTagName("body")[0];
             if (res == 1) {
+              this.theme = 1
+              this.question = 'http://cdn.bitkeep.vip/u_b_47485390-4f90-11ec-ace3-97579b99c357.png';
               body.setAttribute("class", "theme-dark");
             } else {
+              this.theme = 0
+              this.question = 'http://cdn.bitkeep.vip/u_b_99107f80-356f-11ec-8c2d-251a27ef7eba.png';
               body.setAttribute("class", "theme-light");
             }
           });
@@ -165,6 +179,9 @@ export default {
       if (this.inviteList.length >= data.total_count) {
         this.finished = true;
       }
+    },
+    ruleDetailClose(){
+      this.ruleDetailFlag = false;
     },
     async onRefresh() {
       const { data, status } = await USER_API.getInviteList({

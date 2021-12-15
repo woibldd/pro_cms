@@ -15,7 +15,7 @@
       <div class="textBox textPrimary0">
         <p>{{ $t("blindboxInvite.downText") }}</p>
       </div>
-      <a class="btn" href="https://bitkeep.org">{{
+      <a class="btn" @click="back">{{
         $t("blindboxInvite.know")
       }}</a>
     </div>

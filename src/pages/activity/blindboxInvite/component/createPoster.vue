@@ -47,15 +47,15 @@
           :download="new Date().getTime() + '.jpeg'"
         >
           <img src="@/assets/activity/icon/icon_saveimage@2.png" alt="" />
-          <span>{{ $t("ActivityBlindbox.button.savePicture") }}</span>
+          <span>{{ $t("blindboxInvite.savePicture") }}</span>
         </a>
         <div v-if="isBitKeep" class="btn" @click="shareImage">
           <img src="@/assets/activity/icon/icon_sharelink@2.png" alt="" />
-          <span>{{ $t("ActivityBlindbox.button.ShareLink") }}</span>
+          <span>{{ $t("blindboxInvite.ShareLink") }}</span>
         </div>
         <div v-else class="btn">
           <img src="@/assets/activity/icon/icon_sharelink@2.png" alt="" />
-          <span>{{ $t("ActivityBlindbox.button.ShareLink") }}</span>
+          <span>{{ $t("blindboxInvite.ShareLink") }}</span>
         </div>
       </div>
     </div>

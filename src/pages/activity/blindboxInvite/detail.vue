@@ -221,6 +221,7 @@
 <script>
 import { mapState } from "vuex";
 import { USER_API } from "@/api/client";
+import { debounce } from "@/tools/common";
 
 export default {
   name: "Detail",
@@ -241,6 +242,9 @@ export default {
     isIos() {
       return this.local.UA.ios;
     },
+    userInfo() {
+      return this.local.userInfo.token;
+    },
   },
   mounted () {
     this.$nextTick(()=>{
@@ -254,9 +258,11 @@ export default {
     handlerBlur() {
       this.focus = false;
     },
-    async submitAddress() {
+
+    submitAddress:debounce(async function () {
       const { data, status } = await USER_API.certifyFriendship({
-        address: this.address
+        address: this.address,
+        token: this.userInfo
       });
       if (status == 1) {
         this.isLoading = false;
@@ -276,8 +282,7 @@ export default {
         case 2:
           return this.$toast('地址已存在');
       }
-      
-    },
+    }),
     changeLang(){
       this.langShow = true;
       // 点击切换语言

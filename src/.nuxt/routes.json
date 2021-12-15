@@ -112,6 +112,13 @@
     "_name": "_62b6ad66"
   },
   {
+    "name": "activity-blindboxInvite-RuleDetail",
+    "path": "/activity/blindboxInvite/RuleDetail",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindboxInvite/RuleDetail.vue",
+    "chunkName": "pages/activity/blindboxInvite/RuleDetail",
+    "_name": "_3faca386"
+  },
+  {
     "name": "activity-mining-history",
     "path": "/activity/mining/history",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/mining/history.vue",
