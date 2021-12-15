@@ -136,6 +136,10 @@ export default {
         '^/poster': ''
       }
     },
+    '/friendship': {
+      target: 'http://118.193.40.6:8700', 
+      changeOrigin: true,
+    },
     '/swap': {
       target: HOST_API,
       changeOrigin: true,

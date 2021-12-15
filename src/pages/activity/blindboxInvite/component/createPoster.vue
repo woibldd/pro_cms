@@ -79,6 +79,9 @@ export default {
     isBitKeep: {
       default: false
     },
+    userInfo: {
+      default: ""
+    },
     info: {
       default: () => ({
         status: 0,
@@ -88,7 +91,7 @@ export default {
   },
   computed: {
     proxy_img() {
-      const sourceUrl = "http://cdn.bitkeep.vip/u_b_dd1dd720-de37-11eb-bc7e-0715ecaf7f2d.jpeg";
+      const sourceUrl = "http://cdn.bitkeep.vip/u_b_4cca7310-5be4-11ec-bdbc-7722494dfa58.jpeg";
       return sourceUrl
         ? `/poster${sourceUrl
             .replace("http://cdn.bitkeep.vip", "")
@@ -96,7 +99,7 @@ export default {
         : "";
     },
     codeText() {
-      return process.client ? location.href : "";
+      return process.client ? location.href + '/detail?token=' + this.userInfo : "";
     }
   },
   data() {
@@ -161,7 +164,7 @@ export default {
       BitKeepInvoke.shareUrl(
         '',
         this.$t("ActivityBlindbox.shared.content"),
-        location.href,
+        location.href + '/detail?token=' + this.userInfo,
         this.info.cover_image,
         console.log
       );
@@ -201,7 +204,7 @@ export default {
   .close {
     position: absolute;
     z-index: 1;
-    top: 60px;
+    top: 26px;
     right: 26px;
     width: 28px;
     height: 28px;
@@ -260,8 +263,8 @@ export default {
       position: absolute;
       right: 18px;
       bottom: 20px;
-      width: 60px;
-      height: 60px;
+      width: 80px;
+      height: 80px;
       box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.4),
         inset 0px -1px 0px rgba(255, 255, 255, 0.15);
       border-radius: 8px;

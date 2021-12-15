@@ -39,10 +39,7 @@ export default {
     },
   },
   mounted() {
-    this.isBitKeep &&
-      BitKeepInvoke.setTitle(
-        locale == "zh" ? "下载 bitKeep" : "Download bitKeep"
-      );
+    
   },
   methods: {
     back() {

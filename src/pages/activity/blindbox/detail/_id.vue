@@ -622,7 +622,7 @@ export default {
   width: 100%;
   .block_open_is_owner {
     width: 100%;
-    background: url("@/assets/activity/blindbox/own02@2.png") center center
+    background: url("@/assets/activity/blindbox/own02@2.en.png") center center
       no-repeat;
     background-size: 100% 100%;
     height: 368px;
@@ -636,7 +636,7 @@ export default {
   .block_open_strategy_warpper {
     width: 100%;
     height: 364px;
-    background: url("@/assets/activity/blindbox/02@2.png") center center
+    background: url("@/assets/activity/blindbox/02@2.en.png") center center
       no-repeat;
     background-size: 100% 100%;
     &.en {

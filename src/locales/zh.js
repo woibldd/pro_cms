@@ -7,149 +7,149 @@ module.exports = {
     },
     "ActivityBlindbox": {
         shared:{
-            content:"我正在免费开盲盒，快来帮我助力一下吧～"
-        },
+          content:"I'm opening blind free boxes, come and help me~"
+      },
         dialog: {
-
-            "isCreateWalletComfirm": "云钱包不存在，是否现在创建云钱包？",
-            helperSuccess: "助力成功",
-            "getBlindbox": "恭喜获得BitKeep数字盲盒",
-            "openBlindbox": "开启获得惊喜数字资产",
-            "lookBlindbox": "查看数字盲盒",
+          "isCreateWalletComfirm":"Cloud wallet does not exist. Do you want to create it now?",
+            helperSuccess: "Contribute to success",
+          "getBlindbox": "Congratulations on getting the BitKeep digital blind box",
+          "openBlindbox": "Open to get surprise digital assets",
+          "lookBlindbox": "View digital blind box",
         },
-        toast: {
-            open: "开启中...",
-            Saving:"保存中...",
-            loading: "加载中...",
-            inputETH: "请输入ETH助力地址",
-            Generating:"生成中...",
-            ContributeSuccess: "助力成功"
+        toast:{
+           open:"Opening...",
+           loading:"Loading...",
+           Saving:"Saving...",
+           inputETH:"Please enter eth address",
+           Generating:"Generating...",
+           ContributeSuccess: "Contribute to success"
         },
         statusText: [
-            "恭喜获得BitKeep数字盲盒",
-            "开启获得惊喜数字资产",
-            "查看数字盲盒"
+          "恭喜获得BitKeep数字盲盒",
+          "开启获得惊喜数字资产",
+          "查看数字盲盒"
         ],
-        stepDetail:[{
-            title: 'Step 1 <br/>Open your Cloud Wallet',
-            content: 'Download BitKeep App. In BitKeep app, tap the Nav-bar in the upper right corner, click “Cloud Wallet” to enter the cloud wallet page.',
-            img: 'http://cdn.bitkeep.vip/u_b_f11e6760-599a-11ec-bdbc-7722494dfa58.jpeg',
-            },{
-            title: 'Step 2 <br/>Activate your Cloud Wallet',
-            content: 'Enter the password as prompted to activate the cloud wallet,Tap BKB to go to BKB page.',
-            img: 'http://cdn.bitkeep.vip/u_b_f12174a0-599a-11ec-bdbc-7722494dfa58.jpeg',
-            },{
-            title: 'Step 3 <br/>Copy your Cloud Wallet address',
-            content: 'Tap Deposit to go to transfer page, and choose “Copy Address”,go back to the contribution page and fill in yourBitKeep Cloud Wallet address, then tap Contribute Now.',
-            img: 'http://cdn.bitkeep.vip/u_b_f11f03a0-599a-11ec-bdbc-7722494dfa58.jpeg',
-            }
-        ],
-        button: {
-            "OpenimmediatelyText": "立即开启盲盒",
-            "InviteFriendsNow": "立即邀请好友助力",
-            "OpenFriendsImmediately": "立即助力开启盲盒",
-            "ViewAssets": "查看资产",
-            "SuccessView": "助力已完成，立即查看盲盒",
-            "savePicture":"保存图片",  //
-            "ShareLink":"分享链接",
-            "Downloadnow":"立即下载",
-              //
+        button:{
+    
+          "OpenimmediatelyText": "Open the blind box immediately",
+          "InviteFriendsNow": "Invite my friends now",
+          "OpenFriendsImmediately": "Help open the blind box",
+          "ViewAssets":"View assets",
+          "SuccessView":"Success! Please view assets", //
+          // "OpenimmediatelyText": "Open the blind box immediately"
+          "savePicture":"Save Picture",  //
+          "ShareLink":"Share Link",  //
+          "Downloadnow":"Download now",
+    
         },
-        title: {
-            "myBlindboxText": "我的盲盒",
-
+        stepDetail:[{
+          title: 'Step 1 <br/>Open your Cloud Wallet',
+          content: 'Download BitKeep App. In BitKeep app, tap the Nav-bar in the upper right corner, click “Cloud Wallet” to enter the cloud wallet page.',
+          img: 'http://cdn.bitkeep.vip/u_b_f11e6760-599a-11ec-bdbc-7722494dfa58.jpeg',
+        },{
+          title: 'Step 2 <br/>Activate your Cloud Wallet',
+          content: 'Enter the password as prompted to activate the cloud wallet,Tap BKB to go to BKB page.',
+          img: 'http://cdn.bitkeep.vip/u_b_f12174a0-599a-11ec-bdbc-7722494dfa58.jpeg',
+        },{
+          title: 'Step 3 <br/>Copy your Cloud Wallet address',
+          content: 'Tap Deposit to go to transfer page, and choose “Copy Address”,go back to the contribution page and fill in yourBitKeep Cloud Wallet address, then tap Contribute Now.',
+          img: 'http://cdn.bitkeep.vip/u_b_f11f03a0-599a-11ec-bdbc-7722494dfa58.jpeg',
+        }
+      ],
+        title:{
+          "myBlindboxText": "My blind box"
         },
         ActivityBlindboxList: {
-            "myBlindboxText": "我的盲盒",
-            "RaidersText": "攻略",
-            "DigitalBlindBoxText": "数字盲盒",
-            "blindBoxNumText": "已有 <span class='color_red'>{surplus}</span> 人助力(还需 {invite} 人)",
-            "blindBoxSurpriseText": "开启后将获得惊喜数字资产",
-            "ValidUntilText": "有效期至",
-            "inviteContent": "{helper} 位已助力",
-            "GoOpenText": "去开启",
-            "GoShareText": "去分享",
-            "TurnedOnText": "已开启",
-            "SuccessfullyOpenedText": "成功开启",
-            "expiredText": "已过期",
-            "friendList": '好友列表',
-            "ShareWithMe": "分享给我的",
-            "noHelper": "暂时没有已助力好友",
-            "noInvite": "暂时没有已邀请好友",
-             willOpened:"待开启",
-             inviteFirends: '已邀请好友',
-             HelpFirends: '已助力好友',
-
-            noData:{
-                title:"暂时没有盲盒",
-                content:"据说使用 BitSwap 或跨链兑换成功交易即有机会获得盲盒，开出惊喜数字资产"
-            },
-            end:{
-                title:"本期盲盒活动已结束",
-                subtitle:"敬请期待下期盲盒活动",
-                content:`关注@BitKeepOS 了解更多详情`
-              }
-
+          "myBlindboxText": "My blind box",
+          "RaidersText": "Raiders",
+          "DigitalBlindBoxText": "Digital blind box",
+    
+          "blindBoxNumText": "{surplus} done <span class='color_red'>{invite}</span> to go",
+          "blindBoxSurpriseText": "",
+          "ValidUntilText": "Valid until",
+          "inviteFirends": 'Invited',
+          "HelpFirends": 'Be helped',
+          "friendList": 'Friends List',
+          "inviteContent": `{helper} have been assisted `,
+          "GoOpenText": "Go open",
+          "GoShareText": "Go share",
+          "TurnedOnText": "Turned on",
+          "SuccessfullyOpenedText": "Opened",
+          "expiredText": "expired",
+          "ShareWithMe": "Shared width me",
+          "noHelper": "No friends have been helped",
+          "noInvite": "No friends have been invited",
+          willOpened:"To be opened",
+          noData:{
+            title:"No blind box",
+            content:"It is said that Using BitSwap or cross-chain swap sucessfully will get a chance to receive blind box and get digital assets"
+          },
+          end:{
+            title:"No blind box",
+            subtitle:"please stay tuned for next event",
+            content:`Follow @BitKeepOS to learn more details`
+          }
         },
         ActivityBlindboxDetail: {
-            "blindBoxNumText": "已有 <span class='color_red font-20'>{surplus}</span> 人助力(还需 {invite} 人)",
-            "inputAddressPlaceholader": "点即此处输入 BitKeep 云钱包地址",
-            "NoAddressDownload": "没有云钱包地址？<br/>👉  点击下载 BitKeep 创建   👈",
-            "HelpSuccessETH": "助力成功的 BitKeep 云钱包地址",
-            "InviteSuccessETH": "已邀请的 ETH 地址：",
-            "FinalInterpretation": "本活动最终解释权归 BitKeep 所有",
-
-
-            "invalidTimeText": "距离盲盒失效还有",
-            "successfullyTimeText": "盲盒已成功开启！",
-            'expiredTimeText': "太遗憾了，这个盲盒已过期",
-
-
-            "ScanBlindBox": "扫描领取数字盲盒",
+          "blindBoxNumText": "{surplus} done <span class='color_red font-20'>{invite}</span> to go",
+          "inputAddressPlaceholader": "Entry BitKeep Cloud Wallet adress",
+          "NoAddressDownload": "Tap here to create <br/>👉   your BitKeep Cloud Wallet 👈",
+          "HelpSuccessETH":"BitKeep Cloud Wallet adress",
+          "InviteSuccessETH": "The ETH address has been invited",
+         "FinalInterpretation": "BitKeep owns the final interpretation right of this event.",
+    
+         "invalidTimeText": "Distance blind box failure",
+         "successfullyTimeText" :"The blind box has been opened successfully!",
+          expiredTimeText    :"It's a pity that this blind box has expired",
+    
+          "ScanBlindBox": "Scan and receive digital blind box",
+          DownloadBitkeep: "Download Bitkeep to share the digital assets in the blind box",
+    
+    
+          "BitKeepTitleText": "BitKeep数字盲盒",
+          "OpenTitleText": "开启获得惊喜数字资产",
+    
+          "InviteFriendsText": "邀请好友助力开启盲盒",
+          "GetSurpriseAssetsText": "获得惊喜数字资产",
+          "stillShort": "距离开启盲盒仅差3/5人助力",
+          "InviteFriendsNowText": "立即邀请好友助力",
+          "SuccessfullyAssistedText": "已成功助力 ETH 地址",
+          "OpenStrategyText": "开启盲盒攻略",
+          "shareLinkText": "分享海拔或链接给好友",
+          "ClickConentSharedText": "点击「立即邀请好友助力」将海报或者链接分享给好友",
+          "FriendsFillValidTitleText": "好友填写有效ETH地址助力",
+          "FriendsHelpeSuccessText": "好友进入链接并输入有效的ETH地址助力成功",
+          "CanopenBlindBoxText": "凑齐足够助力好友助力后开启盲盒",
+          "OpenTheBlindBoxText": "当足够数量的好友助力成功后，您可以点击开启盲盒",
+          "shareWidthFriendsText": '您和好友瓜分盲盒内数字资产',
+          "CanViewAssetsTocloudWallet": "盲盒开启后您和助力好友均可在 BitKeep 云钱包中查看获得的数字资产",
+    
+          rules: [
+            "Each blind box contains a random number of BKB",
+            `Share this link to invite your friends, and ask them to fill in valid BitKeep Cloud Wallet address (Click the link to create a BitKeep Cloud Wallet <a href='https://bit.ly/BitKeepCloudWallet' class='color_red'>https://bit.ly/BitKeepCloudWallet</a> )`,
+            "With five friends manage to make contribution, the blind box will unlock, and you and your friends will get a share of the BKB inside.",
+            "These BKB will be deposited in your Cloud Wallet. If you have’t activated your Cloud Wallet, please tap Cloud Wallet in the NAV bar to activate it.",
+          ],
+    
+          modal: {
+    
+    
+            sharedHelperMeText: "助力我开启 BitKeep 数字盲盒吧",
+            openSurpriseText: "开启获取惊喜数字资产",
+    
             DownloadBitkeep: "下载 Bitkeep，瓜分盲盒中数字资产",
-
-
-            "BitKeepTitleText": "BitKeep数字盲盒",
-            "OpenTitleText": "开启获得惊喜数字资产",
-
-            "InviteFriendsText": "邀请好友助力开启盲盒",
-            "GetSurpriseAssetsText": "获得惊喜数字资产",
-            "stillShort": "距离开启盲盒仅差3/5人助力",
-            "InviteFriendsNowText": "立即邀请好友助力",
-            "SuccessfullyAssistedText": "已成功助力 ETH 地址",
-            "OpenStrategyText": "开启盲盒攻略",
-            "shareLinkText": "分享海拔或链接给好友",
-            "ClickConentSharedText": "点击「立即邀请好友助力」将海报或者链接分享给好友",
-            "FriendsFillValidTitleText": "好友填写有效ETH地址助力",
-            "FriendsHelpeSuccessText": "好友进入链接并输入有效的ETH地址助力成功",
-            "CanopenBlindBoxText": "凑齐足够助力好友助力后开启盲盒",
-            "OpenTheBlindBoxText": "当足够数量的好友助力成功后，您可以点击开启盲盒",
-            "shareWidthFriendsText": '您和好友瓜分盲盒内数字资产',
-            "CanViewAssetsTocloudWallet": "盲盒开启后您和助力好友均可在 BitKeep 云钱包中查看获得的数字资产",
-            rules: [
-                "每个盲盒里面有随机数量的数字资产",
-                `分享给好友后，好友填写有效的 BitKeep 云钱包地址即可成功助力，点击链接<a href='https://bit.ly/BitKeepCloudWallet' class='color_red'>https://bit.ly/BitKeepCloudWallet</a>创建 BitKeep 云钱包`,
-                "足够数量的好友助力成功后，盲盒将自动开启，盲盒开启后您和助力好友均可获得盲盒中的数字资产",
-                "盲盒奖品发放至云钱包，若未激活云钱包，可在 <span class='word_keep'>BitKeep</span> 菜单栏「云钱包」中激活，便可查看获得的数字资产"
-            ],
-
-            modal: {
-                sharedHelperMeText: "助力我开启 BitKeep 数字盲盒吧",
-                openSurpriseText: "开启获取惊喜数字资产",
-                "ScanBlindBox": "扫描领取数字盲盒",
-                DownloadBitkeep: "下载 Bitkeep，瓜分盲盒中数字资产",
-                savePicture: "保存图片",
-                ShareLink: "分享链接",
-                HelpOpenImmediatel: "立即助力开启盲盒",
-
-                SuccessfullyHelpFriends: "成功助力好友",
-                DownloadBitkeepAppNow: "立即下载 bitkeep",
-                "CheckBoxToGetAssets": "查看盲盒获取惊喜数字资产",
-                DownloadNow: "立即下载"
-            }
-
-        },
-
+            savePicture: "保存图片",
+            ShareLink: "分享链接",
+            HelpOpenImmediatel: "立即助力开启盲盒",
+    
+            SuccessfullyHelpFriends: "成功助力好友",
+            DownloadBitkeepAppNow: "立即下载 bitkeep",
+            "CheckBoxToGetAssets": "查看盲盒获取惊喜数字资产",
+            DownloadNow: "立即下载"
+          }
+    
+        }
+    
     },
     'CbkbExchange':{
     balance: '余额',
@@ -344,6 +344,15 @@ module.exports = {
         ClaimRewards: 'Claim Rewards',
         confirm: 'Confirm',
         noData: 'No data',
+        invitationReward: "Invitation Reward",
+        myInvitationRewards: "My Invitation Rewards",
+        totalBonusPool: "Total Bonus Pool",
+        todayBonusPool: "Today Bonus Pool",
+        myTodayRewards: "My today Rewards",
+        tradingRewards: "Trading Rewards",
+        invitationRewards: "Invitation Rewards",
+        viewDetails: "View Dtails",
+        inviteFriendsNow: "Invite friends now",
         ruleDetail: 'Note: The following transactions are not considered eligible for trading rewards',
         ruleDetail1: `1. Cross-chain swaps, including：<br/>  (1) swapping the same coin on different chains, e.g. BSC-USDT to ETH-USDT swaps;<br/>  (2) swapping different coins on different chains, such as through Swft channels, or BNB to ETH swaps.`,
         ruleDetail2: '2. Burning coin transactions. Some coins are based on a burning mechanism, and they might be requited to be partially burnt whenever there is a transaction, which makes it different to count the exact transaction amount. Theses coins are therefore excluded from this BKSwap Trading Reward event.',
@@ -369,7 +378,7 @@ module.exports = {
     'blindboxInvite': {
         inviteTitle: 'Invite Friends',
         myRewards: 'My Rewards',
-        invitedNumber: 'Invited number',
+        invitedNumber: 'Invited friends',
         tokenRewards: 'Token Rewards',
         NFTRewards: 'NFT Rewards',
         boxRewards: 'Blind Box Rewards',

@@ -6,27 +6,50 @@
       >
     </div>
     <div v-else class="rewards-list-box">
-      <van-list
-        v-model="loading"
-        v-if="rewardsList.length > 0"
-        :finished="finished"
-        :immediate-check="false"
-        :loading-text="$t('blindboxrewards.loading')"
-        :finished-text="$t('blindboxrewards.nomore')"
-        @load="getrewardsList"
-      >
-        <div class="rewards-row-data" v-for="item in rewardsList" :key='item.address'>
-          <div class="rewards-row-data-left">
-            <div class="rewards-row-data-left-title textPrimary0">活动 1 奖励</div>
-            <div class="rewards-row-data-left-time textSecond3">2020-12-08 12:02:23</div>
-          </div>
-          <div class="rewards-row-data-right">
-            <div class="rewards-row-data-right-content textPrimary0">
-              <img src="http://cdn.bitkeep.vip/u_b_04e2ea10-596d-11ec-bdbc-7722494dfa58.png" alt=""> &nbsp;   +12,000.9090 BKB
+      <div v-if="rewardsList.length > 0">
+        <van-pull-refresh
+          class="setHeight"
+          v-model="refreshing"
+          @refresh="onRefresh"
+        >
+          <van-list
+            v-model="loading"
+            :finished="finished"
+            :immediate-check='false'
+            @load="getRewardsList"
+          >
+            <div
+              class="rewards-row-data"
+              v-for="item in rewardsList"
+              :key="item.number"
+            >
+              <div class="rewards-row-data-left">
+                <div class="rewards-row-data-left-title textPrimary0">
+                  邀请奖励
+                </div>
+                <div class="rewards-row-data-left-time textSecond3">
+                  {{item.create_time | filterTime}}
+                </div>
+              </div>
+              <div class="rewards-row-data-right">
+                <div
+                  class="
+                    rewards-row-data-right-content
+                    textPrimary0
+                    setFontFamily
+                  "
+                >
+                  <img
+                    src="http://cdn.bitkeep.vip/u_b_04e2ea10-596d-11ec-bdbc-7722494dfa58.png"
+                    alt=""
+                  />
+                  &nbsp; +{{item.reward}} BKB
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </van-list>
+          </van-list>
+        </van-pull-refresh>
+      </div>
       <div class="noData" v-else>
         <img
           src="http://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png"
@@ -47,19 +70,22 @@ export default {
       isLoading: true,
       finished: false,
       loading: false,
-      rewardsList: [
-          {address:'0x7a32....9941',state:1,time: '2021-11-12 18:21:21'},
-          {address:'0x7a31....9941',state:2,time: '2021-11-12 18:21:21'},
-          ],
-      activeCount: 0,
-      unActiveCount: 0,
+      refreshing: false,
+      rewardsList: [],
       start: 0,
       limit: 20,
     };
   },
-  filters:{
-    address(item){
-    return item && item.substring(0, 6) + " .... " + item.substr(-4);
+  filters: {
+    filterTime(date) {
+      let val = new Date(date)
+      var Y = val.getFullYear()
+      var M = val.getMonth()
+      var D = val.getDate()
+      var H = val.getHours()
+      var MI = val.getMinutes()
+      var S = val.getSeconds()
+      return Y + "-" + M + "-" + D + " " + H + ":" + MI + ":" + S 
     }
   },
   computed: {
@@ -78,6 +104,7 @@ export default {
     this.isBitKeep &&
       BitKeepInvoke.onLoadReady(() => {
         BitKeepInvoke.setTitle(this.$t("blindboxInvite.rewardTitle"));
+        BitKeepInvoke.setIconAction();
         this.$nextTick(() => {
           BitKeepInvoke.appMode((err, res) => {
             let body = document.getElementsByTagName("body")[0];
@@ -91,29 +118,40 @@ export default {
       });
   },
   mounted() {
-    // this.getrewardsList();
+    this.getRewardsList();
   },
   methods: {
-    async getrewardsList() {
-      const { data, status } = await USER_API.getInviteList({
-        start: this.start*this.limit,
+    async getRewardsList() {
+      const { data, status } = await USER_API.activityDoneRewardList({
+        start: this.start * this.limit,
         limit: this.limit,
       });
       if (status == 1) {
         this.isLoading = false;
-        this.$toast(data);
+        this.loading = true;
+        return this.$toast(data);
       }
-      this.activeCount = data.activeCount;
-      this.unActiveCount = data.unActiveCount;
       var moreList = data.data;
-      this.rewardsList.push(...moreList);
+      moreList && this.rewardsList.push(...moreList);
       this.isLoading = false;
-      Toast.clear();
+      this.$toast.clear();
       this.loading = false;
       this.start++;
       if (this.rewardsList.length >= data.total_count) {
         this.finished = true;
       }
+    },
+    async onRefresh() {
+      const { data, status } = await USER_API.activityDoneRewardList({
+        start: 0,
+        limit: this.limit,
+      });
+      if (status == 1) {
+        this.refreshing = false;
+        return this.$toast(data);
+      }
+      this.rewardsList = data.data;
+      this.refreshing = false;
     },
   },
 };
@@ -127,24 +165,30 @@ export default {
     justify-content: center;
     align-items: center;
   }
-  .rewards-row-data{
+  .setHeight{
+    min-height: 100vh;
+  }
+  .rewards-row-data {
     display: flex;
     justify-content: space-between;
     margin: 0 16px;
     height: 60px;
     align-items: center;
-    .rewards-row-data-left{
-      .rewards-row-data-left-title{
+    .rewards-row-data-left {
+      .rewards-row-data-left-title {
         font-size: 14px;
+        font-weight: 500;
       }
-      .rewards-row-data-left-time{
+      .rewards-row-data-left-time {
         font-size: 12px;
       }
     }
-    .rewards-row-data-right{
-      .rewards-row-data-right-content{
+    .rewards-row-data-right {
+      .rewards-row-data-right-content {
+        display: flex;
+        align-items: center;
         font-size: 14px;
-        img{
+        img {
           width: 20px;
           height: 20px;
           vertical-align: sub;

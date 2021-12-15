@@ -1,15 +1,25 @@
 <template>
-  <div class="detail_box">
-    <div class="detail_box_header">
+<div>
+  <div class="loading" v-if="isLoading">
+      <van-loading color="#1989fa" vertical
+        >{{ $t("base.loading") }}...</van-loading
+      >
+  </div>
+  <div class="detail_box" v-else>
+    <div class="detail_box_back">
+      <div class="detail_box_header">
       <div><img src="@/assets/activity/blindbox/logo@2.png" /></div>
       <div class="detail_box_lang">
-        <div class="langBox" id="showLang">
-          <span class="curLang">中文</span>
-          <van-icon name="play" class="icon" />
+        <div class="langBox" id="showLang" @click="changeLang">
+          <span class="curLang">{{langText}}</span>
+          <van-icon name="play" class="icon setFont" />
         </div>
-        <ul class="langList" id="langList">
+        <ul class="langList" id="langList" v-show='langShow'>
           <li class="langItem" data-val="zh" data="中文">中文</li>
           <li class="langItem" data-val="en" data="English">English</li>
+          <li class="langItem" data-val="ko" data="韩语">韩语</li>
+          <li class="langItem" data-val="ja" data="日语">日语</li>
+          <li class="langItem" data-val="vi" data="越南语">越南语</li>
         </ul>
       </div>
     </div>
@@ -21,7 +31,7 @@
         <div>
           <div>
             <img
-              src="http://cdn.bitkeep.vip/u_b_24d53cf0-5a54-11ec-bdbc-7722494dfa58.jpeg"
+              src="http://cdn.bitkeep.vip/u_b_2d8ec1f0-5bed-11ec-bdbc-7722494dfa58.png"
               alt=""
             />
           </div>
@@ -32,7 +42,7 @@
         <div class="detail_box_flex_content_right">
           <div>
             <img
-              src="http://cdn.bitkeep.vip/u_b_24d60040-5a54-11ec-bdbc-7722494dfa58.jpeg"
+              src="http://cdn.bitkeep.vip/u_b_2d96d840-5bed-11ec-bdbc-7722494dfa58.png"
               alt=""
             />
           </div>
@@ -45,7 +55,7 @@
         <div>
           <div>
             <img
-              src="http://cdn.bitkeep.vip/u_b_24d5d930-5a54-11ec-bdbc-7722494dfa58.jpeg"
+              src="http://cdn.bitkeep.vip/u_b_2d97e9b0-5bed-11ec-bdbc-7722494dfa58.png"
               alt=""
             />
           </div>
@@ -54,11 +64,11 @@
         <div class="detail_box_flex_content_right">
           <div>
             <img
-              src="http://cdn.bitkeep.vip/u_b_24d5b220-5a54-11ec-bdbc-7722494dfa58.jpeg"
+              src="http://cdn.bitkeep.vip/u_b_2d8f1010-5bed-11ec-bdbc-7722494dfa58.png"
               alt=""
             />
           </div>
-          <div>7000+ DApp ecosystem</div>
+          <div class="detail_box_flex_font">7000+ DApp ecosystem</div>
         </div>
       </div>
     </div>
@@ -78,16 +88,16 @@
           :class="{ focus: focus || !!address }"
           @blur="handlerBlur()"
           :placeholder="
-            $t(
-              'ActivityBlindbox.ActivityBlindboxDetail.inputAddressPlaceholader'
-            )
-          "
+            focus ? '' : $t( 'ActivityBlindbox.ActivityBlindboxDetail.inputAddressPlaceholader' )"
         />
-        <div class="detail_box_address_textarea_btn">提交地址 接受邀请</div>
-        <div class="detail_box_address_textarea_link colorPrimary">
+        <div class="detail_box_address_textarea_btn" @click="submitAddress">提交地址 接受邀请</div>
+        <div class="detail_box_address_textarea_link">
+          <a href="https://www.bitkeep.org/" class="colorPrimary">
           没有 ETH 地址? 点击下方按钮下载 BitKeep 创建
+          </a>
         </div>
       </div>
+    </div>
     </div>
     <div class="detail_box_wallet setMargin">
       <h1>Why choose BitKeep wallet？</h1>
@@ -106,7 +116,7 @@
     </div>
     <div class="detail_box_wallet setBackground">
       <img
-        src="http://cdn.bitkeep.vip/u_b_e98408a0-5a5f-11ec-bdbc-7722494dfa58.jpeg"
+        src="http://cdn.bitkeep.vip/u_b_22575140-5bec-11ec-bdbc-7722494dfa58.png"
         alt=""
       />
       <div class="detail_box_wallet_title_content setBottom">
@@ -205,23 +215,104 @@
       </div>
     </div>
   </div>
+</div>
+  
 </template>
 <script>
+import { mapState } from "vuex";
+import { USER_API } from "@/api/client";
+
 export default {
-  data() {
-    return {};
+  name: "Detail",
+  data () {
+    return {
+      isLoading: true,
+      address: '',
+      focus: false,
+      langShow: false,
+      langText: 'English'
+    }
   },
-  methods: {},
+  computed: {
+    ...mapState(["local"]),
+    locale() {
+      return this.local.locale;
+    },
+    isIos() {
+      return this.local.UA.ios;
+    },
+  },
+  mounted () {
+    this.$nextTick(()=>{
+      this.isLoading = false;
+    })
+  },
+  methods: {
+    handlerFocus() {
+      this.focus = true;
+    },
+    handlerBlur() {
+      this.focus = false;
+    },
+    async submitAddress() {
+      const { data, status } = await USER_API.certifyFriendship({
+        address: this.address
+      });
+      if (status == 1) {
+        this.isLoading = false;
+        return this.$toast(data);
+      }
+      this.address = '';
+      // 0 --认证不成功
+      // 1 --成功
+      // 2 --地址已存在
+      switch (data) {
+        case 0:
+          return this.$toast('认证不成功');
+          break
+        case 1:
+          this.$toast('成功');
+          this.$router.push('/activity/blindboxInvite/download')
+        case 2:
+          return this.$toast('地址已存在');
+      }
+      
+    },
+    changeLang(){
+      this.langShow = true;
+      // 点击切换语言
+      let langItem = document.getElementsByClassName('langItem');
+      for (let i = 0; i < langItem.length; i++) {
+        let curItem = langItem[i];
+        curItem.addEventListener('click', () => {
+          let lang = curItem.getAttribute('data-val');
+          this.langShow = false;
+          this.langText = curItem.getAttribute('data');
+          // 获取对应语言包数据
+          this.$store.commit('CHANGE_LANG',lang)
+        })
+      }
+    }
+  }
 };
 </script>
 <style scoped lang="scss">
 @import "@/assets/css/theme.scss";
-
+.loading {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.detail_box_back{
+  background: url("http://cdn.bitkeep.vip/u_b_4dcd9190-5bec-11ec-bdbc-7722494dfa58.png") no-repeat;
+  background-size: 100% 100%;
+}
 .detail_box {
   .detail_box_header {
     display: flex;
     justify-content: space-between;
-    margin: 8px 22px 8px 16px;
+    padding: 8px 22px 8px 16px;
     align-items: center;
     img {
       width: 108px;
@@ -242,22 +333,22 @@ export default {
         }
       }
       .langList {
-        display: none;
+        // display: none;
         position: absolute;
         right: 16px;
         overflow: hidden;
         padding: 12px 22px;
         background: #fff;
-        border-radius: 0.3rem;
+        border-radius: 6px;
         box-shadow: 0px 30px 40px 0px #0e1b400d;
         font-size: 14px;
         line-height: 30px;
         text-align: center;
+        margin-top: 6px;
       }
     }
   }
   .detail_box_text {
-    width: 100%;
     margin: 28px 16px 0;
     p {
       width: 230px;
@@ -272,12 +363,17 @@ export default {
     margin: 10px 16px;
     .detail_box_flex_content_first {
       width: 111px;
+      font-size: 14px;
     }
     .detail_box_flex_content_last {
+      font-size: 14px;
       width: 124px;
     }
     .detail_box_flex_content_right {
       margin-left: 66px;
+      .detail_box_flex_font{
+      font-size: 14px;
+      }
     }
     img {
       width: 24px;
@@ -285,11 +381,11 @@ export default {
     }
   }
   .detail_box_address {
-    margin: 50px 16px;
+    margin: 50px 16px 40px;
     height: 262px;
     border-radius: 16px;
     padding: 10px;
-    background: #ddd !important;
+    background: #fff;
     .detail_box_address_header {
       font-size: 18px;
       line-height: 24px;
@@ -350,6 +446,9 @@ export default {
     padding: 0 16px 34px;
   }
   .detail_box_wallet {
+    >h1{
+      font-size: 24px;
+    }
     img {
       width: 100%;
     }
@@ -364,6 +463,7 @@ export default {
         color: #0e1b40;
         li {
           margin-left: 18px;
+          font-size: 12px;
         }
         li::before {
           content: "";
@@ -502,6 +602,9 @@ export default {
       margin-top: 5px;
       text-align: center;
     }
+  }
+  .setFont{
+    font-size: 12px;
   }
   a {
     text-decoration: none;

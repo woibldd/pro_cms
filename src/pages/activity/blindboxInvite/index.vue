@@ -9,7 +9,7 @@
       <div class="warp-invite colorBackground3">
         <div class="warp-invite-banner">
           <img
-            src="http://cdn.bitkeep.vip/u_b_e0135f70-5422-11ec-a16d-43771b230a03.png"
+            src="http://cdn.bitkeep.vip/u_b_2df2d7c0-5be9-11ec-bdbc-7722494dfa58.png"
           />
         </div>
         <div class="warp-invite-one colorBackgroundWhite setTop">
@@ -20,15 +20,15 @@
           </div>
           <!-- <div class="borderBottom colorLine"></div> -->
           <div class="invite-setP">
-            <div class="warp-invite-produced">
+            <div class="warp-invite-produced" @click="inviteFriendList">
               <span><img src="http://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.invitedNumber") }}</span>
-              <span class="setFontFamily">0
+              <span class="setFontFamily setDisplay">{{inviteNumber}}
                 <van-icon name="arrow" color='#999BA3'/>
               </span>
             </div>
-            <div class="warp-invite-produced">
+            <div class="warp-invite-produced" @click="rewardsList">
               <span><img src="http://cdn.bitkeep.vip/u_b_e7b6fe30-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.tokenRewards") }}</span>
-              <span class="setFontFamily">0
+              <span class="setFontFamily">
                 <van-icon name="arrow" color='#999BA3'/>
               </span>
             </div>
@@ -80,6 +80,7 @@
       :zIndex="100"
       ref="CreatePoster"
       :isBitKeep="isBitKeep"
+      :userInfo="userInfo"
     />
   </div>
 </template>
@@ -91,6 +92,7 @@
 import { mapState } from "vuex";
 import CreatePoster from "./component/createPoster.vue";
 import copy from "./copy";
+import { USER_API } from "@/api/client";
 
 export default {
   name: "blindboxInvite",
@@ -98,6 +100,7 @@ export default {
     return {
       isLoading: true,
       inviteLink: "",
+      inviteNumber: 0,
       inviteLinkAll: "",
     };
   },
@@ -126,13 +129,12 @@ export default {
     this.isBitKeep &&
       BitKeepInvoke.onLoadReady(() => {
         BitKeepInvoke.setTitle(this.$t("blindboxInvite.inviteTitle"));
-        let devSrc =
-          "http://192.168.50.246:8081/activity/blindboxInvite?token=";
-        // let proSrc = 'https://news.bitkeep.io/activity/blindboxInvite';
+        let devSrc = location.href + "/detail?token=";
         this.inviteLink = devSrc + this.userInfo;
         this.inviteLinkAll = devSrc + this.userInfo;
         this.getSub()
         this.$nextTick(() => {
+          BitKeepInvoke.setIconAction();
           BitKeepInvoke.appMode((err, res) => {
             let body = document.getElementsByTagName("body")[0];
             if (res == 1) {
@@ -143,6 +145,7 @@ export default {
           });
         });
       });
+      this.getInviteNumber()
   },
   methods: {
     getSub() {
@@ -151,9 +154,25 @@ export default {
       let fisrt = copy.substring(0, 14);
       this.inviteLink = fisrt + " .... " + copy.substr(-15); 
     },
-    inviteFirends(){
-      // this.$refs.CreatePoster && this.$refs.CreatePoster.init();
+    async getInviteNumber(){
+      const { data, status } = await USER_API.getInviteList({
+        start: 0,
+        limit: 10,
+      });
+      if (status == 1) {
+        this.isLoading = false;
+        this.$toast(data);
+      }
+      this.inviteNumber = data.total_count;
+    },
+    inviteFriendList(){
       this.$router.push('/activity/blindboxInvite/inviteList')
+    },
+    rewardsList(){
+      this.$router.push('/activity/blindboxInvite/rewardList')
+    },
+    inviteFirends(){
+      this.$refs.CreatePoster && this.$refs.CreatePoster.init();
     }
   },
 };
@@ -190,6 +209,10 @@ export default {
       height: 50px;
       line-height: 50px;
       justify-content: space-between;
+      .setDisplay{
+        display: flex;
+        align-items: center;
+      }
       span {
         font-size: 14px;
         img {
@@ -199,7 +222,8 @@ export default {
           vertical-align: sub;
         }
         i {
-          vertical-align: text-bottom;
+          vertical-align: middle;
+          display: inline-block;
         }
       }
       span:last-child {

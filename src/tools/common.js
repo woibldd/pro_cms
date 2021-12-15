@@ -288,3 +288,13 @@ export function DPR() {
     }
     return 1;
 }
+export function filterTime(date) {
+    let val = new Date(date)
+    var Y = val.getFullYear()
+    var M = val.getMonth()
+    var D = val.getDate()
+    var H = val.getHours()
+    var MI = val.getMinutes()
+    var S = val.getSeconds()
+    return Y + "-" + M + "-" + D + " " + H + ":" + MI + ":" + S 
+  }

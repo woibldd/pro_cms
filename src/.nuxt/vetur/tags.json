@@ -2,6 +2,15 @@
   "Activity": {
     "description": "Auto imported from components/activity/index.vue"
   },
+  "CommonCVueCountdown": {
+    "description": "Auto imported from components/common/c-vue-countdown.vue"
+  },
+  "CommonHeader": {
+    "description": "Auto imported from components/common/header.vue"
+  },
+  "Common": {
+    "description": "Auto imported from components/common/index.js"
+  },
   "BlindboxBlindButton": {
     "description": "Auto imported from components/blindbox/BlindButton.vue"
   },
@@ -16,15 +25,6 @@
   },
   "BlindboxTitleImage": {
     "description": "Auto imported from components/blindbox/titleImage.vue"
-  },
-  "CommonCVueCountdown": {
-    "description": "Auto imported from components/common/c-vue-countdown.vue"
-  },
-  "CommonHeader": {
-    "description": "Auto imported from components/common/header.vue"
-  },
-  "Common": {
-    "description": "Auto imported from components/common/index.js"
   },
   "VueCreatePosterLayoutCanvasPoster": {
     "description": "Auto imported from components/vue-create-poster/layout/canvas-poster.vue"

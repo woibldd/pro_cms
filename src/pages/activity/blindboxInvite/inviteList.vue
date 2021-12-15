@@ -9,50 +9,65 @@
       <div class="invite-list-header">
         <div class="invite-list-header-left">
           <div>{{ $t("blindboxInvite.inforce") }}</div>
-          <div class="setFontFamily">{{activeCount || 111}}</div>
+          <div class="setFontFamily">{{ activeCount || 0 }}</div>
         </div>
-        <div class="color-line colorLine"></div>
+        <div class="color-line"></div>
         <div class="invite-list-header-right">
           <div>{{ $t("blindboxInvite.inactivated") }}</div>
-          <div class="setFontFamily">{{unActiveCount || 98}}</div>
+          <div class="setFontFamily">{{ unActiveCount || 0 }}</div>
         </div>
       </div>
-      <van-list
-        v-model="loading"
-        v-if="inviteList.length > 0"
-        :finished="finished"
-        :immediate-check="false"
-        :loading-text="$t('blindboxInvite.loading')"
-        :finished-text="$t('blindboxInvite.nomore')"
-        @load="getInviteList"
-      >
-        <van-row class="invite-row">
-          <van-col span="8" class="invite-col textSecond3">{{
-            $t("blindboxInvite.Address")
-          }}</van-col>
-          <van-col span="8" class="invite-col textSecond3">{{
-            $t("blindboxInvite.State")
-          }}</van-col>
-          <van-col span="8" class="invite-col textSecond3">{{
-            $t("blindboxInvite.Time")
-          }}</van-col>
-        </van-row>
-        <div class="invite-line colorLine"></div>
-        <div class="invite-row-data" v-for="item in inviteList" :key='item.address'>
-          <van-row class="invite-row-data-row" :class="item.state==1 ? 'textPrimary0' : 'textSecond3'">
-            <van-col span="8" class="invite-row-data-col"
-              >{{item.address | address }}</van-col
+      <div v-if="inviteList.length > 0">
+        <van-pull-refresh
+          class="setHeight"
+          v-model="refreshing"
+          :success-text="$t('mining.success')"
+          :loading-text="$t('mining.loading')"
+          :loosing-text="$t('mining.loading')"
+          @refresh="onRefresh"
+        >
+          <van-list
+            v-model="loading"
+            :finished="finished"
+            :immediate-check="false"
+            @load="getInviteList"
+          >
+            <van-row class="invite-row">
+              <van-col span="8" class="invite-col textSecond3">{{
+                $t("blindboxInvite.Address")
+              }}</van-col>
+              <van-col span="7" class="invite-col textSecond3">{{
+                $t("blindboxInvite.State")
+              }}</van-col>
+              <van-col span="9" class="invite-col textSecond3">{{
+                $t("blindboxInvite.Time")
+              }}</van-col>
+            </van-row>
+            <div class="invite-line colorLine"></div>
+            <div
+              class="invite-row-data"
+              v-for="item in inviteList"
+              :key="item.address"
             >
-            <van-col span="8" class="invite-row-data-col"
-              >{{item.state == 1 ? 'In force': 'Inactivated'}}</van-col
-            >
-            <van-col span="8" class="invite-row-data-col"
-              >{{ item.time}}</van-col
-            >
-          </van-row>
-          <div class="invite-line colorLine"></div>
-        </div>
-      </van-list>
+              <van-row
+                class="invite-row-data-row"
+                :class="item.state == 1 ? 'textPrimary0' : 'textSecond3'"
+              >
+                <van-col span="8" class="invite-row-data-col">{{
+                  item.address_friend | address
+                }}</van-col>
+                <van-col span="7" class="invite-row-data-col">{{
+                  item.state == 1 ? "In force" : "Inactivated"
+                }}</van-col>
+                <van-col span="9" class="invite-row-data-col">{{
+                  item.create_time | filterTime
+                }}</van-col>
+              </van-row>
+              <div class="invite-line colorLine"></div>
+            </div>
+          </van-list>
+        </van-pull-refresh>
+      </div>
       <div class="noData" v-else>
         <img
           src="http://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png"
@@ -73,19 +88,27 @@ export default {
       isLoading: true,
       finished: false,
       loading: false,
-      inviteList: [
-          {address:'0x7a32....9941',state:1,time: '2021-11-12 18:21:21'},
-          {address:'0x7a31....9941',state:2,time: '2021-11-12 18:21:21'},
-          ],
+      refreshing: false,
+      inviteList: [],
       activeCount: 0,
       unActiveCount: 0,
       start: 0,
       limit: 20,
     };
   },
-  filters:{
-    address(item){
-    return item && item.substring(0, 6) + " .... " + item.substr(-4);
+  filters: {
+    address(item) {
+      return item && item.substring(0, 6) + " .... " + item.substr(-4);
+    },
+    filterTime(date) {
+      let val = new Date(date)
+      var Y = val.getFullYear()
+      var M = val.getMonth()
+      var D = val.getDate()
+      var H = val.getHours()
+      var MI = val.getMinutes()
+      var S = val.getSeconds()
+      return Y + "-" + M + "-" + D + " " + H + ":" + MI + ":" + S 
     }
   },
   computed: {
@@ -104,6 +127,7 @@ export default {
     this.isBitKeep &&
       BitKeepInvoke.onLoadReady(() => {
         BitKeepInvoke.setTitle(this.$t("blindboxInvite.inviteFriends"));
+        BitKeepInvoke.setIconAction();
         this.$nextTick(() => {
           BitKeepInvoke.appMode((err, res) => {
             let body = document.getElementsByTagName("body")[0];
@@ -117,35 +141,48 @@ export default {
       });
   },
   mounted() {
-    // this.getInviteList();
+    this.getInviteList();
   },
   methods: {
     async getInviteList() {
       const { data, status } = await USER_API.getInviteList({
-        start: this.start*this.limit,
+        start: this.start * this.limit,
         limit: this.limit,
       });
       if (status == 1) {
         this.isLoading = false;
-        this.$toast(data);
+        this.loading = true;
+        return this.$toast(data);
       }
       this.activeCount = data.activeCount;
       this.unActiveCount = data.unActiveCount;
-      var moreList = data.data;
-      this.inviteList.push(...moreList);
+      var moreList = data.list;
+      moreList && this.inviteList.push(...moreList);
       this.isLoading = false;
-      Toast.clear();
+      this.$toast.clear();
       this.loading = false;
       this.start++;
       if (this.inviteList.length >= data.total_count) {
         this.finished = true;
       }
     },
+    async onRefresh() {
+      const { data, status } = await USER_API.getInviteList({
+        start: 0,
+        limit: this.limit,
+      });
+      if (status == 1) {
+        this.isLoading = false;
+        this.$toast(data);
+      }
+      this.rewardsList = data.data;
+      this.refreshing = false;
+    },
     getSub() {
       // 中间显示省略号
-      let copy = JSON.parse(JSON.stringify(this.inviteLink))
+      let copy = JSON.parse(JSON.stringify(this.inviteLink));
       let fisrt = copy.substring(0, 14);
-      this.inviteLink = fisrt + " .... " + copy.substr(-15); 
+      this.inviteLink = fisrt + " .... " + copy.substr(-15);
     },
   },
 };
@@ -159,10 +196,13 @@ export default {
     justify-content: center;
     align-items: center;
   }
+  .setHeight{
+    min-height: 90vh;
+  }
   .invite-list-header {
-    margin: 16px;
+    margin: 16px 16px 0;
     border-radius: 8px 8px 0px 0px;
-    color: #495BFF;
+    color: #495bff;
     display: flex;
     padding: 10px 15px 15px;
     line-height: 28px;
@@ -172,6 +212,7 @@ export default {
       height: 36px;
       opacity: 0.1;
       margin-top: 14px;
+      background: #495bff;
     }
     .invite-list-header-left {
       width: 50%;
@@ -194,7 +235,9 @@ export default {
     }
   }
   .invite-row {
-    padding: 0 16px 9px;
+    padding: 0 16px;
+    height: 30px;
+    line-height: 30px;
   }
   .invite-line {
     width: 100%;
@@ -204,8 +247,8 @@ export default {
     height: 50px;
     line-height: 50px;
     margin: 0 16px;
-    .invite-row-data-row{
-        font-family: 'bitkeep DIN';
+    .invite-row-data-row {
+      font-family: "bitkeep DIN";
     }
   }
   .noData {

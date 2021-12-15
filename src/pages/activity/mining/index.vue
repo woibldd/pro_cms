@@ -209,6 +209,64 @@
             </div>
           </div>
         </div>
+        <!-- Invitation Reward -->
+        <div class="mining-wrap-one invitation">
+          <div class="mining-wrap-one-header">
+            <div class="mining-wrap-one-header-title">
+              <img
+                src="http://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png"
+                alt=""
+              />
+              <span class="setFontWeight">{{ $t("mining.invitationReward") }}</span>
+            </div>
+            <div class="colorPrimary" @click="inviteRewards">
+              <span>{{ $t("mining.viewDetails") }}</span>
+            </div>
+          </div>
+          <div class="mining-wrap-one-body">
+            <div class="mining-wrap-one-body-trading">
+              <div>
+                <p class="mining-wrap-one-body-vol" style="text-align: left">
+                  {{ $t("mining.totalBonusPool") }}
+                </p>
+                <div class="mining-wrap-one-body-vol-number setFontFamily">
+                  <span class="setW">{{ activityDoneTradingBkbReward }}</span>
+                </div>
+              </div>
+              <div>
+                <p class="mining-wrap-one-body-vol">
+                  {{ $t("mining.todayBonusPool") }}
+                </p>
+                <div class="
+                    mining-wrap-one-body-vol-number-todyVolue
+                    setFontFamily">{{ activityTradingBkbReward }}
+                </div>
+              </div>
+            </div>
+            <div class="line mining-wrap-one-body-line"></div>
+            <div class="mining-wrap-one-body-rewards">
+              <div>
+                <p class="mining-wrap-one-body-vol">
+                  {{ $t("mining.myInvitationRewards") }}
+                </p>
+                <div class="mining-wrap-one-body-vol-number setFontFamily">
+                  <span class="setW">{{ activityInviteDonereward }}</span> BKB
+                </div>
+              </div>
+              <div>
+                <p class="mining-wrap-one-body-vol" style="text-align: right">
+                  {{ $t("mining.myTodayRewards") }}
+                </p>
+                <div class="mining-wrap-one-body-vol-number-last setFontFamily">
+                  {{ activityStatus != 0 ? "+" + activityInviteReward + " BKB" : "--" }}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="warp-invite-link-btn colorBackgroundPrimary" @click="inviteFirends">
+            {{$t("blindboxInvite.inviteFriendsNow")}}
+          </div>
+        </div>
         <!-- Mining Rule -->
         <div class="mining-wrap-one">
           <div class="mining-wrap-one-header">
@@ -244,7 +302,7 @@
         </div>
       </div>
     </van-pull-refresh>
-    <pup-protocol :show='show' @close='close' :unclaimReward='unclaimReward' :theme='theme'></pup-protocol>
+    <pup-protocol :show='show' @close='close' :unclaimReward='unclaimReward' :sumReward='sum_activity_today_reward' :theme='theme'></pup-protocol>
     <ruleDetail :ruleDetailFlag='ruleDetailFlag' :theme='theme' @close='ruleDetailClose'></ruleDetail>
   </div>
 </template>
@@ -267,6 +325,11 @@ export default {
       userTotalBkbReward: 0,
       userTodayDayBkbReward: 0,
       unclaimReward: 0,
+      activityTradingBkbReward: 0,
+      activityDoneTradingBkbReward: 0,
+      activityInviteReward: 0,
+      activityInviteDonereward: 0,
+      sum_activity_today_reward: 0,
       status: false,
       show: false,
       ruleDetailFlag: false,
@@ -333,7 +396,14 @@ export default {
       this.userTodayValue = this.milliFormat(data.userTodayValue);
       this.userTotalBkbReward = this.milliFormat(data.userTotalBkbReward);
       this.userTodayDayBkbReward = this.milliFormat(data.userTodayDayBkbReward);
-      this.unclaimReward = this.milliFormat(data.unclaimReward);
+      this.unclaimReward = data.unclaimReward;
+
+      this.activityTradingBkbReward = this.milliFormat(data.activity_TradingBkbReward);
+      this.activityInviteReward = this.milliFormat(data.activity_invite_reward);
+      this.activityDoneTradingBkbReward = this.milliFormat(data.activity_DoneTradingBkbReward);
+      this.activityInviteDonereward = this.milliFormat(data.activity_invite_Donereward);
+      this.sum_activity_today_reward = data.sum_activity_today_reward;
+
       this.countDown = data.countdown;
       this.activityStatus = data.activityStatus;
       // this.startTime = this.countDown(data.miningStartTime);
@@ -350,6 +420,12 @@ export default {
     },
     ruleDetailClose(){
       this.ruleDetailFlag = false;
+    },
+    inviteRewards(){
+      this.$router.push('/activity/blindboxInvite/rewardList')
+    },
+    inviteFirends(){
+      this.$router.push('/activity/blindboxInvite')
     },
     setIcon(){
       BitKeepInvoke.setTitle(

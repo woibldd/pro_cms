@@ -3,13 +3,12 @@
     <!-- 恭喜你成功开启盲盒 -->
     <!-- 并获取数字资产 -->
     <div v-if="status == 2 && isOwner" class="item">
-      <img
+      <!-- <img
         v-if="locale == 'zh'"
         class="openTextTitle_zh"
         src="@/assets/activity/blindbox/title/openTextTitle@2.png"
-      />
+      /> -->
       <img
-        v-else
         class="openTextTitle_en"
         src="@/assets/activity/blindbox/title/openTextTitle@2.en.png"
       />
@@ -18,13 +17,12 @@
     <!-- 邀请好友助力开启盲盒 
         获惊喜数字资产 -->
     <div v-else-if="isOwner" class="item">
-      <img
+      <!-- <img
         class="inviteTextTitle_zh"
         v-if="locale == 'zh'"
         src="@/assets/activity/blindbox/title/inviteTextTitle@2.png"
-      />
+      /> -->
       <img
-        v-else
         class="inviteTextTitle_en"
         src="@/assets/activity/blindbox/title/inviteTextTitle@2.en.png"
       />
@@ -32,13 +30,12 @@
     <!-- 助力好友开启盲盒 -->
     <!-- 一起分享数字资产 -->
     <div v-else class="item">
-      <img
+      <!-- <img
         v-if="locale == 'zh'"
         class="helperTextTitle_zh"
         src="@/assets/activity/blindbox/title/helperTextTitle@2.png"
-      />
+      /> -->
       <img
-        v-else
         class="helperTextTitle_en"
         src="@/assets/activity/blindbox/title/helperTextTitle@2.en.png"
       />
@@ -47,13 +44,12 @@
   <!-- 盲盒活动规则 -->
   <div v-else-if="type == 'footer'" class="titleImage footer ">
     <div class="item">
-      <img
+      <!-- <img
         v-if="locale == 'zh'"
         class="rulesTextTitle_zh"
         src="@/assets/activity/blindbox/title/rulesTextTitle@2.png"
-      />
+      /> -->
       <img
-        v-else
         class="rulesTextTitle_en"
         src="@/assets/activity/blindbox/title/rulesTextTitle@2.en.png"
       />
@@ -61,14 +57,13 @@
   </div>
   <div v-else-if="type == 'strategy'" class="titleImage">
     <div class="item">
-      <img
+      <!-- <img
       
         v-if="locale == 'zh'"
         class="strategyTextTitle_zh"
         src="@/assets/activity/blindbox/title/rulesTextTitle@2.png"
-      />
+      /> -->
       <img
-        v-else
         class="strategyTextTitle_en"
         src="@/assets/activity/blindbox/title/rulesTextTitle@2.en.png"
       />
