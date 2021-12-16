@@ -479,7 +479,7 @@ export default {
           font-size: 12px;
         }
         li::before {
-          content: "1";
+          content: "";
           display: block;
           position: absolute;
           left: 14px;
@@ -515,7 +515,7 @@ export default {
   .detail_box_bitkeep {
     position: relative;
     box-sizing: border-box;
-    height: 544px;
+    height: 555px;
     padding: 30px 16px 0;
     background: #0e1b40;
     > h1 {
@@ -527,6 +527,7 @@ export default {
       font-size: 14px;
       line-height: 20px;
       font-weight: 400;
+      margin-bottom: 5px;
     }
     div {
       color: #fff;
