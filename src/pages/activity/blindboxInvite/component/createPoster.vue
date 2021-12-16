@@ -204,7 +204,7 @@ export default {
     right: 26px;
     width: 28px;
     height: 28px;
-    background: url("@/assets/activity/blindbox/icon_close@2.png") center center
+    background: url("http://cdn.bitkeep.vip/u_b_a1752190-5e77-11ec-b5be-b5b1720a6926.png") center center
       no-repeat;
     background-size: 100% 100%;
   }
@@ -244,7 +244,6 @@ export default {
       left: 16px;
       bottom: 22px;
       position: absolute;
-      font-weight: 500;
       font-size: 12px;
       line-height: 18px;
       color: #080D21;

@@ -467,9 +467,6 @@ export default {
       width: 100%;
     }
     .detail_box_wallet_title_content {
-      .detail_box_wallet_title {
-        font-weight: 600;
-      }
       .detail_box_wallet_ul {
         margin-top: 14px;
         line-height: 20px;

@@ -1,29 +1,26 @@
 exports.ids = [31,27,28];
 exports.modules = {
 
-/***/ 103:
+/***/ 102:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_createPoster_vue_vue_type_style_index_0_id_0fde9c62_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(82);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_createPoster_vue_vue_type_style_index_0_id_0fde9c62_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_createPoster_vue_vue_type_style_index_0_id_0fde9c62_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_createPoster_vue_vue_type_style_index_0_id_0fde9c62_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_createPoster_vue_vue_type_style_index_0_id_0fde9c62_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_createPoster_vue_vue_type_style_index_0_id_bd6d6370_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_createPoster_vue_vue_type_style_index_0_id_bd6d6370_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_createPoster_vue_vue_type_style_index_0_id_bd6d6370_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_createPoster_vue_vue_type_style_index_0_id_bd6d6370_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_createPoster_vue_vue_type_style_index_0_id_bd6d6370_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 104:
+/***/ 103:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
-var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(35);
-var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(75);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".qcodeModalwarpper[data-v-0fde9c62] {\n  width: 100vw;\n  z-index: 100;\n}\n.qcodeModalwarpper.hidden[data-v-0fde9c62] {\n  z-index: -10 !important;\n  opacity: 0;\n}\n.qcodeModalwarpper .canvasTmp[data-v-0fde9c62] {\n  position: absolute;\n  z-index: -1;\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n.qcodeModalwarpper .close[data-v-0fde9c62] {\n  position: absolute;\n  z-index: 1;\n  top: 0.69rem;\n  right: 0.69rem;\n  width: 0.75rem;\n  height: 0.75rem;\n  background: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ") center center no-repeat;\n  background-size: 100% 100%;\n}\n.qcodeModalwarpper .postershow[data-v-0fde9c62] {\n  width: 9.2rem;\n  height: 14.21rem;\n  max-height: calc(100vh - 3.07rem);\n  margin: 0.48rem auto 0;\n  position: relative;\n}\n.qcodeModalwarpper .postershow img[data-v-0fde9c62] {\n  width: 100%;\n  height: 100%;\n}\n.qcodeModalwarpper .poster_wrapper[data-v-0fde9c62] {\n  position: relative;\n  width: 9.2rem;\n  height: 14.24rem;\n  max-height: calc(100vh - 3.07rem);\n  margin: 0.48rem auto 0;\n  position: relative;\n}\n.qcodeModalwarpper .poster_wrapper .poster_bg[data-v-0fde9c62] {\n  width: 100%;\n  height: 100%;\n  display: block;\n}\n.qcodeModalwarpper .poster_wrapper .imgText[data-v-0fde9c62] {\n  position: absolute;\n  top: 0.53rem;\n  left: 0.53rem;\n  width: 7.33rem;\n  font-size: 0.69rem;\n  color: #080D21;\n  font-weight: bold;\n}\n.qcodeModalwarpper .poster_wrapper .commany_title[data-v-0fde9c62] {\n  left: 0.43rem;\n  bottom: 0.59rem;\n  position: absolute;\n  font-weight: 500;\n  font-size: 0.32rem;\n  line-height: 0.48rem;\n  color: #080D21;\n}\n.qcodeModalwarpper .poster_wrapper .commany_title .logo[data-v-0fde9c62] {\n  width: 2.4rem;\n  height: 0.64rem;\n}\n.qcodeModalwarpper .poster_wrapper .commany_title .title[data-v-0fde9c62] {\n  margin-top: 0.27rem;\n}\n.qcodeModalwarpper .poster_wrapper .commany_title .content[data-v-0fde9c62] {\n  width: 4.4rem;\n  margin-left: 0.13rem;\n  word-wrap: break-word;\n  line-height: 0.37rem;\n}\n.qcodeModalwarpper .poster_wrapper .poster_qrcode[data-v-0fde9c62] {\n  position: absolute;\n  right: 0.53rem;\n  bottom: 0.53rem;\n  width: 2.13rem;\n  height: 2.13rem;\n  box-shadow: inset 0 0.03rem 0 rgba(255,255,255,0.4),inset 0 -0.03rem 0 rgba(255,255,255,0.15);\n  border-radius: 0.21rem;\n}\n.qcodeModalwarpper .footer[data-v-0fde9c62] {\n  margin-top: 0.4rem;\n  display: flex;\n  justify-content: center;\n}\n.qcodeModalwarpper .footer .left[data-v-0fde9c62] {\n  margin-right: 0.51rem;\n}\n.qcodeModalwarpper .footer .btn[data-v-0fde9c62] {\n  display: flex;\n  width: 4.32rem;\n  height: 1.33rem;\n  font-size: 0.43rem;\n  background: #495BFF;\n  border-radius: 2.67rem;\n  font-weight: 600;\n  color: #ffffff;\n  justify-content: center;\n  align-items: center;\n}\n.qcodeModalwarpper .footer .btn img[data-v-0fde9c62] {\n  width: 0.53rem;\n  height: 0.53rem;\n  margin-right: 0.16rem;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".qcodeModalwarpper[data-v-bd6d6370] {\n  width: 100vw;\n  z-index: 100;\n}\n.qcodeModalwarpper.hidden[data-v-bd6d6370] {\n  z-index: -10 !important;\n  opacity: 0;\n}\n.qcodeModalwarpper .canvasTmp[data-v-bd6d6370] {\n  position: absolute;\n  z-index: -1;\n  opacity: 0;\n  width: 0;\n  height: 0;\n}\n.qcodeModalwarpper .close[data-v-bd6d6370] {\n  position: absolute;\n  z-index: 1;\n  top: 0.69rem;\n  right: 0.69rem;\n  width: 0.75rem;\n  height: 0.75rem;\n  background: url(\"http://cdn.bitkeep.vip/u_b_a1752190-5e77-11ec-b5be-b5b1720a6926.png\") center center no-repeat;\n  background-size: 100% 100%;\n}\n.qcodeModalwarpper .postershow[data-v-bd6d6370] {\n  width: 9.2rem;\n  height: 14.21rem;\n  max-height: calc(100vh - 3.07rem);\n  margin: 0.48rem auto 0;\n  position: relative;\n}\n.qcodeModalwarpper .postershow img[data-v-bd6d6370] {\n  width: 100%;\n  height: 100%;\n}\n.qcodeModalwarpper .poster_wrapper[data-v-bd6d6370] {\n  position: relative;\n  width: 9.2rem;\n  height: 14.24rem;\n  max-height: calc(100vh - 3.07rem);\n  margin: 0.48rem auto 0;\n  position: relative;\n}\n.qcodeModalwarpper .poster_wrapper .poster_bg[data-v-bd6d6370] {\n  width: 100%;\n  height: 100%;\n  display: block;\n}\n.qcodeModalwarpper .poster_wrapper .imgText[data-v-bd6d6370] {\n  position: absolute;\n  top: 0.53rem;\n  left: 0.53rem;\n  width: 7.33rem;\n  font-size: 0.69rem;\n  color: #080D21;\n  font-weight: bold;\n}\n.qcodeModalwarpper .poster_wrapper .commany_title[data-v-bd6d6370] {\n  left: 0.43rem;\n  bottom: 0.59rem;\n  position: absolute;\n  font-size: 0.32rem;\n  line-height: 0.48rem;\n  color: #080D21;\n}\n.qcodeModalwarpper .poster_wrapper .commany_title .logo[data-v-bd6d6370] {\n  width: 2.4rem;\n  height: 0.64rem;\n}\n.qcodeModalwarpper .poster_wrapper .commany_title .title[data-v-bd6d6370] {\n  margin-top: 0.27rem;\n}\n.qcodeModalwarpper .poster_wrapper .commany_title .content[data-v-bd6d6370] {\n  width: 4.4rem;\n  margin-left: 0.13rem;\n  word-wrap: break-word;\n  line-height: 0.37rem;\n}\n.qcodeModalwarpper .poster_wrapper .poster_qrcode[data-v-bd6d6370] {\n  position: absolute;\n  right: 0.53rem;\n  bottom: 0.53rem;\n  width: 2.13rem;\n  height: 2.13rem;\n  box-shadow: inset 0 0.03rem 0 rgba(255,255,255,0.4),inset 0 -0.03rem 0 rgba(255,255,255,0.15);\n  border-radius: 0.21rem;\n}\n.qcodeModalwarpper .footer[data-v-bd6d6370] {\n  margin-top: 0.4rem;\n  display: flex;\n  justify-content: center;\n}\n.qcodeModalwarpper .footer .left[data-v-bd6d6370] {\n  margin-right: 0.51rem;\n}\n.qcodeModalwarpper .footer .btn[data-v-bd6d6370] {\n  display: flex;\n  width: 4.32rem;\n  height: 1.33rem;\n  font-size: 0.43rem;\n  background: #495BFF;\n  border-radius: 2.67rem;\n  font-weight: 600;\n  color: #ffffff;\n  justify-content: center;\n  align-items: center;\n}\n.qcodeModalwarpper .footer .btn img[data-v-bd6d6370] {\n  width: 0.53rem;\n  height: 0.53rem;\n  margin-right: 0.16rem;\n}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
@@ -114,7 +111,7 @@ if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
 var add = __webpack_require__(9).default
 module.exports.__inject__ = function (context) {
-  add("4906b6c4", content, true, context)
+  add("379d9e08", content, true, context)
 };
 
 /***/ }),
@@ -126,7 +123,7 @@ module.exports.__inject__ = function (context) {
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/blindboxInvite/component/createPoster.vue?vue&type=template&id=0fde9c62&scoped=true&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/blindboxInvite/component/createPoster.vue?vue&type=template&id=bd6d6370&scoped=true&
 var render = function () {
 var _obj;
 var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('van-overlay',{class:{
@@ -136,7 +133,7 @@ var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('van-ov
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/activity/blindboxInvite/component/createPoster.vue?vue&type=template&id=0fde9c62&scoped=true&
+// CONCATENATED MODULE: ./pages/activity/blindboxInvite/component/createPoster.vue?vue&type=template&id=bd6d6370&scoped=true&
 
 // EXTERNAL MODULE: external "qrcode"
 var external_qrcode_ = __webpack_require__(61);
@@ -345,7 +342,7 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(103)
+  var style0 = __webpack_require__(102)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -358,7 +355,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   injectStyles,
-  "0fde9c62",
+  "bd6d6370",
   "e9bfca92"
   
 )
@@ -372,9 +369,9 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_270175a7_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(145);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_270175a7_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_270175a7_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_270175a7_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_270175a7_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_562412f8_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(145);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_562412f8_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_562412f8_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_562412f8_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_562412f8_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
@@ -386,7 +383,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".theme-light .textPrimary0[data-v-270175a7] {\n  color: #080D21;\n}\n.theme-light .textSecond1[data-v-270175a7] {\n  color: #4B5373;\n}\n.theme-light .textSecond2[data-v-270175a7] {\n  color: #7F828F;\n}\n.theme-light .textSecond3[data-v-270175a7] {\n  color: #9CA5B3;\n}\n.theme-light .colorDisable[data-v-270175a7] {\n  background-color: #DADBDE;\n}\n.theme-light .colorLine[data-v-270175a7] {\n  background-color: #F4F5FA;\n}\n.theme-light .colorBackground0[data-v-270175a7] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackground1[data-v-270175a7] {\n  background-color: #fff;\n}\n.theme-light .colorBackground2[data-v-270175a7] {\n  background-color: #F3F5F6;\n}\n.theme-light .colorBackground3[data-v-270175a7] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackgroundWhite[data-v-270175a7] {\n  background-color: #fff;\n}\n.theme-light .colorBackgroundPrimary[data-v-270175a7] {\n  background-color: #495BFF;\n}\n.theme-light .colorPrimary[data-v-270175a7] {\n  color: #495BFF;\n}\n.theme-light .colorSecond01[data-v-270175a7] {\n  color: #1CBDB5;\n}\n.theme-light .colorSecond02[data-v-270175a7] {\n  color: #F04A4A;\n}\n.theme-light .colorSecond03[data-v-270175a7] {\n  color: #26BC80;\n}\n.theme-light .colorSecond04[data-v-270175a7] {\n  color: #FF8146;\n}\n.theme-light .colorSecond05[data-v-270175a7] {\n  color: #2F80ED;\n}\n.theme-light .colorSecond06[data-v-270175a7] {\n  color: #4A2FD2;\n}\n.theme-light .colorSecond07[data-v-270175a7] {\n  color: #F04E98;\n}\n.theme-light .colorBlack[data-v-270175a7] {\n  color: #000;\n}\n.theme-light .colorwhite[data-v-270175a7] {\n  color: #fff;\n}\n.theme-light .colorSecond10[data-v-270175a7] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-light .colorSecond11[data-v-270175a7] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-light .colorSecond12[data-v-270175a7] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-light .colorSecond13[data-v-270175a7] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-light .colorSecond14[data-v-270175a7] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-light .colorSecond15[data-v-270175a7] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-dark .textPrimary0[data-v-270175a7] {\n  color: #DFE0E3;\n}\n.theme-dark .textSecond1[data-v-270175a7] {\n  color: #9CA5B3;\n}\n.theme-dark .textSecond2[data-v-270175a7] {\n  color: #7F828F;\n}\n.theme-dark .textSecond3[data-v-270175a7] {\n  color: #6D707D;\n}\n.theme-dark .colorDisable[data-v-270175a7] {\n  background-color: #5F626D;\n}\n.theme-dark .colorLine[data-v-270175a7] {\n  background-color: #1F212E;\n}\n.theme-dark .colorBackground0[data-v-270175a7] {\n  background-color: #0A0E1F;\n}\n.theme-dark .colorBackground1[data-v-270175a7] {\n  background-color: #171A26;\n}\n.theme-dark .colorBackground2[data-v-270175a7] {\n  background-color: #131620;\n}\n.theme-dark .colorBackground3[data-v-270175a7] {\n  background-color: #212331;\n}\n.theme-dark .colorBackgroundPrimary[data-v-270175a7] {\n  background-color: #495BFF;\n}\n.theme-dark .colorPrimary[data-v-270175a7] {\n  color: #495BFF;\n}\n.theme-dark .colorSecond01[data-v-270175a7] {\n  color: #1CBDB5;\n}\n.theme-dark .colorSecond02[data-v-270175a7] {\n  color: #F04A4A;\n}\n.theme-dark .colorSecond03[data-v-270175a7] {\n  color: #26BC80;\n}\n.theme-dark .colorSecond04[data-v-270175a7] {\n  color: #FF8146;\n}\n.theme-dark .colorSecond05[data-v-270175a7] {\n  color: #2F80ED;\n}\n.theme-dark .colorSecond06[data-v-270175a7] {\n  color: #4A2FD2;\n}\n.theme-dark .colorSecond07[data-v-270175a7] {\n  color: #F04E98;\n}\n.theme-dark .colorBlack[data-v-270175a7] {\n  color: #000;\n}\n.theme-dark .colorwhite[data-v-270175a7] {\n  color: #fff;\n}\n.theme-dark .colorSecond10[data-v-270175a7] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-dark .colorSecond11[data-v-270175a7] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorSecond12[data-v-270175a7] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-dark .colorSecond13[data-v-270175a7] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-dark .colorSecond14[data-v-270175a7] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-dark .colorSecond15[data-v-270175a7] {\n  color: rgba(47,128,237,0.1);\n}\n.warp-invite[data-v-270175a7] {\n  min-height: 100vh;\n  padding-bottom: 0.67rem;\n}\n.warp-invite .loading[data-v-270175a7] {\n  min-height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.warp-invite .warp-invite-banner[data-v-270175a7] {\n  height: 4.27rem;\n  position: relative;\n}\n.warp-invite .warp-invite-banner img[data-v-270175a7] {\n  width: 100%;\n}\n.warp-invite .warp-invite-banner .imgText[data-v-270175a7] {\n  position: absolute;\n  top: 1.2rem;\n  left: 0.43rem;\n  width: 5.33rem;\n}\n.warp-invite .warp-invite-banner .imgText .imgTextTitle[data-v-270175a7] {\n  font-size: 0.69rem;\n  font-weight: bold;\n  line-height: 0.75rem;\n}\n.warp-invite .warp-invite-banner .imgText .imgTextContent[data-v-270175a7] {\n  font-size: 0.32rem;\n}\n.warp-invite .setTop[data-v-270175a7] {\n  position: relative;\n  top: -1.2rem;\n}\n.warp-invite .warp-invite-one[data-v-270175a7] {\n  margin: 0.27rem 0.43rem 0;\n  border-radius: 0.21rem;\n  font-size: 0.37rem;\n  line-height: 0.43rem;\n}\n.warp-invite .warp-invite-one .warp-invite-produced[data-v-270175a7] {\n  display: flex;\n  height: 1.33rem;\n  line-height: 1.33rem;\n  justify-content: space-between;\n}\n.warp-invite .warp-invite-one .warp-invite-produced .setDisplay[data-v-270175a7] {\n  display: flex;\n  align-items: center;\n}\n.warp-invite .warp-invite-one .warp-invite-produced span[data-v-270175a7] {\n  font-size: 0.37rem;\n}\n.warp-invite .warp-invite-one .warp-invite-produced span img[data-v-270175a7] {\n  width: 0.53rem;\n  height: 0.53rem;\n  margin-right: 0.13rem;\n  vertical-align: sub;\n}\n.warp-invite .warp-invite-one .warp-invite-produced span i[data-v-270175a7] {\n  vertical-align: middle;\n  display: inline-block;\n  font-size: 0.37rem;\n}\n.warp-invite .warp-invite-one .warp-invite-produced span[data-v-270175a7]:last-child {\n  font-size: 0.48rem;\n}\n.warp-invite .warp-invite-one .warp-invite-one-header[data-v-270175a7] {\n  display: flex;\n  justify-content: space-between;\n  height: 0.93rem;\n  line-height: 0.93rem;\n  padding: 0 0.21rem 0 0.4rem;\n}\n.warp-invite .warp-invite-one .warp-invite-one-header .warp-invite-one-header-title span[data-v-270175a7] {\n  font-size: 0.48rem;\n  font-family: \"bitkeep DIN\";\n}\n.warp-invite .warp-invite-one .warp-invite-one-header .warp-invite-one-header-right[data-v-270175a7] {\n  padding-right: 0.19rem;\n}\n.warp-invite .warp-invite-one .borderBottom[data-v-270175a7] {\n  height: 0.03rem;\n}\n.warp-invite .warp-invite-one .invite-setP[data-v-270175a7] {\n  padding: 0 0.4rem 0.03rem;\n}\n.warp-invite .warp-invite-one .warp-invite-link[data-v-270175a7] {\n  border-radius: 0.21rem;\n  margin: 0.27rem 0 0.27rem;\n}\n.warp-invite .warp-invite-one .warp-invite-link .warp-invite-link-box[data-v-270175a7] {\n  padding: 0.27rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.warp-invite .warp-invite-one .warp-invite-link-btn[data-v-270175a7] {\n  height: 1.33rem;\n  line-height: 1.33rem;\n  color: #fff;\n  text-align: center;\n  border-radius: 0.27rem;\n  margin-bottom: 0.53rem;\n  font-size: 0.43rem;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".theme-light .textPrimary0[data-v-562412f8] {\n  color: #080D21;\n}\n.theme-light .textSecond1[data-v-562412f8] {\n  color: #4B5373;\n}\n.theme-light .textSecond2[data-v-562412f8] {\n  color: #7F828F;\n}\n.theme-light .textSecond3[data-v-562412f8] {\n  color: #9CA5B3;\n}\n.theme-light .colorDisable[data-v-562412f8] {\n  background-color: #DADBDE;\n}\n.theme-light .colorLine[data-v-562412f8] {\n  background-color: #F4F5FA;\n}\n.theme-light .colorBackground0[data-v-562412f8] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackground1[data-v-562412f8] {\n  background-color: #fff;\n}\n.theme-light .colorBackground2[data-v-562412f8] {\n  background-color: #F3F5F6;\n}\n.theme-light .colorBackground3[data-v-562412f8] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackgroundWhite[data-v-562412f8] {\n  background-color: #fff;\n}\n.theme-light .colorBackgroundPrimary[data-v-562412f8] {\n  background-color: #495BFF;\n}\n.theme-light .colorPrimary[data-v-562412f8] {\n  color: #495BFF;\n}\n.theme-light .colorSecond01[data-v-562412f8] {\n  color: #1CBDB5;\n}\n.theme-light .colorSecond02[data-v-562412f8] {\n  color: #F04A4A;\n}\n.theme-light .colorSecond03[data-v-562412f8] {\n  color: #26BC80;\n}\n.theme-light .colorSecond04[data-v-562412f8] {\n  color: #FF8146;\n}\n.theme-light .colorSecond05[data-v-562412f8] {\n  color: #2F80ED;\n}\n.theme-light .colorSecond06[data-v-562412f8] {\n  color: #4A2FD2;\n}\n.theme-light .colorSecond07[data-v-562412f8] {\n  color: #F04E98;\n}\n.theme-light .colorBlack[data-v-562412f8] {\n  color: #000;\n}\n.theme-light .colorwhite[data-v-562412f8] {\n  color: #fff;\n}\n.theme-light .colorSecond10[data-v-562412f8] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-light .colorSecond11[data-v-562412f8] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-light .colorSecond12[data-v-562412f8] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-light .colorSecond13[data-v-562412f8] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-light .colorSecond14[data-v-562412f8] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-light .colorSecond15[data-v-562412f8] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-dark .textPrimary0[data-v-562412f8] {\n  color: #DFE0E3;\n}\n.theme-dark .textSecond1[data-v-562412f8] {\n  color: #9CA5B3;\n}\n.theme-dark .textSecond2[data-v-562412f8] {\n  color: #7F828F;\n}\n.theme-dark .textSecond3[data-v-562412f8] {\n  color: #6D707D;\n}\n.theme-dark .colorDisable[data-v-562412f8] {\n  background-color: #5F626D;\n}\n.theme-dark .colorLine[data-v-562412f8] {\n  background-color: #1F212E;\n}\n.theme-dark .colorBackground0[data-v-562412f8] {\n  background-color: #0A0E1F;\n}\n.theme-dark .colorBackground1[data-v-562412f8] {\n  background-color: #171A26;\n}\n.theme-dark .colorBackground2[data-v-562412f8] {\n  background-color: #131620;\n}\n.theme-dark .colorBackground3[data-v-562412f8] {\n  background-color: #212331;\n}\n.theme-dark .colorBackgroundPrimary[data-v-562412f8] {\n  background-color: #495BFF;\n}\n.theme-dark .colorPrimary[data-v-562412f8] {\n  color: #495BFF;\n}\n.theme-dark .colorSecond01[data-v-562412f8] {\n  color: #1CBDB5;\n}\n.theme-dark .colorSecond02[data-v-562412f8] {\n  color: #F04A4A;\n}\n.theme-dark .colorSecond03[data-v-562412f8] {\n  color: #26BC80;\n}\n.theme-dark .colorSecond04[data-v-562412f8] {\n  color: #FF8146;\n}\n.theme-dark .colorSecond05[data-v-562412f8] {\n  color: #2F80ED;\n}\n.theme-dark .colorSecond06[data-v-562412f8] {\n  color: #4A2FD2;\n}\n.theme-dark .colorSecond07[data-v-562412f8] {\n  color: #F04E98;\n}\n.theme-dark .colorBlack[data-v-562412f8] {\n  color: #000;\n}\n.theme-dark .colorwhite[data-v-562412f8] {\n  color: #fff;\n}\n.theme-dark .colorSecond10[data-v-562412f8] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-dark .colorSecond11[data-v-562412f8] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorSecond12[data-v-562412f8] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-dark .colorSecond13[data-v-562412f8] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-dark .colorSecond14[data-v-562412f8] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-dark .colorSecond15[data-v-562412f8] {\n  color: rgba(47,128,237,0.1);\n}\n.warp-invite[data-v-562412f8] {\n  min-height: 100vh;\n  padding-bottom: 0.67rem;\n}\n.warp-invite .loading[data-v-562412f8] {\n  min-height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.warp-invite .warp-invite-banner[data-v-562412f8] {\n  height: 4.27rem;\n  position: relative;\n}\n.warp-invite .warp-invite-banner img[data-v-562412f8] {\n  width: 100%;\n}\n.warp-invite .warp-invite-banner .imgText[data-v-562412f8] {\n  position: absolute;\n  top: 1.2rem;\n  left: 0.43rem;\n  width: 5.33rem;\n}\n.warp-invite .warp-invite-banner .imgText .imgTextTitle[data-v-562412f8] {\n  font-size: 0.69rem;\n  font-weight: bold;\n  line-height: 0.75rem;\n}\n.warp-invite .warp-invite-banner .imgText .imgTextContent[data-v-562412f8] {\n  font-size: 0.32rem;\n}\n.warp-invite .setTop[data-v-562412f8] {\n  position: relative;\n  top: -1.2rem;\n}\n.warp-invite .warp-invite-one[data-v-562412f8] {\n  margin: 0.27rem 0.43rem 0;\n  border-radius: 0.21rem;\n  font-size: 0.37rem;\n  line-height: 0.43rem;\n}\n.warp-invite .warp-invite-one .warp-invite-produced[data-v-562412f8] {\n  display: flex;\n  height: 1.33rem;\n  line-height: 1.33rem;\n  justify-content: space-between;\n}\n.warp-invite .warp-invite-one .warp-invite-produced .setDisplay[data-v-562412f8] {\n  display: flex;\n  align-items: center;\n}\n.warp-invite .warp-invite-one .warp-invite-produced span[data-v-562412f8] {\n  font-size: 0.37rem;\n}\n.warp-invite .warp-invite-one .warp-invite-produced span img[data-v-562412f8] {\n  width: 0.53rem;\n  height: 0.53rem;\n  margin-right: 0.13rem;\n  vertical-align: sub;\n}\n.warp-invite .warp-invite-one .warp-invite-produced span i[data-v-562412f8] {\n  vertical-align: middle;\n  display: inline-block;\n  font-size: 0.37rem;\n}\n.warp-invite .warp-invite-one .warp-invite-produced span[data-v-562412f8]:last-child {\n  font-size: 0.48rem;\n}\n.warp-invite .warp-invite-one .warp-invite-one-header[data-v-562412f8] {\n  display: flex;\n  justify-content: space-between;\n  height: 0.93rem;\n  line-height: 0.93rem;\n  padding: 0 0.21rem 0 0.4rem;\n}\n.warp-invite .warp-invite-one .warp-invite-one-header .warp-invite-one-header-title span[data-v-562412f8] {\n  font-size: 0.48rem;\n  font-family: \"bitkeep DIN\";\n}\n.warp-invite .warp-invite-one .warp-invite-one-header .warp-invite-one-header-right[data-v-562412f8] {\n  padding-right: 0.19rem;\n}\n.warp-invite .warp-invite-one .borderBottom[data-v-562412f8] {\n  height: 0.03rem;\n}\n.warp-invite .warp-invite-one .invite-setP[data-v-562412f8] {\n  padding: 0 0.4rem 0.03rem;\n}\n.warp-invite .warp-invite-one .warp-invite-link[data-v-562412f8] {\n  border-radius: 0.21rem;\n  margin: 0.27rem 0 0.27rem;\n}\n.warp-invite .warp-invite-one .warp-invite-link .warp-invite-link-box[data-v-562412f8] {\n  padding: 0.27rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.warp-invite .warp-invite-one .warp-invite-link-btn[data-v-562412f8] {\n  height: 1.33rem;\n  line-height: 1.33rem;\n  color: #fff;\n  text-align: center;\n  border-radius: 0.27rem;\n  margin-bottom: 0.53rem;\n  font-size: 0.43rem;\n}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
@@ -400,12 +397,12 @@ module.exports = ___CSS_LOADER_EXPORT___;
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/blindboxInvite/index.vue?vue&type=template&id=270175a7&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"warp-invite colorBackground3"},[(_vm.isLoading)?_vm._ssrNode("<div class=\"loading\" data-v-270175a7>","</div>",[_c('van-loading',{attrs:{"color":"#1989fa","vertical":""}},[_vm._v(_vm._s(_vm.$t("base.loading"))+"...")])],1):_c('van-pull-refresh',{attrs:{"success-text":_vm.$t('mining.success'),"loading-text":_vm.$t('mining.loading'),"loosing-text":_vm.$t('mining.loading')},on:{"refresh":_vm.getInviteNumber},model:{value:(_vm.refreshLoading),callback:function ($$v) {_vm.refreshLoading=$$v},expression:"refreshLoading"}},[_c('div',{staticClass:"warp-invite colorBackground3"},[_c('div',{staticClass:"warp-invite-banner"},[_c('img',{attrs:{"src":"http://cdn.bitkeep.vip/u_b_d6f84c30-5e3f-11ec-bd49-b1b354a240c8.png"}}),_vm._v(" "),_c('div',{staticClass:"imgText"},[_c('div',{staticClass:"textPrimary0 imgTextTitle"},[_vm._v(_vm._s(_vm.$t("blindboxInvite.toEarn")))]),_vm._v(" "),_c('div',{staticClass:"textPrimary0 imgTextContent"},[_vm._v(_vm._s(_vm.$t("blindboxInvite.rewardsMore")))])])]),_vm._v(" "),_c('div',{staticClass:"warp-invite-one colorBackground1 setTop"},[_c('div',{staticClass:"warp-invite-one-header",staticStyle:{"padding-right":"0"}},[_c('div',{staticClass:"warp-invite-one-header-title textPrimary0"},[_c('span',[_vm._v(_vm._s(_vm.$t("blindboxInvite.myRewards")))])])]),_vm._v(" "),_c('div',{staticClass:"invite-setP"},[_c('div',{staticClass:"warp-invite-produced",on:{"click":_vm.inviteFriendList}},[_c('span',{staticClass:"textSecond1"},[_c('img',{attrs:{"src":"http://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png","alt":""}}),_vm._v(_vm._s(_vm.$t("blindboxInvite.invitedNumber")))]),_vm._v(" "),_c('span',{staticClass:"setFontFamily setDisplay textPrimary0"},[_vm._v(_vm._s(_vm.inviteNumber)+"  \n              "),_c('van-icon',{attrs:{"name":"arrow","color":"#999BA3"}})],1)]),_vm._v(" "),_c('div',{staticClass:"warp-invite-produced",on:{"click":_vm.rewardsList}},[_c('span',{staticClass:"textSecond1"},[_c('img',{attrs:{"src":"http://cdn.bitkeep.vip/u_b_e7b6fe30-5427-11ec-a16d-43771b230a03.png","alt":""}}),_vm._v(_vm._s(_vm.$t("blindboxInvite.tokenRewards")))]),_vm._v(" "),_c('span',{staticClass:"setFontFamily"},[_c('van-icon',{attrs:{"name":"arrow","color":"#999BA3"}})],1)])])]),_vm._v(" "),_c('div',{staticClass:"warp-invite-one colorBackground1 setTop"},[_c('div',{staticClass:"warp-invite-one-header",staticStyle:{"padding-right":"0"}},[_c('div',{staticClass:"warp-invite-one-header-title"},[_c('span',{staticClass:"textPrimary0"},[_vm._v(_vm._s(_vm.$t("blindboxInvite.inviteFriends")))])])]),_vm._v(" "),_c('div',{staticClass:"invite-setP"},[_c('div',{staticClass:"warp-invite-link colorBackground3"},[_c('div',{staticClass:"warp-invite-link-box"},[_c('span',[_c('span',{staticClass:"textSecond2"},[_vm._v(_vm._s(_vm.$t("blindboxInvite.inviteLink"))),_c('br'),_vm._v(" "),_c('span',{staticClass:"warp-invite-address textPrimary0"},[_vm._v(_vm._s(_vm.inviteLink))])])]),_vm._v(" "),_c('span',{staticClass:"setFontFamily"},[_c('van-icon',{directives:[{name:"copy",rawName:"v-copy",value:(_vm.inviteLinkAll),expression:"inviteLinkAll"}],attrs:{"name":"http://cdn.bitkeep.vip/u_b_1a477b90-3579-11ec-8690-93c311cd0b88.png"}})],1)])]),_vm._v(" "),_c('div',{staticClass:"warp-invite-link-btn colorBackgroundPrimary",on:{"click":_vm.inviteFirends}},[_vm._v("\n              "+_vm._s(_vm.$t("blindboxInvite.inviteFriendsNow"))+"\n            ")])])])])]),_vm._ssrNode(" "),_c('CreatePoster',{ref:"CreatePoster",attrs:{"locale":_vm.locale,"zIndex":100,"isBitKeep":_vm.isBitKeep,"userInfo":_vm.userInfo}})],2)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/blindboxInvite/index.vue?vue&type=template&id=562412f8&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"warp-invite colorBackground3"},[(_vm.isLoading)?_vm._ssrNode("<div class=\"loading\" data-v-562412f8>","</div>",[_c('van-loading',{attrs:{"color":"#1989fa","vertical":""}},[_vm._v(_vm._s(_vm.$t("base.loading"))+"...")])],1):_vm._ssrNode("<div data-v-562412f8>","</div>",[_vm._ssrNode("<div class=\"warp-invite colorBackground3\" data-v-562412f8>","</div>",[_vm._ssrNode("<div class=\"warp-invite-banner\" data-v-562412f8><img src=\"http://cdn.bitkeep.vip/u_b_d6f84c30-5e3f-11ec-bd49-b1b354a240c8.png\" data-v-562412f8> <div class=\"imgText\" data-v-562412f8><div class=\"textPrimary0 imgTextTitle\" data-v-562412f8>"+_vm._ssrEscape(_vm._s(_vm.$t("blindboxInvite.toEarn")))+"</div> <div class=\"textPrimary0 imgTextContent\" data-v-562412f8>"+_vm._ssrEscape(_vm._s(_vm.$t("blindboxInvite.rewardsMore")))+"</div></div></div> "),_vm._ssrNode("<div class=\"warp-invite-one colorBackground1 setTop\" data-v-562412f8>","</div>",[_vm._ssrNode("<div class=\"warp-invite-one-header\" style=\"padding-right: 0\" data-v-562412f8><div class=\"warp-invite-one-header-title textPrimary0\" data-v-562412f8><span data-v-562412f8>"+_vm._ssrEscape(_vm._s(_vm.$t("blindboxInvite.myRewards")))+"</span></div></div> "),_vm._ssrNode("<div class=\"invite-setP\" data-v-562412f8>","</div>",[_vm._ssrNode("<div class=\"warp-invite-produced\" data-v-562412f8>","</div>",[_vm._ssrNode("<span class=\"textSecond1\" data-v-562412f8><img src=\"http://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png\" alt data-v-562412f8>"+_vm._ssrEscape(_vm._s(_vm.$t("blindboxInvite.invitedNumber")))+"</span> "),_vm._ssrNode("<span class=\"setFontFamily setDisplay textPrimary0\" data-v-562412f8>","</span>",[_c('van-icon',{attrs:{"name":"arrow","color":"#999BA3"}})],1)],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"warp-invite-produced\" data-v-562412f8>","</div>",[_vm._ssrNode("<span class=\"textSecond1\" data-v-562412f8><img src=\"http://cdn.bitkeep.vip/u_b_e7b6fe30-5427-11ec-a16d-43771b230a03.png\" alt data-v-562412f8>"+_vm._ssrEscape(_vm._s(_vm.$t("blindboxInvite.tokenRewards")))+"</span> "),_vm._ssrNode("<span class=\"setFontFamily\" data-v-562412f8>","</span>",[_c('van-icon',{attrs:{"name":"arrow","color":"#999BA3"}})],1)],2)],2)],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"warp-invite-one colorBackground1 setTop\" data-v-562412f8>","</div>",[_vm._ssrNode("<div class=\"warp-invite-one-header\" style=\"padding-right: 0\" data-v-562412f8><div class=\"warp-invite-one-header-title\" data-v-562412f8><span class=\"textPrimary0\" data-v-562412f8>"+_vm._ssrEscape(_vm._s(_vm.$t("blindboxInvite.inviteFriends")))+"</span></div></div> "),_vm._ssrNode("<div class=\"invite-setP\" data-v-562412f8>","</div>",[_vm._ssrNode("<div class=\"warp-invite-link colorBackground3\" data-v-562412f8>","</div>",[_vm._ssrNode("<div class=\"warp-invite-link-box\" data-v-562412f8>","</div>",[_vm._ssrNode("<span data-v-562412f8><span class=\"textSecond2\" data-v-562412f8>"+_vm._ssrEscape(_vm._s(_vm.$t("blindboxInvite.inviteLink")))+"<br data-v-562412f8> <span class=\"warp-invite-address textPrimary0\" data-v-562412f8>"+_vm._ssrEscape(_vm._s(_vm.inviteLink))+"</span></span></span> "),_vm._ssrNode("<span class=\"setFontFamily\" data-v-562412f8>","</span>",[_c('van-icon',{directives:[{name:"copy",rawName:"v-copy",value:(_vm.inviteLinkAll),expression:"inviteLinkAll"}],attrs:{"name":"http://cdn.bitkeep.vip/u_b_1a477b90-3579-11ec-8690-93c311cd0b88.png"}})],1)],2)]),_vm._ssrNode(" <div class=\"warp-invite-link-btn colorBackgroundPrimary\" data-v-562412f8>"+_vm._ssrEscape("\n                "+_vm._s(_vm.$t("blindboxInvite.inviteFriendsNow"))+"\n              ")+"</div>")],2)],2)],2)]),_vm._ssrNode(" "),_c('CreatePoster',{ref:"CreatePoster",attrs:{"locale":_vm.locale,"zIndex":100,"isBitKeep":_vm.isBitKeep,"userInfo":_vm.userInfo}})],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/activity/blindboxInvite/index.vue?vue&type=template&id=270175a7&scoped=true&
+// CONCATENATED MODULE: ./pages/activity/blindboxInvite/index.vue?vue&type=template&id=562412f8&scoped=true&
 
 // EXTERNAL MODULE: external "vuex"
 var external_vuex_ = __webpack_require__(4);
@@ -512,13 +509,6 @@ var client = __webpack_require__(64);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 // import { USER_API } from "@/api/client";
 // import { debounce } from "../../../tools/common";
 
@@ -531,9 +521,9 @@ var client = __webpack_require__(64);
   data() {
     return {
       isLoading: true,
-      refreshLoading: false,
+      // refreshLoading: false,
       inviteLink: "",
-      inviteNumber: 0,
+      // inviteNumber: 0,
       inviteLinkAll: ""
     };
   },
@@ -583,8 +573,7 @@ var client = __webpack_require__(64);
           }
         });
       });
-    });
-    this.getInviteNumber();
+    }); // this.getInviteNumber()
   },
 
   methods: {
@@ -595,24 +584,18 @@ var client = __webpack_require__(64);
       this.inviteLink = fisrt + " .... " + copy.substr(-15);
     },
 
-    async getInviteNumber() {
-      const {
-        data,
-        status
-      } = await client["a" /* USER_API */].getInviteList({
-        start: 0,
-        limit: 10
-      });
-
-      if (status == 1) {
-        this.isLoading = false;
-        this.$toast(data);
-      }
-
-      this.inviteNumber = data.total_count;
-      this.refreshLoading = false;
-    },
-
+    // async getInviteNumber(){
+    //   const { data, status } = await USER_API.getInviteList({
+    //     start: 0,
+    //     limit: 10,
+    //   });
+    //   if (status == 1) {
+    //     this.isLoading = false;
+    //     this.$toast(data);
+    //   }
+    //   this.inviteNumber = data.total_count;
+    //   this.refreshLoading =false;
+    // },
     inviteFriendList() {
       this.$router.push('/activity/blindboxInvite/inviteList');
     },
@@ -651,7 +634,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   injectStyles,
-  "270175a7",
+  "562412f8",
   "14ef14f4"
   
 )
@@ -817,27 +800,20 @@ const BaseMixin = {
 
 /***/ }),
 
-/***/ 75:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/icon_close@2.730c7dc.png";
-
-/***/ }),
-
-/***/ 82:
+/***/ 81:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(104);
+var content = __webpack_require__(103);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
 var add = __webpack_require__(9).default
 module.exports.__inject__ = function (context) {
-  add("123a6c3d", content, true, context)
+  add("675aef46", content, true, context)
 };
 
 /***/ })

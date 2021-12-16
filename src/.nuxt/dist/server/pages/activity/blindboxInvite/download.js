@@ -55,7 +55,7 @@ __webpack_require__.r(__webpack_exports__);
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/blindboxInvite/download.vue?vue&type=template&id=3cd1f8c6&
 var render = function () {
 var _obj;
-var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"download"}},[_c('Header',[_c('div',{staticClass:"blindbox_header"},[_c('span',{staticClass:"logo"},[_c('img',{attrs:{"src":__webpack_require__(79)}})])])]),_vm._ssrNode(" <div class=\"block_body\"><img src=\"http://cdn.bitkeep.vip/u_b_95224b10-596e-11ec-bdbc-7722494dfa58.png\""+(_vm._ssrClass(null,( _obj = {}, _obj[_vm.locale] = true, _obj )))+"> <div class=\"textBox textPrimary0\"><p>"+_vm._ssrEscape(_vm._s(_vm.$t("blindboxInvite.downText")))+"</p></div> <a class=\"btn\">"+_vm._ssrEscape(_vm._s(_vm.$t("blindboxInvite.know")))+"</a></div>")],2)}
+var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"download"}},[_c('Header',[_c('div',{staticClass:"blindbox_header"},[_c('span',{staticClass:"logo"},[_c('img',{attrs:{"src":__webpack_require__(78)}})])])]),_vm._ssrNode(" <div class=\"block_body\"><img src=\"http://cdn.bitkeep.vip/u_b_95224b10-596e-11ec-bdbc-7722494dfa58.png\""+(_vm._ssrClass(null,( _obj = {}, _obj[_vm.locale] = true, _obj )))+"> <div class=\"textBox textPrimary0\"><p>"+_vm._ssrEscape(_vm._s(_vm.$t("blindboxInvite.downText")))+"</p></div> <a class=\"btn\">"+_vm._ssrEscape(_vm._s(_vm.$t("blindboxInvite.know")))+"</a></div>")],2)}
 var staticRenderFns = []
 
 
@@ -301,7 +301,7 @@ const Header = _header_vue__WEBPACK_IMPORTED_MODULE_0__["default"];
 
 /***/ }),
 
-/***/ 79:
+/***/ 78:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/logo@2.ca1f304.png";

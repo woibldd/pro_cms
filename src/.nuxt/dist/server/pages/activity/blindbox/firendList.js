@@ -1,7 +1,7 @@
 exports.ids = [22];
 exports.modules = {
 
-/***/ 119:
+/***/ 118:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/logo2@3.fb021ce.png";
@@ -104,7 +104,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 __webpack_require__.r(__webpack_exports__);
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/blindbox/firendList.vue?vue&type=template&id=35b9e7a0&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"firenddivst"},[(_vm.isLoading)?_vm._ssrNode("<div class=\"loading\" data-v-35b9e7a0>","</div>",[_c('van-loading',{attrs:{"color":"#1989fa"}})],1):_vm._ssrNode("<div class=\"firenddivst-tab\" data-v-35b9e7a0>","</div>",[_c('van-pull-refresh',{staticClass:"blindbox_list_content",on:{"refresh":_vm.userInvite},model:{value:(_vm.refreshing),callback:function ($$v) {_vm.refreshing=$$v},expression:"refreshing"}},[(_vm.inviteList.length > 0)?_c('div',{staticClass:"firenddivst-tab-con radial-gradient"},[_c('div',{staticClass:"firenddivst-tab-divst"},[_c('span',[_vm._v(_vm._s(_vm.$t("ActivityBlindbox.ActivityBlindboxDetail.HelpSuccessETH")+ '（'+ _vm.helpNum + '）:'))]),_vm._v(" "),_c('div',{staticClass:"firenddivst-tab-address"},_vm._l((_vm.inviteList),function(item,index){return _c('div',{key:index},[_vm._v("\n                "+_vm._s(index + 1)+". "+_vm._s(item)+"\n              ")])}),0)])]):_c('div',{staticClass:"noDataBox"},[_c('div',{staticClass:"noData"},[_c('p',[_vm._v(_vm._s(_vm.$t("ActivityBlindbox.ActivityBlindboxList.noHelper")))])])]),_vm._v(" "),(_vm.inviteList.length > 0)?_c('div',{staticClass:"block_page_footer"},[_c('div',{staticClass:"block_warpper"},[_c('div',{staticClass:"block_header"},[_c('img',{attrs:{"src":__webpack_require__(119)}})])])]):_vm._e()])],1)])}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"firenddivst"},[(_vm.isLoading)?_vm._ssrNode("<div class=\"loading\" data-v-35b9e7a0>","</div>",[_c('van-loading',{attrs:{"color":"#1989fa"}})],1):_vm._ssrNode("<div class=\"firenddivst-tab\" data-v-35b9e7a0>","</div>",[_c('van-pull-refresh',{staticClass:"blindbox_list_content",on:{"refresh":_vm.userInvite},model:{value:(_vm.refreshing),callback:function ($$v) {_vm.refreshing=$$v},expression:"refreshing"}},[(_vm.inviteList.length > 0)?_c('div',{staticClass:"firenddivst-tab-con radial-gradient"},[_c('div',{staticClass:"firenddivst-tab-divst"},[_c('span',[_vm._v(_vm._s(_vm.$t("ActivityBlindbox.ActivityBlindboxDetail.HelpSuccessETH")+ '（'+ _vm.helpNum + '）:'))]),_vm._v(" "),_c('div',{staticClass:"firenddivst-tab-address"},_vm._l((_vm.inviteList),function(item,index){return _c('div',{key:index},[_vm._v("\n                "+_vm._s(index + 1)+". "+_vm._s(item)+"\n              ")])}),0)])]):_c('div',{staticClass:"noDataBox"},[_c('div',{staticClass:"noData"},[_c('p',[_vm._v(_vm._s(_vm.$t("ActivityBlindbox.ActivityBlindboxList.noHelper")))])])]),_vm._v(" "),(_vm.inviteList.length > 0)?_c('div',{staticClass:"block_page_footer"},[_c('div',{staticClass:"block_warpper"},[_c('div',{staticClass:"block_header"},[_c('img',{attrs:{"src":__webpack_require__(118)}})])])]):_vm._e()])],1)])}
 var staticRenderFns = []
 
 

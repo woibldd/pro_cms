@@ -5,87 +5,80 @@
         >{{ $t("base.loading") }}...</van-loading
       >
     </div>
-      <van-pull-refresh
-      v-model="refreshLoading"
-      v-else
-      :success-text="$t('mining.success')"
-      :loading-text="$t('mining.loading')"
-      :loosing-text="$t('mining.loading')"
-      @refresh="getInviteNumber"
-    >
-      <div class="warp-invite colorBackground3">
-        <div class="warp-invite-banner">
-          <img
-            src="http://cdn.bitkeep.vip/u_b_d6f84c30-5e3f-11ec-bd49-b1b354a240c8.png"
-          />
-          <div class="imgText">
-            <div class="textPrimary0 imgTextTitle">{{ $t("blindboxInvite.toEarn") }}</div>
-            <div class="textPrimary0 imgTextContent">{{ $t("blindboxInvite.rewardsMore") }}</div>
-          </div>
-        </div>
-        <div class="warp-invite-one colorBackground1 setTop">
-          <div class="warp-invite-one-header" style="padding-right: 0">
-            <div class="warp-invite-one-header-title textPrimary0">
-              <span>{{ $t("blindboxInvite.myRewards") }}</span>
+      <div v-else>
+        <div class="warp-invite colorBackground3">
+          <div class="warp-invite-banner">
+            <img
+              src="http://cdn.bitkeep.vip/u_b_d6f84c30-5e3f-11ec-bd49-b1b354a240c8.png"
+            />
+            <div class="imgText">
+              <div class="textPrimary0 imgTextTitle">{{ $t("blindboxInvite.toEarn") }}</div>
+              <div class="textPrimary0 imgTextContent">{{ $t("blindboxInvite.rewardsMore") }}</div>
             </div>
           </div>
-          <!-- <div class="borderBottom colorLine"></div> -->
-          <div class="invite-setP">
-            <div class="warp-invite-produced" @click="inviteFriendList">
-              <span class="textSecond1"><img src="http://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.invitedNumber") }}</span>
-              <span class="setFontFamily setDisplay textPrimary0">{{inviteNumber}}&nbsp;&nbsp;
-                <van-icon name="arrow" color='#999BA3'/>
-              </span>
+          <div class="warp-invite-one colorBackground1 setTop">
+            <div class="warp-invite-one-header" style="padding-right: 0">
+              <div class="warp-invite-one-header-title textPrimary0">
+                <span>{{ $t("blindboxInvite.myRewards") }}</span>
+              </div>
             </div>
-            <div class="warp-invite-produced" @click="rewardsList">
-              <span class="textSecond1"><img src="http://cdn.bitkeep.vip/u_b_e7b6fe30-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.tokenRewards") }}</span>
-              <span class="setFontFamily">
-                <van-icon name="arrow" color='#999BA3'/>
-              </span>
-            </div>
-          </div>
-          <!-- <div class="invite-setP">
-            <div class="warp-invite-produced">
-              <span><img src="http://cdn.bitkeep.vip/u_b_e7b63ae0-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.NFTRewards") }}</span>
-              <span class="setFontFamily">0
-                <van-icon name="arrow" color='#999BA3'/>
-              </span>
-            </div>
-            <div class="warp-invite-produced">
-              <span><img src="http://cdn.bitkeep.vip/u_b_e7b5c5b0-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.boxRewards") }}</span>
-              <span class="setFontFamily">0
-                <van-icon name="arrow" color='#999BA3'/>
-              </span>
-            </div>
-          </div> -->
-        </div>
-        <div class="warp-invite-one colorBackground1 setTop">
-          <div class="warp-invite-one-header" style="padding-right: 0">
-            <div class="warp-invite-one-header-title">
-              <span class="textPrimary0">{{ $t("blindboxInvite.inviteFriends") }}</span>
-            </div>
-          </div>
-          <!-- <div class="borderBottom colorLine"></div> -->
-          <div class="invite-setP">
-            <div class="warp-invite-link colorBackground3">
-              <div class="warp-invite-link-box">
-                <span>
-                  <span class="textSecond2">{{ $t("blindboxInvite.inviteLink") }}<br/>
-                    <span class="warp-invite-address textPrimary0">{{inviteLink}}</span>
-                  </span> 
+            <!-- <div class="borderBottom colorLine"></div> -->
+            <div class="invite-setP">
+              <div class="warp-invite-produced" @click="inviteFriendList">
+                <span class="textSecond1"><img src="http://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.invitedNumber") }}</span>
+                <span class="setFontFamily setDisplay textPrimary0">
+                  <van-icon name="arrow" color='#999BA3'/>
                 </span>
+              </div>
+              <div class="warp-invite-produced" @click="rewardsList">
+                <span class="textSecond1"><img src="http://cdn.bitkeep.vip/u_b_e7b6fe30-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.tokenRewards") }}</span>
                 <span class="setFontFamily">
-                  <van-icon v-copy="inviteLinkAll" name=http://cdn.bitkeep.vip/u_b_1a477b90-3579-11ec-8690-93c311cd0b88.png></van-icon>
+                  <van-icon name="arrow" color='#999BA3'/>
                 </span>
               </div>
             </div>
-            <div class="warp-invite-link-btn colorBackgroundPrimary" @click="inviteFirends">
-                {{$t("blindboxInvite.inviteFriendsNow")}}
+            <!-- <div class="invite-setP">
+              <div class="warp-invite-produced">
+                <span><img src="http://cdn.bitkeep.vip/u_b_e7b63ae0-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.NFTRewards") }}</span>
+                <span class="setFontFamily">0
+                  <van-icon name="arrow" color='#999BA3'/>
+                </span>
               </div>
+              <div class="warp-invite-produced">
+                <span><img src="http://cdn.bitkeep.vip/u_b_e7b5c5b0-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.boxRewards") }}</span>
+                <span class="setFontFamily">0
+                  <van-icon name="arrow" color='#999BA3'/>
+                </span>
+              </div>
+            </div> -->
+          </div>
+          <div class="warp-invite-one colorBackground1 setTop">
+            <div class="warp-invite-one-header" style="padding-right: 0">
+              <div class="warp-invite-one-header-title">
+                <span class="textPrimary0">{{ $t("blindboxInvite.inviteFriends") }}</span>
+              </div>
+            </div>
+            <!-- <div class="borderBottom colorLine"></div> -->
+            <div class="invite-setP">
+              <div class="warp-invite-link colorBackground3">
+                <div class="warp-invite-link-box">
+                  <span>
+                    <span class="textSecond2">{{ $t("blindboxInvite.inviteLink") }}<br/>
+                      <span class="warp-invite-address textPrimary0">{{inviteLink}}</span>
+                    </span> 
+                  </span>
+                  <span class="setFontFamily">
+                    <van-icon v-copy="inviteLinkAll" name=http://cdn.bitkeep.vip/u_b_1a477b90-3579-11ec-8690-93c311cd0b88.png></van-icon>
+                  </span>
+                </div>
+              </div>
+              <div class="warp-invite-link-btn colorBackgroundPrimary" @click="inviteFirends">
+                  {{$t("blindboxInvite.inviteFriendsNow")}}
+                </div>
+            </div>
           </div>
         </div>
       </div>
-      </van-pull-refresh>
     <CreatePoster
       :locale="locale"
       :zIndex="100"
@@ -110,9 +103,9 @@ export default {
   data() {
     return {
       isLoading: true,
-      refreshLoading: false,
+      // refreshLoading: false,
       inviteLink: "",
-      inviteNumber: 0,
+      // inviteNumber: 0,
       inviteLinkAll: "",
     };
   },
@@ -157,7 +150,7 @@ export default {
           });
         });
       });
-      this.getInviteNumber()
+      // this.getInviteNumber()
   },
   methods: {
     getSub() {
@@ -166,18 +159,18 @@ export default {
       let fisrt = copy.substring(0, 14);
       this.inviteLink = fisrt + " .... " + copy.substr(-15); 
     },
-    async getInviteNumber(){
-      const { data, status } = await USER_API.getInviteList({
-        start: 0,
-        limit: 10,
-      });
-      if (status == 1) {
-        this.isLoading = false;
-        this.$toast(data);
-      }
-      this.inviteNumber = data.total_count;
-      this.refreshLoading =false;
-    },
+    // async getInviteNumber(){
+    //   const { data, status } = await USER_API.getInviteList({
+    //     start: 0,
+    //     limit: 10,
+    //   });
+    //   if (status == 1) {
+    //     this.isLoading = false;
+    //     this.$toast(data);
+    //   }
+    //   this.inviteNumber = data.total_count;
+    //   this.refreshLoading =false;
+    // },
     inviteFriendList(){
       this.$router.push('/activity/blindboxInvite/inviteList')
     },
