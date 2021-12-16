@@ -268,15 +268,22 @@ export default {
       // 0 --认证不成功
       // 1 --成功
       // 2 --地址已存在
-      switch (data) {
-        case 0:
-          return this.$toast('认证不成功');
-        case 1:
-          this.$toast('成功');
-          this.$router.push('/activity/blindboxInvite/download')
-        case 2:
-          return this.$toast('地址已存在');
+      if(data == 0){
+        this.$toast('抱歉，该地址已超过邀请时效');
+      }else if(data == 1){
+        this.$router.push('/activity/blindboxInvite/download')
+      }else{
+        this.$toast('抱歉，地址已被邀请');
       }
+      // switch (data) {
+      //   case 0:
+      //     return this.$toast('认证不成功');
+      //   case 1:
+      //     this.$toast('成功');
+      //     this.$router.push('/activity/blindboxInvite/download')
+      //   case 2:
+      //     return this.$toast('地址已存在');
+      // }
     }),
     changeLang(){
       this.langShow = true;

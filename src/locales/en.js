@@ -402,7 +402,7 @@ module.exports = {
     loading: 'Loading...',
     rewardTitle: 'Token Rewards',
     downText: '🎉 恭喜您，您已经成功接受邀请！快去享受加密货币之旅',
-    
+    RuleTitle: 'Invite Rules',
     know: 'OK',
     detailWallet: 'A crypto wallet that takes no effort to navigate',
     detailWallet1: 'Convenient and easy-to-use BKSwap',

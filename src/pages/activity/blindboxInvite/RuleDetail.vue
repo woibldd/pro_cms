@@ -3,7 +3,7 @@
              :close-icon="closeIcon" round position="bottom" @click-overlay="close" 
              @click-close-icon="close" class="colorBackground1" :style="{ height: '50%', overflow: 'hidden' }">
     <div class="title">
-      <p class="textPrimary0">{{$t('mining.miningRuleTitle')}}</p>
+      <p class="textPrimary0">{{$t('blindboxInvite.RuleTitle')}}</p>
     </div>
     <div class="line colorLine"></div>
     <div class="ruleDetailcontent">

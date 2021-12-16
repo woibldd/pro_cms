@@ -3108,6 +3108,7 @@ module.exports = {
     loading: 'Loading...',
     rewardTitle: 'Token Rewards',
     downText: '🎉 恭喜您，您已经成功接受邀请！快去享受加密货币之旅',
+    RuleTitle: 'Invite Rules',
     know: 'OK',
     detailWallet: 'A crypto wallet that takes no effort to navigate',
     detailWallet1: 'Convenient and easy-to-use BKSwap',
@@ -4483,6 +4484,7 @@ module.exports = {
     ClaimRewards: 'Claim Rewards',
     confirm: 'Confirm',
     noData: 'No data',
+    RuleTitle: 'Invite Rules',
     invitationReward: "My Invitation Reward",
     inviteNumber1: 'Total invite Rewards',
     inviteNumber2: 'Yesterday invite Rewards',
@@ -6391,14 +6393,14 @@ function wrapFunctional(options) {
 
 
 const components = {
-  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 79)).then(c => wrapFunctional(c.default || c)),
-  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 68)).then(c => wrapFunctional(c.default || c)),
-  Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 72)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 167)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 246)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 99)).then(c => wrapFunctional(c.default || c)),
   BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 168)).then(c => wrapFunctional(c.default || c)),
   BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 166)).then(c => wrapFunctional(c.default || c)),
+  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 79)).then(c => wrapFunctional(c.default || c)),
+  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 68)).then(c => wrapFunctional(c.default || c)),
+  Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 72)).then(c => wrapFunctional(c.default || c)),
   Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 162)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 11).then(__webpack_require__.bind(null, 134)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 12).then(__webpack_require__.bind(null, 82)).then(c => wrapFunctional(c.default || c)),

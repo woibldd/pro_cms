@@ -344,6 +344,7 @@ module.exports = {
         ClaimRewards: 'Claim Rewards',
         confirm: 'Confirm',
         noData: 'No data',
+        RuleTitle: 'Invite Rules',
         invitationReward: "My Invitation Reward",
         inviteNumber1: 'Total invite Rewards',
         inviteNumber2: 'Yesterday invite Rewards',
