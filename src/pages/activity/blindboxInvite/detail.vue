@@ -16,14 +16,14 @@
         </div>
         <ul class="langList" id="langList" v-show='langShow'>
           <li class="langItem" data-val="en" data="English">English</li>
-          <li class="langItem" data-val="ko" data="韩语">韩语</li>
-          <li class="langItem" data-val="ja" data="日语">日语</li>
-          <li class="langItem" data-val="vi" data="越南语">越南语</li>
+          <li class="langItem" data-val="ko" data="한국어">한국어</li>
+          <li class="langItem" data-val="ja" data="日本語">日本語</li>
+          <li class="langItem" data-val="vi" data="Tiếng Việt">Tiếng Việt</li>
         </ul>
       </div>
     </div>
     <div class="detail_box_text">
-      <p class="textPrimary0">The most trusted & secure crypto wallet</p>
+      <p class="textPrimary0">{{$t('blindboxInvite.detailWallet')}}</p>
     </div>
     <div class="detail_box_flex">
       <div class="detail_box_flex_content">
@@ -35,7 +35,7 @@
             />
           </div>
           <div class="detail_box_flex_content_first">
-            Securely store encrypted assets
+            {{$t('blindboxInvite.detailWallet1')}}
           </div>
         </div>
         <div class="detail_box_flex_content_right">
@@ -46,7 +46,7 @@
             />
           </div>
           <div class="detail_box_flex_content_last">
-            Convenient & easy to use BKSwap
+            {{$t('blindboxInvite.detailWallet2')}}
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@
               alt=""
             />
           </div>
-          <div class="detail_box_flex_content_first">Support 721 NFT</div>
+          <div class="detail_box_flex_content_first">{{$t('blindboxInvite.detailWallet3')}}</div>
         </div>
         <div class="detail_box_flex_content_right">
           <div>
@@ -67,16 +67,16 @@
               alt=""
             />
           </div>
-          <div class="detail_box_flex_font">7000+ DApp ecosystem</div>
+          <div class="detail_box_flex_font">{{$t('blindboxInvite.detailWallet4')}}</div>
         </div>
       </div>
     </div>
     <div class="detail_box_address colorBackgroundWhite">
       <div class="detail_box_address_header textPrimary0">
-        Your friend invites you to join BitKeep multi-chain wallet
+        {{$t('blindboxInvite.yourFrinedInvite')}}
       </div>
       <div class="detail_box_address_desc textSecond1">
-        Trade and mine together to get BKB asset rewards
+                {{$t('blindboxInvite.friendsText')}}
       </div>
       <div class="detail_box_address_textarea colorBackground2">
         <textarea
@@ -87,29 +87,29 @@
           :class="{ focus: focus || !!address }"
           @blur="handlerBlur()"
           :placeholder="
-            focus ? '' : $t( 'ActivityBlindbox.ActivityBlindboxDetail.inputAddressPlaceholader' )"
+            focus ? '' : $t( 'blindboxInvite.detailInput' )"
         />
-        <div class="detail_box_address_textarea_btn" @click="submitAddress">提交地址 接受邀请</div>
+        <div class="detail_box_address_textarea_btn" @click="submitAddress">{{$t( 'blindboxInvite.detailBtn' )}}</div>
         <div class="detail_box_address_textarea_link">
           <a href="https://www.bitkeep.org/" class="colorPrimary">
-          没有 ETH 地址? 点击下方按钮下载 BitKeep 创建
+          {{$t( 'blindboxInvite.detailJust' )}}
           </a>
         </div>
       </div>
     </div>
     </div>
     <div class="detail_box_wallet setMargin">
-      <h1>Why choose BitKeep wallet？</h1>
+      <h1>{{$t( 'blindboxInvite.detailWhy' )}}</h1>
       <img
         src="http://cdn.bitkeep.vip/u_b_916160b0-5a59-11ec-bdbc-7722494dfa58.png"
         alt=""
       />
       <div class="detail_box_wallet_title_content">
-        <div class="detail_box_wallet_title">Control your crypto</div>
+        <h1 class="detail_box_wallet_title">{{$t( 'blindboxInvite.detailContro' )}}</h1>
         <ul class="detail_box_wallet_ul">
-          <li>安全存储加密数字货币及 NFT，资产自我掌控</li>
-          <li>支持 30+ 主链，5000+ 种加密资产</li>
-          <li>7000+ DApp 生态功能，畅玩 DeFi</li>
+          <li>{{$t( 'blindboxInvite.detailUl1' )}}</li>
+          <li>{{$t( 'blindboxInvite.detailUl2' )}}</li>
+          <li>{{$t( 'blindboxInvite.detailUl3' )}}</li>
         </ul>
       </div>
     </div>
@@ -119,40 +119,39 @@
         alt=""
       />
       <div class="detail_box_wallet_title_content setBottom">
-        <div class="detail_box_wallet_title">Trading anycoins on BKSwap</div>
+        <h1 class="detail_box_wallet_title">{{$t( 'blindboxInvite.detailCrypto' )}}</h1>
         <ul class="detail_box_wallet_ul">
-          <li>随时轻松兑换和交易多链加密货币</li>
-          <li>聚合 Uniswap、Sushiswap、PancakeSwap 等 30+ 主流 DEX</li>
+          <li>{{$t('blindboxInvite.detailAny')}}</li>
+          <li>{{$t('blindboxInvite.detailAggregate')}}</li>
         </ul>
       </div>
     </div>
     <div class="detail_box_nft">
-      <h2 class="textPrimary0">Store your NFTs</h2>
+      <h1 class="textPrimary0">{{$t('blindboxInvite.detailNFT')}}</h1>
       <div class="detail_box_nft_desc">
-        Safely store and easily view all of your NFTs (ERC721 tokens) right in
-        your Wallet.
+        {{$t('blindboxInvite.detailNFTCon')}}
       </div>
       <img
-        src="http://cdn.bitkeep.vip/u_b_f565c310-5a60-11ec-bdbc-7722494dfa58.png"
+        src="http://cdn.bitkeep.vip/u_b_d35394b0-5e1f-11ec-bd49-b1b354a240c8.png"
         alt=""
       />
     </div>
     <div class="detail_box_bitkeep">
-      <h1 bklang="five_1">BitKeep 为全球提供服务</h1>
+      <h1 bklang="five_1">{{$t('blindboxInvite.foot1')}}</h1>
       <p bklang="five_2">
-        已为全球 168+ 个国家地区的数百万用户提供安全、可靠的加密资产管理服务
+        {{$t('blindboxInvite.foot2')}}
       </p>
       <ul>
         <li>
-          <p bklang="five_3">用户量</p>
+          <p bklang="five_3">{{$t('blindboxInvite.foot3')}}</p>
           <div class="num GB">4,000,000<span>+</span></div>
         </li>
         <li>
-          <p bklang="five_4">转账金额</p>
+          <p bklang="five_4">{{$t('blindboxInvite.foot4')}}</p>
           <div class="num"><span>$</span>5,000<span>+ 亿</span></div>
         </li>
         <li>
-          <p>覆盖国家和地区</p>
+          <p>{{$t('blindboxInvite.foot5')}}</p>
           <div class="num">168<span>+</span></div>
         </li>
       </ul>
@@ -245,6 +244,11 @@ export default {
   mounted () {
     this.$nextTick(()=>{
       this.isLoading = false;
+      window.addEventListener('load',()=>{
+        let lang = {en: 'English', ja: '日本語', ko: '한국어', vi: 'Tiếng Việt'}
+        this.langText = lang[this.locale];
+        this.$store.commit('CHANGE_LANG',this.locale)
+      });
     })
   },
   methods: {
@@ -256,6 +260,7 @@ export default {
     },
 
     submitAddress:debounce(async function () {
+      if(this.address == '') return this.$toast(this.$t( 'blindboxInvite.emptyToast' ));
       const { data, status } = await USER_API.certifyFriendship({
         address: this.address,
         token: this.$route.query.token
@@ -269,11 +274,11 @@ export default {
       // 1 --成功
       // 2 --地址已存在
       if(data == 0){
-        this.$toast('抱歉，该地址已超过邀请时效');
+        this.$toast(this.$t('blindboxInvite.toast0'));
       }else if(data == 1){
         this.$router.push('/activity/blindboxInvite/download')
       }else{
-        this.$toast('抱歉，地址已被邀请');
+        this.$toast(this.$t('blindboxInvite.toast2'));
       }
       // switch (data) {
       //   case 0:
@@ -316,6 +321,9 @@ export default {
   background-size: 100% 100%;
 }
 .detail_box {
+  h1{
+    font-size: 24px;
+  }
   .detail_box_header {
     display: flex;
     justify-content: space-between;
@@ -374,7 +382,6 @@ export default {
     }
     .detail_box_flex_content_last {
       font-size: 14px;
-      width: 124px;
     }
     .detail_box_flex_content_right {
       margin-left: 66px;
@@ -461,7 +468,6 @@ export default {
     }
     .detail_box_wallet_title_content {
       .detail_box_wallet_title {
-        font-size: 22px;
         font-weight: 600;
       }
       .detail_box_wallet_ul {
@@ -489,11 +495,10 @@ export default {
   .setBackground {
     width: 100%;
     margin-top: 34px;
-    background: url("https://cdn.bitkeep.vip/u_b_ad386c70-d0bb-11eb-a1fd-1b9796c35a14.jpeg")
-      no-repeat;
+    background: url("https://cdn.bitkeep.vip/u_b_ad386c70-d0bb-11eb-a1fd-1b9796c35a14.jpeg") 100% 100% no-repeat;
   }
   .detail_box_nft {
-    margin: 50px 16px;
+    margin: 30px 16px;
     h2 {
       font-size: 22px;
     }

@@ -214,12 +214,13 @@
           <div class="mining-wrap-one-header">
             <div class="mining-wrap-one-header-title">
               <img
-                src="http://cdn.bitkeep.vip/u_b_381594a0-3b9f-11ec-8e63-1db435df936c.png"
+                src="http://cdn.bitkeep.vip/u_b_d9ddb520-3b9e-11ec-8e63-1db435df936c.png"
                 alt=""
               />
               <span class="setFontWeight">{{
                 $t("mining.invitationPool")
               }}</span>
+              <img :src="question" class="setImg" @click="inviteRuleDetail" alt="">
             </div>
           </div>
           <div class="mining-wrap-one-body">
@@ -326,6 +327,7 @@
     </van-pull-refresh>
     <pup-protocol :show='show' @close='close' :unclaimReward='unclaimReward' :sumReward='sum_activity_today_reward' :theme='theme'></pup-protocol>
     <ruleDetail :ruleDetailFlag='ruleDetailFlag' :theme='theme' @close='ruleDetailClose'></ruleDetail>
+    <inviteRuleDetail :inviteRuleDetailFlag='inviteRuleDetailFlag' :theme='theme' @closeInvite='closeInvite'></inviteRuleDetail>
   </div>
 </template>
 <script>
@@ -334,6 +336,7 @@ import { mapState } from "vuex";
 import activity from "@/components/activity";
 import pupProtocol from './protocol.vue';
 import ruleDetail from './RuleDetail.vue';
+import inviteRuleDetail from './inviteRuleDetail.vue';
 export default {
   name: "mining",
   data() {
@@ -356,6 +359,7 @@ export default {
       status: false,
       show: false,
       ruleDetailFlag: false,
+      inviteRuleDetailFlag: false,
       isLoading: true,
       refreshLoading: false,
       startTime: null,
@@ -382,12 +386,10 @@ export default {
   components: {
     activityCom: activity,
     pupProtocol,
+    inviteRuleDetail,
     ruleDetail
   },
   
-  beforeMount() {
-    
-  },
   mounted() {
     // this.startTime = this.countDown(this.fixdStartTime);
     // this.endTime = this.countDown(this.fixdEndTime);
@@ -444,6 +446,12 @@ export default {
     },
     ruleDetailClose(){
       this.ruleDetailFlag = false;
+    },
+    inviteRuleDetail(){
+      this.inviteRuleDetailFlag = true;
+    },
+    closeInvite(){
+      this.inviteRuleDetailFlag = false;
     },
     inviteRewards(){
       this.$router.push('/activity/blindboxInvite/rewardList')

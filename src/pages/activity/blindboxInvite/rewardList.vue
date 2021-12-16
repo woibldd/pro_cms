@@ -25,7 +25,7 @@
             >
               <div class="rewards-row-data-left">
                 <div class="rewards-row-data-left-title textPrimary0">
-                  邀请奖励
+                  {{$t('blindboxInvite.invitationReward')}}
                 </div>
                 <div class="rewards-row-data-left-time textSecond3">
                   {{item.create_time | filterTime}}
@@ -55,7 +55,7 @@
           src="http://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png"
           alt=""
         />
-        <p class="textSecond3">No Data</p>
+        <p class="textSecond3">{{$t('mining.noData')}}</p>
       </div>
     </div>
   </div>

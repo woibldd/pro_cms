@@ -126,6 +126,13 @@
     "_name": "_133d3cbc"
   },
   {
+    "name": "activity-mining-inviteRuleDetail",
+    "path": "/activity/mining/inviteRuleDetail",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/mining/inviteRuleDetail.vue",
+    "chunkName": "pages/activity/mining/inviteRuleDetail",
+    "_name": "_723d0c5e"
+  },
+  {
     "name": "activity-mining-miningRule",
     "path": "/activity/mining/miningRule",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/mining/miningRule.vue",

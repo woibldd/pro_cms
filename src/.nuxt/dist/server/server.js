@@ -43,7 +43,7 @@ module.exports =
 /******/
 /******/ 		// "0" is the signal for "already loaded"
 /******/ 		if(installedChunks[chunkId] !== 0) {
-/******/ 			var chunk = require("./" + ({"1":"components/activity","2":"components/blindbox-blind-button","3":"components/blindbox-blind-strategy","4":"components/blindbox-blind-time-text","5":"components/blindbox-create-poster","6":"components/blindbox-title-image","7":"components/common","8":"components/common-c-vue-countdown","9":"components/common-header","10":"components/vue-create-poster-layout","11":"components/vue-create-poster-layout-canvas-poster","12":"components/vue-create-poster-layout-gradient","13":"components/vue-create-poster-layout-header","14":"components/vue-create-poster-layout-painter","15":"components/vue-create-poster-layout-qrcode","16":"components/vue-create-poster-layout-util","17":"pages/_id","18":"pages/activity/airdrop/index","19":"pages/activity/blindbox/detail/_id","20":"pages/activity/blindbox/detail/index","21":"pages/activity/blindbox/download","22":"pages/activity/blindbox/firendList","23":"pages/activity/blindbox/index","24":"pages/activity/blindbox/list","25":"pages/activity/blindbox/stepDetail","26":"pages/activity/blindboxInvite/RuleDetail","27":"pages/activity/blindboxInvite/component/createPoster","28":"pages/activity/blindboxInvite/copy","29":"pages/activity/blindboxInvite/detail","30":"pages/activity/blindboxInvite/download","31":"pages/activity/blindboxInvite/index","32":"pages/activity/blindboxInvite/inviteList","33":"pages/activity/blindboxInvite/rewardList","34":"pages/activity/cbkbexchange/index","35":"pages/activity/mining/RuleDetail","36":"pages/activity/mining/history","37":"pages/activity/mining/index","38":"pages/activity/mining/miningRule","39":"pages/activity/mining/protocol","40":"pages/activity/nftLottery/index","41":"pages/article/detail/_id"}[chunkId]||chunkId) + ".js");
+/******/ 			var chunk = require("./" + ({"1":"components/activity","2":"components/blindbox-blind-button","3":"components/blindbox-blind-strategy","4":"components/blindbox-blind-time-text","5":"components/blindbox-create-poster","6":"components/blindbox-title-image","7":"components/common","8":"components/common-c-vue-countdown","9":"components/common-header","10":"components/vue-create-poster-layout","11":"components/vue-create-poster-layout-canvas-poster","12":"components/vue-create-poster-layout-gradient","13":"components/vue-create-poster-layout-header","14":"components/vue-create-poster-layout-painter","15":"components/vue-create-poster-layout-qrcode","16":"components/vue-create-poster-layout-util","17":"pages/_id","18":"pages/activity/airdrop/index","19":"pages/activity/blindbox/detail/_id","20":"pages/activity/blindbox/detail/index","21":"pages/activity/blindbox/download","22":"pages/activity/blindbox/firendList","23":"pages/activity/blindbox/index","24":"pages/activity/blindbox/list","25":"pages/activity/blindbox/stepDetail","26":"pages/activity/blindboxInvite/RuleDetail","27":"pages/activity/blindboxInvite/component/createPoster","28":"pages/activity/blindboxInvite/copy","29":"pages/activity/blindboxInvite/detail","30":"pages/activity/blindboxInvite/download","31":"pages/activity/blindboxInvite/index","32":"pages/activity/blindboxInvite/inviteList","33":"pages/activity/blindboxInvite/rewardList","34":"pages/activity/cbkbexchange/index","35":"pages/activity/mining/RuleDetail","36":"pages/activity/mining/history","37":"pages/activity/mining/index","38":"pages/activity/mining/inviteRuleDetail","39":"pages/activity/mining/miningRule","40":"pages/activity/mining/protocol","41":"pages/activity/nftLottery/index","42":"pages/article/detail/_id"}[chunkId]||chunkId) + ".js");
 /******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				modules[moduleId] = moreModules[moduleId];
@@ -3107,33 +3107,46 @@ module.exports = {
     nomore: 'No More',
     loading: 'Loading...',
     rewardTitle: 'Token Rewards',
-    downText: '🎉 恭喜您，您已经成功接受邀请！快去享受加密货币之旅',
     RuleTitle: 'Invite Rules',
     know: 'OK',
+    toEarn: 'Invite friends to earn BKB',
+    rewardsMore: 'Friends trading rewards more BKB',
+    Poster: 'Scan QRcode',
+    downReward: 'Download BitKeep Wallet Earn crypto asset rewards',
+    imgText: 'Invite a Friend Let\'s share BKB rewards',
     detailWallet: 'A crypto wallet that takes no effort to navigate',
-    detailWallet1: 'Convenient and easy-to-use BKSwap',
-    detailWallet2: 'Your friend invites you to use BitKeep multi-chain wallet',
-    detailWallet3: 'Trade with BitKeep to earn BKB',
-    detailWallet4: 'Convenient and easy-to-use BKSwap',
+    detailWallet1: 'Securely store encrypted assets',
+    detailWallet2: 'Convenient and easy-to-use BKSwap',
+    detailWallet3: 'Support 721 NFT',
+    detailWallet4: '7000+ DApps ecosystem',
+    yourFrinedInvite: 'Your friend invites you to use BitKeep multi-chain wallet',
+    friendsText: 'Trade with BitKeep to earn BKB',
     detailInput: 'Please input your ETH address to join BitKeep',
-    detailBtn: 'Submit your address and accept the invitation',
-    detailBtn: 'Submit your address and accept the invitation',
+    detailBtn: 'Accept the invitation',
     detailJust: 'Have no ETH address yet? Just download BitKeep app and create a wallet',
     detailWhy: 'Why choose BitKeep wallet?',
-    detailControl: 'Control your digital assets',
+    detailContro: 'Control your digital assets',
     detailUl1: 'A safe storage for your tokens and NFTs',
     detailUl2: 'BitKeep supports 30+ main chains, 200,000+ tokens, and 7000+ DApps',
     detailUl3: 'opening the world of DeFi for our users',
     detailCrypto: 'All crypto assets can be traded with BKSwap',
     detailAny: 'Easily swap and trade multi-chain cryptocurrencies at any time',
     detailAggregate: 'Aggregate 30+ mainstream DEXs such as Uniswap, Sushiswap, PancakeSwap, etc.',
-    detailNFT: 'tore your NFTs',
+    detailNFT: 'Store your NFTs',
     detailNFTCon: 'BitKeep provides secure and reliable crypto asset management services for millions of users across more than 168 countries and regions',
-    detailSuccess: 'Congratulations, you have successfully accepted the invitation! Use BitKeep wallet now to enjoy your blockchain lifestyle',
+    downText: 'Congratulations, you have successfully accepted the invitation! Use BitKeep wallet now to enjoy your blockchain lifestyle',
+    foot1: 'BitKeep Provides Service Worldwide',
+    foot2: 'It has provided safe and reliable crypto asset management service to millions of users in more than 168 countries around the world',
+    foot3: 'Number of Users',
+    foot4: 'Transactions Amount',
+    foot5: 'Covering Countries and Regions',
     inviteRuleTitle: 'What makes an valid invitation Your friend (new user) confirms?',
     ruleDetail: 'The user imports his/her wallet address or address has been imported or create a BitKeep wallet',
     ruleDetail1: 'The address is created within 24 hours',
-    ruleDetail2: 'The user’s trading volume on BKSwap is larger than or equal to 10 USDT'
+    ruleDetail2: 'The user’s trading volume on BKSwap is larger than or equal to 10 USDT',
+    toast2: 'Sorry, this address has been invited',
+    toast0: ' Sorry, this address has reached the maximum invite limit',
+    emptyToast: 'Address field cannot be empty'
   }
 };
 
@@ -3486,6 +3499,68 @@ module.exports = {
     inviteNumber4: '昨日の報酬',
     invitationPool: '招待ボーナスプール',
     invitationPoolContent: '招待して獲得するイベントの第2フェーズに使用されます'
+  },
+  'blindboxInvite': {
+    inviteTitle: '友達を招待',
+    myRewards: '私の報酬',
+    invitedNumber: '友達を招待',
+    tokenRewards: 'トークンリワード',
+    NFTRewards: 'NFTリワード',
+    boxRewards: 'ブラインドボックスリワード',
+    inviteFriend: '友達を招待',
+    inviteFriends: '友達を招待',
+    inviteLink: '招待リンク',
+    inviteFriendsNow: '友達を招待',
+    savePicture: '画像を保存する',
+    ShareLink: "共有リンク",
+    inforce: 'アクティベート',
+    inactivated: '不活化',
+    Address: '住所',
+    State: '州',
+    Time: '時間',
+    nomore: 'もういや',
+    loading: '読み込み中...',
+    rewardTitle: 'トークンリワード',
+    RuleTitle: 'ルールを招待',
+    know: 'わかった',
+    toEarn: '友達を招待してBKBを獲得する',
+    rewardsMore: '友達取引で報酬が増えるBKB',
+    Poster: 'QRコードをスキャンする',
+    downReward: 'BitKeepウォレットをダウンロードして報酬を稼ぐ',
+    imgText: '友達を招待しましょうBKBの報酬を共有しましょう',
+    detailWallet: 'ナビゲートするのに労力を必要としない暗号ウォレット',
+    detailWallet1: '暗号化された資産を安全に保管する',
+    detailWallet2: '便利で使いやすいBKSwap',
+    detailWallet3: '721NFTをサポート',
+    detailWallet4: '7000以上のDAppsエコシステム',
+    yourFrinedInvite: 'あなたの友人はあなたにBitKeepマルチチェーンウォレットを使うように勧めます',
+    friendsText: 'BitKeepと取引してBKBを獲得する',
+    detailInput: 'ETHアドレスを入力してください',
+    detailBtn: '招待を受け入れる',
+    detailJust: 'ETHアドレスはまだありませんか？ BitKeepアプリをダウンロードしてウォレットを作成するだけです',
+    detailWhy: 'なぜBitKeepウォレットを選ぶのですか？',
+    detailContro: 'デジタル資産を管理する',
+    detailUl1: 'トークンとNFTの安全なストレージ',
+    detailUl2: 'BitKeepは、30以上のメインチェーン、200,000以上のトークン、および7000以上のDAppをサポートします',
+    detailUl3: 'ユーザーにDeFiの世界を開く',
+    detailCrypto: 'すべての暗号資産はBKSwapで取引できます',
+    detailAny: 'いつでも簡単にマルチチェーン暗号通貨を交換して交換する',
+    detailAggregate: 'Uniswap、Sushiswap、PancakeSwapなどの30以上の主流のDEXを集約します。',
+    detailNFT: 'NFTを保存する',
+    detailNFTCon: 'BitKeepは、168を超える国と地域の何百万ものユーザーに安全で信頼性の高い暗号資産管理サービスを提供します',
+    downText: 'おめでとうございます、あなたは招待を無事に受け入れました！ 今すぐBitKeepウォレットを使用して、ブロックチェーンのライフスタイルをお楽しみください',
+    foot1: 'BitKeepは世界中にサービスを提供します',
+    foot2: '世界168カ国以上の数百万人のユーザーに安全で信頼性の高い暗号資産管理サービスを提供してきました',
+    foot3: '利用者数',
+    foot4: '取引金額',
+    foot5: '国と地域をカバーする',
+    inviteRuleTitle: '何が有効な招待状になりますかあなたの友人（新しいユーザー）は確認しますか？',
+    ruleDetail: 'ユーザーが自分のウォレットアドレスをインポートするか、アドレスがインポートされたか、BitKeepウォレットを作成します',
+    ruleDetail1: 'アドレスは24時間以内に作成されます',
+    ruleDetail2: 'BKSwapでのユーザーの取引量が10USDT以上',
+    toast2: '申し訳ありませんが、このアドレスは招待されています',
+    toast0: '申し訳ありませんが、このアドレスは招待の上限に達しました',
+    emptyToast: 'アドレスフィールドを空にすることはできません'
   }
 };
 
@@ -3820,6 +3895,68 @@ module.exports = {
     inviteNumber4: '어제 보상',
     invitationPool: '초대 보너스 풀',
     invitationPoolContent: '초대 및 적립 이벤트의 두 번째 단계에 사용'
+  },
+  'blindboxInvite': {
+    inviteTitle: '친구를 초대',
+    myRewards: '내 보상',
+    invitedNumber: '친구를 초대',
+    tokenRewards: '토큰 보상',
+    NFTRewards: 'NFT 보상',
+    boxRewards: '블라인드 박스 보상',
+    inviteFriend: '친구를 초대',
+    inviteFriends: '친구를 초대',
+    inviteLink: '초대 링크',
+    inviteFriendsNow: '지금 친구를 초대하세요',
+    savePicture: '사진을 저장하다',
+    ShareLink: "링크 공유",
+    inforce: '활성화됨',
+    inactivated: '비활성화됨',
+    Address: '주소',
+    State: '상태',
+    Time: '시간',
+    nomore: '더 이상은 없어',
+    loading: '로딩 중...',
+    rewardTitle: '토큰 보상',
+    RuleTitle: '초대 규칙',
+    know: '확인',
+    toEarn: '친구를 초대하여 BKB 적립',
+    rewardsMore: '친구 거래는 더 많은 BKB를 보상합니다.',
+    Poster: 'QR코드 스캔',
+    downReward: 'BitKeep Wallet 다운로드 암호화 자산 보상 받기',
+    imgText: '친구 초대 BKB 보상을 공유하자',
+    detailWallet: '탐색에 노력이 필요하지 않은 암호화 지갑',
+    detailWallet1: '암호화된 자산을 안전하게 저장',
+    detailWallet2: '편리하고 사용하기 쉬운 BKSwap',
+    detailWallet3: '721 NFT 지원',
+    detailWallet4: '7000개 이상의 DApp 생태계',
+    yourFrinedInvite: '친구가 BitKeep 다중 체인 지갑을 사용하도록 초대합니다.',
+    friendsText: 'BitKeep과 거래하여 BKB 획득',
+    detailInput: 'BitKeep에 가입하려면 ETH 주소를 입력하세요.',
+    detailBtn: '초대를 수락하다',
+    detailJust: '아직 ETH 주소가 없으신가요? BitKeep 앱을 다운로드하고 지갑을 만드세요.',
+    detailWhy: 'BitKeep 지갑을 선택하는 이유는 무엇입니까?',
+    detailContro: '디지털 자산 제어',
+    detailUl1: '토큰 및 NFT를 위한 안전한 저장소',
+    detailUl2: 'BitKeep은 30개 이상의 메인 체인, 200,000개 이상의 토큰 및 7000개 이상의 DApp을 지원합니다.',
+    detailUl3: '사용자를 위한 DeFi의 세계를 열다',
+    detailCrypto: '모든 암호화 자산은 BKSwap으로 거래할 수 있습니다.',
+    detailAny: '언제든지 멀티체인 암호화폐를 쉽게 교환하고 거래할 수 있습니다.',
+    detailAggregate: 'Uniswap, Sushiswap, PancakeSwap 등과 같은 30개 이상의 주류 DEX를 집계합니다.',
+    detailNFT: 'NFT 저장',
+    detailNFTCon: 'BitKeep은 168개 이상의 국가 및 지역에 걸쳐 수백만 명의 사용자에게 안전하고 안정적인 암호화 자산 관리 서비스를 제공합니다.',
+    downText: '축하합니다. 초대를 수락했습니다! 지금 BitKeep 지갑을 사용하여 블록체인 라이프스타일을 즐기세요',
+    foot1: 'BitKeep은 전 세계적으로 서비스를 제공합니다',
+    foot2: '전 세계 168개국 이상 수백만 명의 사용자에게 안전하고 안정적인 암호화 자산 관리 서비스를 제공했습니다.',
+    foot3: '사용자 수',
+    foot4: '거래 금액',
+    foot5: '국가 및 지역 포함',
+    inviteRuleTitle: '친구(신규 사용자)가 확인하는 유효한 초대는 무엇입니까?',
+    ruleDetail: '사용자가 자신의 지갑 주소를 가져오거나 주소를 가져오거나 BitKeep 지갑을 생성합니다.',
+    ruleDetail1: '주소는 24시간 이내에 생성됩니다.',
+    ruleDetail2: 'BKSwap에서 사용자의 거래량이 10 USDT 이상입니다.',
+    toast2: '죄송합니다. 이 주소는 초대되었습니다.',
+    toast0: '죄송합니다. 이 주소는 최대 초대 한도에 도달했습니다.',
+    emptyToast: '주소 필드는 비워둘 수 없습니다.'
   }
 };
 
@@ -4154,6 +4291,68 @@ module.exports = {
     inviteNumber4: 'Phần thưởng hôm qua',
     invitationPool: 'Tiền thưởng lời mời',
     invitationPoolContent: 'Được sử dụng cho giai đoạn thứ hai của sự kiện mời và kiếm tiền'
+  },
+  'blindboxInvite': {
+    inviteTitle: 'Mời bạn bè',
+    myRewards: 'Giải thưởng của tôi',
+    invitedNumber: 'Mời bạn bè',
+    tokenRewards: 'Phần thưởng mã thông báo',
+    NFTRewards: 'Phần thưởng NFT',
+    boxRewards: 'Phần thưởng Hộp mù',
+    inviteFriend: 'Mời bạn bè',
+    inviteFriends: 'Mời bạn bè',
+    inviteLink: 'Liên kết lời mời',
+    inviteFriendsNow: 'Mời bạn bè của bạn ngay bây giờ',
+    savePicture: 'Lưu hình ảnh',
+    ShareLink: "Chia sẻ",
+    inforce: 'Đã kích hoạt',
+    inactivated: 'Không hoạt động',
+    Address: 'Địa chỉ nhà',
+    State: 'Trạng thái',
+    Time: 'Thời gian',
+    nomore: 'Không còn nữa',
+    loading: 'Đang tải...',
+    rewardTitle: 'Phần thưởng mã thông báo',
+    RuleTitle: 'Nội quy mời',
+    know: 'VÂNG',
+    toEarn: 'Mời bạn bè để kiếm BKB',
+    rewardsMore: 'Giao dịch bạn bè thưởng thêm BKB',
+    Poster: 'Quét mã QR',
+    downReward: 'TTải xuống ví BitKeep để kiếm phần thưởng',
+    imgText: 'Mời bạn bè Chia sẻ phần thưởng BKB',
+    detailWallet: 'Một ví tiền điện tử không cần nỗ lực điều hướng',
+    detailWallet1: 'Lưu trữ an toàn nội dung được mã hóa',
+    detailWallet2: 'BKSwap thuận tiện và dễ sử dụng',
+    detailWallet3: 'Hỗ trợ 721 NFT',
+    detailWallet4: 'Hơn 7000 hệ sinh thái DApps',
+    yourFrinedInvite: 'Bạn bè của bạn mời bạn sử dụng ví đa chuỗi BitKeep',
+    friendsText: 'Giao dịch với BitKeep để kiếm BKB',
+    detailInput: 'Hãy nhập địa chỉ của ETH',
+    detailBtn: 'Chấp nhận lời mời',
+    detailJust: 'Chưa có địa chỉ ETH? Chỉ cần tải xuống ứng dụng BitKeep và tạo ví',
+    detailWhy: 'Tại sao chọn ví BitKeep?',
+    detailContro: 'Kiểm soát tài sản kỹ thuật số của bạn',
+    detailUl1: 'Một nơi lưu trữ an toàn cho các mã thông báo và NFT của bạn',
+    detailUl2: 'BitKeep hỗ trợ hơn 30 chuỗi chính, 200.000+ mã thông báo và hơn 7000 DApps',
+    detailUl3: 'mở ra thế giới DeFi cho người dùng của chúng tôi',
+    detailCrypto: 'Tất cả các tài sản tiền điện tử có thể được giao dịch với BKSwap',
+    detailAny: 'Dễ dàng hoán đổi và giao dịch tiền điện tử đa chuỗi bất kỳ lúc nào',
+    detailAggregate: 'Tổng hợp hơn 30 DEX chính như Uniswap, Sushiswap, PancakeSwap, v.v.',
+    detailNFT: 'Lưu trữ NFT của bạn',
+    detailNFTCon: 'BitKeep cung cấp các dịch vụ quản lý tài sản tiền điện tử an toàn và đáng tin cậy cho hàng triệu người dùng trên hơn 168 quốc gia và khu vực',
+    downText: 'Xin chúc mừng, bạn đã chấp nhận lời mời thành công! Sử dụng ví BitKeep ngay bây giờ để tận hưởng phong cách sống blockchain của bạn',
+    foot1: 'BitKeep cung cấp dịch vụ trên toàn thế giới',
+    foot2: 'Nó đã cung cấp dịch vụ quản lý tài sản tiền điện tử an toàn và đáng tin cậy cho hàng triệu người dùng ở hơn 168 quốc gia trên thế giới',
+    foot3: 'Số lượng người dùng',
+    foot4: 'Số tiền giao dịch',
+    foot5: 'Bao gồm các quốc gia và khu vực',
+    inviteRuleTitle: 'Điều gì làm cho một lời mời hợp lệ Bạn của bạn (người dùng mới) xác nhận?',
+    ruleDetail: 'Người dùng nhập địa chỉ ví của mình hoặc địa chỉ đã được nhập hoặc tạo ví BitKeep',
+    ruleDetail1: 'Địa chỉ được tạo trong vòng 24 giờ',
+    ruleDetail2: 'Khối lượng giao dịch của người dùng trên BKSwap lớn hơn hoặc bằng 10 USDT',
+    toast2: 'Xin lỗi, địa chỉ này đã được mời',
+    toast0: 'Xin lỗi, địa chỉ này đã đạt đến giới hạn mời tối đa',
+    emptyToast: 'Trường địa chỉ không được để trống'
   }
 };
 
@@ -4539,8 +4738,46 @@ module.exports = {
     nomore: 'No More',
     loading: 'Loading...',
     rewardTitle: 'Token Rewards',
-    downText: '🎉 恭喜您，您已经成功接受邀请！快去享受加密货币之旅',
-    know: 'OK'
+    RuleTitle: 'Invite Rules',
+    know: 'OK',
+    toEarn: 'Invite friends to earn BKB',
+    rewardsMore: 'Friends trading rewards more BKB',
+    Poster: 'Scan QRcode',
+    downReward: 'Download BitKeep Wallet Earn crypto asset rewards',
+    imgText: 'Invite a Friend Let\'s share BKB rewards',
+    detailWallet: 'A crypto wallet that takes no effort to navigate',
+    detailWallet1: 'Securely store encrypted assets',
+    detailWallet2: 'Convenient and easy-to-use BKSwap',
+    detailWallet3: 'Support 721 NFT',
+    detailWallet4: '7000+ DApps ecosystem',
+    yourFrinedInvite: 'Your friend invites you to use BitKeep multi-chain wallet',
+    friendsText: 'Trade with BitKeep to earn BKB',
+    detailInput: 'Please input your ETH address to join BitKeep',
+    detailBtn: 'Accept the invitation',
+    detailJust: 'Have no ETH address yet? Just download BitKeep app and create a wallet',
+    detailWhy: 'Why choose BitKeep wallet?',
+    detailContro: 'Control your digital assets',
+    detailUl1: 'A safe storage for your tokens and NFTs',
+    detailUl2: 'BitKeep supports 30+ main chains, 200,000+ tokens, and 7000+ DApps',
+    detailUl3: 'opening the world of DeFi for our users',
+    detailCrypto: 'All crypto assets can be traded with BKSwap',
+    detailAny: 'Easily swap and trade multi-chain cryptocurrencies at any time',
+    detailAggregate: 'Aggregate 30+ mainstream DEXs such as Uniswap, Sushiswap, PancakeSwap, etc.',
+    detailNFT: 'Store your NFTs',
+    detailNFTCon: 'BitKeep provides secure and reliable crypto asset management services for millions of users across more than 168 countries and regions',
+    downText: 'Congratulations, you have successfully accepted the invitation! Use BitKeep wallet now to enjoy your blockchain lifestyle',
+    foot1: 'BitKeep Provides Service Worldwide',
+    foot2: 'It has provided safe and reliable crypto asset management service to millions of users in more than 168 countries around the world',
+    foot3: 'Number of Users',
+    foot4: 'Transactions Amount',
+    foot5: 'Covering Countries and Regions',
+    inviteRuleTitle: 'What makes an valid invitation Your friend (new user) confirms?',
+    ruleDetail: 'The user imports his/her wallet address or address has been imported or create a BitKeep wallet',
+    ruleDetail1: 'The address is created within 24 hours',
+    ruleDetail2: 'The user’s trading volume on BKSwap is larger than or equal to 10 USDT',
+    toast2: 'Sorry, this address has been invited',
+    toast0: ' Sorry, this address has reached the maximum invite limit',
+    emptyToast: 'Address field cannot be empty'
   }
 };
 
@@ -5351,55 +5588,57 @@ function shouldScrollToTop(route) {
 
 
 
-const _214ac336 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/airdrop/index */ 18).then(__webpack_require__.bind(null, 227)));
+const _214ac336 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/airdrop/index */ 18).then(__webpack_require__.bind(null, 234)));
 
-const _85ae8e80 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 23).then(__webpack_require__.bind(null, 228)));
+const _85ae8e80 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 23).then(__webpack_require__.bind(null, 235)));
 
-const _423e24e9 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/index */ 31).then(__webpack_require__.bind(null, 229)));
+const _423e24e9 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/index */ 31).then(__webpack_require__.bind(null, 236)));
 
-const _432e757a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/cbkbexchange/index */ 34).then(__webpack_require__.bind(null, 230)));
+const _432e757a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/cbkbexchange/index */ 34).then(__webpack_require__.bind(null, 237)));
 
-const _03bed5fa = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/index */ 37).then(__webpack_require__.bind(null, 231)));
+const _03bed5fa = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/index */ 37).then(__webpack_require__.bind(null, 238)));
 
-const _e16d1052 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/nftLottery/index */ 40).then(__webpack_require__.bind(null, 232)));
+const _e16d1052 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/nftLottery/index */ 41).then(__webpack_require__.bind(null, 239)));
 
-const _26864b16 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/index */ 20).then(__webpack_require__.bind(null, 225)));
+const _26864b16 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/index */ 20).then(__webpack_require__.bind(null, 232)));
 
-const _51b48dec = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 21).then(__webpack_require__.bind(null, 233)));
+const _51b48dec = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 21).then(__webpack_require__.bind(null, 240)));
 
-const _1e254ba8 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/firendList */ 22).then(__webpack_require__.bind(null, 234)));
+const _1e254ba8 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/firendList */ 22).then(__webpack_require__.bind(null, 241)));
 
-const _271da9c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 24).then(__webpack_require__.bind(null, 235)));
+const _271da9c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 24).then(__webpack_require__.bind(null, 242)));
 
-const _a5580482 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/stepDetail */ 25).then(__webpack_require__.bind(null, 236)));
+const _a5580482 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/stepDetail */ 25).then(__webpack_require__.bind(null, 243)));
 
-const _d75b1ebe = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/copy */ 28).then(__webpack_require__.bind(null, 138)));
+const _d75b1ebe = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/copy */ 28).then(__webpack_require__.bind(null, 144)));
 
-const _c44cf06c = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/detail */ 29).then(__webpack_require__.bind(null, 237)));
+const _c44cf06c = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/detail */ 29).then(__webpack_require__.bind(null, 244)));
 
-const _21c91f7e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/download */ 30).then(__webpack_require__.bind(null, 238)));
+const _21c91f7e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/download */ 30).then(__webpack_require__.bind(null, 245)));
 
-const _1e5dd980 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/inviteList */ 32).then(__webpack_require__.bind(null, 239)));
+const _1e5dd980 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/inviteList */ 32).then(__webpack_require__.bind(null, 246)));
 
-const _62b6ad66 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/rewardList */ 33).then(__webpack_require__.bind(null, 240)));
+const _62b6ad66 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/rewardList */ 33).then(__webpack_require__.bind(null, 247)));
 
-const _3faca386 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/RuleDetail */ 26).then(__webpack_require__.bind(null, 165)));
+const _3faca386 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/RuleDetail */ 26).then(__webpack_require__.bind(null, 172)));
 
-const _133d3cbc = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/history */ 36).then(__webpack_require__.bind(null, 241)));
+const _133d3cbc = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/history */ 36).then(__webpack_require__.bind(null, 248)));
 
-const _3390fe74 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/miningRule */ 38).then(__webpack_require__.bind(null, 242)));
+const _723d0c5e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/inviteRuleDetail */ 38).then(__webpack_require__.bind(null, 171)));
 
-const _54d1d0c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/protocol */ 39).then(__webpack_require__.bind(null, 163)));
+const _3390fe74 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/miningRule */ 39).then(__webpack_require__.bind(null, 249)));
 
-const _d61615d6 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/RuleDetail */ 35).then(__webpack_require__.bind(null, 164)));
+const _54d1d0c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/protocol */ 40).then(__webpack_require__.bind(null, 169)));
 
-const _5d08bdb4 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/component/createPoster */ 27).then(__webpack_require__.bind(null, 161)));
+const _d61615d6 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/RuleDetail */ 35).then(__webpack_require__.bind(null, 170)));
 
-const _24381afe = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/_id */ 19).then(__webpack_require__.bind(null, 243)));
+const _5d08bdb4 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/component/createPoster */ 27).then(__webpack_require__.bind(null, 167)));
 
-const _262ca6c4 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 41).then(__webpack_require__.bind(null, 244)));
+const _24381afe = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/_id */ 19).then(__webpack_require__.bind(null, 250)));
 
-const _18d2f8a1 = () => interopDefault(__webpack_require__.e(/* import() | pages/_id */ 17).then(__webpack_require__.bind(null, 245)));
+const _262ca6c4 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 42).then(__webpack_require__.bind(null, 251)));
+
+const _18d2f8a1 = () => interopDefault(__webpack_require__.e(/* import() | pages/_id */ 17).then(__webpack_require__.bind(null, 252)));
 
 const emptyFn = () => {};
 
@@ -5482,6 +5721,10 @@ const routerOptions = {
     path: "/activity/mining/history",
     component: _133d3cbc,
     name: "activity-mining-history"
+  }, {
+    path: "/activity/mining/inviteRuleDetail",
+    component: _723d0c5e,
+    name: "activity-mining-inviteRuleDetail"
   }, {
     path: "/activity/mining/miningRule",
     component: _3390fe74,
@@ -6393,22 +6636,22 @@ function wrapFunctional(options) {
 
 
 const components = {
-  BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 167)).then(c => wrapFunctional(c.default || c)),
-  BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 246)).then(c => wrapFunctional(c.default || c)),
-  BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 99)).then(c => wrapFunctional(c.default || c)),
-  BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 168)).then(c => wrapFunctional(c.default || c)),
-  BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 166)).then(c => wrapFunctional(c.default || c)),
-  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 79)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 174)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 253)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 100)).then(c => wrapFunctional(c.default || c)),
+  BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 175)).then(c => wrapFunctional(c.default || c)),
+  BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 173)).then(c => wrapFunctional(c.default || c)),
+  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 78)).then(c => wrapFunctional(c.default || c)),
   CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 68)).then(c => wrapFunctional(c.default || c)),
   Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 72)).then(c => wrapFunctional(c.default || c)),
-  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 162)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 11).then(__webpack_require__.bind(null, 134)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 12).then(__webpack_require__.bind(null, 82)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 13).then(__webpack_require__.bind(null, 247)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 10).then(__webpack_require__.bind(null, 226)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutPainter: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-painter */ 14).then(__webpack_require__.bind(null, 100)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutQrcode: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-qrcode */ 15).then(__webpack_require__.bind(null, 81)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 16).then(__webpack_require__.bind(null, 101)).then(c => wrapFunctional(c.default || c))
+  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 168)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 11).then(__webpack_require__.bind(null, 140)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 12).then(__webpack_require__.bind(null, 81)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 13).then(__webpack_require__.bind(null, 254)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 10).then(__webpack_require__.bind(null, 233)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutPainter: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-painter */ 14).then(__webpack_require__.bind(null, 101)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutQrcode: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-qrcode */ 15).then(__webpack_require__.bind(null, 80)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 16).then(__webpack_require__.bind(null, 102)).then(c => wrapFunctional(c.default || c))
 };
 
 for (const name in components) {

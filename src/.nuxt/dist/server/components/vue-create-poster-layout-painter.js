@@ -1,15 +1,15 @@
 exports.ids = [14,12,15];
 exports.modules = {
 
-/***/ 100:
+/***/ 101:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Painter; });
-const QR = __webpack_require__(81);
+const QR = __webpack_require__(80);
 
-const GD = __webpack_require__(82);
+const GD = __webpack_require__(81);
 
 class Painter {
   constructor(ctx, data) {
@@ -838,7 +838,7 @@ class Painter {
 
 /***/ }),
 
-/***/ 81:
+/***/ 80:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1527,7 +1527,7 @@ const api = {
 
 /***/ }),
 
-/***/ 82:
+/***/ 81:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

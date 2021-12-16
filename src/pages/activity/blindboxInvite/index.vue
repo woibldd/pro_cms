@@ -9,8 +9,12 @@
       <div class="warp-invite colorBackground3">
         <div class="warp-invite-banner">
           <img
-            src="http://cdn.bitkeep.vip/u_b_2df2d7c0-5be9-11ec-bdbc-7722494dfa58.png"
+            src="http://cdn.bitkeep.vip/u_b_d6f84c30-5e3f-11ec-bd49-b1b354a240c8.png"
           />
+          <div class="imgText">
+            <div class="textPrimary0 imgTextTitle">{{ $t("blindboxInvite.toEarn") }}</div>
+            <div class="textPrimary0 imgTextContent">{{ $t("blindboxInvite.rewardsMore") }}</div>
+          </div>
         </div>
         <div class="warp-invite-one colorBackgroundWhite setTop">
           <div class="warp-invite-one-header" style="padding-right: 0">
@@ -191,8 +195,23 @@ export default {
   }
   .warp-invite-banner {
     height: 160px;
+    position: relative;
     img {
       width: 100%;
+    }
+    .imgText{
+      position: absolute;
+      top: 45px;
+      left: 16px;
+      width:200px;
+      .imgTextTitle{
+        font-size: 26px;
+        font-weight: bold;
+        line-height: 28px;
+      }
+      .imgTextContent{
+        font-size: 12px;
+      }
     }
   }
   .setTop {
@@ -224,6 +243,7 @@ export default {
         i {
           vertical-align: middle;
           display: inline-block;
+          font-size: 14px;
         }
       }
       span:last-child {

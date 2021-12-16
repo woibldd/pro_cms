@@ -12,24 +12,20 @@
       <div class="poster_wrapper" v-show="!poster.url" id="poster" ref="poster">
         <img  class="poster_bg" :src="proxy_img" alt="" @load="createPoster" />
         <div class="commany_title">
-          <img
-            class="logo"
-            src="@/assets/activity/blindbox/poster_logo@2.png"
-            alt=""
-          />
           <div :class="{ content:true,[locale]:true}">
-            <!-- 扫描领取数字盲盒 -->
+            <!-- 扫描二维码 -->
             <div>
-              {{ $t("ActivityBlindbox.ActivityBlindboxDetail.ScanBlindBox") }}
+              {{ $t("blindboxInvite.Poster") }}
             </div>
-            <!-- 下载 Bitkeep，瓜分盲盒中数字资产 -->
+            <!-- 下载 Bitkeep，获取bkb奖励 -->
             <div>
               {{
-                $t("ActivityBlindbox.ActivityBlindboxDetail.DownloadBitkeep")
+                $t("blindboxInvite.downReward")
               }}
             </div>
           </div>
         </div>
+        <div class="imgText">{{$t("blindboxInvite.imgText")}}</div>
         <img class="poster_qrcode" :src="qrcodeUrl" />
       </div>
       <div class="postershow" v-if="poster.url">
@@ -38,7 +34,7 @@
       <div class="footer">
         <div v-if="isBitKeep || pedding" class="btn left" @click="saveImage">
           <img src="@/assets/activity/icon/icon_saveimage@2.png" alt="" />
-          <span>{{ $t("ActivityBlindbox.button.savePicture") }}</span>
+          <span>{{ $t("blindboxInvite.savePicture") }}</span>
         </div>
         <a
           v-else
@@ -91,7 +87,7 @@ export default {
   },
   computed: {
     proxy_img() {
-      const sourceUrl = "http://cdn.bitkeep.vip/u_b_4cca7310-5be4-11ec-bdbc-7722494dfa58.jpeg";
+      const sourceUrl = "http://cdn.bitkeep.vip/u_b_792eb450-5e3e-11ec-bd49-b1b354a240c8.png";
       return sourceUrl
         ? `/poster${sourceUrl
             .replace("http://cdn.bitkeep.vip", "")
@@ -235,6 +231,15 @@ export default {
       height: 100%;
       display: block;
     }
+    .imgText{
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 215px;
+      font-size: 28px;
+      color: #080D21;
+      font-weight: bold;
+    }
     .commany_title {
       left: 16px;
       bottom: 22px;
@@ -242,7 +247,7 @@ export default {
       font-weight: 500;
       font-size: 12px;
       line-height: 18px;
-      color: #ffffff;
+      color: #080D21;
       .logo {
         width: 90px;
         height: 24px;
@@ -251,17 +256,15 @@ export default {
         margin-top: 10px;
       }
       .content {
-        width: 219px;
-        word-break: break-all;
+        width: 165px;
+        margin-left: 5px;
         word-wrap: break-word;
-        &.en{
-          line-height: 13px;
-        }
+        line-height: 14px;
       }
     }
     .poster_qrcode {
       position: absolute;
-      right: 18px;
+      right: 20px;
       bottom: 20px;
       width: 80px;
       height: 80px;
