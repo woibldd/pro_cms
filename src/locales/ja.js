@@ -378,7 +378,7 @@ module.exports = {
     rewardsMore: '友達取引で報酬が増えるBKB',
     Poster: 'QRコードをスキャンする',
     downReward: 'BitKeepウォレットをダウンロードして報酬を稼ぐ',
-    imgText: '友達を招待しましょうBKBの報酬を共有しましょう',
+    imgText: 'こんにちは友人、ここにあなたに暗号資産を稼ぐための暗号ウォレットがあります',
     detailWallet: 'ナビゲートするのに労力を必要としない暗号ウォレット',
     detailWallet1: '暗号化された資産を安全に保管する',
     detailWallet2: '便利で使いやすいBKSwap',

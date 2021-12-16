@@ -26,7 +26,7 @@
           <div class="invite-setP">
             <div class="warp-invite-produced" @click="inviteFriendList">
               <span><img src="http://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.invitedNumber") }}</span>
-              <span class="setFontFamily setDisplay">{{inviteNumber}}
+              <span class="setFontFamily setDisplay">{{inviteNumber}}&nbsp;&nbsp;
                 <van-icon name="arrow" color='#999BA3'/>
               </span>
             </div>

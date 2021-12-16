@@ -102,7 +102,7 @@ export const USER_API = {
   historyPhase: (data,headers={}) => host_user_instance.post("swap/mining/historyPhase", data),
   receiveAward: (data,headers={}) => host_user_instance.post("swap/mining/receiveAward", data),
   // 邀请好友
-  getInviteList: (data,headers={}) => host_user_instance.post('friendship/getInviteList',data),
-  certifyFriendship: (data,headers={}) => host_user_instance.post('friendship/certifyFriendship',data),
+  getInviteList: (data,headers={}) => host_user_instance.post('user/friendship/getInviteList',data),
+  certifyFriendship: (data,headers={}) => host_user_instance.post('user/friendship/certifyFriendship',data),
   activityDoneRewardList: (data,headers={}) => host_user_instance.post('swap/mining/activityDoneRewardList',data),
 };

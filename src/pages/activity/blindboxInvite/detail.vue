@@ -245,8 +245,8 @@ export default {
     this.$nextTick(()=>{
       this.isLoading = false;
       window.addEventListener('load',()=>{
-        let lang = {en: 'English', ja: '日本語', ko: '한국어', vi: 'Tiếng Việt'}
-        this.langText = lang[this.locale];
+        let lang = {en: 'English', zh: 'English', ja: '日本語', ko: '한국어', vi: 'Tiếng Việt'}
+        this.langText = lang[this.locale];        
         this.$store.commit('CHANGE_LANG',this.locale)
       });
     })
@@ -479,7 +479,7 @@ export default {
           font-size: 12px;
         }
         li::before {
-          content: "";
+          content: "1";
           display: block;
           position: absolute;
           left: 14px;
@@ -493,9 +493,9 @@ export default {
     }
   }
   .setBackground {
-    width: 100%;
     margin-top: 34px;
-    background: url("https://cdn.bitkeep.vip/u_b_ad386c70-d0bb-11eb-a1fd-1b9796c35a14.jpeg") 100% 100% no-repeat;
+    background: url("http://cdn.bitkeep.vip/u_b_efc07e80-5e4f-11ec-85be-634c19e2b84d.png") no-repeat;
+    background-size: 100% 100%;
   }
   .detail_box_nft {
     margin: 30px 16px;

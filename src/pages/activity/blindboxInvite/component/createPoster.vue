@@ -235,8 +235,8 @@ export default {
       position: absolute;
       top: 20px;
       left: 20px;
-      width: 215px;
-      font-size: 28px;
+      width: 275px;
+      font-size: 26px;
       color: #080D21;
       font-weight: bold;
     }
@@ -285,8 +285,9 @@ export default {
       width: 162px;
       height: 50px;
       font-size: 16px;
-      background: linear-gradient(122.71deg, #5aebff 3.38%, #6d39ff 92.57%),
-        #c4c4c4;
+      // background: linear-gradient(122.71deg, #5aebff 3.38%, #6d39ff 92.57%),
+        // #c4c4c4;
+      background:#495BFF;
       border-radius: 100px;
       font-weight: 600;
       color: #ffffff;

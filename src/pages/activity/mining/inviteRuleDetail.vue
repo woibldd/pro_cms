@@ -6,12 +6,12 @@
       <p class="textPrimary0">{{$t('blindboxInvite.RuleTitle')}}</p>
     </div>
     <div class="line colorLine"></div>
-    <div class="ruleDetailcontent">
+    <ul class="ruleDetailcontent">
       <p class="textPrimary0 setF">{{$t('blindboxInvite.inviteRuleTitle')}}</p>
-      <p class="textSecond1 setLineHeight" v-html="$t('blindboxInvite.ruleDetail')"></p>
-      <p class="textSecond1 setLineHeight" v-html="$t('blindboxInvite.ruleDetail1')"></p>
-      <p class="textSecond1">{{$t('blindboxInvite.ruleDetail2')}}</p>
-    </div>
+      <li class="textSecond1 setLineHeight" v-html="$t('blindboxInvite.ruleDetail')"></li>
+      <li class="textSecond1 setLineHeight" v-html="$t('blindboxInvite.ruleDetail1')"></li>
+      <li class="textSecond1">{{$t('blindboxInvite.ruleDetail2')}}</li>
+    </ul>
   </van-popup>
 </template>
 <script>
@@ -82,6 +82,7 @@ export default {
 .ruleDetailcontent{
   height: 50vh;
   overflow: auto;
+  padding: 20px;
   img{
     width: 48px;
     height: 48px;
@@ -91,6 +92,13 @@ export default {
   }
   .setLineHeight{
     line-height: 18px;
+  }
+  li{
+    // font-family: bitkeep DIN;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 10px;
+    list-style: disc;
   }
   p{
     // font-family: bitkeep DIN;
