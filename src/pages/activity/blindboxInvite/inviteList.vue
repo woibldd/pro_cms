@@ -1,5 +1,5 @@
 <template>
-  <div class="invite-list">
+  <div class="invite-list colorBackground3">
     <div class="loading" v-if="isLoading">
       <van-loading color="#1989fa" vertical
         >{{ $t("base.loading") }}...</van-loading
@@ -19,7 +19,6 @@
       </div>
       <div v-if="inviteList.length > 0">
         <van-pull-refresh
-          class="setHeight"
           v-model="refreshing"
           :success-text="$t('mining.success')"
           :loading-text="$t('mining.loading')"
@@ -31,6 +30,7 @@
             :finished="finished"
             :immediate-check="false"
             @load="getInviteList"
+            class="setHeight"
           >
             <van-row class="invite-row">
               <van-col span="8" class="invite-col textSecond3">{{
@@ -135,9 +135,6 @@ export default {
     this.isBitKeep &&
       BitKeepInvoke.onLoadReady(() => {
         BitKeepInvoke.setTitle(this.$t("blindboxInvite.inviteFriends"));
-        BitKeepInvoke.setIconAction(this.question,()=>{
-          this.ruleDetailFlag = true;
-        });
         this.$nextTick(() => {
           BitKeepInvoke.appMode((err, res) => {
             let body = document.getElementsByTagName("body")[0];
@@ -145,10 +142,16 @@ export default {
               this.theme = 1
               this.question = 'http://cdn.bitkeep.vip/u_b_47485390-4f90-11ec-ace3-97579b99c357.png';
               body.setAttribute("class", "theme-dark");
+              BitKeepInvoke.setIconAction(this.question,()=>{
+                this.ruleDetailFlag = true;
+              });
             } else {
               this.theme = 0
               this.question = 'http://cdn.bitkeep.vip/u_b_99107f80-356f-11ec-8c2d-251a27ef7eba.png';
               body.setAttribute("class", "theme-light");
+              BitKeepInvoke.setIconAction(this.question,()=>{
+                this.ruleDetailFlag = true;
+              });
             }
           });
         });
@@ -207,6 +210,7 @@ export default {
 <style scoped lang="scss">
 @import "@/assets/css/theme.scss";
 .invite-list-box {
+  padding-top:10px;
   .loading {
     min-height: 100vh;
     display: flex;
@@ -217,7 +221,7 @@ export default {
     min-height: 90vh;
   }
   .invite-list-header {
-    margin: 16px 16px 0;
+    margin: 0 16px;
     border-radius: 8px 8px 0px 0px;
     color: #495bff;
     display: flex;

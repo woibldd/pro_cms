@@ -23,22 +23,22 @@
             <div class="textPrimary0 imgTextContent">{{ $t("blindboxInvite.rewardsMore") }}</div>
           </div>
         </div>
-        <div class="warp-invite-one colorBackgroundWhite setTop">
+        <div class="warp-invite-one colorBackground1 setTop">
           <div class="warp-invite-one-header" style="padding-right: 0">
-            <div class="warp-invite-one-header-title">
+            <div class="warp-invite-one-header-title textPrimary0">
               <span>{{ $t("blindboxInvite.myRewards") }}</span>
             </div>
           </div>
           <!-- <div class="borderBottom colorLine"></div> -->
           <div class="invite-setP">
             <div class="warp-invite-produced" @click="inviteFriendList">
-              <span><img src="http://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.invitedNumber") }}</span>
-              <span class="setFontFamily setDisplay">{{inviteNumber}}&nbsp;&nbsp;
+              <span class="textSecond1"><img src="http://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.invitedNumber") }}</span>
+              <span class="setFontFamily setDisplay textPrimary0">{{inviteNumber}}&nbsp;&nbsp;
                 <van-icon name="arrow" color='#999BA3'/>
               </span>
             </div>
             <div class="warp-invite-produced" @click="rewardsList">
-              <span><img src="http://cdn.bitkeep.vip/u_b_e7b6fe30-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.tokenRewards") }}</span>
+              <span class="textSecond1"><img src="http://cdn.bitkeep.vip/u_b_e7b6fe30-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.tokenRewards") }}</span>
               <span class="setFontFamily">
                 <van-icon name="arrow" color='#999BA3'/>
               </span>
@@ -59,10 +59,10 @@
             </div>
           </div> -->
         </div>
-        <div class="warp-invite-one colorBackgroundWhite setTop">
+        <div class="warp-invite-one colorBackground1 setTop">
           <div class="warp-invite-one-header" style="padding-right: 0">
             <div class="warp-invite-one-header-title">
-              <span>{{ $t("blindboxInvite.inviteFriends") }}</span>
+              <span class="textPrimary0">{{ $t("blindboxInvite.inviteFriends") }}</span>
             </div>
           </div>
           <!-- <div class="borderBottom colorLine"></div> -->

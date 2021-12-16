@@ -1,5 +1,5 @@
 <template>
-  <div class="rewards-list">
+  <div class="rewards-list colorBackground3">
     <div class="loading" v-if="isLoading">
       <van-loading color="#1989fa" vertical
         >{{ $t("base.loading") }}...</van-loading
@@ -158,6 +158,9 @@ export default {
 </script>
 <style scoped lang="scss">
 @import "@/assets/css/theme.scss";
+.rewards-list{
+  min-height: 100vh;
+}
 .rewards-list-box {
   .loading {
     min-height: 100vh;
