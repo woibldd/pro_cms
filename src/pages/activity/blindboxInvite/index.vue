@@ -5,7 +5,14 @@
         >{{ $t("base.loading") }}...</van-loading
       >
     </div>
-    <div v-else>
+      <van-pull-refresh
+      v-model="refreshLoading"
+      v-else
+      :success-text="$t('mining.success')"
+      :loading-text="$t('mining.loading')"
+      :loosing-text="$t('mining.loading')"
+      @refresh="getInviteNumber"
+    >
       <div class="warp-invite colorBackground3">
         <div class="warp-invite-banner">
           <img
@@ -78,7 +85,7 @@
           </div>
         </div>
       </div>
-    </div>
+      </van-pull-refresh>
     <CreatePoster
       :locale="locale"
       :zIndex="100"
@@ -103,6 +110,7 @@ export default {
   data() {
     return {
       isLoading: true,
+      refreshLoading: false,
       inviteLink: "",
       inviteNumber: 0,
       inviteLinkAll: "",
@@ -168,6 +176,7 @@ export default {
         this.$toast(data);
       }
       this.inviteNumber = data.total_count;
+      this.refreshLoading =false;
     },
     inviteFriendList(){
       this.$router.push('/activity/blindboxInvite/inviteList')

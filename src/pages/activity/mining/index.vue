@@ -226,7 +226,7 @@
           <div class="mining-wrap-one-body">
             <div class="setMingMargin">
               <span class="setFontFamily">{{
-                activityStatus != 0 && activity_rewardPool ? activity_rewardPool + ' BKB' : '--'
+                activityStatus != 0 ? activity_rewardPool + ' BKB' : '--'
               }}</span>
             </div>
             <p class="mining-wrap-one-body-day" style="color: #080D21">{{ $t("mining.invitationPoolContent") }}</p>

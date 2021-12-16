@@ -82,6 +82,7 @@ export default {
 .ruleDetailcontent{
   height: 50vh;
   overflow: auto;
+  padding: 20px;
   img{
     width: 48px;
     height: 48px;
@@ -94,6 +95,12 @@ export default {
   }
   p{
     // font-family: bitkeep DIN;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 10px;
+  }
+  li{
+    list-style: disc;
     font-size: 14px;
     line-height: 18px;
     margin: 10px;
