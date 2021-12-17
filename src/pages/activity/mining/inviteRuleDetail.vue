@@ -7,10 +7,13 @@
     </div>
     <div class="line colorLine"></div>
     <ul class="ruleDetailcontent">
-      <p class="textPrimary0 setF">{{$t('blindboxInvite.inviteRuleTitle')}}</p>
-      <li class="textSecond1 setLineHeight" v-html="$t('blindboxInvite.ruleDetail')"></li>
-      <li class="textSecond1 setLineHeight" v-html="$t('blindboxInvite.ruleDetail1')"></li>
-      <li class="textSecond1">{{$t('blindboxInvite.ruleDetail2')}}</li>
+      <p class="textPrimary0 setF">{{$t('blindboxInvite.myInviteRuleTitle')}}</p>
+      <li class="textSecond1 setLineHeight" v-html="$t('blindboxInvite.myRuleDetail')"></li>
+      <li class="textSecond1 setLineHeight" v-html="$t('blindboxInvite.myRuleDetail1')"></li>
+      <li class="textSecond1">{{$t('blindboxInvite.myRuleDetail2')}}</li>
+      <li class="textSecond1">{{$t('blindboxInvite.myRuleDetail3')}}</li>
+      <li class="textSecond1">{{$t('blindboxInvite.myRuleDetail4')}}</li>
+      <li class="textSecond1">{{$t('blindboxInvite.myRuleDetail5')}}</li>
     </ul>
   </van-popup>
 </template>
@@ -83,6 +86,8 @@ export default {
   height: 50vh;
   overflow: auto;
   padding: 20px;
+  height: 68%;
+  overflow: scroll;
   img{
     width: 48px;
     height: 48px;
@@ -104,7 +109,7 @@ export default {
     // font-family: bitkeep DIN;
     font-size: 14px;
     line-height: 18px;
-    margin: 10px;
+    margin:0 10px 10px;
   }
 }
  .confirm-bottom {

@@ -411,6 +411,13 @@ module.exports = {
     ruleDetail: 'ユーザーが自分のウォレットアドレスをインポートするか、アドレスがインポートされたか、BitKeepウォレットを作成します',
     ruleDetail1: 'アドレスは24時間以内に作成されます',
     ruleDetail2: 'BKSwapでのユーザーの取引量が10USDT以上',
+    myInviteRuleTitle: '招待報酬はどのように計算されますか？',
+    myRuleDetail: '毎日、ユーザーは次の情報を取得できます。15*正常に招待されたユーザーの数+（すべての招待者のトランザクション量/すべての招待ユーザーのGMVの合計）* X; ここで、「（すべての招待者のトランザクション量/すべての招待ユーザーのGMVの合計）」をYと見なします。',
+    myRuleDetail1: 'Yが2M以上5M以下のUSDT相当の場合、X = 10,000BKB',
+    myRuleDetail2: 'Yが50M以上20M以下のUSDT相当の場合、X = 20,000BKB',
+    myRuleDetail3: 'Yが20M以上30M以下のUSDT相当の場合、X = 20,000BKB',
+    myRuleDetail4: 'Yが> 30M USDT相当の場合、X = 40,000BKB',
+    myRuleDetail5: '注：招待は、新しいユーザーがBKSwapと有効な取引（決済前の取引金額が100U以上）を行った場合にのみ有効と見なされます。',
     toast2: '申し訳ありませんが、このアドレスは招待されています',
     toast0: '申し訳ありませんが、このアドレスは招待の上限に達しました',
     emptyToast: 'アドレスフィールドを空にすることはできません'

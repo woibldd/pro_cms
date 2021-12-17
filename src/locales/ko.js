@@ -411,6 +411,13 @@ module.exports = {
     ruleDetail: '사용자가 자신의 지갑 주소를 가져오거나 주소를 가져오거나 BitKeep 지갑을 생성합니다.',
     ruleDetail1: '주소는 24시간 이내에 생성됩니다.',
     ruleDetail2: 'BKSwap에서 사용자의 거래량이 10 USDT 이상입니다.',
+    myInviteRuleTitle: '초대 보상은 어떻게 계산되나요?',
+    myRuleDetail: '매일 사용자는 다음을 얻을 수 있습니다. 15*성공적으로 초대된 사용자 수 + (모든 초대 대상자의 트랜잭션 볼륨/초대된 모든 사용자의 GMV 합계)*X; 여기서 우리는 "(모든 초대받은 사람의 거래량/초대받은 모든 사용자의 GMV의 합계)"를 Y로 간주합니다.',
+    myRuleDetail1: 'Y가 ≥ 2M이고 ≤ 5M USDT에 해당하는 경우 X=10,000BKB',
+    myRuleDetail2: 'Y가 ≥ 50M이고 ≤ 20M USDT에 해당하는 경우 X=20,000BKB',
+    myRuleDetail3: 'Y가 ≥ 20M이고 ≤ 30M USDT에 해당하는 경우 X=20,000BKB',
+    myRuleDetail4: 'Y가 > 30M USDT에 해당하는 경우 X=40,000BKB',
+    myRuleDetail5: '참고: 새 사용자가 BKSwap과 유효한 거래(사전 결제 거래 금액 ≥100U)를 한 경우에만 초대가 유효한 것으로 간주됩니다.',
     toast2: '죄송합니다. 이 주소는 초대되었습니다.',
     toast0: '죄송합니다. 이 주소는 최대 초대 한도에 도달했습니다.',
     emptyToast: '주소 필드는 비워둘 수 없습니다.'

@@ -411,6 +411,13 @@ module.exports = {
     ruleDetail: 'Người dùng nhập địa chỉ ví của mình hoặc địa chỉ đã được nhập hoặc tạo ví BitKeep',
     ruleDetail1: 'Địa chỉ được tạo trong vòng 24 giờ',
     ruleDetail2: 'Khối lượng giao dịch của người dùng trên BKSwap lớn hơn hoặc bằng 10 USDT',
+    myInviteRuleTitle: 'Phần thưởng lời mời của tôi được tính như thế nào?',
+    myRuleDetail: 'Đối với mỗi ngày, người dùng có thể nhận được: 15 * số người dùng được mời thành công + (tổng khối lượng giao dịch của tất cả những người được mời / GMV của tất cả người dùng được mời) * X; trong đó, chúng tôi coi “(tổng khối lượng giao dịch của tất cả những người được mời / GMV của tất cả những người dùng được mời)” là Y',
+    myRuleDetail1: 'Nếu Y là ≥ 2 triệu và tương đương ≤ 5 triệu USDT, X = 10.000BKB',
+    myRuleDetail2: 'Nếu Y là ≥ 50 triệu và tương đương ≤ 20 triệu USDT, X = 20.000BKB',
+    myRuleDetail3: 'Nếu Y là ≥ 20 triệu và tương đương ≤ 30 triệu USDT, X = 20.000BKB',
+    myRuleDetail4: 'Nếu Y> 30 triệu USDT tương đương, X = 40.000BKB',
+    myRuleDetail5: 'Lưu ý: Lời mời chỉ được coi là hợp lệ nếu người dùng mới thực hiện một giao dịch hợp lệ (với số tiền giao dịch thanh toán trước ≥100U) với BKSwap',
     toast2: 'Xin lỗi, địa chỉ này đã được mời',
     toast0: 'Xin lỗi, địa chỉ này đã đạt đến giới hạn mời tối đa',
     emptyToast: 'Trường địa chỉ không được để trống'

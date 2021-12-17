@@ -440,6 +440,13 @@ module.exports = {
     ruleDetail: 'The user imports his/her wallet address or address has been imported or create a BitKeep wallet',
     ruleDetail1: 'The address is created within 24 hours',
     ruleDetail2: 'The user’s trading volume on BKSwap is larger than or equal to 10 USDT',
+    myInviteRuleTitle: 'How is my invitation rewards calculated?',
+    myRuleDetail: 'For each day, a user can get: 15*number of successfully invited users + (sum of the transaction volume of all his/her invitees/GMV of all invited users)*X; in which, we consider “(sum of the transaction volume of all his/her invitees/GMV of all invited users)” as Y',
+    myRuleDetail1: 'If Y is ≥ 2M and ≤ 5M USDT equivalent, X=10,000BKB',
+    myRuleDetail2: 'If Y is ≥ 50M and ≤ 20M USDT equivalent, X=20,000BKB',
+    myRuleDetail3: 'If Y is ≥ 20M and ≤ 30M USDT equivalent, X=20,000BKB',
+    myRuleDetail4: 'If Y is > 30M USDT equivalent, X=40,000BKB',
+    myRuleDetail5: 'Note: An invitation will be considered valid only if the new user make a valid transaction(with a pre-settlement trading amount of ≥100U) with BKSwap',
     toast2: 'Sorry, this address has been invited',
     toast0: ' Sorry, this address has reached the maximum invite limit',
     emptyToast: 'Address field cannot be empty'
