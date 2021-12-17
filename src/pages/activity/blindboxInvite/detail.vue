@@ -366,7 +366,6 @@ export default {
   .detail_box_text {
     margin: 28px 16px 0;
     p {
-      width: 230px;
       font-weight: bold;
       font-size: 24px;
       line-height: 24px;

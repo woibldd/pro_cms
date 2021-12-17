@@ -7,7 +7,7 @@
     </div>
     <div class="line colorLine"></div>
     <ul class="ruleDetailcontent">
-      <li class="textPrimary0 setF">{{$t('blindboxInvite.inviteRuleTitle')}}</li>
+      <p class="textPrimary0 setF">{{$t('blindboxInvite.inviteRuleTitle')}}</p>
       <li class="textSecond1 setLineHeight" v-html="$t('blindboxInvite.ruleDetail')"></li>
       <li class="textSecond1 setLineHeight" v-html="$t('blindboxInvite.ruleDetail1')"></li>
       <li class="textSecond1">{{$t('blindboxInvite.ruleDetail2')}}</li>

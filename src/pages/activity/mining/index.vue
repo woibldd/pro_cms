@@ -253,7 +253,7 @@
                   {{ $t("mining.inviteNumber1") }}
                 </p>
                 <div class="mining-wrap-one-body-vol-number setFontFamily">
-                  <span class="setW" style="color: #495BFF">{{ activityDoneTradingBkbReward }}</span>
+                  <span class="setW" style="color: #495BFF">{{ activityDoneTradingBkbReward }} BKB</span>
                 </div>
               </div>
               <div>
@@ -262,7 +262,7 @@
                 </p>
                 <div class="
                     mining-wrap-one-body-vol-number-todyVolue
-                    setFontFamily" style="color: #495BFF">{{ activityStatus != 0 ? "+" + activityTradingBkbReward : '--' }}
+                    setFontFamily" style="color: #495BFF">{{ activityStatus != 0 ? "+" + activityTradingBkbReward + ' BKB' : '--' }}
                 </div>
               </div>
             </div>
