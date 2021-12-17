@@ -10,40 +10,28 @@
     <div class="mining-rule-content">
       {{$t('mining.howContent')}}
     </div>
+    <div class="mining-rule-content" v-html="$t('mining.howContent1')">    </div>
     <ul class="mining-rule-content-ul">
       <li class="mining-rule-content-li">{{$t('mining.Objectives1')}}</li>
       <li class="mining-rule-content-li">{{$t('mining.Objectives2')}}</li>
       <li class="mining-rule-content-li">{{$t('mining.Objectives3')}}</li>
+      <li class="mining-rule-content-li">{{$t('mining.Objectives4')}}</li>
+    </ul>
+    <div class="mining-rule-content" v-html="$t('mining.howContent2')">    </div>
+    <ul class="mining-rule-content-ul">
+      <li class="mining-rule-content-li">{{$t('mining.Objectives11')}}</li>
+      <li class="mining-rule-content-li">{{$t('mining.Objectives12')}}</li>
+      <li class="mining-rule-content-li">{{$t('mining.Objectives13')}}</li>
     </ul>
     <div class="mining-rule-title"> {{$t('mining.how3')}}</div>
     <div class="mining-rule-content">
       {{$t('mining.OverviewContent')}}
-    </div>
-    <div class="mining-rule-title"> {{$t('mining.how4')}}</div>
-    <div class="mining-rule-content">
-      {{$t('mining.how4Content')}}
-    </div>
-    <div class="mining-rule-title"> {{$t('mining.how5')}}</div>
-    <div class="mining-rule-content">
-      {{$t('mining.how5Content')}}
-    </div>
-    <div class="mining-rule-title"> {{$t('mining.how6')}}</div>
-    <div class="mining-rule-content">
-      {{$t('mining.how6Content')}}
     </div>
     <div class="mining-rule-faq">
       <div class="mining-rule-title-one setM"> {{$t('mining.FQATitle')}}</div>
       <p class="mining-rule-title setC">
         {{$t('mining.FQATitle1')}}
       </p>
-      <div class="mining-rule-content">
-        {{$t('mining.howContent')}}
-      </div>
-      <ul class="mining-rule-content-ul">
-        <li class="mining-rule-content-li">{{$t('mining.Objectives1')}}</li>
-        <li class="mining-rule-content-li">{{$t('mining.Objectives2')}}</li>
-        <li class="mining-rule-content-li">{{$t('mining.Objectives3')}}</li>
-      </ul>
       <div class="mining-rule-content">
         {{$t('mining.FQAContent1')}}
       </div>
@@ -71,24 +59,20 @@
       <p class="mining-rule-content">
         {{$t('mining.FQAContent5')}}
       </p>
+      <ul class="mining-rule-content-ul">
+        <li class="mining-rule-content-li">{{$t('mining.FQAContent51')}}</li>
+        <li class="mining-rule-content-li">{{$t('mining.FQAContent52')}}</li>
+        <li class="mining-rule-content-li">{{$t('mining.FQAContent53')}}</li>
+        <li class="mining-rule-content-li">{{$t('mining.FQAContent54')}}</li>
+      </ul>
+      <p class="mining-rule-content">
+        {{$t('mining.FQAContentNote')}}
+      </p>
       <p class="mining-rule-title setC">
         {{$t('mining.FQATitle6')}}
       </p>
       <p class="mining-rule-content">
         {{$t('mining.FQAContent6')}}
-      </p>
-      <ul class="mining-rule-content-ul">
-        <li class="mining-rule-content-li">{{$t('mining.FQAContent61')}}</li>
-        <li class="mining-rule-content-li">{{$t('mining.FQAContent62')}}</li>
-        <li class="mining-rule-content-li">{{$t('mining.FQAContent63')}}</li>
-        <li class="mining-rule-content-li">{{$t('mining.FQAContent64')}}</li>
-        <li class="mining-rule-content-li">{{$t('mining.FQAContent65')}}</li>
-        <li class="mining-rule-content-li">{{$t('mining.FQAContent66')}}</li>
-        <li class="mining-rule-content-li">{{$t('mining.FQAContent67')}}</li>
-        <li class="mining-rule-content-li">{{$t('mining.FQAContent68')}}</li>
-      </ul>
-      <p class="mining-rule-content">
-        {{$t('mining.FQAContentNote')}}
       </p>
     </div>
   </div>
