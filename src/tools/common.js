@@ -291,10 +291,10 @@ export function DPR() {
 export function filterTime(date) {
     let val = new Date(date)
     var Y = val.getFullYear()
-    var M = val.getMonth()
-    var D = val.getDate()
-    var H = val.getHours()
-    var MI = val.getMinutes()
-    var S = val.getSeconds()
+    var M = val.getMonth() + 1 >= 10 ? (val.getMonth() + 1) : '0' + (this.getMonth() + 1)
+    var D = val.getDate() >= 10 ? val.getDate() : '0' + val.getDate()
+    var H = val.getHours() >= 10 ? val.getHours() : '0' + val.getHours()
+    var MI = val.getMinutes() >= 10 ? val.getMinutes():'0'+val.getMinutes()
+    var S = val.getSeconds() >= 10 ? val.getSeconds() : '0' + val.getSeconds()
     return Y + "-" + M + "-" + D + " " + H + ":" + MI + ":" + S 
   }

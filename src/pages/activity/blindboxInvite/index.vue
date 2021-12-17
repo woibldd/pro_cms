@@ -61,14 +61,14 @@
             <!-- <div class="borderBottom colorLine"></div> -->
             <div class="invite-setP">
               <div class="warp-invite-link colorBackground3">
-                <div class="warp-invite-link-box">
+                <div class="warp-invite-link-box" v-copy="inviteLinkAll">
                   <span>
                     <span class="textSecond2">{{ $t("blindboxInvite.inviteLink") }}<br/>
                       <span class="warp-invite-address textPrimary0">{{inviteLink}}</span>
                     </span> 
                   </span>
                   <span class="setFontFamily">
-                    <van-icon v-copy="inviteLinkAll" name=http://cdn.bitkeep.vip/u_b_1a477b90-3579-11ec-8690-93c311cd0b88.png></van-icon>
+                    <van-icon name=http://cdn.bitkeep.vip/u_b_1a477b90-3579-11ec-8690-93c311cd0b88.png></van-icon>
                   </span>
                 </div>
               </div>
@@ -77,6 +77,13 @@
                 </div>
             </div>
           </div>
+          <!-- <div class="warp-invite-imgLink setTop">
+            <img src="http://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
+            <img src="http://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
+            <img src="http://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
+            <img src="http://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
+            <img src="http://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
+          </div> -->
         </div>
       </div>
     <CreatePoster
@@ -188,12 +195,19 @@ export default {
 
 .warp-invite {
   min-height: 100vh;
-  padding-bottom: 25px;
   .loading {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .warp-invite-imgLink{
+    padding: 0 16px 10px;
+    img{
+      display: inline-block;
+      margin-top: 10px;
+      width: 100%;
+    }
   }
   .warp-invite-banner {
     height: 160px;

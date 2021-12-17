@@ -10,7 +10,7 @@ const vCopy = { // 名字爱取啥取啥
   el.handler = () => {
    if (!el.$value) {
    // 值为空的时候，给出提示，我这里的提示是用的 vant 的提示
-   Toast.fail('无复制内容');
+   Toast.fail('Some error occurred');
     return;
    }
    // 动态创建 textarea 标签
@@ -28,7 +28,7 @@ const vCopy = { // 名字爱取啥取啥
    textarea.setSelectionRange(0, textarea.value.length);
    const result = document.execCommand('Copy');
    if (result) {
-    Toast.success('复制成功');
+    Toast('Copied');
    }
    document.body.removeChild(textarea);
   };

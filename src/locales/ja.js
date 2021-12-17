@@ -3,7 +3,9 @@ module.exports = {
     loading: "読み込み中",
     no_more: "もういや",
     success: '正常に更新',
-    networkErro:"インターネットがうまくいかなくなった"
+    networkErro:"インターネットがうまくいかなくなった",
+    copied: 'コピー',
+    copiedError: 'エラーが発生しました'
   },
 
   "ActivityBlindbox": {
@@ -60,7 +62,7 @@ module.exports = {
       "TurnedOnText": "Turned on",
       "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired",
-      "ShareWithMe": "Shared width me",
+      "ShareWithMe": "Shared with me",
       willOpened:"To be opened",
       noData:{
         title:"No blind box",

@@ -28,7 +28,7 @@
                   {{$t('blindboxInvite.invitationReward')}}
                 </div>
                 <div class="rewards-row-data-left-time textSecond3">
-                  {{item.create_time | filterTime}}
+                  {{item.create_time}}
                 </div>
               </div>
               <div class="rewards-row-data-right">
@@ -75,18 +75,6 @@ export default {
       start: 0,
       limit: 20,
     };
-  },
-  filters: {
-    filterTime(date) {
-      let val = new Date(date)
-      var Y = val.getFullYear()
-      var M = val.getMonth()
-      var D = val.getDate()
-      var H = val.getHours()
-      var MI = val.getMinutes()
-      var S = val.getSeconds()
-      return Y + "-" + M + "-" + D + " " + H + ":" + MI + ":" + S 
-    }
   },
   computed: {
     ...mapState(["local"]),

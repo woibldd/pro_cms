@@ -3,7 +3,9 @@ module.exports = {
     loading: "Đang tải",
     no_more: "Không còn nữa",
     success: 'Làm mới thành công',
-    networkErro:"Internet đã trở nên tồi tệ"
+    networkErro:"Internet đã trở nên tồi tệ",
+    copied: 'Đã sao chép',
+    copiedError: 'Một số lỗi đã xảy ra'
   },
 
   "ActivityBlindbox": {
@@ -60,7 +62,7 @@ module.exports = {
       "TurnedOnText": "Turned on",
       "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired",
-      "ShareWithMe": "Shared width me",
+      "ShareWithMe": "Shared with me",
       willOpened:"To be opened",
       noData:{
         title:"No blind box",

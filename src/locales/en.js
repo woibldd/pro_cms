@@ -3,7 +3,9 @@ module.exports = {
     loading: "Loading",
     no_more: "No more",
     success: 'Successfully',
-    networkErro:"The Internet has gone awry"
+    networkErro:"The Internet has gone awry",
+    copied: 'Copied',
+    copiedError: 'Some error occurred'
   },
 
   "ActivityBlindbox": {
@@ -77,7 +79,7 @@ module.exports = {
       "TurnedOnText": "Turned on",
       "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired",
-      "ShareWithMe": "Shared width me",
+      "ShareWithMe": "Shared with me",
       "noHelper": "No friends have been helped",
       "noInvite": "No friends have been invited",
       willOpened:"To be opened",

@@ -1062,11 +1062,11 @@ function DPR() {
 function filterTime(date) {
   let val = new Date(date);
   var Y = val.getFullYear();
-  var M = val.getMonth();
-  var D = val.getDate();
-  var H = val.getHours();
-  var MI = val.getMinutes();
-  var S = val.getSeconds();
+  var M = val.getMonth() + 1 >= 10 ? val.getMonth() + 1 : '0' + (this.getMonth() + 1);
+  var D = val.getDate() >= 10 ? val.getDate() : '0' + val.getDate();
+  var H = val.getHours() >= 10 ? val.getHours() : '0' + val.getHours();
+  var MI = val.getMinutes() >= 10 ? val.getMinutes() : '0' + val.getMinutes();
+  var S = val.getSeconds() >= 10 ? val.getSeconds() : '0' + val.getSeconds();
   return Y + "-" + M + "-" + D + " " + H + ":" + MI + ":" + S;
 }
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(51)["URL"]))
@@ -2733,7 +2733,9 @@ module.exports = {
     loading: "Loading",
     no_more: "No more",
     success: 'Successfully',
-    networkErro: "The Internet has gone awry"
+    networkErro: "The Internet has gone awry",
+    copied: 'Copied',
+    copiedError: 'Some error occurred'
   },
   "ActivityBlindbox": {
     shared: {
@@ -2801,7 +2803,7 @@ module.exports = {
       "TurnedOnText": "Turned on",
       "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired",
-      "ShareWithMe": "Shared width me",
+      "ShareWithMe": "Shared with me",
       "noHelper": "No friends have been helped",
       "noInvite": "No friends have been invited",
       willOpened: "To be opened",
@@ -3177,7 +3179,9 @@ module.exports = {
     loading: "読み込み中",
     no_more: "もういや",
     success: '正常に更新',
-    networkErro: "インターネットがうまくいかなくなった"
+    networkErro: "インターネットがうまくいかなくなった",
+    copied: 'コピー',
+    copiedError: 'エラーが発生しました'
   },
   "ActivityBlindbox": {
     shared: {
@@ -3228,7 +3232,7 @@ module.exports = {
       "TurnedOnText": "Turned on",
       "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired",
-      "ShareWithMe": "Shared width me",
+      "ShareWithMe": "Shared with me",
       willOpened: "To be opened",
       noData: {
         title: "No blind box",
@@ -3573,7 +3577,9 @@ module.exports = {
     loading: "로딩 중",
     no_more: "더 이상은 없어",
     networkErro: "인터넷이 엉망이 되었다",
-    success: '새로고침 성공'
+    success: '새로고침 성공',
+    copied: '복사됨',
+    copiedError: '일부 오류가 발생했습니다.'
   },
   "ActivityBlindbox": {
     shared: {
@@ -3624,7 +3630,7 @@ module.exports = {
       "TurnedOnText": "Turned on",
       "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired",
-      "ShareWithMe": "Shared width me",
+      "ShareWithMe": "Shared with me",
       willOpened: "To be opened",
       noData: {
         title: "No blind box",
@@ -3969,7 +3975,9 @@ module.exports = {
     loading: "Đang tải",
     no_more: "Không còn nữa",
     success: 'Làm mới thành công',
-    networkErro: "Internet đã trở nên tồi tệ"
+    networkErro: "Internet đã trở nên tồi tệ",
+    copied: 'Đã sao chép',
+    copiedError: 'Một số lỗi đã xảy ra'
   },
   "ActivityBlindbox": {
     shared: {
@@ -4020,7 +4028,7 @@ module.exports = {
       "TurnedOnText": "Turned on",
       "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired",
-      "ShareWithMe": "Shared width me",
+      "ShareWithMe": "Shared with me",
       willOpened: "To be opened",
       noData: {
         title: "No blind box",
@@ -4365,7 +4373,9 @@ module.exports = {
     loading: "加载中",
     success: '刷新成功',
     no_more: "没有更多了",
-    networkErro: "网络开了小差"
+    networkErro: "网络开了小差",
+    copied: 'Copied',
+    copiedError: 'Some error occurred'
   },
   "ActivityBlindbox": {
     shared: {
@@ -4433,7 +4443,7 @@ module.exports = {
       "TurnedOnText": "Turned on",
       "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired",
-      "ShareWithMe": "Shared width me",
+      "ShareWithMe": "Shared with me",
       "noHelper": "No friends have been helped",
       "noInvite": "No friends have been invited",
       willOpened: "To be opened",

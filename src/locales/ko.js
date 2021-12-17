@@ -4,6 +4,8 @@ module.exports = {
     no_more: "더 이상은 없어",
     networkErro:"인터넷이 엉망이 되었다",
     success: '새로고침 성공',
+    copied: '복사됨',
+    copiedError: '일부 오류가 발생했습니다.'
   },
 
   "ActivityBlindbox": {
@@ -60,7 +62,7 @@ module.exports = {
       "TurnedOnText": "Turned on",
       "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired",
-      "ShareWithMe": "Shared width me",
+      "ShareWithMe": "Shared with me",
       willOpened:"To be opened",
       noData:{
         title:"No blind box",

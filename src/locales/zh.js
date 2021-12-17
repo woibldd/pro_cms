@@ -3,7 +3,9 @@ module.exports = {
         loading: "加载中",
         success: '刷新成功',
         no_more: "没有更多了",
-        networkErro:"网络开了小差"
+        networkErro:"网络开了小差",
+        copied: 'Copied',
+        copiedError: 'Some error occurred'
     },
     "ActivityBlindbox": {
         shared:{
@@ -76,7 +78,7 @@ module.exports = {
           "TurnedOnText": "Turned on",
           "SuccessfullyOpenedText": "Opened",
           "expiredText": "expired",
-          "ShareWithMe": "Shared width me",
+          "ShareWithMe": "Shared with me",
           "noHelper": "No friends have been helped",
           "noInvite": "No friends have been invited",
           willOpened:"To be opened",

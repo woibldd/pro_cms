@@ -51,16 +51,16 @@
             >
               <van-row
                 class="invite-row-data-row"
-                :class="item.state == 1 ? 'textPrimary0' : 'textSecond3'"
+                :class="item.status == 1 ? 'textPrimary0' : 'textSecond3'"
               >
                 <van-col span="8" class="invite-row-data-col">{{
                   item.address_friend | address
                 }}</van-col>
                 <van-col span="7" class="invite-row-data-col">{{
-                  item.state == 1 ? "In force" : "Inactivated"
+                  item.status == 1 ? $t("blindboxInvite.inforce") : $t("blindboxInvite.inactivated")
                 }}</van-col>
                 <van-col span="9" class="invite-row-data-col">{{
-                  item.create_time | filterTime
+                  item.create_time
                 }}</van-col>
               </van-row>
               <div class="invite-line colorLine"></div>
@@ -107,16 +107,6 @@ export default {
   filters: {
     address(item) {
       return item && item.substring(0, 6) + " .... " + item.substr(-4);
-    },
-    filterTime(date) {
-      let val = new Date(date)
-      var Y = val.getFullYear()
-      var M = val.getMonth()
-      var D = val.getDate()
-      var H = val.getHours()
-      var MI = val.getMinutes()
-      var S = val.getSeconds()
-      return Y + "-" + M + "-" + D + " " + H + ":" + MI + ":" + S 
     }
   },
   computed: {
@@ -270,6 +260,11 @@ export default {
     margin: 0 16px;
     .invite-row-data-row {
       font-family: "bitkeep DIN";
+      .invite-row-data-col{
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
     }
   }
   .noData {

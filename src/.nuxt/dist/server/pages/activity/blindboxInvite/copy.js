@@ -25,7 +25,7 @@ const vCopy = {
     el.handler = () => {
       if (!el.$value) {
         // 值为空的时候，给出提示，我这里的提示是用的 vant 的提示
-        vant__WEBPACK_IMPORTED_MODULE_0__["Toast"].fail('无复制内容');
+        vant__WEBPACK_IMPORTED_MODULE_0__["Toast"].fail('Some error occurred');
         return;
       } // 动态创建 textarea 标签
 
@@ -45,7 +45,7 @@ const vCopy = {
       const result = document.execCommand('Copy');
 
       if (result) {
-        vant__WEBPACK_IMPORTED_MODULE_0__["Toast"].success('复制成功');
+        Object(vant__WEBPACK_IMPORTED_MODULE_0__["Toast"])('Copied');
       }
 
       document.body.removeChild(textarea);

@@ -16,11 +16,7 @@
       <div class="mining-wrap">
         <div class="img">
           <img
-            :src="
-              locale == 'en'
-                ? 'http://cdn.bitkeep.vip/u_b_3f7ff950-4d1b-11ec-9af0-83b391500e95.png'
-                : 'http://cdn.bitkeep.vip/u_b_3f7ff950-4d1b-11ec-9af0-83b391500e95.png'
-            "
+            src="http://cdn.bitkeep.vip/u_b_56506420-5f0f-11ec-a944-e370f85086e5.png"
             alt=""
           />
         </div>
@@ -70,11 +66,11 @@
           <div class="mining-setP">
             <div class="produced mining_trans">
               <span>{{ $t("mining.startTime") }}</span>
-              <span class="setFontFamily">{{ fixdStartTime }}(GMT+8)</span>
+              <span class="setFontFamily">{{ fixdStartTime }}(EST)</span>
             </div>
             <div class="produced mining_trans mbottom">
               <span>{{ $t("mining.overTime") }}</span>
-              <span class="setFontFamily">{{ fixdEndTime }}(GMT+8)</span>
+              <span class="setFontFamily">{{ fixdEndTime }}(EST)</span>
             </div>
           </div>
         </div>
@@ -203,7 +199,7 @@
                   {{ $t("mining.yesterdayRewards") }}
                 </p>
                 <div class="mining-wrap-one-body-vol-number-last setFontFamily">
-                  {{ activityStatus != 0 ? "+" + userTodayDayBkbReward + " BKB" : "--" }}
+                  {{ activityStatus != 0 ? "+" + userTodayDayBkbReward + " BKB" : "0 BKB" }}
                 </div>
               </div>
             </div>
@@ -226,13 +222,13 @@
           <div class="mining-wrap-one-body">
             <div class="setMingMargin">
               <span class="setFontFamily textPrimary0">{{
-                activityStatus != 0 ? activity_rewardPool + ' BKB' : '--'
+                activity_rewardPool + ' BKB'
               }}</span>
             </div>
             <p class="mining-wrap-one-body-day textPrimary0">{{ $t("mining.invitationPoolContent") }}</p>
           </div>
         </div>
-        <!-- Invitation Reward -->
+        <!-- My Invitation Reward -->
         <div class="mining-wrap-one invitation">
           <div class="mining-wrap-one-header">
             <div class="mining-wrap-one-header-title">
@@ -262,7 +258,7 @@
                 </p>
                 <div class="
                     mining-wrap-one-body-vol-number-todyVolue
-                    setFontFamily" style="color: #495BFF">{{ activityStatus != 0 ? "+" + activityTradingBkbReward + ' BKB' : '--' }}
+                    setFontFamily" style="color: #495BFF">{{ activityStatus != 0 ? "+" + activityTradingBkbReward + ' BKB' : '0 BKB' }}
                 </div>
               </div>
             </div>
@@ -281,7 +277,7 @@
                   {{ $t("mining.inviteNumber4") }}
                 </p>
                 <div class="mining-wrap-one-body-vol-number-last setFontFamily">
-                  {{ activityStatus != 0 ? "+" + activityInviteReward + " BKB" : "--" }}
+                  {{ activityStatus != 0 ? "+" + activityInviteReward + " BKB" : "0 BKB" }}
                 </div>
               </div>
             </div>
