@@ -51,7 +51,7 @@
       <van-button
         class="swap-btn colorBackgroundPrimary"
         :disabled="btnStatus"
-        :class="unclaimReward == 0 ? 'setOpactive' : ''"
+        :class="(unclaimReward + sumReward) == 0 ? 'setOpactive' : ''"
         @click="swapConfirm"
         >{{ $t("mining.confirm") }}</van-button
       >
