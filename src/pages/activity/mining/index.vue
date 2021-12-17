@@ -249,7 +249,7 @@
                   {{ $t("mining.inviteNumber1") }}
                 </p>
                 <div class="mining-wrap-one-body-vol-number setFontFamily">
-                  <span class="setW" style="color: #495BFF">{{ activityDoneTradingBkbReward }} BKB</span>
+                  <span class="setW" style="color: #495BFF">{{ activityInviteDonereward }} BKB</span>
                 </div>
               </div>
               <div>
@@ -269,7 +269,7 @@
                   {{ $t("mining.inviteNumber3") }}
                 </p>
                 <div class="mining-wrap-one-body-vol-number setFontFamily">
-                  <span class="setW">{{ activityInviteDonereward }}</span> BKB
+                  <span class="setW">{{ activityDoneTradingBkbReward }}</span> BKB
                 </div>
               </div>
               <div>

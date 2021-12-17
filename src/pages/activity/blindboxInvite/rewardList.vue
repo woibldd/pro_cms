@@ -25,7 +25,7 @@
             >
               <div class="rewards-row-data-left">
                 <div class="rewards-row-data-left-title textPrimary0">
-                  {{$t('blindboxInvite.invitationReward')}}
+                  {{$t('mining.invitationRewards')}}
                 </div>
                 <div class="rewards-row-data-left-time textSecond3">
                   {{item.create_time}}
@@ -119,7 +119,7 @@ export default {
         this.loading = true;
         return this.$toast(data);
       }
-      var moreList = data.data;
+      var moreList = data;
       moreList && this.rewardsList.push(...moreList);
       this.isLoading = false;
       this.$toast.clear();

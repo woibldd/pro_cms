@@ -93,11 +93,12 @@ export default {
   },
   methods: {
     swapConfirm: debounce(async function () {
-      if (this.unclaimReward == 0) return;
+      if ((this.unclaimReward + this.sumReward) == 0) return;
       this.btnStatus = true;
       const { data, status } = await USER_API.receiveAward();
       if (status == 1) {
         this.close();
+        this.btnStatus = false;
         return this.$toast(data);
       }
       this.$toast(data);
