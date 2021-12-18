@@ -414,7 +414,7 @@ export default {
         this.showLoading();
         const HelpR = await USER_API.helpMBox({
           address: this.address,
-          id: this.$route.params.id || this.$route.query.id,
+          id: this.info.id,
           scene: this.info.scene
         });
         this.hideLoading();
