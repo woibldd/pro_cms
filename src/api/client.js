@@ -18,7 +18,7 @@ const host_user_instance = axios.create({
   headers: {
     token: "",
     // token: "",
-    language: "zh",
+    language: "en",
     currency: "",
     brand: "",
     os: "",

@@ -51,7 +51,7 @@ const actions = {
       query, req } = ctx
 
     let locale =  query.lang || params.lang
-
+    log("==============内嵌bitkeep req.headers", req.headers)
     //UA
     commit('SET_UA', parseUA(req.headers['user-agent']));
 

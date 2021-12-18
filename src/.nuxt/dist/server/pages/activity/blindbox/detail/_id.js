@@ -1368,7 +1368,7 @@ const host_user_instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
   headers: {
     token: "",
     // token: "",
-    language: "zh",
+    language: "en",
     currency: "",
     brand: "",
     os: "",

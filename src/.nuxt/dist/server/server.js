@@ -653,7 +653,8 @@ const actions = {
       query,
       req
     } = ctx;
-    let locale = query.lang || params.lang; //UA
+    let locale = query.lang || params.lang;
+    log("==============内嵌bitkeep req.headers", req.headers); //UA
 
     commit('SET_UA', Object(_tools_common__WEBPACK_IMPORTED_MODULE_1__[/* parseUA */ "c"])(req.headers['user-agent'])); //App内嵌
 
