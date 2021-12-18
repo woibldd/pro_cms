@@ -52,13 +52,23 @@
           </div>
           <!-- 是否已经开启-->
           <!-- 金额展示 -->
-          <div
+          <!-- <div
             class="block_invite_coin color_red"
             v-if="info.status == 2 && info.is_owner == 1"
           >
             <span>+{{ info.amount }}</span>
             &nbsp;
             <span>{{ info.symbol }}</span>
+          </div> -->
+          <div
+            class="block_invite_coin color_red"
+            v-if="info.status == 2 && info.is_owner == 1"
+          >
+          <div v-for='(item, index) in info.symbolList' :key='index'>
+            <span>+{{ item.amount }}</span>
+            <!-- &nbsp; -->
+            <span>{{ item.symbol }}</span>
+          </div>
           </div>
           <!-- 助力进度  -->
           <div v-else>
@@ -677,10 +687,8 @@ export default {
 
 .block_invite_coin {
   margin-top: 15px;
-  height: 28px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  // height: 28px;
+  text-align: center;
   font-family: Gilroy;
   font-weight: bold;
   font-size: 28px;

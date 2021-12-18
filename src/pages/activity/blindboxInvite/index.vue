@@ -77,13 +77,15 @@
                 </div>
             </div>
           </div>
-          <!-- <div class="warp-invite-imgLink setTop">
+          <div class="warp-invite-imgLink setTop">
+            <div @click="toReward" class="setBg">
+              <img src="http://cdn.bitkeep.vip/u_b_020a3500-5fb7-11ec-82cb-a72d43841bd3.png" alt="">
+            </div>
+            <!-- <img src="http://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
             <img src="http://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
             <img src="http://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
-            <img src="http://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
-            <img src="http://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
-            <img src="http://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
-          </div> -->
+            <img src="http://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt=""> -->
+          </div>
         </div>
       </div>
     <CreatePoster
@@ -184,6 +186,9 @@ export default {
     rewardsList(){
       this.$router.push('/activity/blindboxInvite/rewardList')
     },
+    toReward(){
+      this.$router.push('/activity/mining')
+    },
     inviteFirends(){
       this.$refs.CreatePoster && this.$refs.CreatePoster.init();
     }
@@ -203,9 +208,12 @@ export default {
   }
   .warp-invite-imgLink{
     padding: 0 16px 10px;
-    img{
-      display: inline-block;
+    .setBg{
+      background: #D6DEEB;
+      border-radius: 8px;
       margin-top: 10px;
+    }
+    img{
       width: 100%;
     }
   }
