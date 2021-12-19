@@ -51,10 +51,9 @@ const actions = {
       query, req } = ctx
 
     let locale =  query.lang || params.lang
-    log("==============内嵌bitkeep req.headers", req.headers)
-    console.log('req.headers',  req.headers)
     //UA
-    commit('SET_UA', parseUA(req.headers['user-agent']));
+    let headerUa = req.headers.ua ? req.headers.ua : '';
+    commit('SET_UA', parseUA(req.headers['user-agent'], headerUa));
 
     //App内嵌
     if (state.UA.isBitKeep) {

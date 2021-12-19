@@ -232,7 +232,7 @@ export function getStyle(element, attr) {
     return attr ? element.currentStyle[attr] : element.currentStyle;
 }
 
-export const parseUA = userAgent => {
+export const parseUA = (userAgent, headerUa) => {
     const ua = userAgent || (process.client ? (navigator.userAgent || window.navigator.userAgent )  : '')
     const isIosEnv = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)
     const isPhonx = _ => !!(isIosEnv && screen.height == 812 && screen.width == 375)
@@ -245,7 +245,7 @@ export const parseUA = userAgent => {
         wPhone: /(Windows Phone|windows[\s+]phone)/i.test(ua),
         PC: ua.indexOf('Win') > -1 || ua.indexOf('Mac') > -1 || ua.indexOf('Linux') > -1,
         weixin: ua.indexOf('MicroMessenger') > -1,
-        isBitKeep:/(BitKeep)/i.test(ua),  //app
+        isBitKeep:/(BitKeep)/i.test(headerUa),  //app
         isDinhgDing: /(DingTalk)/i.test(ua)
     }
     ret.bitKeepAndroid = ret.isBitKeep && ret.android
