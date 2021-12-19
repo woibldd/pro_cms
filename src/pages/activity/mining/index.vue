@@ -321,7 +321,7 @@
         </div>
       </div>
     </van-pull-refresh>
-    <pup-protocol :show='show' @close='close' :unclaimReward='unclaimReward' :sumReward='sum_activity_today_reward' :theme='theme'></pup-protocol>
+    <pup-protocol :show='show' @close='close' :unclaimReward='unclaimReward' :sumReward='sum_activity_today_reward' :theme='theme' :key='new Date().getTime()'></pup-protocol>
     <ruleDetail :ruleDetailFlag='ruleDetailFlag' :theme='theme' @ruleDetailClose='ruleDetailClose'></ruleDetail>
     <inviteRuleDetail :inviteRuleDetailFlag='inviteRuleDetailFlag' :theme='theme' @closeInvite='closeInvite'></inviteRuleDetail>
   </div>
@@ -410,6 +410,7 @@ export default {
       }
       this.fixdStartTime = data.miningStartTime;
       this.fixdEndTime = data.miningEndTime;
+      this.unclaimReward = data.unclaimReward;
       this.currencyPool = this.milliFormat(data.currencyPool);
       this.yesCurrencyPool = this.milliFormat(data.yesCurrencyPool);
       this.allTodayTrading = this.milliFormat(data.AllTodayTrading);
@@ -417,7 +418,7 @@ export default {
       this.userTodayValue = this.milliFormat(data.userTodayValue);
       this.userTotalBkbReward = this.milliFormat(data.userTotalBkbReward);
       this.userTodayDayBkbReward = this.milliFormat(data.userTodayDayBkbReward);
-      this.unclaimReward = data.unclaimReward;
+      
 
       this.activityTradingBkbReward = this.milliFormat(data.activity_TradingBkbReward);
       this.activityInviteReward = this.milliFormat(data.activity_invite_reward);
@@ -513,7 +514,9 @@ export default {
       this.show = true;
     },
     close(val){
-      if(val) this.getInfo();
+      if(val) {
+        this.getInfo();
+      }
       this.show = false;
     },
     swap(){
