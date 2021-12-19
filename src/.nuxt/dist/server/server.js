@@ -653,11 +653,10 @@ const actions = {
       query,
       req
     } = ctx;
-    let locale = query.lang || params.lang;
-    log("==============内嵌bitkeep req.headers", req.headers);
-    console.log('req.headers', req.headers); //UA
+    let locale = query.lang || params.lang; //UA
 
-    commit('SET_UA', Object(_tools_common__WEBPACK_IMPORTED_MODULE_1__[/* parseUA */ "c"])(req.headers['user-agent'])); //App内嵌
+    let headerUa = req.headers.ua ? req.headers.ua : '';
+    commit('SET_UA', Object(_tools_common__WEBPACK_IMPORTED_MODULE_1__[/* parseUA */ "c"])(req.headers['user-agent'], headerUa)); //App内嵌
 
     if (state.UA.isBitKeep) {
       log("内嵌bitkeep app 设置参数", state.UA.isBitKeep);
@@ -1009,7 +1008,7 @@ function getStyle(element, attr) {
 
   return attr ? element.currentStyle[attr] : element.currentStyle;
 }
-const parseUA = userAgent => {
+const parseUA = (userAgent, headerUa) => {
   const ua = userAgent || ( false ? undefined : '');
   const isIosEnv = !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
 
@@ -1023,7 +1022,7 @@ const parseUA = userAgent => {
     wPhone: /(Windows Phone|windows[\s+]phone)/i.test(ua),
     PC: ua.indexOf('Win') > -1 || ua.indexOf('Mac') > -1 || ua.indexOf('Linux') > -1,
     weixin: ua.indexOf('MicroMessenger') > -1,
-    isBitKeep: /(BitKeep)/i.test(ua),
+    isBitKeep: /(BitKeep)/i.test(headerUa),
     //app
     isDinhgDing: /(DingTalk)/i.test(ua)
   };
@@ -6675,6 +6674,7 @@ function wrapFunctional(options) {
 
 
 const components = {
+  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 168)).then(c => wrapFunctional(c.default || c)),
   CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 77)).then(c => wrapFunctional(c.default || c)),
   CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 68)).then(c => wrapFunctional(c.default || c)),
   Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 72)).then(c => wrapFunctional(c.default || c)),
@@ -6683,7 +6683,6 @@ const components = {
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 99)).then(c => wrapFunctional(c.default || c)),
   BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 175)).then(c => wrapFunctional(c.default || c)),
   BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 173)).then(c => wrapFunctional(c.default || c)),
-  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 168)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 11).then(__webpack_require__.bind(null, 140)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 12).then(__webpack_require__.bind(null, 80)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 13).then(__webpack_require__.bind(null, 254)).then(c => wrapFunctional(c.default || c)),
