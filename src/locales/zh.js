@@ -409,7 +409,7 @@ module.exports = {
         rewardsMore: 'Friends trading rewards more BKB',
         Poster: 'Scan QRcode',
         downReward: 'Download BitKeep Wallet Earn crypto asset rewards',
-        imgText: 'Hi friend, here’s a Crypto Wallet to earn you crypto assets',
+        imgText: 'Hi, friend, here’s a Crypto Wallet to earn you crypto assets',
         detailWallet: 'A crypto wallet that takes no effort to navigate',
         detailWallet1: 'Securely store encrypted assets',
         detailWallet2: 'Convenient and easy-to-use BKSwap',

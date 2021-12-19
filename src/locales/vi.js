@@ -376,7 +376,7 @@ module.exports = {
     rewardsMore: 'Giao dịch bạn bè thưởng thêm BKB',
     Poster: 'Quét mã QR',
     downReward: 'TTải xuống ví BitKeep để kiếm phần thưởng',
-    imgText: 'Xin chào bạn, đây là Ví tiền điện tử để bạn kiếm được tài sản tiền điện tử',
+    imgText: 'Xin chào bạn, đây là một Ví tiền điện tử để bạn kiếm được tài sản tiền điện tử',
     detailWallet: 'Một ví tiền điện tử không cần nỗ lực điều hướng',
     detailWallet1: 'Lưu trữ an toàn nội dung được mã hóa',
     detailWallet2: 'BKSwap thuận tiện và dễ sử dụng',

@@ -376,7 +376,7 @@ module.exports = {
     rewardsMore: '친구 거래는 더 많은 BKB를 보상합니다.',
     Poster: 'QR코드 스캔',
     downReward: 'BitKeep Wallet 다운로드 암호화 자산 보상 받기',
-    imgText: '안녕 친구, 여기 암호화 자산을 적립할 수 있는 Crypto Wallet이 있습니다.',
+    imgText: '안녕하세요, 친구, 여기 암호화 자산을 적립할 수 있는 Crypto Wallet이 있습니다',
     detailWallet: '탐색에 노력이 필요하지 않은 암호화 지갑',
     detailWallet1: '암호화된 자산을 안전하게 저장',
     detailWallet2: '편리하고 사용하기 쉬운 BKSwap',
