@@ -517,7 +517,7 @@ export default {
       if(val) {
         setTimeout(()=>{
           this.getInfo();
-        },150)
+        },500)
       }
       this.show = false;
     },
