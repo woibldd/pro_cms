@@ -98,7 +98,9 @@ export default {
       const { data, status } = await USER_API.receiveAward();
       if (status == 1) {
         this.close();
-        this.btnStatus = false;
+        setTimeout(() => {
+          this.btnStatus = false;
+        }, 1000);
         return this.$toast(data);
       }
       this.$toast(data);

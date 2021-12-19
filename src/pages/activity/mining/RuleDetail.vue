@@ -37,7 +37,7 @@ export default {
   props: ['ruleDetailFlag','theme'],
   methods: {
     close(){
-      this.$emit('close', false);
+      this.$emit('ruleDetailClose', false);
     }
   }
 };

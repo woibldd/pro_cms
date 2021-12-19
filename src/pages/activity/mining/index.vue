@@ -322,7 +322,7 @@
       </div>
     </van-pull-refresh>
     <pup-protocol :show='show' @close='close' :unclaimReward='unclaimReward' :sumReward='sum_activity_today_reward' :theme='theme'></pup-protocol>
-    <ruleDetail :ruleDetailFlag='ruleDetailFlag' :theme='theme' @close='ruleDetailClose'></ruleDetail>
+    <ruleDetail :ruleDetailFlag='ruleDetailFlag' :theme='theme' @ruleDetailClose='ruleDetailClose'></ruleDetail>
     <inviteRuleDetail :inviteRuleDetailFlag='inviteRuleDetailFlag' :theme='theme' @closeInvite='closeInvite'></inviteRuleDetail>
   </div>
 </template>
