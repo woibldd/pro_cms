@@ -201,6 +201,7 @@ export default {
 @import "@/assets/css/theme.scss";
 .invite-list-box {
   padding-top:10px;
+  min-height: 100vh;
   .loading {
     min-height: 100vh;
     display: flex;
