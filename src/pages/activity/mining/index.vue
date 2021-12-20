@@ -66,11 +66,11 @@
           <div class="mining-setP">
             <div class="produced mining_trans">
               <span>{{ $t("mining.startTime") }}</span>
-              <span class="setFontFamily">{{ fixdStartTime }}(EST)</span>
+              <span class="setFontFamily">{{ fixdStartTime }}(GMT+8)</span>
             </div>
             <div class="produced mining_trans mbottom">
               <span>{{ $t("mining.overTime") }}</span>
-              <span class="setFontFamily">{{ fixdEndTime }}(EST)</span>
+              <span class="setFontFamily">{{ fixdEndTime }}(GMT+8)</span>
             </div>
           </div>
         </div>
