@@ -70,7 +70,7 @@
       </div>
       <div class="noData" v-else>
         <img
-          src="http://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png"
+          src="https://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png"
           alt=""
         />
         <p class="textSecond3">{{$t('mining.noData')}}</p>
@@ -98,7 +98,7 @@ export default {
       theme: 0,
       start: 0,
       limit: 20,
-      question: 'http://cdn.bitkeep.vip/u_b_99107f80-356f-11ec-8c2d-251a27ef7eba.png'
+      question: 'https://cdn.bitkeep.vip/u_b_99107f80-356f-11ec-8c2d-251a27ef7eba.png'
     };
   },
   components: {
@@ -130,14 +130,14 @@ export default {
             let body = document.getElementsByTagName("body")[0];
             if (res == 1) {
               this.theme = 1
-              this.question = 'http://cdn.bitkeep.vip/u_b_47485390-4f90-11ec-ace3-97579b99c357.png';
+              this.question = 'https://cdn.bitkeep.vip/u_b_47485390-4f90-11ec-ace3-97579b99c357.png';
               body.setAttribute("class", "theme-dark");
               BitKeepInvoke.setIconAction(this.question,()=>{
                 this.ruleDetailFlag = true;
               });
             } else {
               this.theme = 0
-              this.question = 'http://cdn.bitkeep.vip/u_b_99107f80-356f-11ec-8c2d-251a27ef7eba.png';
+              this.question = 'https://cdn.bitkeep.vip/u_b_99107f80-356f-11ec-8c2d-251a27ef7eba.png';
               body.setAttribute("class", "theme-light");
               BitKeepInvoke.setIconAction(this.question,()=>{
                 this.ruleDetailFlag = true;

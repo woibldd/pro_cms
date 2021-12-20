@@ -16,7 +16,7 @@
     <div class="line colorLine"></div>
     <div class="content">
       <img
-        src="http://cdn.bitkeep.vip/u_b_7d8ec4f0-4b78-11ec-9826-e3fc5958ff1e.png"
+        src="https://cdn.bitkeep.vip/u_b_7d8ec4f0-4b78-11ec-9826-e3fc5958ff1e.png"
         class="logo"
         alt=""
       />
@@ -25,9 +25,9 @@
         <div class="content_invite_flex colorBackground3">
           <div class="content_invite_flex_cont">
             <div>
-              <!-- http://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png -->
+              <!-- https://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png -->
               <img
-                src="http://cdn.bitkeep.vip/u_b_e7b6fe30-5427-11ec-a16d-43771b230a03.png"
+                src="https://cdn.bitkeep.vip/u_b_e7b6fe30-5427-11ec-a16d-43771b230a03.png"
                 alt=""
               />
               <span class="textSecond1">{{ $t("mining.tradingRewards") }}</span>
@@ -37,7 +37,7 @@
           <div class="content_invite_flex_cont setMargin">
             <div>
               <img
-                src="http://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png"
+                src="https://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png"
                 alt=""
               />
               <span class="textSecond1">{{ $t("mining.invitationRewards") }}</span>
@@ -69,7 +69,7 @@ export default {
       visables: this.show,
       btnStatus: false,
       closeIcon:
-        "http://cdn.bitkeep.vip/u_b_991190f0-356f-11ec-8c2d-251a27ef7eba.png",
+        "https://cdn.bitkeep.vip/u_b_991190f0-356f-11ec-8c2d-251a27ef7eba.png",
     };
   },
   watch: {
@@ -79,10 +79,10 @@ export default {
     theme(n) {
       if (n == 1) {
         this.closeIcon =
-          "http://cdn.bitkeep.vip/u_b_d71e28c0-4c2d-11ec-ad04-d1b66ed0d35e.png";
+          "https://cdn.bitkeep.vip/u_b_d71e28c0-4c2d-11ec-ad04-d1b66ed0d35e.png";
       } else {
         this.closeIcon =
-          "http://cdn.bitkeep.vip/u_b_991190f0-356f-11ec-8c2d-251a27ef7eba.png";
+          "https://cdn.bitkeep.vip/u_b_991190f0-356f-11ec-8c2d-251a27ef7eba.png";
       }
     },
   },

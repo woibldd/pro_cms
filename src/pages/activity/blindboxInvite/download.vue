@@ -10,7 +10,7 @@
     <div class="block_body">
       <img
         :class="{ [locale]: true }"
-        src="http://cdn.bitkeep.vip/u_b_95224b10-596e-11ec-bdbc-7722494dfa58.png"
+        src="https://cdn.bitkeep.vip/u_b_95224b10-596e-11ec-bdbc-7722494dfa58.png"
       />
       <div class="textBox textPrimary0">
         <p>{{ $t("blindboxInvite.downText") }}</p>

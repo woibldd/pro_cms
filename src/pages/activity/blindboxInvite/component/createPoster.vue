@@ -87,10 +87,10 @@ export default {
   },
   computed: {
     proxy_img() {
-      const sourceUrl = "http://cdn.bitkeep.vip/u_b_792eb450-5e3e-11ec-bd49-b1b354a240c8.png";
+      const sourceUrl = "https://cdn.bitkeep.vip/u_b_792eb450-5e3e-11ec-bd49-b1b354a240c8.png";
       return sourceUrl
         ? `/poster${sourceUrl
-            .replace("http://cdn.bitkeep.vip", "")
+            .replace("https://cdn.bitkeep.vip", "")
             .replace("https://cdn.bitkeep.vip", "")}`
         : "";
     },
@@ -204,7 +204,7 @@ export default {
     right: 26px;
     width: 28px;
     height: 28px;
-    background: url("http://cdn.bitkeep.vip/u_b_a1752190-5e77-11ec-b5be-b5b1720a6926.png") center center
+    background: url("https://cdn.bitkeep.vip/u_b_a1752190-5e77-11ec-b5be-b5b1720a6926.png") center center
       no-repeat;
     background-size: 100% 100%;
   }

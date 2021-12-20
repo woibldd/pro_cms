@@ -16,7 +16,7 @@
       <div class="mining-wrap">
         <div class="img">
           <img
-            src="http://cdn.bitkeep.vip/u_b_56506420-5f0f-11ec-a944-e370f85086e5.png"
+            src="https://cdn.bitkeep.vip/u_b_56506420-5f0f-11ec-a944-e370f85086e5.png"
             alt=""
           />
         </div>
@@ -25,7 +25,7 @@
           <div class="mining-wrap-one-header" style="padding-right: 0">
             <div class="mining-wrap-one-header-title">
               <img
-                src="http://cdn.bitkeep.vip/u_b_d9de7871-3b9e-11ec-8e63-1db435df936c.png"
+                src="https://cdn.bitkeep.vip/u_b_d9de7871-3b9e-11ec-8e63-1db435df936c.png"
                 alt=""
               />
               <span class="setFontWeight">{{ $t("mining.coundown") }}</span>
@@ -79,7 +79,7 @@
           <div class="mining-wrap-one-header">
             <div class="mining-wrap-one-header-title">
               <img
-                src="http://cdn.bitkeep.vip/u_b_d9ddb520-3b9e-11ec-8e63-1db435df936c.png"
+                src="https://cdn.bitkeep.vip/u_b_d9ddb520-3b9e-11ec-8e63-1db435df936c.png"
                 alt=""
               />
               <span class="setFontWeight">{{ $t("mining.rewardPool") }}</span>
@@ -129,7 +129,7 @@
           <div class="mining-wrap-one-header">
             <div class="mining-wrap-one-header-title">
               <img
-                src="http://cdn.bitkeep.vip/u_b_381594a0-3b9f-11ec-8e63-1db435df936c.png"
+                src="https://cdn.bitkeep.vip/u_b_381594a0-3b9f-11ec-8e63-1db435df936c.png"
                 alt=""
               />
               <span class="setFontWeight">{{
@@ -154,7 +154,7 @@
           <div class="mining-wrap-one-header">
             <div class="mining-wrap-one-header-title">
               <img
-                src="http://cdn.bitkeep.vip/u_b_d9de5160-3b9e-11ec-8e63-1db435df936c.png"
+                src="https://cdn.bitkeep.vip/u_b_d9de5160-3b9e-11ec-8e63-1db435df936c.png"
                 alt=""
               />
               <span class="setFontWeight">{{ $t("mining.myRewards") }}</span>
@@ -210,7 +210,7 @@
           <div class="mining-wrap-one-header">
             <div class="mining-wrap-one-header-title">
               <img
-                src="http://cdn.bitkeep.vip/u_b_d9ddb520-3b9e-11ec-8e63-1db435df936c.png"
+                src="https://cdn.bitkeep.vip/u_b_d9ddb520-3b9e-11ec-8e63-1db435df936c.png"
                 alt=""
               />
               <span class="setFontWeight">{{
@@ -233,7 +233,7 @@
           <div class="mining-wrap-one-header">
             <div class="mining-wrap-one-header-title">
               <img
-                src="http://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png"
+                src="https://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png"
                 alt=""
               />
               <span class="setFontWeight">{{ $t("mining.invitationReward") }}</span>
@@ -291,7 +291,7 @@
           <div class="mining-wrap-one-header">
             <div class="mining-wrap-one-header-title">
               <img
-                src="http://cdn.bitkeep.vip/u_b_d9de7870-3b9e-11ec-8e63-1db435df936c.png"
+                src="https://cdn.bitkeep.vip/u_b_d9de7870-3b9e-11ec-8e63-1db435df936c.png"
                 alt=""
               />
               <span class="setFontWeight">{{
@@ -367,7 +367,7 @@ export default {
       countDown: 0,
       activityStatus: 0,
       theme: 0,
-      question: 'http://cdn.bitkeep.vip/u_b_99107f80-356f-11ec-8c2d-251a27ef7eba.png'
+      question: 'https://cdn.bitkeep.vip/u_b_99107f80-356f-11ec-8c2d-251a27ef7eba.png'
     };
   },
   computed: {
@@ -472,22 +472,22 @@ export default {
                 let body = document.getElementsByTagName("body")[0];
                 if (res == 1) {
                   this.theme = 1;
-                  this.question = 'http://cdn.bitkeep.vip/u_b_47485390-4f90-11ec-ace3-97579b99c357.png';
+                  this.question = 'https://cdn.bitkeep.vip/u_b_47485390-4f90-11ec-ace3-97579b99c357.png';
                   body.setAttribute("class", "theme-dark");
                   setTimeout(()=>{
                     BitKeepInvoke.setIconAction(
-                    "http://cdn.bitkeep.vip/u_b_09035ca0-4dd9-11ec-a555-07d5354e6fab.png",
+                    "https://cdn.bitkeep.vip/u_b_09035ca0-4dd9-11ec-a555-07d5354e6fab.png",
                     ()=>{
                       this.$router.push("/activity/mining/history")
                     });
                   },500)
                 } else {
                   this.theme = 0;
-                  this.question = 'http://cdn.bitkeep.vip/u_b_99107f80-356f-11ec-8c2d-251a27ef7eba.png';
+                  this.question = 'https://cdn.bitkeep.vip/u_b_99107f80-356f-11ec-8c2d-251a27ef7eba.png';
                   body.setAttribute("class", "theme-light");
                   setTimeout(()=>{
                     BitKeepInvoke.setIconAction(
-                    "http://cdn.bitkeep.vip/u_b_2bb4fa20-3b86-11ec-8e63-1db435df936c.png",
+                    "https://cdn.bitkeep.vip/u_b_2bb4fa20-3b86-11ec-8e63-1db435df936c.png",
                     ()=>{
                       this.$router.push("/activity/mining/history")
                     //   let routeUrl = this.$router.resolve({

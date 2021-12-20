@@ -11,8 +11,8 @@
           <img
             :src="
               locale == 'en'
-                ? 'http://cdn.bitkeep.vip/u_b_6ab42f50-412d-11ec-84b4-35a471e98238.png'
-                : 'http://cdn.bitkeep.vip/u_b_6ab42f50-412d-11ec-84b4-35a471e98238.png'
+                ? 'https://cdn.bitkeep.vip/u_b_6ab42f50-412d-11ec-84b4-35a471e98238.png'
+                : 'https://cdn.bitkeep.vip/u_b_6ab42f50-412d-11ec-84b4-35a471e98238.png'
             "
           />
         </div>
@@ -137,7 +137,7 @@ export default {
     getDialog() {
       this.$dialog.alert({
         title: this.$t("nft.dialogTitle"),
-        message: `<img src='http://cdn.bitkeep.vip/u_b_817d2120-413b-11ec-84b4-35a471e98238.png'/><div class='content'>BoredNessApeClubBoredNessApeClubBoredNessApeClub</div>`,
+        message: `<img src='https://cdn.bitkeep.vip/u_b_817d2120-413b-11ec-84b4-35a471e98238.png'/><div class='content'>BoredNessApeClubBoredNessApeClubBoredNessApeClub</div>`,
         confirmButtonText: this.$t("nft.btn"),
         getContainer: () => document.querySelector("body"),
       });

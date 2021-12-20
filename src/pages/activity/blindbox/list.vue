@@ -13,7 +13,7 @@
       </Header> -->
       <!-- v-if='blindbox_list.length>0' -->
       <div class="blindbox_list_firends" v-if='blindbox_list.length > 0' @click='goFriendList'>
-        <van-icon name='http://cdn.bitkeep.vip/u_b_78569440-5721-11ec-84e8-3b41e43dd21d.png' color='#fff'/>
+        <van-icon name='https://cdn.bitkeep.vip/u_b_78569440-5721-11ec-84e8-3b41e43dd21d.png' color='#fff'/>
         {{$t('ActivityBlindbox.ActivityBlindboxList.inviteContent', {
                   invite: this.inviteNum || 0,
                   helper: this.helpNum || 0

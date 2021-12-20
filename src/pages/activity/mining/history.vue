@@ -58,7 +58,7 @@
       </div>
     </div>
     <div class="noData" v-else>
-      <img src="http://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png" alt="">
+      <img src="https://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png" alt="">
       <p class="textSecond3">{{ $t('mining.noData') }}</p>
     </div>
   </div>

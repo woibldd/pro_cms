@@ -30,7 +30,7 @@
         <div>
           <div>
             <img
-              src="http://cdn.bitkeep.vip/u_b_2d8ec1f0-5bed-11ec-bdbc-7722494dfa58.png"
+              src="https://cdn.bitkeep.vip/u_b_2d8ec1f0-5bed-11ec-bdbc-7722494dfa58.png"
               alt=""
             />
           </div>
@@ -41,7 +41,7 @@
         <div class="detail_box_flex_content_right">
           <div>
             <img
-              src="http://cdn.bitkeep.vip/u_b_2d96d840-5bed-11ec-bdbc-7722494dfa58.png"
+              src="https://cdn.bitkeep.vip/u_b_2d96d840-5bed-11ec-bdbc-7722494dfa58.png"
               alt=""
             />
           </div>
@@ -54,7 +54,7 @@
         <div>
           <div>
             <img
-              src="http://cdn.bitkeep.vip/u_b_2d97e9b0-5bed-11ec-bdbc-7722494dfa58.png"
+              src="https://cdn.bitkeep.vip/u_b_2d97e9b0-5bed-11ec-bdbc-7722494dfa58.png"
               alt=""
             />
           </div>
@@ -63,7 +63,7 @@
         <div class="detail_box_flex_content_right">
           <div>
             <img
-              src="http://cdn.bitkeep.vip/u_b_2d8f1010-5bed-11ec-bdbc-7722494dfa58.png"
+              src="https://cdn.bitkeep.vip/u_b_2d8f1010-5bed-11ec-bdbc-7722494dfa58.png"
               alt=""
             />
           </div>
@@ -101,7 +101,7 @@
     <div class="detail_box_wallet setMargin">
       <h1>{{$t( 'blindboxInvite.detailWhy' )}}</h1>
       <img
-        src="http://cdn.bitkeep.vip/u_b_916160b0-5a59-11ec-bdbc-7722494dfa58.png"
+        src="https://cdn.bitkeep.vip/u_b_916160b0-5a59-11ec-bdbc-7722494dfa58.png"
         alt=""
       />
       <div class="detail_box_wallet_title_content">
@@ -115,7 +115,7 @@
     </div>
     <div class="detail_box_wallet setBackground">
       <img
-        src="http://cdn.bitkeep.vip/u_b_22575140-5bec-11ec-bdbc-7722494dfa58.png"
+        src="https://cdn.bitkeep.vip/u_b_22575140-5bec-11ec-bdbc-7722494dfa58.png"
         alt=""
       />
       <div class="detail_box_wallet_title_content setBottom">
@@ -132,7 +132,7 @@
         {{$t('blindboxInvite.detailNFTCon')}}
       </div>
       <img
-        src="http://cdn.bitkeep.vip/u_b_d35394b0-5e1f-11ec-bd49-b1b354a240c8.png"
+        src="https://cdn.bitkeep.vip/u_b_d35394b0-5e1f-11ec-bd49-b1b354a240c8.png"
         alt=""
       />
     </div>
@@ -317,7 +317,7 @@ export default {
     align-items: center;
   }
 .detail_box_back{
-  background: url("http://cdn.bitkeep.vip/u_b_4dcd9190-5bec-11ec-bdbc-7722494dfa58.png") no-repeat;
+  background: url("https://cdn.bitkeep.vip/u_b_4dcd9190-5bec-11ec-bdbc-7722494dfa58.png") no-repeat;
   background-size: 100% 100%;
 }
 .detail_box {
@@ -490,7 +490,7 @@ export default {
   }
   .setBackground {
     margin-top: 34px;
-    background: url("http://cdn.bitkeep.vip/u_b_efc07e80-5e4f-11ec-85be-634c19e2b84d.png") no-repeat;
+    background: url("https://cdn.bitkeep.vip/u_b_efc07e80-5e4f-11ec-85be-634c19e2b84d.png") no-repeat;
     background-size: 100% 100%;
   }
   .detail_box_nft {

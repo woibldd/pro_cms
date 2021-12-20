@@ -9,7 +9,7 @@
         <div class="warp-invite colorBackground3">
           <div class="warp-invite-banner">
             <img
-              src="http://cdn.bitkeep.vip/u_b_d6f84c30-5e3f-11ec-bd49-b1b354a240c8.png"
+              src="https://cdn.bitkeep.vip/u_b_d6f84c30-5e3f-11ec-bd49-b1b354a240c8.png"
             />
             <div class="imgText">
               <div class="textPrimary0 imgTextTitle">{{ $t("blindboxInvite.toEarn") }}</div>
@@ -25,13 +25,13 @@
             <!-- <div class="borderBottom colorLine"></div> -->
             <div class="invite-setP">
               <div class="warp-invite-produced" @click="inviteFriendList">
-                <span class="textSecond1"><img src="http://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.invitedNumber") }}</span>
+                <span class="textSecond1"><img src="https://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.invitedNumber") }}</span>
                 <span class="setFontFamily setDisplay textPrimary0">
                   <van-icon name="arrow" color='#999BA3'/>
                 </span>
               </div>
               <div class="warp-invite-produced" @click="rewardsList">
-                <span class="textSecond1"><img src="http://cdn.bitkeep.vip/u_b_e7b6fe30-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.tokenRewards") }}</span>
+                <span class="textSecond1"><img src="https://cdn.bitkeep.vip/u_b_e7b6fe30-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.tokenRewards") }}</span>
                 <span class="setFontFamily">
                   <van-icon name="arrow" color='#999BA3'/>
                 </span>
@@ -39,13 +39,13 @@
             </div>
             <!-- <div class="invite-setP">
               <div class="warp-invite-produced">
-                <span><img src="http://cdn.bitkeep.vip/u_b_e7b63ae0-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.NFTRewards") }}</span>
+                <span><img src="https://cdn.bitkeep.vip/u_b_e7b63ae0-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.NFTRewards") }}</span>
                 <span class="setFontFamily">0
                   <van-icon name="arrow" color='#999BA3'/>
                 </span>
               </div>
               <div class="warp-invite-produced">
-                <span><img src="http://cdn.bitkeep.vip/u_b_e7b5c5b0-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.boxRewards") }}</span>
+                <span><img src="https://cdn.bitkeep.vip/u_b_e7b5c5b0-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.boxRewards") }}</span>
                 <span class="setFontFamily">0
                   <van-icon name="arrow" color='#999BA3'/>
                 </span>
@@ -68,7 +68,7 @@
                     </span> 
                   </span>
                   <span class="setFontFamily">
-                    <van-icon name=http://cdn.bitkeep.vip/u_b_1a477b90-3579-11ec-8690-93c311cd0b88.png></van-icon>
+                    <van-icon name=https://cdn.bitkeep.vip/u_b_1a477b90-3579-11ec-8690-93c311cd0b88.png></van-icon>
                   </span>
                 </div>
               </div>
@@ -79,12 +79,12 @@
           </div>
           <div class="warp-invite-imgLink setTop">
             <div @click="toReward" class="setBg">
-              <img src="http://cdn.bitkeep.vip/u_b_020a3500-5fb7-11ec-82cb-a72d43841bd3.png" alt="">
+              <img src="https://cdn.bitkeep.vip/u_b_020a3500-5fb7-11ec-82cb-a72d43841bd3.png" alt="">
             </div>
-            <!-- <img src="http://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
-            <img src="http://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
-            <img src="http://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
-            <img src="http://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt=""> -->
+            <!-- <img src="https://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
+            <img src="https://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
+            <img src="https://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
+            <img src="https://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt=""> -->
           </div>
         </div>
       </div>

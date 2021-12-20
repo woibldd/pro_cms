@@ -193,7 +193,7 @@ export default {
     align-items: center;
   }
   .noData {
-    background: url("http://cdn.bitkeep.vip/u_b_652ddc30-572a-11ec-9c68-896cd381f4ca.png")
+    background: url("https://cdn.bitkeep.vip/u_b_652ddc30-572a-11ec-9c68-896cd381f4ca.png")
       center center no-repeat;
     background-size: 100% 100%;
     height: 198px;

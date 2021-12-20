@@ -40,7 +40,7 @@
                   "
                 >
                   <img
-                    src="http://cdn.bitkeep.vip/u_b_04e2ea10-596d-11ec-bdbc-7722494dfa58.png"
+                    src="https://cdn.bitkeep.vip/u_b_04e2ea10-596d-11ec-bdbc-7722494dfa58.png"
                     alt=""
                   />
                   &nbsp; +{{item.reward}} BKB
@@ -52,7 +52,7 @@
       </div>
       <div class="noData" v-else>
         <img
-          src="http://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png"
+          src="https://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png"
           alt=""
         />
         <p class="textSecond3">{{$t('mining.noData')}}</p>
