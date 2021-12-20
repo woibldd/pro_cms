@@ -264,7 +264,7 @@ module.exports = {
     Objectives3: 'Nếu Y là ≥ 20 triệu và tương đương ≤ 30 triệu USDT, X = 20.000BKB',
     Objectives4: 'Nếu Y> 30 triệu USDT tương đương, X = 40.000BKB',
     howContent2: 'Phần thưởng giao dịch BKSwap được chia thành 3 cấp độ như sau:',
-    Objectives11: ' Khi tổng số tiền giao dịch trên BKSwap trong một ngày nhất định là ≥ 5 triệu USDT và ≤ 10 triệu USDT tương đương, thì theo quy tắc hợp đồng, BitKeep sẽ cung cấp số tiền BKB bằng 200% phí giao dịch trong ngày như phần thưởng trong ngày. Tất cả người dùng tham gia giao dịch BKSwap trong ngày sẽ nhận được một phần tương xứng (tùy thuộc vào số tiền giao dịch của từng người dùng)',
+    Objectives11: ' Khi tổng số tiền giao dịch trên BKSwap trong một ngày nhất định là ≥ 5 triệu USDT và ≤ 10 triệu USDT tương đương, thì theo quy tắc hợp đồng, BitKeep sẽ cung cấp số tiền BKB bằng 300% phí giao dịch trong ngày như phần thưởng trong ngày. Tất cả người dùng tham gia giao dịch BKSwap trong ngày sẽ nhận được một phần tương xứng (tùy thuộc vào số tiền giao dịch của từng người dùng)',
     Objectives12: ' Khi tổng số tiền giao dịch trên BKSwap vào một ngày nhất định rơi vào khoảng từ 10 triệu đến 40 triệu USDT tương đương, thì theo các quy tắc hợp đồng, BitKeep sẽ cung cấp một số tiền BKB bằng 200% phí giao dịch trong ngày làm phần thưởng của ngày. Tất cả người dùng tham gia giao dịch BKSwap trong ngày sẽ nhận được một phần tương xứng',
     Objectives13: ' Nếu tổng số tiền giao dịch của BKSwap trong ngày lớn hơn 40 triệu USDT tương đương, theo quy định của hợp đồng, BKB sẽ được phát hành 100% phí giao dịch trong ngày làm tổng phần thưởng trong ngày và tất cả người dùng tham gia trong giao dịch trong ngày sẽ được chia theo tỷ lệ',
     how3: '3. Khoảng thời gian:',
