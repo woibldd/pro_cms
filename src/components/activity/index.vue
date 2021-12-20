@@ -4,7 +4,7 @@
       <div class="about-wrap">
         <div class="about-wrap-pos">
           <img
-            src="http://cdn.bitkeep.vip/u_b_0978f140-2bec-11ec-b5c0-c1ce5b0a2535.png"
+            src="https://cdn.bitkeep.vip/u_b_0978f140-2bec-11ec-b5c0-c1ce5b0a2535.png"
             alt=""
           />
           <p>{{ $t("mining.about") }}</p>
@@ -13,7 +13,7 @@
       <div class="about-content">
         <div class="about-title">
           <img
-            src="http://cdn.bitkeep.vip/u_b_d9de0340-3b9e-11ec-8e63-1db435df936c.png"
+            src="https://cdn.bitkeep.vip/u_b_d9de0340-3b9e-11ec-8e63-1db435df936c.png"
           />
           <span>{{ $t("mining.Introduce") }}</span>
         </div>
@@ -34,14 +34,14 @@
     <div class="distribution">
       <div class="distribution-title">
         <img
-          src="http://cdn.bitkeep.vip/u_b_244b3eb0-2bec-11ec-b5c0-c1ce5b0a2535.png"
+          src="https://cdn.bitkeep.vip/u_b_244b3eb0-2bec-11ec-b5c0-c1ce5b0a2535.png"
           alt=""
         />
         <span>{{ $t("mining.distribution") }}</span>
       </div>
       <div class="charts-img">
         <img
-          src="http://cdn.bitkeep.vip/u_b_9aa7b0e0-3dec-11ec-91b2-899abceaa0ac.png"
+          src="https://cdn.bitkeep.vip/u_b_9aa7b0e0-3dec-11ec-91b2-899abceaa0ac.png"
           alt=""
         />
         <p class="total">
@@ -90,7 +90,7 @@
     <div class="hold">
       <div class="hold-title">
         <img
-          src="http://cdn.bitkeep.vip/u_b_5930f660-2bec-11ec-b5c0-c1ce5b0a2535.png"
+          src="https://cdn.bitkeep.vip/u_b_5930f660-2bec-11ec-b5c0-c1ce5b0a2535.png"
           alt=""
         />
         <span>{{ $t("mining.hold") }}</span>
@@ -109,14 +109,14 @@
         <div class="appreciation-grid-flex">
           <div>
             <img
-              src="http://cdn.bitkeep.vip/u_b_06654b70-4b63-11ec-9826-e3fc5958ff1e.png"
+              src="https://cdn.bitkeep.vip/u_b_06654b70-4b63-11ec-9826-e3fc5958ff1e.png"
               alt=""
             />
             <span>{{ $t("mining.hold1") }}</span>
           </div>
           <div>
             <img
-              src="http://cdn.bitkeep.vip/u_b_066e4c20-4b63-11ec-9826-e3fc5958ff1e.png"
+              src="https://cdn.bitkeep.vip/u_b_066e4c20-4b63-11ec-9826-e3fc5958ff1e.png"
               alt=""
             />
             <span>{{ $t("mining.hold2") }}</span>
@@ -125,14 +125,14 @@
         <div class="appreciation-grid-flex">
           <div>
             <img
-              src="http://cdn.bitkeep.vip/u_b_066dfe00-4b63-11ec-9826-e3fc5958ff1e.png"
+              src="https://cdn.bitkeep.vip/u_b_066dfe00-4b63-11ec-9826-e3fc5958ff1e.png"
               alt=""
             />
             <span>{{ $t("mining.hold3") }}</span>
           </div>
           <div>
             <img
-              src="http://cdn.bitkeep.vip/u_b_066f5d90-4b63-11ec-9826-e3fc5958ff1e.png"
+              src="https://cdn.bitkeep.vip/u_b_066f5d90-4b63-11ec-9826-e3fc5958ff1e.png"
               alt=""
             />
             <span>{{ $t("mining.hold4") }}</span>
@@ -141,14 +141,14 @@
         <div class="appreciation-grid-flex">
           <div>
             <img
-              src="http://cdn.bitkeep.vip/u_b_066e9a40-4b63-11ec-9826-e3fc5958ff1e.png"
+              src="https://cdn.bitkeep.vip/u_b_066e9a40-4b63-11ec-9826-e3fc5958ff1e.png"
               alt=""
             />
             <span>{{ $t("mining.hold5") }}</span>
           </div>
           <div>
             <img
-              src="http://cdn.bitkeep.vip/u_b_066f0f70-4b63-11ec-9826-e3fc5958ff1e.png"
+              src="https://cdn.bitkeep.vip/u_b_066f0f70-4b63-11ec-9826-e3fc5958ff1e.png"
               alt=""
             />
             <span>{{ $t("mining.hold6") }}</span>
@@ -157,14 +157,14 @@
         <div class="appreciation-grid-flex">
           <div>
             <img
-              src="http://cdn.bitkeep.vip/u_b_0699f000-4b63-11ec-9826-e3fc5958ff1e.png"
+              src="https://cdn.bitkeep.vip/u_b_0699f000-4b63-11ec-9826-e3fc5958ff1e.png"
               alt=""
             />
             <span>{{ $t("mining.hold7") }}</span>
           </div>
           <div>
             <img
-              src="http://cdn.bitkeep.vip/u_b_069a6530-4b63-11ec-9826-e3fc5958ff1e.png"
+              src="https://cdn.bitkeep.vip/u_b_069a6530-4b63-11ec-9826-e3fc5958ff1e.png"
               alt=""
             />
             <span>{{ $t("mining.hold8") }}</span>
@@ -176,7 +176,7 @@
     <div class="appreciation">
       <div class="appreciation-title">
         <img
-          src="http://cdn.bitkeep.vip/u_b_dfdfdf40-3e1c-11ec-9b39-4f7f91c175c3.png"
+          src="https://cdn.bitkeep.vip/u_b_dfdfdf40-3e1c-11ec-9b39-4f7f91c175c3.png"
         />
         <span>{{ $t("mining.appreciation") }}</span>
       </div>
@@ -184,14 +184,14 @@
         <div class="appreciation-grid-flex">
           <div>
             <img
-              src="http://cdn.bitkeep.vip/u_b_9f4a5d20-3e1c-11ec-9b39-4f7f91c175c3.png"
+              src="https://cdn.bitkeep.vip/u_b_9f4a5d20-3e1c-11ec-9b39-4f7f91c175c3.png"
               alt=""
             />
             <span>{{ $t("mining.appreciationSwap") }}</span>
           </div>
           <div>
             <img
-              src="http://cdn.bitkeep.vip/u_b_9f4a3610-3e1c-11ec-9b39-4f7f91c175c3.png"
+              src="https://cdn.bitkeep.vip/u_b_9f4a3610-3e1c-11ec-9b39-4f7f91c175c3.png"
               alt=""
             />
             <span>{{ $t("mining.appreciationCoin") }}</span>
@@ -200,14 +200,14 @@
         <div class="appreciation-grid-flex">
           <div>
             <img
-              src="http://cdn.bitkeep.vip/u_b_9f494bb0-3e1c-11ec-9b39-4f7f91c175c3.png"
+              src="https://cdn.bitkeep.vip/u_b_9f494bb0-3e1c-11ec-9b39-4f7f91c175c3.png"
               alt=""
             />
             <span>{{ $t("mining.appreciationPool") }}</span>
           </div>
           <div>
             <img
-              src="http://cdn.bitkeep.vip/u_b_9f4a3611-3e1c-11ec-9b39-4f7f91c175c3.png"
+              src="https://cdn.bitkeep.vip/u_b_9f4a3611-3e1c-11ec-9b39-4f7f91c175c3.png"
               alt=""
             />
             <span>{{ $t("mining.appreciationValut") }}</span>
@@ -221,7 +221,7 @@
       <div class="more-line">
         <a href="https://www.bitkeep.com/" target="_blank">
           <img
-            src="http://cdn.bitkeep.vip/u_b_ddcf2860-2bec-11ec-b5c0-c1ce5b0a2535.png"
+            src="https://cdn.bitkeep.vip/u_b_ddcf2860-2bec-11ec-b5c0-c1ce5b0a2535.png"
             alt=""
           /><span>{{ $t("mining.website") }}</span>
         </a>
@@ -230,7 +230,7 @@
       <div class="more-line">
         <a href="https://twitter.com/BitKeepOS" target="_blank">
           <img
-            src="http://cdn.bitkeep.vip/u_b_ddcf4f71-2bec-11ec-b5c0-c1ce5b0a2535.png"
+            src="https://cdn.bitkeep.vip/u_b_ddcf4f71-2bec-11ec-b5c0-c1ce5b0a2535.png"
             alt=""
           />
           <span>{{ $t("mining.twitter") }}</span>
@@ -240,7 +240,7 @@
       <div class="more-line">
         <a href="https://t.me/bitkeep" target="_blank">
           <img
-            src="http://cdn.bitkeep.vip/u_b_ddcf0150-2bec-11ec-b5c0-c1ce5b0a2535.png"
+            src="https://cdn.bitkeep.vip/u_b_ddcf0150-2bec-11ec-b5c0-c1ce5b0a2535.png"
             alt=""
           />
           <span>{{ $t("mining.telegram") }}</span>
@@ -250,7 +250,7 @@
       <div class="more-line">
         <a :href="src" target="_blank">
           <img
-            src="http://cdn.bitkeep.vip/u_b_ddceda40-2bec-11ec-b5c0-c1ce5b0a2535.png"
+            src="https://cdn.bitkeep.vip/u_b_ddceda40-2bec-11ec-b5c0-c1ce5b0a2535.png"
             alt=""
           />
           <span>{{ $t("mining.explorer") }}</span>
