@@ -32,7 +32,7 @@
               />
               <span class="textSecond1">{{ $t("mining.tradingRewards") }}</span>
             </div>
-            <div class="invite_number setFontFamily">{{ milliFormat(unclaimReward) }} BKB</div>
+            <div class="invite_number textPrimary0 setFontFamily">{{ milliFormat(unclaimReward) }} BKB</div>
           </div>
           <div class="content_invite_flex_cont setMargin">
             <div>
@@ -42,7 +42,7 @@
               />
               <span class="textSecond1">{{ $t("mining.invitationRewards") }}</span>
             </div>
-            <div class="invite_number setFontFamily">{{milliFormat(sumReward)}} BKB</div>
+            <div class="invite_number textPrimary0 setFontFamily">{{milliFormat(sumReward)}} BKB</div>
           </div>
         </div>
       </div>
@@ -188,7 +188,6 @@ export default {
         font-size: 14px;
       }
       .invite_number{
-        color: #0E1B40;
         font-size: 14px;
       }
     }
