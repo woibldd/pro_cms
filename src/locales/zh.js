@@ -346,6 +346,7 @@ module.exports = {
         yesterday: 'Yesterday',
         claim: 'Claim',
         ClaimRewards: 'Claim Rewards',
+        ClaimRewardsub: 'Rewards will be settled at 24:00 each day',
         confirm: 'Confirm',
         noData: 'No data',
         RuleTitle: 'Invite Rules',

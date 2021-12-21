@@ -327,6 +327,7 @@ module.exports = {
     yesterday: '昨日',
     claim: '請求',
     ClaimRewards: '報酬を請求する',
+    ClaimRewardsub: 'その日の報酬はその夜の12:00に決済されます',
     confirm: '確認',
     noData: 'データなし',
     invitationReward: "招待報酬",

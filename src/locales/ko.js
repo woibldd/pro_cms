@@ -327,6 +327,7 @@ module.exports = {
     yesterday: '어제',
     claim: '주장하다',
     ClaimRewards: '보상 청구',
+    ClaimRewardsub: '오늘의 보상은 그날 밤 12시에 정산됩니다',
     confirm: '확인하다',
     noData: '데이터 없음',
     invitationReward: "초대 보상",

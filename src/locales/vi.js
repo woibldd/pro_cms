@@ -328,6 +328,7 @@ module.exports = {
     yesterday: 'Hôm qua',
     claim: 'Yêu cầu',
     ClaimRewards: 'Yêu cầu phần thưởng',
+    ClaimRewardsub: 'Phần thưởng sẽ được giải quyết vào lúc 12:00 tối nay',
     confirm: 'Xác nhận',
     noData: 'Không có dữ liệu',
     invitationReward: "Phần thưởng lời mời",

@@ -8,10 +8,11 @@
     @click-overlay="close"
     @click-close-icon="close"
     class="colorBackground1"
-    :style="{ height: '53%', overflow: 'hidden' }"
+    :style="{ height: '55%', overflow: 'hidden' }"
   >
     <div class="title">
-      <p class="textPrimary0">{{ $t("mining.ClaimRewards") }}</p>
+      <div class="textPrimary0">{{ $t("mining.ClaimRewards") }}</div>
+      <div class="textPrimary0 subTitle">{{ $t("mining.ClaimRewardsub") }}</div>
     </div>
     <div class="line colorLine"></div>
     <div class="content">
@@ -146,6 +147,11 @@ export default {
   text-align: center;
   font-size: 16px;
   font-weight: 500;
+}
+.subTitle{
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: normal;
 }
 .setOpactive {
   opacity: 0.3;
