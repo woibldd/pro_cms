@@ -12,8 +12,8 @@
               src="https://cdn.bitkeep.vip/u_b_d6f84c30-5e3f-11ec-bd49-b1b354a240c8.png"
             />
             <div class="imgText">
-              <div class="textPrimary0 imgTextTitle">{{ $t("blindboxInvite.toEarn") }}</div>
-              <div class="textPrimary0 imgTextContent">{{ $t("blindboxInvite.rewardsMore") }}</div>
+              <div class="imgTextTitle">{{ $t("blindboxInvite.toEarn") }}</div>
+              <div class="imgTextContent">{{ $t("blindboxInvite.rewardsMore") }}</div>
             </div>
           </div>
           <div class="warp-invite-one colorBackground1 setTop">
@@ -79,7 +79,7 @@
           </div>
           <div class="warp-invite-imgLink setTop">
             <div @click="toReward" class="setBg">
-              <img src="https://cdn.bitkeep.vip/u_b_020a3500-5fb7-11ec-82cb-a72d43841bd3.png" alt="">
+              <img src="https://cdn.bitkeep.vip/u_b_c9755b00-6206-11ec-9638-bfd886e3565b.png" alt="">
             </div>
             <!-- <img src="https://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
             <img src="https://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
@@ -209,7 +209,6 @@ export default {
   .warp-invite-imgLink{
     padding: 0 16px 10px;
     .setBg{
-      background: #D6DEEB;
       border-radius: 8px;
       margin-top: 10px;
     }
@@ -227,14 +226,17 @@ export default {
       position: absolute;
       top: 45px;
       left: 16px;
-      width:200px;
       .imgTextTitle{
         font-size: 26px;
         font-weight: bold;
         line-height: 28px;
+        width:200px;
+        color: #080D21;
       }
       .imgTextContent{
         font-size: 12px;
+        width:220px;
+        color: #080D21;
       }
     }
   }

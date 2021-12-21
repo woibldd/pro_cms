@@ -331,7 +331,7 @@ module.exports = {
         appreciationSwap: 'Swap commission deduction',
         appreciationCoin: 'Payment',
         appreciationPool: 'Multiple staking pool',
-        appreciationValut: 'Valut',
+        appreciationValut: 'Vault',
         more: 'More about BKB',
         website: 'Official website',
         paper: 'White paper',
