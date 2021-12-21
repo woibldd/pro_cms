@@ -8,7 +8,7 @@
     @click-overlay="close"
     @click-close-icon="close"
     class="colorBackground1"
-    :style="{ height: '55%', overflow: 'hidden' }"
+    :style="{ height: '54%', overflow: 'hidden' }"
   >
     <div class="title">
       <div class="textPrimary0">{{ $t("mining.ClaimRewards") }}</div>
@@ -166,7 +166,7 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 60%;
+  // height: 100%;
   overflow: auto;
   padding-top: 20px;
   .content_invite {
