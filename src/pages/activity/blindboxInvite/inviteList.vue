@@ -1,5 +1,5 @@
 <template>
-  <div class="invite-list colorBackground3">
+  <div class="invite-list colorBackground0">
     <div class="loading" v-if="isLoading">
       <van-loading color="#1989fa" vertical
         >{{ $t("base.loading") }}...</van-loading

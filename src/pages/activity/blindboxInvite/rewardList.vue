@@ -1,5 +1,5 @@
 <template>
-  <div class="rewards-list colorBackground3">
+  <div class="rewards-list colorBackground0">
     <div class="loading" v-if="isLoading">
       <van-loading color="#1989fa" vertical
         >{{ $t("base.loading") }}...</van-loading
