@@ -292,7 +292,7 @@ const host_user_instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
   baseURL: "/",
   timeout: 60000,
   headers: {
-    token: "1a5b1cbcc613d8b52860262109d247a3",
+    token: "",
     // token: "",
     language: "en",
     currency: "",
