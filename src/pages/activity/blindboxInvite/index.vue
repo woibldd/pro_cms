@@ -1,12 +1,12 @@
 <template>
-  <div class="warp-invite colorBackground3">
+  <div class="warp-invite colorBackground0">
     <div class="loading" v-if="isLoading">
       <van-loading color="#1989fa" vertical
         >{{ $t("base.loading") }}...</van-loading
       >
     </div>
       <div v-else>
-        <div class="warp-invite colorBackground3">
+        <div class="warp-invite colorBackground0">
           <div class="warp-invite-banner">
             <img
               src="https://cdn.bitkeep.vip/u_b_d6f84c30-5e3f-11ec-bd49-b1b354a240c8.png"
