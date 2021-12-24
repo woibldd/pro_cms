@@ -2804,7 +2804,7 @@ module.exports = {
       "TurnedOnText": "Turned on",
       "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired",
-      "ShareWithMe": "Shared me",
+      "ShareWithMe": "By invitation",
       "noHelper": "No friends have been helped",
       "noInvite": "No friends have been invited",
       willOpened: "To be opened",
@@ -3243,7 +3243,7 @@ module.exports = {
       "TurnedOnText": "Turned on",
       "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired",
-      "ShareWithMe": "Shared me",
+      "ShareWithMe": "By invitation",
       willOpened: "To be opened",
       noData: {
         title: "No blind box",
@@ -3645,7 +3645,7 @@ module.exports = {
       "TurnedOnText": "Turned on",
       "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired",
-      "ShareWithMe": "Shared me",
+      "ShareWithMe": "By invitation",
       willOpened: "To be opened",
       noData: {
         title: "No blind box",
@@ -4047,7 +4047,7 @@ module.exports = {
       "TurnedOnText": "Turned on",
       "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired",
-      "ShareWithMe": "Shared me",
+      "ShareWithMe": "By invitation",
       willOpened: "To be opened",
       noData: {
         title: "No blind box",
@@ -4466,7 +4466,7 @@ module.exports = {
       "TurnedOnText": "Turned on",
       "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired",
-      "ShareWithMe": "Shared me",
+      "ShareWithMe": "By invitation",
       "noHelper": "No friends have been helped",
       "noInvite": "No friends have been invited",
       willOpened: "To be opened",
@@ -6679,6 +6679,7 @@ function wrapFunctional(options) {
 
 
 const components = {
+  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 168)).then(c => wrapFunctional(c.default || c)),
   CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 77)).then(c => wrapFunctional(c.default || c)),
   CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 68)).then(c => wrapFunctional(c.default || c)),
   Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 72)).then(c => wrapFunctional(c.default || c)),
@@ -6693,8 +6694,7 @@ const components = {
   VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 10).then(__webpack_require__.bind(null, 233)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutPainter: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-painter */ 14).then(__webpack_require__.bind(null, 100)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutQrcode: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-qrcode */ 15).then(__webpack_require__.bind(null, 79)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 16).then(__webpack_require__.bind(null, 101)).then(c => wrapFunctional(c.default || c)),
-  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 168)).then(c => wrapFunctional(c.default || c))
+  VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 16).then(__webpack_require__.bind(null, 101)).then(c => wrapFunctional(c.default || c))
 };
 
 for (const name in components) {

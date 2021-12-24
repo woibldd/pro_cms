@@ -79,7 +79,7 @@ module.exports = {
       "TurnedOnText": "Turned on",
       "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired",
-      "ShareWithMe": "Shared me",
+      "ShareWithMe": "By invitation",
       "noHelper": "No friends have been helped",
       "noInvite": "No friends have been invited",
       willOpened:"To be opened",

@@ -606,7 +606,7 @@ export default {
 
         border-radius: 10px;
         box-sizing: border-box;
-        padding: 10px;
+        padding: 5px;
         margin: 10px 16px;
         display: flex;
         justify-content: space-between;
@@ -641,7 +641,7 @@ export default {
             background: linear-gradient(269.79deg, #00C7D7 16.73%, #73FFDD 82.64%);
             border-radius: 50%;
             transform: scale(1,0.5);
-            bottom: -56px;
+            bottom: -54px;
             left: -21px;
             position: absolute;
           }
