@@ -62,7 +62,7 @@ module.exports = {
       "TurnedOnText": "Turned on",
       "SuccessfullyOpenedText": "Opened",
       "expiredText": "expired",
-      "ShareWithMe": "Shared with me",
+      "ShareWithMe": "Shared me",
       willOpened:"To be opened",
       noData:{
         title:"No blind box",

@@ -39,7 +39,8 @@
                     invaild: item.status == 3
                   }"
                 >
-                  <div class="tag">
+                <!-- //左上角tag 修改为下面 -->
+                  <!-- <div class="tag">
                     <span
                       :class="{
                         btn: true,
@@ -63,20 +64,28 @@
                       }}</span
                     >
                     <span v-else></span>
-                  </div>
+                  </div> -->
                   <div class="list_item_pic">
                     <van-image
                       width="100%"
                       height="100%"
+                      fit='cover'
                       :src="item.cover_image"
                     />
+                    <!-- 盲盒角标 -->
+                    <div class="setBorderT" v-if="item.is_owner != 1"></div>
+                    <div class="setBorderText">
+                      <span v-if="item.is_owner != 1">{{
+                        $t("ActivityBlindbox.ActivityBlindboxList.ShareWithMe")
+                      }}</span>
+                    </div>
                   </div>
                   <div class="list_item_cont">
                     <div
                       :class="{
                         title: true,
                         color_blod: true,
-                        'van-ellipsis': true,
+                        'clamp3': true,
                         [locale]: true
                       }"
                     >
@@ -459,6 +468,10 @@ export default {
       vertical-align: middle;
       margin-right: 4px;
       margin-top: -2px;
+      img{
+        width: 20px;
+        height: 20px;
+      }
     }
   }
   .blindbox_list_header {
@@ -598,26 +611,50 @@ export default {
         display: flex;
         justify-content: space-between;
         border-radius: 10px;
-        align-items: center;
+        position: relative;
         .list_item_pic {
-          height: 74px;
+          height: 104px;
           width: 74px;
           border-radius: 6px;
           overflow: hidden;
           display: flex;
+          position: relative;
           img {
             width: 100%;
             height: 100%;
+          }
+          .setBorderText{
+            bottom: 2px;
+            position: absolute;
+            color: #fff;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+          }
+          .setBorderT{
+            width: 117px;
+            height:100px;
+            background: linear-gradient(269.79deg, #00C7D7 16.73%, #73FFDD 82.64%);
+            border-radius: 50%;
+            transform: scale(1,0.5);
+            bottom: -56px;
+            left: -21px;
+            position: absolute;
           }
         }
         .list_item_cont {
           flex: 1;
           // height: 28px;
-          width: 161px;
+          // width: 161px;
           color: #7f828f;
           font-size: 10px;
           line-height: 14px;
           margin: 0 10px;
+          position: relative;
           .title {
             margin-top: 5px;
             font-size: 16px;
@@ -625,6 +662,7 @@ export default {
             line-height: 18px;
             letter-spacing: 0px;
             color: #080d21;
+            word-break: break-word;
             &.en {
               line-height: 18px;
             }
@@ -636,19 +674,26 @@ export default {
             color: #4b5373;
           }
           .time {
+            width: 161px;
             font-size: 10px;
             line-height: 12px;
             color: #4b5373;
+            position: absolute;
+            bottom: 5px;
             // line-height: 10px;  //有的最小12px
           }
         }
         .list_item_btn {
-          height: 74px;
-          display: flex;
-          display: flex;
-          align-items: flex-end;
-          // align-items: flex-end;
-          // align-self: flex-end;
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+        }
+        .clamp3{
+          display: -webkit-box;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
         }
       }
     }
