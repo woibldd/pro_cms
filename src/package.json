@@ -20,6 +20,7 @@
     "firebase": "^9.0.1",
     "html2canvas": "^1.0.0-rc.7",
     "image-to-base64": "^2.2.0",
+    "moment": "^2.29.1",
     "nuxt": "^2.15.3",
     "qrcode": "^1.4.4",
     "vant": "^2.12.22",

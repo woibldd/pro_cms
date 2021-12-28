@@ -42,6 +42,13 @@
     "_name": "_e16d1052"
   },
   {
+    "name": "activity-staking",
+    "path": "/activity/staking",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/staking/index.vue",
+    "chunkName": "pages/activity/staking/index",
+    "_name": "_488fe13a"
+  },
+  {
     "name": "activity-blindbox-detail",
     "path": "/activity/blindbox/detail",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindbox/detail/index.vue",
@@ -152,6 +159,27 @@
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/mining/RuleDetail.vue",
     "chunkName": "pages/activity/mining/RuleDetail",
     "_name": "_d61615d6"
+  },
+  {
+    "name": "activity-staking-addPool",
+    "path": "/activity/staking/addPool",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/staking/addPool.vue",
+    "chunkName": "pages/activity/staking/addPool",
+    "_name": "_aec9c9a4"
+  },
+  {
+    "name": "activity-staking-myPool",
+    "path": "/activity/staking/myPool",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/staking/myPool.vue",
+    "chunkName": "pages/activity/staking/myPool",
+    "_name": "_9a96d6b2"
+  },
+  {
+    "name": "activity-staking-protocol",
+    "path": "/activity/staking/protocol",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/staking/protocol.vue",
+    "chunkName": "pages/activity/staking/protocol",
+    "_name": "_2dd20cd2"
   },
   {
     "name": "activity-blindboxInvite-component-createPoster",

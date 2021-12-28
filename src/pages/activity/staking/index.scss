@@ -1,0 +1,235 @@
+.staking-wrap {
+    min-height: 100vh;
+    .loading {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .staking-wrap-line {
+        width: 100%;
+        height: 1px;
+    }
+    .staking-wrap-banner {
+        position: relative;
+        img {
+            width: 100%;
+        }
+        .staking-wrap-imgText {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            .imgTextTitle {
+                font-size: 26px;
+                font-weight: bold;
+                line-height: 28px;
+                width: 140px;
+                color: #080d21;
+            }
+        }
+    }
+    .staking-wrap-box {
+        padding: 16px;
+        .staking-wrap-box-Introduce {
+            border-radius: 8px;
+            .staking-wrap-box-Introduce-title {
+                height: 36px;
+                line-height: 36px;
+                img {
+                    width: 20px;
+                    height: 20px;
+                    display: inline-block;
+                    margin-left: 15px;
+                    vertical-align: sub;
+                }
+                span {
+                    font-weight: 600;
+                    font-size: 16px;
+                    margin-left: 5px;
+                    display: inline-block;
+                }
+            }
+            .staking-wrap-box-Introduce-content {
+                padding: 10px 15px 0;
+                font-size: 12px;
+                line-height: 20px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+            }
+            .viewAll {
+                text-align: right;
+                font-size: 14px;
+                line-height: 12px;
+                margin: 6px 15px 0;
+                padding-bottom: 10px;
+            }
+        }
+        .staking-wrap-box-Data {
+            border-radius: 8px;
+            margin-top: 10px;
+            .staking-wrap-box-Data-title {
+                height: 36px;
+                line-height: 36px;
+                img {
+                    width: 20px;
+                    height: 20px;
+                    display: inline-block;
+                    margin-left: 15px;
+                    vertical-align: sub;
+                }
+                span {
+                    font-weight: 600;
+                    font-size: 16px;
+                    margin-left: 5px;
+                    display: inline-block;
+                }
+            }
+            .staking-wrap-box-Data-content {
+                padding: 10px 15px 20px;
+                .staking-wrap-box-Data-flex {
+                    display: flex;
+                    justify-content: space-between;
+                    .staking-wrap-box-Data-left {
+                        text-align: left;
+                        :first-child {
+                            font-size: 12px;
+                        }
+                        :last-child {
+                            font-size: 16px;
+                            margin-top: 5px;
+                        }
+                    }
+                    .staking-wrap-box-Data-right {
+                        text-align: right;
+                        :first-child {
+                            font-size: 12px;
+                        }
+                        :last-child {
+                            font-size: 16px;
+                            margin-top: 5px;
+                        }
+                    }
+                }
+            }
+        }
+        .staking-wrap-box-pool {
+            border-radius: 8px;
+            margin-top: 10px;
+            .staking-wrap-box-pool-title {
+                display: flex;
+                height: 54px;
+                align-items: center;
+                position: relative;
+                .bigImg {
+                    width: 30px;
+                    height: 30px;
+                    display: inline-block;
+                    margin-left: 15px;
+                    vertical-align: middle;
+                }
+                .smallImg{
+                    position: absolute;
+                    bottom: 10px;
+                    width: 14px;
+                    height: 14px;
+                    border-radius: 50%;
+                    left: 34px;
+                }
+            }
+            .staking-wrap-box-pool-title-flex {
+                display: flex;
+                justify-content: space-between;
+                margin-left: 10px;
+                .staking-wrap-box-pool-title-left {
+                    :first-child {
+                        font-weight: 600;
+                        font-size: 16px;
+                    }
+                    :last-child {
+                        font-size: 12px;
+                        margin-top: 2px;
+                    }
+                }
+                .staking-wrap-box-pool-title-right {
+                    text-align: right;
+                    position: absolute;
+                    right: 15px;
+                    :first-child {
+                        font-size: 12px;
+                    }
+                    :last-child {
+                        font-weight: 600;
+                        font-size: 12px;
+                        margin-top: 2px;
+                    }
+                }
+            }
+            .staking-wrap-box-pool-content{
+                padding: 10px 15px 20px;
+                .staking-wrap-box-pool-flex {
+                    display: flex;
+                    justify-content: space-between;
+                    .staking-wrap-box-pool-left {
+                        text-align: left;
+                        :first-child {
+                            font-size: 12px;
+                        }
+                        :last-child {
+                            font-size: 16px;
+                            margin-top: 5px;
+                        }
+                    }
+                    .staking-wrap-box-pool-right {
+                        text-align: right;
+                        :first-child {
+                            font-size: 12px;
+                        }
+                        :last-child {
+                            font-size: 16px;
+                            margin-top: 5px;
+                        }
+                    }
+                }
+                .staking-wrap-box-pool-duration{
+                    margin-top: 20px;
+                    font-size: 12px;
+                }
+                .staking-wrap-box-pool-duration-box{
+                    margin-top: 10px;
+                    .staking-wrap-box-pool-duration-smallBox{
+                        display: inline-block;
+                        text-align: center;
+                        height: 28px;
+                        width: 60px;
+                        line-height: 28px;
+                        border-radius: 4px;
+                        margin-right: 8px;
+                    }
+                    .setBorderColor{
+                        border: 1px solid #495BFF;
+                    }
+                }
+                .staking-wrap-box-pool-stake{
+                    margin-top: 20px;
+                    width: 100%;
+                    height: 50px;
+                    line-height: 50px;
+                    text-align: center;
+                    border-radius: 10px;
+                    font-weight: 500;
+                    font-size: 16px;
+                }
+                .staking-wrap-box-pool-stake-now{
+                    background: #495BFF;
+                    color: #fff;
+                }
+                .staking-wrap-box-pool-stake-soon{
+                    color: #9CA5B3;
+                }
+            }
+        }
+    }
+}

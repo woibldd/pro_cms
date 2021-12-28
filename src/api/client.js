@@ -105,4 +105,17 @@ export const USER_API = {
   getInviteList: (data,headers={}) => host_user_instance.post('user/friendship/getInviteList',data),
   certifyFriendship: (data,headers={}) => host_user_instance.post('user/friendship/certifyFriendship',data),
   activityDoneRewardList: (data,headers={}) => host_user_instance.post('swap/mining/activityDoneRewardList',data),
+  //质押bkb
+// 质押池列表
+  poolList: (data,headers={}) => host_user_instance.post('/user/cloudstaking/poolList',data),
+// 我的质押池列表
+  myPool: (data,headers={}) => host_user_instance.post('/user/cloudstaking/myPool',data),
+// 历史质押池列表
+  stakeHistory: (data,headers={}) => host_user_instance.post('/user/cloudstaking/stakeHistory',data),
+// 取消质押
+  receiveStakingReward: (data,headers={}) => host_user_instance.post('/user/cloudstaking/receiveStakingReward',data),
+  //确认质押
+  staking: (data,headers={}) => host_user_instance.post('/user/cloudstaking/staking',data),
+  //获取token
+  handleGetToken: (data,headers={}) => host_user_instance.post('/user/cloudstaking/getToken',data),
 };

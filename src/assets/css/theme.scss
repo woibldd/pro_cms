@@ -4,6 +4,7 @@
   $theme-light-textSecond3: #9CA5B3;
   $theme-light-colorDisable: #DADBDE;
   $theme-light-colorLine: #F4F5FA;
+  $theme-light-colorLine1: #F0F0F0;
   $theme-light-colorBackground0: #F8F9FA;
   $theme-light-colorBackground1: #FFFFFF;
   $theme-light-colorBackground2: #F3F5F6;
@@ -16,6 +17,7 @@
   $theme-light-colorSecond05: #2F80ED;
   $theme-light-colorSecond06: #4A2FD2;
   $theme-light-colorSecond07: #F04E98;
+  $theme-light-colorSecond08: #FFB800;
   $theme-light-colorBlack: #000000;
   $theme-light-colorwhite: #FFFFFF;
   $theme-light-colorSecond10: rgba(73, 91, 255, 0.1);
@@ -24,6 +26,7 @@
   $theme-light-colorSecond13: rgba(38, 188, 128, 0.1);
   $theme-light-colorSecond14: rgba(255, 129, 70, 0.1);
   $theme-light-colorSecond15: rgba(47, 128, 237, 0.1);
+  $theme-light-colorSecond18: rgba(255, 184, 0, 0.1);
 
 
   $theme-dark-textPrimary0: #DFE0E3;
@@ -32,9 +35,10 @@
   $theme-dark-textSecond3: #6D707D;
   $theme-dark-colorDisable: #5F626D;
   $theme-dark-colorLine: #1F212E;
+  $theme-dark-colorLine1: #2A2D3D;
   $theme-dark-colorBackground0: #0A0E1F;
   $theme-dark-colorBackground1: #171A26;
-  $theme-dark-colorBackground2: #131620;
+  $theme-dark-colorBackground2: #212331;
   $theme-dark-colorBackground3: #212331;
   $theme-dark-colorPrimary: #495BFF;
   $theme-dark-colorSecond01: #1CBDB5;
@@ -44,6 +48,7 @@
   $theme-dark-colorSecond05: #2F80ED;
   $theme-dark-colorSecond06: #4A2FD2;
   $theme-dark-colorSecond07: #F04E98;
+  $theme-dark-colorSecond08: #FFB800;
   $theme-dark-colorwhite: #FFFFFF;
   $theme-dark-colorBlack: #000000;
   $theme-dark-colorSecond10: rgba(73, 91, 255, 0.1);;
@@ -52,6 +57,7 @@
   $theme-dark-colorSecond13: rgba(38, 188, 128, 0.1);
   $theme-dark-colorSecond14: rgba(255, 129, 70, 0.1);
   $theme-dark-colorSecond15: rgba(47, 128, 237, 0.1);
+  $theme-dark-colorSecond18: rgba(255, 184, 0, 0.1);;
 
   .theme-light{
     .textPrimary0{
@@ -72,6 +78,9 @@
     .colorLine{
       background-color: $theme-light-colorLine;
     }
+    .colorLine1{
+      background-color: $theme-light-colorLine1;
+    }
     .colorBackground0{
       background-color: $theme-light-colorBackground0;
     }
@@ -89,6 +98,9 @@
     }
     .colorBackgroundPrimary{
       background-color: $theme-light-colorPrimary;
+    }
+    .colorBackgroundColorSecond11{
+      background-color: $theme-light-colorSecond11;
     }
     .colorPrimary{
       color: $theme-light-colorPrimary;
@@ -114,6 +126,9 @@
     .colorSecond07{
       color: $theme-light-colorSecond07;
     }
+    .colorSecond08{
+      color: $theme-light-colorSecond08;
+    }
     .colorBlack{
       color: $theme-light-colorBlack;
     }
@@ -138,6 +153,9 @@
     .colorSecond15{
       color: $theme-light-colorSecond15;
     }
+    .colorSecond18{
+      background-color: $theme-light-colorSecond18;
+    }
   }
   .theme-dark{
     .textPrimary0{
@@ -158,6 +176,9 @@
     .colorLine{
       background-color: $theme-dark-colorLine;
     }
+    .colorLine1{
+      background-color: $theme-dark-colorLine1;
+    }
     .colorBackground0{
       background-color: $theme-dark-colorBackground0;
     }
@@ -172,6 +193,9 @@
     }
     .colorBackgroundPrimary{
       background-color: $theme-dark-colorPrimary;
+    }
+    .colorBackgroundColorSecond11{
+      background-color: $theme-dark-colorSecond11;
     }
     .colorPrimary{
       color: $theme-dark-colorPrimary;
@@ -197,6 +221,9 @@
     .colorSecond07{
       color: $theme-dark-colorSecond07;
     }
+    .colorSecond08{
+      color: $theme-dark-colorSecond08;
+    }
     .colorBlack{
       color: $theme-dark-colorBlack;
     }
@@ -220,5 +247,8 @@
     }
     .colorSecond15{
       color: $theme-dark-colorSecond15;
+    }
+    .colorSecond18{
+      background-color: $theme-dark-colorSecond18;
     }
   }
