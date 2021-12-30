@@ -11,7 +11,7 @@
     :style="{ overflow: 'hidden' }"
   >
     <div class="title">
-      <div class="textPrimary0">Remove Pool</div>
+      <div class="textPrimary0">{{$t('staking.RemovePool')}}</div>
     </div>
     <div class="line colorLine"></div>
     <div class="content">
@@ -28,12 +28,11 @@
         v-else
       />
       <p class="colorPrimary" v-if='stakingStatus'>
-        <span class="textPrimary0">Congratulations！You get</span><br/>
+        <span class="textPrimary0">{{$t('staking.getBKB')}}</span><br/>
         {{ milliFormat(currencyReward * 1 + stakeAmount) }} BKB
       </p>
-      <p class="textPrimary0 setFontSize" v-else>
-        If you remove before the event ends<br/> you'll loss all Interests.<br/>
-        Are you sure to remove？
+      <p class="textPrimary0 setFontSize" v-html="$t('staking.removeBefore')" v-else>
+       
       </p>
       <div class="content_invite">
         <div class="content_invite_flex colorBackground3">
@@ -43,7 +42,7 @@
                 src="https://cdn.bitkeep.vip/u_b_2297b4f0-66c9-11ec-86f9-3314f114ad70.png"
                 alt=""
               />
-              <span class="textSecond1">Your Stake Amout</span>
+              <span class="textSecond1">{{$t('staking.YourStakeAmount')}}</span>
             </div>
             <div class="invite_number textPrimary0 setFontFamily">{{ milliFormat(stakeAmount) }} BKB</div>
           </div>
@@ -53,7 +52,7 @@
                 src="https://cdn.bitkeep.vip/u_b_e7b6fe30-5427-11ec-a16d-43771b230a03.png"
                 alt=""
               />
-              <span class="textSecond1">Interests</span>
+              <span class="textSecond1">{{$t('staking.Interests')}}</span>
             </div>
             <div class="invite_number colorSecond01 setFontFamily">{{milliFormat(currencyReward)}} BKB</div>
           </div>
@@ -66,19 +65,20 @@
         :class="stakingStatus? 'colorBackground2 textPrimary0' : 'colorBackgroundPrimary colorwhite'"
         :disabled="btnStatus"
         @click="Cancel"
-        >Cancel</van-button>
+        >{{$t('staking.Cancel')}}</van-button>
       <van-button
         class="swap-btn"
         :class="!stakingStatus? 'colorBackground2 textPrimary0' : 'colorBackgroundPrimary colorwhite'"
         :disabled="btnStatus"
-        @click="swapConfirm"
-        >{{!stakingStatus? 'Remove' : 'Confirm'}}</van-button>
+        @click="sign"
+        >{{!stakingStatus? $t('staking.Remove') : $t('staking.Confirm')}}</van-button>
     </div>
   </van-popup>
 </template>
 <script>
 import { debounce } from "@/tools/common";
 import { USER_API } from "@/api/client";
+import { wallet } from "./wallet";
 
 export default {
   data() {
@@ -95,7 +95,7 @@ export default {
       this.visables = n;
     }
   },
-  props: ["showPool", "theme", "currencyReward", "stakeAmount", 'stakingStatus'],
+  props: ["token", "stakeId", "address", "showPool", "theme", "currencyReward", "stakeAmount", 'stakingStatus'],
   mounted () {
     if (this.theme == 1) {
         this.closeIcon =
@@ -108,10 +108,15 @@ export default {
     // this.filter_sumReward = this.stakeAmount && this.milliFormat(this.stakeAmount)
   },
   methods: {
-    swapConfirm: debounce(async function () {
+    swapConfirm: debounce(async function (loginSign) {
       if ((this.currencyReward + this.stakeAmount) == 0) return;
       this.btnStatus = true;
-      const { data, status } = await USER_API.receiveStakingReward();
+      const { data, status } = await USER_API.receiveStakingReward({ 
+        userid: this.address,
+        stakeId: this.stakeId,
+        c_token: this.token,
+        verifyToken: loginSign,
+      });
       if (status == 1) {
         this.close();
         setTimeout(() => {
@@ -125,6 +130,14 @@ export default {
         this.btnStatus = false;
       }, 1000);
     }),
+    async sign(){
+      try {
+        let loginSign = await wallet.LoginSign(this.token, this.address);
+        this.swapConfirm(loginSign);
+      } catch (error) {
+        this.$toast('You canceled signature authorization!')
+      }
+    },
     close() {
       this.$emit("Cancel", false);
     },

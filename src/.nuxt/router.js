@@ -30,6 +30,7 @@ const _d61615d6 = () => interopDefault(import('../pages/activity/mining/RuleDeta
 const _aec9c9a4 = () => interopDefault(import('../pages/activity/staking/addPool.vue' /* webpackChunkName: "pages/activity/staking/addPool" */))
 const _9a96d6b2 = () => interopDefault(import('../pages/activity/staking/myPool.vue' /* webpackChunkName: "pages/activity/staking/myPool" */))
 const _2dd20cd2 = () => interopDefault(import('../pages/activity/staking/protocol.vue' /* webpackChunkName: "pages/activity/staking/protocol" */))
+const _633da457 = () => interopDefault(import('../pages/activity/staking/wallet.js' /* webpackChunkName: "pages/activity/staking/wallet" */))
 const _5d08bdb4 = () => interopDefault(import('../pages/activity/blindboxInvite/component/createPoster.vue' /* webpackChunkName: "pages/activity/blindboxInvite/component/createPoster" */))
 const _24381afe = () => interopDefault(import('../pages/activity/blindbox/detail/_id.vue' /* webpackChunkName: "pages/activity/blindbox/detail/_id" */))
 const _262ca6c4 = () => interopDefault(import('../pages/article/detail/_id.vue' /* webpackChunkName: "pages/article/detail/_id" */))
@@ -150,6 +151,10 @@ export const routerOptions = {
     path: "/activity/staking/protocol",
     component: _2dd20cd2,
     name: "activity-staking-protocol"
+  }, {
+    path: "/activity/staking/wallet",
+    component: _633da457,
+    name: "activity-staking-wallet"
   }, {
     path: "/activity/blindboxInvite/component/createPoster",
     component: _5d08bdb4,

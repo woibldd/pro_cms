@@ -182,6 +182,13 @@
     "_name": "_2dd20cd2"
   },
   {
+    "name": "activity-staking-wallet",
+    "path": "/activity/staking/wallet",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/staking/wallet.js",
+    "chunkName": "pages/activity/staking/wallet",
+    "_name": "_633da457"
+  },
+  {
     "name": "activity-blindboxInvite-component-createPoster",
     "path": "/activity/blindboxInvite/component/createPoster",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindboxInvite/component/createPoster.vue",

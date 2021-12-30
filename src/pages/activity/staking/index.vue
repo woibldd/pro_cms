@@ -20,7 +20,7 @@
             alt=""
           />
           <div class="staking-wrap-imgText">
-            <div class="imgTextTitle">Stake BKB Earn BKB</div>
+            <div class="imgTextTitle">{{$t('staking.stakingImg')}}</div>
           </div>
         </div>
         <div class="staking-wrap-box">
@@ -30,19 +30,11 @@
                 src="https://cdn.bitkeep.vip/u_b_9976a830-647e-11ec-8dc3-6956fa76f0cf.png"
                 alt=""
               />
-              <span class="textPrimary0">Introduce</span>
+              <span class="textPrimary0">{{$t('staking.Introduce')}}</span>
             </div>
             <div class="staking-wrap-line colorLine"></div>
             <div class="staking-wrap-box-Introduce-content textSecond2">
-              BitKeep has launched BKB Staking to provide users with
-              opportunities to make money. BKB holders who stake there BKB are
-              getting profits from the BKB pools every week. There will be many
-              other projects accessible in the future, allowing you to earn
-              more. When staking your BKB, you may choose from 4 different
-              staking pools with maturity of 7 days, 30 days, 60 days, and 90
-              days. You will enjoy an APY of 20%, 30%, 40%, 50%, respectively.
-              Your profit will be calculated and distributed to your Cloud
-              Wallet at maturity.
+              {{$t('staking.content')}}
             </div>
             <div class="viewAll colorPrimary" @click="viewAll">
               {{ !this.flag ? $t("mining.viewAll") : $t("mining.pickUp") }}
@@ -54,13 +46,13 @@
                 src="https://cdn.bitkeep.vip/u_b_554d2280-6481-11ec-8561-09279f51a681.png"
                 alt=""
               />
-              <span class="textPrimary0">Data</span>
+              <span class="textPrimary0">{{$t('staking.Data')}}</span>
             </div>
             <div class="staking-wrap-line colorLine"></div>
             <div class="staking-wrap-box-Data-content textSecond2">
               <div class="staking-wrap-box-Data-flex">
                 <div class="staking-wrap-box-Data-left">
-                  <div class="textSecond2">Staked BKB</div>
+                  <div class="textSecond2">{{$t('staking.StakedBKB')}}</div>
                   <div class="textPrimary0 setFontFamily">
                     {{
                       milliFormat(
@@ -72,7 +64,7 @@
                   </div>
                 </div>
                 <div class="staking-wrap-box-Data-right">
-                  <div class="textSecond2">BKB Total Supply</div>
+                  <div class="textSecond2">{{$t('staking.totalSupply')}}</div>
                   <div class="textPrimary0 setFontFamily">
                     {{
                       milliFormat(
@@ -101,10 +93,10 @@
               <div class="staking-wrap-box-pool-title-flex">
                 <div class="staking-wrap-box-pool-title-left">
                   <div class="textPrimary0">{{ item.title }}</div>
-                  <div class="textSecond2">Stake BKB Earn BKB</div>
+                  <div class="textSecond2">{{$t('staking.stakingImg')}}</div>
                 </div>
                 <div class="staking-wrap-box-pool-title-right">
-                  <div class="textSecond2">Ends in</div>
+                  <div class="textSecond2">{{$t('staking.EndsIn')}}</div>
                   <div class="textPrimary0 setFontFamily">{{ ends }}</div>
                 </div>
               </div>
@@ -113,18 +105,18 @@
             <div class="staking-wrap-box-pool-content textSecond2">
               <div class="staking-wrap-box-pool-flex">
                 <div class="staking-wrap-box-pool-left">
-                  <div class="textSecond2">APY</div>
+                  <div class="textSecond2">{{$t('staking.APY')}}</div>
                   <div class="colorSecond01 setFontFamily">{{ apy }}</div>
                 </div>
                 <div class="staking-wrap-box-pool-right">
-                  <div class="textSecond2">Your Stake Amount</div>
+                  <div class="textSecond2">{{$t('staking.YourStakeAmount')}}</div>
                   <div class="textPrimary0 setFontFamily">
                     {{ item.myAllStaking.toFixed(2) }} BKB
                   </div>
                 </div>
               </div>
               <div class="staking-wrap-box-pool-duration textSecond2">
-                Duration（Days）
+                {{$t('staking.Duration')}}
               </div>
               <div class="staking-wrap-box-pool-duration-box">
                 <span
@@ -144,7 +136,7 @@
                   staking-wrap-box-pool-stake
                 "
                 :class="
-                  btn == 'Stake now'
+                  btn == `${$t('staking.StakeNow')}`
                     ? 'staking-wrap-box-pool-stake-now'
                     : 'textSecond3 colorBackground2'
                 "
@@ -169,11 +161,11 @@
               />
               <div class="staking-wrap-box-pool-title-flex">
                 <div class="staking-wrap-box-pool-title-left">
-                  <div class="textPrimary0">Ethereum Chain Pool</div>
-                  <div class="textSecond2">Stake BKB Earn BKB</div>
+                  <div class="textPrimary0">{{$t('staking.EthereumChainPool')}}</div>
+                  <div class="textSecond2">{{$t('staking.stakingImg')}}</div>
                 </div>
                 <div class="staking-wrap-box-pool-title-right">
-                  <div class="textSecond2">Ends in</div>
+                  <div class="textSecond2">{{$t('staking.EndsIn')}}</div>
                   <div class="textPrimary0 setFontFamily">--</div>
                 </div>
               </div>
@@ -182,16 +174,16 @@
             <div class="staking-wrap-box-pool-content textSecond2">
               <div class="staking-wrap-box-pool-flex">
                 <div class="staking-wrap-box-pool-left">
-                  <div class="textSecond2">APY</div>
+                  <div class="textSecond2">{{$t('staking.APY')}}</div>
                   <div class="colorSecond01 setFontFamily">15.48%</div>
                 </div>
                 <div class="staking-wrap-box-pool-right">
-                  <div class="textSecond2">Your Stake Amount</div>
+                  <div class="textSecond2">{{$t('staking.YourStakeAmount')}}</div>
                   <div class="textPrimary0 setFontFamily">0 BKB</div>
                 </div>
               </div>
               <div class="staking-wrap-box-pool-duration textSecond2">
-                Duration（Days）
+                {{$t('staking.Duration')}}
               </div>
               <div class="staking-wrap-box-pool-duration-box">
                 <span
@@ -208,7 +200,7 @@
                   staking-wrap-box-pool-stake textSecond3 colorBackground2
                 "
               >
-                Coming soon
+                {{$t('staking.ComingSoon')}}
               </div>
             </div>
           </div>
@@ -227,11 +219,11 @@
               />
               <div class="staking-wrap-box-pool-title-flex">
                 <div class="staking-wrap-box-pool-title-left">
-                  <div class="textPrimary0">BSC Chain Pool</div>
-                  <div class="textSecond2">Stake BKB Earn BKB</div>
+                  <div class="textPrimary0">{{$t('staking.BSCChainPool')}}</div>
+                  <div class="textSecond2">{{$t('staking.stakingImg')}}</div>
                 </div>
                 <div class="staking-wrap-box-pool-title-right">
-                  <div class="textSecond2">Ends in</div>
+                  <div class="textSecond2">{{$t('staking.EndsIn')}}</div>
                   <div class="textPrimary0 setFontFamily">--</div>
                 </div>
               </div>
@@ -240,16 +232,16 @@
             <div class="staking-wrap-box-pool-content textSecond2">
               <div class="staking-wrap-box-pool-flex">
                 <div class="staking-wrap-box-pool-left">
-                  <div class="textSecond2">APY</div>
+                  <div class="textSecond2">{{$t('staking.APY')}}</div>
                   <div class="colorSecond01 setFontFamily">17.85%</div>
                 </div>
                 <div class="staking-wrap-box-pool-right">
-                  <div class="textSecond2">Your Stake Amount</div>
+                  <div class="textSecond2">{{$t('staking.YourStakeAmount')}}</div>
                   <div class="textPrimary0 setFontFamily">0 BKB</div>
                 </div>
               </div>
               <div class="staking-wrap-box-pool-duration textSecond2">
-                Duration（Days）
+                {{$t('staking.Duration')}}
               </div>
               <div class="staking-wrap-box-pool-duration-box">
                 <span
@@ -266,7 +258,7 @@
                   staking-wrap-box-pool-stake textSecond3 colorBackground2
                 "
               >
-                Coming soon
+                {{$t('staking.ComingSoon')}}
               </div>
             </div>
           </div>
@@ -279,6 +271,8 @@
 import { USER_API } from "@/api/client";
 import { mapState } from "vuex";
 import moment from "moment";
+import { wallet } from './wallet'
+
 export default {
   name: "staking",
   data() {
@@ -291,6 +285,7 @@ export default {
       apy: "20%",
       ends: "--",
       btn: "Stake now",
+      address: '',
       listInfo: {
         list: [{ allStakeAmount: 0, bkbTotalSuperAmount: 0, config: [] }],
       },
@@ -310,12 +305,13 @@ export default {
 
   mounted() {
     this.setIcon();
-    this.getInfo();
+    if(!this.isBitKeep) this.getInfo()
   },
   methods: {
     async getInfo() {
+      if(!this.isBitKeep) this.address = await wallet.connect();      
       const { data, status } = await USER_API.poolList({
-        userid: 0x7068dd34531c8f7656b540e6290e352c880f6822,
+        userid: this.address,
       });
       if (status == 1) {
         this.isLoading = false;
@@ -341,19 +337,27 @@ export default {
       );
     },
     stakeNow() {
-      if (this.btn == "Sold Out") return;
+      if (this.btn == this.$t('staking.SoldOut')) return;
       this.$router.push("/activity/staking/addPool");
     },
     handlePoolTimeTab(item, index) {
       this.setBorderColor = index;
       this.apy = (item.apy * 100).toFixed(2) + "%";
       this.ends = moment(item.lastStakeTime).format("YYYY-MM-DD HH:mm");
-      this.btn = !this.isActiveSaleOut(item) ? "Stake now" : "Sold Out";
+      this.btn = !this.isActiveSaleOut(item) ? this.$t('staking.StakeNow') : this.$t('staking.SoldOut');
     },
     setIcon() {
       this.isBitKeep &&
         BitKeepInvoke.onLoadReady(() => {
-          BitKeepInvoke.setTitle(this.$t("mining.miningTitle"));
+          BitKeepInvoke.setTitle(this.$t("staking.stakingTitle"));
+          BitKeepInvoke.getAddress(async (err, data) => {
+            if (err) {
+              return this.$toast(err);
+            }
+            this.addresses = data;
+            this.address = this.addresses["eth"] || "--";
+            this.getInfo();
+          });
           //设置主题
           this.$nextTick(() => {
             BitKeepInvoke.appMode((err, res) => {

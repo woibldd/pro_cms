@@ -1,166 +1,207 @@
 <template>
-  <div class="myPool-warp colorBackground0">
-      <div class="loading" v-if="isLoading">
+  <div
+    class="myPool-warp"
+    :class="activeType == 1 ? 'colorBackground0' : 'colorBackground1'"
+  >
+    <div class="loading" v-if="isLoading">
       <van-loading color="#1989fa" vertical
         >{{ $t("base.loading") }}...</van-loading
       >
     </div>
     <div v-else>
-        <div class="myPool-warp-tab colorBackground1">
-      <div
-        class="myPool-warp-tab-first"
-        :class="activeType == '1' ? 'textPrimary0 setFontW' : 'textSecond2'"
-        @click="active(1)"
-      >
-        Staking
-      </div>
-      <div
-        class="myPool-warp-tab-last"
-        :class="activeType == '2' ? 'textPrimary0 setFontW' : 'textSecond2'"
-        @click="active(2)"
-      >
-        Activity
-      </div>
-    </div>
-    <div v-if="activeType == 1">
-      <van-pull-refresh
-        v-model="refreshLoading"
-        :success-text="$t('mining.success')"
-        :loading-text="$t('mining.loading')"
-        :loosing-text="$t('mining.loading')"
-        @refresh="getList"
-        >
-      <div v-if="myPoolList.length > 0" class="myPool-warp-tab-firstContent">
+      <div class="myPool-warp-tab colorBackground1">
         <div
-          v-for="item in myPoolList"
-          :key="item.id"
-          class="myPool-warp-tab-firstContentBox colorBackground1"
+          class="myPool-warp-tab-first"
+          :class="activeType == '1' ? 'textPrimary0 setFontW' : 'textSecond2'"
+          @click="active(1)"
         >
-          <div class="myPool-warp-tab-firstContent-title">
-            <div class="myPool-warp-tab-firstContent-titleLeft">
-              <img
-                src="https://cdn.bitkeep.vip/u_b_a6bdfc60-5113-11ec-be10-ddc2856c6ac6.png"
-                alt=""
-              />
-              <span class="textPrimary0">{{ item.poolName }}</span>
-            </div>
-            <div class="myPool-warp-tab-firstContent-titleRight">
-              <div class="colorSecond08 colorSecond18" v-if="!item.isExpire">
-                Be expired
-              </div>
-              <div class="colorSecond01 colorBackgroundColorSecond11" v-else>
-                Pledge
-              </div>
-            </div>
-          </div>
-          <div class="myPool-wrap-line colorLine"></div>
-          <div class="myPool-warp-tab-firstContent-content">
-            <div class="myPool-warp-tab-firstContent-content-apy">
-              <div class="textSecond2">APY</div>
-              <div class="colorSecond01">
-                {{ (item.apy * 100).toFixed(2) + "%" }}
-              </div>
-            </div>
-            <div class="myPool-warp-tab-firstContent-content-number">
-              <div class="myPool-warp-tab-firstContent-content-number-left">
-                <div class="textSecond2">Duration</div>
-                <div class="textPrimary0">{{ item.lockTime }} Days</div>
-              </div>
-              <div class="myPool-warp-tab-firstContent-content-number-right">
-                <div class="textSecond2">Pledge Due Date</div>
-                <div class="textPrimary0">{{ time(item.lockEndTime) }}</div>
-              </div>
-            </div>
-            <div class="myPool-warp-tab-firstContent-content-number">
-              <div class="myPool-warp-tab-firstContent-content-number-left">
-                <div class="textSecond2">Your Stake Amount</div>
-                <div class="textPrimary0">{{ item.stakeAmount }} BKB</div>
-              </div>
-              <div class="myPool-warp-tab-firstContent-content-number-right">
-                <div class="textSecond2">Currency Reward</div>
-                <div class="colorPrimary">+{{ item.currencyReward }} BKB</div>
-              </div>
-            </div>
-            <div
-              class="myPool-warp-tab-firstContent-content-btn"
-              :class="
-                !item.isExpire
-                  ? 'colorBackground2 textPrimary0'
-                  : 'colorBackgroundPrimary colorwhite'
-              "
-              @click="removeClick(item)"
-            >
-              {{ !item.isExpire ? "Remove" : "Unstake" }}
-            </div>
-          </div>
+          {{ $t("staking.Staking") }}
+        </div>
+        <div
+          class="myPool-warp-tab-last"
+          :class="activeType == '2' ? 'textPrimary0 setFontW' : 'textSecond2'"
+          @click="active(2)"
+        >
+          {{ $t("staking.Activity") }}
         </div>
       </div>
-      <div class="noData" v-else>
-        <img
-          src="https://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png"
-          alt=""
-        />
-        <p class="textSecond3">{{ $t("mining.noData") }}</p>
-      </div>
-      </van-pull-refresh>
-    </div>
-    <div v-if="activeType == 2">
+      <div v-if="activeType == 1">
         <van-pull-refresh
-        v-model="refreshLoading"
-        :success-text="$t('mining.success')"
-        :loading-text="$t('mining.loading')"
-        :loosing-text="$t('mining.loading')"
-        @refresh="stakeHistory"
+          v-model="refreshLoading"
+          :success-text="$t('mining.success')"
+          :loading-text="$t('mining.loading')"
+          :loosing-text="$t('mining.loading')"
+          @refresh="getList"
+          style="min-height: 100vh"
         >
-      <div
-        v-if="historyList.length > 0"
-        class="myPool-warp-tab-lastContent colorBackground0"
-      >
-        <div v-for="(historyItem, index) in historyList" :key="index" class="myPool-warp-tab-lastContent-titleBox">
-          <div class="myPool-warp-tab-lastContent-title">
-            <div class="myPool-warp-tab-firstContent-titleLeft">
-              <img
-                src="https://cdn.bitkeep.vip/u_b_a6bdfc60-5113-11ec-be10-ddc2856c6ac6.png"
-                alt=""
-              />
-              <span class="textPrimary0">{{ historyItem.poolName }}</span>
-            </div>
-            <div class="myPool-warp-tab-firstContent-titleRight">
-              <div class="textSecond3">{{ time(historyItem.updateTime) }}</div>
+          <div
+            v-if="myPoolList.length > 0"
+            class="myPool-warp-tab-firstContent"
+          >
+            <div
+              v-for="item in myPoolList"
+              :key="item.id"
+              class="myPool-warp-tab-firstContentBox colorBackground1"
+            >
+              <div class="myPool-warp-tab-firstContent-title">
+                <div class="myPool-warp-tab-firstContent-titleLeft">
+                  <img
+                    src="https://cdn.bitkeep.vip/u_b_a6bdfc60-5113-11ec-be10-ddc2856c6ac6.png"
+                    alt=""
+                  />
+                  <span class="textPrimary0">{{ item.poolName }}</span>
+                </div>
+                <div class="myPool-warp-tab-firstContent-titleRight">
+                  <div
+                    class="colorSecond08 colorSecond18"
+                    v-if="!item.isExpire"
+                  >
+                    {{ $t("staking.BeExpired") }}
+                  </div>
+                  <div
+                    class="colorSecond01 colorBackgroundColorSecond11"
+                    v-else
+                  >
+                    {{ $t("staking.Pledge") }}
+                  </div>
+                </div>
+              </div>
+              <div class="myPool-wrap-line colorLine"></div>
+              <div class="myPool-warp-tab-firstContent-content">
+                <div class="myPool-warp-tab-firstContent-content-apy">
+                  <div class="textSecond2">APY</div>
+                  <div class="colorSecond01">
+                    {{ (item.apy * 100).toFixed(2) + "%" }}
+                  </div>
+                </div>
+                <div class="myPool-warp-tab-firstContent-content-number">
+                  <div class="myPool-warp-tab-firstContent-content-number-left">
+                    <div class="textSecond2">{{ $t("staking.Durations") }}</div>
+                    <div class="textPrimary0">{{ item.lockTime }} {{$t('staking.Days')}}</div>
+                  </div>
+                  <div
+                    class="myPool-warp-tab-firstContent-content-number-right"
+                  >
+                    <div class="textSecond2">
+                      {{ $t("staking.PledgeDueDate") }}
+                    </div>
+                    <div class="textPrimary0">{{ time(item.lockEndTime) }}</div>
+                  </div>
+                </div>
+                <div class="myPool-warp-tab-firstContent-content-number">
+                  <div class="myPool-warp-tab-firstContent-content-number-left">
+                    <div class="textSecond2">
+                      {{ $t("staking.YourStakeAmount") }}
+                    </div>
+                    <div class="textPrimary0">{{ item.stakeAmount }} BKB</div>
+                  </div>
+                  <div
+                    class="myPool-warp-tab-firstContent-content-number-right"
+                  >
+                    <div class="textSecond2">
+                      {{ $t("staking.CurrencyReward") }}
+                    </div>
+                    <div class="colorPrimary">
+                      +{{ item.currencyReward }} BKB
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="myPool-warp-tab-firstContent-content-btn"
+                  :class="
+                    !item.isExpire
+                      ? 'colorBackground2 textPrimary0'
+                      : 'colorBackgroundPrimary colorwhite'
+                  "
+                  @click="removeClick(item)"
+                >
+                  {{
+                    !item.isExpire
+                      ? $t("staking.Remove")
+                      : $t("staking.Unstake")
+                  }}
+                </div>
+              </div>
             </div>
           </div>
-          <div class="myPool-warp-tab-lastContent-number">
-            <div>
-              <div class="textSecond2">Stake Amount</div>
-              <div class="textPrimary0 setFontFamily">
-                {{ historyItem.stakeAmount.toFixed(2) }} BKB
-              </div>
-            </div>
-            <div>
-              <div class="Reward">Reward</div>
-              <div class="colorPrimary setFontFamily">
-                +{{ historyItem.reward.toFixed(2) }} BKB
-              </div>
-            </div>
-            <div>
-              <div class="textSecond2">Operate</div>
-              <div class="textPrimary0">
-                {{ historyItem.status === 1 ? "Add" : "Remove" }}
-              </div>
-            </div>
+          <div class="noData" v-else>
+            <img
+              src="https://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png"
+              alt=""
+            />
+            <p class="textSecond3">{{ $t("mining.noData") }}</p>
           </div>
-        </div>
-      </div>
-      <div class="noData" v-else>
-        <img
-          src="https://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png"
-          alt=""
-        />
-        <p class="textSecond3">{{ $t("mining.noData") }}</p>
-      </div>
         </van-pull-refresh>
-
-    </div>
+      </div>
+      <div v-if="activeType == 2">
+        <van-pull-refresh
+          v-model="refreshLoading"
+          :success-text="$t('mining.success')"
+          :loading-text="$t('mining.loading')"
+          :loosing-text="$t('mining.loading')"
+          @refresh="stakeHistory"
+          style="min-height: 100vh"
+        >
+          <div
+            v-if="historyList.length > 0"
+            class="myPool-warp-tab-lastContent"
+          >
+            <div
+              v-for="(historyItem, index) in historyList"
+              :key="index"
+              class="myPool-warp-tab-lastContent-titleBox"
+            >
+              <div class="myPool-warp-tab-lastContent-title">
+                <div class="myPool-warp-tab-firstContent-titleLeft">
+                  <img
+                    src="https://cdn.bitkeep.vip/u_b_a6bdfc60-5113-11ec-be10-ddc2856c6ac6.png"
+                    alt=""
+                  />
+                  <span class="textPrimary0">{{ historyItem.poolName }}</span>
+                </div>
+                <div class="myPool-warp-tab-firstContent-titleRight">
+                  <div class="textSecond3">
+                    {{ time(historyItem.updateTime) }}
+                  </div>
+                </div>
+              </div>
+              <div class="myPool-warp-tab-lastContent-number">
+                <div>
+                  <div class="textSecond2">{{ $t("staking.StakeAmount") }}</div>
+                  <div class="textPrimary0 setFontFamily">
+                    {{ historyItem.stakeAmount.toFixed(2) }} BKB
+                  </div>
+                </div>
+                <div>
+                  <div class="Reward textSecond2">
+                    {{ $t("staking.Reward") }}
+                  </div>
+                  <div class="colorPrimary setFontFamily">
+                    +{{ historyItem.reward.toFixed(2) }} BKB
+                  </div>
+                </div>
+                <div>
+                  <div class="textSecond2">{{ $t("staking.Operate") }}</div>
+                  <div class="textPrimary0" style="text-align: right">
+                    {{
+                      historyItem.status === 1
+                        ? $t("staking.Add")
+                        : $t("staking.Remove")
+                    }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="noData" v-else>
+            <img
+              src="https://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png"
+              alt=""
+            />
+            <p class="textSecond3">{{ $t("mining.noData") }}</p>
+          </div>
+        </van-pull-refresh>
+      </div>
     </div>
     <pup-protocol
       :showPool="showPool"
@@ -169,6 +210,9 @@
       :stakeAmount="stakeAmount"
       :currencyReward="currencyReward"
       :stakingStatus="stakingStatus"
+      :address="address"
+      :stakeId="stakeId"
+      :token="token"
       :key="new Date().getTime()"
     ></pup-protocol>
   </div>
@@ -192,13 +236,16 @@ export default {
       stakingStatus: false,
       refreshLoading: false,
       isLoading: true,
+      address: "",
+      stakeId: "",
+      token: "",
     };
   },
   components: {
     pupProtocol,
   },
   computed: {
-      ...mapState(["local"]),
+    ...mapState(["local"]),
     locale() {
       return this.local.locale;
     },
@@ -206,16 +253,21 @@ export default {
       return this.local.UA.isBitKeep;
     },
   },
-  mounted() {
+  async mounted() {
     this.setIcon();
-    this.getList();
-    this.stakeHistory();
-    BitKeepInvoke.setIconAction();
+    if (!this.isBitKeep) {
+    //   this.address = "0x7068dd34531c8f7656b540e6290e352c880f6822";
+      this.address = "0x3707766dbADE98CC3631B5427A8D9186db159154";
+      this.getList();
+      this.stakeHistory();
+      this.handleGetToken();
+    }
   },
   methods: {
     async getList() {
+      //   this.address = await wallet.connect();
       const { data, status } = await USER_API.myPool({
-        userid: "0x7068dd34531c8f7656b540e6290e352c880f6822",
+        userid: this.address,
       });
       if (status == 1) {
         this.isLoading = false;
@@ -232,7 +284,7 @@ export default {
     },
     async stakeHistory() {
       const { data, status } = await USER_API.stakeHistory({
-        userid: "0x7068dd34531c8f7656b540e6290e352c880f6822",
+        userid: this.address,
       });
       if (status == 1) {
         this.isLoading = false;
@@ -247,10 +299,28 @@ export default {
       this.refreshLoading = false;
       this.historyList = data.list;
     },
+    async handleGetToken() {
+      const { data, status } = await USER_API.handleGetToken({
+        userid: this.address,
+      });
+      if (status == 1) {
+        this.isLoading = false;
+        return this.$dialog.alert({
+          message: data,
+          confirmButtonText: this.$t("CbkbExchange.know"),
+          confirmButtonColor: "$theme-light-colorPrimary",
+        });
+      }
+      this.token = data.token;
+    },
     time(lockEndTime) {
       return moment(lockEndTime).format("YYYY-MM-DD HH:mm");
     },
-    close() {
+    close(val) {
+      if (val) {
+        this.getList();
+        this.handleGetToken();
+      }
       this.showPool = false;
     },
     removeClick(item) {
@@ -258,19 +328,32 @@ export default {
       this.stakeAmount = item.stakeAmount;
       this.currencyReward = item.currencyReward;
       this.stakingStatus = item.isExpire;
+      this.stakeId = item.id;
     },
     active(type) {
       this.activeType = type;
-      if(this.activeType == 1){
-          this.getList();
-      }else{
-          this.stakeHistory()
+      if (this.activeType == 1) {
+        this.getList();
+      } else {
+        this.stakeHistory();
       }
     },
     setIcon() {
+      this.$store.commit('CHANGE_LANG',this.locale)
       this.isBitKeep &&
         BitKeepInvoke.onLoadReady(() => {
-          BitKeepInvoke.setTitle(this.$t("mining.miningTitle"));
+          BitKeepInvoke.getAddress(async (err, data) => {
+            if (err) {
+              return this.$toast(err);
+            }
+            this.addresses = data;
+            this.address = this.addresses["eth"] || "--";
+            this.getList();
+            this.stakeHistory();
+            this.handleGetToken();
+          });
+          BitKeepInvoke.setIconAction();
+          BitKeepInvoke.setTitle(this.$t("staking.MyPoolsTitle"));
           //设置主题
           this.$nextTick(() => {
             BitKeepInvoke.appMode((err, res) => {
@@ -298,6 +381,9 @@ export default {
   .myPool-warp-tab-lastContent-number {
     border-bottom: 1px solid $theme-light-colorLine;
   }
+  .myPool-warp-tab {
+    border-bottom: 1px solid $theme-light-colorLine;
+  }
 }
 .theme-dark {
   .setFontW {
@@ -306,12 +392,15 @@ export default {
   .myPool-warp-tab-lastContent-number {
     border-bottom: 1px solid $theme-dark-colorLine;
   }
+  .myPool-warp-tab {
+    border-bottom: 1px solid $theme-dark-colorLine;
+  }
 }
 .loading {
-    min-height: 90vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .myPool-warp {
   min-height: 100vh;
@@ -344,6 +433,8 @@ export default {
       padding-left: 15px;
       justify-content: space-between;
       .myPool-warp-tab-firstContent-titleLeft {
+        display: flex;
+        align-items: center;
         img {
           width: 30px;
           height: 30px;
@@ -417,9 +508,9 @@ export default {
     }
   }
   .myPool-warp-tab-lastContent {
-    padding: 15px;
-    .myPool-warp-tab-lastContent-titleBox{
-        padding-top: 15px;
+    padding:0 15px 15px;
+    .myPool-warp-tab-lastContent-titleBox {
+      padding-top: 15px;
     }
     .myPool-warp-tab-lastContent-title {
       display: flex;
@@ -450,13 +541,13 @@ export default {
       margin-top: 15px;
       line-height: 17px;
       padding-bottom: 15px;
-      div{
-          :first-child{
-              font-size: 12px;
-          }
-          :last-child{
-              font-size: 14px;
-          }
+      div {
+        :first-child {
+          font-size: 12px;
+        }
+        :last-child {
+          font-size: 14px;
+        }
       }
     }
   }

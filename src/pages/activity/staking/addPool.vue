@@ -14,16 +14,16 @@
           />
           <div class="staking-wrap-box-pool-title-flex">
             <div class="staking-wrap-box-pool-title-left">
-              <div class="textPrimary0">Cloud Wallet Pool</div>
+              <div class="textPrimary0">{{ title }}</div>
             </div>
             <div class="staking-wrap-box-pool-title-right">
-              <div class="textSecond2">APY</div>
+              <div class="textSecond2">{{ $t("staking.APY") }}</div>
               <div class="colorSecond01 setFontFamily">{{ apy + "%" }}</div>
             </div>
           </div>
         </div>
         <div class="staking-wrap-box-pool-duration textPrimary0">
-          Duration（Days）
+          {{ $t("staking.Duration") }}
         </div>
         <div class="staking-wrap-box-pool-duration-box">
           <span
@@ -39,9 +39,10 @@
           >
         </div>
         <div class="staking-warp-amount">
-          <div class="textPrimary0">Stake Amount</div>
+          <div class="textPrimary0">{{ $t("staking.StakeAmount") }}</div>
           <div class="textSecond3">
-            Available: {{ listInfo.list[0].userAmount }} BKB
+            {{ $t("staking.Available") }}:
+            {{ listInfo.list[0].userAmount.toFixed(6) }} BKB
           </div>
         </div>
         <div class="staking-warp-amount-input">
@@ -54,27 +55,32 @@
           <div class="staking-warp-amount-input-right">
             <div class="right textPrimary0 setFontFamily">BKB</div>
             <div class="line colorLine1"></div>
-            <div class="max colorPrimary" @click="Max">MAX</div>
+            <div class="max colorPrimary" @click="Max">
+              {{ $t("staking.MAX") }}
+            </div>
           </div>
         </div>
-        <div class="staking-limiation textPrimary0">Stake Amount Limiation</div>
+        <div class="staking-limiation textPrimary0">
+          {{ $t("staking.StakeAmountLimiation") }}
+        </div>
         <div class="staking-min textSecond3">
           <div>
-            Minimum: <span class="setFontFamily textPrimary0"> 1 BKB</span>
+            {{ $t("staking.Minimum") }}:
+            <span class="setFontFamily textPrimary0"> 1 BKB</span>
           </div>
           <div>
-            Maximum:
+            {{ $t("staking.Maximum") }}:
             <span class="setFontFamily textPrimary0">10,000,000 BKB</span>
           </div>
         </div>
         <div class="colorLine setColorLine"></div>
         <div class="staking-summry">
-          <div class="textPrimary0 Summary">Summary</div>
+          <div class="textPrimary0 Summary">{{ $t("staking.Summary") }}</div>
           <div class="staking-summary-box colorBackground3">
             <ul>
               <li>
                 <span class="dian colorBackgroundPrimary"></span>
-                <span class="textSecond3">Stake Date </span>
+                <span class="textSecond3">{{ $t("staking.StakeDate") }} </span>
                 <span class="textPrimary0 setFontFamily">{{
                   timerFormatte(listInfo.serverTime)
                 }}</span>
@@ -82,18 +88,24 @@
               <li class="setLeftLine colorDisable"></li>
               <li>
                 <span class="dian colorBackgroundPrimary"></span>
-                <span class="textSecond3">Value Date </span>
+                <span class="textSecond3">{{ $t("staking.ValueDate") }} </span>
                 <span class="textPrimary0 setFontFamily">{{
                   timerFormatte(listInfo.serverTime)
                 }}</span>
               </li>
               <li class="setLeftColorLine">
-                <span class="textSecond3">Interest Period </span>
-                <span class="textPrimary0 setFontFamily">{{ day }}</span>
+                <span class="textSecond3"
+                  >{{ $t("staking.InterestPeriod") }}
+                </span>
+                <span class="textPrimary0 setFontFamily"
+                  >{{ day }} {{ $t("staking.Days") }}</span
+                >
               </li>
               <li>
                 <span class="dian colorBackgroundPrimary"></span>
-                <span class="textSecond3">Interest End Date </span>
+                <span class="textSecond3"
+                  >{{ $t("staking.InterestEndDate") }}
+                </span>
                 <span class="textPrimary0 setFontFamily">{{
                   endtimerFormatte(listInfo.serverTime)
                 }}</span>
@@ -101,7 +113,9 @@
               <li class="setLeftLine colorDisable"></li>
               <li>
                 <span class="dian colorBackgroundPrimary"></span>
-                <span class="textSecond3">Redemption Date </span>
+                <span class="textSecond3"
+                  >{{ $t("staking.RedemptionDate") }}
+                </span>
                 <span class="textPrimary0 setFontFamily">{{
                   endtimerFormatte(listInfo.serverTime)
                 }}</span>
@@ -109,7 +123,9 @@
             </ul>
             <div class="colorLine1 setColorLine1"></div>
             <div class="staking-warp-Interests">
-              <div class="textSecond3">Estimated Interests</div>
+              <div class="textSecond3">
+                {{ $t("staking.EstimatedInterests") }}
+              </div>
               <div class="colorSecond01">
                 {{
                   inputNumber
@@ -126,11 +142,10 @@
         </div>
       </div>
       <div class="wrap-bottom colorBackground1">
-        <div class="colorLine setBottomLine"></div>
         <button
           class="swap-btn"
           :class="[
-            btn == 'Stake now' && inputNumber > 0
+            btn == `${$t('staking.StakeNow')}` && inputNumber >= 1
               ? 'staking-wrap-box-pool-stake-now'
               : 'staking-wrap-box-pool-stake-now setOpacity',
           ]"
@@ -144,9 +159,10 @@
 </template>
 <script>
 import { USER_API } from "@/api/client";
-// import { mapState } from "vuex";
+import { mapState } from "vuex";
 import moment from "moment";
-
+import { wallet } from "./wallet";
+// import airdropABI from "./airdropABI";
 export default {
   data() {
     return {
@@ -155,6 +171,7 @@ export default {
       btn: "Stake now",
       inputNumber: 0,
       isLoading: true,
+      title: "",
       day: "7",
       accounts: "",
       listInfo: {
@@ -165,15 +182,28 @@ export default {
       poolContract: "0xbb85bfbbdcefca43e9de619a149c186506fd0ff6",
     };
   },
+  computed: {
+    ...mapState(["local"]),
+    locale() {
+      return this.local.locale;
+    },
+    isBitKeep() {
+      return this.local.UA.isBitKeep;
+    },
+    userInfo() {
+      return this.local.userInfo.token;
+    },
+  },
   mounted() {
-    this.getInfo();
-    this.handleGetToken();
-    BitKeepInvoke.setIconAction();
+    this.setIcon();
+    setTimeout(()=>{
+      this.onClickConnect();
+    },400)
   },
   methods: {
     async getInfo() {
       const { data, status } = await USER_API.poolList({
-        userid: "0x7068dd34531c8f7656b540e6290e352c880f6822",
+        userid: this.accounts,
       });
       if (status == 1) {
         this.isLoading = false;
@@ -186,8 +216,35 @@ export default {
       this.isLoading = false;
       this.listInfo = data;
       this.listInfo.list = data.list;
+      this.title = data.list[0].title;
       let prames = data.list && data.list[0].config[0];
       this.handlePoolTimeTab(prames, 0);
+    },
+    setIcon() {
+      this.isBitKeep &&
+        BitKeepInvoke.onLoadReady(() => {
+          BitKeepInvoke.setIconAction();
+          //设置主题
+          this.$nextTick(() => {
+            this.$store.commit('CHANGE_LANG',this.locale)
+            BitKeepInvoke.setTitle(this.$t("staking.AddPoolTitle"));
+            BitKeepInvoke.getAddress(async (err, data) => {
+              if (err) {
+                return this.$toast(err);
+              }
+              this.addresses = data;
+              this.accounts = this.addresses["eth"] || "--";
+          });
+            BitKeepInvoke.appMode((err, res) => {
+              let body = document.getElementsByTagName("body")[0];
+              if (res == 1) {
+                body.setAttribute("class", "theme-dark");
+              } else {
+                body.setAttribute("class", "theme-light");
+              }
+            });
+          });
+        });
     },
     Max() {
       this.inputNumber = this.listInfo.list[0].userAmount;
@@ -200,7 +257,7 @@ export default {
     },
     async handleGetToken() {
       const { data, status } = await USER_API.handleGetToken({
-        userid: "0x7068dd34531c8f7656b540e6290e352c880f6822",
+        userid: this.accounts,
       });
       if (status == 1) {
         this.isLoading = false;
@@ -213,12 +270,19 @@ export default {
       this.token = data.token;
     },
     // 获取签名
-    async handleGetLoginSign() {},
+    async handleGetLoginSign() {
+      try {
+        let loginSign = await wallet.LoginSign(this.token, this.accounts);
+        this.handleStaking(loginSign);
+      } catch (error) {
+        this.$toast(this.$t('staking.authorization'));
+      }
+    },
     async handleStaking(loginSign) {
       const { data, status } = await USER_API.staking({
-        userid: "0x7068dd34531c8f7656b540e6290e352c880f6822",
-        time: this.days,
-        amount: this.inputNumber,
+        userid: this.accounts,
+        time: this.day,
+        amount: Number(this.inputNumber),
         c_token: this.token,
         verifyToken: loginSign,
       });
@@ -244,9 +308,60 @@ export default {
       this.setBorderColor = index;
       this.day = item.time;
       this.apy = (item.apy * 100).toFixed(2);
-      // this.ends = moment(item.lastStakeTime).format('YYYY-MM-DD HH:mm');
-      this.btn = !this.isActiveSaleOut(item) ? "Stake now" : "Sold Out";
+      this.btn = !this.isActiveSaleOut(item)
+        ? this.$t("staking.StakeNow")
+        : this.$t("staking.SoldOut");
     },
+    // 点击连接
+    async onClickConnect() {
+      try {
+        this.accounts = this.accounts || await wallet.connect();
+        const chainId = await wallet.getChainId();
+        // const [adddress] = await wallet.getAccounts();        
+        if (Number(chainId) !== 1) {
+          await wallet.switchChainId(1, this.accounts);
+        }        
+        this.handleGetToken();
+        this.getInfo();
+        wallet.on("chainChanged", async () => {
+          const chainId16 = await wallet.getChainId();
+          Number(chainId16) != 1 && (await wallet.switchChainId(1));
+        });
+        wallet.on("accountsChanged", this.onClickConnect);
+      } catch (error) {
+        this.$toast(typeof error == "object" ? error.message : error);
+      }
+    },
+    // addPool(){
+    //   const token = window.web3.eth
+    //         .contract(airdropABI)
+    //         .at(this.poolContract);
+
+    //       const data = token.withdraw.getData('0x9a78649501bbaac285ea4187299471b7ad4abd35', this.inputNumber);
+    //       const params = {
+    //         to: this.poolContract,
+    //         value: 0,
+    //         data: data,
+    //       };
+    //       console.log(token);
+
+    //       params.gasLimit = window.web3.eth.estimateGas(
+    //         params,
+    //         (err, gasLimit) => {
+    //           if (err) return Toast(err);
+    //           params.gas = gasLimit;
+    //           window.web3.eth.sendTransaction(params, (err, result) => {
+    //             if (err) return Toast(this.$t("base.dropCancel"));
+    //             console.log(parseFloat(result));
+    //             this.$dialog.alert({
+    //               message: data,
+    //               confirmButtonText: this.$t("CbkbExchange.know"),
+    //               confirmButtonColor: "$theme-light-colorPrimary",
+    //             });
+    //           });
+    //         }
+    //       );
+    // }
   },
 };
 </script>
@@ -259,6 +374,9 @@ export default {
   .staking-wrap-box-pool-duration-smallBox {
     border: 1px solid $theme-light-colorLine1;
   }
+  .wrap-bottom {
+    border-top: 1px solid $theme-light-colorLine1;
+  }
 }
 .theme-dark {
   .staking-warp-amount-input {
@@ -267,12 +385,15 @@ export default {
   .staking-wrap-box-pool-duration-smallBox {
     border: 1px solid $theme-dark-colorLine1;
   }
+  .wrap-bottom {
+    border-top: 1px solid $theme-dark-colorLine1;
+  }
 }
 .loading {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .addPool {
   padding: 0 16px;
@@ -328,6 +449,7 @@ export default {
       line-height: 28px;
       border-radius: 4px;
       margin-right: 8px;
+      font-size: 16px;
     }
     .setBorderColor {
       border: 1px solid #495bff;
@@ -350,6 +472,8 @@ export default {
     line-height: 50px;
     border-radius: 8px;
     margin-top: 10px;
+    display: flex;
+    align-items: center;
     input {
       width: 60%;
       height: 50px;
@@ -451,6 +575,7 @@ export default {
         display: flex;
         justify-content: space-between;
         padding: 0 15px 15px;
+        font-size: 14px;
       }
     }
   }
@@ -469,10 +594,6 @@ export default {
     background: #495bff;
     color: #fff;
   }
-  //   .staking-wrap-box-pool-stake-soon {
-  //     // background: #f3f5f6;
-  //     // color: #9ca5b3;
-  //   }
   .setOpacity {
     opacity: 0.3;
   }
