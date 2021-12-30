@@ -118,6 +118,10 @@
               <span></span>
             </div>
           </div>
+          <div id='recaptcha' class="g-recaptcha"
+          data-sitekey="6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26"
+          :data-callback="onSubmit"
+          data-size="invisible"></div>
           <!-- 操作按钮÷÷ -->
           <BlindButton
             v-if="info.status != 3"
@@ -217,6 +221,7 @@
     </div>
   </div>
 </template>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <script>
 import { Header } from "@/components/common";
@@ -310,6 +315,28 @@ export default {
   methods: {
     async init() {
       await this.$nextTick();
+    },
+    async onSubmit(token){
+      const HelpR = await USER_API.helpMBox({
+          address: this.address,
+          id: this.info.id,
+          scene: this.info.scene,
+          verifytoken: token
+        });
+        this.hideLoading();
+        if (HelpR.status != 0) {
+          this.$toast.fail(HelpR.data);
+          return;
+        }
+        this.getDetails();
+        this.$toast.success(
+          this.$t("ActivityBlindbox.toast.ContributeSuccess")
+        );
+        !this.isBitKeep &&
+          this.$router.push({
+            path: "/activity/blindbox/download",
+            query: {}
+          });
     },
     handlerFocus() {
       this.focus = true;
@@ -412,34 +439,36 @@ export default {
           return;
         }
         this.showLoading();
-        const HelpR = await USER_API.helpMBox({
-          address: this.address,
-          id: this.info.id,
-          scene: this.info.scene
-        });
-        this.hideLoading();
-        if (HelpR.status != 0) {
-          this.$toast.fail(HelpR.data);
-          return;
-        }
-        this.getDetails();
+        grecaptcha.execute();
+        // const HelpR = await USER_API.helpMBox({
+        //   address: this.address,
+        //   id: this.info.id,
+        //   scene: this.info.scene,
+        //   verifytoken: this.verifytoken
+        // });
+        // this.hideLoading();
+        // if (HelpR.status != 0) {
+        //   this.$toast.fail(HelpR.data);
+        //   return;
+        // }
+        // this.getDetails();
 
-        this.$toast.success(
-          this.$t("ActivityBlindbox.toast.ContributeSuccess")
-        );
-        // await new Promise((resolve) =>
-        //   BitKeepInvoke.alert(
-        //     this.$t("ActivityBlindbox.dialog.helperSuccess"),
-        //     resolve
-        //   )
+        // this.$toast.success(
+        //   this.$t("ActivityBlindbox.toast.ContributeSuccess")
         // );
-        // await this.getDetails();
+        // // await new Promise((resolve) =>
+        // //   BitKeepInvoke.alert(
+        // //     this.$t("ActivityBlindbox.dialog.helperSuccess"),
+        // //     resolve
+        // //   )
+        // // );
+        // // await this.getDetails();
 
-        !this.isBitKeep &&
-          this.$router.push({
-            path: "/activity/blindbox/download",
-            query: {}
-          });
+        // !this.isBitKeep &&
+        //   this.$router.push({
+        //     path: "/activity/blindbox/download",
+        //     query: {}
+        //   });
       }
     },
     back() {
