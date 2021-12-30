@@ -120,7 +120,7 @@
           </div>
           <div id='recaptcha' class="g-recaptcha"
           data-sitekey="6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26"
-          :data-callback="onSubmit"
+          :data-callback="(token)=> console.log(token)"
           data-size="invisible"></div>
           <!-- 操作按钮÷÷ -->
           <BlindButton
@@ -221,8 +221,6 @@
     </div>
   </div>
 </template>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
 <script>
 import { Header } from "@/components/common";
 import Countdown from "@/components/common/c-vue-countdown";
@@ -299,13 +297,22 @@ export default {
       },
       invite_list: [],
       address: "",
-      focus: false
+      focus: false,
+      verifytoken: ''
     };
   },
   async created() {},
   async beforeMount() {
     this.getDetails();
   },
+
+head () {
+        return {
+            script: [
+                {src: 'https://www.recaptcha.net/recaptcha/api.js'}
+            ]
+        }
+    },
   async mounted() {
     await this.$nextTick();
     this.isLoading = false;
@@ -317,6 +324,7 @@ export default {
       await this.$nextTick();
     },
     async onSubmit(token){
+      console.log(token)
       const HelpR = await USER_API.helpMBox({
           address: this.address,
           id: this.info.id,
@@ -439,7 +447,11 @@ export default {
           return;
         }
         this.showLoading();
-        grecaptcha.execute();
+        // window.grecaptcha.execute();
+        window.grecaptcha.execute('6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26', { action: 'login' }).then((token) => {
+        // recaptcha 调用是后台的接口的方法
+        this.onSubmit(token);
+      })
         // const HelpR = await USER_API.helpMBox({
         //   address: this.address,
         //   id: this.info.id,
@@ -494,7 +506,9 @@ export default {
 .mb {
   // margin-bottom: -24px !important;
 }
-
+.grecaptcha-badge {
+    display: none;
+}
 .loading {
   min-height: 100vh;
   display: flex;
