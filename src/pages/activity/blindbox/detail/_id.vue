@@ -309,7 +309,7 @@ export default {
 head () {
         return {
             script: [
-                {src: 'https://www.recaptcha.net/recaptcha/api.js'}
+                {src: 'https://www.recaptcha.net/recaptcha/api.js?render=6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26'}
             ]
         }
     },
@@ -501,13 +501,14 @@ head () {
   filters: {}
 };
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.grecaptcha-badge {
+    display: none;
+}
+</style>
 <style lang="scss" scoped>
 .mb {
   // margin-bottom: -24px !important;
-}
-.grecaptcha-badge {
-    display: none;
 }
 .loading {
   min-height: 100vh;
