@@ -118,10 +118,11 @@
               <span></span>
             </div>
           </div>
-          <div id='recaptcha' class="g-recaptcha"
+          <div id="recaptcha"></div>
+          <!-- <div id='recaptcha' class="g-recaptcha"
           data-sitekey="6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26"
           :data-callback="(token)=> console.log(token)"
-          data-size="invisible"></div>
+          data-size="invisible"></div> -->
           <!-- 操作按钮÷÷ -->
           <BlindButton
             v-if="info.status != 3"
@@ -448,10 +449,16 @@ head () {
         }
         this.showLoading();
         // window.grecaptcha.execute();
-        window.grecaptcha.execute('6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26', { action: 'login' }).then((token) => {
-        // recaptcha 调用是后台的接口的方法
-        this.onSubmit(token);
-      })
+        setTimeout(() => {
+          window.grecaptcha.render("recaptcha", {
+            sitekey: '6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26',
+            callback: this.onSubmit
+          });
+        }, 200);
+      //   window.grecaptcha.execute('6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26', { action: 'login' }).then((token) => {
+      //   // recaptcha 调用是后台的接口的方法
+      //   this.onSubmit(token);
+      // })
         // const HelpR = await USER_API.helpMBox({
         //   address: this.address,
         //   id: this.info.id,
