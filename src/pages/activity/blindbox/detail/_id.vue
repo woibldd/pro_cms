@@ -127,6 +127,7 @@
               :data-validate="validate"
               :data-callback="onSubmit"
               data-btn-class="btn"
+              data-type ='image'
               :data-btn-disabled="false"
               > 
             <!-- 操作按钮÷÷ -->
@@ -454,8 +455,6 @@ head () {
       }
     },
     async helperBtn(isOwner) {
-        this.hideLoading();
-        this.$toast.clear();
       if (isOwner) {
       } else {
         if (!this.address || !this.address.replace(/ /g, "")) {
