@@ -309,7 +309,8 @@ export default {
       invite_list: [],
       address: "",
       focus: false,
-      verifytoken: ''
+      verifytoken: '',
+      handerType: ''
     };
   },
   async created() {},
@@ -335,14 +336,15 @@ head () {
       await this.$nextTick();
     },
     validate() {
+      if(this.handerType != 1) return true;
       if (!this.address || !this.address.replace(/ /g, "")) {
         this.$toast.fail(this.$t("ActivityBlindbox.toast.inputETH"));
         this.$refs.textarea && this.$refs.textarea.focus();
         return false;
       }
-      if(!window.web3.isAddress(this.address)){
-        return this.$toast('Enter the correct ETH address')
-      }
+      // if(!window.web3.isAddress(this.address)){
+      //   return this.$toast('Enter the correct ETH address')
+      // }
       return true;
     },
     async onSubmit(token){
@@ -407,6 +409,7 @@ head () {
       return true;
     },
     async handerBotton(type) {
+      this.handerType = type;
       const isOwner = this.info.is_owner == 1;
       switch (String(type)) {
         //立即开启盲盒
