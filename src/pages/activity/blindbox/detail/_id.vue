@@ -335,10 +335,17 @@ head () {
       await this.$nextTick();
     },
     validate() {
+      if (!this.address || !this.address.replace(/ /g, "")) {
+        this.$toast.fail(this.$t("ActivityBlindbox.toast.inputETH"));
+        this.$refs.textarea && this.$refs.textarea.focus();
+        return false;
+      }
+      if(!window.web3.isAddress(this.address)){
+        return this.$toast('Enter the correct ETH address')
+      }
       return true;
     },
     async onSubmit(token){
-      console.log(token)
       const HelpR = await USER_API.helpMBox({
           address: this.address,
           id: this.info.id,
