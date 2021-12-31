@@ -123,7 +123,7 @@
           data-callback="onSubmit"
           data-size="invisible"></div> -->
             <vue2-recaptcha-invisible 
-              data-sitekey="6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26" 
+              data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" 
               :data-validate="validate"
               :data-callback="onSubmit"
               data-btn-class="btn"
