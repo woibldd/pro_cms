@@ -123,7 +123,7 @@
           data-callback="onSubmit"
           data-size="invisible"></div> -->
             <vue2-recaptcha-invisible 
-              data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" 
+              data-sitekey="6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26" 
               :data-validate="validate"
               :data-callback="onSubmit"
               data-btn-class="btn"
@@ -430,6 +430,8 @@ head () {
             this.$refs.CreatePoster && this.$refs.CreatePoster.init();
           } else {
             this.helperBtn();
+            this.hideLoading();
+            
           }
           break;
         //查看资产
@@ -452,15 +454,15 @@ head () {
       }
     },
     async helperBtn(isOwner) {
+        this.hideLoading();
+        this.$toast.clear();
       if (isOwner) {
       } else {
-        this.$toast.clear();
         if (!this.address || !this.address.replace(/ /g, "")) {
           this.$toast.fail(this.$t("ActivityBlindbox.toast.inputETH"));
           this.$refs.textarea && this.$refs.textarea.focus();
           return;
         }
-        // this.showLoading();
         // window.grecaptcha.execute();
         // setTimeout(() => {
         //   window.grecaptcha.render("recaptcha", {
