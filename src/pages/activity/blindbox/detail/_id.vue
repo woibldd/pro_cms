@@ -354,10 +354,10 @@ head () {
           this.$t("ActivityBlindbox.toast.ContributeSuccess")
         );
         !this.isBitKeep &&
-          this.$router.push({
-            path: "/activity/blindbox/download",
-            query: {}
-          });
+        this.$router.push({
+          path: "/activity/blindbox/download",
+          query: {}
+        });
     },
     handlerFocus() {
       this.focus = true;
@@ -454,6 +454,7 @@ head () {
     async helperBtn(isOwner) {
       if (isOwner) {
       } else {
+        this.$toast.clear();
         if (!this.address || !this.address.replace(/ /g, "")) {
           this.$toast.fail(this.$t("ActivityBlindbox.toast.inputETH"));
           this.$refs.textarea && this.$refs.textarea.focus();
