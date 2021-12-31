@@ -118,18 +118,26 @@
               <span></span>
             </div>
           </div>
-          <div id="recaptcha"></div>
           <!-- <div id='recaptcha' class="g-recaptcha"
           data-sitekey="6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26"
-          :data-callback="(token)=> console.log(token)"
+          data-callback="onSubmit"
           data-size="invisible"></div> -->
-          <!-- 操作按钮÷÷ -->
-          <BlindButton
-            v-if="info.status != 3"
-            :isBitKeep="isBitKeep"
-            @handerBotton="handerBotton"
-            :info="info"
-          />
+            <vue2-recaptcha-invisible 
+              data-sitekey="6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26" 
+              :data-validate="validate"
+              :data-callback="onSubmit"
+              data-btn-class="btn"
+              :data-btn-disabled="false"
+              > 
+            <!-- 操作按钮÷÷ -->
+            <BlindButton
+              v-if="info.status != 3"
+              :isBitKeep="isBitKeep"
+              @handerBotton="handerBotton"
+              :info="info"
+            />
+          </vue2-recaptcha-invisible>
+          
           <!-- 下载地址 -->
           <div v-if="!isBitKeep" class="block_invite_down">
             <a @click="openUrl" v-html='$t("ActivityBlindbox.ActivityBlindboxDetail.NoAddressDownload")'> {{
@@ -230,7 +238,7 @@ import BlindTitleImage from "@/components/blindbox/titleImage.vue";
 import BlindButton from "@/components/blindbox/BlindButton.vue";
 import CreatePoster from "@/components/blindbox/createPoster.vue";
 import { USER_API } from "@/api/client";
-
+import vue2RecaptchaInvisible from '@finpo/vue2-recaptcha-invisible';
 import { mapState } from "vuex";
 import { BaseMixin } from "@/mixin/base.js";
 export default {
@@ -242,7 +250,8 @@ export default {
     BlindTimeText,
     BlindTitleImage,
     CreatePoster,
-    BlindButton
+    BlindButton,
+    vue2RecaptchaInvisible
   },
   computed: {
     ...mapState(["local"]),
@@ -310,7 +319,7 @@ export default {
 head () {
         return {
             script: [
-                {src: 'https://www.recaptcha.net/recaptcha/api.js?render=6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26'}
+                {src: 'https://www.recaptcha.net/recaptcha/api.js?render=explicit'}
             ]
         }
     },
@@ -323,6 +332,9 @@ head () {
   methods: {
     async init() {
       await this.$nextTick();
+    },
+    validate() {
+      return true;
     },
     async onSubmit(token){
       console.log(token)
@@ -447,14 +459,14 @@ head () {
           this.$refs.textarea && this.$refs.textarea.focus();
           return;
         }
-        this.showLoading();
+        // this.showLoading();
         // window.grecaptcha.execute();
-        setTimeout(() => {
-          window.grecaptcha.render("recaptcha", {
-            sitekey: '6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26',
-            callback: this.onSubmit
-          });
-        }, 200);
+        // setTimeout(() => {
+        //   window.grecaptcha.render("recaptcha", {
+        //     sitekey: '6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26',
+        //     callback: this.onSubmit
+        //   });
+        // }, 200);
       //   window.grecaptcha.execute('6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26', { action: 'login' }).then((token) => {
       //   // recaptcha 调用是后台的接口的方法
       //   this.onSubmit(token);
@@ -511,6 +523,10 @@ head () {
 <style lang="scss">
 .grecaptcha-badge {
     display: none;
+}
+.btn{
+  border: none;
+  background: none;
 }
 </style>
 <style lang="scss" scoped>
