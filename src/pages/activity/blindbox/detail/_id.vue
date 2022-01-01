@@ -137,6 +137,7 @@
               @handerBotton="handerBotton"
               :info="info"
             />
+            <div v-else> </div>
           </vue2-recaptcha-invisible>
           
           <!-- 下载地址 -->
