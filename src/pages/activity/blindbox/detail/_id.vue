@@ -118,13 +118,28 @@
               <span></span>
             </div>
           </div>
-          <!-- 操作按钮÷÷ -->
-          <BlindButton
-            v-if="info.status != 3"
-            :isBitKeep="isBitKeep"
-            @handerBotton="handerBotton"
-            :info="info"
-          />
+          <!-- <div id='recaptcha' class="g-recaptcha"
+          data-sitekey="6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26"
+          data-callback="onSubmit"
+          data-size="invisible"></div> -->
+            <vue2-recaptcha-invisible 
+              data-sitekey="6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26" 
+              :data-validate="validate"
+              :data-callback="onSubmit"
+              data-btn-class="btn"
+              data-type ='image'
+              :data-btn-disabled="false"
+              > 
+            <!-- 操作按钮÷÷ -->
+            <BlindButton
+              v-if="info.status != 3"
+              :isBitKeep="isBitKeep"
+              @handerBotton="handerBotton"
+              :info="info"
+            />
+            <div v-else> </div>
+          </vue2-recaptcha-invisible>
+          
           <!-- 下载地址 -->
           <div v-if="!isBitKeep" class="block_invite_down">
             <a @click="openUrl" v-html='$t("ActivityBlindbox.ActivityBlindboxDetail.NoAddressDownload")'> {{
@@ -217,7 +232,6 @@
     </div>
   </div>
 </template>
-
 <script>
 import { Header } from "@/components/common";
 import Countdown from "@/components/common/c-vue-countdown";
@@ -226,7 +240,7 @@ import BlindTitleImage from "@/components/blindbox/titleImage.vue";
 import BlindButton from "@/components/blindbox/BlindButton.vue";
 import CreatePoster from "@/components/blindbox/createPoster.vue";
 import { USER_API } from "@/api/client";
-
+import vue2RecaptchaInvisible from '@finpo/vue2-recaptcha-invisible';
 import { mapState } from "vuex";
 import { BaseMixin } from "@/mixin/base.js";
 export default {
@@ -238,7 +252,8 @@ export default {
     BlindTimeText,
     BlindTitleImage,
     CreatePoster,
-    BlindButton
+    BlindButton,
+    vue2RecaptchaInvisible
   },
   computed: {
     ...mapState(["local"]),
@@ -294,13 +309,23 @@ export default {
       },
       invite_list: [],
       address: "",
-      focus: false
+      focus: false,
+      verifytoken: '',
+      handerType: ''
     };
   },
   async created() {},
   async beforeMount() {
     this.getDetails();
   },
+
+head () {
+        return {
+            script: [
+                {src: 'https://www.recaptcha.net/recaptcha/api.js?render=explicit'}
+            ]
+        }
+    },
   async mounted() {
     await this.$nextTick();
     this.isLoading = false;
@@ -310,6 +335,40 @@ export default {
   methods: {
     async init() {
       await this.$nextTick();
+    },
+    validate() {
+      if(this.handerType != 1) return true;
+      if (!this.address || !this.address.replace(/ /g, "")) {
+        this.$toast.fail(this.$t("ActivityBlindbox.toast.inputETH"));
+        this.$refs.textarea && this.$refs.textarea.focus();
+        return false;
+      }
+      // if(!window.web3.isAddress(this.address)){
+      //   return this.$toast('Enter the correct ETH address')
+      // }
+      return true;
+    },
+    async onSubmit(token){
+      const HelpR = await USER_API.helpMBox({
+          address: this.address,
+          id: this.info.id,
+          scene: this.info.scene,
+          verifytoken: token
+        });
+        this.hideLoading();
+        if (HelpR.status != 0) {
+          this.$toast.fail(HelpR.data);
+          return;
+        }
+        this.getDetails();
+        this.$toast.success(
+          this.$t("ActivityBlindbox.toast.ContributeSuccess")
+        );
+        !this.isBitKeep &&
+        this.$router.push({
+          path: "/activity/blindbox/download",
+          query: {}
+        });
     },
     handlerFocus() {
       this.focus = true;
@@ -351,6 +410,7 @@ export default {
       return true;
     },
     async handerBotton(type) {
+      this.handerType = type;
       const isOwner = this.info.is_owner == 1;
       switch (String(type)) {
         //立即开启盲盒
@@ -382,6 +442,8 @@ export default {
             this.$refs.CreatePoster && this.$refs.CreatePoster.init();
           } else {
             this.helperBtn();
+            this.hideLoading();
+            
           }
           break;
         //查看资产
@@ -411,35 +473,46 @@ export default {
           this.$refs.textarea && this.$refs.textarea.focus();
           return;
         }
-        this.showLoading();
-        const HelpR = await USER_API.helpMBox({
-          address: this.address,
-          id: this.info.id,
-          scene: this.info.scene
-        });
-        this.hideLoading();
-        if (HelpR.status != 0) {
-          this.$toast.fail(HelpR.data);
-          return;
-        }
-        this.getDetails();
+        // window.grecaptcha.execute();
+        // setTimeout(() => {
+        //   window.grecaptcha.render("recaptcha", {
+        //     sitekey: '6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26',
+        //     callback: this.onSubmit
+        //   });
+        // }, 200);
+      //   window.grecaptcha.execute('6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26', { action: 'login' }).then((token) => {
+      //   // recaptcha 调用是后台的接口的方法
+      //   this.onSubmit(token);
+      // })
+        // const HelpR = await USER_API.helpMBox({
+        //   address: this.address,
+        //   id: this.info.id,
+        //   scene: this.info.scene,
+        //   verifytoken: this.verifytoken
+        // });
+        // this.hideLoading();
+        // if (HelpR.status != 0) {
+        //   this.$toast.fail(HelpR.data);
+        //   return;
+        // }
+        // this.getDetails();
 
-        this.$toast.success(
-          this.$t("ActivityBlindbox.toast.ContributeSuccess")
-        );
-        // await new Promise((resolve) =>
-        //   BitKeepInvoke.alert(
-        //     this.$t("ActivityBlindbox.dialog.helperSuccess"),
-        //     resolve
-        //   )
+        // this.$toast.success(
+        //   this.$t("ActivityBlindbox.toast.ContributeSuccess")
         // );
-        // await this.getDetails();
+        // // await new Promise((resolve) =>
+        // //   BitKeepInvoke.alert(
+        // //     this.$t("ActivityBlindbox.dialog.helperSuccess"),
+        // //     resolve
+        // //   )
+        // // );
+        // // await this.getDetails();
 
-        !this.isBitKeep &&
-          this.$router.push({
-            path: "/activity/blindbox/download",
-            query: {}
-          });
+        // !this.isBitKeep &&
+        //   this.$router.push({
+        //     path: "/activity/blindbox/download",
+        //     query: {}
+        //   });
       }
     },
     back() {
@@ -460,12 +533,19 @@ export default {
   filters: {}
 };
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.grecaptcha-badge {
+    display: none;
+}
+.btn{
+  border: none;
+  background: none;
+}
+</style>
 <style lang="scss" scoped>
 .mb {
   // margin-bottom: -24px !important;
 }
-
 .loading {
   min-height: 100vh;
   display: flex;
