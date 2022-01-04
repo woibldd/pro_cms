@@ -27,7 +27,7 @@
         </div>
         <div class="staking-wrap-box-pool-duration-box">
           <span
-            class="staking-wrap-box-pool-duration-smallBox"
+            class="staking-wrap-box-pool-duration-smallBox setFontFamily"
             @click="handlePoolTimeTab(sitem, i)"
             v-for="(sitem, i) in listInfo.list[0].config"
             :key="i"
@@ -50,7 +50,7 @@
             type="number"
             v-model="inputNumber"
             placeholder="Entry stake amount"
-            class="textPrimary0"
+            class="textPrimary0 setFontFamily"
           />
           <div class="staking-warp-amount-input-right">
             <div class="right textPrimary0 setFontFamily">BKB</div>
@@ -73,7 +73,7 @@
             <span class="setFontFamily textPrimary0">10,000,000 BKB</span>
           </div>
         </div>
-        <div class="colorLine setColorLine"></div>
+        <!-- <div class="colorLine setColorLine"></div> -->
         <div class="staking-summry">
           <div class="textPrimary0 Summary">{{ $t("staking.Summary") }}</div>
           <div class="staking-summary-box colorBackground3">
@@ -126,7 +126,7 @@
               <div class="textSecond3">
                 {{ $t("staking.EstimatedInterests") }}
               </div>
-              <div class="colorSecond01">
+              <div class="colorSecond01 setFontFamily">
                 {{
                   inputNumber
                     ? ((this.apy / 100 / 360) * this.day * inputNumber).toFixed(
@@ -196,9 +196,7 @@ export default {
   },
   mounted() {
     this.setIcon();
-    setTimeout(()=>{
-      this.onClickConnect();
-    },400)
+    this.onClickConnect();
   },
   methods: {
     async getInfo() {
@@ -232,8 +230,9 @@ export default {
               if (err) {
                 return this.$toast(err);
               }
-              this.addresses = data;
-              this.accounts = this.addresses["eth"] || "--";
+              this.accounts = data["eth"] || "--";
+              await this.handleGetToken();
+              await this.getInfo();
           });
             BitKeepInvoke.appMode((err, res) => {
               let body = document.getElementsByTagName("body")[0];
@@ -316,13 +315,11 @@ export default {
     async onClickConnect() {
       try {
         this.accounts = this.accounts || await wallet.connect();
-        const chainId = await wallet.getChainId();
-        // const [adddress] = await wallet.getAccounts();        
-        if (Number(chainId) !== 1) {
-          await wallet.switchChainId(1, this.accounts);
-        }        
-        this.handleGetToken();
-        this.getInfo();
+        // const chainId = await wallet.getChainId();
+        // const [adddress] = await wallet.getAccounts();       
+        // if (Number(chainId) !== 1) {
+        //   await wallet.switchChainId(1, this.accounts);
+        // }        
         wallet.on("chainChanged", async () => {
           const chainId16 = await wallet.getChainId();
           Number(chainId16) != 1 && (await wallet.switchChainId(1));
@@ -426,10 +423,9 @@ export default {
       position: absolute;
       right: 0;
       :first-child {
-        font-size: 16px;
+        font-size: 12px;
       }
       :last-child {
-        font-weight: 600;
         font-size: 16px;
         margin-top: 2px;
       }
@@ -453,6 +449,7 @@ export default {
     }
     .setBorderColor {
       border: 1px solid #495bff;
+      color: #495bff;
     }
   }
   .staking-warp-amount {
@@ -475,7 +472,7 @@ export default {
     display: flex;
     align-items: center;
     input {
-      width: 60%;
+      width: 55%;
       height: 50px;
       float: left;
       padding-left: 15px;
@@ -490,7 +487,7 @@ export default {
       line-height: 50px;
       .right {
         float: left;
-        padding: 0 10px;
+        padding: 0 20px 0 10px;
         font-size: 16px;
       }
       .line {
@@ -501,7 +498,7 @@ export default {
       }
       .max {
         float: left;
-        padding: 0 10px;
+        padding: 0 17px 0 20px;
         font-size: 16px;
       }
     }
@@ -522,7 +519,7 @@ export default {
     margin-top: 30px;
   }
   .staking-summry {
-    margin-top: 10px;
+    margin-top: 40px;
     padding-bottom: 100px;
     .Summary {
       font-weight: 600;
@@ -567,9 +564,9 @@ export default {
         }
       }
       .setColorLine1 {
-        width: 100%;
         height: 1px;
-        margin: 15px 0;
+        margin: 0 16px 15px;
+        box-sizing: border-box;
       }
       .staking-warp-Interests {
         display: flex;
@@ -590,6 +587,7 @@ export default {
   z-index: 99;
   position: fixed;
   padding: 11px 36px 34px;
+  box-sizing:border-box;
   .staking-wrap-box-pool-stake-now {
     background: #495bff;
     color: #fff;

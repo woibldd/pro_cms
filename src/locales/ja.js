@@ -440,7 +440,7 @@ module.exports = {
     BSCChainPool: 'BSCチェーンプール',
     StakeAmount: 'ステーク額',
     Available: '利用可能',
-    MAX: 'MAX',
+    MAX: 'Max',
     StakeAmountLimiation: 'ステーク額の制限',
     Minimum: '最小',
     Maximum: '最大',

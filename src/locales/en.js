@@ -475,7 +475,7 @@ module.exports = {
     BSCChainPool: 'BSC Chain Pool',
     StakeAmount: 'Stake Amount',
     Available: 'Available',
-    MAX: 'MAX',
+    MAX: 'Max',
     StakeAmountLimiation: 'Stake Amount Limiation',
     Minimum: 'Minimum',
     Maximum: 'Maximum',

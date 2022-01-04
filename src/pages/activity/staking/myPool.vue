@@ -70,14 +70,14 @@
               <div class="myPool-warp-tab-firstContent-content">
                 <div class="myPool-warp-tab-firstContent-content-apy">
                   <div class="textSecond2">APY</div>
-                  <div class="colorSecond01">
+                  <div class="colorSecond01 setFontFamily">
                     {{ (item.apy * 100).toFixed(2) + "%" }}
                   </div>
                 </div>
                 <div class="myPool-warp-tab-firstContent-content-number">
                   <div class="myPool-warp-tab-firstContent-content-number-left">
                     <div class="textSecond2">{{ $t("staking.Durations") }}</div>
-                    <div class="textPrimary0">{{ item.lockTime }} {{$t('staking.Days')}}</div>
+                    <div class="textPrimary0 setFontFamily">{{ item.lockTime }} {{$t('staking.Days')}}</div>
                   </div>
                   <div
                     class="myPool-warp-tab-firstContent-content-number-right"
@@ -85,7 +85,7 @@
                     <div class="textSecond2">
                       {{ $t("staking.PledgeDueDate") }}
                     </div>
-                    <div class="textPrimary0">{{ time(item.lockEndTime) }}</div>
+                    <div class="textPrimary0 setFontFamily">{{ time(item.lockEndTime) }}</div>
                   </div>
                 </div>
                 <div class="myPool-warp-tab-firstContent-content-number">
@@ -93,7 +93,7 @@
                     <div class="textSecond2">
                       {{ $t("staking.YourStakeAmount") }}
                     </div>
-                    <div class="textPrimary0">{{ item.stakeAmount }} BKB</div>
+                    <div class="textPrimary0 setFontFamily">{{ item.stakeAmount }} BKB</div>
                   </div>
                   <div
                     class="myPool-warp-tab-firstContent-content-number-right"
@@ -101,7 +101,7 @@
                     <div class="textSecond2">
                       {{ $t("staking.CurrencyReward") }}
                     </div>
-                    <div class="colorPrimary">
+                    <div class="colorPrimary setFontFamily">
                       +{{ item.currencyReward }} BKB
                     </div>
                   </div>

@@ -29,7 +29,7 @@
       />
       <p class="colorPrimary" v-if='stakingStatus'>
         <span class="textPrimary0">{{$t('staking.getBKB')}}</span><br/>
-        {{ milliFormat(currencyReward * 1 + stakeAmount) }} BKB
+        <span class="setFontFamily setFontSize24">{{ milliFormat(currencyReward * 1 + stakeAmount) }} BKB</span>
       </p>
       <p class="textPrimary0 setFontSize" v-html="$t('staking.removeBefore')" v-else>
        
@@ -71,7 +71,7 @@
         :class="!stakingStatus? 'colorBackground2 textPrimary0' : 'colorBackgroundPrimary colorwhite'"
         :disabled="btnStatus"
         @click="sign"
-        >{{!stakingStatus? $t('staking.Remove') : $t('staking.Confirm')}}</van-button>
+        >{{$t('staking.Remove')}}</van-button>
     </div>
   </van-popup>
 </template>
@@ -232,7 +232,7 @@ export default {
     height: 48px;
   }
   p {
-    font-family: bitkeep DIN;
+    // font-family: bitkeep DIN;
     font-size: 24px;
     margin: 10px;
     text-align: center;
@@ -242,6 +242,10 @@ export default {
   }
   .setFontSize{
     font-size: 18px;
+    font-weight: 600;
+  }
+  .setFontSize24{
+    font-size: 24px;
   }
 }
 .confirm-bottom {
@@ -255,6 +259,7 @@ export default {
   transform: translateX(-50%);
   text-align: center;
   .swap-btn {
+    font-weight: 500;
     height: 50px;
     border-radius: 10px;
     text-align: center;

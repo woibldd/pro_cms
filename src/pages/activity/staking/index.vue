@@ -120,7 +120,7 @@
               </div>
               <div class="staking-wrap-box-pool-duration-box">
                 <span
-                  class="staking-wrap-box-pool-duration-smallBox"
+                  class="staking-wrap-box-pool-duration-smallBox setFontFamily"
                   @click="handlePoolTimeTab(sitem, i)"
                   v-for="(sitem, i) in item.config"
                   :key="i"
