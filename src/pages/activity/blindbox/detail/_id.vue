@@ -442,8 +442,6 @@ head () {
             this.$refs.CreatePoster && this.$refs.CreatePoster.init();
           } else {
             this.helperBtn();
-            this.hideLoading();
-            
           }
           break;
         //查看资产
@@ -459,7 +457,8 @@ head () {
                 query: {}
               });
           }
-
+        case "3":
+            this.helperBtn();
           break;
         default:
           break;
