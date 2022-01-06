@@ -337,7 +337,7 @@ head () {
       await this.$nextTick();
     },
     validate() {
-      if(this.handerType != 1) return true;
+      if(this.handerType == 1) return false;
       if (!this.address || !this.address.replace(/ /g, "")) {
         this.$toast.fail(this.$t("ActivityBlindbox.toast.inputETH"));
         this.$refs.textarea && this.$refs.textarea.focus();
@@ -442,8 +442,6 @@ head () {
             this.$refs.CreatePoster && this.$refs.CreatePoster.init();
           } else {
             this.helperBtn();
-            this.hideLoading();
-            
           }
           break;
         //查看资产
@@ -459,7 +457,8 @@ head () {
                 query: {}
               });
           }
-
+        case "3":
+            this.helperBtn();
           break;
         default:
           break;

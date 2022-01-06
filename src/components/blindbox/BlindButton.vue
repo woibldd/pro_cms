@@ -9,11 +9,12 @@
     <div v-if="info.status == 0">
       <!-- {{ info.is_owner == 1 ? "立即邀请好友助力" : "立即助力开启盲盒" }} -->
 
-      <div class="invite_button heart" @click="handerBotton(1)">
+      <div class="invite_button heart" v-if='info.is_owner == 1' @click="handerBotton(1)">
+        {{$t("ActivityBlindbox.button.InviteFriendsNow")}}
+      </div>
+      <div class="invite_button heart" v-else @click="handerBotton(3)">
         {{
-          info.is_owner == 1
-            ? $t("ActivityBlindbox.button.InviteFriendsNow")
-            : $t("ActivityBlindbox.button.OpenFriendsImmediately")
+          $t("ActivityBlindbox.button.OpenFriendsImmediately")
         }}
       </div>
     </div>
