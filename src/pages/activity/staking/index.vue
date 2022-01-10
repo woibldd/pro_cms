@@ -283,6 +283,7 @@ export default {
       theme: 0,
       setBorderColor: 0,
       apy: "20%",
+      yourAmount: "0",
       ends: "--",
       btn: "Stake now",
       address: '',
@@ -343,6 +344,7 @@ export default {
     handlePoolTimeTab(item, index) {
       this.setBorderColor = index;
       this.apy = (item.apy * 100).toFixed(2) + "%";
+      // this.yourAmount = this.milliFormat(item.limit);
       this.ends = moment(item.lastStakeTime).format("YYYY-MM-DD HH:mm");
       this.btn = !this.isActiveSaleOut(item) ? this.$t('staking.StakeNow') : this.$t('staking.SoldOut');
     },

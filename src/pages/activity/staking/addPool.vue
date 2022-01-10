@@ -72,8 +72,8 @@
             <span class="setFontFamily textPrimary0"> 1 BKB</span>
           </div>
           <div>
-            {{ $t("staking.Maximum") }}:
-            <span class="setFontFamily textPrimary0">10,000,000 BKB</span>
+            <!-- {{ $t("staking.Maximum") }}:
+            <span class="setFontFamily textPrimary0">{{ listInfo.list[0].userAmount.toFixed(6) }} BKB</span> -->
           </div>
         </div>
         <!-- <div class="colorLine setColorLine"></div> -->
@@ -298,6 +298,7 @@ export default {
       });
       if (status == 1) {
         this.isLoading = false;
+        this.handleGetToken();
         return this.$dialog.alert({
           message: data,
           confirmButtonText: this.$t("staking.know"),
