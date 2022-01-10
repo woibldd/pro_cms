@@ -505,7 +505,8 @@ module.exports = {
     Cancel: 'Cancel',
     Confirm: 'Confirm',
     Days: 'Days',
-    authorization: 'You canceled signature authorization!'
-
+    authorization: 'You canceled signature authorization!',
+    stakeAmount: 'Entry stake amount',
+    know: 'OK',
   }
 }

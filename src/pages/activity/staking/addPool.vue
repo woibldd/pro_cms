@@ -49,8 +49,11 @@
           <input
             type="number"
             v-model="inputNumber"
+            :min='1'
             placeholder="Entry stake amount"
             class="textPrimary0 setFontFamily"
+            @keydown="handleInput"
+            @blur="handleInput"
           />
           <div class="staking-warp-amount-input-right">
             <div class="right textPrimary0 setFontFamily">BKB</div>
@@ -169,7 +172,7 @@ export default {
       setBorderColor: 0,
       apy: "20",
       btn: "Stake now",
-      inputNumber: 0,
+      inputNumber: '',
       isLoading: true,
       title: "",
       day: "7",
@@ -199,6 +202,10 @@ export default {
     this.onClickConnect();
   },
   methods: {
+    handleInput(e){
+      if(e.target.value < 1) e.target.value = '';
+      e.target.value = (e.target.value.match(/^\d*(\.?\d{0,5})/g)[0]) || null
+    },
     async getInfo() {
       const { data, status } = await USER_API.poolList({
         userid: this.accounts,
@@ -262,7 +269,7 @@ export default {
         this.isLoading = false;
         return this.$dialog.alert({
           message: data,
-          confirmButtonText: this.$t("CbkbExchange.know"),
+          confirmButtonText: this.$t("staking.know"),
           confirmButtonColor: "$theme-light-colorPrimary",
         });
       }
@@ -270,11 +277,15 @@ export default {
     },
     // 获取签名
     async handleGetLoginSign() {
-      try {
-        let loginSign = await wallet.LoginSign(this.token, this.accounts);
-        this.handleStaking(loginSign);
-      } catch (error) {
-        this.$toast(this.$t('staking.authorization'));
+      if(this.inputNumber == '' || this.inputNumber < 1) return this.$toast(this.$t('staking.stakeAmount'));
+      if(this.listInfo.list && (this.inputNumber > this.listInfo.list[0].userAmount)) return this.$toast('insufficient balance');
+      if(this.btn == this.$t('staking.StakeNow') && this.inputNumber >= 1) {
+        try {
+          let loginSign = await wallet.LoginSign(this.token, this.accounts);
+          this.handleStaking(loginSign);
+        } catch (error) {
+          this.$toast(this.$t('staking.authorization'));
+        }
       }
     },
     async handleStaking(loginSign) {
@@ -289,7 +300,7 @@ export default {
         this.isLoading = false;
         return this.$dialog.alert({
           message: data,
-          confirmButtonText: this.$t("CbkbExchange.know"),
+          confirmButtonText: this.$t("staking.know"),
           confirmButtonColor: "$theme-light-colorPrimary",
         });
       }
@@ -319,7 +330,11 @@ export default {
         // const [adddress] = await wallet.getAccounts();       
         // if (Number(chainId) !== 1) {
         //   await wallet.switchChainId(1, this.accounts);
-        // }        
+        // }
+        if(!this.isBitKeep){
+          await this.handleGetToken();
+          await this.getInfo();
+        } 
         wallet.on("chainChanged", async () => {
           const chainId16 = await wallet.getChainId();
           Number(chainId16) != 1 && (await wallet.switchChainId(1));
@@ -352,7 +367,7 @@ export default {
     //             console.log(parseFloat(result));
     //             this.$dialog.alert({
     //               message: data,
-    //               confirmButtonText: this.$t("CbkbExchange.know"),
+    //               confirmButtonText: this.$t("staking.know"),
     //               confirmButtonColor: "$theme-light-colorPrimary",
     //             });
     //           });

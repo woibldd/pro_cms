@@ -470,6 +470,8 @@ module.exports = {
     Cancel: 'Hủy bỏ',
     Confirm: 'Xác nhận',
     Days: 'Ngày',
-    authorization: 'Bạn đã hủy ủy quyền chữ ký!'
+    authorization: 'Bạn đã hủy ủy quyền chữ ký!',
+    stakeAmount: 'Số tiền đặt cược tham gia',
+    know: 'VÂNG',
   }
 }

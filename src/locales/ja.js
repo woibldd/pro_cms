@@ -470,7 +470,8 @@ module.exports = {
     Cancel: 'キャンセル',
     Confirm: '確認',
     Days: '日々',
-    authorization: '署名認証をキャンセルしました！'
-
+    authorization: '署名認証をキャンセルしました！',
+    stakeAmount: 'エントリーステーク額',
+    know: 'わかった',
   }
 }

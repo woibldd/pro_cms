@@ -3212,7 +3212,9 @@ module.exports = {
     Cancel: 'Cancel',
     Confirm: 'Confirm',
     Days: 'Days',
-    authorization: 'You canceled signature authorization!'
+    authorization: 'You canceled signature authorization!',
+    stakeAmount: 'Entry stake amount',
+    know: 'OK'
   }
 };
 
@@ -3685,7 +3687,9 @@ module.exports = {
     Cancel: 'キャンセル',
     Confirm: '確認',
     Days: '日々',
-    authorization: '署名認証をキャンセルしました！'
+    authorization: '署名認証をキャンセルしました！',
+    stakeAmount: 'エントリーステーク額',
+    know: 'わかった'
   }
 };
 
@@ -4140,7 +4144,9 @@ module.exports = {
     Cancel: '취소',
     Confirm: '확인하다',
     Days: '날',
-    authorization: '서명 승인을 취소했습니다!'
+    authorization: '서명 승인을 취소했습니다!',
+    stakeAmount: '참가 지분 금액',
+    know: '확인'
   }
 };
 
@@ -4595,7 +4601,9 @@ module.exports = {
     Cancel: 'Hủy bỏ',
     Confirm: 'Xác nhận',
     Days: 'Ngày',
-    authorization: 'Bạn đã hủy ủy quyền chữ ký!'
+    authorization: 'Bạn đã hủy ủy quyền chữ ký!',
+    stakeAmount: 'Số tiền đặt cược tham gia',
+    know: 'VÂNG'
   }
 };
 
@@ -5085,7 +5093,9 @@ module.exports = {
     Cancel: 'Cancel',
     Confirm: 'Confirm',
     Days: 'Days',
-    authorization: 'You canceled signature authorization!'
+    authorization: 'You canceled signature authorization!',
+    stakeAmount: 'Entry stake amount',
+    know: 'OK'
   }
 };
 
@@ -6974,7 +6984,6 @@ function wrapFunctional(options) {
 
 
 const components = {
-  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 182)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 189)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 279)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 105)).then(c => wrapFunctional(c.default || c)),
@@ -6983,6 +6992,7 @@ const components = {
   CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 81)).then(c => wrapFunctional(c.default || c)),
   CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 71)).then(c => wrapFunctional(c.default || c)),
   Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 75)).then(c => wrapFunctional(c.default || c)),
+  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 182)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 11).then(__webpack_require__.bind(null, 150)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 12).then(__webpack_require__.bind(null, 84)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 13).then(__webpack_require__.bind(null, 280)).then(c => wrapFunctional(c.default || c)),

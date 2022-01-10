@@ -470,8 +470,8 @@ module.exports = {
     Cancel: '취소',
     Confirm: '확인하다',
     Days: '날',
-    authorization: '서명 승인을 취소했습니다!'
-
-
+    authorization: '서명 승인을 취소했습니다!',
+    stakeAmount: '참가 지분 금액',
+    know: '확인',
   }
 }

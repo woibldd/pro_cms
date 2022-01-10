@@ -274,7 +274,7 @@ export default {
         this.refreshLoading = false;
         return this.$dialog.alert({
           message: data,
-          confirmButtonText: this.$t("CbkbExchange.know"),
+          confirmButtonText: this.$t("staking.know"),
           confirmButtonColor: "$theme-light-colorPrimary",
         });
       }
@@ -291,7 +291,7 @@ export default {
         this.refreshLoading = false;
         return this.$dialog.alert({
           message: data,
-          confirmButtonText: this.$t("CbkbExchange.know"),
+          confirmButtonText: this.$t("staking.know"),
           confirmButtonColor: "$theme-light-colorPrimary",
         });
       }
@@ -307,7 +307,7 @@ export default {
         this.isLoading = false;
         return this.$dialog.alert({
           message: data,
-          confirmButtonText: this.$t("CbkbExchange.know"),
+          confirmButtonText: this.$t("staking.know"),
           confirmButtonColor: "$theme-light-colorPrimary",
         });
       }
