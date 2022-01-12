@@ -2,7 +2,6 @@ import Vue from 'vue'
 import { wrapFunctional } from './utils'
 
 const components = {
-  Activity: () => import('../../components/activity/index.vue' /* webpackChunkName: "components/activity" */).then(c => wrapFunctional(c.default || c)),
   CommonCVueCountdown: () => import('../../components/common/c-vue-countdown.vue' /* webpackChunkName: "components/common-c-vue-countdown" */).then(c => wrapFunctional(c.default || c)),
   CommonHeader: () => import('../../components/common/header.vue' /* webpackChunkName: "components/common-header" */).then(c => wrapFunctional(c.default || c)),
   Common: () => import('../../components/common/index.js' /* webpackChunkName: "components/common" */).then(c => wrapFunctional(c.default || c)),
@@ -17,7 +16,8 @@ const components = {
   VueCreatePosterLayout: () => import('../../components/vue-create-poster/layout/index.js' /* webpackChunkName: "components/vue-create-poster-layout" */).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutPainter: () => import('../../components/vue-create-poster/layout/painter.js' /* webpackChunkName: "components/vue-create-poster-layout-painter" */).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutQrcode: () => import('../../components/vue-create-poster/layout/qrcode.js' /* webpackChunkName: "components/vue-create-poster-layout-qrcode" */).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutUtil: () => import('../../components/vue-create-poster/layout/util.js' /* webpackChunkName: "components/vue-create-poster-layout-util" */).then(c => wrapFunctional(c.default || c))
+  VueCreatePosterLayoutUtil: () => import('../../components/vue-create-poster/layout/util.js' /* webpackChunkName: "components/vue-create-poster-layout-util" */).then(c => wrapFunctional(c.default || c)),
+  Activity: () => import('../../components/activity/index.vue' /* webpackChunkName: "components/activity" */).then(c => wrapFunctional(c.default || c))
 }
 
 for (const name in components) {

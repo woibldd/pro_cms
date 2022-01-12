@@ -1,7 +1,4 @@
 {
-  "Activity": {
-    "description": "Auto imported from components/activity/index.vue"
-  },
   "CommonCVueCountdown": {
     "description": "Auto imported from components/common/c-vue-countdown.vue"
   },
@@ -46,5 +43,8 @@
   },
   "VueCreatePosterLayoutUtil": {
     "description": "Auto imported from components/vue-create-poster/layout/util.js"
+  },
+  "Activity": {
+    "description": "Auto imported from components/activity/index.vue"
   }
 }
