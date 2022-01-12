@@ -473,5 +473,28 @@ module.exports = {
     authorization: '署名認証をキャンセルしました！',
     stakeAmount: 'エントリーステーク額',
     know: 'わかった',
+  },
+  'trading':{
+    tradingTitle: '取引報酬',
+    know: 'わかった',
+    ComingSoon: '近日公開',
+    swapNow: '今すぐ交換',
+    claim: '請求',
+    tradingRule: 'Mining Rule',
+    learnMore: 'もっと詳しく知る',
+    finished: '終了した',
+    Live: '住む',
+    Upcoming: '今後の',
+    Past: '過去',
+    UnclaimedReward: '未請求の報酬',
+    Chain: 'Biananceスマートチェーン',
+    Ending: '終了',
+    Start: '始まる時間',
+    Time: '時間',
+    Reward: '褒美',
+    YourTrading: 'あなたの取引価値',
+    transaction: '合計取引金額',
+    GetsBKB: 'BKB番号を取得します',
+    in: 'の'
   }
 }

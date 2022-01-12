@@ -473,5 +473,28 @@ module.exports = {
     authorization: 'Bạn đã hủy ủy quyền chữ ký!',
     stakeAmount: 'Số tiền đặt cược tham gia',
     know: 'VÂNG',
+  },
+  'trading':{
+    tradingTitle: 'Phần thưởng giao dịch',
+    know: 'VÂNG',
+    ComingSoon: 'Sắp có',
+    swapNow: 'Hoán đổi ngay',
+    claim: 'Yêu cầu',
+    tradingRule: 'Mining Rule',
+    learnMore: 'Tìm hiểu thêm',
+    finished: 'Hoàn thành',
+    Live: 'trực tiếp',
+    Upcoming: 'Sắp tới',
+    Past: 'Quá khứ',
+    UnclaimedReward: 'Phần thưởng không có người nhận',
+    Chain: 'Chuỗi thông minh Bianance',
+    Ending: 'Hoàn thành',
+    Start: 'Thời gian bắt đầu',
+    Time: 'Thời gian',
+    Reward: 'Giải thưởng',
+    YourTrading: 'Giá trị giao dịch của bạn',
+    transaction: 'Tổng số tiền giao dịch',
+    GetsBKB: 'Nhận số BKB',
+    in: 'trong'
   }
 }

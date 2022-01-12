@@ -508,5 +508,28 @@ module.exports = {
     authorization: 'You canceled signature authorization!',
     stakeAmount: 'Entry stake amount',
     know: 'OK',
+  },
+  'trading':{
+    tradingTitle: 'Trading Reward',
+    know: 'OK',
+    ComingSoon: 'Coming soon',
+    swapNow: 'Swap Now',
+    claim: 'Claim',
+    tradingRule: 'Mining Rule',
+    learnMore: 'Learn more',
+    finished: 'Finished',
+    Live: 'Live',
+    Upcoming: 'Upcoming',
+    Past: 'Past',
+    UnclaimedReward: 'Unclaimed reward',
+    Chain: 'Bianance Smart Chain',
+    Ending: 'Ending in',
+    Start: 'Start time',
+    Time: 'Time',
+    Reward: 'Reward',
+    YourTrading: 'Your Trading value',
+    transaction: 'Total transaction amount',
+    GetsBKB: 'Gets BKB number',
+    in: 'in'
   }
 }

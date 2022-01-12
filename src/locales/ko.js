@@ -473,5 +473,28 @@ module.exports = {
     authorization: '서명 승인을 취소했습니다!',
     stakeAmount: '참가 지분 금액',
     know: '확인',
+  },
+  'trading':{
+    tradingTitle: '거래 보상',
+    know: '확인',
+    ComingSoon: '출시 예정',
+    swapNow: '지금 교환',
+    claim: '주장하다',
+    tradingRule: 'Mining Rule',
+    learnMore: '더 알아보기',
+    finished: '완성 된',
+    Live: '라이브',
+    Upcoming: '다가오는',
+    Past: '과거',
+    UnclaimedReward: '미청구 보상',
+    Chain: 'BI A 남쪽의 스마트체인',
+    Ending: '마치다',
+    Start: '시작 시간',
+    Time: '시간',
+    Reward: '보상',
+    YourTrading: '귀하의 거래 가치',
+    transaction: '총 거래 금액',
+    GetsBKB: 'BKB 번호 가져오기',
+    in: '~에'
   }
 }
