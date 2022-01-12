@@ -51,18 +51,7 @@ export default {
   watch: {
     show(n) {
       this.visables = n;
-    },
-    theme(n) {
-      console.log(n,'12312312');
-      
-      if (n == 1) {
-        this.closeIcon =
-          "https://cdn.bitkeep.vip/u_b_d71e28c0-4c2d-11ec-ad04-d1b66ed0d35e.png";
-      } else {
-        this.closeIcon =
-          "https://cdn.bitkeep.vip/u_b_991190f0-356f-11ec-8c2d-251a27ef7eba.png";
-      }
-    },
+    }
   },
   props: ["show", "theme", "unclaimReward", "sumReward"],
   beforeMount () {

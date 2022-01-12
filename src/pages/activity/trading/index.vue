@@ -76,7 +76,7 @@
         <!-- <activity-com/> -->
         <div class="wrap-bottom colorBackground1">
             <div class="wrap-bottom-text">
-                <div class="textSecond3">待领取奖励</div>
+                <div class="textSecond3">{{$t('trading.UnclaimedReward')}}</div>
                 <div class="colorPrimary setFontFamily">3,750.8704 BKB</div>
             </div>
           <van-button class="swap-btn colorBackgroundSecond01" @click="claim">{{

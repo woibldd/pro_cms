@@ -53,23 +53,22 @@ export default {
     },
   },
   beforeMount() {
+    
+  },
+  mounted() {
     this.isBitKeep &&
       BitKeepInvoke.onLoadReady(() => {
         BitKeepInvoke.setTitle(this.$t("mining.historyTitle"));
-        BitKeepInvoke.setIconAction();
+        BitKeepInvoke.setIconAction('');
         BitKeepInvoke.appMode((err, res) => {
-          let body = document.getElementsByTagName("body")[0];
-          if (res == 1) {
-            this.theme = 1;
-            body.setAttribute("class", "theme-dark");
-          } else {
-            this.theme = 0;
-            body.setAttribute("class", "theme-light");
-          }
-        });
+        let body = document.getElementsByTagName("body")[0];
+        if (res == 1) {
+          body.setAttribute("class", "theme-dark");
+        } else {
+          body.setAttribute("class", "theme-light");
+        }
       });
-  },
-  mounted() {
+    });
     this.historyPhase();
   },
   methods: {

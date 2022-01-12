@@ -83,7 +83,7 @@ export default {
   beforeMount() {
     this.isBitKeep && BitKeepInvoke.onLoadReady(() => {
       BitKeepInvoke.setTitle(this.$t("mining.historyTitle"));
-      BitKeepInvoke.setIconAction();
+      BitKeepInvoke.setIconAction('');
       BitKeepInvoke.appMode((err, res) => {
         let body = document.getElementsByTagName("body")[0];
         if (res == 1) {

@@ -79,7 +79,7 @@
           >
             {{ $t("trading.ComingSoon") }}
           </div>
-          <div v-else
+          <div v-else-if="!finished && activeType == 2"
             class="trading-wrap-box-pool-stake textSecond3 colorBackground2"
           >
             {{ $t("trading.finished") }}
