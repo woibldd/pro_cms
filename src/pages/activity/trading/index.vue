@@ -219,7 +219,7 @@ export default {
       this.show = false;
     },
     swap() {
-      BitKeepInvoke.nativeApp({
+      BitKeepInvoke.nativeApp(JSON.parse(JSON.stringify({
         symbol0: {
           symbol: "CAKE",
           chain: "CAKE",
@@ -234,7 +234,7 @@ export default {
           contract: "contract",
           icon: "123",
         },
-      });
+      })));
     },
     learnMore() {
       this.$router.push("/activity/mining/miningRule");
