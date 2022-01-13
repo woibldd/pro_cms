@@ -169,10 +169,8 @@
 		this.jHost(['close']);
 	}
 
-	BitKeepInvoke.prototype.nativeApp = function(callback){
-		this.jHost(['nativeApp','swapSwap'], function(data){
-			if(callback) callback(data);
-		});
+	BitKeepInvoke.prototype.nativeApp = function(parmase){
+		this.jHost(['nativeApp', 'swapSwap', parmase]);
 	}
 
 

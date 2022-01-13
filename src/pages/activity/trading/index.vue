@@ -22,31 +22,36 @@
         </div>
         <!-- box -->
         <div class="trading-wrap-status textSecond3">
-            <span
-                v-for="(item, index) in activeList"
-                :key='index'
-                :class="activeType==index ? 'textPrimary0 setBorder': ''"
-                @click="tabChange(index)"
-            >{{item}}</span>
-            <!-- <div 
+          <span
+            v-for="(item, index) in activeList"
+            :key="index"
+            :class="activeType == index ? 'textPrimary0 setBorder' : ''"
+            @click="tabChange(index)"
+            >{{ item }}</span
+          >
+          <!-- <div 
             class="trading-wrap-bottom-line colorBackgroundTextPrimary0" 
             :class="[activeType == 0 ? 'trading-active-line-one':activeType == 1 ? 'trading-active-line-two': 'trading-active-line-three']"
             ></div> -->
         </div>
-        <div v-show='activeType==0'>
-            <div class="trading-wrap-box">
-                <tradingCom @swap='swap' :tradingList = 'tradingList' :activeType='0'></tradingCom>
-            </div>
+        <div v-show="activeType == 0">
+          <div class="trading-wrap-box">
+            <tradingCom
+              @swap="swap"
+              :tradingList="tradingList"
+              :activeType="0"
+            ></tradingCom>
+          </div>
         </div>
-        <div v-show='activeType==1'>
-            <div class="trading-wrap-box">
-                <tradingCom :tradingList = 'tradingList' :activeType='1'></tradingCom>
-            </div>
+        <div v-show="activeType == 1">
+          <div class="trading-wrap-box">
+            <tradingCom :tradingList="tradingList" :activeType="1"></tradingCom>
+          </div>
         </div>
-        <div v-show='activeType==2'>
-            <div class="trading-wrap-box">
-                <tradingCom :tradingList = 'tradingList' :activeType='2'></tradingCom>
-            </div>
+        <div v-show="activeType == 2">
+          <div class="trading-wrap-box">
+            <tradingCom :tradingList="tradingList" :activeType="2"></tradingCom>
+          </div>
         </div>
         <!-- Mining Rule -->
         <div class="trading-wrap-one colorBackground1">
@@ -61,12 +66,14 @@
               }}</span>
             </div>
             <div>
-              <span class="trading-wrap-one-header-right colorPrimary" @click="learnMore">{{
-                $t("mining.learnMore")
-              }}</span>
+              <span
+                class="trading-wrap-one-header-right colorPrimary"
+                @click="learnMore"
+                >{{ $t("mining.learnMore") }}</span
+              >
             </div>
           </div>
-            <div class="trading-wrap-line colorLine"></div>
+          <div class="trading-wrap-line colorLine"></div>
           <div class="trading-wrap-one-body" @click="learnMore">
             <p class="trading-wrap-one-body-text textSecond1">
               {{ $t("mining.miningRule") }}
@@ -75,25 +82,30 @@
         </div>
         <!-- <activity-com/> -->
         <div class="wrap-bottom colorBackground1">
-            <div class="wrap-bottom-text">
-                <div class="textSecond3">{{$t('trading.UnclaimedReward')}}</div>
-                <div class="colorPrimary setFontFamily">3,750.8704 BKB</div>
-            </div>
+          <div class="wrap-bottom-text">
+            <div class="textSecond3">{{ $t("trading.UnclaimedReward") }}</div>
+            <div class="colorPrimary setFontFamily">3,750.8704 BKB</div>
+          </div>
           <van-button class="swap-btn colorBackgroundSecond01" @click="claim">{{
             $t("trading.claim")
           }}</van-button>
         </div>
       </div>
     </van-pull-refresh>
-    <pup-protocol :show='show' @close='close' :theme='theme' :key='new Date().getTime()'></pup-protocol>
+    <pup-protocol
+      :show="show"
+      @close="close"
+      :theme="theme"
+      :key="new Date().getTime()"
+    ></pup-protocol>
   </div>
 </template>
 <script>
 import { USER_API } from "@/api/client";
 import { mapState } from "vuex";
 // import activity from "@/components/activity";
-import pupProtocol from './protocol.vue';
-import trading from '@/components/trading';
+import pupProtocol from "./protocol.vue";
+import trading from "@/components/trading";
 export default {
   name: "trading",
   data() {
@@ -104,10 +116,12 @@ export default {
       refreshLoading: false,
       activeType: 0,
       theme: 0,
-      activeList: [this.$t('trading.Live'), this.$t('trading.Upcoming'), this.$t('trading.Past')],
-      tradingList: [
-          {}
-      ]
+      activeList: [
+        this.$t("trading.Live"),
+        this.$t("trading.Upcoming"),
+        this.$t("trading.Past"),
+      ],
+      tradingList: [{}],
     };
   },
   computed: {
@@ -122,9 +136,9 @@ export default {
   components: {
     // activityCom: activity,
     pupProtocol,
-    tradingCom: trading
+    tradingCom: trading,
   },
-  
+
   mounted() {
     this.getInfo();
     this.setIcon();
@@ -144,45 +158,45 @@ export default {
       this.isLoading = false;
       this.refreshLoading = false;
     },
-    inviteRewards(){
-      this.$router.push('/activity/blindboxInvite/rewardList')
+    inviteRewards() {
+      this.$router.push("/activity/blindboxInvite/rewardList");
     },
     tabChange(val) {
       this.activeType = val;
     },
-    setIcon(){
-        this.isBitKeep &&
-          BitKeepInvoke.onLoadReady(() => {
-            BitKeepInvoke.setTitle(
-              this.$t("trading.tradingTitle")
-            );
+    setIcon() {
+      this.isBitKeep &&
+        BitKeepInvoke.onLoadReady(() => {
+          BitKeepInvoke.setTitle(this.$t("trading.tradingTitle"));
           //设置主题
-            this.$nextTick(() => {
-              BitKeepInvoke.appMode((err, res) => {
-                let body = document.getElementsByTagName("body")[0];
-                if (res == 1) {
-                  this.theme = 1;
-                  body.setAttribute("class", "theme-dark");
-                  setTimeout(()=>{
-                    BitKeepInvoke.setIconAction(
+          this.$nextTick(() => {
+            BitKeepInvoke.appMode((err, res) => {
+              let body = document.getElementsByTagName("body")[0];
+              if (res == 1) {
+                this.theme = 1;
+                body.setAttribute("class", "theme-dark");
+                setTimeout(() => {
+                  BitKeepInvoke.setIconAction(
                     "https://cdn.bitkeep.vip/u_b_09035ca0-4dd9-11ec-a555-07d5354e6fab.png",
-                    ()=>{
-                      this.$router.push("/activity/trading/history")
-                    });
-                  },500)
-                } else {
-                  this.theme = 0;
-                  body.setAttribute("class", "theme-light");
-                  setTimeout(()=>{
-                    BitKeepInvoke.setIconAction(
+                    () => {
+                      this.$router.push("/activity/trading/history");
+                    }
+                  );
+                }, 500);
+              } else {
+                this.theme = 0;
+                body.setAttribute("class", "theme-light");
+                setTimeout(() => {
+                  BitKeepInvoke.setIconAction(
                     "https://cdn.bitkeep.vip/u_b_2bb4fa20-3b86-11ec-8e63-1db435df936c.png",
-                    ()=>{
-                      this.$router.push("/activity/trading/history")
-                    });
-                  },500)
-                }
-              });
-          })
+                    () => {
+                      this.$router.push("/activity/trading/history");
+                    }
+                  );
+                }, 500);
+              }
+            });
+          });
         });
     },
     milliFormat(num) {
@@ -193,33 +207,33 @@ export default {
           .replace(/^\d+/g, (m) => m.replace(/(?=(?!^)(\d{3})+$)/g, ","))
       );
     },
-    claim(){
+    claim() {
       this.show = true;
     },
-    close(val){
-      if(val) {
-        setTimeout(()=>{
+    close(val) {
+      if (val) {
+        setTimeout(() => {
           this.getInfo();
-        },500)
+        }, 500);
       }
       this.show = false;
     },
-    swap(){
+    swap() {
       BitKeepInvoke.nativeApp({
-          symbol0: {
-            symbol: 'CAKE',
-            chain: 'CAKE',
-            chainName: 'CAKE',
-            contract: 'contract',
-            icon:  '123'
-            },
-            symbol1: {
-            symbol: 'BNB',
-            chainName: 'BNB',
-            chain: 'BNB',
-            contract: 'contract',
-            icon: '123'
-            }
+        symbol0: {
+          symbol: "CAKE",
+          chain: "CAKE",
+          chainName: "CAKE",
+          contract: "contract",
+          icon: "123",
+        },
+        symbol1: {
+          symbol: "BNB",
+          chainName: "BNB",
+          chain: "BNB",
+          contract: "contract",
+          icon: "123",
+        },
       });
     },
     learnMore() {
@@ -245,17 +259,17 @@ export default {
 @import "@/assets/css/theme.scss";
 @import "./index.scss";
 .theme-light {
-  .trading-wrap-status{
-      .setBorder{
-          border-bottom: 2.1px solid $theme-light-textPrimary0;
-      }
+  .trading-wrap-status {
+    .setBorder {
+      border-bottom: 2.1px solid $theme-light-textPrimary0;
+    }
   }
 }
 .theme-dark {
   .trading-wrap-status {
-      .setBorder{
-          border-bottom: 2.1px solid $theme-dark-textPrimary0;
-      }
+    .setBorder {
+      border-bottom: 2.1px solid $theme-dark-textPrimary0;
+    }
   }
 }
 </style>
