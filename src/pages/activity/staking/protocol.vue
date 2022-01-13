@@ -22,7 +22,7 @@
         v-if='stakingStatus'
       />
       <img
-        src="http://cdn.bitkeep.vip/u_b_eaa1a130-6792-11ec-ae16-9772e16dd24c.png"
+        src="https://cdn.bitkeep.vip/u_b_eaa1a130-6792-11ec-ae16-9772e16dd24c.png"
         class="logo"
         alt=""
         v-else
