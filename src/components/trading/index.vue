@@ -45,7 +45,7 @@
               <div class="textSecond3">{{$t('trading.Reward')}}</div>
             </div>
             <div class="trading-wrap-box-pool-right">
-              <div class="textSecond2">
+              <div class="textSecond2 setFontFamily">
                 2022.01.20 12:00 — 01.22 12:00 (GMT+8)
               </div>
               <div class="setFontFamily textSecond3">

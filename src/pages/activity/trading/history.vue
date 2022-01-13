@@ -16,11 +16,11 @@
     <div class="hisory-wrap-box colorBackground1">
       <div class="hisory-wrap-box-text">
         <div class="textSecond2">{{$t('trading.transaction')}}</div>
-        <div class="textPrimary0">$8,125,250.87</div>
+        <div class="textPrimary0 setFontFamily">$8,125,250.87</div>
       </div>
       <div class="hisory-wrap-box-text">
         <div class="textSecond2">{{$t('trading.GetsBKB')}}</div>
-        <div class="textPrimary0">3,750.8704</div>
+        <div class="textPrimary0 setFontFamily">3,750.8704</div>
       </div>
     </div>
     <div class="history-wrap-one">
