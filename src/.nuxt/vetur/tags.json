@@ -8,6 +8,9 @@
   "Common": {
     "description": "Auto imported from components/common/index.js"
   },
+  "Trading": {
+    "description": "Auto imported from components/trading/index.vue"
+  },
   "BlindboxBlindButton": {
     "description": "Auto imported from components/blindbox/BlindButton.vue"
   },
@@ -22,9 +25,6 @@
   },
   "BlindboxTitleImage": {
     "description": "Auto imported from components/blindbox/titleImage.vue"
-  },
-  "Trading": {
-    "description": "Auto imported from components/trading/index.vue"
   },
   "Activity": {
     "description": "Auto imported from components/activity/index.vue"

@@ -235,8 +235,8 @@ export default {
           icon: "123",
         },
       }
-      console.log( JSON.stringify(swap))
-      BitKeepInvoke.nativeApp(swap.toString());
+      // console.log( JSON.stringify(swap))
+      BitKeepInvoke.nativeApp(JSON.stringify(swap));
     },
     learnMore() {
       this.$router.push("/activity/mining/miningRule");
