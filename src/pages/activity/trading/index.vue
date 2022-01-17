@@ -311,7 +311,7 @@ export default {
 .van-notice-bar{
   font-size: 12px;
   line-height: 15px;
-  padding: 6px 16px;
+  padding: 6px 8px 6px 10px;
   i{
     display: inline-block;
     margin-right: 5px;
