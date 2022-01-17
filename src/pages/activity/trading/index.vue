@@ -277,8 +277,8 @@ export default {
     close(val) {
       if (val) {
         setTimeout(() => {
-          this.getInfo();
-        }, 500);
+          this.tradingWaitClaim();
+        }, 200);
       }
       this.show = false;
     },

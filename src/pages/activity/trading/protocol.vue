@@ -70,7 +70,7 @@ export default {
     swapConfirm: debounce(async function () {
       if (this.waitClaim == 0) return;
       this.btnStatus = true;
-      const { data, status } = await USER_API.tradingClaim({});
+      const { data, status } = await USER_API.tradingClaim();
       if (status == 1) {
         this.close();
         setTimeout(() => {

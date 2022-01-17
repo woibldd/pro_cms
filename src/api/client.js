@@ -16,7 +16,7 @@ const host_user_instance = axios.create({
   baseURL: "/",
   timeout: 60000,
   headers: {
-    token: "",
+    token: "c8ff79c0aff1c702d3c73f0874add811",
     // token: "",
     language: "en",
     currency: "",
@@ -124,7 +124,7 @@ export const USER_API = {
   //待领取
   tradingWaitClaim: (data,headers={}) => host_user_instance.post('/tradeCompetition/waitClaim',data),
   //领取
-  tradingClaim: (data,headers={}) => host_user_instance.post('/tradeCompetition/Claim',data),
+  tradingClaim: (data,headers={}) => host_user_instance.post('/tradeCompetition/claim',data),
   //历史汇总
   tradingSummary: (data,headers={}) => host_user_instance.post('/tradeCompetition/summary',data),
   //历史list
