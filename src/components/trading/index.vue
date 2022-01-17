@@ -5,18 +5,26 @@
        v-for="(item, index) in tradingList" :key="index">
         <div class="trading-wrap-box-pool-title">
           <img
-            :src="item.fromIcon?item.fromIcon:'https://cdn.bitkeep.vip/u_b_a6bdfc60-5113-11ec-be10-ddc2856c6ac6.png'"
+            v-if="item.fromIcon"
+            :src="item.fromIcon"
             alt=""
             class="bigImg"
           />
+          <div v-else class="noImg colorBackground2 noImgOne textSecond3 setFontFamily">
+            {{item.fromSymbol.length> 4 ? item.fromSymbol.substring(0,4).toUpperCase(): item.fromSymbol.toUpperCase()}}
+          </div>
           <img
+            v-if="item.toIcon"
             class="smallImg"
-            :src="item.toIcon?item.toIcon:'https://cdn.bitkeep.vip/u_b_090033d0-5104-11ec-be10-ddc2856c6ac6.png'"
+            :src="item.toIcon"
             alt=""
           />
+          <div v-else class="noImg noImgTwo colorBackground2 textSecond3 setFontFamily">
+            {{ item.toSymbol.length> 4 ? item.toSymbol.substring(0,4).toUpperCase(): item.toSymbol.toUpperCase()}}
+            </div>
           <div class="trading-wrap-box-pool-title-flex">
             <div class="trading-wrap-box-pool-title-left">
-              <div class="textPrimary0">{{item.fromChain.toUpperCase()}}/{{item.toChain.toUpperCase()}}</div>
+              <div class="textPrimary0">{{item.fromSymbol.toUpperCase()}}/{{item.toSymbol .toUpperCase()}}</div>
               <div class="textSecond3">{{$t('trading.Chain')}}</div>
             </div>
             <div class="trading-wrap-box-pool-title-right" v-if='!finished && activeType != 2'>
@@ -136,9 +144,15 @@ export default {
     border: 1px solid $theme-light-colorBackground1;
     border-radius: 50%;
   }
+  .noImg{
+    border: 1px solid $theme-light-colorBackground1;
+  }
   .smallImg{
     border: 1px solid $theme-light-colorBackground1;
     border-radius: 50%;
+  }
+  .noImg{
+    border: 1px solid $theme-light-colorBackground1;
   }
 }
 .theme-dark {
@@ -176,7 +190,7 @@ export default {
     height: 54px;
     align-items: center;
     position: relative;
-    margin-bottom: 8px;
+    // margin-bottom: 4px;
     .bigImg {
       width: 32px;
       height: 32px;
@@ -188,7 +202,23 @@ export default {
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      margin-left: -4px;
+      margin-left: -5px;
+    }
+    .noImg{
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .noImgOne{
+      margin-left: 15px;
+    }
+    .noImgTwo{
+      margin-left: -5px;
     }
   }
   .trading-wrap-line {
@@ -249,6 +279,7 @@ export default {
       padding: 15px 0 0;
       .setFont16 {
         font-size: 16px !important;
+        margin-top: 5px !important;
       }
       .trading-wrap-box-pool-left {
         text-align: left;

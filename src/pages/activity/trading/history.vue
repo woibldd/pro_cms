@@ -19,7 +19,7 @@
         :finished="finished"
         :immediate-check="false"
         :loading-text="$t('mining.loading')"
-        :finished-text="$t('base.nomore')"
+        :finished-text="historyList.length > 0 ? $t('base.nomore'): ''"
         @load="onLoadList"
       >
       <div class="hisory-wrap-box colorBackground1">

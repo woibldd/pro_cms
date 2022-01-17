@@ -1,6 +1,6 @@
 {
-  "Trading": {
-    "description": "Auto imported from components/trading/index.vue"
+  "Activity": {
+    "description": "Auto imported from components/activity/index.vue"
   },
   "CommonCVueCountdown": {
     "description": "Auto imported from components/common/c-vue-countdown.vue"
@@ -26,8 +26,8 @@
   "BlindboxTitleImage": {
     "description": "Auto imported from components/blindbox/titleImage.vue"
   },
-  "Activity": {
-    "description": "Auto imported from components/activity/index.vue"
+  "Trading": {
+    "description": "Auto imported from components/trading/index.vue"
   },
   "VueCreatePosterLayoutCanvasPoster": {
     "description": "Auto imported from components/vue-create-poster/layout/canvas-poster.vue"

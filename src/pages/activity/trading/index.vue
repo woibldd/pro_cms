@@ -340,6 +340,7 @@ export default {
   .trading-wrap-status {
     .setBorder {
       border-bottom: 2.1px solid $theme-light-textPrimary0;
+      font-weight: 500;
     }
   }
 }
@@ -347,6 +348,7 @@ export default {
   .trading-wrap-status {
     .setBorder {
       border-bottom: 2.1px solid $theme-dark-textPrimary0;
+      font-weight: 500;
     }
   }
 }
