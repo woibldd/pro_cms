@@ -5,7 +5,8 @@ module.exports = {
         no_more: "没有更多了",
         networkErro:"网络开了小差",
         copied: 'Copied',
-        copiedError: 'Some error occurred'
+        copiedError: 'Some error occurred',
+        nomore: 'No More',
     },
     "ActivityBlindbox": {
         shared:{
@@ -528,6 +529,8 @@ module.exports = {
         YourTrading: 'Your Trading value',
         transaction: 'Total transaction amount',
         GetsBKB: 'Gets BKB number',
-        in: 'in'
+        in: 'in',
+        make: 'Make a transaction',
+        toGet: 'to get BKB'
       }
 }

@@ -5,7 +5,8 @@ module.exports = {
     success: 'Successfully',
     networkErro:"The Internet has gone awry",
     copied: 'Copied',
-    copiedError: 'Some error occurred'
+    copiedError: 'Some error occurred',
+    nomore: 'No More',
   },
 
   "ActivityBlindbox": {
@@ -530,6 +531,8 @@ module.exports = {
     YourTrading: 'Your Trading value',
     transaction: 'Total transaction amount',
     GetsBKB: 'Gets BKB number',
-    in: 'in'
+    in: 'in',
+    make: 'Make a transaction',
+    toGet: 'to get BKB'
   }
 }

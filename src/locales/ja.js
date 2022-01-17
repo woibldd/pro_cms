@@ -5,7 +5,8 @@ module.exports = {
     success: '正常に更新',
     networkErro:"インターネットがうまくいかなくなった",
     copied: 'コピー',
-    copiedError: 'エラーが発生しました'
+    copiedError: 'エラーが発生しました',
+    nomore: 'もういや',
   },
 
   "ActivityBlindbox": {
@@ -495,6 +496,9 @@ module.exports = {
     YourTrading: 'あなたの取引価値',
     transaction: '合計取引金額',
     GetsBKB: 'BKB番号を取得します',
-    in: 'の'
+    in: 'の',
+    make: '取引を行う',
+    toGet: 'BKBを取得するには'
+
   }
 }

@@ -1,30 +1,30 @@
 <template>
   <div>
-    <div v-if="tradingList.length>0">
+    <div v-if="tradingList && tradingList.length>0">
       <div class="trading-wrap-box-pool colorBackground1"
        v-for="(item, index) in tradingList" :key="index">
         <div class="trading-wrap-box-pool-title">
           <img
-            src="https://cdn.bitkeep.vip/u_b_a6bdfc60-5113-11ec-be10-ddc2856c6ac6.png"
+            :src="item.fromIcon?item.fromIcon:'https://cdn.bitkeep.vip/u_b_a6bdfc60-5113-11ec-be10-ddc2856c6ac6.png'"
             alt=""
             class="bigImg"
           />
           <img
             class="smallImg"
-            src="https://cdn.bitkeep.vip/u_b_090033d0-5104-11ec-be10-ddc2856c6ac6.png"
+            :src="item.toIcon?item.toIcon:'https://cdn.bitkeep.vip/u_b_090033d0-5104-11ec-be10-ddc2856c6ac6.png'"
             alt=""
           />
           <div class="trading-wrap-box-pool-title-flex">
             <div class="trading-wrap-box-pool-title-left">
-              <div class="textPrimary0">CAKE/BNB</div>
-              <div class="textSecond2">{{$t('trading.Chain')}}</div>
+              <div class="textPrimary0">{{item.fromChain.toUpperCase()}}/{{item.toChain.toUpperCase()}}</div>
+              <div class="textSecond3">{{$t('trading.Chain')}}</div>
             </div>
             <div class="trading-wrap-box-pool-title-right" v-if='!finished && activeType != 2'>
-              <div class="textSecond2" v-if="activeType == 0">{{$t('trading.Ending')}}</div>
-              <div class="textSecond2" v-if="activeType == 1">{{$t('trading.Start')}}</div>
-              <div v-if="countDown > 0">
+              <div class="textSecond3" v-if="activeType == 0">{{$t('trading.Ending')}}</div>
+              <div class="textSecond3" v-if="activeType == 1">{{$t('trading.Start')}}</div>
+              <div v-if="item.countdown > 0">
                 <van-count-down
-                  :time="countDown"
+                  :time="item.countdown"
                   :format="formatEn"
                   class="textPrimary0 setFontFamily"
                 />
@@ -46,10 +46,10 @@
             </div>
             <div class="trading-wrap-box-pool-right">
               <div class="textSecond2 setFontFamily">
-                2022.01.20 12:00 — 01.22 12:00 (GMT+8)
+                {{item.startTime}} — {{item.endTime}} (GMT+8)
               </div>
-              <div class="setFontFamily textSecond3">
-                <span class="colorPrimary">1x</span> {{$t('trading.in')}} BKB
+              <div class="setFontFamily textSecond2">
+                <span class="colorPrimary">{{item.rate}}x</span> {{$t('trading.in')}} BKB
               </div>
             </div>
           </div>
@@ -58,19 +58,19 @@
             <div class="trading-wrap-box-pool-left">
               <div class="textSecond3">{{$t('trading.YourTrading')}}</div>
               <div class="textPrimary0 setFontFamily setFont16">
-                $8,125,250.87
+                ${{milliFormat(item.allTradingVolume)}}
               </div>
             </div>
             <div class="trading-wrap-box-pool-right">
-              <div class="textSecond2">{{$t('trading.tradingTitle')}}</div>
+              <div class="textSecond3">{{$t('trading.tradingTitle')}}</div>
               <div class="setFontFamily colorPrimary setFont16">
-                +3,750.8704 BKB
+                +{{milliFormat(item.reward)}} BKB
               </div>
             </div>
           </div>
           <div v-if='!finished && activeType == 0'
             class="trading-wrap-box-pool-stake colorwhite colorBackgroundPrimary"
-            @click="swap"
+            @click="swap(item.swapNow)"
           >
             {{ $t("trading.swapNow") }}
           </div>
@@ -98,7 +98,6 @@ export default {
   data() {
     return {
       formatEn: "DDd HHh mmm sss",
-      countDown: 30 * 60 * 60 * 1000,
     };
   },
   props: {
@@ -108,7 +107,7 @@ export default {
     },
     tradingList:{
       type: Array,
-      default: []
+      default: ()=>{}
     },
     activeType:{
       type: Number,
@@ -116,14 +115,42 @@ export default {
     }
   },
   methods: {
-    swap(){
-      this.$emit('swap');
-    }
+    swap(swapNow){
+      this.$emit('swap', swapNow);
+    },
+    milliFormat(num) {
+      return (
+        num &&
+        num
+          .toString()
+          .replace(/^\d+/g, (m) => m.replace(/(?=(?!^)(\d{3})+$)/g, ","))
+      );
+    },
   }
 };
 </script>
 <style lang="scss" scoped>
 @import "@/assets/css/theme.scss";
+.theme-light {
+  .bigImg{
+    border: 1px solid $theme-light-colorBackground1;
+    border-radius: 50%;
+  }
+  .smallImg{
+    border: 1px solid $theme-light-colorBackground1;
+    border-radius: 50%;
+  }
+}
+.theme-dark {
+  .bigImg{
+    border: 1px solid $theme-dark-colorBackground0;
+    border-radius: 50%;
+  }
+  .smallImg{
+    border: 1px solid $theme-dark-colorBackground0;
+    border-radius: 50%;
+  }
+}
 .noData{
   min-height: 80vh;
   display: flex;
@@ -149,6 +176,7 @@ export default {
     height: 54px;
     align-items: center;
     position: relative;
+    margin-bottom: 8px;
     .bigImg {
       width: 32px;
       height: 32px;
@@ -178,7 +206,7 @@ export default {
       }
       :last-child {
         font-size: 12px;
-        margin-top: 2px;
+        margin-top: 4px;
         width: 125px;
         overflow: hidden;
         text-overflow:ellipsis;
@@ -229,7 +257,7 @@ export default {
         }
         :last-child {
           font-size: 12px;
-          margin-top: 5px;
+          margin-top: 15px;
         }
       }
       .trading-wrap-box-pool-right {

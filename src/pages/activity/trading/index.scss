@@ -9,8 +9,21 @@
     // min-height: 100vh;
     margin-bottom: 120px;
     .img {
+      position: relative;
       img {
         width: 100%;
+      }
+      .img-text{
+        position: absolute;
+        top: 8px;
+        left: 16px;
+        font-weight: 700;
+        :first-child{
+          font-size: 18px;
+        }
+        :last-child{
+          font-size: 26px;
+        }
       }
     }
     .trading-wrap-status{

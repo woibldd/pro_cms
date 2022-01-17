@@ -5,7 +5,8 @@ module.exports = {
     success: 'Làm mới thành công',
     networkErro:"Internet đã trở nên tồi tệ",
     copied: 'Đã sao chép',
-    copiedError: 'Một số lỗi đã xảy ra'
+    copiedError: 'Một số lỗi đã xảy ra',
+    nomore: 'Không còn nữa',
   },
 
   "ActivityBlindbox": {
@@ -495,6 +496,9 @@ module.exports = {
     YourTrading: 'Giá trị giao dịch của bạn',
     transaction: 'Tổng số tiền giao dịch',
     GetsBKB: 'Nhận số BKB',
-    in: 'trong'
+    in: 'trong',
+    make: 'Thực hiện một giao dịch',
+    toGet: 'để lấy BKB'
+
   }
 }

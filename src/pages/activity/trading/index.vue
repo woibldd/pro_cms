@@ -11,91 +11,111 @@
       :success-text="$t('mining.success')"
       :loading-text="$t('mining.loading')"
       :loosing-text="$t('mining.loading')"
-      @refresh="getInfo"
+      @refresh="onDownRefresh"
     >
-      <div class="trading-wrap">
-        <div class="img">
-          <img
-            src="https://cdn.bitkeep.vip/u_b_ea7b65f0-7292-11ec-8a6e-5bcf537d44fc.png"
-            alt=""
-          />
-        </div>
-        <!-- box -->
-        <div class="trading-wrap-status textSecond3">
-          <span
-            v-for="(item, index) in activeList"
-            :key="index"
-            :class="activeType == index ? 'textPrimary0 setBorder' : ''"
-            @click="tabChange(index)"
-            >{{ item }}</span
-          >
-          <!-- <div 
-            class="trading-wrap-bottom-line colorBackgroundTextPrimary0" 
-            :class="[activeType == 0 ? 'trading-active-line-one':activeType == 1 ? 'trading-active-line-two': 'trading-active-line-three']"
-            ></div> -->
-        </div>
-        <div v-show="activeType == 0">
-          <div class="trading-wrap-box">
-            <tradingCom
-              @swap="swap"
-              :tradingList="tradingList"
-              :activeType="0"
-            ></tradingCom>
-          </div>
-        </div>
-        <div v-show="activeType == 1">
-          <div class="trading-wrap-box">
-            <tradingCom :tradingList="tradingList" :activeType="1"></tradingCom>
-          </div>
-        </div>
-        <div v-show="activeType == 2">
-          <div class="trading-wrap-box">
-            <tradingCom :tradingList="tradingList" :activeType="2"></tradingCom>
-          </div>
-        </div>
-        <!-- Mining Rule -->
-        <div class="trading-wrap-one colorBackground1">
-          <div class="trading-wrap-one-header">
-            <div class="trading-wrap-one-header-title">
-              <img
-                src="https://cdn.bitkeep.vip/u_b_d9de7870-3b9e-11ec-8e63-1db435df936c.png"
-                alt=""
-              />
-              <span class="setFontWeight textPrimary0">{{
-                $t("trading.tradingRule")
-              }}</span>
-            </div>
-            <div>
-              <span
-                class="trading-wrap-one-header-right colorPrimary"
-                @click="learnMore"
-                >{{ $t("mining.learnMore") }}</span
-              >
+     <van-list
+        v-model="loading"
+        :finished="finished"
+        :immediate-check="false"
+        :loading-text="$t('mining.loading')"
+        :finished-text="$t('base.nomore')"
+        @load="onLoadList"
+      >
+        <div class="trading-wrap">
+          <van-notice-bar wrapable
+            :scrollable="false" 
+            color="#FF8146" 
+            background="rgba(255, 129, 70, 0.1)" 
+            left-icon="https://cdn.bitkeep.vip/u_b_c2936690-7531-11ec-8de8-87fc79fc0305.png" 
+            mode="closeable">The DeFi airdrop is only a fan welfare activity and does not make any investment advice.</van-notice-bar>
+          <div class="img">
+            <img
+              src="https://cdn.bitkeep.vip/u_b_c29ed840-7531-11ec-8de8-87fc79fc0305.png"
+              alt=""
+            />
+            <div class="img-text">
+              <div>{{$t('trading.make')}}</div>
+              <div>{{$t('trading.toGet')}}</div>
             </div>
           </div>
-          <div class="trading-wrap-line colorLine"></div>
-          <div class="trading-wrap-one-body" @click="learnMore">
-            <p class="trading-wrap-one-body-text textSecond1">
-              {{ $t("mining.miningRule") }}
-            </p>
+          <!-- box -->
+          <div class="trading-wrap-status textSecond3">
+            <span
+              v-for="(item, index) in activeList"
+              :key="index"
+              :class="activeType == index ? 'textPrimary0 setBorder' : ''"
+              @click="tabChange(index)"
+              >{{ item }}</span
+            >
+            <!-- <div 
+              class="trading-wrap-bottom-line colorBackgroundTextPrimary0" 
+              :class="[activeType == 0 ? 'trading-active-line-one':activeType == 1 ? 'trading-active-line-two': 'trading-active-line-three']"
+              ></div> -->
+          </div>
+          <div v-show="activeType == 0">
+            <div class="trading-wrap-box">
+              <tradingCom
+                @swap="swap"
+                :tradingList="tradingList"
+                :activeType="0"
+              ></tradingCom>
+            </div>
+          </div>
+          <div v-show="activeType == 1">
+            <div class="trading-wrap-box">
+              <tradingCom :tradingList="tradingList" :activeType="1"></tradingCom>
+            </div>
+          </div>
+          <div v-show="activeType == 2">
+            <div class="trading-wrap-box">
+              <tradingCom :tradingList="tradingList" :activeType="2"></tradingCom>
+            </div>
+          </div>
+          <!-- Mining Rule -->
+          <div class="trading-wrap-one colorBackground1">
+            <div class="trading-wrap-one-header">
+              <div class="trading-wrap-one-header-title">
+                <img
+                  src="https://cdn.bitkeep.vip/u_b_d9de7870-3b9e-11ec-8e63-1db435df936c.png"
+                  alt=""
+                />
+                <span class="setFontWeight textPrimary0">{{
+                  $t("trading.tradingRule")
+                }}</span>
+              </div>
+              <div>
+                <span
+                  class="trading-wrap-one-header-right colorPrimary"
+                  @click="learnMore"
+                  >{{ $t("mining.learnMore") }}</span
+                >
+              </div>
+            </div>
+            <div class="trading-wrap-line colorLine"></div>
+            <div class="trading-wrap-one-body" @click="learnMore">
+              <p class="trading-wrap-one-body-text textSecond1">
+                {{ $t("mining.miningRule") }}
+              </p>
+            </div>
+          </div>
+          <!-- <activity-com/> -->
+          <div class="wrap-bottom colorBackground1">
+            <div class="wrap-bottom-text">
+              <div class="textSecond3">{{ $t("trading.UnclaimedReward") }}</div>
+              <div class="colorPrimary setFontFamily">{{milliFormat(waitClaim)}} BKB</div>
+            </div>
+            <van-button class="swap-btn colorBackgroundSecond01" @click="claim">{{
+              $t("trading.claim")
+            }}</van-button>
           </div>
         </div>
-        <!-- <activity-com/> -->
-        <div class="wrap-bottom colorBackground1">
-          <div class="wrap-bottom-text">
-            <div class="textSecond3">{{ $t("trading.UnclaimedReward") }}</div>
-            <div class="colorPrimary setFontFamily">3,750.8704 BKB</div>
-          </div>
-          <van-button class="swap-btn colorBackgroundSecond01" @click="claim">{{
-            $t("trading.claim")
-          }}</van-button>
-        </div>
-      </div>
+      </van-list>
     </van-pull-refresh>
     <pup-protocol
       :show="show"
       @close="close"
       :theme="theme"
+      :waitClaim='waitClaim'
       :key="new Date().getTime()"
     ></pup-protocol>
   </div>
@@ -114,14 +134,18 @@ export default {
       show: false,
       isLoading: true,
       refreshLoading: false,
+      loading: false, //上拉加载
+      finished: false, //上拉加载完毕
+      start: 1,
       activeType: 0,
       theme: 0,
+      waitClaim: 0,
       activeList: [
         this.$t("trading.Live"),
         this.$t("trading.Upcoming"),
         this.$t("trading.Past"),
       ],
-      tradingList: [{}],
+      tradingList: [],
     };
   },
   computed: {
@@ -142,11 +166,16 @@ export default {
   mounted() {
     this.getInfo();
     this.setIcon();
+    this.tradingWaitClaim();
   },
   methods: {
-    // 获取信息
+    // 获取列表
     async getInfo() {
-      const { data, status } = await USER_API.miningInfo();
+      const { data, status } = await USER_API.tradingGetList({
+        start: this.start,
+        limit: 20,
+        type: this.activeType + 1
+      });
       if (status == 1) {
         this.isLoading = false;
         return this.$dialog.alert({
@@ -155,14 +184,49 @@ export default {
           confirmButtonColor: "$theme-light-colorPrimary",
         });
       }
-      this.isLoading = false;
+      var moreList = data.list;
+      this.finished = false;
+      if(this.start == 1 ){
+        this.tradingList = [];
+        this.tradingList = moreList;
+      }else{
+        this.tradingList.push(...moreList);
+      }
       this.refreshLoading = false;
+      this.loading = false;
+      this.isLoading = false;
+      this.$toast.clear();
+      if (this.tradingList.length >= data.totalRows) {
+        this.finished = true;
+      }
+    },
+    // 上拉加载请求方法
+    onLoadList() {
+      this.start++;
+      this.finished = false;
+      this.getInfo();
+    },
+    onDownRefresh() {
+      this.start = 1;
+      this.getInfo();
+    },
+    async tradingWaitClaim(){
+      const { data, status } = await USER_API.tradingWaitClaim();
+      if (status == 1) {
+        return this.$dialog.alert({
+          message: data,
+          confirmButtonText: this.$t("staking.know"),
+          confirmButtonColor: "$theme-light-colorPrimary",
+        });
+      }
+      this.waitClaim = data;
     },
     inviteRewards() {
       this.$router.push("/activity/blindboxInvite/rewardList");
     },
     tabChange(val) {
       this.activeType = val;
+      this.getInfo();
     },
     setIcon() {
       this.isBitKeep &&
@@ -218,25 +282,24 @@ export default {
       }
       this.show = false;
     },
-    swap() {
-      let swap = {
-        symbol0: {
-          symbol: "CAKE",
-          chain: "CAKE",
-          chainName: "CAKE",
-          contract: "contract",
-          icon: "123",
-        },
-        symbol1: {
-          symbol: "BNB",
-          chainName: "BNB",
-          chain: "BNB",
-          contract: "contract",
-          icon: "123",
-        },
-      }
-      // console.log( JSON.stringify(swap))
-      BitKeepInvoke.nativeApp(JSON.stringify(swap));
+    swap(swapNow) {
+      // let swap = {
+      //   symbol0: {
+      //     symbol: "CAKE",
+      //     chain: "CAKE",
+      //     chainName: "CAKE",
+      //     contract: "contract",
+      //     icon: "123",
+      //   },
+      //   symbol1: {
+      //     symbol: "BNB",
+      //     chainName: "BNB",
+      //     chain: "BNB",
+      //     contract: "contract",
+      //     icon: "123",
+      //   },
+      // }
+      BitKeepInvoke.nativeApp(JSON.stringify(swapNow));
     },
     learnMore() {
       this.$router.push("/activity/mining/miningRule");
@@ -245,6 +308,19 @@ export default {
 };
 </script>
 <style lang="scss">
+.van-notice-bar{
+  font-size: 12px;
+  line-height: 15px;
+  padding: 6px 16px;
+  i{
+    display: inline-block;
+    margin-right: 5px;
+    img{
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
 .van-dialog__message {
   font-size: 16px !important;
   padding-left: 24px !important;

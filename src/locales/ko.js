@@ -5,7 +5,8 @@ module.exports = {
     networkErro:"인터넷이 엉망이 되었다",
     success: '새로고침 성공',
     copied: '복사됨',
-    copiedError: '일부 오류가 발생했습니다.'
+    copiedError: '일부 오류가 발생했습니다.',
+    nomore: '더 이상은 없어',
   },
 
   "ActivityBlindbox": {
@@ -495,6 +496,10 @@ module.exports = {
     YourTrading: '귀하의 거래 가치',
     transaction: '총 거래 금액',
     GetsBKB: 'BKB 번호 가져오기',
-    in: '~에'
+    in: '~에',
+    make: '거래하기',
+    toGet: 'BKB를 얻으려면'
+
+
   }
 }

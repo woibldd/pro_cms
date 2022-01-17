@@ -21,13 +21,13 @@
         class="logo"
         alt=""
       />
-      <p class="textPrimary0">{{ milliFormat(unclaimReward + sumReward) }} BKB</p>
+      <p class="textPrimary0">{{ milliFormat(waitClaim) }} BKB</p>
     </div>
     <div class="confirm-bottom">
       <van-button
         class="swap-btn colorBackgroundPrimary"
         :disabled="btnStatus"
-        :class="unclaimReward == 0 ? 'setOpactive' : ''"
+        :class="waitClaim == 0 ? 'setOpactive' : ''"
         @click="swapConfirm"
         >{{ $t("mining.confirm") }}</van-button
       >
@@ -53,7 +53,7 @@ export default {
       this.visables = n;
     }
   },
-  props: ["show", "theme", "unclaimReward", "sumReward"],
+  props: ["show", "theme", "waitClaim"],
   beforeMount () {
     BitKeepInvoke.appMode((err, res) => {
       if(res == 1){
@@ -65,16 +65,12 @@ export default {
       }
     })
   },
-  mounted () {
-    
-    // this.filter_unclaimReward = this.unclaimReward && this.milliFormat(this.unclaimReward)
-    // this.filter_sumReward = this.sumReward && this.milliFormat(this.sumReward)
-  },
+  mounted () {},
   methods: {
     swapConfirm: debounce(async function () {
-      if ((this.unclaimReward + this.sumReward) == 0) return;
+      if (this.waitClaim == 0) return;
       this.btnStatus = true;
-      const { data, status } = await USER_API.receiveAward();
+      const { data, status } = await USER_API.tradingClaim({});
       if (status == 1) {
         this.close();
         setTimeout(() => {
@@ -149,7 +145,7 @@ export default {
   flex-direction: column;
   // height: 100%;
   overflow: auto;
-  padding-top: 20px;
+  padding-top: 30px;
   .content_invite {
     width: 100%;
     .content_invite_flex {

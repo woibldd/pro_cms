@@ -2736,7 +2736,8 @@ module.exports = {
     success: 'Successfully',
     networkErro: "The Internet has gone awry",
     copied: 'Copied',
-    copiedError: 'Some error occurred'
+    copiedError: 'Some error occurred',
+    nomore: 'No More'
   },
   "ActivityBlindbox": {
     shared: {
@@ -3237,7 +3238,9 @@ module.exports = {
     YourTrading: 'Your Trading value',
     transaction: 'Total transaction amount',
     GetsBKB: 'Gets BKB number',
-    in: 'in'
+    in: 'in',
+    make: 'Make a transaction',
+    toGet: 'to get BKB'
   }
 };
 
@@ -3270,7 +3273,8 @@ module.exports = {
     success: '正常に更新',
     networkErro: "インターネットがうまくいかなくなった",
     copied: 'コピー',
-    copiedError: 'エラーが発生しました'
+    copiedError: 'エラーが発生しました',
+    nomore: 'もういや'
   },
   "ActivityBlindbox": {
     shared: {
@@ -3735,7 +3739,9 @@ module.exports = {
     YourTrading: 'あなたの取引価値',
     transaction: '合計取引金額',
     GetsBKB: 'BKB番号を取得します',
-    in: 'の'
+    in: 'の',
+    make: '取引を行う',
+    toGet: 'BKBを取得するには'
   }
 };
 
@@ -3750,7 +3756,8 @@ module.exports = {
     networkErro: "인터넷이 엉망이 되었다",
     success: '새로고침 성공',
     copied: '복사됨',
-    copiedError: '일부 오류가 발생했습니다.'
+    copiedError: '일부 오류가 발생했습니다.',
+    nomore: '더 이상은 없어'
   },
   "ActivityBlindbox": {
     shared: {
@@ -4215,7 +4222,9 @@ module.exports = {
     YourTrading: '귀하의 거래 가치',
     transaction: '총 거래 금액',
     GetsBKB: 'BKB 번호 가져오기',
-    in: '~에'
+    in: '~에',
+    make: '거래하기',
+    toGet: 'BKB를 얻으려면'
   }
 };
 
@@ -4230,7 +4239,8 @@ module.exports = {
     success: 'Làm mới thành công',
     networkErro: "Internet đã trở nên tồi tệ",
     copied: 'Đã sao chép',
-    copiedError: 'Một số lỗi đã xảy ra'
+    copiedError: 'Một số lỗi đã xảy ra',
+    nomore: 'Không còn nữa'
   },
   "ActivityBlindbox": {
     shared: {
@@ -4695,7 +4705,9 @@ module.exports = {
     YourTrading: 'Giá trị giao dịch của bạn',
     transaction: 'Tổng số tiền giao dịch',
     GetsBKB: 'Nhận số BKB',
-    in: 'trong'
+    in: 'trong',
+    make: 'Thực hiện một giao dịch',
+    toGet: 'để lấy BKB'
   }
 };
 
@@ -4710,7 +4722,8 @@ module.exports = {
     no_more: "没有更多了",
     networkErro: "网络开了小差",
     copied: 'Copied',
-    copiedError: 'Some error occurred'
+    copiedError: 'Some error occurred',
+    nomore: 'No More'
   },
   "ActivityBlindbox": {
     shared: {
@@ -5210,7 +5223,9 @@ module.exports = {
     YourTrading: 'Your Trading value',
     transaction: 'Total transaction amount',
     GetsBKB: 'Gets BKB number',
-    in: 'in'
+    in: 'in',
+    make: 'Make a transaction',
+    toGet: 'to get BKB'
   }
 };
 
@@ -7123,16 +7138,16 @@ function wrapFunctional(options) {
 
 
 const components = {
-  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 82)).then(c => wrapFunctional(c.default || c)),
-  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 71)).then(c => wrapFunctional(c.default || c)),
-  Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 75)).then(c => wrapFunctional(c.default || c)),
-  Trading: () => __webpack_require__.e(/* import() | components/trading */ 10).then(__webpack_require__.bind(null, 113)).then(c => wrapFunctional(c.default || c)),
+  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 197)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 205)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 308)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 110)).then(c => wrapFunctional(c.default || c)),
   BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 206)).then(c => wrapFunctional(c.default || c)),
   BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 204)).then(c => wrapFunctional(c.default || c)),
-  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 197)).then(c => wrapFunctional(c.default || c)),
+  Trading: () => __webpack_require__.e(/* import() | components/trading */ 10).then(__webpack_require__.bind(null, 113)).then(c => wrapFunctional(c.default || c)),
+  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 82)).then(c => wrapFunctional(c.default || c)),
+  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 71)).then(c => wrapFunctional(c.default || c)),
+  Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 75)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 12).then(__webpack_require__.bind(null, 160)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 13).then(__webpack_require__.bind(null, 85)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 14).then(__webpack_require__.bind(null, 309)).then(c => wrapFunctional(c.default || c)),
@@ -7378,7 +7393,7 @@ const log =  true ? (...arg) => {
 
 
 const init_components = [external_vant_["Popup"], external_vant_["Dialog"], external_vant_["Toast"], external_vant_["Icon"], external_vant_["Image"], external_vant_["Loading"], external_vant_["List"], external_vant_["Empty"], external_vant_["CountDown"], external_vant_["PullRefresh"], external_vant_["Progress"], external_vant_["ImagePreview"], // Badge,
-external_vant_["Overlay"], external_vant_["Field"], external_vant_["Form"], external_vant_["Skeleton"], external_vant_["Button"], external_vant_["Col"], external_vant_["Row"], external_vant_["Tab"], external_vant_["Tabs"] // Lazyload
+external_vant_["Overlay"], external_vant_["Field"], external_vant_["Form"], external_vant_["Skeleton"], external_vant_["Button"], external_vant_["Col"], external_vant_["Row"], external_vant_["Tab"], external_vant_["Tabs"], external_vant_["NoticeBar"] // Lazyload
 // VueCanvasPoster
 ]; //存在问题结合nuxt使用  服务端拿不到query
 

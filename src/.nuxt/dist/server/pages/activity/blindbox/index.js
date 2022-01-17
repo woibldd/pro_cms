@@ -437,7 +437,17 @@ const USER_API = {
   //确认质押
   staking: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/staking', data),
   //获取token
-  handleGetToken: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/getToken', data)
+  handleGetToken: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/getToken', data),
+  //trading 交易大赛
+  tradingGetList: (data, headers = {}) => host_user_instance.post('/tradeCompetition/getList', data),
+  //待领取
+  tradingWaitClaim: (data, headers = {}) => host_user_instance.post('/tradeCompetition/waitClaim', data),
+  //领取
+  tradingClaim: (data, headers = {}) => host_user_instance.post('/tradeCompetition/Claim', data),
+  //历史汇总
+  tradingSummary: (data, headers = {}) => host_user_instance.post('/tradeCompetition/summary', data),
+  //历史list
+  tradingHistory: (data, headers = {}) => host_user_instance.post('/tradeCompetition/history', data)
 };
 
 /***/ }),
