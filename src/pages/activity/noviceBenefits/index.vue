@@ -250,6 +250,10 @@ export default {
             this.telegramUrl = 'https://t.me/bitkeep'
         }else if(this.locale == 'vi'){
             this.telegramUrl = 'https://t.me/BitKeep_Vietnam'
+        }else if(this.locale == 'id'){
+             this.telegramUrl = 'https://t.me/bitkeepng'
+        }else{
+            this.telegramUrl = 'https://t.me/bitkeep'
         }
     },
     async viewblindbox(){
@@ -320,7 +324,7 @@ export default {
             this.signList.list[index].isSignin = true;
             this.$toast(this.$t('noviceBenefits.signSuccess'));
         }else{
-            this.$toast(this.$t('noviceBenefits.receiveError'));
+            this.$toast(this.$t('noviceBenefits.signError'));
 
         }
     },
