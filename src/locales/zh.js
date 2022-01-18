@@ -520,7 +520,7 @@ module.exports = {
         Live: 'Live',
         Upcoming: 'Upcoming',
         Past: 'Past',
-        UnclaimedReward: 'Unclaimed reward',
+        UnclaimedReward: 'Unclaimed Reward',
         Chain: 'Bianance Smart Chain',
         Ending: 'Ending in',
         Start: 'Start time',

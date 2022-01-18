@@ -111,7 +111,7 @@
         </div>
       </div>
     </div>
-    <div class="noData" v-else>
+    <div class="noData" :class="!finished?'setHeight': ''" v-else>
       <img src="https://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png" alt="">
       <p class="textSecond3">{{ $t('mining.noData') }}</p>
     </div>
@@ -180,6 +180,9 @@ export default {
     border: 1px solid $theme-dark-colorBackground0;
     border-radius: 50%;
   }
+}
+.setHeight{
+  min-height: 32vh!important;
 }
 .noData{
   min-height: 80vh;
