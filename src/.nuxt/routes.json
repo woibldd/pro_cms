@@ -3,203 +3,174 @@
     "name": "activity-airdrop",
     "path": "/activity/airdrop",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/airdrop/index.vue",
-    "chunkName": "pages/activity/airdrop/index",
-    "_name": "_57e7dee0"
+    "chunkName": "pages/activity/airdrop/index"
   },
   {
     "name": "activity-blindbox",
     "path": "/activity/blindbox",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/blindbox/index.vue",
-    "chunkName": "pages/activity/blindbox/index",
-    "_name": "_664387a5"
+    "chunkName": "pages/activity/blindbox/index"
   },
   {
     "name": "activity-blindboxInvite",
     "path": "/activity/blindboxInvite",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/blindboxInvite/index.vue",
-    "chunkName": "pages/activity/blindboxInvite/index",
-    "_name": "_750d17e4"
+    "chunkName": "pages/activity/blindboxInvite/index"
   },
   {
     "name": "activity-cbkbexchange",
     "path": "/activity/cbkbexchange",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/cbkbexchange/index.vue",
-    "chunkName": "pages/activity/cbkbexchange/index",
-    "_name": "_63f0ccb0"
+    "chunkName": "pages/activity/cbkbexchange/index"
   },
   {
     "name": "activity-mining",
     "path": "/activity/mining",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/mining/index.vue",
-    "chunkName": "pages/activity/mining/index",
-    "_name": "_12cbcbc2"
+    "chunkName": "pages/activity/mining/index"
   },
   {
     "name": "activity-nftLottery",
     "path": "/activity/nftLottery",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/nftLottery/index.vue",
-    "chunkName": "pages/activity/nftLottery/index",
-    "_name": "_5cec217c"
+    "chunkName": "pages/activity/nftLottery/index"
   },
   {
     "name": "activity-noviceBenefits",
     "path": "/activity/noviceBenefits",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/noviceBenefits/index.vue",
-    "chunkName": "pages/activity/noviceBenefits/index",
-    "_name": "_790f37c1"
+    "chunkName": "pages/activity/noviceBenefits/index"
   },
   {
     "name": "activity-blindbox-detail",
     "path": "/activity/blindbox/detail",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/blindbox/detail/index.vue",
-    "chunkName": "pages/activity/blindbox/detail/index",
-    "_name": "_0ab4e091"
+    "chunkName": "pages/activity/blindbox/detail/index"
   },
   {
     "name": "activity-blindbox-download",
     "path": "/activity/blindbox/download",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/blindbox/download.vue",
-    "chunkName": "pages/activity/blindbox/download",
-    "_name": "_844f77f6"
+    "chunkName": "pages/activity/blindbox/download"
   },
   {
     "name": "activity-blindbox-firendList",
     "path": "/activity/blindbox/firendList",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/blindbox/firendList.vue",
-    "chunkName": "pages/activity/blindbox/firendList",
-    "_name": "_15addb32"
+    "chunkName": "pages/activity/blindbox/firendList"
   },
   {
     "name": "activity-blindbox-list",
     "path": "/activity/blindbox/list",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/blindbox/list.vue",
-    "chunkName": "pages/activity/blindbox/list",
-    "_name": "_54fe6b9b"
+    "chunkName": "pages/activity/blindbox/list"
   },
   {
     "name": "activity-blindbox-stepDetail",
     "path": "/activity/blindbox/stepDetail",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/blindbox/stepDetail.vue",
-    "chunkName": "pages/activity/blindbox/stepDetail",
-    "_name": "_9ce0940c"
+    "chunkName": "pages/activity/blindbox/stepDetail"
   },
   {
     "name": "activity-blindboxInvite-copy",
     "path": "/activity/blindboxInvite/copy",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/blindboxInvite/copy.js",
-    "chunkName": "pages/activity/blindboxInvite/copy",
-    "_name": "_f81d75f4"
+    "chunkName": "pages/activity/blindboxInvite/copy"
   },
   {
     "name": "activity-blindboxInvite-detail",
     "path": "/activity/blindboxInvite/detail",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/blindboxInvite/detail.vue",
-    "chunkName": "pages/activity/blindboxInvite/detail",
-    "_name": "_fbefc576"
+    "chunkName": "pages/activity/blindboxInvite/detail"
   },
   {
     "name": "activity-blindboxInvite-download",
     "path": "/activity/blindboxInvite/download",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/blindboxInvite/download.vue",
-    "chunkName": "pages/activity/blindboxInvite/download",
-    "_name": "_fc0ada08"
+    "chunkName": "pages/activity/blindboxInvite/download"
   },
   {
     "name": "activity-blindboxInvite-inviteList",
     "path": "/activity/blindboxInvite/inviteList",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/blindboxInvite/inviteList.vue",
-    "chunkName": "pages/activity/blindboxInvite/inviteList",
-    "_name": "_4872733b"
+    "chunkName": "pages/activity/blindboxInvite/inviteList"
   },
   {
     "name": "activity-blindboxInvite-rewardList",
     "path": "/activity/blindboxInvite/rewardList",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/blindboxInvite/rewardList.vue",
-    "chunkName": "pages/activity/blindboxInvite/rewardList",
-    "_name": "_8b4fe53e"
+    "chunkName": "pages/activity/blindboxInvite/rewardList"
   },
   {
     "name": "activity-blindboxInvite-RuleDetail",
     "path": "/activity/blindboxInvite/RuleDetail",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/blindboxInvite/RuleDetail.vue",
-    "chunkName": "pages/activity/blindboxInvite/RuleDetail",
-    "_name": "_d163f8fe"
+    "chunkName": "pages/activity/blindboxInvite/RuleDetail"
   },
   {
     "name": "activity-mining-history",
     "path": "/activity/mining/history",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/mining/history.vue",
-    "chunkName": "pages/activity/mining/history",
-    "_name": "_874fe8be"
+    "chunkName": "pages/activity/mining/history"
   },
   {
     "name": "activity-mining-inviteRuleDetail",
     "path": "/activity/mining/inviteRuleDetail",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/mining/inviteRuleDetail.vue",
-    "chunkName": "pages/activity/mining/inviteRuleDetail",
-    "_name": "_051c2f19"
+    "chunkName": "pages/activity/mining/inviteRuleDetail"
   },
   {
     "name": "activity-mining-miningRule",
     "path": "/activity/mining/miningRule",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/mining/miningRule.vue",
-    "chunkName": "pages/activity/mining/miningRule",
-    "_name": "_1a43896f"
+    "chunkName": "pages/activity/mining/miningRule"
   },
   {
     "name": "activity-mining-protocol",
     "path": "/activity/mining/protocol",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/mining/protocol.vue",
-    "chunkName": "pages/activity/mining/protocol",
-    "_name": "_4fd6255b"
+    "chunkName": "pages/activity/mining/protocol"
   },
   {
     "name": "activity-mining-RuleDetail",
     "path": "/activity/mining/RuleDetail",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/mining/RuleDetail.vue",
-    "chunkName": "pages/activity/mining/RuleDetail",
-    "_name": "_7ba78010"
+    "chunkName": "pages/activity/mining/RuleDetail"
   },
   {
     "name": "activity-noviceBenefits-drawluckly",
     "path": "/activity/noviceBenefits/drawluckly",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/noviceBenefits/drawluckly.vue",
-    "chunkName": "pages/activity/noviceBenefits/drawluckly",
-    "_name": "_b520543a"
+    "chunkName": "pages/activity/noviceBenefits/drawluckly"
   },
   {
     "name": "activity-noviceBenefits-lotteryresults",
     "path": "/activity/noviceBenefits/lotteryresults",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/noviceBenefits/lotteryresults.vue",
-    "chunkName": "pages/activity/noviceBenefits/lotteryresults",
-    "_name": "_57b9f12e"
+    "chunkName": "pages/activity/noviceBenefits/lotteryresults"
   },
   {
     "name": "activity-blindboxInvite-component-createPoster",
     "path": "/activity/blindboxInvite/component/createPoster",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/blindboxInvite/component/createPoster.vue",
-    "chunkName": "pages/activity/blindboxInvite/component/createPoster",
-    "_name": "_75ea05a2"
+    "chunkName": "pages/activity/blindboxInvite/component/createPoster"
   },
   {
     "name": "activity-blindbox-detail-id",
     "path": "/activity/blindbox/detail/:id",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/activity/blindbox/detail/_id.vue",
-    "chunkName": "pages/activity/blindbox/detail/_id",
-    "_name": "_2873d339"
+    "chunkName": "pages/activity/blindbox/detail/_id"
   },
   {
     "name": "article-detail-id",
     "path": "/article/detail/:id?",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/article/detail/_id.vue",
-    "chunkName": "pages/article/detail/_id",
-    "_name": "_10086299"
+    "chunkName": "pages/article/detail/_id"
   },
   {
     "name": "id",
     "path": "/:id?",
     "component": "/Users/jimmmy/h5/pro_cms/src/pages/_id.vue",
-    "chunkName": "pages/_id",
-    "_name": "_49cc6c06"
+    "chunkName": "pages/_id"
   }
 ]
