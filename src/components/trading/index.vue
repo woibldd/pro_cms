@@ -25,7 +25,7 @@
           <div class="trading-wrap-box-pool-title-flex">
             <div class="trading-wrap-box-pool-title-left">
               <div class="textPrimary0">{{item.fromSymbol.toUpperCase()}}/{{item.toSymbol .toUpperCase()}}</div>
-              <div class="textSecond3">{{$t('trading.Chain')}}</div>
+              <div class="textSecond3">{{item.chainName}}</div>
             </div>
             <div class="trading-wrap-box-pool-title-right" v-if='!finished && activeType != 2'>
               <div class="textSecond3" v-if="activeType == 0">{{$t('trading.Ending')}}</div>
