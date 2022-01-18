@@ -4,6 +4,7 @@
   $theme-light-textSecond3: #9CA5B3;
   $theme-light-colorDisable: #DADBDE;
   $theme-light-colorLine: #F4F5FA;
+  $theme-light-colorLine1: #F0F0F0;
   $theme-light-colorBackground0: #F8F9FA;
   $theme-light-colorBackground1: #FFFFFF;
   $theme-light-colorBackground2: #F3F5F6;
@@ -96,6 +97,9 @@
     .colorSecond01{
       color: $theme-light-colorSecond01;
     }
+    .backgroundSecond01{
+      background-color: $theme-light-colorSecond01;
+    }
     .colorSecond02{
       color: $theme-light-colorSecond02;
     }
@@ -178,6 +182,9 @@
     }
     .colorSecond01{
       color: $theme-dark-colorSecond01;
+    }
+    .backgroundSecond01{
+      background-color: $theme-dark-colorSecond01;
     }
     .colorSecond02{
       color: $theme-dark-colorSecond02;

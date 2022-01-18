@@ -456,7 +456,7 @@ module.exports = {
   },
   'noviceBenefits':{
     'sign':'Sign in to receive raffle tickets',
-    'alreadySignedin':'Kept signing in for the last',
+    'alreadySignedin':'Signed in',
     'day':'days',
     'Signedin':'day',
     'obtain':'Ticket ',
@@ -507,5 +507,9 @@ module.exports = {
     'Failedto':'no prize won ',
     'Congratulations':'Congratulations!',
     'Morebenefits':'More gifts',
+    'signSuccess':'Check in succeeded',
+    'signError':'Check in failed',
+    'receiveSuccess':'Received successfully',
+    'receiveError':'Collection failed'
   }
 }

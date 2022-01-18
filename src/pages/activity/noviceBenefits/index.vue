@@ -1,22 +1,21 @@
 <template>
-  <div class="Novicebenefits">
+  <div class="Novicebenefits colorBackground0">
       <div class="Novicebenefits-box">
             <div class="Novicebenefits-title textPrimary0">
                 {{$t('noviceBenefits.sign')}}
                 <van-image
-                   
                     src="https://cdn.bitkeep.vip/u_b_47485390-4f90-11ec-ace3-97579b99c357.png"
                 />
         </div>
-        <div class="Novicebenefits-sign">
+        <div class="Novicebenefits-sign colorBackground1">
             <div class="Novicebenefits-sign-top">
-                <div class="Novicebenefits-sign-title">{{$t('noviceBenefits.alreadySignedin')}}<span class="colorBlue">{{signDay}}</span>{{$t('noviceBenefits.day')}}</div>
+                <div class="Novicebenefits-sign-title textPrimary0">{{$t('noviceBenefits.alreadySignedin')}}<span class="colorPrimary">{{signDay}}</span>{{$t('noviceBenefits.day')}}</div>
                 <div class="Novicebenefits-sign-top-signlist" >
                     <div v-for="(item,index) in signList.list" :key="index" class="Novicebenefits-sign-item">
                         
                         <div @click="welfareSignInfunc(index)">
                             <p class="Novicebenefits-sign-item-img">
-                                <span v-if="item.day === 4 || item.day === 7" class="Novicebenefits-sign-item-img-obtain">{{$t('noviceBenefits.obtain')}}</span>
+                                <span v-if="item.day === 4 || item.day === 7" class="Novicebenefits-sign-item-img-obtain backgroundSecond01"> <span class="colorwhite">{{$t('noviceBenefits.obtain')}}</span></span>
                                 <van-image
                                     v-if="!item.isSignin"
                                     :src="(item.day === 4 || item.day === 7) && index === signDay ? 'https://cdn.bitkeep.vip/u_b_aa80c7c0-7615-11ec-9d29-f144d09ca5ed.png' : index === signDay ? 'https://cdn.bitkeep.vip/u_b_56e30a70-7448-11ec-a3df-456c694c3f18.png' : (item.day === 4 || item.day === 7) ? 'https://cdn.bitkeep.vip/u_b_65c04710-7448-11ec-a3df-456c694c3f18.png' : 'https://cdn.bitkeep.vip/u_b_5457fe50-743e-11ec-a3df-456c694c3f18.png'"
@@ -27,8 +26,8 @@
                                 />
                             </p>
                             <!-- 签到 -->
-                            <p v-if="index === signDay" class="Novicebenefits-sign-item-result colorBlue">{{$t('noviceBenefits.Signedin')}}</p>
-                            <p v-else class="Novicebenefits-sign-item-result Novicebenefits-sign-item-day"> {{index < signDay ? $t('noviceBenefits.alreadySignedin'): item.day + $t('noviceBenefits.day') }}</p>
+                            <p v-if="index === signDay" class="Novicebenefits-sign-item-result colorPrimary">{{$t('noviceBenefits.Signedin')}}</p>
+                            <p v-else :class="index < signDay  ? 'Novicebenefits-sign-item-result Novicebenefits-sign-item-day colorPrimary':'Novicebenefits-sign-item-result Novicebenefits-sign-item-day textSecond2'"> {{index < signDay ? $t('noviceBenefits.alreadySignedin'): item.day + $t('noviceBenefits.day') }}</p>
                         </div>
                     </div>
                 </div>
@@ -41,20 +40,20 @@
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
-                    <p>{{$t('noviceBenefits.Currently')}} <span class="colorBlue">{{signList.lottery}}</span> {{$t('noviceBenefits.zhang')}}
+                    <p class="textPrimary0">{{$t('noviceBenefits.Currently')}} <span class="colorPrimary">{{signList.lottery}}</span> {{$t('noviceBenefits.zhang')}}
                     <van-image
                         class="Novicebenefits-sign-top-bottom-img-right"
                         src="https://cdn.bitkeep.vip/u_b_47485390-4f90-11ec-ace3-97579b99c357.png"
                     /></p>
-                    <p>{{$t('noviceBenefits.Participate')}} {{signList.reward_pool}} BKB！</p>
+                    <p class="textSecond2">{{$t('noviceBenefits.Participate')}} {{signList.reward_pool}} BKB！</p>
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-btn">
-                    <van-button class="draw-btn" @click="drawClick()">{{$t('noviceBenefits.Draw')}} </van-button>
+                    <van-button class="draw-btn colorBackgroundPrimary" @click="drawClick()"> <span class="colorwhite">{{$t('noviceBenefits.Draw')}}</span> </van-button>
                 </div>
             </div>
         </div>
-        <div class="Novicebenefits-title" v-if="!!newUser.isNewUser">{{$t('noviceBenefits.Novice')}}</div>
-        <ul class="Novicebenefits-reward Novicebenefits-sign-top-bottom" v-if="!!newUser.isNewUser && (!newUser.isDoneTelJob || !newUser.isDoneSwap || !newUser.isDone50U)">
+        <div class="Novicebenefits-title textPrimary0" v-if="!!newUser.isNewUser">{{$t('noviceBenefits.Novice')}}</div>
+        <ul class="Novicebenefits-reward Novicebenefits-sign-top-bottom colorBackground1" v-if="!!newUser.isNewUser && (!newUser.isDoneTelJob || !newUser.isDoneSwap || !newUser.isDone50U)">
             <!-- 加入Telegram -->
             <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom">
                 <div class="Novicebenefits-sign-top-bottom-img">
@@ -63,16 +62,16 @@
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
-                    <p>{{$t('noviceBenefits.Telegram')}}</p>
-                    <p>{{$t('noviceBenefits.Reward')}} BKB +1</p>
+                    <p class="textPrimary0">{{$t('noviceBenefits.Telegram')}}</p>
+                    <p class="textSecond2">{{$t('noviceBenefits.Reward')}} BKB +1</p>
                 </div> 
                 <div class="Novicebenefits-sign-top-bottom-btn">
-                    <span class="alreadydraw-btn" v-if="!!newUser.isDoneTelJob">{{$t('noviceBenefits.alreadyReceived')}}</span>
-                    <van-button class="draw-btn" @click="joinTelegram()" v-else> {{!!joinTelegramflag ?  $t('noviceBenefits.Getitnow') : $t('noviceBenefits.Join')}}</van-button>
+                    <span class="alreadydraw-btn textSecond3" v-if="!!newUser.isDoneTelJob">{{$t('noviceBenefits.alreadyReceived')}}</span>
+                    <van-button class="draw-btn colorBackgroundPrimary" @click="joinTelegram()" v-else><span class="colorwhite"> <span class="colorwhite"> {{!!joinTelegramflag ?  $t('noviceBenefits.Getitnow') : $t('noviceBenefits.Join')}}</span></span></van-button>
                 </div>
             </li>
 
-            <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom" v-if="!newUser.isDoneSwap">
+            <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom " v-if="!newUser.isDoneSwap">
                 <!-- swap交易 -->
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
@@ -80,11 +79,11 @@
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
-                    <p>{{$t('noviceBenefits.swap')}}</p>
-                    <p>{{$t('noviceBenefits.raffle')}}</p>
+                    <p class="textPrimary0">{{$t('noviceBenefits.swap')}}</p>
+                    <p class="textSecond2">{{$t('noviceBenefits.raffle')}}</p>
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-btn">
-                    <van-button class="draw-btn" @click="SwapTransaction()">{{!newUser.isUpToSwap ?  $t('noviceBenefits.Getitnow') : $t('noviceBenefits.Immediate')}}</van-button>
+                    <van-button class="draw-btn colorBackgroundPrimary" @click="SwapTransaction()"><span class="colorwhite"> {{newUser.isUpToSwap ?  $t('noviceBenefits.Getitnow') : $t('noviceBenefits.Immediate')}}</span></van-button>
                 </div>
             </li>
 
@@ -96,18 +95,18 @@
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
-                    <p>{{$t('noviceBenefits.USDT')}}</p>
-                    <p>{{$t('noviceBenefits.Reward')}} BKB +2</p>
+                    <p class="textPrimary0">{{$t('noviceBenefits.USDT')}}</p>
+                    <p class="textSecond2">{{$t('noviceBenefits.Reward')}} BKB +2</p>
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-btn">
-                    <span v-if="!newUser.isUpTo50U" class="alreadydraw-btn"> {{$t('noviceBenefits.standard')}}</span>
-                    <van-button class="draw-btn" @click="UpTo50U()" v-if="newUser.isUpTo50U">{{ $t('noviceBenefits.Join')}}</van-button>
+                    <span v-if="!newUser.isUpTo50U" class="alreadydraw-btn textSecond3"> {{$t('noviceBenefits.standard')}}</span>
+                    <van-button class="draw-btn colorBackgroundPrimary" @click="UpTo50U()" v-if="newUser.isUpTo50U"><span class="colorwhite"> {{ $t('noviceBenefits.Join')}}</span></van-button>
                 </div>
             </li>
         </ul>
 
-         <div class="Novicebenefits-title">{{$t('noviceBenefits.Morebenefits')}}</div>
-        <ul class="Novicebenefits-reward Novicebenefits-sign-top-bottom">
+         <div class="Novicebenefits-title textPrimary0">{{$t('noviceBenefits.Morebenefits')}}</div>
+        <ul class="Novicebenefits-reward Novicebenefits-sign-top-bottom colorBackground1">
             <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom">
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
@@ -115,11 +114,11 @@
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
-                    <p>{{$t('noviceBenefits.Airdropactivity')}}</p>
-                    <p>{{$t('noviceBenefits.Access')}}</p>
+                    <p class="textPrimary0">{{$t('noviceBenefits.Airdropactivity')}}</p>
+                    <p class="textSecond2">{{$t('noviceBenefits.Access')}}</p>
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-btn">
-                    <van-button class="draw-btn" @click="viewairdrop()">{{$t('noviceBenefits.Viewnow')}}</van-button>
+                    <van-button class="draw-btn colorBackgroundPrimary" @click="viewairdrop()"><span class="colorwhite"> {{$t('noviceBenefits.Viewnow')}}</span></van-button>
                 </div>
             </li>
 
@@ -130,11 +129,11 @@
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
-                    <p>{{$t('noviceBenefits.Blindboxactivity')}}</p>
-                    <p>{{$t('noviceBenefits.AccessNFT')}}</p>
+                    <p class="textPrimary0">{{$t('noviceBenefits.Blindboxactivity')}}</p>
+                    <p class="textSecond2">{{$t('noviceBenefits.AccessNFT')}}</p>
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-btn">
-                    <van-button class="draw-btn" @click="viewblindbox()">{{$t('noviceBenefits.Viewnow')}}</van-button>
+                    <van-button class="draw-btn colorBackgroundPrimary" @click="viewblindbox()"><span class="colorwhite"> {{$t('noviceBenefits.Viewnow')}}</span></van-button>
                 </div>
             </li>
 
@@ -145,11 +144,11 @@
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
-                    <p>{{$t('noviceBenefits.Invitation')}}</p>
-                    <p>{{$t('noviceBenefits.Invitefriends')}}</p>
+                    <p class="textPrimary0">{{$t('noviceBenefits.Invitation')}}</p>
+                    <p class="textSecond2">{{$t('noviceBenefits.Invitefriends')}}</p>
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-btn">
-                    <van-button class="draw-btn" @click="viewblindboxInvite()">{{$t('noviceBenefits.Viewnow')}}</van-button>
+                    <van-button class="draw-btn colorBackgroundPrimary" @click="viewblindboxInvite()"><span class="colorwhite"> {{$t('noviceBenefits.Viewnow')}}</span></van-button>
                 </div>
             </li>
         </ul>
@@ -238,12 +237,12 @@ export default {
     }, 
     islanguage(){
         //   中文:https://t.me/BitKeep_Official
-// 英文：https://t.me/bitkeep
-// 尼日利亚：https://t.me/bitkeepng
-// 越南：https://t.me/BitKeep_Vietnam
-//菲律宾： https://t.me/BitKeep_Philippines
-// 巴基斯坦：https://t.me/Bitkeep_Pak
-// 南亚：https://t.me/BitkeepSouthAsia
+        // 英文：https://t.me/bitkeep
+    // 尼日利亚：https://t.me/bitkeepng
+    // 越南：https://t.me/BitKeep_Vietnam
+    //菲律宾： https://t.me/BitKeep_Philippines
+    // 巴基斯坦：https://t.me/Bitkeep_Pak
+    // 南亚：https://t.me/BitkeepSouthAsia
 
         if(this.locale == 'zh'){
             this.telegramUrl = 'https://t.me/BitKeep_Official'
@@ -275,24 +274,24 @@ export default {
     async UpTo50U(){
         const { data, status } = await USER_API.getFirst50UJob();
         if(data === true){
-            this.$toast('领取成功');
+             this.$toast(this.$t('noviceBenefits.receiveSuccess'));
             this.newUserRewardJobs();
         }else{
-            this.$toast('领取失败');
+            this.$toast(this.$t('noviceBenefits.receiveError'));
         }
     },
     async SwapTransaction(){
         // SWAP交易
-        if(!newUser.isUpToSwap){
+        if(!this.newUser.isUpToSwap){
             BitKeepInvoke.nativeApp();
             localStorage.setItem('SwapTransaction',true);
         }else{
             const { data, status } = await USER_API.getFirstSwapJob();
             if(data === true){
-                this.$toast('领取成功');
+                this.$toast(this.$t('noviceBenefits.receiveSuccess'));
                 this.newUserRewardJobs();
             }else{
-                this.$toast('领取失败');
+                this.$toast(this.$t('noviceBenefits.receiveError'));
             }
         }
     },
@@ -300,28 +299,29 @@ export default {
         // 加入Telegram
         if(!this.joinTelegramflag){
             // 立即加入
+            window.location.href=this.telegramUrl ;
             this.joinTelegramflag = true;
             localStorage.setItem('joinTelegram',true);
         }else{
             // 立即领取
             const { data, status } = await USER_API.getJoinTeleJob();
             if(data === true){
-                this.$toast('领取成功');
+                 this.$toast(this.$t('noviceBenefits.receiveSuccess'));
                 this.newUserRewardJobs();
             }else{
-                this.$toast('领取失败');
+                this.$toast(this.$t('noviceBenefits.receiveError'));
             }
         }
     },
     async welfareSignInfunc(index){
         if (index !== this.signDay) return;
         const { data, status } = await USER_API.welfareSignIn();
-        console.log(data, 'datatat')
         if(data === true){
             this.signList.list[index].isSignin = true;
-            this.$toast('签到成功');
+            this.$toast(this.$t('noviceBenefits.signSuccess'));
         }else{
-            this.$toast('签到失败');
+            this.$toast(this.$t('noviceBenefits.receiveError'));
+
         }
     },
 
@@ -383,14 +383,13 @@ export default {
 };
 </script>
 <style lang="scss">
+@import "@/assets/css/theme.scss";
 p{
     margin: 0;
     padding: 0;
 }
 .Novicebenefits{
-    width: 100%;
-    background: #F8F9FA;
-    height: 100%;
+    min-height: 100vh;
 }
 .Novicebenefits-box{
     padding:10px 16px 54px 16px;
@@ -412,13 +411,22 @@ p{
 .Novicebenefits-sign{
     width: 100%;
     height: 182px;
-    background: #ffffff;
     border-radius: 10px;
+}
+.theme-light{
+    .Novicebenefits-sign-top-signlist{
+         border-bottom: 2px solid $theme-light-colorLine;
+    }
+}
+
+.theme-dark{
+    .Novicebenefits-sign-top-signlist{
+         border-bottom: 2px solid $theme-dark-colorLine;
+    }
 }
 .Novicebenefits-sign-top{
     height: 110px;
     .Novicebenefits-sign-top-signlist{
-        border-bottom: 2px solid #F4F5FA;
         margin: 0 15px 0 15px;
         height: 80px;
         display: flex;
@@ -440,11 +448,10 @@ p{
                     top: -10px;
                     width: 46px;
                     height: 18px;
-                    background: #1CBDB5;
                     border-radius: 20px;
                     text-align: center;
-                    color: #FFFFFF;
                     font-size: 11px;
+                    line-height: 18px;
                 }
            }
         }
@@ -458,7 +465,6 @@ p{
 .Novicebenefits-sign-title{
     font-size: 14px;
     line-height: 14px;
-    color:  #080D21;
     padding: 15px 0 0 15px;
 }
 .Novicebenefits-sign-top-bottom{
@@ -479,11 +485,10 @@ p{
        .draw-btn{
            width: 72px;
            height: 28px;
-           background: #495BFF;
            font-size: 12px;
-           color: #ffffff;
            line-height: 28px;
            border-radius: 100px;
+           border: none;
        }
        .alreadydraw-btn{
            display: inline-block;
@@ -492,7 +497,6 @@ p{
            text-align: center;
            line-height: 28px;
            font-size: 12px;
-           color: #9CA5B3;
        }
        .van-button--normal{
            padding: 0;
@@ -516,7 +520,6 @@ p{
         margin-left: 5px;
     }
     p:nth-child(1){
-        color:  #080D21;
         font-size: 14px;
         padding: 0;
         margin: 0;
@@ -524,7 +527,6 @@ p{
         align-items: center;
     }
     p:nth-child(2){
-        color:  #7F828F;
         font-size: 12px;
         padding: 0;
         margin: 0;
@@ -544,8 +546,5 @@ p{
         align-items: center;
     }
 }
-.colorBlue{
-    color: #495BFF;
-    padding: 0 3px 0 3px;
-}
+
 </style>

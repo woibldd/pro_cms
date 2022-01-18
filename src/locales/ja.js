@@ -472,5 +472,9 @@ module.exports = {
     'Failedto':'に当たりそこなう',
     'Congratulations':'当選おめでとうございます!',
     'Morebenefits':'より多くの福利厚生',
+    'signSuccess':'サインインに成功',
+    'signError':'サインインに失敗しました',
+    'receiveSuccess':'正常に受信されました',
+    'receiveError':'申し立てに失敗しました'
   }
 }

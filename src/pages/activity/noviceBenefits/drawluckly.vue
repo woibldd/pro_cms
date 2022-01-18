@@ -1,54 +1,54 @@
 <template>
-<div class="drawluckly">
+<div class="drawluckly colorBackground1">
     <div class="drawluckly-topbanner">
-      <span class="drawluckly-topbanner-time">2022.10.20</span>
-      <span  class="drawluckly-topbanner-text">
+      <span class="drawluckly-topbanner-time colorBlack">2022.10.20</span>
+      <span  class="drawluckly-topbanner-text colorBlack">
         {{$t('noviceBenefits.Winaraffle')}} {{RewardDetail.thisRewardPool || 0}} BKB
       </span>
     </div>
 
     <div class="drawluckly-Coupons">
       <div class="drawluckly-Coupons-item">
-        <p>{{$t('noviceBenefits.rafflepapers')}}</p>
-        <p>{{RewardDetail.allPapersIn || 0}}</p>
+        <p class="textSecond2">{{$t('noviceBenefits.rafflepapers')}}</p>
+        <p class="textPrimary0">{{RewardDetail.allPapersIn || 0}}</p>
       </div>
       <div class="drawluckly-Coupons-item" style="marginLeft:50px;">
-        <p>{{$t('noviceBenefits.merafflepapers')}}</p>
-        <p>{{RewardDetail.mePapersIn || 0}}</p>
+        <p class="textSecond2">{{$t('noviceBenefits.merafflepapers')}}</p>
+        <p class="textPrimary0">{{RewardDetail.mePapersIn || 0}}</p>
       </div>
     </div>
 
     <div class="drawluckly-CouponsNums">
       <p class="drawluckly-CouponsNums-title">
-        <span>{{$t('noviceBenefits.raffletickets')}}</span>
-        <span>{{$t('noviceBenefits.available')}}: <span class="colorBlue">{{RewardDetail.mePapersKeep || 0}}</span></span>
+        <span class="textPrimary0">{{$t('noviceBenefits.raffletickets')}}</span>
+        <span class="textPrimary0">{{$t('noviceBenefits.available')}}: <span class="colorPrimary">{{RewardDetail.mePapersKeep || 0}}</span></span>
       </p>
       <div class="drawluckly-CouponsNums-inp">
        <van-field v-model="CouponsNums" type="number" :placeholder="$t('noviceBenefits.Pleaseenter')"/>
-       <p class="drawluckly-CouponsNums-all" @click="allin()">All in</p>
+       <p class="drawluckly-CouponsNums-all colorPrimary " @click="allin()">All in</p>
       </div>
     </div>
 
     <div class="drawluckly-Award" v-if="!!RewardDetail.whoGotReward">
-      <p>{{$t('noviceBenefits.usersyesterday')}}</p>
+      <p class="textPrimary0">{{$t('noviceBenefits.usersyesterday')}}</p>
       <div class="drawluckly-Award-user">
-        <p>{{RewardDetail.whoGotReward}}</p>
-        <p>+{{RewardDetail.whoGotRewardPool}} BKB</p>
+        <p class="textPrimary0">{{RewardDetail.whoGotReward}}</p>
+        <p class="colorPrimary">+{{RewardDetail.whoGotRewardPool}} BKB</p>
       </div>
     </div>
 
-    <div class="drawluckly-rule">
-      <p class="drawluckly-rule-title">{{$t('noviceBenefits.Activityrules')}}</p>
+    <div class="drawluckly-rule colorBackground3">
+      <p class="drawluckly-rule-title textPrimary0">{{$t('noviceBenefits.Activityrules')}}</p>
       <ul class="drawluckly-rule-content">
-        <li>1.{{$t('noviceBenefits.Dailyreward')}}</li>
-        <li>2.{{$t('noviceBenefits.morelottery')}}</li>
-        <li>3.{{$t('noviceBenefits.luckydraw')}}</li>
+        <li class="textSecond2">1.{{$t('noviceBenefits.Dailyreward')}}</li>
+        <li class="textSecond2">2.{{$t('noviceBenefits.morelottery')}}</li>
+        <li class="textSecond2">3.{{$t('noviceBenefits.luckydraw')}}</li>
       </ul>
-      <div class="drawluckly-rule-bottom">*{{$t('noviceBenefits.notes')}} </div>
+      <div class="drawluckly-rule-bottom textSecond3">*{{$t('noviceBenefits.notes')}} </div>
     </div>
 
     <div class="drawluckly-btnbox">
-       <van-button :class="Number(CouponsNums) > 0 ? 'ondrawluckly-btn' : 'drawluckly-btn'" @click="pushPapersIn()">{{$t('noviceBenefits.Immediateinput')}}</van-button>
+       <van-button :class="Number(CouponsNums) > 0 ? 'ondrawluckly-btn colorBackgroundPrimary' : 'drawluckly-btn colorBackgroundPrimary'" @click="pushPapersIn()"> <span class="colorwhite">{{$t('noviceBenefits.Immediateinput')}} </span></van-button>
     </div>
     </div>
 </template>
@@ -98,7 +98,7 @@ export default {
         this.getRewardDetail();
         this.CouponsNums = 0;
       }else{
-        this.$toast('投入失败');
+        this.$toast('error');
       }
     },
     allin(){
@@ -166,9 +166,42 @@ export default {
 };
 </script>
 <style lang="scss">
+@import "@/assets/css/theme.scss";
+.theme-light{
+    .drawluckly-CouponsNums-inp{
+        border: 1px solid $theme-light-colorLine1;
+        .drawluckly-CouponsNums-all{
+          border-left: 1px solid $theme-light-colorLine1;
+        }
+    }
+    .drawluckly-btnbox{
+      border-top:1px solid $theme-light-colorLine1;
+    }
+}
+
+.theme-dark{
+    .drawluckly-CouponsNums-inp{
+        border: 1px solid $theme-dark-colorLine;
+         .van-cell{
+          background-color: #171A26;
+          .van-field__control{
+            color: #f0f0f0;
+          }
+        }
+        .drawluckly-CouponsNums-all{
+          border-left: 1px solid $theme-dark-colorLine;
+        }
+    }
+    .drawluckly-btnbox{
+      border-top:1px solid $theme-dark-colorLine;
+    }
+}
 p{
   padding: 0;
   margin: 0;
+}
+.drawluckly{
+  min-height: 100vh;
 }
 .drawluckly-topbanner{
     width: 100%;
@@ -180,7 +213,6 @@ p{
       position: absolute;
       top: 10px;
       left: 16px;
-      color: #000000;
       font-size: 12px;
     }
     .drawluckly-topbanner-text{
@@ -198,12 +230,10 @@ p{
   padding: 40px 0 30px 16px;
   .drawluckly-Coupons-item{
     p:nth-child(1){
-      color: #7F828F;
       font-size: 14px;
       line-height: 14px;
     }
     p:nth-child(2){
-      color: #080D21;
       font-size: 16px;
       line-height: 16px;
       padding-top: 5px;
@@ -215,7 +245,6 @@ p{
   .drawluckly-CouponsNums-title{
     display: flex;
     justify-content: space-between;
-    color: #080D21;
     font-size: 14px;
     line-height: 14px;
   }
@@ -224,15 +253,12 @@ p{
   margin-top: 10px;
   width: 100%;
   height: 50px;
-  border: 1px solid #F0F0F0;
   border-radius: 8px;
   display: flex;
   .drawluckly-CouponsNums-all{
     width: 68px;
     margin: 16px 0 16px 16px;
-    border-left: 1px solid #F0F0F0;
     text-align: center;
-    color: #495BFF;
     font-size: 14px;
     line-height: 18px;
   }
@@ -246,7 +272,6 @@ p{
 }
 .drawluckly-Award{
   padding: 0 15px;
-  color: #080D21;
   font-size: 14px;
   line-height: 14px;
   .drawluckly-Award-user{
@@ -259,22 +284,18 @@ p{
 .drawluckly-rule{
   height: 207px;
   margin: 30px 16px 20px 16px;
-  background: #F8F9FA;
   border-radius: 8px;
   padding: 15px;
   .drawluckly-rule-title{
-    color: #080D21;
     font-size: 14px;
     font-weight: 600;
   }
   .drawluckly-rule-content{
     margin-top: 15px;
-    color:  #7F828F;
     font-size: 14px;
     line-height: 20px;
   }
   .drawluckly-rule-bottom{
-    color:    #9CA5B3;
     margin-top: 15px;
     font-size: 12px;
   }
@@ -288,12 +309,12 @@ p{
   .drawluckly-btn{
     width: 303px;
     height: 50px;
-    background: #495BFF;
     opacity: 0.3;
     border-radius: 10px;
     color: #ffffff;
     font-size: 16px;
     margin-top: 10px;
+    border: none;
   }
   .ondrawluckly-btn{
     width: 303px;
@@ -303,9 +324,7 @@ p{
     color: #ffffff;
     font-size: 16px;
     margin-top: 10px;
+    border: none;
   }
-}
-.colorBlue{
-    color: #495BFF;
 }
 </style>

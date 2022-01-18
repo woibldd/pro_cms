@@ -472,5 +472,9 @@ module.exports = {
     'Failedto':'미당첨',
     'Congratulations':'당첨을 축하합니다!',
     'Morebenefits':'더 많은 혜택',
+    'signSuccess':'로그인 성공',
+    'signError':'로그인 실패',
+    'receiveSuccess':'성공적으로 수신됨',
+    'receiveError':'소유권 주장 실패'
   }
 }

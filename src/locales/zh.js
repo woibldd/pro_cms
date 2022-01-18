@@ -505,5 +505,9 @@ module.exports = {
       'Failedto':'未中奖',
       'Congratulations':'恭喜您中奖!',
       'Morebenefits':'更多福利',
+      'signSuccess':'签到成功',
+      'signError':'签到失败',
+      'receiveSuccess':'领取成功',
+      'receiveError':'领取失败'
     }
 }

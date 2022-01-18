@@ -472,5 +472,9 @@ module.exports = {
     'Failedto':'Thắng giải thua',
     'Congratulations':'Chúc mừng đã thắng giải!',
     'Morebenefits':'Thêm lợi ích',
+    'signSuccess':'Kiểm tra thành công',
+    'signError':'Lỗi kiểm tra',
+    'receiveSuccess':'Đã nhận',
+    'receiveError':'Tập hợp bị lỗi'
   }
 }
