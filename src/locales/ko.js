@@ -481,7 +481,7 @@ module.exports = {
     ComingSoon: '출시 예정',
     swapNow: '지금 교환',
     claim: '주장하다',
-    tradingRule: 'Mining Rule',
+    tradingRule: '거래 규칙',
     learnMore: '더 알아보기',
     finished: '완성 된',
     Live: '라이브',
@@ -495,14 +495,29 @@ module.exports = {
     Reward: '보상',
     YourTradingValue: '귀하의 거래 가치',
     TodayTradingValue: '오늘 거래 가치',
-    TodayTradingReward: '오늘 거래 보상',
+    TodayTradingReward: '오늘의 총 보상',
     YourTradingReward: '귀하의 거래 보상',
     transaction: '총 거래 금액',
     GetsBKB: 'BKB 번호 가져오기',
     in: '~에',
     make: '거래하기',
-    toGet: 'BKB를 얻으려면'
-
-
+    toGet: 'BKB를 얻으려면',
+    noticeBar: '이 이벤트는 투자 조언으로 해석되어서는 안 됩니다.',
+    ruleTitle: '거래 규칙',
+    ruleContent: '1. 사용자는 두 개의 지정된 토큰 중 하나의 세부 정보 페이지 또는 마켓 페이지로 이동하여 거래 보상 페이지에 들어갈 수 있습니다.<br/>2. 지정된 두 토큰 간의 모든 교환/교환은 유효한 것으로 간주됩니다.<br/>3. 특정 날짜의 보상은 다음 날 00:00(GMT+8)에 계산되며, 그 이후에 사용자는 보상을 요청할 수 있습니다.<br/>4. 이 이벤트는 투자 조언으로 해석되어서는 안 됩니다.',
+    how: 'BKSwap 트레이딩 리워드 이벤트는 어떻게 참여하나요?',
+    how1: '1. 참조:',
+    how11: ' 최신 BKSap 자습서.',
+    how2: '2. 규칙:',
+    howContent: 'BKSap을 사용하여 지정된 토큰 쌍 간에 트랜잭션을 수행하는 사용자는 보상을 받습니다.',
+    howContent1: '세부:',
+    Objectives1: '각 이벤트 동안 사용자는 BKSwap을 사용하여 지정된 토큰 쌍 간에 트랜잭션을 수행합니다. BKB 금액은 나중에 당일 거래 수수료의 백분율로 계산되어 배포됩니다. 당일 이벤트에 참여하는 모든 사용자는 비례하여 보상을 받게 됩니다.',
+    how3: '3. 거래 보상은 어떻게 계산되나요?',
+    OverviewContent: '거래 보상은 실시간으로 계산되며, 이용자는 "거래 보상" 페이지에서 언제든지 확인할 수 있습니다. 이벤트 정산 주기는 24시간입니다. 사용자는 매일 00:00(GMT+8)에 전날의 거래 보상을 받습니다.',
+    how4: '4. 거래 보상을 확인하는 방법은 무엇입니까?',
+    OverviewContent4: 'BitKeep의 "거래 보상" 페이지로 이동하여 수익에 대한 모든 것을 확인하십시오.',
+    how5: '5. 거래 보상을 청구하는 방법은 무엇입니까?',
+    OverviewContent5: '"보상 거래" 페이지로 이동하여 "청구" 버튼을 눌러 보상을 청구하십시오.',
+  
   }
 }

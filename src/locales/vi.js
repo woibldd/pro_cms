@@ -481,7 +481,7 @@ module.exports = {
     ComingSoon: 'Sắp có',
     swapNow: 'Hoán đổi ngay',
     claim: 'Yêu cầu',
-    tradingRule: 'Mining Rule',
+    tradingRule: 'Quy tắc giao dịch',
     learnMore: 'Tìm hiểu thêm',
     finished: 'Hoàn thành',
     Live: 'trực tiếp',
@@ -501,7 +501,23 @@ module.exports = {
     GetsBKB: 'Nhận số BKB',
     in: 'trong',
     make: 'Thực hiện một giao dịch',
-    toGet: 'để lấy BKB'
-
+    toGet: 'để lấy BKB',
+    noticeBar: 'Sự kiện này sẽ không được hiểu là một lời khuyên đầu tư',
+    ruleTitle: 'Quy tắc giao dịch',
+    ruleContent: '1. Người dùng có thể truy cập trang Chi tiết hoặc trang Thị trường của một trong hai mã thông báo được chỉ định để vào trang Phần thưởng giao dịch; <br/> 2. Mọi hoán đổi đến / đi giữa hai mã thông báo được chỉ định sẽ được coi là hợp lệ; <br/> 3. Phần thưởng của một ngày nhất định sẽ được tính vào 00:00 (GMT + 8) ngày hôm sau, sau đó người dùng có thể nhận phần thưởng của họ; <br/> 4. Sự kiện này sẽ không được hiểu là một lời khuyên đầu tư',
+    how: 'Làm thế nào để tham gia sự kiện Phần thưởng Giao dịch BKSwap?',
+    how1: '1. Vui lòng xem:',
+    how11: ' Để có hướng dẫn về BKSwap mới nhất.',
+    how2: '2. Quy tắc:',
+    howContent: 'Người dùng thực hiện giao dịch giữa một cặp mã thông báo cụ thể với BKSwap sẽ được thưởng',
+    howContent1: 'Thông tin chi tiết:',
+    Objectives1: 'Trong mỗi sự kiện, người dùng thực hiện giao dịch giữa một cặp mã thông báo cụ thể với BKSwap. Sau đó, một lượng BKB sẽ được tính theo tỷ lệ phần trăm của phí giao dịch trong ngày và được phân phối. Tất cả người dùng tham gia sự kiện trong ngày sẽ được thưởng theo tỷ lệ.',
+    how3: '3. Phần thưởng giao dịch được tính như thế nào?',
+    OverviewContent: 'Phần thưởng giao dịch được tính theo thời gian thực và người dùng có thể kiểm tra bất kỳ lúc nào trên trang "Phần thưởng giao dịch". Chu kỳ giải quyết của sự kiện là 24 giờ. Người dùng sẽ nhận được phần thưởng giao dịch của ngày hôm trước vào lúc 00:00 (GMT + 8) hàng ngày.',
+    how4: '4. Làm thế nào để kiểm tra phần thưởng giao dịch của bạn?',
+    OverviewContent4: 'Truy cập trang "Phần thưởng giao dịch" trong BitKeep để xem mọi thứ về lợi nhuận của bạn.',
+    how5: '5. Làm thế nào để nhận phần thưởng giao dịch của bạn?',
+    OverviewContent5: 'Truy cập trang "Phần thưởng giao dịch" và nhấn vào nút "Yêu cầu" để nhận phần thưởng của bạn.',
+  
   }
 }

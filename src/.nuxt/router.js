@@ -34,7 +34,7 @@ const _2dd20cd2 = () => interopDefault(import('../pages/activity/staking/protoco
 const _633da457 = () => interopDefault(import('../pages/activity/staking/wallet.js' /* webpackChunkName: "pages/activity/staking/wallet" */))
 const _29516762 = () => interopDefault(import('../pages/activity/trading/history.vue' /* webpackChunkName: "pages/activity/trading/history" */))
 const _00befa6d = () => interopDefault(import('../pages/activity/trading/protocol.vue' /* webpackChunkName: "pages/activity/trading/protocol" */))
-const _d4a14ebc = () => interopDefault(import('../pages/activity/trading/RuleDetail.vue' /* webpackChunkName: "pages/activity/trading/RuleDetail" */))
+const _1e1c3978 = () => interopDefault(import('../pages/activity/trading/tradingRule.vue' /* webpackChunkName: "pages/activity/trading/tradingRule" */))
 const _5d08bdb4 = () => interopDefault(import('../pages/activity/blindboxInvite/component/createPoster.vue' /* webpackChunkName: "pages/activity/blindboxInvite/component/createPoster" */))
 const _24381afe = () => interopDefault(import('../pages/activity/blindbox/detail/_id.vue' /* webpackChunkName: "pages/activity/blindbox/detail/_id" */))
 const _262ca6c4 = () => interopDefault(import('../pages/article/detail/_id.vue' /* webpackChunkName: "pages/article/detail/_id" */))
@@ -172,9 +172,9 @@ export const routerOptions = {
     component: _00befa6d,
     name: "activity-trading-protocol"
   }, {
-    path: "/activity/trading/RuleDetail",
-    component: _d4a14ebc,
-    name: "activity-trading-RuleDetail"
+    path: "/activity/trading/tradingRule",
+    component: _1e1c3978,
+    name: "activity-trading-tradingRule"
   }, {
     path: "/activity/blindboxInvite/component/createPoster",
     component: _5d08bdb4,

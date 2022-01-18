@@ -27,7 +27,7 @@
             color="#FF8146" 
             background="rgba(255, 129, 70, 0.1)" 
             left-icon="https://cdn.bitkeep.vip/u_b_c2936690-7531-11ec-8de8-87fc79fc0305.png" 
-            mode="closeable">The DeFi airdrop is only a fan welfare activity and does not make any investment advice.</van-notice-bar>
+            mode="closeable">{{$t('trading.noticeBar')}}</van-notice-bar>
           <div class="img">
             <img
               src="https://cdn.bitkeep.vip/u_b_c29ed840-7531-11ec-8de8-87fc79fc0305.png"
@@ -167,7 +167,6 @@ export default {
     this.getInfo();
     this.setIcon();
     this.tradingWaitClaim();
-    console.log(this.locale,'12')
   },
   methods: {
     // 获取列表
@@ -221,9 +220,6 @@ export default {
         });
       }
       this.waitClaim = data;
-    },
-    inviteRewards() {
-      this.$router.push("/activity/blindboxInvite/rewardList");
     },
     tabChange(val) {
       this.activeType = val;
@@ -303,7 +299,7 @@ export default {
       BitKeepInvoke.nativeApp(JSON.stringify(swapNow));
     },
     learnMore() {
-      this.$router.push("/activity/mining/miningRule");
+      this.$router.push("/activity/trading/tradingRule");
     },
   },
 };
