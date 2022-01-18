@@ -1,7 +1,4 @@
 {
-  "Activity": {
-    "description": "Auto imported from components/activity/index.vue"
-  },
   "CommonCVueCountdown": {
     "description": "Auto imported from components/common/c-vue-countdown.vue"
   },
@@ -10,6 +7,9 @@
   },
   "Common": {
     "description": "Auto imported from components/common/index.js"
+  },
+  "Activity": {
+    "description": "Auto imported from components/activity/index.vue"
   },
   "BlindboxBlindButton": {
     "description": "Auto imported from components/blindbox/BlindButton.vue"

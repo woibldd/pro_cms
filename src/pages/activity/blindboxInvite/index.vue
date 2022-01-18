@@ -78,9 +78,9 @@
             </div>
           </div>
           <div class="warp-invite-imgLink setTop">
-            <div @click="toReward" class="setBg">
+            <!-- <div @click="toReward" class="setBg">
               <img src="https://cdn.bitkeep.vip/u_b_c9755b00-6206-11ec-9638-bfd886e3565b.png" alt="">
-            </div>
+            </div> -->
             <!-- <img src="https://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
             <img src="https://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
             <img src="https://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
