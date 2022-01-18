@@ -13,8 +13,8 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_0f50faef from 'nuxt_plugin_plugin_0f50faef' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_axios_4558d485 from 'nuxt_plugin_axios_4558d485' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_plugin_8dea18ac from 'nuxt_plugin_plugin_8dea18ac' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_axios_338dcdc0 from 'nuxt_plugin_axios_338dcdc0' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_bitkeep_1ee24016 from 'nuxt_plugin_bitkeep_1ee24016' // Source: ../plugins/client/bitkeep.js (mode: 'client')
 import nuxt_plugin_flexible_92f9b208 from 'nuxt_plugin_flexible_92f9b208' // Source: ../plugins/client/flexible.js (mode: 'client')
 import nuxt_plugin_init_04de01b7 from 'nuxt_plugin_init_04de01b7' // Source: ../plugins/common/init.js (mode: 'all')
@@ -88,7 +88,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"","htmlAttrs":{"lang":"en"},"bodyAttrs":{"class":"theme-light"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1, user-scalable=no"},{"hid":"description","name":"description","content":""},{"hid":"keywords","name":"keywords","content":"bitkeep,eth"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"script":[],"style":[]},
+    head: {"title":"","htmlAttrs":{"lang":"en"},"bodyAttrs":{"class":"theme-light"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1, user-scalable=no"},{"hid":"description","name":"description","content":""},{"hid":"keywords","name":"keywords","content":"bitkeep,eth"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"script":[{"src":"https:\u002F\u002Fcdn.bootcdn.net\u002Fajax\u002Flibs\u002FvConsole\u002F3.8.1\u002Fvconsole.min.js","type":"text\u002Fjavascript","charset":"utf-8"}],"style":[]},
 
     store,
     router,
@@ -217,12 +217,12 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_0f50faef === 'function') {
-    await nuxt_plugin_plugin_0f50faef(app.context, inject)
+  if (typeof nuxt_plugin_plugin_8dea18ac === 'function') {
+    await nuxt_plugin_plugin_8dea18ac(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_4558d485 === 'function') {
-    await nuxt_plugin_axios_4558d485(app.context, inject)
+  if (typeof nuxt_plugin_axios_338dcdc0 === 'function') {
+    await nuxt_plugin_axios_338dcdc0(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_bitkeep_1ee24016 === 'function') {

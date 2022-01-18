@@ -404,7 +404,7 @@ export default {
         this.isLoading = false;
         return this.$dialog.alert({
           message: data,
-          confirmButtonText: this.$t("CbkbExchange.know"),
+          confirmButtonText: '福利中心',
           confirmButtonColor: "$theme-light-colorPrimary",
         });
       }
