@@ -69,7 +69,7 @@ export default {
   mounted() {
     this.isBitKeep &&
       BitKeepInvoke.onLoadReady(() => {
-        BitKeepInvoke.setTitle(this.$t("mining.historyTitle"));
+        BitKeepInvoke.setTitle(this.$t("trading.historyData"));
         BitKeepInvoke.setIconAction("");
         BitKeepInvoke.appMode((err, res) => {
           let body = document.getElementsByTagName("body")[0];

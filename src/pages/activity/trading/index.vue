@@ -94,7 +94,7 @@
             <div class="trading-wrap-line colorLine"></div>
             <div class="trading-wrap-one-body" @click="learnMore">
               <p class="trading-wrap-one-body-text textSecond1">
-                {{ $t("mining.miningRule") }}
+                {{ $t("trading.ruleContentTitle") }}
               </p>
             </div>
           </div>

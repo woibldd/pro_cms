@@ -493,6 +493,8 @@ module.exports = {
     Start: '시작 시간',
     Time: '시간',
     Reward: '보상',
+    historyData: '역사',
+    ruleContentTitle: '지정된 토큰 간의 스왑 거래를 완료하여 BKB 보상을 비례적으로 받습니다(거래 수수료의 백분율로 계산).',
     YourTradingValue: '귀하의 거래 가치',
     TodayTradingValue: '오늘 거래 가치',
     TodayTradingReward: '오늘의 총 보상',

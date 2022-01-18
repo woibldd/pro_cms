@@ -493,6 +493,8 @@ module.exports = {
     Start: 'Thời gian bắt đầu',
     Time: 'Thời gian',
     Reward: 'Giải thưởng',
+    historyData: 'Môn lịch sử',
+    ruleContentTitle: 'Hoàn thành giao dịch hoán đổi giữa các mã thông báo được chỉ định để nhận phần thưởng BKB theo tỷ lệ (tính theo phần trăm phí giao dịch).',
     YourTradingValue: 'Giá trị giao dịch của bạn',
     TodayTradingValue: 'Giá trị giao dịch hôm nay',
     TodayTradingReward: 'Phần thưởng giao dịch hôm nay',
