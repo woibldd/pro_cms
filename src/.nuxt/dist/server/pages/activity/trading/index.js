@@ -1001,15 +1001,15 @@ const USER_API = {
   //获取token
   handleGetToken: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/getToken', data),
   //trading 交易大赛
-  tradingGetList: (data, headers = {}) => host_user_instance.post('/tradeCompetition/getList', data),
+  tradingGetList: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/getList', data),
   //待领取
-  tradingWaitClaim: (data, headers = {}) => host_user_instance.post('/tradeCompetition/waitClaim', data),
+  tradingWaitClaim: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/waitClaim', data),
   //领取
-  tradingClaim: (data, headers = {}) => host_user_instance.post('/tradeCompetition/claim', data),
+  tradingClaim: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/claim', data),
   //历史汇总
-  tradingSummary: (data, headers = {}) => host_user_instance.post('/tradeCompetition/summary', data),
+  tradingSummary: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/summary', data),
   //历史list
-  tradingHistory: (data, headers = {}) => host_user_instance.post('/tradeCompetition/history', data)
+  tradingHistory: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/history', data)
 };
 
 /***/ }),
