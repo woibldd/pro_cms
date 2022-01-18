@@ -167,6 +167,7 @@ export default {
     this.getInfo();
     this.setIcon();
     this.tradingWaitClaim();
+    console.log(this.locale,'12')
   },
   methods: {
     // 获取列表

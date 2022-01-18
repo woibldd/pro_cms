@@ -528,11 +528,14 @@ module.exports = {
     Start: 'Start time',
     Time: 'Time',
     Reward: 'Reward',
-    YourTrading: 'Your Trading value',
+    YourTradingValue: 'Your Trading value',
+    TodayTradingValue: 'Today trading value',
+    TodayTradingReward: 'Today trading reward',
+    YourTradingReward: 'Your trading reward',
     transaction: 'Total transaction amount',
     GetsBKB: 'Gets BKB number',
     in: 'in',
     make: 'Make a transaction',
-    toGet: 'to get BKB'
+    toGet: 'to get BKB',
   }
 }

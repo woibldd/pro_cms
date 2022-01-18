@@ -8,14 +8,14 @@
             v-if="item.fromIcon"
             :src="item.fromIcon"
             alt=""
-            class="bigImg"
+            class="bigImg colorBackground0"
           />
           <div v-else class="noImg colorBackground2 noImgOne textSecond3 setFontFamily">
             {{item.fromSymbol.length> 4 ? item.fromSymbol.substring(0,4).toUpperCase(): item.fromSymbol.toUpperCase()}}
           </div>
           <img
             v-if="item.toIcon"
-            class="smallImg"
+            class="smallImg colorBackground0"
             :src="item.toIcon"
             alt=""
           />
@@ -62,15 +62,31 @@
             </div>
           </div>
           <div class="trading-wrap-line colorLine setMargin"></div>
-          <div class="trading-wrap-box-pool-flex">
+          <!-- MY -->
+          <div class="trading-wrap-box-pool-flex" v-if='!finished && activeType == 0'>
             <div class="trading-wrap-box-pool-left">
-              <div class="textSecond3">{{$t('trading.YourTrading')}}</div>
+              <div class="textSecond3">{{$t('trading.TodayTradingValue')}}</div>
+              <div class="textPrimary0 setFontFamily setFont16">
+                ${{milliFormat(item.allTradingVolumeToday)}}
+              </div>
+            </div>
+            <div class="trading-wrap-box-pool-right">
+              <div class="textSecond3">{{$t('trading.TodayTradingReward')}}</div>
+              <div class="setFontFamily colorPrimary setFont16">
+                +{{milliFormat(item.rewardToday)}} BKB
+              </div>
+            </div>
+          </div>
+          <!-- YOUR -->
+          <div class="trading-wrap-box-pool-flex" v-if='activeType != 1'>
+            <div class="trading-wrap-box-pool-left">
+              <div class="textSecond3">{{$t('trading.YourTradingValue')}}</div>
               <div class="textPrimary0 setFontFamily setFont16">
                 ${{milliFormat(item.allTradingVolume)}}
               </div>
             </div>
             <div class="trading-wrap-box-pool-right">
-              <div class="textSecond3">{{$t('trading.tradingTitle')}}</div>
+              <div class="textSecond3">{{$t('trading.YourTradingReward')}}</div>
               <div class="setFontFamily colorPrimary setFont16">
                 +{{milliFormat(item.reward)}} BKB
               </div>
