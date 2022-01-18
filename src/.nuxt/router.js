@@ -11,6 +11,7 @@ const _432e757a = () => interopDefault(import('../pages/activity/cbkbexchange/in
 const _03bed5fa = () => interopDefault(import('../pages/activity/mining/index.vue' /* webpackChunkName: "pages/activity/mining/index" */))
 const _e16d1052 = () => interopDefault(import('../pages/activity/nftLottery/index.vue' /* webpackChunkName: "pages/activity/nftLottery/index" */))
 const _488fe13a = () => interopDefault(import('../pages/activity/staking/index.vue' /* webpackChunkName: "pages/activity/staking/index" */))
+const _3c2dae4d = () => interopDefault(import('../pages/activity/trading/index.vue' /* webpackChunkName: "pages/activity/trading/index" */))
 const _26864b16 = () => interopDefault(import('../pages/activity/blindbox/detail/index.vue' /* webpackChunkName: "pages/activity/blindbox/detail/index" */))
 const _51b48dec = () => interopDefault(import('../pages/activity/blindbox/download.vue' /* webpackChunkName: "pages/activity/blindbox/download" */))
 const _1e254ba8 = () => interopDefault(import('../pages/activity/blindbox/firendList.vue' /* webpackChunkName: "pages/activity/blindbox/firendList" */))
@@ -31,6 +32,9 @@ const _aec9c9a4 = () => interopDefault(import('../pages/activity/staking/addPool
 const _9a96d6b2 = () => interopDefault(import('../pages/activity/staking/myPool.vue' /* webpackChunkName: "pages/activity/staking/myPool" */))
 const _2dd20cd2 = () => interopDefault(import('../pages/activity/staking/protocol.vue' /* webpackChunkName: "pages/activity/staking/protocol" */))
 const _633da457 = () => interopDefault(import('../pages/activity/staking/wallet.js' /* webpackChunkName: "pages/activity/staking/wallet" */))
+const _29516762 = () => interopDefault(import('../pages/activity/trading/history.vue' /* webpackChunkName: "pages/activity/trading/history" */))
+const _00befa6d = () => interopDefault(import('../pages/activity/trading/protocol.vue' /* webpackChunkName: "pages/activity/trading/protocol" */))
+const _1e1c3978 = () => interopDefault(import('../pages/activity/trading/tradingRule.vue' /* webpackChunkName: "pages/activity/trading/tradingRule" */))
 const _5d08bdb4 = () => interopDefault(import('../pages/activity/blindboxInvite/component/createPoster.vue' /* webpackChunkName: "pages/activity/blindboxInvite/component/createPoster" */))
 const _24381afe = () => interopDefault(import('../pages/activity/blindbox/detail/_id.vue' /* webpackChunkName: "pages/activity/blindbox/detail/_id" */))
 const _262ca6c4 = () => interopDefault(import('../pages/article/detail/_id.vue' /* webpackChunkName: "pages/article/detail/_id" */))
@@ -75,6 +79,10 @@ export const routerOptions = {
     path: "/activity/staking",
     component: _488fe13a,
     name: "activity-staking"
+  }, {
+    path: "/activity/trading",
+    component: _3c2dae4d,
+    name: "activity-trading"
   }, {
     path: "/activity/blindbox/detail",
     component: _26864b16,
@@ -155,6 +163,18 @@ export const routerOptions = {
     path: "/activity/staking/wallet",
     component: _633da457,
     name: "activity-staking-wallet"
+  }, {
+    path: "/activity/trading/history",
+    component: _29516762,
+    name: "activity-trading-history"
+  }, {
+    path: "/activity/trading/protocol",
+    component: _00befa6d,
+    name: "activity-trading-protocol"
+  }, {
+    path: "/activity/trading/tradingRule",
+    component: _1e1c3978,
+    name: "activity-trading-tradingRule"
   }, {
     path: "/activity/blindboxInvite/component/createPoster",
     component: _5d08bdb4,

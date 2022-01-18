@@ -51,13 +51,13 @@
   $theme-dark-colorSecond08: #FFB800;
   $theme-dark-colorwhite: #FFFFFF;
   $theme-dark-colorBlack: #000000;
-  $theme-dark-colorSecond10: rgba(73, 91, 255, 0.1);;
+  $theme-dark-colorSecond10: rgba(73, 91, 255, 0.1);
   $theme-dark-colorSecond11: rgba(28, 189, 181, 0.1);
   $theme-dark-colorSecond12: rgba(240, 74, 74, 0.1);
   $theme-dark-colorSecond13: rgba(38, 188, 128, 0.1);
   $theme-dark-colorSecond14: rgba(255, 129, 70, 0.1);
   $theme-dark-colorSecond15: rgba(47, 128, 237, 0.1);
-  $theme-dark-colorSecond18: rgba(255, 184, 0, 0.1);;
+  $theme-dark-colorSecond18: rgba(255, 184, 0, 0.1);
 
   .theme-light{
     .textPrimary0{
@@ -101,6 +101,12 @@
     }
     .colorBackgroundColorSecond11{
       background-color: $theme-light-colorSecond11;
+    }
+    .colorBackgroundSecond01{
+      background-color: $theme-light-colorSecond01;
+    }
+    .colorBackgroundTextPrimary0{
+      background-color: $theme-light-textPrimary0;
     }
     .colorPrimary{
       color: $theme-light-colorPrimary;
@@ -196,6 +202,12 @@
     }
     .colorBackgroundColorSecond11{
       background-color: $theme-dark-colorSecond11;
+    }
+    .colorBackgroundSecond01{
+      background-color: $theme-dark-colorSecond01;
+    }
+    .colorBackgroundTextPrimary0{
+      background-color: $theme-dark-textPrimary0;
     }
     .colorPrimary{
       color: $theme-dark-colorPrimary;

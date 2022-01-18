@@ -1,19 +1,19 @@
-exports.ids = [31,27,28];
+exports.ids = [32,28,29];
 exports.modules = {
 
-/***/ 108:
+/***/ 114:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_createPoster_vue_vue_type_style_index_0_id_6d3efd6b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(85);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_createPoster_vue_vue_type_style_index_0_id_6d3efd6b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(86);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_createPoster_vue_vue_type_style_index_0_id_6d3efd6b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_createPoster_vue_vue_type_style_index_0_id_6d3efd6b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_createPoster_vue_vue_type_style_index_0_id_6d3efd6b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_createPoster_vue_vue_type_style_index_0_id_6d3efd6b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 109:
+/***/ 115:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -27,7 +27,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 154:
+/***/ 164:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98,13 +98,13 @@ const vCopy = {
 
 /***/ }),
 
-/***/ 155:
+/***/ 165:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(198);
+var content = __webpack_require__(213);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -116,7 +116,7 @@ module.exports.__inject__ = function (context) {
 
 /***/ }),
 
-/***/ 181:
+/***/ 195:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -342,7 +342,7 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(108)
+  var style0 = __webpack_require__(114)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -364,33 +364,33 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 197:
+/***/ 212:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_45d79c4b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(155);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_45d79c4b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(165);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_45d79c4b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_45d79c4b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_45d79c4b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_45d79c4b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 198:
+/***/ 213:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".theme-light .textPrimary0[data-v-45d79c4b] {\n  color: #080D21;\n}\n.theme-light .textSecond1[data-v-45d79c4b] {\n  color: #4B5373;\n}\n.theme-light .textSecond2[data-v-45d79c4b] {\n  color: #7F828F;\n}\n.theme-light .textSecond3[data-v-45d79c4b] {\n  color: #9CA5B3;\n}\n.theme-light .colorDisable[data-v-45d79c4b] {\n  background-color: #DADBDE;\n}\n.theme-light .colorLine[data-v-45d79c4b] {\n  background-color: #F4F5FA;\n}\n.theme-light .colorLine1[data-v-45d79c4b] {\n  background-color: #F0F0F0;\n}\n.theme-light .colorBackground0[data-v-45d79c4b] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackground1[data-v-45d79c4b] {\n  background-color: #fff;\n}\n.theme-light .colorBackground2[data-v-45d79c4b] {\n  background-color: #F3F5F6;\n}\n.theme-light .colorBackground3[data-v-45d79c4b] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackgroundWhite[data-v-45d79c4b] {\n  background-color: #fff;\n}\n.theme-light .colorBackgroundPrimary[data-v-45d79c4b] {\n  background-color: #495BFF;\n}\n.theme-light .colorBackgroundColorSecond11[data-v-45d79c4b] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-light .colorPrimary[data-v-45d79c4b] {\n  color: #495BFF;\n}\n.theme-light .colorSecond01[data-v-45d79c4b] {\n  color: #1CBDB5;\n}\n.theme-light .colorSecond02[data-v-45d79c4b] {\n  color: #F04A4A;\n}\n.theme-light .colorSecond03[data-v-45d79c4b] {\n  color: #26BC80;\n}\n.theme-light .colorSecond04[data-v-45d79c4b] {\n  color: #FF8146;\n}\n.theme-light .colorSecond05[data-v-45d79c4b] {\n  color: #2F80ED;\n}\n.theme-light .colorSecond06[data-v-45d79c4b] {\n  color: #4A2FD2;\n}\n.theme-light .colorSecond07[data-v-45d79c4b] {\n  color: #F04E98;\n}\n.theme-light .colorSecond08[data-v-45d79c4b] {\n  color: #FFB800;\n}\n.theme-light .colorBlack[data-v-45d79c4b] {\n  color: #000;\n}\n.theme-light .colorwhite[data-v-45d79c4b] {\n  color: #fff;\n}\n.theme-light .colorSecond10[data-v-45d79c4b] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-light .colorSecond11[data-v-45d79c4b] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-light .colorSecond12[data-v-45d79c4b] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-light .colorSecond13[data-v-45d79c4b] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-light .colorSecond14[data-v-45d79c4b] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-light .colorSecond15[data-v-45d79c4b] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-light .colorSecond18[data-v-45d79c4b] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-dark .textPrimary0[data-v-45d79c4b] {\n  color: #DFE0E3;\n}\n.theme-dark .textSecond1[data-v-45d79c4b] {\n  color: #9CA5B3;\n}\n.theme-dark .textSecond2[data-v-45d79c4b] {\n  color: #7F828F;\n}\n.theme-dark .textSecond3[data-v-45d79c4b] {\n  color: #6D707D;\n}\n.theme-dark .colorDisable[data-v-45d79c4b] {\n  background-color: #5F626D;\n}\n.theme-dark .colorLine[data-v-45d79c4b] {\n  background-color: #1F212E;\n}\n.theme-dark .colorLine1[data-v-45d79c4b] {\n  background-color: #2A2D3D;\n}\n.theme-dark .colorBackground0[data-v-45d79c4b] {\n  background-color: #0A0E1F;\n}\n.theme-dark .colorBackground1[data-v-45d79c4b] {\n  background-color: #171A26;\n}\n.theme-dark .colorBackground2[data-v-45d79c4b] {\n  background-color: #212331;\n}\n.theme-dark .colorBackground3[data-v-45d79c4b] {\n  background-color: #212331;\n}\n.theme-dark .colorBackgroundPrimary[data-v-45d79c4b] {\n  background-color: #495BFF;\n}\n.theme-dark .colorBackgroundColorSecond11[data-v-45d79c4b] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorPrimary[data-v-45d79c4b] {\n  color: #495BFF;\n}\n.theme-dark .colorSecond01[data-v-45d79c4b] {\n  color: #1CBDB5;\n}\n.theme-dark .colorSecond02[data-v-45d79c4b] {\n  color: #F04A4A;\n}\n.theme-dark .colorSecond03[data-v-45d79c4b] {\n  color: #26BC80;\n}\n.theme-dark .colorSecond04[data-v-45d79c4b] {\n  color: #FF8146;\n}\n.theme-dark .colorSecond05[data-v-45d79c4b] {\n  color: #2F80ED;\n}\n.theme-dark .colorSecond06[data-v-45d79c4b] {\n  color: #4A2FD2;\n}\n.theme-dark .colorSecond07[data-v-45d79c4b] {\n  color: #F04E98;\n}\n.theme-dark .colorSecond08[data-v-45d79c4b] {\n  color: #FFB800;\n}\n.theme-dark .colorBlack[data-v-45d79c4b] {\n  color: #000;\n}\n.theme-dark .colorwhite[data-v-45d79c4b] {\n  color: #fff;\n}\n.theme-dark .colorSecond10[data-v-45d79c4b] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-dark .colorSecond11[data-v-45d79c4b] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorSecond12[data-v-45d79c4b] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-dark .colorSecond13[data-v-45d79c4b] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-dark .colorSecond14[data-v-45d79c4b] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-dark .colorSecond15[data-v-45d79c4b] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-dark .colorSecond18[data-v-45d79c4b] {\n  background-color: rgba(255,184,0,0.1);\n}\n.warp-invite[data-v-45d79c4b] {\n  min-height: 100vh;\n}\n.warp-invite .loading[data-v-45d79c4b] {\n  min-height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.warp-invite .warp-invite-imgLink[data-v-45d79c4b] {\n  padding: 0 0.43rem 0.27rem;\n}\n.warp-invite .warp-invite-imgLink .setBg[data-v-45d79c4b] {\n  border-radius: 0.21rem;\n  margin-top: 0.27rem;\n}\n.warp-invite .warp-invite-imgLink img[data-v-45d79c4b] {\n  width: 100%;\n}\n.warp-invite .warp-invite-banner[data-v-45d79c4b] {\n  height: 4.27rem;\n  position: relative;\n}\n.warp-invite .warp-invite-banner img[data-v-45d79c4b] {\n  width: 100%;\n}\n.warp-invite .warp-invite-banner .imgText[data-v-45d79c4b] {\n  position: absolute;\n  top: 1.2rem;\n  left: 0.43rem;\n}\n.warp-invite .warp-invite-banner .imgText .imgTextTitle[data-v-45d79c4b] {\n  font-size: 0.69rem;\n  font-weight: bold;\n  line-height: 0.75rem;\n  width: 5.33rem;\n  color: #080D21;\n}\n.warp-invite .warp-invite-banner .imgText .imgTextContent[data-v-45d79c4b] {\n  font-size: 0.32rem;\n  width: 5.87rem;\n  color: #080D21;\n}\n.warp-invite .setTop[data-v-45d79c4b] {\n  position: relative;\n  top: -1.2rem;\n}\n.warp-invite .warp-invite-one[data-v-45d79c4b] {\n  margin: 0.27rem 0.43rem 0;\n  border-radius: 0.21rem;\n  font-size: 0.37rem;\n  line-height: 0.43rem;\n}\n.warp-invite .warp-invite-one .warp-invite-produced[data-v-45d79c4b] {\n  display: flex;\n  height: 1.33rem;\n  line-height: 1.33rem;\n  justify-content: space-between;\n}\n.warp-invite .warp-invite-one .warp-invite-produced .setDisplay[data-v-45d79c4b] {\n  display: flex;\n  align-items: center;\n}\n.warp-invite .warp-invite-one .warp-invite-produced span[data-v-45d79c4b] {\n  font-size: 0.37rem;\n}\n.warp-invite .warp-invite-one .warp-invite-produced span img[data-v-45d79c4b] {\n  width: 0.53rem;\n  height: 0.53rem;\n  margin-right: 0.13rem;\n  vertical-align: sub;\n}\n.warp-invite .warp-invite-one .warp-invite-produced span i[data-v-45d79c4b] {\n  vertical-align: middle;\n  display: inline-block;\n  font-size: 0.37rem;\n}\n.warp-invite .warp-invite-one .warp-invite-produced span[data-v-45d79c4b]:last-child {\n  font-size: 0.48rem;\n}\n.warp-invite .warp-invite-one .warp-invite-one-header[data-v-45d79c4b] {\n  display: flex;\n  justify-content: space-between;\n  height: 0.93rem;\n  line-height: 0.93rem;\n  padding: 0 0.21rem 0 0.4rem;\n}\n.warp-invite .warp-invite-one .warp-invite-one-header .warp-invite-one-header-title span[data-v-45d79c4b] {\n  font-size: 0.48rem;\n  font-family: \"bitkeep DIN\";\n}\n.warp-invite .warp-invite-one .warp-invite-one-header .warp-invite-one-header-right[data-v-45d79c4b] {\n  padding-right: 0.19rem;\n}\n.warp-invite .warp-invite-one .borderBottom[data-v-45d79c4b] {\n  height: 0.03rem;\n}\n.warp-invite .warp-invite-one .invite-setP[data-v-45d79c4b] {\n  padding: 0 0.4rem 0.03rem;\n}\n.warp-invite .warp-invite-one .warp-invite-link[data-v-45d79c4b] {\n  border-radius: 0.21rem;\n  margin: 0.27rem 0 0.27rem;\n}\n.warp-invite .warp-invite-one .warp-invite-link .warp-invite-link-box[data-v-45d79c4b] {\n  padding: 0.27rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.warp-invite .warp-invite-one .warp-invite-link-btn[data-v-45d79c4b] {\n  height: 1.33rem;\n  line-height: 1.33rem;\n  color: #fff;\n  text-align: center;\n  border-radius: 0.27rem;\n  margin-bottom: 0.53rem;\n  font-size: 0.43rem;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".theme-light .textPrimary0[data-v-45d79c4b] {\n  color: #080D21;\n}\n.theme-light .textSecond1[data-v-45d79c4b] {\n  color: #4B5373;\n}\n.theme-light .textSecond2[data-v-45d79c4b] {\n  color: #7F828F;\n}\n.theme-light .textSecond3[data-v-45d79c4b] {\n  color: #9CA5B3;\n}\n.theme-light .colorDisable[data-v-45d79c4b] {\n  background-color: #DADBDE;\n}\n.theme-light .colorLine[data-v-45d79c4b] {\n  background-color: #F4F5FA;\n}\n.theme-light .colorLine1[data-v-45d79c4b] {\n  background-color: #F0F0F0;\n}\n.theme-light .colorBackground0[data-v-45d79c4b] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackground1[data-v-45d79c4b] {\n  background-color: #fff;\n}\n.theme-light .colorBackground2[data-v-45d79c4b] {\n  background-color: #F3F5F6;\n}\n.theme-light .colorBackground3[data-v-45d79c4b] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackgroundWhite[data-v-45d79c4b] {\n  background-color: #fff;\n}\n.theme-light .colorBackgroundPrimary[data-v-45d79c4b] {\n  background-color: #495BFF;\n}\n.theme-light .colorBackgroundColorSecond11[data-v-45d79c4b] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-light .colorBackgroundSecond01[data-v-45d79c4b] {\n  background-color: #1CBDB5;\n}\n.theme-light .colorBackgroundTextPrimary0[data-v-45d79c4b] {\n  background-color: #080D21;\n}\n.theme-light .colorPrimary[data-v-45d79c4b] {\n  color: #495BFF;\n}\n.theme-light .colorSecond01[data-v-45d79c4b] {\n  color: #1CBDB5;\n}\n.theme-light .colorSecond02[data-v-45d79c4b] {\n  color: #F04A4A;\n}\n.theme-light .colorSecond03[data-v-45d79c4b] {\n  color: #26BC80;\n}\n.theme-light .colorSecond04[data-v-45d79c4b] {\n  color: #FF8146;\n}\n.theme-light .colorSecond05[data-v-45d79c4b] {\n  color: #2F80ED;\n}\n.theme-light .colorSecond06[data-v-45d79c4b] {\n  color: #4A2FD2;\n}\n.theme-light .colorSecond07[data-v-45d79c4b] {\n  color: #F04E98;\n}\n.theme-light .colorSecond08[data-v-45d79c4b] {\n  color: #FFB800;\n}\n.theme-light .colorBlack[data-v-45d79c4b] {\n  color: #000;\n}\n.theme-light .colorwhite[data-v-45d79c4b] {\n  color: #fff;\n}\n.theme-light .colorSecond10[data-v-45d79c4b] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-light .colorSecond11[data-v-45d79c4b] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-light .colorSecond12[data-v-45d79c4b] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-light .colorSecond13[data-v-45d79c4b] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-light .colorSecond14[data-v-45d79c4b] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-light .colorSecond15[data-v-45d79c4b] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-light .colorSecond18[data-v-45d79c4b] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-dark .textPrimary0[data-v-45d79c4b] {\n  color: #DFE0E3;\n}\n.theme-dark .textSecond1[data-v-45d79c4b] {\n  color: #9CA5B3;\n}\n.theme-dark .textSecond2[data-v-45d79c4b] {\n  color: #7F828F;\n}\n.theme-dark .textSecond3[data-v-45d79c4b] {\n  color: #6D707D;\n}\n.theme-dark .colorDisable[data-v-45d79c4b] {\n  background-color: #5F626D;\n}\n.theme-dark .colorLine[data-v-45d79c4b] {\n  background-color: #1F212E;\n}\n.theme-dark .colorLine1[data-v-45d79c4b] {\n  background-color: #2A2D3D;\n}\n.theme-dark .colorBackground0[data-v-45d79c4b] {\n  background-color: #0A0E1F;\n}\n.theme-dark .colorBackground1[data-v-45d79c4b] {\n  background-color: #171A26;\n}\n.theme-dark .colorBackground2[data-v-45d79c4b] {\n  background-color: #212331;\n}\n.theme-dark .colorBackground3[data-v-45d79c4b] {\n  background-color: #212331;\n}\n.theme-dark .colorBackgroundPrimary[data-v-45d79c4b] {\n  background-color: #495BFF;\n}\n.theme-dark .colorBackgroundColorSecond11[data-v-45d79c4b] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorBackgroundSecond01[data-v-45d79c4b] {\n  background-color: #1CBDB5;\n}\n.theme-dark .colorBackgroundTextPrimary0[data-v-45d79c4b] {\n  background-color: #DFE0E3;\n}\n.theme-dark .colorPrimary[data-v-45d79c4b] {\n  color: #495BFF;\n}\n.theme-dark .colorSecond01[data-v-45d79c4b] {\n  color: #1CBDB5;\n}\n.theme-dark .colorSecond02[data-v-45d79c4b] {\n  color: #F04A4A;\n}\n.theme-dark .colorSecond03[data-v-45d79c4b] {\n  color: #26BC80;\n}\n.theme-dark .colorSecond04[data-v-45d79c4b] {\n  color: #FF8146;\n}\n.theme-dark .colorSecond05[data-v-45d79c4b] {\n  color: #2F80ED;\n}\n.theme-dark .colorSecond06[data-v-45d79c4b] {\n  color: #4A2FD2;\n}\n.theme-dark .colorSecond07[data-v-45d79c4b] {\n  color: #F04E98;\n}\n.theme-dark .colorSecond08[data-v-45d79c4b] {\n  color: #FFB800;\n}\n.theme-dark .colorBlack[data-v-45d79c4b] {\n  color: #000;\n}\n.theme-dark .colorwhite[data-v-45d79c4b] {\n  color: #fff;\n}\n.theme-dark .colorSecond10[data-v-45d79c4b] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-dark .colorSecond11[data-v-45d79c4b] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorSecond12[data-v-45d79c4b] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-dark .colorSecond13[data-v-45d79c4b] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-dark .colorSecond14[data-v-45d79c4b] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-dark .colorSecond15[data-v-45d79c4b] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-dark .colorSecond18[data-v-45d79c4b] {\n  background-color: rgba(255,184,0,0.1);\n}\n.warp-invite[data-v-45d79c4b] {\n  min-height: 100vh;\n}\n.warp-invite .loading[data-v-45d79c4b] {\n  min-height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.warp-invite .warp-invite-imgLink[data-v-45d79c4b] {\n  padding: 0 0.43rem 0.27rem;\n}\n.warp-invite .warp-invite-imgLink .setBg[data-v-45d79c4b] {\n  border-radius: 0.21rem;\n  margin-top: 0.27rem;\n}\n.warp-invite .warp-invite-imgLink img[data-v-45d79c4b] {\n  width: 100%;\n}\n.warp-invite .warp-invite-banner[data-v-45d79c4b] {\n  height: 4.27rem;\n  position: relative;\n}\n.warp-invite .warp-invite-banner img[data-v-45d79c4b] {\n  width: 100%;\n}\n.warp-invite .warp-invite-banner .imgText[data-v-45d79c4b] {\n  position: absolute;\n  top: 1.2rem;\n  left: 0.43rem;\n}\n.warp-invite .warp-invite-banner .imgText .imgTextTitle[data-v-45d79c4b] {\n  font-size: 0.69rem;\n  font-weight: bold;\n  line-height: 0.75rem;\n  width: 5.33rem;\n  color: #080D21;\n}\n.warp-invite .warp-invite-banner .imgText .imgTextContent[data-v-45d79c4b] {\n  font-size: 0.32rem;\n  width: 5.87rem;\n  color: #080D21;\n}\n.warp-invite .setTop[data-v-45d79c4b] {\n  position: relative;\n  top: -1.2rem;\n}\n.warp-invite .warp-invite-one[data-v-45d79c4b] {\n  margin: 0.27rem 0.43rem 0;\n  border-radius: 0.21rem;\n  font-size: 0.37rem;\n  line-height: 0.43rem;\n}\n.warp-invite .warp-invite-one .warp-invite-produced[data-v-45d79c4b] {\n  display: flex;\n  height: 1.33rem;\n  line-height: 1.33rem;\n  justify-content: space-between;\n}\n.warp-invite .warp-invite-one .warp-invite-produced .setDisplay[data-v-45d79c4b] {\n  display: flex;\n  align-items: center;\n}\n.warp-invite .warp-invite-one .warp-invite-produced span[data-v-45d79c4b] {\n  font-size: 0.37rem;\n}\n.warp-invite .warp-invite-one .warp-invite-produced span img[data-v-45d79c4b] {\n  width: 0.53rem;\n  height: 0.53rem;\n  margin-right: 0.13rem;\n  vertical-align: sub;\n}\n.warp-invite .warp-invite-one .warp-invite-produced span i[data-v-45d79c4b] {\n  vertical-align: middle;\n  display: inline-block;\n  font-size: 0.37rem;\n}\n.warp-invite .warp-invite-one .warp-invite-produced span[data-v-45d79c4b]:last-child {\n  font-size: 0.48rem;\n}\n.warp-invite .warp-invite-one .warp-invite-one-header[data-v-45d79c4b] {\n  display: flex;\n  justify-content: space-between;\n  height: 0.93rem;\n  line-height: 0.93rem;\n  padding: 0 0.21rem 0 0.4rem;\n}\n.warp-invite .warp-invite-one .warp-invite-one-header .warp-invite-one-header-title span[data-v-45d79c4b] {\n  font-size: 0.48rem;\n  font-family: \"bitkeep DIN\";\n}\n.warp-invite .warp-invite-one .warp-invite-one-header .warp-invite-one-header-right[data-v-45d79c4b] {\n  padding-right: 0.19rem;\n}\n.warp-invite .warp-invite-one .borderBottom[data-v-45d79c4b] {\n  height: 0.03rem;\n}\n.warp-invite .warp-invite-one .invite-setP[data-v-45d79c4b] {\n  padding: 0 0.4rem 0.03rem;\n}\n.warp-invite .warp-invite-one .warp-invite-link[data-v-45d79c4b] {\n  border-radius: 0.21rem;\n  margin: 0.27rem 0 0.27rem;\n}\n.warp-invite .warp-invite-one .warp-invite-link .warp-invite-link-box[data-v-45d79c4b] {\n  padding: 0.27rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.warp-invite .warp-invite-one .warp-invite-link-btn[data-v-45d79c4b] {\n  height: 1.33rem;\n  line-height: 1.33rem;\n  color: #fff;\n  text-align: center;\n  border-radius: 0.27rem;\n  margin-bottom: 0.53rem;\n  font-size: 0.43rem;\n}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
 
-/***/ 259:
+/***/ 282:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -408,10 +408,10 @@ var staticRenderFns = []
 var external_vuex_ = __webpack_require__(4);
 
 // EXTERNAL MODULE: ./pages/activity/blindboxInvite/component/createPoster.vue + 4 modules
-var createPoster = __webpack_require__(181);
+var createPoster = __webpack_require__(195);
 
 // EXTERNAL MODULE: ./pages/activity/blindboxInvite/copy.js
-var copy = __webpack_require__(154);
+var copy = __webpack_require__(164);
 
 // EXTERNAL MODULE: ./api/client.js
 var client = __webpack_require__(67);
@@ -634,7 +634,7 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(197)
+  var style0 = __webpack_require__(212)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -774,7 +774,17 @@ const USER_API = {
   //确认质押
   staking: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/staking', data),
   //获取token
-  handleGetToken: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/getToken', data)
+  handleGetToken: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/getToken', data),
+  //trading 交易大赛
+  tradingGetList: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/getList', data),
+  //待领取
+  tradingWaitClaim: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/waitClaim', data),
+  //领取
+  tradingClaim: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/claim', data),
+  //历史汇总
+  tradingSummary: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/summary', data),
+  //历史list
+  tradingHistory: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/history', data)
 };
 
 /***/ }),
@@ -826,13 +836,13 @@ const BaseMixin = {
 
 /***/ }),
 
-/***/ 85:
+/***/ 86:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(109);
+var content = __webpack_require__(115);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;

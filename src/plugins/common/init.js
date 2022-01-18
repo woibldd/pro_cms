@@ -35,7 +35,8 @@ import {
     Col,
     Row,
     Tab,
-    Tabs
+    Tabs,
+    NoticeBar
 } from "vant";
 
 const components = [
@@ -60,7 +61,8 @@ const components = [
     Col,
     Row,
     Tab,
-    Tabs
+    Tabs,
+    NoticeBar
     // Lazyload
     // VueCanvasPoster
 ];

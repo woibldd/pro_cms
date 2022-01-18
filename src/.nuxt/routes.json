@@ -49,6 +49,13 @@
     "_name": "_488fe13a"
   },
   {
+    "name": "activity-trading",
+    "path": "/activity/trading",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/trading/index.vue",
+    "chunkName": "pages/activity/trading/index",
+    "_name": "_3c2dae4d"
+  },
+  {
     "name": "activity-blindbox-detail",
     "path": "/activity/blindbox/detail",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/blindbox/detail/index.vue",
@@ -187,6 +194,27 @@
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/staking/wallet.js",
     "chunkName": "pages/activity/staking/wallet",
     "_name": "_633da457"
+  },
+  {
+    "name": "activity-trading-history",
+    "path": "/activity/trading/history",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/trading/history.vue",
+    "chunkName": "pages/activity/trading/history",
+    "_name": "_29516762"
+  },
+  {
+    "name": "activity-trading-protocol",
+    "path": "/activity/trading/protocol",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/trading/protocol.vue",
+    "chunkName": "pages/activity/trading/protocol",
+    "_name": "_00befa6d"
+  },
+  {
+    "name": "activity-trading-tradingRule",
+    "path": "/activity/trading/tradingRule",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/trading/tradingRule.vue",
+    "chunkName": "pages/activity/trading/tradingRule",
+    "_name": "_1e1c3978"
   },
   {
     "name": "activity-blindboxInvite-component-createPoster",

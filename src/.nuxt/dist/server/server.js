@@ -43,7 +43,7 @@ module.exports =
 /******/
 /******/ 		// "0" is the signal for "already loaded"
 /******/ 		if(installedChunks[chunkId] !== 0) {
-/******/ 			var chunk = require("./" + ({"1":"components/activity","2":"components/blindbox-blind-button","3":"components/blindbox-blind-strategy","4":"components/blindbox-blind-time-text","5":"components/blindbox-create-poster","6":"components/blindbox-title-image","7":"components/common","8":"components/common-c-vue-countdown","9":"components/common-header","10":"components/vue-create-poster-layout","11":"components/vue-create-poster-layout-canvas-poster","12":"components/vue-create-poster-layout-gradient","13":"components/vue-create-poster-layout-header","14":"components/vue-create-poster-layout-painter","15":"components/vue-create-poster-layout-qrcode","16":"components/vue-create-poster-layout-util","17":"pages/_id","18":"pages/activity/airdrop/index","19":"pages/activity/blindbox/detail/_id","20":"pages/activity/blindbox/detail/index","21":"pages/activity/blindbox/download","22":"pages/activity/blindbox/firendList","23":"pages/activity/blindbox/index","24":"pages/activity/blindbox/list","25":"pages/activity/blindbox/stepDetail","26":"pages/activity/blindboxInvite/RuleDetail","27":"pages/activity/blindboxInvite/component/createPoster","28":"pages/activity/blindboxInvite/copy","29":"pages/activity/blindboxInvite/detail","30":"pages/activity/blindboxInvite/download","31":"pages/activity/blindboxInvite/index","32":"pages/activity/blindboxInvite/inviteList","33":"pages/activity/blindboxInvite/rewardList","34":"pages/activity/cbkbexchange/index","35":"pages/activity/mining/RuleDetail","36":"pages/activity/mining/history","37":"pages/activity/mining/index","38":"pages/activity/mining/inviteRuleDetail","39":"pages/activity/mining/miningRule","40":"pages/activity/mining/protocol","41":"pages/activity/nftLottery/index","42":"pages/activity/staking/addPool","43":"pages/activity/staking/index","44":"pages/activity/staking/myPool","45":"pages/activity/staking/protocol","46":"pages/activity/staking/wallet","47":"pages/article/detail/_id"}[chunkId]||chunkId) + ".js");
+/******/ 			var chunk = require("./" + ({"1":"components/activity","2":"components/blindbox-blind-button","3":"components/blindbox-blind-strategy","4":"components/blindbox-blind-time-text","5":"components/blindbox-create-poster","6":"components/blindbox-title-image","7":"components/common","8":"components/common-c-vue-countdown","9":"components/common-header","10":"components/trading","11":"components/vue-create-poster-layout","12":"components/vue-create-poster-layout-canvas-poster","13":"components/vue-create-poster-layout-gradient","14":"components/vue-create-poster-layout-header","15":"components/vue-create-poster-layout-painter","16":"components/vue-create-poster-layout-qrcode","17":"components/vue-create-poster-layout-util","18":"pages/_id","19":"pages/activity/airdrop/index","20":"pages/activity/blindbox/detail/_id","21":"pages/activity/blindbox/detail/index","22":"pages/activity/blindbox/download","23":"pages/activity/blindbox/firendList","24":"pages/activity/blindbox/index","25":"pages/activity/blindbox/list","26":"pages/activity/blindbox/stepDetail","27":"pages/activity/blindboxInvite/RuleDetail","28":"pages/activity/blindboxInvite/component/createPoster","29":"pages/activity/blindboxInvite/copy","30":"pages/activity/blindboxInvite/detail","31":"pages/activity/blindboxInvite/download","32":"pages/activity/blindboxInvite/index","33":"pages/activity/blindboxInvite/inviteList","34":"pages/activity/blindboxInvite/rewardList","35":"pages/activity/cbkbexchange/index","36":"pages/activity/mining/RuleDetail","37":"pages/activity/mining/history","38":"pages/activity/mining/index","39":"pages/activity/mining/inviteRuleDetail","40":"pages/activity/mining/miningRule","41":"pages/activity/mining/protocol","42":"pages/activity/nftLottery/index","43":"pages/activity/staking/addPool","44":"pages/activity/staking/index","45":"pages/activity/staking/myPool","46":"pages/activity/staking/protocol","47":"pages/activity/staking/wallet","48":"pages/activity/trading/history","49":"pages/activity/trading/index","50":"pages/activity/trading/protocol","51":"pages/activity/trading/tradingRule","52":"pages/article/detail/_id"}[chunkId]||chunkId) + ".js");
 /******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				modules[moduleId] = moreModules[moduleId];
@@ -2736,7 +2736,8 @@ module.exports = {
     success: 'Successfully',
     networkErro: "The Internet has gone awry",
     copied: 'Copied',
-    copiedError: 'Some error occurred'
+    copiedError: 'Some error occurred',
+    nomore: 'No more'
   },
   "ActivityBlindbox": {
     shared: {
@@ -3215,6 +3216,52 @@ module.exports = {
     authorization: 'You canceled signature authorization!',
     stakeAmount: 'Entry stake amount',
     know: 'OK'
+  },
+  'trading': {
+    tradingTitle: 'Trading Reward',
+    know: 'OK',
+    ComingSoon: 'Coming soon',
+    swapNow: 'Swap Now',
+    claim: 'Claim',
+    tradingRule: 'Trading Rules',
+    learnMore: 'Learn more',
+    finished: 'Finished',
+    Live: 'Live',
+    Upcoming: 'Upcoming',
+    Past: 'Past',
+    UnclaimedReward: 'Rewards to claim',
+    Chain: 'Bianance Smart Chain',
+    Ending: 'Ending in',
+    Start: 'Start time',
+    Time: 'Time',
+    Reward: 'Reward',
+    historyData: 'History',
+    ruleContentTitle: 'Complete a swap transaction between the specified tokens to get BKB rewards pro rata (calculated by a percentage of the transaction fee).',
+    YourTradingValue: 'Your Trading value',
+    TodayTradingValue: 'Today trading value',
+    TodayTradingReward: 'Today‘s total reward',
+    YourTradingReward: 'Your trading reward',
+    transaction: 'Total transactions',
+    GetsBKB: 'BKB rewards',
+    in: 'in',
+    make: 'Make a transaction',
+    toGet: 'to get BKB',
+    noticeBar: 'This event shall not be construed as an investment advice',
+    ruleTitle: 'Trading Rules',
+    ruleContent: '1. Users may go to the Details page or Market page of one of the two specified tokens to enter the Trading Rewards page;<br/>2. Any to/from swap between the two specified tokens will be deemed valid;<br/>3. The reward of a given day will be calculated at 00:00 (GMT+8) the next day, after which the users may claim their rewards;<br/>4. This event shall not be construed as an investment advice',
+    how: 'How to participate in the BKSwap Trading Reward event?',
+    how1: '1. Please see:',
+    how11: ' For the latest BKSwap tutorial.',
+    how2: '2. Rules:',
+    howContent: 'Users who make a transaction between a specified token pair with BKSwap will get rewarded',
+    howContent1: 'Details:',
+    Objectives1: 'During each event, users make a transaction between a specified token pair with BKSwap. An amount of BKB will be later calculated as a percentage of the transaction fee of the day and distributed. All users participating in the event on the day will be rewarded pro rata.',
+    how3: '3. How are the trading rewards calculated?',
+    OverviewContent: 'The trading reward is calculated in real time, and users can check it at any time on the "Trading Reward" page. The settlement cycle of the event is 24 hours. Users will receive their trading rewards for the previous day at 00:00 (GMT+8) every day.',
+    how4: '4. How to check your trading rewards?',
+    OverviewContent4: 'Go to the "Trading Reward" page in BitKeep to see everything about your gains.',
+    how5: '5. How to claim your trading rewards?',
+    OverviewContent5: 'Go to "Trading Reward" page and tap "Claim" button to claim your rewards.'
   }
 };
 
@@ -3247,7 +3294,8 @@ module.exports = {
     success: '正常に更新',
     networkErro: "インターネットがうまくいかなくなった",
     copied: 'コピー',
-    copiedError: 'エラーが発生しました'
+    copiedError: 'エラーが発生しました',
+    nomore: 'もういや'
   },
   "ActivityBlindbox": {
     shared: {
@@ -3690,6 +3738,52 @@ module.exports = {
     authorization: '署名認証をキャンセルしました！',
     stakeAmount: 'エントリーステーク額',
     know: 'わかった'
+  },
+  'trading': {
+    tradingTitle: '取引報酬',
+    know: 'わかった',
+    ComingSoon: '近日公開',
+    swapNow: '今すぐ交換',
+    claim: '請求',
+    tradingRule: '取引ルール',
+    learnMore: 'もっと詳しく知る',
+    finished: '終了した',
+    Live: '住む',
+    Upcoming: '今後の',
+    Past: '過去',
+    UnclaimedReward: '未請求の報酬',
+    Chain: 'Biananceスマートチェーン',
+    Ending: '終了',
+    Start: '始まる時間',
+    Time: '時間',
+    Reward: '褒美',
+    historyData: '歴史',
+    ruleContentTitle: '指定されたトークン間のスワップトランザクションを完了して、BKB報酬を比例配分で取得します（トランザクション料金のパーセンテージで計算されます）。',
+    YourTradingValue: 'あなたの取引価値',
+    TodayTradingValue: '今日の取引価値',
+    TodayTradingReward: '今日の取引報酬',
+    YourTradingReward: 'あなたの取引報酬',
+    transaction: '合計取引金額',
+    GetsBKB: 'BKB番号を取得します',
+    in: 'の',
+    make: '取引を行う',
+    toGet: 'BKBを取得するには',
+    noticeBar: 'このイベントは、投資アドバイスとして解釈されるべきではありません',
+    ruleTitle: '取引ルール',
+    ruleContent: '1.ユーザーは、指定された2つのトークンのいずれかの[詳細]ページまたは[マーケット]ページに移動して、[取引報酬]ページに入ることができます。<br/> 2。 指定された2つのトークン間のto / fromスワップは、有効と見なされます。<br/> 3。 特定の日の報酬は翌日の00:00（GMT + 8）に計算され、その後ユーザーは報酬を請求できます; <br/> 4。 このイベントは、投資アドバイスとして解釈されるべきではありません',
+    how: 'BKSwap Trading Rewardイベントに参加するにはどうすればよいですか？',
+    how1: '1.以下を参照してください。',
+    how11: ' 最新のBKSwapチュートリアルについて。',
+    how2: '2. ルール:',
+    howContent: '指定されたトークンペアとBKSwapの間でトランザクションを行うユーザーには、報酬が与えられます',
+    howContent1: '詳細:',
+    Objectives1: '各イベント中に、ユーザーは指定されたトークンペアとBKSwapの間でトランザクションを実行します。 BKBの金額は、後でその日の取引手数料のパーセンテージとして計算され、分配されます。 当日のイベントに参加したすべてのユーザーには、比例配分で報酬が与えられます。',
+    how3: '3. 取引報酬はどのように計算されますか？',
+    OverviewContent: '取引報酬はリアルタイムで計算され、ユーザーは「取引報酬」ページでいつでも確認できます。 イベントの決済サイクルは24時間です。 ユーザーは、前日の00:00（GMT + 8）に毎日取引報酬を受け取ります。',
+    how4: '4. 取引報酬を確認する方法は？',
+    OverviewContent4: 'BitKeepの「取引報酬」ページに移動して、利益に関するすべてを確認してください。',
+    how5: '5. 取引報酬を請求する方法は？',
+    OverviewContent5: '「取引報酬」ページに移動し、「請求」ボタンをタップして報酬を請求します。'
   }
 };
 
@@ -3704,7 +3798,8 @@ module.exports = {
     networkErro: "인터넷이 엉망이 되었다",
     success: '새로고침 성공',
     copied: '복사됨',
-    copiedError: '일부 오류가 발생했습니다.'
+    copiedError: '일부 오류가 발생했습니다.',
+    nomore: '더 이상은 없어'
   },
   "ActivityBlindbox": {
     shared: {
@@ -4147,6 +4242,52 @@ module.exports = {
     authorization: '서명 승인을 취소했습니다!',
     stakeAmount: '참가 지분 금액',
     know: '확인'
+  },
+  'trading': {
+    tradingTitle: '거래 보상',
+    know: '확인',
+    ComingSoon: '출시 예정',
+    swapNow: '지금 교환',
+    claim: '주장하다',
+    tradingRule: '거래 규칙',
+    learnMore: '더 알아보기',
+    finished: '완성 된',
+    Live: '라이브',
+    Upcoming: '다가오는',
+    Past: '과거',
+    UnclaimedReward: '미청구 보상',
+    Chain: 'BI A 남쪽의 스마트체인',
+    Ending: '마치다',
+    Start: '시작 시간',
+    Time: '시간',
+    Reward: '보상',
+    historyData: '역사',
+    ruleContentTitle: '지정된 토큰 간의 스왑 거래를 완료하여 BKB 보상을 비례적으로 받습니다(거래 수수료의 백분율로 계산).',
+    YourTradingValue: '귀하의 거래 가치',
+    TodayTradingValue: '오늘 거래 가치',
+    TodayTradingReward: '오늘의 총 보상',
+    YourTradingReward: '귀하의 거래 보상',
+    transaction: '총 거래 금액',
+    GetsBKB: 'BKB 번호 가져오기',
+    in: '~에',
+    make: '거래하기',
+    toGet: 'BKB를 얻으려면',
+    noticeBar: '이 이벤트는 투자 조언으로 해석되어서는 안 됩니다.',
+    ruleTitle: '거래 규칙',
+    ruleContent: '1. 사용자는 두 개의 지정된 토큰 중 하나의 세부 정보 페이지 또는 마켓 페이지로 이동하여 거래 보상 페이지에 들어갈 수 있습니다.<br/>2. 지정된 두 토큰 간의 모든 교환/교환은 유효한 것으로 간주됩니다.<br/>3. 특정 날짜의 보상은 다음 날 00:00(GMT+8)에 계산되며, 그 이후에 사용자는 보상을 요청할 수 있습니다.<br/>4. 이 이벤트는 투자 조언으로 해석되어서는 안 됩니다.',
+    how: 'BKSwap 트레이딩 리워드 이벤트는 어떻게 참여하나요?',
+    how1: '1. 참조:',
+    how11: ' 최신 BKSap 자습서.',
+    how2: '2. 규칙:',
+    howContent: 'BKSap을 사용하여 지정된 토큰 쌍 간에 트랜잭션을 수행하는 사용자는 보상을 받습니다.',
+    howContent1: '세부:',
+    Objectives1: '각 이벤트 동안 사용자는 BKSwap을 사용하여 지정된 토큰 쌍 간에 트랜잭션을 수행합니다. BKB 금액은 나중에 당일 거래 수수료의 백분율로 계산되어 배포됩니다. 당일 이벤트에 참여하는 모든 사용자는 비례하여 보상을 받게 됩니다.',
+    how3: '3. 거래 보상은 어떻게 계산되나요?',
+    OverviewContent: '거래 보상은 실시간으로 계산되며, 이용자는 "거래 보상" 페이지에서 언제든지 확인할 수 있습니다. 이벤트 정산 주기는 24시간입니다. 사용자는 매일 00:00(GMT+8)에 전날의 거래 보상을 받습니다.',
+    how4: '4. 거래 보상을 확인하는 방법은 무엇입니까?',
+    OverviewContent4: 'BitKeep의 "거래 보상" 페이지로 이동하여 수익에 대한 모든 것을 확인하십시오.',
+    how5: '5. 거래 보상을 청구하는 방법은 무엇입니까?',
+    OverviewContent5: '"보상 거래" 페이지로 이동하여 "청구" 버튼을 눌러 보상을 청구하십시오.'
   }
 };
 
@@ -4161,7 +4302,8 @@ module.exports = {
     success: 'Làm mới thành công',
     networkErro: "Internet đã trở nên tồi tệ",
     copied: 'Đã sao chép',
-    copiedError: 'Một số lỗi đã xảy ra'
+    copiedError: 'Một số lỗi đã xảy ra',
+    nomore: 'Không còn nữa'
   },
   "ActivityBlindbox": {
     shared: {
@@ -4604,6 +4746,52 @@ module.exports = {
     authorization: 'Bạn đã hủy ủy quyền chữ ký!',
     stakeAmount: 'Số tiền đặt cược tham gia',
     know: 'VÂNG'
+  },
+  'trading': {
+    tradingTitle: 'Phần thưởng giao dịch',
+    know: 'VÂNG',
+    ComingSoon: 'Sắp có',
+    swapNow: 'Hoán đổi ngay',
+    claim: 'Yêu cầu',
+    tradingRule: 'Quy tắc giao dịch',
+    learnMore: 'Tìm hiểu thêm',
+    finished: 'Hoàn thành',
+    Live: 'trực tiếp',
+    Upcoming: 'Sắp tới',
+    Past: 'Quá khứ',
+    UnclaimedReward: 'Phần thưởng không có người nhận',
+    Chain: 'Chuỗi thông minh Bianance',
+    Ending: 'Hoàn thành',
+    Start: 'Thời gian bắt đầu',
+    Time: 'Thời gian',
+    Reward: 'Giải thưởng',
+    historyData: 'Môn lịch sử',
+    ruleContentTitle: 'Hoàn thành giao dịch hoán đổi giữa các mã thông báo được chỉ định để nhận phần thưởng BKB theo tỷ lệ (tính theo phần trăm phí giao dịch).',
+    YourTradingValue: 'Giá trị giao dịch của bạn',
+    TodayTradingValue: 'Giá trị giao dịch hôm nay',
+    TodayTradingReward: 'Phần thưởng giao dịch hôm nay',
+    YourTradingReward: 'Phần thưởng giao dịch của bạn',
+    transaction: 'Tổng số tiền giao dịch',
+    GetsBKB: 'Nhận số BKB',
+    in: 'trong',
+    make: 'Thực hiện một giao dịch',
+    toGet: 'để lấy BKB',
+    noticeBar: 'Sự kiện này sẽ không được hiểu là một lời khuyên đầu tư',
+    ruleTitle: 'Quy tắc giao dịch',
+    ruleContent: '1. Người dùng có thể truy cập trang Chi tiết hoặc trang Thị trường của một trong hai mã thông báo được chỉ định để vào trang Phần thưởng giao dịch; <br/> 2. Mọi hoán đổi đến / đi giữa hai mã thông báo được chỉ định sẽ được coi là hợp lệ; <br/> 3. Phần thưởng của một ngày nhất định sẽ được tính vào 00:00 (GMT + 8) ngày hôm sau, sau đó người dùng có thể nhận phần thưởng của họ; <br/> 4. Sự kiện này sẽ không được hiểu là một lời khuyên đầu tư',
+    how: 'Làm thế nào để tham gia sự kiện Phần thưởng Giao dịch BKSwap?',
+    how1: '1. Vui lòng xem:',
+    how11: ' Để có hướng dẫn về BKSwap mới nhất.',
+    how2: '2. Quy tắc:',
+    howContent: 'Người dùng thực hiện giao dịch giữa một cặp mã thông báo cụ thể với BKSwap sẽ được thưởng',
+    howContent1: 'Thông tin chi tiết:',
+    Objectives1: 'Trong mỗi sự kiện, người dùng thực hiện giao dịch giữa một cặp mã thông báo cụ thể với BKSwap. Sau đó, một lượng BKB sẽ được tính theo tỷ lệ phần trăm của phí giao dịch trong ngày và được phân phối. Tất cả người dùng tham gia sự kiện trong ngày sẽ được thưởng theo tỷ lệ.',
+    how3: '3. Phần thưởng giao dịch được tính như thế nào?',
+    OverviewContent: 'Phần thưởng giao dịch được tính theo thời gian thực và người dùng có thể kiểm tra bất kỳ lúc nào trên trang "Phần thưởng giao dịch". Chu kỳ giải quyết của sự kiện là 24 giờ. Người dùng sẽ nhận được phần thưởng giao dịch của ngày hôm trước vào lúc 00:00 (GMT + 8) hàng ngày.',
+    how4: '4. Làm thế nào để kiểm tra phần thưởng giao dịch của bạn?',
+    OverviewContent4: 'Truy cập trang "Phần thưởng giao dịch" trong BitKeep để xem mọi thứ về lợi nhuận của bạn.',
+    how5: '5. Làm thế nào để nhận phần thưởng giao dịch của bạn?',
+    OverviewContent5: 'Truy cập trang "Phần thưởng giao dịch" và nhấn vào nút "Yêu cầu" để nhận phần thưởng của bạn.'
   }
 };
 
@@ -4618,7 +4806,8 @@ module.exports = {
     no_more: "没有更多了",
     networkErro: "网络开了小差",
     copied: 'Copied',
-    copiedError: 'Some error occurred'
+    copiedError: 'Some error occurred',
+    nomore: 'No more'
   },
   "ActivityBlindbox": {
     shared: {
@@ -5096,6 +5285,52 @@ module.exports = {
     authorization: 'You canceled signature authorization!',
     stakeAmount: 'Entry stake amount',
     know: 'OK'
+  },
+  'trading': {
+    tradingTitle: 'Trading Reward',
+    know: 'OK',
+    ComingSoon: 'Coming soon',
+    swapNow: 'Swap Now',
+    claim: 'Claim',
+    tradingRule: 'Trading Rules',
+    learnMore: 'Learn more',
+    finished: 'Finished',
+    Live: 'Live',
+    Upcoming: 'Upcoming',
+    Past: 'Past',
+    UnclaimedReward: 'Rewards to claim',
+    Chain: 'Bianance Smart Chain',
+    Ending: 'Ending in',
+    Start: 'Start time',
+    Time: 'Time',
+    Reward: 'Reward',
+    historyData: 'History',
+    ruleContentTitle: 'Complete a swap transaction between the specified tokens to get BKB rewards pro rata (calculated by a percentage of the transaction fee).',
+    YourTradingValue: 'Your Trading value',
+    TodayTradingValue: 'Today trading value',
+    TodayTradingReward: 'Today‘s total reward',
+    YourTradingReward: 'Your trading reward',
+    transaction: 'Total transactions',
+    GetsBKB: 'BKB rewards',
+    in: 'in',
+    make: 'Make a transaction',
+    toGet: 'to get BKB',
+    noticeBar: 'This event shall not be construed as an investment advice',
+    ruleTitle: 'Trading Rules',
+    ruleContent: '1. Users may go to the Details page or Market page of one of the two specified tokens to enter the Trading Rewards page;<br/>2. Any to/from swap between the two specified tokens will be deemed valid;<br/>3. The reward of a given day will be calculated at 00:00 (GMT+8) the next day, after which the users may claim their rewards;<br/>4. This event shall not be construed as an investment advice',
+    how: 'How to participate in the BKSwap Trading Reward event?',
+    how1: '1. Please see:',
+    how11: ' For the latest BKSwap tutorial.',
+    how2: '2. Rules:',
+    howContent: 'Users who make a transaction between a specified token pair with BKSwap will get rewarded',
+    howContent1: 'Details:',
+    Objectives1: 'During each event, users make a transaction between a specified token pair with BKSwap. An amount of BKB will be later calculated as a percentage of the transaction fee of the day and distributed. All users participating in the event on the day will be rewarded pro rata.',
+    how3: '3. How are the trading rewards calculated?',
+    OverviewContent: 'The trading reward is calculated in real time, and users can check it at any time on the "Trading Reward" page. The settlement cycle of the event is 24 hours. Users will receive their trading rewards for the previous day at 00:00 (GMT+8) every day.',
+    how4: '4. How to check your trading rewards?',
+    OverviewContent4: 'Go to the "Trading Reward" page in BitKeep to see everything about your gains.',
+    how5: '5. How to claim your trading rewards?',
+    OverviewContent5: 'Go to "Trading Reward" page and tap "Claim" button to claim your rewards.'
   }
 };
 
@@ -5906,67 +6141,75 @@ function shouldScrollToTop(route) {
 
 
 
-const _214ac336 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/airdrop/index */ 18).then(__webpack_require__.bind(null, 257)));
+const _214ac336 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/airdrop/index */ 19).then(__webpack_require__.bind(null, 280)));
 
-const _85ae8e80 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 23).then(__webpack_require__.bind(null, 258)));
+const _85ae8e80 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 24).then(__webpack_require__.bind(null, 281)));
 
-const _423e24e9 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/index */ 31).then(__webpack_require__.bind(null, 259)));
+const _423e24e9 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/index */ 32).then(__webpack_require__.bind(null, 282)));
 
-const _432e757a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/cbkbexchange/index */ 34).then(__webpack_require__.bind(null, 260)));
+const _432e757a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/cbkbexchange/index */ 35).then(__webpack_require__.bind(null, 283)));
 
-const _03bed5fa = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/index */ 37).then(__webpack_require__.bind(null, 261)));
+const _03bed5fa = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/index */ 38).then(__webpack_require__.bind(null, 284)));
 
-const _e16d1052 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/nftLottery/index */ 41).then(__webpack_require__.bind(null, 262)));
+const _e16d1052 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/nftLottery/index */ 42).then(__webpack_require__.bind(null, 285)));
 
-const _488fe13a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/index */ 43).then(__webpack_require__.bind(null, 263)));
+const _488fe13a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/index */ 44).then(__webpack_require__.bind(null, 286)));
 
-const _26864b16 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/index */ 20).then(__webpack_require__.bind(null, 255)));
+const _3c2dae4d = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/index */ 49).then(__webpack_require__.bind(null, 287)));
 
-const _51b48dec = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 21).then(__webpack_require__.bind(null, 264)));
+const _26864b16 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/index */ 21).then(__webpack_require__.bind(null, 278)));
 
-const _1e254ba8 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/firendList */ 22).then(__webpack_require__.bind(null, 265)));
+const _51b48dec = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 22).then(__webpack_require__.bind(null, 288)));
 
-const _271da9c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 24).then(__webpack_require__.bind(null, 266)));
+const _1e254ba8 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/firendList */ 23).then(__webpack_require__.bind(null, 289)));
 
-const _a5580482 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/stepDetail */ 25).then(__webpack_require__.bind(null, 267)));
+const _271da9c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 25).then(__webpack_require__.bind(null, 290)));
 
-const _d75b1ebe = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/copy */ 28).then(__webpack_require__.bind(null, 154)));
+const _a5580482 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/stepDetail */ 26).then(__webpack_require__.bind(null, 291)));
 
-const _c44cf06c = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/detail */ 29).then(__webpack_require__.bind(null, 268)));
+const _d75b1ebe = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/copy */ 29).then(__webpack_require__.bind(null, 164)));
 
-const _21c91f7e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/download */ 30).then(__webpack_require__.bind(null, 269)));
+const _c44cf06c = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/detail */ 30).then(__webpack_require__.bind(null, 292)));
 
-const _1e5dd980 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/inviteList */ 32).then(__webpack_require__.bind(null, 270)));
+const _21c91f7e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/download */ 31).then(__webpack_require__.bind(null, 293)));
 
-const _62b6ad66 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/rewardList */ 33).then(__webpack_require__.bind(null, 271)));
+const _1e5dd980 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/inviteList */ 33).then(__webpack_require__.bind(null, 294)));
 
-const _3faca386 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/RuleDetail */ 26).then(__webpack_require__.bind(null, 186)));
+const _62b6ad66 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/rewardList */ 34).then(__webpack_require__.bind(null, 295)));
 
-const _133d3cbc = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/history */ 36).then(__webpack_require__.bind(null, 272)));
+const _3faca386 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/RuleDetail */ 27).then(__webpack_require__.bind(null, 201)));
 
-const _723d0c5e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/inviteRuleDetail */ 38).then(__webpack_require__.bind(null, 185)));
+const _133d3cbc = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/history */ 37).then(__webpack_require__.bind(null, 296)));
 
-const _3390fe74 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/miningRule */ 39).then(__webpack_require__.bind(null, 273)));
+const _723d0c5e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/inviteRuleDetail */ 39).then(__webpack_require__.bind(null, 199)));
 
-const _54d1d0c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/protocol */ 40).then(__webpack_require__.bind(null, 183)));
+const _3390fe74 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/miningRule */ 40).then(__webpack_require__.bind(null, 297)));
 
-const _d61615d6 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/RuleDetail */ 35).then(__webpack_require__.bind(null, 184)));
+const _54d1d0c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/protocol */ 41).then(__webpack_require__.bind(null, 197)));
 
-const _aec9c9a4 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/addPool */ 42).then(__webpack_require__.bind(null, 274)));
+const _d61615d6 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/RuleDetail */ 36).then(__webpack_require__.bind(null, 198)));
 
-const _9a96d6b2 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/myPool */ 44).then(__webpack_require__.bind(null, 275)));
+const _aec9c9a4 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/addPool */ 43).then(__webpack_require__.bind(null, 298)));
 
-const _2dd20cd2 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/protocol */ 45).then(__webpack_require__.bind(null, 187)));
+const _9a96d6b2 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/myPool */ 45).then(__webpack_require__.bind(null, 299)));
 
-const _633da457 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/wallet */ 46).then(__webpack_require__.bind(null, 77)));
+const _2dd20cd2 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/protocol */ 46).then(__webpack_require__.bind(null, 202)));
 
-const _5d08bdb4 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/component/createPoster */ 27).then(__webpack_require__.bind(null, 181)));
+const _633da457 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/wallet */ 47).then(__webpack_require__.bind(null, 77)));
 
-const _24381afe = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/_id */ 19).then(__webpack_require__.bind(null, 276)));
+const _29516762 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/history */ 48).then(__webpack_require__.bind(null, 300)));
 
-const _262ca6c4 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 47).then(__webpack_require__.bind(null, 277)));
+const _00befa6d = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/protocol */ 50).then(__webpack_require__.bind(null, 200)));
 
-const _18d2f8a1 = () => interopDefault(__webpack_require__.e(/* import() | pages/_id */ 17).then(__webpack_require__.bind(null, 278)));
+const _1e1c3978 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/tradingRule */ 51).then(__webpack_require__.bind(null, 301)));
+
+const _5d08bdb4 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/component/createPoster */ 28).then(__webpack_require__.bind(null, 195)));
+
+const _24381afe = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/_id */ 20).then(__webpack_require__.bind(null, 302)));
+
+const _262ca6c4 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 52).then(__webpack_require__.bind(null, 303)));
+
+const _18d2f8a1 = () => interopDefault(__webpack_require__.e(/* import() | pages/_id */ 18).then(__webpack_require__.bind(null, 304)));
 
 const emptyFn = () => {};
 
@@ -6005,6 +6248,10 @@ const routerOptions = {
     path: "/activity/staking",
     component: _488fe13a,
     name: "activity-staking"
+  }, {
+    path: "/activity/trading",
+    component: _3c2dae4d,
+    name: "activity-trading"
   }, {
     path: "/activity/blindbox/detail",
     component: _26864b16,
@@ -6085,6 +6332,18 @@ const routerOptions = {
     path: "/activity/staking/wallet",
     component: _633da457,
     name: "activity-staking-wallet"
+  }, {
+    path: "/activity/trading/history",
+    component: _29516762,
+    name: "activity-trading-history"
+  }, {
+    path: "/activity/trading/protocol",
+    component: _00befa6d,
+    name: "activity-trading-protocol"
+  }, {
+    path: "/activity/trading/tradingRule",
+    component: _1e1c3978,
+    name: "activity-trading-tradingRule"
   }, {
     path: "/activity/blindboxInvite/component/createPoster",
     component: _5d08bdb4,
@@ -6984,22 +7243,23 @@ function wrapFunctional(options) {
 
 
 const components = {
-  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 81)).then(c => wrapFunctional(c.default || c)),
+  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 196)).then(c => wrapFunctional(c.default || c)),
+  Trading: () => __webpack_require__.e(/* import() | components/trading */ 10).then(__webpack_require__.bind(null, 113)).then(c => wrapFunctional(c.default || c)),
+  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 82)).then(c => wrapFunctional(c.default || c)),
   CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 71)).then(c => wrapFunctional(c.default || c)),
   Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 75)).then(c => wrapFunctional(c.default || c)),
-  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 182)).then(c => wrapFunctional(c.default || c)),
-  BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 189)).then(c => wrapFunctional(c.default || c)),
-  BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 279)).then(c => wrapFunctional(c.default || c)),
-  BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 105)).then(c => wrapFunctional(c.default || c)),
-  BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 190)).then(c => wrapFunctional(c.default || c)),
-  BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 188)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 11).then(__webpack_require__.bind(null, 150)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 12).then(__webpack_require__.bind(null, 84)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 13).then(__webpack_require__.bind(null, 280)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 10).then(__webpack_require__.bind(null, 256)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutPainter: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-painter */ 14).then(__webpack_require__.bind(null, 106)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutQrcode: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-qrcode */ 15).then(__webpack_require__.bind(null, 83)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 16).then(__webpack_require__.bind(null, 107)).then(c => wrapFunctional(c.default || c))
+  BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 204)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 305)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 110)).then(c => wrapFunctional(c.default || c)),
+  BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 205)).then(c => wrapFunctional(c.default || c)),
+  BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 203)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 12).then(__webpack_require__.bind(null, 160)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 13).then(__webpack_require__.bind(null, 85)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 14).then(__webpack_require__.bind(null, 306)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 11).then(__webpack_require__.bind(null, 279)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutPainter: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-painter */ 15).then(__webpack_require__.bind(null, 111)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutQrcode: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-qrcode */ 16).then(__webpack_require__.bind(null, 84)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 17).then(__webpack_require__.bind(null, 112)).then(c => wrapFunctional(c.default || c))
 };
 
 for (const name in components) {
@@ -7238,7 +7498,7 @@ const log =  true ? (...arg) => {
 
 
 const init_components = [external_vant_["Popup"], external_vant_["Dialog"], external_vant_["Toast"], external_vant_["Icon"], external_vant_["Image"], external_vant_["Loading"], external_vant_["List"], external_vant_["Empty"], external_vant_["CountDown"], external_vant_["PullRefresh"], external_vant_["Progress"], external_vant_["ImagePreview"], // Badge,
-external_vant_["Overlay"], external_vant_["Field"], external_vant_["Form"], external_vant_["Skeleton"], external_vant_["Button"], external_vant_["Col"], external_vant_["Row"], external_vant_["Tab"], external_vant_["Tabs"] // Lazyload
+external_vant_["Overlay"], external_vant_["Field"], external_vant_["Form"], external_vant_["Skeleton"], external_vant_["Button"], external_vant_["Col"], external_vant_["Row"], external_vant_["Tab"], external_vant_["Tabs"], external_vant_["NoticeBar"] // Lazyload
 // VueCanvasPoster
 ]; //存在问题结合nuxt使用  服务端拿不到query
 

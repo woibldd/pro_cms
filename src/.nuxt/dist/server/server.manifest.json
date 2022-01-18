@@ -10,6 +10,7 @@
     "components/common-c-vue-countdown.js": "components/common-c-vue-countdown.js",
     "components/common-header.js": "components/common-header.js",
     "components/common.js": "components/common.js",
+    "components/trading.js": "components/trading.js",
     "components/vue-create-poster-layout-canvas-poster.js": "components/vue-create-poster-layout-canvas-poster.js",
     "components/vue-create-poster-layout-gradient.js": "components/vue-create-poster-layout-gradient.js",
     "components/vue-create-poster-layout-header.js": "components/vue-create-poster-layout-header.js",
@@ -47,6 +48,10 @@
     "pages/activity/staking/myPool.js": "pages/activity/staking/myPool.js",
     "pages/activity/staking/protocol.js": "pages/activity/staking/protocol.js",
     "pages/activity/staking/wallet.js": "pages/activity/staking/wallet.js",
+    "pages/activity/trading/history.js": "pages/activity/trading/history.js",
+    "pages/activity/trading/index.js": "pages/activity/trading/index.js",
+    "pages/activity/trading/protocol.js": "pages/activity/trading/protocol.js",
+    "pages/activity/trading/tradingRule.js": "pages/activity/trading/tradingRule.js",
     "pages/article/detail/_id.js": "pages/article/detail/_id.js",
     "server.js": "server.js"
   },
@@ -60,6 +65,7 @@
     "components/common-c-vue-countdown.js": "components/common-c-vue-countdown.js.map",
     "components/common-header.js": "components/common-header.js.map",
     "components/common.js": "components/common.js.map",
+    "components/trading.js": "components/trading.js.map",
     "components/vue-create-poster-layout-canvas-poster.js": "components/vue-create-poster-layout-canvas-poster.js.map",
     "components/vue-create-poster-layout-gradient.js": "components/vue-create-poster-layout-gradient.js.map",
     "components/vue-create-poster-layout-header.js": "components/vue-create-poster-layout-header.js.map",
@@ -97,6 +103,10 @@
     "pages/activity/staking/myPool.js": "pages/activity/staking/myPool.js.map",
     "pages/activity/staking/protocol.js": "pages/activity/staking/protocol.js.map",
     "pages/activity/staking/wallet.js": "pages/activity/staking/wallet.js.map",
+    "pages/activity/trading/history.js": "pages/activity/trading/history.js.map",
+    "pages/activity/trading/index.js": "pages/activity/trading/index.js.map",
+    "pages/activity/trading/protocol.js": "pages/activity/trading/protocol.js.map",
+    "pages/activity/trading/tradingRule.js": "pages/activity/trading/tradingRule.js.map",
     "pages/article/detail/_id.js": "pages/article/detail/_id.js.map",
     "server.js": "server.js.map"
   }
