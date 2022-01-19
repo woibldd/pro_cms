@@ -40,7 +40,7 @@
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
-                    <p class="textPrimary0">
+                    <p class="textPrimary0 Novicebenefits-sign-top-bottom-content-top">
                         {{$t('noviceBenefits.Currently')}} 
                         <span class="colorPrimary Novicebenefits-sign-top-bottom-content-span setFontFamily">{{signList.lottery}}</span> {{$t('noviceBenefits.zhang')}}
                     <img
@@ -102,7 +102,7 @@
                     <p class="textSecond2">{{$t('noviceBenefits.Reward')}} BKB +2</p>
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-btn">
-                    <span v-if="!newUser.isUpTo50U" class="textbtn textSecond3"> {{$t('noviceBenefits.standard')}}</span>
+                    <span v-if="!newUser.isUpTo50U" class="textbtn textSecond3 standard"> {{$t('noviceBenefits.standard')}}</span>
                     <van-button class="draw-btn colorBackgroundPrimary" @click="UpTo50U()" v-if="newUser.isUpTo50U"><span class="colorwhite Novicebenefits-sign-top-bottom-btn-span"> {{ $t('noviceBenefits.Join')}}</span></van-button>
                 </div>
             </li>
@@ -499,6 +499,12 @@ p{
     }
     .Novicebenefits-sign-top-bottom-btn{
         margin: 24px 16px 21px 0;
+        .standard{
+            display: inline-block;
+            width: 70px;
+            height: 28px;
+            margin-left: 10px;
+        }
         .Novicebenefits-sign-top-bottom-btn-span{
             max-width: 68px;
             height: 28px;
@@ -575,12 +581,14 @@ p{
         height: 15px;
         margin-left: 5px;
     }
+    .Novicebenefits-sign-top-bottom-content-top{
+        display: flex;
+        align-items: center;
+    }
     p:nth-child(1){
         font-size: 14px;
         padding: 0;
         margin: 0;
-        display: flex;
-        align-items: center;
         font-weight: 500;
         overflow:hidden;
         text-overflow:ellipsis;
