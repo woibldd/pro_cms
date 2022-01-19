@@ -12,7 +12,7 @@
         <p class="textSecond2">{{$t('noviceBenefits.rafflepapers')}}</p>
         <p class="textPrimary0 setFontFamily">{{RewardDetail.allPapersIn || 0}}</p>
       </div>
-      <div class="drawluckly-Coupons-item" style="marginLeft:50px;">
+      <div class="drawluckly-Coupons-item">
         <p class="textSecond2">{{$t('noviceBenefits.merafflepapers')}}</p>
         <p class="textPrimary0 setFontFamily">{{RewardDetail.mePapersIn || 0}}</p>
       </div>
@@ -181,7 +181,7 @@ export default {
 
 .theme-dark{
     .drawluckly-CouponsNums-inp{
-        border: 1px solid $theme-light-colorLine1;
+        border: 1px solid $theme-dark-colorLine1;
          .van-cell{
           background-color: #171A26;
           .van-field__control{
@@ -231,7 +231,8 @@ p{
 }
 .drawluckly-Coupons{
   display: flex;
-  padding: 40px 0 30px 16px;
+  padding: 40px 16px 30px 16px;
+  justify-content: space-between;
   .drawluckly-Coupons-item{
     p:nth-child(1){
       font-size: 14px;
@@ -292,6 +293,7 @@ p{
   margin: 30px 16px 20px 16px;
   border-radius: 8px;
   padding: 15px;
+  margin-bottom: 102px;
   .drawluckly-rule-title{
     font-size: 14px;
     font-weight: 600;
@@ -313,6 +315,7 @@ p{
   height: 81px;
   display: flex;
   justify-content: center;
+  background: #ffffff;
   .drawluckly-btn{
     width: 303px;
     height: 50px;

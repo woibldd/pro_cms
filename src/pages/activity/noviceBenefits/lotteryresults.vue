@@ -133,7 +133,7 @@ p{
 .lotteryresults-summary{
     height: 66px;
     border-radius: 8px;
-    margin: 0px 16px 10px 16px;
+    margin: 10px 16px 10px 16px;
     display: flex;
     justify-content: space-around;
 }

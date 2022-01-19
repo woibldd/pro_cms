@@ -165,7 +165,7 @@ export default {
   data() {
     return {
       isLoading: true,
-      question: 'https://cdn.bitkeep.vip/u_b_99107f80-356f-11ec-8c2d-251a27ef7eba.png',
+      question: 'https://cdn.bitkeep.vip/u_b_af43f280-78f1-11ec-9d29-f144d09ca5ed.png',
       signList:{
         reward_pool: 0,
         lottery: 0,
@@ -366,14 +366,14 @@ export default {
                 let body = document.getElementsByTagName("body")[0];
                 if (res == 1) {
                   this.theme = 1;
-                  this.question = 'https://cdn.bitkeep.vip/u_b_47485390-4f90-11ec-ace3-97579b99c357.png';
+                  this.question = 'https://cdn.bitkeep.vip/u_b_cac9ff90-78f1-11ec-9d29-f144d09ca5ed.png';
                   body.setAttribute("class", "theme-dark");
                   setTimeout(()=>{
                     BitKeepInvoke.setIconAction();
                   },500)
                 } else {
                   this.theme = 0;
-                  this.question = 'https://cdn.bitkeep.vip/u_b_99107f80-356f-11ec-8c2d-251a27ef7eba.png';
+                  this.question = 'https://cdn.bitkeep.vip/u_b_af43f280-78f1-11ec-9d29-f144d09ca5ed.png';
                   body.setAttribute("class", "theme-light");
                   setTimeout(()=>{
                     BitKeepInvoke.setIconAction();
@@ -407,7 +407,7 @@ p{
     line-height: 44px;
     font-size: 14px;
     padding-top: 10px;
-    font-weight: 600;
+    font-weight: 500;
     .van-image{
         width: 16px;
         height: 16px;
@@ -452,7 +452,7 @@ p{
                     display: inline-block;
                     position: absolute;
                     top: -10px;
-                    width: 46px;
+                    width: 40px;
                     height: 18px;
                     border-radius: 20px;
                     text-align: center;
@@ -472,7 +472,7 @@ p{
     font-size: 14px;
     line-height: 14px;
     padding: 15px 0 0 15px;
-    font-weight: 600;
+    font-weight: 500;
 }
 .Novicebenefits-sign-top-bottom-content-span{
     display: inline-block;
@@ -501,7 +501,7 @@ p{
            line-height: 28px;
            border-radius: 100px;
            border: none;
-           font-weight: 600;
+           font-weight: 500;
        }
        .textbtn {
            width: 70px;
@@ -517,7 +517,7 @@ p{
            text-align: center;
            line-height: 28px;
            font-size: 12px;
-           font-weight: 600;
+           font-weight: 500;
        }
        .van-button--normal{
            padding: 0;
@@ -546,7 +546,7 @@ p{
         margin: 0;
         display: flex;
         align-items: center;
-        font-weight: 600;
+        font-weight: 500;
     }
     p:nth-child(2){
         font-size: 12px;
