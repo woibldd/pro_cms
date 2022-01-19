@@ -14,7 +14,7 @@
                     <div v-for="(item,index) in signList.list" :key="index" class="Novicebenefits-sign-item">
                         
                         <div @click="welfareSignInfunc(index)">
-                            <p class="Novicebenefits-sign-item-img">
+                            <div class="Novicebenefits-sign-item-img">
                                 <span v-if="item.day === 4 || item.day === 7" class="Novicebenefits-sign-item-img-obtain backgroundSecond01"> <i style="font-style:normal;" class="colorwhite">{{$t('noviceBenefits.obtain')}}</i></span>
                                 <van-image
                                     v-if="!item.isSignin"
@@ -24,7 +24,7 @@
                                     v-else
                                     :src="(item.day === 4 || item.day === 7) ? 'https://cdn.bitkeep.vip/u_b_78224830-7449-11ec-a3df-456c694c3f18.png' : 'https://cdn.bitkeep.vip/u_b_384a1810-7448-11ec-a3df-456c694c3f18.png'"
                                 />
-                            </p>
+                            </div>
                             <!-- 签到 -->
                             <p v-if="index === signDay" class="Novicebenefits-sign-item-result colorPrimary">{{$t('noviceBenefits.Signedin')}}</p>
                             <p v-else :class="index < signDay  ? 'Novicebenefits-sign-item-result Novicebenefits-sign-item-day colorPrimary':'Novicebenefits-sign-item-result Novicebenefits-sign-item-day textSecond2 setFontFamily'"> {{index < signDay ? $t('noviceBenefits.alreadySignedin1'): item.day + $t('noviceBenefits.day') }}</p>
@@ -40,11 +40,14 @@
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
-                    <p class="textPrimary0">{{$t('noviceBenefits.Currently')}} <span class="colorPrimary Novicebenefits-sign-top-bottom-content-span setFontFamily">{{signList.lottery}}</span> {{$t('noviceBenefits.zhang')}}
+                    <div class="textPrimary0">
+                        {{$t('noviceBenefits.Currently')}} 
+                        <span class="colorPrimary Novicebenefits-sign-top-bottom-content-span setFontFamily">{{signList.lottery}}</span> {{$t('noviceBenefits.zhang')}}
                     <van-image
                         class="Novicebenefits-sign-top-bottom-img-right"
                         :src="this.question"
-                    /></p>
+                    />
+                    </div>
                     <p class="textSecond2">{{$t('noviceBenefits.Participate')}}<span class="setFontFamily">{{signList.reward_pool}}</span>  BKB！</p>
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-btn">
@@ -217,6 +220,9 @@ export default {
         let day = [];
         day = this.signList.list.filter(item => item.isSignin);
         return day.length;
+    },
+    signimg(item,index){
+ return (item.day === 4 || item.day === 7) && index === this.signDay ? 'https://cdn.bitkeep.vip/u_b_aa80c7c0-7615-11ec-9d29-f144d09ca5ed.png' : index === this.signDay ? 'https://cdn.bitkeep.vip/u_b_56e30a70-7448-11ec-a3df-456c694c3f18.png' : (item.day === 4 || item.day === 7) ? 'https://cdn.bitkeep.vip/u_b_65c04710-7448-11ec-a3df-456c694c3f18.png' : 'https://cdn.bitkeep.vip/u_b_5457fe50-743e-11ec-a3df-456c694c3f18.png'
     }
   },
   components: {
