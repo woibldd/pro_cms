@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <ul class="lotteryresults-list" v-if="!!resultList.list">
+    <ul class="lotteryresults-list" v-if="!!resultList.list.length">
         <li class="lotteryresults-list-item" v-for="(item,index) in resultList.list" :key="index">
              <div class="lotteryresults-list-left">
                 <p class="lotteryresults-list-itemNums textPrimary0">{{$t('noviceBenefits.investment')}} <span class="setFontFamily">{{item.pushPapers}}</span> {{$t('noviceBenefits.araffleticket')}}</p>
@@ -31,7 +31,10 @@
              </div>
         </li>
     </ul>
-    <div class="lotteryresults-nodata" v-if="!resultList.list">暂无数据</div>
+    <div class="lotteryresults-nodata" v-if="!resultList.list.length">
+      <img src="https://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png" alt="">
+      <p class="textSecond3">{{ $t('mining.noData') }}</p>
+    </div>
 </div>
 </template>
 <script>
@@ -104,14 +107,14 @@ export default {
                   this.question = 'https://cdn.bitkeep.vip/u_b_47485390-4f90-11ec-ace3-97579b99c357.png';
                   body.setAttribute("class", "theme-dark");
                   setTimeout(()=>{
-                    BitKeepInvoke.setIconAction();
+                    BitKeepInvoke.setIconAction("");
                   },500)
                 } else {
                   this.theme = 0;
                   this.question = 'https://cdn.bitkeep.vip/u_b_99107f80-356f-11ec-8c2d-251a27ef7eba.png';
                   body.setAttribute("class", "theme-light");
                   setTimeout(()=>{
-                    BitKeepInvoke.setIconAction();
+                    BitKeepInvoke.setIconAction("");
                   },500)
                 }
               });
@@ -169,8 +172,18 @@ p{
     }
 }
 .lotteryresults-nodata{
-    text-align: center;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  img{
+    width: 100px;
+    height: 100px;
+  }
+  p{
     font-size: 14px;
+  }
 }
 .colorBlue{
     color: #495BFF!important;

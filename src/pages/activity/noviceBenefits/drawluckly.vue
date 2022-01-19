@@ -21,7 +21,7 @@
     <div class="drawluckly-CouponsNums">
       <p class="drawluckly-CouponsNums-title">
         <span class="textPrimary0">{{$t('noviceBenefits.raffletickets')}}</span>
-        <span class="textPrimary0">{{$t('noviceBenefits.available')}}: <span class="colorPrimary setFontFamily">{{RewardDetail.mePapersKeep || 0}}</span></span>
+        <span class="textPrimary0">{{$t('noviceBenefits.available')}}: <i class="colorPrimary setFontFamily drawluckly-CouponsNums-title-number">{{RewardDetail.mePapersKeep || 0}}</i></span>
       </p>
       <div class="drawluckly-CouponsNums-inp">
        <van-field v-model="CouponsNums" type="number" :placeholder="$t('noviceBenefits.Pleaseenter')"/>
@@ -47,7 +47,7 @@
       <div class="drawluckly-rule-bottom textSecond3">*{{$t('noviceBenefits.notes')}} </div>
     </div>
 
-    <div class="drawluckly-btnbox">
+    <div class="drawluckly-btnbox colorBackground1">
        <van-button :class="Number(CouponsNums) > 0 ? 'ondrawluckly-btn colorBackgroundPrimary' : 'drawluckly-btn colorBackgroundPrimary'" @click="pushPapersIn()"> <span class="colorwhite">{{$t('noviceBenefits.Immediateinput')}} </span></van-button>
     </div>
     </div>
@@ -220,7 +220,7 @@ p{
     }
     .drawluckly-topbanner-text{
       display: inline-block;
-      width: 130px;
+      width: 150px;
       position: absolute;
       bottom: 10px;
       left: 16px;
@@ -231,7 +231,7 @@ p{
 }
 .drawluckly-Coupons{
   display: flex;
-  padding: 40px 16px 30px 16px;
+  padding: 30px 16px 30px 16px;
   justify-content: space-between;
   .drawluckly-Coupons-item{
     p:nth-child(1){
@@ -260,6 +260,9 @@ p{
     justify-content: space-between;
     font-size: 14px;
     line-height: 14px;
+    .drawluckly-CouponsNums-title-number{
+      font-style: normal;
+    }
     span:nth-child(1){
       display: inline-block;
       max-width: 150px;
@@ -330,7 +333,6 @@ p{
   height: 81px;
   display: flex;
   justify-content: center;
-  background: #ffffff;
   .drawluckly-btn{
     width: 303px;
     height: 50px;
