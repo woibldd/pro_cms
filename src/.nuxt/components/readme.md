@@ -6,6 +6,8 @@ You can directly use them in pages and other components without the need to impo
 
 **Tip:** If a component is conditionally rendered with `v-if` and is big, it is better to use `Lazy` or `lazy-` prefix to lazy load.
 
+- `<Activity>` | `<activity>` (components/activity/index.vue)
+- `<Trading>` | `<trading>` (components/trading/index.vue)
 - `<BlindboxBlindButton>` | `<blindbox-blind-button>` (components/blindbox/BlindButton.vue)
 - `<BlindboxBlindStrategy>` | `<blindbox-blind-strategy>` (components/blindbox/blindStrategy.vue)
 - `<BlindboxBlindTimeText>` | `<blindbox-blind-time-text>` (components/blindbox/blindTimeText.vue)
@@ -14,8 +16,6 @@ You can directly use them in pages and other components without the need to impo
 - `<CommonCVueCountdown>` | `<common-c-vue-countdown>` (components/common/c-vue-countdown.vue)
 - `<CommonHeader>` | `<common-header>` (components/common/header.vue)
 - `<Common>` | `<common>` (components/common/index.js)
-- `<Trading>` | `<trading>` (components/trading/index.vue)
-- `<Activity>` | `<activity>` (components/activity/index.vue)
 - `<VueCreatePosterLayoutCanvasPoster>` | `<vue-create-poster-layout-canvas-poster>` (components/vue-create-poster/layout/canvas-poster.vue)
 - `<VueCreatePosterLayoutGradient>` | `<vue-create-poster-layout-gradient>` (components/vue-create-poster/layout/gradient.js)
 - `<VueCreatePosterLayoutHeader>` | `<vue-create-poster-layout-header>` (components/vue-create-poster/layout/header.vue)
