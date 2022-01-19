@@ -9,7 +9,8 @@ const messages = {
     'ja': require('@/locales/ja.js'),
     'ko': require('@/locales/ko.js'),
     'vi': require('@/locales/vi.js'),
-    'zh': require('@/locales/zh.js')
+    'zh': require('@/locales/zh.js'),
+    'zh_tw':require('@/locales/zh_tw.js')
 }
 let i18n = null
 const defaultLocale = 'en'

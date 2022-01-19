@@ -9,7 +9,7 @@ const log = process.env.BUILD_ENV == 'pro' ? (...arg) => {
 } : debug('bit-vuex-local')
 const INIT_STATE = {
   locale: "en", //  语言设置
-  locales: ['zh','en','ja','ko','vi','id'],
+  locales: ['zh','en','ja','ko','vi','id','zh_tw'],
   bitkeep: {
     language: 'en',
     currency: 'cny',
@@ -68,7 +68,8 @@ const actions = {
         mylanguage: req.headers.mylanguage,
         brand: req.headers.brand,
       });
-      locale = req.headers.mylanguage || req.headers.language
+      locale = req.headers.mylanguage || req.headers.language;
+      if(locale == 'zh_tw') return locale = 'zh_tw';
       if(!state.locales.find(lan=>lan==(locale || '').slice(0, 2))){
         locale = 'en'
       }

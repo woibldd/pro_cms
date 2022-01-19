@@ -268,7 +268,7 @@ p{
     line-height: 18px;
   }
   .van-cell {
-    margin: 16px 0 16px 15px;
+    margin: 14px 0 16px 15px;
     padding: 0;
     &::after{
       border-bottom: none;
