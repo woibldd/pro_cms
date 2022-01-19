@@ -422,6 +422,7 @@ module.exports = {
   'noviceBenefits':{
     'sign':'Ký vô và thu vé số',
     'alreadySignedin':'Ký tên',
+    'alreadySignedin1':'Ký tên',
     'day':'ngày',
     'Signedin':'Ký vô.',
     'obtain':'lấy',
@@ -453,7 +454,7 @@ module.exports = {
     'merafflepapers':'Số giấy tờ xổ số tôi đã đưa hôm đó',
     'raffletickets':'Số điểm xổ số được đầu tư',
     'available':'Số điểm xổ số sẵn sàng',
-    'Pleaseenter ':'Xin hãy nhập số vé xổ số',
+    'Pleaseenter':'Xin hãy nhập số vé xổ số',
     'usersyesterday':'Người dùng thắng hôm qua',
     'Activityrules':'Luật hành động',
     'Dailyreward':'Phần thưởng mỗi ngày của BKB chỉ được chia bởi một người dùng',

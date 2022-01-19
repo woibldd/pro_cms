@@ -237,11 +237,19 @@ p{
     p:nth-child(1){
       font-size: 14px;
       line-height: 14px;
+      max-width: 165px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     p:nth-child(2){
       font-size: 16px;
       line-height: 16px;
       padding-top: 5px;
+      max-width: 165px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 }
@@ -252,6 +260,13 @@ p{
     justify-content: space-between;
     font-size: 14px;
     line-height: 14px;
+    span:nth-child(1){
+      display: inline-block;
+      max-width: 150px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
 }
 .drawluckly-CouponsNums-inp{

@@ -1,5 +1,6 @@
 <template>
 <div class="lotteryresults colorBackground1">
+    <div class="lotteryresults-content"></div>
     <div class="lotteryresults-summary colorBackground3">
         <div class="lotteryresults-summary-item">
             <p class="textSecond2">{{$t('noviceBenefits.participationperiods')}}</p>
@@ -130,10 +131,13 @@ p{
 .lotteryresults{
     min-height: 100vh;
 }
+.lotteryresults-content{
+  height: 10px;
+}
 .lotteryresults-summary{
     height: 66px;
     border-radius: 8px;
-    margin: 10px 16px 10px 16px;
+    margin: 0px 16px 10px 16px;
     display: flex;
     justify-content: space-around;
 }

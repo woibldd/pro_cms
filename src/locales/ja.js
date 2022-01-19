@@ -422,6 +422,7 @@ module.exports = {
   'noviceBenefits':{
     'sign':'抽選券にサインする',
     'alreadySignedin':'署名済み',
+    'alreadySignedin1':'署名済み',
     'day':'ああ',
     'Signedin':'にサイン',
     'obtain':'取得',
@@ -453,7 +454,7 @@ module.exports = {
     'merafflepapers':'当日は抽選用紙を投入しました',
     'raffletickets':'抽選券の投入数',
     'available':'抽選券の枚数がご利用いただけます',
-    'Pleaseenter ':'抽選券の数を入力してください',
+    'Pleaseenter':'抽選券の数を入力してください',
     'usersyesterday':'昨日当選したユーザー',
     'Activityrules':'アクティブ・ルール',
     'Dailyreward':'毎日の奨励金BKBは1人のユーザーのみで分けられます',

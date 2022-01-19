@@ -15,7 +15,7 @@
                         
                         <div @click="welfareSignInfunc(index)">
                             <p class="Novicebenefits-sign-item-img">
-                                <span v-if="item.day === 4 || item.day === 7" class="Novicebenefits-sign-item-img-obtain backgroundSecond01"> <span class="colorwhite">{{$t('noviceBenefits.obtain')}}</span></span>
+                                <span v-if="item.day === 4 || item.day === 7" class="Novicebenefits-sign-item-img-obtain backgroundSecond01"> <i style="font-style:normal;" class="colorwhite">{{$t('noviceBenefits.obtain')}}</i></span>
                                 <van-image
                                     v-if="!item.isSignin"
                                     :src="(item.day === 4 || item.day === 7) && index === signDay ? 'https://cdn.bitkeep.vip/u_b_aa80c7c0-7615-11ec-9d29-f144d09ca5ed.png' : index === signDay ? 'https://cdn.bitkeep.vip/u_b_56e30a70-7448-11ec-a3df-456c694c3f18.png' : (item.day === 4 || item.day === 7) ? 'https://cdn.bitkeep.vip/u_b_65c04710-7448-11ec-a3df-456c694c3f18.png' : 'https://cdn.bitkeep.vip/u_b_5457fe50-743e-11ec-a3df-456c694c3f18.png'"
@@ -27,7 +27,7 @@
                             </p>
                             <!-- 签到 -->
                             <p v-if="index === signDay" class="Novicebenefits-sign-item-result colorPrimary">{{$t('noviceBenefits.Signedin')}}</p>
-                            <p v-else :class="index < signDay  ? 'Novicebenefits-sign-item-result Novicebenefits-sign-item-day colorPrimary':'Novicebenefits-sign-item-result Novicebenefits-sign-item-day textSecond2 setFontFamily'"> {{index < signDay ? $t('noviceBenefits.alreadySignedin'): item.day + $t('noviceBenefits.day') }}</p>
+                            <p v-else :class="index < signDay  ? 'Novicebenefits-sign-item-result Novicebenefits-sign-item-day colorPrimary':'Novicebenefits-sign-item-result Novicebenefits-sign-item-day textSecond2 setFontFamily'"> {{index < signDay ? $t('noviceBenefits.alreadySignedin1'): item.day + $t('noviceBenefits.day') }}</p>
                         </div>
                     </div>
                 </div>
@@ -48,7 +48,7 @@
                     <p class="textSecond2">{{$t('noviceBenefits.Participate')}}<span class="setFontFamily">{{signList.reward_pool}}</span>  BKB！</p>
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-btn">
-                    <van-button class="draw-btn colorBackgroundPrimary" @click="drawClick()"> <span class="colorwhite">{{$t('noviceBenefits.Draw')}}</span> </van-button>
+                    <van-button class="draw-btn colorBackgroundPrimary" @click="drawClick()"> <span class="colorwhite Novicebenefits-sign-top-bottom-btn-span">{{$t('noviceBenefits.Draw')}}</span> </van-button>
                 </div>
             </div>
         </div>
@@ -67,7 +67,7 @@
                 </div> 
                 <div class="Novicebenefits-sign-top-bottom-btn">
                     <span class="alreadydraw-btn textSecond3" v-if="!!newUser.isDoneTelJob">{{$t('noviceBenefits.alreadyReceived')}}</span>
-                    <van-button class="draw-btn colorBackgroundPrimary" @click="joinTelegram()" v-else><span class="colorwhite"> <span class="colorwhite"> {{!!joinTelegramflag ?  $t('noviceBenefits.Getitnow') : $t('noviceBenefits.Join')}}</span></span></van-button>
+                    <van-button class="draw-btn colorBackgroundPrimary" @click="joinTelegram()" v-else><span class="colorwhite Novicebenefits-sign-top-bottom-btn-span"> <span class="colorwhite"> {{!!joinTelegramflag ?  $t('noviceBenefits.Getitnow') : $t('noviceBenefits.Join')}}</span></span></van-button>
                 </div>
             </li>
 
@@ -83,7 +83,7 @@
                     <p class="textSecond2">{{$t('noviceBenefits.raffle')}}</p>
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-btn">
-                    <van-button class="draw-btn colorBackgroundPrimary" @click="SwapTransaction()"><span class="colorwhite"> {{newUser.isUpToSwap ?  $t('noviceBenefits.Getitnow') : $t('noviceBenefits.Immediate')}}</span></van-button>
+                    <van-button class="draw-btn colorBackgroundPrimary" @click="SwapTransaction()"><span class="colorwhite Novicebenefits-sign-top-bottom-btn-span"> {{newUser.isUpToSwap ?  $t('noviceBenefits.Getitnow') : $t('noviceBenefits.Immediate')}}</span></van-button>
                 </div>
             </li>
 
@@ -100,13 +100,13 @@
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-btn">
                     <span v-if="!newUser.isUpTo50U" class="textbtn textSecond3"> {{$t('noviceBenefits.standard')}}</span>
-                    <van-button class="draw-btn colorBackgroundPrimary" @click="UpTo50U()" v-if="newUser.isUpTo50U"><span class="colorwhite"> {{ $t('noviceBenefits.Join')}}</span></van-button>
+                    <van-button class="draw-btn colorBackgroundPrimary" @click="UpTo50U()" v-if="newUser.isUpTo50U"><span class="colorwhite Novicebenefits-sign-top-bottom-btn-span"> {{ $t('noviceBenefits.Join')}}</span></van-button>
                 </div>
             </li>
         </ul>
 
          <div class="Novicebenefits-title textPrimary0">{{$t('noviceBenefits.Morebenefits')}}</div>
-        <ul class="Novicebenefits-reward Novicebenefits-sign-top-bottom colorBackground1">
+         <ul class="Novicebenefits-reward Novicebenefits-sign-top-bottom colorBackground1">
             <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom">
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
@@ -118,7 +118,7 @@
                     <p class="textSecond2">{{$t('noviceBenefits.Access')}}</p>
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-btn">
-                    <van-button class="draw-btn colorBackgroundPrimary" @click="viewairdrop()"><span class="colorwhite"> {{$t('noviceBenefits.Viewnow')}}</span></van-button>
+                    <van-button class="draw-btn colorBackgroundPrimary" @click="viewairdrop()"><span class="colorwhite Novicebenefits-sign-top-bottom-btn-span"> {{$t('noviceBenefits.Viewnow')}}</span></van-button>
                 </div>
             </li>
 
@@ -133,7 +133,7 @@
                     <p class="textSecond2">{{$t('noviceBenefits.AccessNFT')}}</p>
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-btn">
-                    <van-button class="draw-btn colorBackgroundPrimary" @click="viewblindbox()"><span class="colorwhite"> {{$t('noviceBenefits.Viewnow')}}</span></van-button>
+                    <van-button class="draw-btn colorBackgroundPrimary" @click="viewblindbox()"><span class="colorwhite Novicebenefits-sign-top-bottom-btn-span"> {{$t('noviceBenefits.Viewnow')}}</span></van-button>
                 </div>
             </li>
 
@@ -148,7 +148,7 @@
                     <p class="textSecond2">{{$t('noviceBenefits.Invitefriends')}}</p>
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-btn">
-                    <van-button class="draw-btn colorBackgroundPrimary" @click="viewblindboxInvite()"><span class="colorwhite"> {{$t('noviceBenefits.Viewnow')}}</span></van-button>
+                    <van-button class="draw-btn colorBackgroundPrimary Novicebenefits-sign-top-bottom-btn-span" @click="viewblindboxInvite()"><span class="colorwhite"> {{$t('noviceBenefits.Viewnow')}}</span></van-button>
                 </div>
             </li>
         </ul>
@@ -494,30 +494,60 @@ p{
     }
     .Novicebenefits-sign-top-bottom-btn{
         margin: 24px 16px 21px 0;
+        .Novicebenefits-sign-top-bottom-btn-span{
+            max-width: 68px;
+            height: 28px;
+            display: inline-block;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+            line-height: 28px;
+        }
        .draw-btn{
-           width: 70px;
-           height: 28px;
-           font-size: 12px;
-           line-height: 28px;
-           border-radius: 100px;
-           border: none;
-           font-weight: 500;
+            width: 70px;
+            height: 28px;
+            font-size: 12px;
+            line-height: 28px;
+            border-radius: 100px;
+            border: none;
+            font-weight: 500;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+            .van-button__text{
+                width: 70px;
+                height: 28px;
+            }
        }
        .textbtn {
-           width: 70px;
-           height: 28px;
-           font-size: 12px;
-           line-height: 28px;
-           display: inline-block;
+            width: 70px;
+            height: 28px;
+            font-size: 12px;
+            line-height: 28px;
+            display: inline-block;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+            .van-button__text{
+                width: 70px;
+                height: 28px;
+            }
        }
        .alreadydraw-btn{
-           display: inline-block;
-           width: 70px;
-           height: 28px;
-           text-align: center;
-           line-height: 28px;
-           font-size: 12px;
-           font-weight: 500;
+            display: inline-block;
+            width: 70px;
+            height: 28px;
+            text-align: center;
+            line-height: 28px;
+            font-size: 12px;
+            font-weight: 500;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+            .van-button__text{
+                width: 70px;
+                height: 28px;
+            }
        }
        .van-button--normal{
            padding: 0;
@@ -547,11 +577,19 @@ p{
         display: flex;
         align-items: center;
         font-weight: 500;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        max-width: 180px;
     }
     p:nth-child(2){
         font-size: 12px;
         padding: 0;
         margin: 0;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        max-width: 190px;
     }
 }
 .Novicebenefits-reward{

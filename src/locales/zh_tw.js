@@ -2,6 +2,7 @@ module.exports = {
     'noviceBenefits':{
       'sign':'簽到領抽獎券',
       'alreadySignedin':'已簽到',
+      'alreadySignedin1':'已簽到',
       'day':'天',
       'Signedin':'簽到',
       'obtain':'獲取',

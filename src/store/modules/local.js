@@ -69,8 +69,9 @@ const actions = {
         brand: req.headers.brand,
       });
       locale = req.headers.mylanguage || req.headers.language;
-      if(locale == 'zh_tw') return locale = 'zh_tw';
-      if(!state.locales.find(lan=>lan==(locale || '').slice(0, 2))){
+      if(locale == 'zh_tw') {
+        locale = 'zh_tw'
+      }else if(!state.locales.find(lan=>lan==(locale || '').slice(0, 2))){
         locale = 'en'
       }
     }else{
@@ -94,7 +95,7 @@ const getters = {
 const mutations = {
   "CHANGE_LANG"(state, data) {
 
-    if (data) data = data.slice(0, 2).toLowerCase()
+    if (data) data = data === 'zh_tw'? data : data.slice(0, 2).toLowerCase()
 
     if (state.locales.indexOf(data) !== -1) {
       state.locale = data || state.locale

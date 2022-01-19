@@ -455,6 +455,7 @@ module.exports = {
     'noviceBenefits':{
       'sign':'签到领抽奖券',
       'alreadySignedin':'已签到',
+      'alreadySignedin1':'已签到',
       'day':'天',
       'Signedin':'签到',
       'obtain':'获取',
