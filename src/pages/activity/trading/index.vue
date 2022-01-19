@@ -54,21 +54,31 @@
           </div>
           <div v-show="activeType == 0">
             <div class="trading-wrap-box">
+              <van-loading color="#1989fa" class="setLoadingHeight" vertical v-if='isLoadingList'
+                >{{ $t("base.loading") }}...</van-loading
+              >
               <tradingCom
                 @swap="swap"
                 :tradingList="tradingList"
                 :activeType="0"
+                v-else
               ></tradingCom>
             </div>
           </div>
           <div v-show="activeType == 1">
             <div class="trading-wrap-box">
-              <tradingCom :tradingList="tradingList" :activeType="1"></tradingCom>
+              <van-loading class="setLoadingHeight" color="#1989fa" vertical v-if='isLoadingList'
+                >{{ $t("base.loading") }}...</van-loading
+              >
+              <tradingCom v-else :tradingList="tradingList" :activeType="1"></tradingCom>
             </div>
           </div>
           <div v-show="activeType == 2">
             <div class="trading-wrap-box">
-              <tradingCom :tradingList="tradingList" :activeType="2"></tradingCom>
+              <van-loading color="#1989fa" class="setLoadingHeight" vertical v-if='isLoadingList'
+                >{{ $t("base.loading") }}...</van-loading
+              >
+              <tradingCom v-else :tradingList="tradingList" :activeType="2"></tradingCom>
             </div>
           </div>
           <!-- Mining Rule -->
@@ -133,6 +143,7 @@ export default {
       status: false,
       show: false,
       isLoading: true,
+      isLoadingList: false,
       refreshLoading: false,
       loading: false, //上拉加载
       finished: false, //上拉加载完毕
@@ -171,6 +182,7 @@ export default {
   methods: {
     // 获取列表
     async getInfo() {
+      if(!this.refreshLoading) this.isLoadingList = true;
       const { data, status } = await USER_API.tradingGetList({
         start: this.start,
         limit: 20,
@@ -195,6 +207,7 @@ export default {
       this.refreshLoading = false;
       this.loading = false;
       this.isLoading = false;
+      this.isLoadingList = false;
       this.$toast.clear();
       if (this.tradingList.length >= data.totalRows) {
         this.finished = true;
