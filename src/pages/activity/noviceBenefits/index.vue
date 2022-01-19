@@ -40,14 +40,14 @@
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
-                    <div class="textPrimary0">
+                    <p class="textPrimary0">
                         {{$t('noviceBenefits.Currently')}} 
                         <span class="colorPrimary Novicebenefits-sign-top-bottom-content-span setFontFamily">{{signList.lottery}}</span> {{$t('noviceBenefits.zhang')}}
-                    <van-image
+                    <img
                         class="Novicebenefits-sign-top-bottom-img-right"
-                        :src="this.question"
+                        :src="question"
                     />
-                    </div>
+                    </p>
                     <p class="textSecond2">{{$t('noviceBenefits.Participate')}}<span class="setFontFamily">{{signList.reward_pool}}</span>  BKB！</p>
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-btn">
