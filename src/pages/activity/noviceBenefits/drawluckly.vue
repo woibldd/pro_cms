@@ -10,18 +10,18 @@
     <div class="drawluckly-Coupons">
       <div class="drawluckly-Coupons-item">
         <p class="textSecond2">{{$t('noviceBenefits.rafflepapers')}}</p>
-        <p class="textPrimary0">{{RewardDetail.allPapersIn || 0}}</p>
+        <p class="textPrimary0 setFontFamily">{{RewardDetail.allPapersIn || 0}}</p>
       </div>
       <div class="drawluckly-Coupons-item" style="marginLeft:50px;">
         <p class="textSecond2">{{$t('noviceBenefits.merafflepapers')}}</p>
-        <p class="textPrimary0">{{RewardDetail.mePapersIn || 0}}</p>
+        <p class="textPrimary0 setFontFamily">{{RewardDetail.mePapersIn || 0}}</p>
       </div>
     </div>
 
     <div class="drawluckly-CouponsNums">
       <p class="drawluckly-CouponsNums-title">
         <span class="textPrimary0">{{$t('noviceBenefits.raffletickets')}}</span>
-        <span class="textPrimary0">{{$t('noviceBenefits.available')}}: <span class="colorPrimary">{{RewardDetail.mePapersKeep || 0}}</span></span>
+        <span class="textPrimary0">{{$t('noviceBenefits.available')}}: <span class="colorPrimary setFontFamily">{{RewardDetail.mePapersKeep || 0}}</span></span>
       </p>
       <div class="drawluckly-CouponsNums-inp">
        <van-field v-model="CouponsNums" type="number" :placeholder="$t('noviceBenefits.Pleaseenter')"/>
@@ -40,9 +40,9 @@
     <div class="drawluckly-rule colorBackground3">
       <p class="drawluckly-rule-title textPrimary0">{{$t('noviceBenefits.Activityrules')}}</p>
       <ul class="drawluckly-rule-content">
-        <li class="textSecond2">1.{{$t('noviceBenefits.Dailyreward')}}</li>
-        <li class="textSecond2">2.{{$t('noviceBenefits.morelottery')}}</li>
-        <li class="textSecond2">3.{{$t('noviceBenefits.luckydraw')}}</li>
+        <li class="textSecond2"><span class="setFontFamily">1.</span>{{$t('noviceBenefits.Dailyreward')}}</li>
+        <li class="textSecond2"><span class="setFontFamily">2.</span>{{$t('noviceBenefits.morelottery')}}</li>
+        <li class="textSecond2"><span class="setFontFamily">3.</span>{{$t('noviceBenefits.luckydraw')}}</li>
       </ul>
       <div class="drawluckly-rule-bottom textSecond3">*{{$t('noviceBenefits.notes')}} </div>
     </div>
@@ -175,17 +175,20 @@ export default {
         }
     }
     .drawluckly-btnbox{
-      border-top:1px solid $theme-light-colorLine1;
+      border-top:1px solid $theme-light-colorLine;
     }
 }
 
 .theme-dark{
     .drawluckly-CouponsNums-inp{
-        border: 1px solid $theme-dark-colorLine;
+        border: 1px solid $theme-light-colorLine1;
          .van-cell{
           background-color: #171A26;
           .van-field__control{
-            color: #f0f0f0;
+            color: #5F626D;
+            ::placeholder{
+               color: #5F626D;
+            }
           }
         }
         .drawluckly-CouponsNums-all{
@@ -222,7 +225,8 @@ p{
       bottom: 10px;
       left: 16px;
       color: #080D21;
-      font-size: 28px;
+      font-size: 24px;
+      font-weight: 600;
     }
 }
 .drawluckly-Coupons{
@@ -268,6 +272,9 @@ p{
     &::after{
       border-bottom: none;
     }
+    .van-field__control{
+      font-size: 16px;
+    }
   }
 }
 .drawluckly-Award{
@@ -282,7 +289,6 @@ p{
 }
 
 .drawluckly-rule{
-  height: 207px;
   margin: 30px 16px 20px 16px;
   border-radius: 8px;
   padding: 15px;
@@ -301,9 +307,10 @@ p{
   }
 }
 .drawluckly-btnbox{
-  height: 95px;
-  border-top:1px solid #F4F5FA;
-  margin-top: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 81px;
   display: flex;
   justify-content: center;
   .drawluckly-btn{
@@ -311,7 +318,6 @@ p{
     height: 50px;
     opacity: 0.3;
     border-radius: 10px;
-    color: #ffffff;
     font-size: 16px;
     margin-top: 10px;
     border: none;
@@ -319,9 +325,7 @@ p{
   .ondrawluckly-btn{
     width: 303px;
     height: 50px;
-    background: #495BFF;
     border-radius: 10px;
-    color: #ffffff;
     font-size: 16px;
     margin-top: 10px;
     border: none;

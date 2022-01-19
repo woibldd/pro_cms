@@ -3,22 +3,22 @@
     <div class="lotteryresults-summary colorBackground3">
         <div class="lotteryresults-summary-item">
             <p class="textSecond2">{{$t('noviceBenefits.participationperiods')}}</p>
-            <p class="textPrimary0">{{resultList.pushTimes || 0}}</p>
+            <p class="textPrimary0 setFontFamily">{{resultList.pushTimes || 0}}</p>
         </div>
         <div class="lotteryresults-summary-item">
             <p class="textSecond2">{{$t('noviceBenefits.ticketsinvested')}}</p>
-            <p class="textPrimary0">{{resultList.pushPapers || 0}}</p>
+            <p class="textPrimary0 setFontFamily">{{resultList.pushPapers || 0}}</p>
         </div>
         <div class="lotteryresults-summary-item">
             <p class="textSecond2">{{$t('noviceBenefits.obtainBKB')}}</p>
-            <p class="textPrimary0">{{resultList.allReward || 0}}</p>
+            <p class="textPrimary0 setFontFamily">{{resultList.allReward || 0}}</p>
         </div>
     </div>
 
     <ul class="lotteryresults-list" v-if="!!resultList.list">
         <li class="lotteryresults-list-item" v-for="(item,index) in resultList.list" :key="index">
              <div class="lotteryresults-list-left">
-                <p class="lotteryresults-list-itemNums textPrimary0">{{$t('noviceBenefits.investment')}} {{item.pushPapers}} {{$t('noviceBenefits.araffleticket')}}</p>
+                <p class="lotteryresults-list-itemNums textPrimary0">{{$t('noviceBenefits.investment')}} <span class="setFontFamily">{{item.pushPapers}}</span> {{$t('noviceBenefits.araffleticket')}}</p>
                 <p class="lotteryresults-list-item-result textSecond3">{{item.code}}</p>
              </div>
              <div class="lotteryresults-list-left" v-if="Number(item.reward) > 0 ">

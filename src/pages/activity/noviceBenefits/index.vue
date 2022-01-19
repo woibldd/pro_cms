@@ -4,12 +4,12 @@
             <div class="Novicebenefits-title textPrimary0">
                 {{$t('noviceBenefits.sign')}}
                 <van-image
-                    src="https://cdn.bitkeep.vip/u_b_47485390-4f90-11ec-ace3-97579b99c357.png"
+                    :src="question"
                 />
         </div>
         <div class="Novicebenefits-sign colorBackground1">
             <div class="Novicebenefits-sign-top">
-                <div class="Novicebenefits-sign-title textPrimary0">{{$t('noviceBenefits.alreadySignedin')}}<span class="colorPrimary">{{signDay}}</span>{{$t('noviceBenefits.day')}}</div>
+                <div class="Novicebenefits-sign-title textPrimary0">{{$t('noviceBenefits.alreadySignedin')}}<span class="setFontFamily colorPrimary Novicebenefits-sign-top-bottom-content-span">{{signDay}}</span>{{$t('noviceBenefits.day')}}</div>
                 <div class="Novicebenefits-sign-top-signlist" >
                     <div v-for="(item,index) in signList.list" :key="index" class="Novicebenefits-sign-item">
                         
@@ -27,7 +27,7 @@
                             </p>
                             <!-- 签到 -->
                             <p v-if="index === signDay" class="Novicebenefits-sign-item-result colorPrimary">{{$t('noviceBenefits.Signedin')}}</p>
-                            <p v-else :class="index < signDay  ? 'Novicebenefits-sign-item-result Novicebenefits-sign-item-day colorPrimary':'Novicebenefits-sign-item-result Novicebenefits-sign-item-day textSecond2'"> {{index < signDay ? $t('noviceBenefits.alreadySignedin'): item.day + $t('noviceBenefits.day') }}</p>
+                            <p v-else :class="index < signDay  ? 'Novicebenefits-sign-item-result Novicebenefits-sign-item-day colorPrimary':'Novicebenefits-sign-item-result Novicebenefits-sign-item-day textSecond2 setFontFamily'"> {{index < signDay ? $t('noviceBenefits.alreadySignedin'): item.day + $t('noviceBenefits.day') }}</p>
                         </div>
                     </div>
                 </div>
@@ -36,16 +36,16 @@
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
                         class="Novicebenefits-sign-top-bottom-img-left"
-                        src="https://cdn.bitkeep.vip/u_b_d856c8b0-72a1-11ec-bb03-832c5d2a67c5.png"
+                        src="https://cdn.bitkeep.vip/u_b_a3b02770-78e4-11ec-9d29-f144d09ca5ed.png"
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
-                    <p class="textPrimary0">{{$t('noviceBenefits.Currently')}} <span class="colorPrimary">{{signList.lottery}}</span> {{$t('noviceBenefits.zhang')}}
+                    <p class="textPrimary0">{{$t('noviceBenefits.Currently')}} <span class="colorPrimary Novicebenefits-sign-top-bottom-content-span setFontFamily">{{signList.lottery}}</span> {{$t('noviceBenefits.zhang')}}
                     <van-image
                         class="Novicebenefits-sign-top-bottom-img-right"
-                        src="https://cdn.bitkeep.vip/u_b_47485390-4f90-11ec-ace3-97579b99c357.png"
+                        :src="this.question"
                     /></p>
-                    <p class="textSecond2">{{$t('noviceBenefits.Participate')}} {{signList.reward_pool}} BKB！</p>
+                    <p class="textSecond2">{{$t('noviceBenefits.Participate')}}<span class="setFontFamily">{{signList.reward_pool}}</span>  BKB！</p>
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-btn">
                     <van-button class="draw-btn colorBackgroundPrimary" @click="drawClick()"> <span class="colorwhite">{{$t('noviceBenefits.Draw')}}</span> </van-button>
@@ -99,7 +99,7 @@
                     <p class="textSecond2">{{$t('noviceBenefits.Reward')}} BKB +2</p>
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-btn">
-                    <span v-if="!newUser.isUpTo50U" class="alreadydraw-btn textSecond3"> {{$t('noviceBenefits.standard')}}</span>
+                    <span v-if="!newUser.isUpTo50U" class="textbtn textSecond3"> {{$t('noviceBenefits.standard')}}</span>
                     <van-button class="draw-btn colorBackgroundPrimary" @click="UpTo50U()" v-if="newUser.isUpTo50U"><span class="colorwhite"> {{ $t('noviceBenefits.Join')}}</span></van-button>
                 </div>
             </li>
@@ -110,7 +110,7 @@
             <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom">
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
-                        src="https://cdn.bitkeep.vip/u_b_5c7c1070-72be-11ec-9c27-5bf3ec58d767.png"
+                        src="https://cdn.bitkeep.vip/u_b_68daa940-78e4-11ec-9d29-f144d09ca5ed.png"
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
@@ -125,7 +125,7 @@
             <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom">
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
-                        src="https://cdn.bitkeep.vip/u_b_63083e00-72be-11ec-9c27-5bf3ec58d767.png"
+                        src="https://cdn.bitkeep.vip/u_b_45ecb4a0-78e4-11ec-9d29-f144d09ca5ed.png"
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
@@ -140,7 +140,7 @@
             <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom">
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
-                        src="https://cdn.bitkeep.vip/u_b_5fcf5a20-72be-11ec-9c27-5bf3ec58d767.png"
+                        src="https://cdn.bitkeep.vip/u_b_81d17ff0-78e4-11ec-9d29-f144d09ca5ed.png"
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
@@ -165,6 +165,7 @@ export default {
   data() {
     return {
       isLoading: true,
+      question: 'https://cdn.bitkeep.vip/u_b_99107f80-356f-11ec-8c2d-251a27ef7eba.png',
       signList:{
         reward_pool: 0,
         lottery: 0,
@@ -406,6 +407,7 @@ p{
     line-height: 44px;
     font-size: 14px;
     padding-top: 10px;
+    font-weight: 600;
     .van-image{
         width: 16px;
         height: 16px;
@@ -470,7 +472,13 @@ p{
     font-size: 14px;
     line-height: 14px;
     padding: 15px 0 0 15px;
+    font-weight: 600;
 }
+.Novicebenefits-sign-top-bottom-content-span{
+    display: inline-block;
+    margin: 0 3px;
+}
+
 .Novicebenefits-sign-top-bottom{
     display: flex;
     .Novicebenefits-sign-top-bottom-img-left{
@@ -478,7 +486,7 @@ p{
         height: 32px;
     }
     .Novicebenefits-sign-top-bottom-img{
-        margin: 24px 20px 24px 20px;
+        padding: 24px 20px 24px 20px;
         .van-image{
             width: 32px;
             height: 32px;
@@ -487,20 +495,29 @@ p{
     .Novicebenefits-sign-top-bottom-btn{
         margin: 24px 16px 21px 0;
        .draw-btn{
-           width: 72px;
+           width: 70px;
            height: 28px;
            font-size: 12px;
            line-height: 28px;
            border-radius: 100px;
            border: none;
+           font-weight: 600;
+       }
+       .textbtn {
+           width: 70px;
+           height: 28px;
+           font-size: 12px;
+           line-height: 28px;
+           display: inline-block;
        }
        .alreadydraw-btn{
            display: inline-block;
-           width: 72px;
+           width: 70px;
            height: 28px;
            text-align: center;
            line-height: 28px;
            font-size: 12px;
+           font-weight: 600;
        }
        .van-button--normal{
            padding: 0;
@@ -529,6 +546,7 @@ p{
         margin: 0;
         display: flex;
         align-items: center;
+        font-weight: 600;
     }
     p:nth-child(2){
         font-size: 12px;
