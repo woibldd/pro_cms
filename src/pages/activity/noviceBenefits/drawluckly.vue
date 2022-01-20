@@ -167,6 +167,15 @@ export default {
 </script>
 <style lang="scss">
 @import "@/assets/css/theme.scss";
+html,body {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  display: none;  // 重点
+}
 .theme-light{
     .drawluckly-CouponsNums-inp{
         border: 1px solid $theme-light-colorLine1;
@@ -184,10 +193,11 @@ export default {
         border: 1px solid $theme-dark-colorLine1;
          .van-cell{
           background-color: #171A26;
-          .van-field__control{
-            color: #5F626D;
-            ::placeholder{
+          .van-cell__value{
+            .van-field__body{
+              .van-field__control::placeholder{
                color: #5F626D;
+            }
             }
           }
         }
@@ -330,7 +340,7 @@ p{
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 81px;
+  height: 95px;
   display: flex;
   justify-content: center;
   .drawluckly-btn{

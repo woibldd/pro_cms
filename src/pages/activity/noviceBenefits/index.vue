@@ -36,7 +36,7 @@
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
                         class="Novicebenefits-sign-top-bottom-img-left"
-                        src="https://cdn.bitkeep.vip/u_b_a3b02770-78e4-11ec-9d29-f144d09ca5ed.png"
+                        src="https://cdn.bitkeep.vip/u_b_b3e95540-79ce-11ec-9d29-f144d09ca5ed.png"
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-        <div class="Novicebenefits-title textPrimary0" v-if="!!newUser.isNewUser">{{$t('noviceBenefits.Novice')}}</div>
+        <div class="Novicebenefits-title Novicebenefits-title-not textPrimary0" v-if="!!newUser.isNewUser">{{$t('noviceBenefits.Novice')}}</div>
         <ul class="Novicebenefits-reward Novicebenefits-sign-top-bottom colorBackground1" v-if="!!newUser.isNewUser && (!newUser.isDoneTelJob || !newUser.isDoneSwap)">
             <!-- 加入Telegram -->
             <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom">
@@ -78,7 +78,7 @@
                 <!-- swap交易 -->
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
-                        src="https://cdn.bitkeep.vip/u_b_bb1dd750-72a8-11ec-bb03-832c5d2a67c5.png"
+                        src="https://cdn.bitkeep.vip/u_b_d8a3f390-79ce-11ec-9d29-f144d09ca5ed.png"
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
@@ -108,7 +108,7 @@
             </li> -->
         </ul>
 
-         <div class="Novicebenefits-title textPrimary0">{{$t('noviceBenefits.Morebenefits')}}</div>
+         <div class="Novicebenefits-title Novicebenefits-title-not textPrimary0">{{$t('noviceBenefits.Morebenefits')}}</div>
          <ul class="Novicebenefits-reward Novicebenefits-sign-top-bottom colorBackground1">
             <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom">
                 <div class="Novicebenefits-sign-top-bottom-img">
@@ -405,12 +405,21 @@ export default {
 </script>
 <style lang="scss">
 @import "@/assets/css/theme.scss";
+html,body {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  display: none;  // 重点
+}
 p{
     margin: 0;
     padding: 0;
 }
 .Novicebenefits{
-    min-height: 100vh;
+    min-height: 100vh; 
 }
 .Novicebenefits-box{
     padding:10px 16px 54px 16px;
@@ -428,6 +437,9 @@ p{
         height: 16px;
         margin: 0 0 0 6px;
     }
+}
+.Novicebenefits-title-not{
+    margin-top: 10px;
 }
 .Novicebenefits-sign{
     width: 100%;
@@ -466,7 +478,7 @@ p{
                 .Novicebenefits-sign-item-img-obtain{
                     display: inline-block;
                     position: absolute;
-                    top: -10px;
+                    top: -8px;
                     width: 40px;
                     height: 18px;
                     border-radius: 20px;
@@ -587,8 +599,8 @@ p{
     flex: 1;
     margin: 17px 0;
     .Novicebenefits-sign-top-bottom-img-right{
-        width: 15px;
-        height: 15px;
+        width: 15.05px;
+        height: 15.05px;
         margin-left: 5px;
     }
     .Novicebenefits-sign-top-bottom-content-top{

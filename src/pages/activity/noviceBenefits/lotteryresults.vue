@@ -127,6 +127,15 @@ export default {
 </script>
 <style lang="scss">
 @import "@/assets/css/theme.scss";
+html,body {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  display: none;  // 重点
+}
 p{
     margin: 0;
     padding: 0;
