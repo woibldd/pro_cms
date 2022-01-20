@@ -1,12 +1,4 @@
 /*!
- * cookie
- * Copyright(c) 2012-2014 Roman Shtylman
- * Copyright(c) 2015 Douglas Christopher Wilson
- * MIT Licensed
- */
-
-
-/*!
   * vue-router v3.5.2
   * (c) 2021 Evan You
   * @license MIT
@@ -171,3 +163,11 @@ and limitations under the License.
     ***************************************************************************** */
 
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+
+/*!
+ * cookie
+ * Copyright(c) 2012-2014 Roman Shtylman
+ * Copyright(c) 2015 Douglas Christopher Wilson
+ * MIT Licensed
+ */
