@@ -18,7 +18,7 @@
                                 <span v-if="item.day === 4 || item.day === 7" class="Novicebenefits-sign-item-img-obtain backgroundSecond01"> <i style="font-style:normal;" class="colorwhite">{{$t('noviceBenefits.obtain')}}</i></span>
                                 <van-image
                                     v-if="!item.isSignin"
-                                    :src="(item.day === 4 || item.day === 7) && index === signDay ? 'https://cdn.bitkeep.vip/u_b_aa80c7c0-7615-11ec-9d29-f144d09ca5ed.png' : index === signDay ? 'https://cdn.bitkeep.vip/u_b_56e30a70-7448-11ec-a3df-456c694c3f18.png' : (item.day === 4 || item.day === 7) ? 'https://cdn.bitkeep.vip/u_b_65c04710-7448-11ec-a3df-456c694c3f18.png' : 'https://cdn.bitkeep.vip/u_b_5457fe50-743e-11ec-a3df-456c694c3f18.png'"
+                                    :src="(item.day === 4 || item.day === 7) && index === signDay ? 'https://cdn.bitkeep.vip/u_b_aa80c7c0-7615-11ec-9d29-f144d09ca5ed.png' : index === signDay && !signList.todayIsSgin? 'https://cdn.bitkeep.vip/u_b_56e30a70-7448-11ec-a3df-456c694c3f18.png' : (item.day === 4 || item.day === 7) ? 'https://cdn.bitkeep.vip/u_b_65c04710-7448-11ec-a3df-456c694c3f18.png' : 'https://cdn.bitkeep.vip/u_b_5457fe50-743e-11ec-a3df-456c694c3f18.png'"
                                 />
                                 <van-image
                                     v-else
@@ -26,7 +26,7 @@
                                 />
                             </div>
                             <!-- 签到 -->
-                            <p v-if="index === signDay" class="Novicebenefits-sign-item-result colorPrimary">{{$t('noviceBenefits.Signedin')}}</p>
+                            <p v-if="index === signDay && !signList.todayIsSgin" class="Novicebenefits-sign-item-result colorPrimary">{{$t('noviceBenefits.Signedin')}}</p>
                             <p v-else :class="index < signDay  ? 'Novicebenefits-sign-item-result Novicebenefits-sign-item-day colorPrimary':'Novicebenefits-sign-item-result Novicebenefits-sign-item-day textSecond2 setFontFamily'"> {{index < signDay ? $t('noviceBenefits.alreadySignedin1'): item.day + $t('noviceBenefits.day') }}</p>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                 <div class="Novicebenefits-sign-top-bottom-content">
                     <p class="textPrimary0 Novicebenefits-sign-top-bottom-content-top">
                         {{$t('noviceBenefits.Currently')}} 
-                        <span class="colorPrimary Novicebenefits-sign-top-bottom-content-span setFontFamily">{{signList.lottery}}</span> {{$t('noviceBenefits.zhang')}}
+                        <span class="colorPrimary Novicebenefits-sign-top-bottom-content-span setFontFamily"> {{signList.lottery}} </span> {{$t('noviceBenefits.zhang')}}
                     <img
                         class="Novicebenefits-sign-top-bottom-img-right"
                         :src="question"
@@ -78,7 +78,7 @@
                 <!-- swap交易 -->
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
-                        src="https://cdn.bitkeep.vip/u_b_d8a3f390-79ce-11ec-9d29-f144d09ca5ed.png"
+                        src="https://cdn.bitkeep.vip/u_b_3badf390-79da-11ec-a1dc-431b57c20695.png"
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
@@ -172,6 +172,7 @@ export default {
       signList:{
         reward_pool: 0,
         lottery: 0,
+        todayIsSgin:false,
         list:[{
             day:1,
             isSignin:false,
@@ -485,6 +486,7 @@ p{
                     text-align: center;
                     font-size: 11px;
                     line-height: 18px;
+                    z-index: 999;
                 }
            }
         }
@@ -504,6 +506,7 @@ p{
 .Novicebenefits-sign-top-bottom-content-span{
     display: inline-block;
     margin: 0 3px;
+    line-height: 20px;
 }
 
 .Novicebenefits-sign-top-bottom{

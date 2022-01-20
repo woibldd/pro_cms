@@ -3193,7 +3193,7 @@ module.exports = {
     'Access': 'Go get various tokens',
     'Blindboxactivity': 'Blind Box events',
     'AccessNFT': 'Go get tokens and NFTs',
-    'Invitation': 'nvitation Rewards',
+    'Invitation': 'Nvitation Rewards',
     'Invitefriends': 'Invite friends to get rewards',
     'Winaraffle': 'Win a raffle',
     'rafflepapers': 'Total number of tickets',

@@ -235,7 +235,7 @@ p{
       bottom: 10px;
       left: 16px;
       color: #080D21;
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 600;
     }
 }
