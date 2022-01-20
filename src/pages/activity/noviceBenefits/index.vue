@@ -335,7 +335,7 @@ export default {
         }
     },
     async welfareSignInfunc(index){
-        if (index !== this.signDay) return;
+        if (index !== this.signDay && index < this.signDay) return;
         const { data, status } = await USER_API.welfareSignIn();
         if(data === true){
             this.signList.list[index].isSignin = true;

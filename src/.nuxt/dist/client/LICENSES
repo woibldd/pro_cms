@@ -12,6 +12,14 @@
 
 
 /*!
+ * cookie
+ * Copyright(c) 2012-2014 Roman Shtylman
+ * Copyright(c) 2015 Douglas Christopher Wilson
+ * MIT Licensed
+ */
+
+
+/*!
  * Vue-Lazyload.js v1.2.3
  * (c) 2018 Awe <hilongjw@gmail.com>
  * Released under the MIT License.
@@ -163,11 +171,3 @@ and limitations under the License.
     ***************************************************************************** */
 
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
-
-
-/*!
- * cookie
- * Copyright(c) 2012-2014 Roman Shtylman
- * Copyright(c) 2015 Douglas Christopher Wilson
- * MIT Licensed
- */
