@@ -509,6 +509,7 @@ module.exports = {
       'signSuccess':'签到成功',
       'signError':'签到失败',
       'receiveSuccess':'领取成功',
-      'receiveError':'领取失败'
+      'receiveError':'领取失败',
+      '50u':'钱包资产需高于50u',
     }
 }

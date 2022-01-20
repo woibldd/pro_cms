@@ -476,6 +476,7 @@ module.exports = {
     'signSuccess':'로그인 성공',
     'signError':'로그인 실패',
     'receiveSuccess':'성공적으로 수신됨',
-    'receiveError':'소유권 주장 실패'
+    'receiveError':'소유권 주장 실패',
+    '50u':'지갑 자산은 50u 이상이어야 합니다.',
   }
 }

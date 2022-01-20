@@ -476,6 +476,7 @@ module.exports = {
     'signSuccess':'Kiểm tra thành công',
     'signError':'Lỗi kiểm tra',
     'receiveSuccess':'Đã nhận',
-    'receiveError':'Tập hợp bị lỗi'
+    'receiveError':'Tập hợp bị lỗi',
+    '50u':'Nội dung trên ví phải cao hơn 50u',
   }
 }

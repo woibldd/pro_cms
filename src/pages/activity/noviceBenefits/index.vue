@@ -56,7 +56,7 @@
             </div>
         </div>
         <div class="Novicebenefits-title textPrimary0" v-if="!!newUser.isNewUser">{{$t('noviceBenefits.Novice')}}</div>
-        <ul class="Novicebenefits-reward Novicebenefits-sign-top-bottom colorBackground1" v-if="!!newUser.isNewUser && (!newUser.isDoneTelJob || !newUser.isDoneSwap || !newUser.isDone50U)">
+        <ul class="Novicebenefits-reward Novicebenefits-sign-top-bottom colorBackground1" v-if="!!newUser.isNewUser && (!newUser.isDoneTelJob || !newUser.isDoneSwap)">
             <!-- 加入Telegram -->
             <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom">
                 <div class="Novicebenefits-sign-top-bottom-img">
@@ -90,8 +90,8 @@
                 </div>
             </li>
 
-            <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom" v-if="!newUser.isDone50U">
                 <!-- 入金50u -->
+            <!-- <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom" v-if="!newUser.isDone50U">
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
                         src="https://cdn.bitkeep.vip/u_b_cb358fc0-72a8-11ec-bb03-832c5d2a67c5.png"
@@ -105,7 +105,7 @@
                     <span v-if="!newUser.isUpTo50U" class="textbtn textSecond3 standard"> {{$t('noviceBenefits.standard')}}</span>
                     <van-button class="draw-btn colorBackgroundPrimary" @click="UpTo50U()" v-if="newUser.isUpTo50U"><span class="colorwhite Novicebenefits-sign-top-bottom-btn-span"> {{ $t('noviceBenefits.Join')}}</span></van-button>
                 </div>
-            </li>
+            </li> -->
         </ul>
 
          <div class="Novicebenefits-title textPrimary0">{{$t('noviceBenefits.Morebenefits')}}</div>
@@ -202,8 +202,8 @@ export default {
         isNewUser: false,
         isDoneTelJob: false,
         isDoneSwap: false,
-        isDone50U: false,
-        isUpToSwap:false
+        isUpToSwap:false,
+        isUpTo50U: false,
     },
     telegramUrl:''
     };
@@ -297,12 +297,17 @@ export default {
             BitKeepInvoke.nativeApp();
             localStorage.setItem('SwapTransaction',true);
         }else{
-            const { data, status } = await USER_API.getFirstSwapJob();
-            if(data === true){
-                this.$toast(this.$t('noviceBenefits.receiveSuccess'));
-                this.newUserRewardJobs();
+            if(!!this.newUser.isUpTo50U){
+                const { data, status } = await USER_API.getFirstSwapJob();
+                if(data === true){
+                    this.$toast(this.$t('noviceBenefits.receiveSuccess'));
+                    this.newUserRewardJobs();
+                }else{
+                    this.$toast(this.$t('noviceBenefits.receiveError'));
+                }
             }else{
-                this.$toast(this.$t('noviceBenefits.receiveError'));
+                 // 钱包资产需高于50u
+                this.$toast(this.$t('noviceBenefits.50u'));
             }
         }
     },
@@ -315,12 +320,17 @@ export default {
             localStorage.setItem('joinTelegram',true);
         }else{
             // 立即领取
-            const { data, status } = await USER_API.getJoinTeleJob();
-            if(data === true){
-                 this.$toast(this.$t('noviceBenefits.receiveSuccess'));
-                this.newUserRewardJobs();
+            if(!!this.newUser.isUpTo50U){
+                const { data, status } = await USER_API.getJoinTeleJob();
+                if(data === true){
+                     this.$toast(this.$t('noviceBenefits.receiveSuccess'));
+                    this.newUserRewardJobs();
+                }else{
+                    this.$toast(this.$t('noviceBenefits.receiveError'));
+                }
             }else{
-                this.$toast(this.$t('noviceBenefits.receiveError'));
+                // 钱包资产需高于50u
+                this.$toast(this.$t('noviceBenefits.50u'));
             }
         }
     },

@@ -476,6 +476,7 @@ module.exports = {
     'signSuccess':'サインインに成功',
     'signError':'サインインに失敗しました',
     'receiveSuccess':'正常に受信されました',
-    'receiveError':'申し立てに失敗しました'
+    'receiveError':'申し立てに失敗しました',
+    '50u':'ウォレットのアセットは50uより大きくする必要があります',
   }
 }

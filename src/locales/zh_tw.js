@@ -56,6 +56,7 @@ module.exports = {
       'signSuccess':'簽到成功',
       'signError':'簽到失敗',
       'receiveSuccess':'領取成功',
-      'receiveError':'領取失敗'
+      'receiveError':'領取失敗',
+      '50u':'錢包資產需高於50u',
     }
 }

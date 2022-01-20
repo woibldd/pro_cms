@@ -511,6 +511,7 @@ module.exports = {
     'signSuccess':'Check in succeeded',
     'signError':'Check in failed',
     'receiveSuccess':'Received successfully',
-    'receiveError':'Collection failed'
+    'receiveError':'Collection failed',
+    '50u':'Wallet assets must be higher than 50u',
   }
 }
