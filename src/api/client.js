@@ -16,7 +16,7 @@ const host_user_instance = axios.create({
   baseURL: "/",
   timeout: 60000,
   headers: {
-    token: "5532975d8e6cc992245636f5f175fbb3",
+    token: "",
     // token: "",
     language: "en",
     currency: "",
