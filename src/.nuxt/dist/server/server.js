@@ -3222,7 +3222,8 @@ module.exports = {
     'signSuccess': 'Check in succeeded',
     'signError': 'Check in failed',
     'receiveSuccess': 'Received successfully',
-    'receiveError': 'Collection failed'
+    'receiveError': 'Collection failed',
+    '50u': 'Wallet assets must be higher than 50u'
   }
 };
 
@@ -3701,7 +3702,8 @@ module.exports = {
     'signSuccess': 'サインインに成功',
     'signError': 'サインインに失敗しました',
     'receiveSuccess': '正常に受信されました',
-    'receiveError': '申し立てに失敗しました'
+    'receiveError': '申し立てに失敗しました',
+    '50u': 'ウォレットのアセットは50uより大きくする必要があります'
   }
 };
 
@@ -4162,7 +4164,8 @@ module.exports = {
     'signSuccess': '로그인 성공',
     'signError': '로그인 실패',
     'receiveSuccess': '성공적으로 수신됨',
-    'receiveError': '소유권 주장 실패'
+    'receiveError': '소유권 주장 실패',
+    '50u': '지갑 자산은 50u 이상이어야 합니다.'
   }
 };
 
@@ -4623,7 +4626,8 @@ module.exports = {
     'signSuccess': 'Kiểm tra thành công',
     'signError': 'Lỗi kiểm tra',
     'receiveSuccess': 'Đã nhận',
-    'receiveError': 'Tập hợp bị lỗi'
+    'receiveError': 'Tập hợp bị lỗi',
+    '50u': 'Nội dung trên ví phải cao hơn 50u'
   }
 };
 
@@ -5119,7 +5123,8 @@ module.exports = {
     'signSuccess': '签到成功',
     'signError': '签到失败',
     'receiveSuccess': '领取成功',
-    'receiveError': '领取失败'
+    'receiveError': '领取失败',
+    '50u': '钱包资产需高于50u'
   }
 };
 
@@ -5185,7 +5190,8 @@ module.exports = {
     'signSuccess': '簽到成功',
     'signError': '簽到失敗',
     'receiveSuccess': '領取成功',
-    'receiveError': '領取失敗'
+    'receiveError': '領取失敗',
+    '50u': '錢包資產需高於50u'
   }
 };
 
@@ -5251,7 +5257,8 @@ module.exports = {
     'signSuccess': 'Check in succeeded',
     'signError': 'Check in failed',
     'receiveSuccess': 'Received successfully',
-    'receiveError': 'Collection failed'
+    'receiveError': 'Collection failed',
+    '50u': 'Wallet assets must be higher than 50u'
   }
 }; // 印尼
 // 'noviceBenefits':{
