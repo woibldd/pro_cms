@@ -65,7 +65,9 @@ module.exports = {
     'Investedmore':'Invested more coupons than available coupons',
     'Investinsuccess':'Invest in success',
     'Failedtoputin':'Failed to put in',
-    'Tobewon':'To be drawn' 
+    'Tobewon':'To be drawn',
+    'congratulations':'congratulations ',
+    'winningthelottery':' winning the lottery '
   }
 }
 

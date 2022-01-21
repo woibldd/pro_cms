@@ -485,6 +485,8 @@ module.exports = {
     'Investedmore':'利用可能なクーポンよりも多くのクーポンを投資しました',
     'Investinsuccess':'成功への投資',
     'Failedtoputin':'入れなかった',
-    'Tobewon':'描かれる' 
+    'Tobewon':'描かれる',
+    'congratulations':'おめでとう ',
+    'winningthelottery':' 宝くじに当選 '
   }
 }

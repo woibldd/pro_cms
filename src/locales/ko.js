@@ -485,6 +485,8 @@ module.exports = {
     'Investedmore':'사용 가능한 쿠폰보다 더 많은 쿠폰을 투자했습니다.',
     'Investinsuccess':'성공에 투자',
     'Failedtoputin':'넣지 못함',
-    'Tobewon':'그려지다' 
+    'Tobewon':'그려지다',
+    'congratulations':'축하합니다 ',
+    'winningthelottery':' 복권 당첨 '
   }
 }

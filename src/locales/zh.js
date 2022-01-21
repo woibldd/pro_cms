@@ -518,6 +518,8 @@ module.exports = {
       'Investedmore':'投入兑奖券超过可用抽奖卷',
       'Investinsuccess':'投入成功',
       'Failedtoputin':'投入失败',
-      'Tobewon':'待开奖'
+      'Tobewon':'待开奖',
+      'congratulations':'恭喜您在',
+      'winningthelottery':'中奖'
     }
 }

@@ -209,6 +209,9 @@ export default {
         isDoneSwap: false,
         isUpToSwap:false,
         isUpTo50U: false,
+        isAlterReward: false, // 是否弹出最近一次中奖信息
+        yestdaycode: '', // 最近一次中奖期号
+        yestdayRewardPool: 0 // 最近一次中奖奖池
     },
     telegramUrl:''
     };
@@ -243,9 +246,13 @@ export default {
   },
   methods: {
       firstEnter(title,message) {
+        let mes =
+            "<div class='popBox'><p>" +
+            message +
+            "</p></div>";
         this.$dialog.alert({
             title:title || '',
-            message: message,
+            message: mes,
             confirmButtonText: this.$t("CbkbExchange.know"),
             confirmButtonColor: "#495BFF",
         });
@@ -294,6 +301,9 @@ export default {
         const { data, status } = await USER_API.newUserRewardJobs();
         if(data){
             this.newUser = data;
+            if(!!data.isAlterReward){
+                this.firstEnter('',this.$t('noviceBenefits.congratulations') + data.yestdaycode + this.$t('noviceBenefits.winningthelottery') + data.yestdayRewardPool + 'BKB!');
+            }
         }
     },
     // async UpTo50U(){
@@ -666,4 +676,67 @@ p{
     }
 }
 
+</style>
+<style lang="scss">
+@import "@/assets/css/theme.scss";
+.theme-light {
+  .van-dialog, .van-dialog__footer, .van-dialog .van-button--default{
+    background: $theme-light-colorBackground1;
+    [class*=van-hairline]::after{
+      border: 1px solid #F4F5FA;
+    }
+    .van-dialog__header{
+        color: #080D21;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .popBox{
+      color: #080D21;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .van-dialog__confirm{
+      color: #080D21;
+    }
+    .van-dialog__confirm:active{
+      color: #080D21;
+    }
+  }
+  .trading-wrap-status {
+    .setBorder {
+      border-bottom: 2.1px solid $theme-light-textPrimary0;
+      font-weight: 500;
+    }
+  }
+}
+.theme-dark {
+  .van-dialog, .van-dialog__footer, .van-dialog .van-button--default{
+    background: $theme-dark-colorBackground1;
+    .van-dialog__header{
+        color: #7F828F;
+       font-size: 16px;
+      font-weight: 500;
+    }
+    .popBox{
+      color: #7F828F;
+       font-size: 16px;
+      font-weight: 500;
+    }
+    [class*=van-hairline]::after{
+      border: 1px solid #1F212E;
+    }
+    .van-dialog__confirm{
+      color: #DFE0E3;
+    }
+    .van-dialog__confirm:active{
+      color: #DFE0E3;
+    }
+  }
+  .trading-wrap-status {
+    .setBorder {
+      border-bottom: 2.1px solid $theme-dark-textPrimary0;
+      font-weight: 500;
+    }
+  }
+}
 </style>

@@ -485,6 +485,8 @@ module.exports = {
     'Investedmore':'Đã đầu tư nhiều phiếu giảm giá hơn so với phiếu giảm giá có sẵn',
     'Investinsuccess':'Đầu tư để thành công',
     'Failedtoputin':'Không đưa vào được',
-    'Tobewon':'Được rút ra'
+    'Tobewon':'Được rút ra',
+    'congratulations':'Xin chúc mừng ',
+    'winningthelottery':' Trúng xổ số '
   }
 }

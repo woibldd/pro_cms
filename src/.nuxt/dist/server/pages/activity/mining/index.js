@@ -189,7 +189,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(199);
+var content = __webpack_require__(200);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -207,7 +207,7 @@ module.exports.__inject__ = function (context) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(201);
+var content = __webpack_require__(202);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -219,7 +219,7 @@ module.exports.__inject__ = function (context) {
 
 /***/ }),
 
-/***/ 178:
+/***/ 179:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -551,7 +551,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 179:
+/***/ 180:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -734,7 +734,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 180:
+/***/ 181:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -829,7 +829,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 181:
+/***/ 182:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -928,7 +928,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 198:
+/***/ 199:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -940,7 +940,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 199:
+/***/ 200:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -954,7 +954,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 200:
+/***/ 201:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -966,7 +966,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 201:
+/***/ 202:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -980,7 +980,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 260:
+/***/ 263:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1001,16 +1001,16 @@ var client = __webpack_require__(68);
 var external_vuex_ = __webpack_require__(4);
 
 // EXTERNAL MODULE: ./components/activity/index.vue + 4 modules
-var activity = __webpack_require__(178);
+var activity = __webpack_require__(179);
 
 // EXTERNAL MODULE: ./pages/activity/mining/protocol.vue + 4 modules
-var protocol = __webpack_require__(179);
+var protocol = __webpack_require__(180);
 
 // EXTERNAL MODULE: ./pages/activity/mining/RuleDetail.vue + 4 modules
-var RuleDetail = __webpack_require__(180);
+var RuleDetail = __webpack_require__(181);
 
 // EXTERNAL MODULE: ./pages/activity/mining/inviteRuleDetail.vue + 4 modules
-var inviteRuleDetail = __webpack_require__(181);
+var inviteRuleDetail = __webpack_require__(182);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/mining/index.vue?vue&type=script&lang=js&
 //
@@ -1567,9 +1567,9 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(198)
+  var style0 = __webpack_require__(199)
 if (style0.__inject__) style0.__inject__(context)
-var style1 = __webpack_require__(200)
+var style1 = __webpack_require__(201)
 if (style1.__inject__) style1.__inject__(context)
 
 }
