@@ -114,7 +114,7 @@
               <div class="textSecond3">{{ $t("trading.UnclaimedReward") }}</div>
               <div class="colorPrimary setFontFamily">{{milliFormat(waitClaim)}} BKB</div>
             </div>
-            <van-button class="swap-btn colorBackgroundSecond01" @click="claim">{{
+            <van-button class="swap-btn colorBackgroundSecond01" style="background-color: #1CBDB5;" @click="claim">{{
               $t("trading.claim")
             }}</van-button>
           </div>
@@ -404,7 +404,7 @@ export default {
 @import "@/assets/css/theme.scss";
 @import "./index.scss";
 .theme-light {
-  .van-dialog, .van-dialog__footer, .van-button--default{
+  .van-dialog, .van-dialog__footer, .van-dialog .van-button--default{
     background: $theme-light-colorBackground1;
     [class*=van-hairline]::after{
       border: 1px solid #F4F5FA;
@@ -427,7 +427,7 @@ export default {
   }
 }
 .theme-dark {
-  .van-dialog, .van-dialog__footer, .van-button--default{
+  .van-dialog, .van-dialog__footer, .van-dialog .van-button--default{
     background: $theme-dark-colorBackground1;
     .popBox{
       color: #7F828F;
