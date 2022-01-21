@@ -59,6 +59,11 @@ module.exports = {
       'receiveError':'領取失敗',
       '50u':'錢包資產需高於50u',
       'Cumulative':'累計簽到4天，7天可分別領取一張抽獎卷。',
-      'Tips':'提示'
+      'Tips':'簽到規則',
+      'Whatisaraffleticket':"什麼是抽獎卷?",
+      'Usethelotteryticket':'使用抽獎卷可前往抽獎頁面抽取BKB獎勵。',
+      'Investedmore':'投入兌獎券超過可用抽獎卷',
+      'Investinsuccess':'投入成功',
+      'Failedtoputin':'投入失敗'
     }
 }

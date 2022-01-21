@@ -479,6 +479,11 @@ module.exports = {
     'receiveError':'소유권 주장 실패',
     '50u':'지갑 자산은 50u 이상이어야 합니다.',
     'Cumulative':'累누적 출석 4 일, 7 일 동안 추첨권 1 장을 수령할 수 있습니다.',
-    'Tips':'프롬프트'
+    'Tips':'체크인 규칙',
+    'Whatisaraffleticket':"추첨권이란?",
+    'Usethelotteryticket':'복권을 사용하여 복권 페이지로 이동하여 BKB 보상을 받으세요.',
+    'Investedmore':'사용 가능한 쿠폰보다 더 많은 쿠폰을 투자했습니다.',
+    'Investinsuccess':'성공에 투자',
+    'Failedtoputin':'넣지 못함'
   }
 }

@@ -479,6 +479,11 @@ module.exports = {
     'receiveError':'Tập hợp bị lỗi',
     '50u':'Nội dung trên ví phải cao hơn 50u',
     'Cumulative':'Ký vô đó bốn ngày tổng cộng, và bạn có thể có một giấy vẽ may mắn trong vòng bảy ngày.',
-    'Tips':'Mẹo'
+    'Tips':'quy tắc đăng ký',
+    'Whatisaraffleticket':"Vé xổ số là gì?",
+    'Usethelotteryticket':'Sử dụng vé số để đến trang xổ số để rút thưởng BKB.',
+    'Investedmore':'Đã đầu tư nhiều phiếu giảm giá hơn so với phiếu giảm giá có sẵn',
+    'Investinsuccess':'Đầu tư để thành công',
+    'Failedtoputin':'Không đưa vào được'
   }
 }

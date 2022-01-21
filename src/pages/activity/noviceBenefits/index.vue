@@ -5,7 +5,7 @@
                 {{$t('noviceBenefits.sign')}}
                 <van-image
                     :src="question"
-                    @click="inviteRuleDetail"
+                    @click="firstEnter($t('noviceBenefits.Tips'),$t('noviceBenefits.Cumulative'))"
                 />
         </div>
         <div class="Novicebenefits-sign colorBackground1">
@@ -19,7 +19,7 @@
                                 <span v-if="item.day === 4 || item.day === 7" class="Novicebenefits-sign-item-img-obtain backgroundSecond01"> <i style="font-style:normal;" class="colorwhite">{{$t('noviceBenefits.obtain')}}</i></span>
                                 <van-image
                                     v-if="!item.isSignin"
-                                    :src="(item.day === 4 || item.day === 7) && index === signDay ? 'https://cdn.bitkeep.vip/u_b_aa80c7c0-7615-11ec-9d29-f144d09ca5ed.png' : index === signDay && !signList.todayIsSgin? 'https://cdn.bitkeep.vip/u_b_56e30a70-7448-11ec-a3df-456c694c3f18.png' : (item.day === 4 || item.day === 7) ? 'https://cdn.bitkeep.vip/u_b_65c04710-7448-11ec-a3df-456c694c3f18.png' : 'https://cdn.bitkeep.vip/u_b_5457fe50-743e-11ec-a3df-456c694c3f18.png'"
+                                    :src="(item.day === 4 || item.day === 7) && index === signDay && !signList.todayIsSgin ? 'https://cdn.bitkeep.vip/u_b_aa80c7c0-7615-11ec-9d29-f144d09ca5ed.png' : index === signDay && !signList.todayIsSgin? 'https://cdn.bitkeep.vip/u_b_56e30a70-7448-11ec-a3df-456c694c3f18.png' : (item.day === 4 || item.day === 7) ? 'https://cdn.bitkeep.vip/u_b_65c04710-7448-11ec-a3df-456c694c3f18.png' : 'https://cdn.bitkeep.vip/u_b_5457fe50-743e-11ec-a3df-456c694c3f18.png'"
                                 />
                                 <van-image
                                     v-else
@@ -48,7 +48,7 @@
                     <img
                         class="Novicebenefits-sign-top-bottom-img-right"
                         :src="question"
-                        @click="inviteRuleDetail"
+                        @click="firstEnter($t('noviceBenefits.Whatisaraffleticket'),$t('noviceBenefits.Usethelotteryticket'))"
                     />
                     </p>
                     <p class="textSecond2">{{$t('noviceBenefits.Participate')}}<span class="setFontFamily">{{signList.reward_pool}}</span>  BKB！</p>
@@ -89,7 +89,8 @@
                     <p class="textSecond2">{{$t('noviceBenefits.raffle')}}</p>
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-btn">
-                    <van-button class="draw-btn colorBackgroundPrimary" @click="SwapTransaction()"><span class="colorwhite Novicebenefits-sign-top-bottom-btn-span"> {{newUser.isUpToSwap ?  $t('noviceBenefits.Getitnow') : $t('noviceBenefits.Immediate')}}</span></van-button>
+                    <span class="alreadydraw-btn textSecond3" v-if="!!newUser.isDoneSwap">{{$t('noviceBenefits.alreadyReceived')}}</span>
+                    <van-button class="draw-btn colorBackgroundPrimary" @click="SwapTransaction()" v-else><span class="colorwhite Novicebenefits-sign-top-bottom-btn-span"> {{newUser.isUpToSwap ?  $t('noviceBenefits.Getitnow') : $t('noviceBenefits.Immediate')}}</span></van-button>
                 </div>
             </li>
 
@@ -159,7 +160,6 @@
             </li>
         </ul>
       </div>
-    <inviteRuleDetail :inviteRuleDetailFlag='inviteRuleDetailFlag' :theme='theme' @closeInvite='closeInvite'></inviteRuleDetail>
   </div>
 </template>
 <script>
@@ -167,7 +167,6 @@ import { USER_API } from "@/api/client";
 import { mapState } from "vuex";
 import { Toast } from 'vant';
 import Cookie from 'cookie';
-import inviteRuleDetail from './inviteRuleDetail.vue';
 export default {
   name: "Novicebenefits",
   data() {
@@ -211,9 +210,7 @@ export default {
         isUpToSwap:false,
         isUpTo50U: false,
     },
-    telegramUrl:'',
-    inviteRuleDetailFlag: false,
-    theme: 0,
+    telegramUrl:''
     };
   },
   computed: {
@@ -234,7 +231,6 @@ export default {
     }
   },
   components: {
-      inviteRuleDetail
   },
   
   mounted() {
@@ -246,12 +242,15 @@ export default {
     this.islanguage();
   },
   methods: {
-    inviteRuleDetail(){
-      this.inviteRuleDetailFlag = true;
+      firstEnter(title,message) {
+        this.$dialog.alert({
+            title:title || '',
+            message: message,
+            confirmButtonText: this.$t("CbkbExchange.know"),
+            confirmButtonColor: "#495BFF",
+        });
     },
-    closeInvite(){
-      this.inviteRuleDetailFlag = false;
-    },
+
     // 初始化
     info(){
         this.newUserRewardJobs();
@@ -297,15 +296,15 @@ export default {
             this.newUser = data;
         }
     },
-    async UpTo50U(){
-        const { data, status } = await USER_API.getFirst50UJob();
-        if(data === true){
-             this.$toast(this.$t('noviceBenefits.receiveSuccess'));
-            this.newUserRewardJobs();
-        }else{
-            this.$toast(this.$t('noviceBenefits.receiveError'));
-        }
-    },
+    // async UpTo50U(){
+    //     const { data, status } = await USER_API.getFirst50UJob();
+    //     if(data === true){
+    //          this.firstEnter(this.$t('noviceBenefits.receiveSuccess'));
+    //         this.newUserRewardJobs();
+    //     }else{
+    //         this.$toast(this.$t('noviceBenefits.receiveError'));
+    //     }
+    // },
     async SwapTransaction(){
         // SWAP交易
         if(!this.newUser.isUpToSwap){
@@ -315,14 +314,14 @@ export default {
             if(!!this.newUser.isUpTo50U){
                 const { data, status } = await USER_API.getFirstSwapJob();
                 if(data === true){
-                    this.$toast(this.$t('noviceBenefits.receiveSuccess'));
+                    this.firstEnter('',this.$t('noviceBenefits.receiveSuccess'));
                     this.newUserRewardJobs();
                 }else{
-                    this.$toast(this.$t('noviceBenefits.receiveError'));
+                    this.firstEnter('',this.$t('noviceBenefits.receiveError'));
                 }
             }else{
                  // 钱包资产需高于50u
-                this.$toast(this.$t('noviceBenefits.50u'));
+                 this.firstEnter('',this.$t('noviceBenefits.50u'));
             }
         }
     },
@@ -338,25 +337,26 @@ export default {
             if(!!this.newUser.isUpTo50U){
                 const { data, status } = await USER_API.getJoinTeleJob();
                 if(data === true){
-                     this.$toast(this.$t('noviceBenefits.receiveSuccess'));
+                     this.firstEnter('',this.$t('noviceBenefits.receiveSuccess'));
                     this.newUserRewardJobs();
                 }else{
-                    this.$toast(this.$t('noviceBenefits.receiveError'));
+                    this.firstEnter('',this.$t('noviceBenefits.receiveError'));
                 }
             }else{
                 // 钱包资产需高于50u
-                this.$toast(this.$t('noviceBenefits.50u'));
+                 this.firstEnter('',this.$t('noviceBenefits.50u'));
             }
         }
     },
     async welfareSignInfunc(index){
-        if (index !== this.signDay && index < this.signDay) return;
+        if ((index !== this.signDay && index < this.signDay) || this.signList.todayIsSgin) return;
+        console.log(this.signList.todayIsSgin)
         const { data, status } = await USER_API.welfareSignIn();
         if(data === true){
             this.signList.list[index].isSignin = true;
-            this.$toast(this.$t('noviceBenefits.signSuccess'));
+            this.firstEnter('',this.$t('noviceBenefits.signSuccess'));
         }else{
-            this.$toast(this.$t('noviceBenefits.signError'));
+            this.firstEnter('',this.$t('noviceBenefits.signError'));
 
         }
     },
@@ -432,6 +432,13 @@ body::-webkit-scrollbar {
 p{
     margin: 0;
     padding: 0;
+}
+.van-dialog{
+    .van-dialog__content{
+        .van-dialog__message{
+            overflow-y: clip;
+        }
+    }
 }
 .Novicebenefits{
     min-height: 100vh; 

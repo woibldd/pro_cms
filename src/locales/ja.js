@@ -479,6 +479,11 @@ module.exports = {
     'receiveError':'申し立てに失敗しました',
     '50u':'ウォレットのアセットは50uより大きくする必要があります',
     'Cumulative':'累计签到4天，7天可分别领取一张抽奖卷.',
-    'Tips':'ヒント'
+    'Tips':'チェックインルール',
+    'Whatisaraffleticket':"ラッフルチケットとは?",
+    'Usethelotteryticket':'宝くじを使用して宝くじのページに移動し、BKBの報酬を引き出します。',
+    'Investedmore':'利用可能なクーポンよりも多くのクーポンを投資しました',
+    'Investinsuccess':'成功への投資',
+    'Failedtoputin':'入れなかった'
   }
 }

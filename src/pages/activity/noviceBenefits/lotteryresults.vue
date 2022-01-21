@@ -23,8 +23,8 @@
                 <p class="lotteryresults-list-item-result textSecond3">{{item.code}}</p>
              </div>
              <div class="lotteryresults-list-left" v-if="Number(item.reward) > 0 ">
-                <p class="lotteryresults-list-itemNums textPrimary0">🎉 {{$t('noviceBenefits.Congratulations')}}!</p>
-                <p class="lotteryresults-list-item-result colorPrimary" style="text-align:right">+1000 BKB</p>
+                <p class="lotteryresults-list-itemNums textPrimary0">🎉 {{$t('noviceBenefits.Congratulations')}}</p>
+                <p class="lotteryresults-list-item-result colorPrimary" style="text-align:right ">+ <span class="setFontFamily">{{item.reward}}</span> BKB</p>
              </div>
              <div class="lotteryresults-list-item-result lotteryresults-list-right textSecond3" v-if="Number(item.reward) <= 0 ">
                  {{$t('noviceBenefits.Failedto')}}

@@ -59,7 +59,12 @@ module.exports = {
     'receiveError':'Collection failed',
     '50u':'Wallet assets must be higher than 50u',
     'Cumulative':'Sign in for 4 days in total, and you can get a lucky draw paper in 7 days.',
-    'Tips':'Tips'
+    'Tips':'check-in rules',
+    'Whatisaraffleticket':"What is a raffle ticket?",
+    'Usethelotteryticket':'Use the lottery ticket to go to the lottery page to draw BKB rewards.',
+    'Investedmore':'Invested more coupons than available coupons',
+    'Investinsuccess':'Invest in success',
+    'Failedtoputin':'Failed to put in'
   }
 }
 

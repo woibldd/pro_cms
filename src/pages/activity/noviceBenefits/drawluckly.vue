@@ -93,16 +93,29 @@ export default {
 
   },
   methods: {
+    firstEnter(title,message) {
+      this.$dialog.alert({
+          title:title || '',
+          message: message,
+          confirmButtonText: this.$t("CbkbExchange.know"),
+          confirmButtonColor: "#495BFF",
+      });
+    },
     async pushPapersIn(){
       if(Number(this.CouponsNums) <= 0){
         return;
       }
-      const { data, status } = await USER_API.pushPapersIn();
+      if(Number(this.CouponsNums) > Number(this.RewardDetail.mePapersKeep)){
+        this.firstEnter('',this.$t('noviceBenefits.Investedmore'));
+        return;
+      }
+      const { data, status } = await USER_API.pushPapersIn({nums:this.CouponsNums});
       if(data === true){
         this.getRewardDetail();
         this.CouponsNums = 0;
+        this.firstEnter('',this.$t('noviceBenefits.Investinsuccess'));
       }else{
-        this.$toast('error');
+        this.firstEnter('',this.$t('noviceBenefits.Failedtoputin'));
       }
     },
     allin(){
@@ -247,7 +260,7 @@ p{
       left: 16px;
       color: #080D21;
       font-size: 26px;
-      font-weight: 600;
+      font-weight: 700;
     }
 }
 .drawluckly-Coupons{

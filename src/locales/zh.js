@@ -512,6 +512,11 @@ module.exports = {
       'receiveError':'领取失败',
       '50u':'钱包资产需高于50u',
       'Cumulative':'累计签到4天，7天可分别领取一张抽奖卷。',
-      'Tips':'提示'
+      'Tips':'签到规则',
+      'Whatisaraffleticket':"什么是抽奖卷?",
+      'Usethelotteryticket':"使用抽奖卷可前往抽奖页面抽取BKB奖励。",
+      'Investedmore':'投入兑奖券超过可用抽奖卷',
+      'Investinsuccess':'投入成功',
+      'Failedtoputin':'投入失败'
     }
 }
