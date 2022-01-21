@@ -164,6 +164,9 @@ export default {
     locale() {
       return this.local.locale;
     },
+    firstState() {
+      return this.local.firstStatus;
+    },
     isBitKeep() {
       return this.local.UA.isBitKeep;
     },
@@ -175,11 +178,31 @@ export default {
   },
 
   mounted() {
+    this.firstEnter();
     this.getInfo();
     this.setIcon();
     this.tradingWaitClaim();
   },
   methods: {
+    firstEnter() {
+      let tit =
+        "<div class='popBox'><div>" +
+        this.$t("trading.tit1") +
+        "</div><div>" +
+        this.$t("trading.tit2") +
+        "</div></div>";
+      if (this.firstState) {
+        this.$dialog.alert({
+          title: this.$t("trading.popTit"),
+          message: tit,
+          confirmButtonText: this.$t("trading.btn"),
+          getContainer: () => document.querySelector("body"),
+        });
+        this.$store.commit('SET_firstStatus', false);
+      } else {
+        return;
+      }
+    },
     // 获取列表
     async getInfo() {
       if(!this.refreshLoading) this.isLoadingList = true;
@@ -318,6 +341,40 @@ export default {
 };
 </script>
 <style lang="scss">
+.wrap-title {
+  width: 100%;
+  .van-tabs__wrap {
+    width: 100%;
+    padding-bottom: 5px;
+  }
+  .van-tabs__nav--line {
+    width: 40%;
+    margin-left: 8px;
+  }
+  .van-tab__text--ellipsis {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    padding-bottom: 2px;
+  }
+  .van-tabs__line {
+    border-radius: 1px;
+    width: 16px;
+  }
+}
+.van-dialog__message--has-title{
+  color: #7F828F;
+}
+.van-dialog__header{
+  color: #080D21;
+  font-size: 18px;
+  font-weight: 500;
+}
+.popBox div {
+  margin-bottom: 10px;
+  text-align: left;
+  line-height: 1.5;
+}
 .van-notice-bar{
   font-size: 12px;
   line-height: 15px;

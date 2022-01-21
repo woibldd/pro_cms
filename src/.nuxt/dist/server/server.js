@@ -608,6 +608,7 @@ const INIT_STATE = {
   locale: "en",
   //  语言设置
   locales: ['zh', 'en', 'ja', 'ko', 'vi'],
+  firstStatus: true,
   bitkeep: {
     language: 'en',
     currency: 'cny',
@@ -719,6 +720,10 @@ const mutations = {
 
   "SET_UA"(state, data) {
     Object.assign(state.UA, data);
+  },
+
+  "SET_firstStatus"(state, data) {
+    state.firstStatus = data;
   }
 
 };
@@ -3261,7 +3266,11 @@ module.exports = {
     how4: '4. How to check your trading rewards?',
     OverviewContent4: 'Go to the "Trading Reward" page in BitKeep to see everything about your gains.',
     how5: '5. How to claim your trading rewards?',
-    OverviewContent5: 'Go to "Trading Reward" page and tap "Claim" button to claim your rewards.'
+    OverviewContent5: 'Go to "Trading Reward" page and tap "Claim" button to claim your rewards.',
+    popTit: 'Risk Warning',
+    tit1: 'The Trading Reward events are only to reward our fans. They may not be considered as investment advice.',
+    tit2: 'Reminder: The price of digital assets fluctuates greatly. Users are advised to fully understand and accept the risks of digital asset investment before investing.',
+    btn: 'OK, i got it'
   }
 };
 
@@ -3783,7 +3792,11 @@ module.exports = {
     how4: '4. 取引報酬を確認する方法は？',
     OverviewContent4: 'BitKeepの「取引報酬」ページに移動して、利益に関するすべてを確認してください。',
     how5: '5. 取引報酬を請求する方法は？',
-    OverviewContent5: '「取引報酬」ページに移動し、「請求」ボタンをタップして報酬を請求します。'
+    OverviewContent5: '「取引報酬」ページに移動し、「請求」ボタンをタップして報酬を請求します。',
+    popTit: 'リスク警告',
+    tit1: 'トレーディングリワードイベントは、ファンに報酬を与えるためだけのものです。 それらは投資アドバイスとはみなされないかもしれません。',
+    tit2: '注意：デジタル資産の価格は大きく変動します。 ユーザーは、投資する前に、デジタル資産投資のリスクを完全に理解して受け入れることをお勧めします。',
+    btn: 'はい、分かりました'
   }
 };
 
@@ -4287,7 +4300,11 @@ module.exports = {
     how4: '4. 거래 보상을 확인하는 방법은 무엇입니까?',
     OverviewContent4: 'BitKeep의 "거래 보상" 페이지로 이동하여 수익에 대한 모든 것을 확인하십시오.',
     how5: '5. 거래 보상을 청구하는 방법은 무엇입니까?',
-    OverviewContent5: '"보상 거래" 페이지로 이동하여 "청구" 버튼을 눌러 보상을 청구하십시오.'
+    OverviewContent5: '"보상 거래" 페이지로 이동하여 "청구" 버튼을 눌러 보상을 청구하십시오.',
+    popTit: '위험 경고',
+    tit1: '트레이딩 리워드 이벤트는 팬들에게만 보상을 제공하는 것입니다. 그들은 투자 조언으로 간주되지 않을 수 있습니다.',
+    tit2: '알림: 디지털 자산의 가격은 크게 변동합니다. 사용자는 투자하기 전에 디지털 자산 투자의 위험을 완전히 이해하고 수용하는 것이 좋습니다.',
+    btn: '알겠습니다.'
   }
 };
 
@@ -4791,7 +4808,11 @@ module.exports = {
     how4: '4. Làm thế nào để kiểm tra phần thưởng giao dịch của bạn?',
     OverviewContent4: 'Truy cập trang "Phần thưởng giao dịch" trong BitKeep để xem mọi thứ về lợi nhuận của bạn.',
     how5: '5. Làm thế nào để nhận phần thưởng giao dịch của bạn?',
-    OverviewContent5: 'Truy cập trang "Phần thưởng giao dịch" và nhấn vào nút "Yêu cầu" để nhận phần thưởng của bạn.'
+    OverviewContent5: 'Truy cập trang "Phần thưởng giao dịch" và nhấn vào nút "Yêu cầu" để nhận phần thưởng của bạn.',
+    popTit: 'Cảnh báo rủi ro',
+    tit1: 'Các sự kiện Phần thưởng giao dịch chỉ để thưởng cho người hâm mộ của chúng tôi. Chúng có thể không được coi là lời khuyên đầu tư.',
+    tit2: 'Nhắc nhở: Giá của tài sản kỹ thuật số biến động rất nhiều. Người dùng nên hiểu đầy đủ và chấp nhận những rủi ro của việc đầu tư tài sản kỹ thuật số trước khi đầu tư.',
+    btn: 'OK, tôi hiểu rồi'
   }
 };
 
@@ -5330,7 +5351,11 @@ module.exports = {
     how4: '4. How to check your trading rewards?',
     OverviewContent4: 'Go to the "Trading Reward" page in BitKeep to see everything about your gains.',
     how5: '5. How to claim your trading rewards?',
-    OverviewContent5: 'Go to "Trading Reward" page and tap "Claim" button to claim your rewards.'
+    OverviewContent5: 'Go to "Trading Reward" page and tap "Claim" button to claim your rewards.',
+    popTit: 'Risk Warning',
+    tit1: 'The Trading Reward events are only to reward our fans. They may not be considered as investment advice.',
+    tit2: 'Reminder: The price of digital assets fluctuates greatly. Users are advised to fully understand and accept the risks of digital asset investment before investing.',
+    btn: 'OK, i got it'
   }
 };
 
@@ -7243,16 +7268,16 @@ function wrapFunctional(options) {
 
 
 const components = {
-  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 196)).then(c => wrapFunctional(c.default || c)),
-  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 82)).then(c => wrapFunctional(c.default || c)),
-  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 71)).then(c => wrapFunctional(c.default || c)),
-  Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 75)).then(c => wrapFunctional(c.default || c)),
+  Trading: () => __webpack_require__.e(/* import() | components/trading */ 10).then(__webpack_require__.bind(null, 113)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 204)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 305)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 110)).then(c => wrapFunctional(c.default || c)),
   BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 205)).then(c => wrapFunctional(c.default || c)),
   BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 203)).then(c => wrapFunctional(c.default || c)),
-  Trading: () => __webpack_require__.e(/* import() | components/trading */ 10).then(__webpack_require__.bind(null, 113)).then(c => wrapFunctional(c.default || c)),
+  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 82)).then(c => wrapFunctional(c.default || c)),
+  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 71)).then(c => wrapFunctional(c.default || c)),
+  Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 75)).then(c => wrapFunctional(c.default || c)),
+  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 196)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 12).then(__webpack_require__.bind(null, 160)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 13).then(__webpack_require__.bind(null, 85)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 14).then(__webpack_require__.bind(null, 306)).then(c => wrapFunctional(c.default || c)),

@@ -10,6 +10,7 @@ const log = process.env.BUILD_ENV == 'pro' ? (...arg) => {
 const INIT_STATE = {
   locale: "en", //  语言设置
   locales: ['zh','en','ja','ko','vi'],
+  firstStatus: true,
   bitkeep: {
     language: 'en',
     currency: 'cny',
@@ -116,6 +117,9 @@ const mutations = {
   },
   "SET_UA"(state, data) {
     Object.assign(state.UA, data)
+  },
+  "SET_firstStatus"(state, data) {
+    state.firstStatus = data;
   }
 
 }
