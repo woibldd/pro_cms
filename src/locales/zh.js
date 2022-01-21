@@ -556,6 +556,6 @@ module.exports = {
         popTit: 'Risk Warning',
         tit1: 'The Trading Reward events are only to reward our fans. They may not be considered as investment advice.',
         tit2: 'Reminder: The price of digital assets fluctuates greatly. Users are advised to fully understand and accept the risks of digital asset investment before investing.',
-        btn: 'OK, i got it'
+        btn: 'I got it'
       }
 }

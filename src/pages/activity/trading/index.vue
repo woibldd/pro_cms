@@ -366,7 +366,7 @@ export default {
   color: #7F828F;
 }
 .van-dialog__header{
-  color: #080D21;
+  color: #ee0a24;
   font-size: 18px;
   font-weight: 500;
 }
@@ -400,10 +400,25 @@ export default {
   font-size: 17px;
 }
 </style>
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/assets/css/theme.scss";
 @import "./index.scss";
 .theme-light {
+  .van-dialog, .van-dialog__footer, .van-button--default{
+    background: $theme-light-colorBackground1;
+    [class*=van-hairline]::after{
+      border: 1px solid #F4F5FA;
+    }
+    .popBox{
+      color: #7F828F;
+    }
+    .van-dialog__confirm{
+      color: #080D21;
+    }
+    .van-dialog__confirm:active{
+      color: #080D21;
+    }
+  }
   .trading-wrap-status {
     .setBorder {
       border-bottom: 2.1px solid $theme-light-textPrimary0;
@@ -412,6 +427,21 @@ export default {
   }
 }
 .theme-dark {
+  .van-dialog, .van-dialog__footer, .van-button--default{
+    background: $theme-dark-colorBackground1;
+    .popBox{
+      color: #7F828F;
+    }
+    [class*=van-hairline]::after{
+      border: 1px solid #1F212E;
+    }
+    .van-dialog__confirm{
+      color: #DFE0E3;
+    }
+    .van-dialog__confirm:active{
+      color: #DFE0E3;
+    }
+  }
   .trading-wrap-status {
     .setBorder {
       border-bottom: 2.1px solid $theme-dark-textPrimary0;

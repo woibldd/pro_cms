@@ -523,6 +523,6 @@ module.exports = {
     popTit: 'Cảnh báo rủi ro',
     tit1: 'Các sự kiện Phần thưởng giao dịch chỉ để thưởng cho người hâm mộ của chúng tôi. Chúng có thể không được coi là lời khuyên đầu tư.',
     tit2: 'Nhắc nhở: Giá của tài sản kỹ thuật số biến động rất nhiều. Người dùng nên hiểu đầy đủ và chấp nhận những rủi ro của việc đầu tư tài sản kỹ thuật số trước khi đầu tư.',
-    btn: 'OK, tôi hiểu rồi'
+    btn: 'Tôi hiểu rồi'
   }
 }
