@@ -478,5 +478,7 @@ module.exports = {
     'receiveSuccess':'正常に受信されました',
     'receiveError':'申し立てに失敗しました',
     '50u':'ウォレットのアセットは50uより大きくする必要があります',
+    'Cumulative':'累计签到4天，7天可分别领取一张抽奖卷.',
+    'Tips':'ヒント'
   }
 }

@@ -1,56 +1,57 @@
 <template>
-<div class="drawluckly colorBackground1">
-    <div class="drawluckly-topbanner">
-      <span class="drawluckly-topbanner-time colorBlack">2022.10.20</span>
-      <span  class="drawluckly-topbanner-text colorBlack">
-        {{$t('noviceBenefits.Winaraffle')}} {{RewardDetail.thisRewardPool || 0}} BKB
-      </span>
-    </div>
-
-    <div class="drawluckly-Coupons">
-      <div class="drawluckly-Coupons-item">
-        <p class="textSecond2">{{$t('noviceBenefits.rafflepapers')}}</p>
-        <p class="textPrimary0 setFontFamily">{{RewardDetail.allPapersIn || 0}}</p>
+  <div class="drawluckly colorBackground1">
+     <div class="drawluckly-box" :style="{'height':documentHeight + 'px'}">
+      <div class="drawluckly-topbanner">
+        <span class="drawluckly-topbanner-time colorBlack">2022.10.20</span>
+        <span  class="drawluckly-topbanner-text colorBlack">
+          {{$t('noviceBenefits.Winaraffle')}} {{RewardDetail.thisRewardPool || 0}} BKB
+        </span>
       </div>
-      <div class="drawluckly-Coupons-item">
-        <p class="textSecond2">{{$t('noviceBenefits.merafflepapers')}}</p>
-        <p class="textPrimary0 setFontFamily">{{RewardDetail.mePapersIn || 0}}</p>
+
+      <div class="drawluckly-Coupons">
+        <div class="drawluckly-Coupons-item">
+          <p class="textSecond2">{{$t('noviceBenefits.rafflepapers')}}</p>
+          <p class="textPrimary0 setFontFamily">{{RewardDetail.allPapersIn || 0}}</p>
+        </div>
+        <div class="drawluckly-Coupons-item">
+          <p class="textSecond2">{{$t('noviceBenefits.merafflepapers')}}</p>
+          <p class="textPrimary0 setFontFamily">{{RewardDetail.mePapersIn || 0}}</p>
+        </div>
       </div>
-    </div>
 
-    <div class="drawluckly-CouponsNums">
-      <p class="drawluckly-CouponsNums-title">
-        <span class="textPrimary0">{{$t('noviceBenefits.raffletickets')}}</span>
-        <span class="textPrimary0">{{$t('noviceBenefits.available')}}: <i class="colorPrimary setFontFamily drawluckly-CouponsNums-title-number">{{RewardDetail.mePapersKeep || 0}}</i></span>
-      </p>
-      <div class="drawluckly-CouponsNums-inp">
-       <van-field v-model="CouponsNums" type="number" :placeholder="$t('noviceBenefits.Pleaseenter')"/>
-       <p class="drawluckly-CouponsNums-all colorPrimary " @click="allin()">All in</p>
+      <div class="drawluckly-CouponsNums">
+        <p class="drawluckly-CouponsNums-title">
+          <span class="textPrimary0">{{$t('noviceBenefits.raffletickets')}}</span>
+          <span class="textPrimary0">{{$t('noviceBenefits.available')}}: <i class="colorPrimary setFontFamily drawluckly-CouponsNums-title-number">{{RewardDetail.mePapersKeep || 0}}</i></span>
+        </p>
+        <div class="drawluckly-CouponsNums-inp">
+        <van-field v-model="CouponsNums" type="number" :placeholder="$t('noviceBenefits.Pleaseenter')"/>
+        <p class="drawluckly-CouponsNums-all colorPrimary " @click="allin()">All in</p>
+        </div>
       </div>
-    </div>
 
-    <div class="drawluckly-Award" v-if="!!RewardDetail.whoGotReward">
-      <p class="textPrimary0">{{$t('noviceBenefits.usersyesterday')}}</p>
-      <div class="drawluckly-Award-user">
-        <p class="textPrimary0">{{RewardDetail.whoGotReward}}</p>
-        <p class="colorPrimary">+{{RewardDetail.whoGotRewardPool}} BKB</p>
+      <div class="drawluckly-Award" v-if="!!RewardDetail.whoGotReward">
+        <p class="textPrimary0">{{$t('noviceBenefits.usersyesterday')}}</p>
+        <div class="drawluckly-Award-user">
+          <p class="textPrimary0 setFontFamily">{{RewardDetail.whoGotReward}}</p>
+          <p class="colorPrimary">+ <span class="setFontFamily">{{RewardDetail.whoGotRewardPool}}</span> BKB</p>
+        </div>
       </div>
-    </div>
 
-    <div class="drawluckly-rule colorBackground3">
-      <p class="drawluckly-rule-title textPrimary0">{{$t('noviceBenefits.Activityrules')}}</p>
-      <ul class="drawluckly-rule-content">
-        <li class="textSecond2"><span class="setFontFamily">1.</span>{{$t('noviceBenefits.Dailyreward')}}</li>
-        <li class="textSecond2"><span class="setFontFamily">2.</span>{{$t('noviceBenefits.morelottery')}}</li>
-        <li class="textSecond2"><span class="setFontFamily">3.</span>{{$t('noviceBenefits.luckydraw')}}</li>
-      </ul>
-      <div class="drawluckly-rule-bottom textSecond3">*{{$t('noviceBenefits.notes')}} </div>
-    </div>
-
+      <div class="drawluckly-rule colorBackground3">
+        <p class="drawluckly-rule-title textPrimary0">{{$t('noviceBenefits.Activityrules')}}</p>
+        <ul class="drawluckly-rule-content">
+          <li class="textSecond2"><span class="setFontFamily">1.</span>{{$t('noviceBenefits.Dailyreward')}}</li>
+          <li class="textSecond2"><span class="setFontFamily">2.</span>{{$t('noviceBenefits.morelottery')}}</li>
+          <li class="textSecond2"><span class="setFontFamily">3.</span>{{$t('noviceBenefits.luckydraw')}}</li>
+        </ul>
+        <div class="drawluckly-rule-bottom textSecond3">*{{$t('noviceBenefits.notes')}} </div>
+      </div>
+     </div>
     <div class="drawluckly-btnbox colorBackground1">
-       <van-button :class="Number(CouponsNums) > 0 ? 'ondrawluckly-btn colorBackgroundPrimary' : 'drawluckly-btn colorBackgroundPrimary'" @click="pushPapersIn()"> <span class="colorwhite">{{$t('noviceBenefits.Immediateinput')}} </span></van-button>
+        <van-button :class="Number(CouponsNums) > 0 ? 'ondrawluckly-btn colorBackgroundPrimary' : 'drawluckly-btn colorBackgroundPrimary'" @click="pushPapersIn()"> <span class="colorwhite">{{$t('noviceBenefits.Immediateinput')}} </span></van-button>
     </div>
-    </div>
+  </div>
 </template>
 <script>
 import { USER_API } from "@/api/client";
@@ -68,7 +69,8 @@ export default {
         thisRewardPool: 0,
         whoGotReward: "",
         whoGotRewardPool: 0,
-        }
+        },
+      documentHeight: '',  //默认屏幕高度
     };
   },
   computed: {
@@ -87,6 +89,8 @@ export default {
     this.getInfo();
     this.setIcon();
     this.getRewardDetail();
+    this.documentHeight = document.documentElement.clientHeight;
+
   },
   methods: {
     async pushPapersIn(){
@@ -173,7 +177,7 @@ html,body {
   overflow-y: scroll;
 }
 
-body::-webkit-scrollbar {
+.drawluckly-box::-webkit-scrollbar {
   display: none;  // 重点
 }
 .theme-light{
@@ -195,9 +199,12 @@ body::-webkit-scrollbar {
           background-color: #171A26;
           .van-cell__value{
             .van-field__body{
-              .van-field__control::placeholder{
-               color: #5F626D;
-            }
+              .van-field__control{
+                color: #DFE0E3;
+                &::placeholder{
+                  color: #5F626D;
+                }
+              }
             }
           }
         }
@@ -213,8 +220,12 @@ p{
   padding: 0;
   margin: 0;
 }
+.drawluckly-box{
+  overflow-y: auto;
+}
 .drawluckly{
   min-height: 100vh;
+  position: relative;
 }
 .drawluckly-topbanner{
     width: 100%;
@@ -314,6 +325,7 @@ p{
     display: flex;
     justify-content: space-between;
     margin-top: 5px;
+    line-height: 15px;
   }
 }
 
@@ -337,7 +349,7 @@ p{
   }
 }
 .drawluckly-btnbox{
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   height: 95px;

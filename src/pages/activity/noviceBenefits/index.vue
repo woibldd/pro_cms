@@ -5,6 +5,7 @@
                 {{$t('noviceBenefits.sign')}}
                 <van-image
                     :src="question"
+                    @click="inviteRuleDetail"
                 />
         </div>
         <div class="Novicebenefits-sign colorBackground1">
@@ -37,7 +38,7 @@
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
                         class="Novicebenefits-sign-top-bottom-img-left"
-                        src="https://cdn.bitkeep.vip/u_b_b3e95540-79ce-11ec-9d29-f144d09ca5ed.png"
+                        src="https://cdn.bitkeep.vip/u_b_ae5cdb10-79e7-11ec-9d29-f144d09ca5ed.png"
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
@@ -47,6 +48,7 @@
                     <img
                         class="Novicebenefits-sign-top-bottom-img-right"
                         :src="question"
+                        @click="inviteRuleDetail"
                     />
                     </p>
                     <p class="textSecond2">{{$t('noviceBenefits.Participate')}}<span class="setFontFamily">{{signList.reward_pool}}</span>  BKB！</p>
@@ -157,6 +159,7 @@
             </li>
         </ul>
       </div>
+    <inviteRuleDetail :inviteRuleDetailFlag='inviteRuleDetailFlag' :theme='theme' @closeInvite='closeInvite'></inviteRuleDetail>
   </div>
 </template>
 <script>
@@ -164,6 +167,7 @@ import { USER_API } from "@/api/client";
 import { mapState } from "vuex";
 import { Toast } from 'vant';
 import Cookie from 'cookie';
+import inviteRuleDetail from './inviteRuleDetail.vue';
 export default {
   name: "Novicebenefits",
   data() {
@@ -207,7 +211,9 @@ export default {
         isUpToSwap:false,
         isUpTo50U: false,
     },
-    telegramUrl:''
+    telegramUrl:'',
+    inviteRuleDetailFlag: false,
+    theme: 0,
     };
   },
   computed: {
@@ -228,6 +234,7 @@ export default {
     }
   },
   components: {
+      inviteRuleDetail
   },
   
   mounted() {
@@ -239,6 +246,12 @@ export default {
     this.islanguage();
   },
   methods: {
+    inviteRuleDetail(){
+      this.inviteRuleDetailFlag = true;
+    },
+    closeInvite(){
+      this.inviteRuleDetailFlag = false;
+    },
     // 初始化
     info(){
         this.newUserRewardJobs();

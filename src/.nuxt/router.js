@@ -28,6 +28,7 @@ const _1a43896f = () => interopDefault(import('../pages/activity/mining/miningRu
 const _4fd6255b = () => interopDefault(import('../pages/activity/mining/protocol.vue' /* webpackChunkName: "pages/activity/mining/protocol" */))
 const _7ba78010 = () => interopDefault(import('../pages/activity/mining/RuleDetail.vue' /* webpackChunkName: "pages/activity/mining/RuleDetail" */))
 const _b520543a = () => interopDefault(import('../pages/activity/noviceBenefits/drawluckly.vue' /* webpackChunkName: "pages/activity/noviceBenefits/drawluckly" */))
+const _54a4cf92 = () => interopDefault(import('../pages/activity/noviceBenefits/inviteRuleDetail.vue' /* webpackChunkName: "pages/activity/noviceBenefits/inviteRuleDetail" */))
 const _57b9f12e = () => interopDefault(import('../pages/activity/noviceBenefits/lotteryresults.vue' /* webpackChunkName: "pages/activity/noviceBenefits/lotteryresults" */))
 const _75ea05a2 = () => interopDefault(import('../pages/activity/blindboxInvite/component/createPoster.vue' /* webpackChunkName: "pages/activity/blindboxInvite/component/createPoster" */))
 const _2873d339 = () => interopDefault(import('../pages/activity/blindbox/detail/_id.vue' /* webpackChunkName: "pages/activity/blindbox/detail/_id" */))
@@ -141,6 +142,10 @@ export const routerOptions = {
     path: "/activity/noviceBenefits/drawluckly",
     component: _b520543a,
     name: "activity-noviceBenefits-drawluckly"
+  }, {
+    path: "/activity/noviceBenefits/inviteRuleDetail",
+    component: _54a4cf92,
+    name: "activity-noviceBenefits-inviteRuleDetail"
   }, {
     path: "/activity/noviceBenefits/lotteryresults",
     component: _57b9f12e,

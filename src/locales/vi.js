@@ -478,5 +478,7 @@ module.exports = {
     'receiveSuccess':'Đã nhận',
     'receiveError':'Tập hợp bị lỗi',
     '50u':'Nội dung trên ví phải cao hơn 50u',
+    'Cumulative':'Ký vô đó bốn ngày tổng cộng, và bạn có thể có một giấy vẽ may mắn trong vòng bảy ngày.',
+    'Tips':'Mẹo'
   }
 }

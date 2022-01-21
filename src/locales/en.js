@@ -513,5 +513,7 @@ module.exports = {
     'receiveSuccess':'Received successfully',
     'receiveError':'Collection failed',
     '50u':'Wallet assets must be higher than 50u',
+    'Cumulative':'Sign in for 4 days in total, and you can get a lucky draw paper in 7 days.',
+    'Tips':'Tips'
   }
 }

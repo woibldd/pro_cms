@@ -511,5 +511,7 @@ module.exports = {
       'receiveSuccess':'领取成功',
       'receiveError':'领取失败',
       '50u':'钱包资产需高于50u',
+      'Cumulative':'累计签到4天，7天可分别领取一张抽奖卷。',
+      'Tips':'提示'
     }
 }

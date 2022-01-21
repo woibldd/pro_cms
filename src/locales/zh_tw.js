@@ -58,5 +58,7 @@ module.exports = {
       'receiveSuccess':'領取成功',
       'receiveError':'領取失敗',
       '50u':'錢包資產需高於50u',
+      'Cumulative':'累計簽到4天，7天可分別領取一張抽獎卷。',
+      'Tips':'提示'
     }
 }
