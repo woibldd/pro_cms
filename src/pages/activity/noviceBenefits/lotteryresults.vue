@@ -22,12 +22,15 @@
                 <p class="lotteryresults-list-itemNums textPrimary0">{{$t('noviceBenefits.investment')}} <span class="setFontFamily">{{item.pushPapers}}</span> {{$t('noviceBenefits.araffleticket')}}</p>
                 <p class="lotteryresults-list-item-result textSecond3">{{item.code}}</p>
              </div>
-             <div class="lotteryresults-list-left" v-if="Number(item.reward) > 0 ">
+             <div class="lotteryresults-list-left" v-if="Number(item.isReward) == 1 ">
                 <p class="lotteryresults-list-itemNums textPrimary0">🎉 {{$t('noviceBenefits.Congratulations')}}</p>
                 <p class="lotteryresults-list-item-result colorPrimary" style="text-align:right ">+ <span class="setFontFamily">{{item.reward}}</span> BKB</p>
              </div>
-             <div class="lotteryresults-list-item-result lotteryresults-list-right textSecond3" v-if="Number(item.reward) <= 0 ">
+             <div class="lotteryresults-list-item-result lotteryresults-list-right textSecond3" v-if="Number(item.isReward) == 0 ">
                  {{$t('noviceBenefits.Failedto')}}
+             </div>
+             <div class="lotteryresults-list-item-result lotteryresults-list-right textSecond3" v-if="Number(item.isReward) == 2 ">
+                 {{$t('noviceBenefits.Tobewon')}}
              </div>
         </li>
     </ul>

@@ -484,6 +484,7 @@ module.exports = {
     'Usethelotteryticket':'복권을 사용하여 복권 페이지로 이동하여 BKB 보상을 받으세요.',
     'Investedmore':'사용 가능한 쿠폰보다 더 많은 쿠폰을 투자했습니다.',
     'Investinsuccess':'성공에 투자',
-    'Failedtoputin':'넣지 못함'
+    'Failedtoputin':'넣지 못함',
+    'Tobewon':'그려지다' 
   }
 }

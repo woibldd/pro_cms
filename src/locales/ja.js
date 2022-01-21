@@ -484,6 +484,7 @@ module.exports = {
     'Usethelotteryticket':'宝くじを使用して宝くじのページに移動し、BKBの報酬を引き出します。',
     'Investedmore':'利用可能なクーポンよりも多くのクーポンを投資しました',
     'Investinsuccess':'成功への投資',
-    'Failedtoputin':'入れなかった'
+    'Failedtoputin':'入れなかった',
+    'Tobewon':'描かれる' 
   }
 }

@@ -484,6 +484,7 @@ module.exports = {
     'Usethelotteryticket':'Sử dụng vé số để đến trang xổ số để rút thưởng BKB.',
     'Investedmore':'Đã đầu tư nhiều phiếu giảm giá hơn so với phiếu giảm giá có sẵn',
     'Investinsuccess':'Đầu tư để thành công',
-    'Failedtoputin':'Không đưa vào được'
+    'Failedtoputin':'Không đưa vào được',
+    'Tobewon':'Được rút ra'
   }
 }

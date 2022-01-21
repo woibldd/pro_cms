@@ -3188,7 +3188,7 @@ module.exports = {
     'Immediate': 'Swap Now',
     'standard': 'Outstanding',
     'Getitnow': 'Act now',
-    'Viewnow': 'View Now ',
+    'Viewnow': 'View',
     'Airdropactivity': 'Airdrop Events',
     'Access': 'Go get various tokens',
     'Blindboxactivity': 'Blind Box events',
@@ -3230,7 +3230,8 @@ module.exports = {
     'Usethelotteryticket': 'Use the lottery ticket to go to the lottery page to draw BKB rewards.',
     'Investedmore': 'Invested more coupons than available coupons',
     'Investinsuccess': 'Invest in success',
-    'Failedtoputin': 'Failed to put in'
+    'Failedtoputin': 'Failed to put in',
+    'Tobewon': 'To be drawn'
   }
 };
 
@@ -3717,7 +3718,8 @@ module.exports = {
     'Usethelotteryticket': '宝くじを使用して宝くじのページに移動し、BKBの報酬を引き出します。',
     'Investedmore': '利用可能なクーポンよりも多くのクーポンを投資しました',
     'Investinsuccess': '成功への投資',
-    'Failedtoputin': '入れなかった'
+    'Failedtoputin': '入れなかった',
+    'Tobewon': '描かれる'
   }
 };
 
@@ -4186,7 +4188,8 @@ module.exports = {
     'Usethelotteryticket': '복권을 사용하여 복권 페이지로 이동하여 BKB 보상을 받으세요.',
     'Investedmore': '사용 가능한 쿠폰보다 더 많은 쿠폰을 투자했습니다.',
     'Investinsuccess': '성공에 투자',
-    'Failedtoputin': '넣지 못함'
+    'Failedtoputin': '넣지 못함',
+    'Tobewon': '그려지다'
   }
 };
 
@@ -4655,7 +4658,8 @@ module.exports = {
     'Usethelotteryticket': 'Sử dụng vé số để đến trang xổ số để rút thưởng BKB.',
     'Investedmore': 'Đã đầu tư nhiều phiếu giảm giá hơn so với phiếu giảm giá có sẵn',
     'Investinsuccess': 'Đầu tư để thành công',
-    'Failedtoputin': 'Không đưa vào được'
+    'Failedtoputin': 'Không đưa vào được',
+    'Tobewon': 'Được rút ra'
   }
 };
 
@@ -5159,7 +5163,8 @@ module.exports = {
     'Usethelotteryticket': "使用抽奖卷可前往抽奖页面抽取BKB奖励。",
     'Investedmore': '投入兑奖券超过可用抽奖卷',
     'Investinsuccess': '投入成功',
-    'Failedtoputin': '投入失败'
+    'Failedtoputin': '投入失败',
+    'Tobewon': '待开奖'
   }
 };
 
@@ -5233,7 +5238,8 @@ module.exports = {
     'Usethelotteryticket': '使用抽獎卷可前往抽獎頁面抽取BKB獎勵。',
     'Investedmore': '投入兌獎券超過可用抽獎卷',
     'Investinsuccess': '投入成功',
-    'Failedtoputin': '投入失敗'
+    'Failedtoputin': '投入失敗',
+    'Tobewon': '待開獎'
   }
 };
 
@@ -5265,7 +5271,7 @@ module.exports = {
     'Immediate': 'Swap Now',
     'standard': 'Outstanding',
     'Getitnow': 'Get it now',
-    'Viewnow': 'View Now ',
+    'Viewnow': 'View',
     'Airdropactivity': 'Airdrop Events',
     'Access': 'Go get various tokens',
     'Blindboxactivity': 'Blind Box events',
@@ -5307,7 +5313,8 @@ module.exports = {
     'Usethelotteryticket': 'Use the lottery ticket to go to the lottery page to draw BKB rewards.',
     'Investedmore': 'Invested more coupons than available coupons',
     'Investinsuccess': 'Invest in success',
-    'Failedtoputin': 'Failed to put in'
+    'Failedtoputin': 'Failed to put in',
+    'Tobewon': 'To be drawn'
   }
 }; // 印尼
 // 'noviceBenefits':{

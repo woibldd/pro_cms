@@ -517,6 +517,7 @@ module.exports = {
       'Usethelotteryticket':"使用抽奖卷可前往抽奖页面抽取BKB奖励。",
       'Investedmore':'投入兑奖券超过可用抽奖卷',
       'Investinsuccess':'投入成功',
-      'Failedtoputin':'投入失败'
+      'Failedtoputin':'投入失败',
+      'Tobewon':'待开奖'
     }
 }

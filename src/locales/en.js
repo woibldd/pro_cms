@@ -477,7 +477,7 @@ module.exports = {
     'Immediate':'Swap Now',
     'standard':'Outstanding',
     'Getitnow':'Act now',
-    'Viewnow':'View Now ',
+    'Viewnow':'View',
     'Airdropactivity':'Airdrop Events',
     'Access':'Go get various tokens',
     'Blindboxactivity':'Blind Box events',
@@ -519,6 +519,7 @@ module.exports = {
     'Usethelotteryticket':'Use the lottery ticket to go to the lottery page to draw BKB rewards.',
     'Investedmore':'Invested more coupons than available coupons',
     'Investinsuccess':'Invest in success',
-    'Failedtoputin':'Failed to put in'
+    'Failedtoputin':'Failed to put in',
+    'Tobewon':'To be drawn' 
   }
 }
