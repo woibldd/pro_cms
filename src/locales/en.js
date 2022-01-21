@@ -555,5 +555,9 @@ module.exports = {
     OverviewContent4: 'Go to the "Trading Reward" page in BitKeep to see everything about your gains.',
     how5: '5. How to claim your trading rewards?',
     OverviewContent5: 'Go to "Trading Reward" page and tap "Claim" button to claim your rewards.',
+    popTit: 'Risk Warning',
+    tit1: 'The Trading Reward events are only to reward our fans. They may not be considered as investment advice.',
+    tit2: 'Reminder: The price of digital assets fluctuates greatly. Users are advised to fully understand and accept the risks of digital asset investment before investing.',
+    btn: 'OK, i got it'
   }
 }

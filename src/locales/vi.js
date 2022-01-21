@@ -520,6 +520,9 @@ module.exports = {
     OverviewContent4: 'Truy cập trang "Phần thưởng giao dịch" trong BitKeep để xem mọi thứ về lợi nhuận của bạn.',
     how5: '5. Làm thế nào để nhận phần thưởng giao dịch của bạn?',
     OverviewContent5: 'Truy cập trang "Phần thưởng giao dịch" và nhấn vào nút "Yêu cầu" để nhận phần thưởng của bạn.',
-  
+    popTit: 'Cảnh báo rủi ro',
+    tit1: 'Các sự kiện Phần thưởng giao dịch chỉ để thưởng cho người hâm mộ của chúng tôi. Chúng có thể không được coi là lời khuyên đầu tư.',
+    tit2: 'Nhắc nhở: Giá của tài sản kỹ thuật số biến động rất nhiều. Người dùng nên hiểu đầy đủ và chấp nhận những rủi ro của việc đầu tư tài sản kỹ thuật số trước khi đầu tư.',
+    btn: 'OK, tôi hiểu rồi'
   }
 }
