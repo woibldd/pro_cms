@@ -369,13 +369,13 @@ export default {
     async welfareSignInfunc(index){
         if ((index !== this.signDay && index < this.signDay) || this.signList.todayIsSgin) return;
         const { data, status } = await USER_API.welfareSignIn();
-        if(data.success === true){
+        if(data === true){
             this.signList.list[index].isSignin = true;
-            this.firstEnter('',this.$t('noviceBenefits.signSuccess'));
             this.getSignInDetailByUser();
+            this.firstEnter('',this.$t('noviceBenefits.signSuccess'));
         }else{
+            this.getSignInDetailByUser();
             this.firstEnter('',this.$t('noviceBenefits.signError'));
-
         }
     },
 
