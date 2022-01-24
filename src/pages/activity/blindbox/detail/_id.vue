@@ -118,18 +118,14 @@
               <span></span>
             </div>
           </div>
-          <!-- <div id='recaptcha' class="g-recaptcha"
-          data-sitekey="6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26"
-          data-callback="onSubmit"
-          data-size="invisible"></div> -->
-            <vue2-recaptcha-invisible 
+            <!-- <vue2-recaptcha-invisible 
               data-sitekey="6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26" 
               :data-validate="validate"
               :data-callback="onSubmit"
               data-btn-class="btn"
               data-type ='image'
               :data-btn-disabled="false"
-              > 
+              >  -->
             <!-- 操作按钮÷÷ -->
             <BlindButton
               v-if="info.status != 3"
@@ -137,8 +133,8 @@
               @handerBotton="handerBotton"
               :info="info"
             />
-            <div v-else> </div>
-          </vue2-recaptcha-invisible>
+            <!-- <div v-else> </div>
+          </vue2-recaptcha-invisible> -->
           
           <!-- 下载地址 -->
           <div v-if="!isBitKeep" class="block_invite_down">
@@ -357,8 +353,11 @@ head () {
         });
         this.hideLoading();
         if (HelpR.status != 0) {
-          this.$toast.fail(HelpR.data);
-          return;
+          return this.$dialog.alert({
+            message: HelpR.data,
+            confirmButtonText: this.$t("blindboxInvite.know"),
+            confirmButtonColor: "$theme-light-colorPrimary",
+          });
         }
         this.getDetails();
         this.$toast.success(
@@ -472,46 +471,29 @@ head () {
           this.$refs.textarea && this.$refs.textarea.focus();
           return;
         }
-        // window.grecaptcha.execute();
-        // setTimeout(() => {
-        //   window.grecaptcha.render("recaptcha", {
-        //     sitekey: '6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26',
-        //     callback: this.onSubmit
-        //   });
-        // }, 200);
-      //   window.grecaptcha.execute('6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26', { action: 'login' }).then((token) => {
-      //   // recaptcha 调用是后台的接口的方法
-      //   this.onSubmit(token);
-      // })
-        // const HelpR = await USER_API.helpMBox({
-        //   address: this.address,
-        //   id: this.info.id,
-        //   scene: this.info.scene,
-        //   verifytoken: this.verifytoken
-        // });
-        // this.hideLoading();
-        // if (HelpR.status != 0) {
-        //   this.$toast.fail(HelpR.data);
-        //   return;
-        // }
-        // this.getDetails();
-
-        // this.$toast.success(
-        //   this.$t("ActivityBlindbox.toast.ContributeSuccess")
-        // );
-        // // await new Promise((resolve) =>
-        // //   BitKeepInvoke.alert(
-        // //     this.$t("ActivityBlindbox.dialog.helperSuccess"),
-        // //     resolve
-        // //   )
-        // // );
-        // // await this.getDetails();
-
-        // !this.isBitKeep &&
-        //   this.$router.push({
-        //     path: "/activity/blindbox/download",
-        //     query: {}
-        //   });
+        
+        const HelpR = await USER_API.helpMBox({
+          address: this.address,
+          id: this.info.id,
+          scene: this.info.scene
+        });
+        this.hideLoading();
+        if (HelpR.status != 0) {
+          return this.$dialog.alert({
+            message: HelpR.data,
+            confirmButtonText: this.$t("blindboxInvite.know"),
+            confirmButtonColor: "$theme-light-colorPrimary",
+          });
+        }
+        this.getDetails();
+        this.$toast.success(
+          this.$t("ActivityBlindbox.toast.ContributeSuccess")
+        );
+        !this.isBitKeep &&
+          this.$router.push({
+            path: "/activity/blindbox/download",
+            query: {}
+          });
       }
     },
     back() {
