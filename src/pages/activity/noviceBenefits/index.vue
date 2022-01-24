@@ -245,7 +245,7 @@ export default {
     this.islanguage();
   },
   methods: {
-      firstEnter(title,message) {
+      firstEnter(title,message,type) {
         let mes =
             "<div class='popBox'><p>" +
             message +
@@ -256,7 +256,9 @@ export default {
             confirmButtonText: this.$t("CbkbExchange.know"),
             confirmButtonColor: "#495BFF",
         }).then(()=>{
-            this.$router.push("/activity/noviceBenefits/lotteryresults")
+            if(type && type==="prize"){
+                this.$router.push("/activity/noviceBenefits/lotteryresults")
+            }
         });
     },
 
@@ -304,7 +306,7 @@ export default {
         if(data){
             this.newUser = data;
             if(!!data.isAlterReward){
-                this.firstEnter('',this.$t('noviceBenefits.congratulations') + data.yestdaycode + this.$t('noviceBenefits.winningthelottery') + data.yestdayRewardPool + 'BKB!');
+                this.firstEnter('',this.$t('noviceBenefits.congratulations') + data.yestdaycode + this.$t('noviceBenefits.winningthelottery') + data.yestdayRewardPool + 'BKB!',prize);
             }
         }
     },
