@@ -255,6 +255,8 @@ export default {
             message: mes,
             confirmButtonText: this.$t("CbkbExchange.know"),
             confirmButtonColor: "#495BFF",
+        }).then(()=>{
+            this.$router.push("/activity/noviceBenefits/lotteryresults")
         });
     },
 
@@ -360,11 +362,11 @@ export default {
     },
     async welfareSignInfunc(index){
         if ((index !== this.signDay && index < this.signDay) || this.signList.todayIsSgin) return;
-        console.log(this.signList.todayIsSgin)
         const { data, status } = await USER_API.welfareSignIn();
         if(data === true){
             this.signList.list[index].isSignin = true;
             this.firstEnter('',this.$t('noviceBenefits.signSuccess'));
+            this.getSignInDetailByUser();
         }else{
             this.firstEnter('',this.$t('noviceBenefits.signError'));
 
