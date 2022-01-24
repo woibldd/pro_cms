@@ -3232,8 +3232,9 @@ module.exports = {
     'Investinsuccess': 'Invest in success',
     'Failedtoputin': 'Failed to put in',
     'Tobewon': 'To be drawn',
-    'congratulations': 'congratulations ',
-    'winningthelottery': ' winning the lottery '
+    'congratulations': 'congratulations',
+    'winningthelottery': ' winning the lottery',
+    'Cloudwallet': 'Cloud wallet has not been created yet'
   }
 };
 
@@ -3723,7 +3724,8 @@ module.exports = {
     'Failedtoputin': '入れなかった',
     'Tobewon': '描かれる',
     'congratulations': 'おめでとう ',
-    'winningthelottery': ' 宝くじに当選 '
+    'winningthelottery': ' 宝くじに当選',
+    'Cloudwallet': 'クラウドウォレットはまだ作成されていません'
   }
 };
 
@@ -4194,8 +4196,9 @@ module.exports = {
     'Investinsuccess': '성공에 투자',
     'Failedtoputin': '넣지 못함',
     'Tobewon': '그려지다',
-    'congratulations': '축하합니다 ',
-    'winningthelottery': ' 복권 당첨 '
+    'congratulations': '축하합니다',
+    'winningthelottery': ' 복권 당첨',
+    'Cloudwallet': '클라우드 지갑이 아직 생성되지 않았습니다.'
   }
 };
 
@@ -4666,8 +4669,9 @@ module.exports = {
     'Investinsuccess': 'Đầu tư để thành công',
     'Failedtoputin': 'Không đưa vào được',
     'Tobewon': 'Được rút ra',
-    'congratulations': 'Xin chúc mừng ',
-    'winningthelottery': ' Trúng xổ số '
+    'congratulations': 'Xin chúc mừng',
+    'winningthelottery': ' Trúng xổ số',
+    'Cloudwallet': 'Ví điện toán đám mây chưa được tạo'
   }
 };
 
@@ -5174,7 +5178,8 @@ module.exports = {
     'Failedtoputin': '投入失败',
     'Tobewon': '待开奖',
     'congratulations': '恭喜您在',
-    'winningthelottery': '中奖'
+    'winningthelottery': '中奖',
+    'Cloudwallet': '暂未创建云钱包'
   }
 };
 
@@ -5251,7 +5256,8 @@ module.exports = {
     'Failedtoputin': '投入失敗',
     'Tobewon': '待開獎',
     'congratulations': '恭喜您在',
-    'winningthelottery': '中獎'
+    'winningthelottery': '中獎',
+    'Cloudwallet': '暫未創建雲錢包'
   }
 };
 
@@ -5328,7 +5334,8 @@ module.exports = {
     'Failedtoputin': 'Failed to put in',
     'Tobewon': 'To be drawn',
     'congratulations': 'congratulations ',
-    'winningthelottery': ' winning the lottery '
+    'winningthelottery': ' winning the lottery',
+    'Cloudwallet': 'Cloud wallet has not been created yet'
   }
 }; // 印尼
 // 'noviceBenefits':{

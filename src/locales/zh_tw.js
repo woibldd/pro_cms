@@ -67,6 +67,7 @@ module.exports = {
       'Failedtoputin':'投入失敗',
       'Tobewon':'待開獎',
       'congratulations':'恭喜您在',
-      'winningthelottery':'中獎'
+      'winningthelottery':'中獎',
+      'Cloudwallet':'暫未創建雲錢包'
     }
 }

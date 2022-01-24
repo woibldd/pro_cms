@@ -486,7 +486,8 @@ module.exports = {
     'Investinsuccess':'Đầu tư để thành công',
     'Failedtoputin':'Không đưa vào được',
     'Tobewon':'Được rút ra',
-    'congratulations':'Xin chúc mừng ',
-    'winningthelottery':' Trúng xổ số '
+    'congratulations':'Xin chúc mừng',
+    'winningthelottery':' Trúng xổ số',
+    'Cloudwallet':'Ví điện toán đám mây chưa được tạo'
   }
 }

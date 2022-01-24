@@ -486,7 +486,8 @@ module.exports = {
     'Investinsuccess':'성공에 투자',
     'Failedtoputin':'넣지 못함',
     'Tobewon':'그려지다',
-    'congratulations':'축하합니다 ',
-    'winningthelottery':' 복권 당첨 '
+    'congratulations':'축하합니다',
+    'winningthelottery':' 복권 당첨',
+    'Cloudwallet':'클라우드 지갑이 아직 생성되지 않았습니다.'
   }
 }

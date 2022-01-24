@@ -327,9 +327,11 @@ export default {
         }else{
             if(!!this.newUser.isUpTo50U){
                 const { data, status } = await USER_API.getFirstSwapJob();
-                if(data === true){
+                if(data.success === true && !!data.isActivate){
                     this.firstEnter('',this.$t('noviceBenefits.receiveSuccess'));
                     this.newUserRewardJobs();
+                }else if (!data.isActivate){
+                    this.firstEnter('',this.$t('noviceBenefits.Cloudwallet'));
                 }else{
                     this.firstEnter('',this.$t('noviceBenefits.receiveError'));
                 }
@@ -350,9 +352,11 @@ export default {
             // 立即领取
             if(!!this.newUser.isUpTo50U){
                 const { data, status } = await USER_API.getJoinTeleJob();
-                if(data === true){
+                if(data.success === true && !!data.isActivate){
                      this.firstEnter('',this.$t('noviceBenefits.receiveSuccess'));
                     this.newUserRewardJobs();
+                }else if (!data.isActivate){
+                    this.firstEnter('',this.$t('noviceBenefits.Cloudwallet'));
                 }else{
                     this.firstEnter('',this.$t('noviceBenefits.receiveError'));
                 }
@@ -365,7 +369,7 @@ export default {
     async welfareSignInfunc(index){
         if ((index !== this.signDay && index < this.signDay) || this.signList.todayIsSgin) return;
         const { data, status } = await USER_API.welfareSignIn();
-        if(data === true){
+        if(data.success === true){
             this.signList.list[index].isSignin = true;
             this.firstEnter('',this.$t('noviceBenefits.signSuccess'));
             this.getSignInDetailByUser();

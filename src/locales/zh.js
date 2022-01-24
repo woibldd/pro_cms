@@ -520,6 +520,7 @@ module.exports = {
       'Failedtoputin':'投入失败',
       'Tobewon':'待开奖',
       'congratulations':'恭喜您在',
-      'winningthelottery':'中奖'
+      'winningthelottery':'中奖',
+      'Cloudwallet':'暂未创建云钱包'
     }
 }

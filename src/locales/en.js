@@ -521,7 +521,8 @@ module.exports = {
     'Investinsuccess':'Invest in success',
     'Failedtoputin':'Failed to put in',
     'Tobewon':'To be drawn',
-    'congratulations':'congratulations ',
-    'winningthelottery':' winning the lottery '
+    'congratulations':'congratulations',
+    'winningthelottery':' winning the lottery',
+    'Cloudwallet':'Cloud wallet has not been created yet'
   }
 }

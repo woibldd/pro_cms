@@ -487,6 +487,7 @@ module.exports = {
     'Failedtoputin':'入れなかった',
     'Tobewon':'描かれる',
     'congratulations':'おめでとう ',
-    'winningthelottery':' 宝くじに当選 '
+    'winningthelottery':' 宝くじに当選',
+    'Cloudwallet':'クラウドウォレットはまだ作成されていません'
   }
 }
