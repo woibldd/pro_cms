@@ -370,7 +370,6 @@ export default {
         if ((index !== this.signDay && index < this.signDay) || this.signList.todayIsSgin) return;
         const { data, status } = await USER_API.welfareSignIn();
         if(data === true){
-            this.signList.list[index].isSignin = true;
             this.getSignInDetailByUser();
             this.firstEnter('',this.$t('noviceBenefits.signSuccess'));
         }else{
