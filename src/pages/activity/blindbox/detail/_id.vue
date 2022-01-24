@@ -118,14 +118,14 @@
               <span></span>
             </div>
           </div>
-            <!-- <vue2-recaptcha-invisible 
+            <vue2-recaptcha-invisible 
               data-sitekey="6LeNstsdAAAAAMR2UBwyqxUuL3CPgD4QT_yxVG26" 
               :data-validate="validate"
               :data-callback="onSubmit"
               data-btn-class="btn"
               data-type ='image'
               :data-btn-disabled="false"
-              >  -->
+              > 
             <!-- 操作按钮÷÷ -->
             <BlindButton
               v-if="info.status != 3"
@@ -133,8 +133,8 @@
               @handerBotton="handerBotton"
               :info="info"
             />
-            <!-- <div v-else> </div>
-          </vue2-recaptcha-invisible> -->
+            <div v-else> </div>
+          </vue2-recaptcha-invisible>
           
           <!-- 下载地址 -->
           <div v-if="!isBitKeep" class="block_invite_down">
@@ -356,7 +356,6 @@ head () {
           return this.$dialog.alert({
             message: HelpR.data,
             confirmButtonText: this.$t("blindboxInvite.know"),
-            confirmButtonColor: "$theme-light-colorPrimary",
           });
         }
         this.getDetails();
@@ -472,28 +471,28 @@ head () {
           return;
         }
         
-        const HelpR = await USER_API.helpMBox({
-          address: this.address,
-          id: this.info.id,
-          scene: this.info.scene
-        });
-        this.hideLoading();
-        if (HelpR.status != 0) {
-          return this.$dialog.alert({
-            message: HelpR.data,
-            confirmButtonText: this.$t("blindboxInvite.know"),
-            confirmButtonColor: "$theme-light-colorPrimary",
-          });
-        }
-        this.getDetails();
-        this.$toast.success(
-          this.$t("ActivityBlindbox.toast.ContributeSuccess")
-        );
-        !this.isBitKeep &&
-          this.$router.push({
-            path: "/activity/blindbox/download",
-            query: {}
-          });
+        // const HelpR = await USER_API.helpMBox({
+        //   address: this.address,
+        //   id: this.info.id,
+        //   scene: this.info.scene
+        // });
+        // this.hideLoading();
+        // if (HelpR.status != 0) {
+        //   return this.$dialog.alert({
+        //     message: HelpR.data,
+        //     confirmButtonText: this.$t("blindboxInvite.know"),
+        //     confirmButtonColor: "$theme-light-colorPrimary",
+        //   });
+        // }
+        // this.getDetails();
+        // this.$toast.success(
+        //   this.$t("ActivityBlindbox.toast.ContributeSuccess")
+        // );
+        // !this.isBitKeep &&
+        //   this.$router.push({
+        //     path: "/activity/blindbox/download",
+        //     query: {}
+        //   });
       }
     },
     back() {
