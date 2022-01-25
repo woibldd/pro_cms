@@ -477,7 +477,7 @@ module.exports = {
     'signError':'로그인 실패',
     'receiveSuccess':'성공적으로 수신됨',
     'receiveError':'소유권 주장 실패',
-    '50u':'지갑 자산은 50u 이상이어야 합니다.',
+    '50u':'50u 이상의 자산은 24시간의 보유 시간 이후에 청구할 수 있습니다.',
     'Cumulative':'累누적 출석 4 일, 7 일 동안 추첨권 1 장을 수령할 수 있습니다.',
     'Tips':'체크인 규칙',
     'Whatisaraffleticket':"추첨권이란?",

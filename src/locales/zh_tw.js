@@ -57,7 +57,7 @@ module.exports = {
       'signError':'簽到失敗',
       'receiveSuccess':'領取成功',
       'receiveError':'領取失敗',
-      '50u':'錢包資產需高於50u',
+      '50u':'資產大於50u持幣時長24小時後可領取',
       'Cumulative':'累計簽到4天，7天可分別領取一張抽獎卷。',
       'Tips':'簽到規則',
       'Whatisaraffleticket':"什麼是抽獎卷?",

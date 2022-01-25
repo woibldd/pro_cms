@@ -57,7 +57,7 @@ module.exports = {
     'signError':'Check in failed',
     'receiveSuccess':'Received successfully',
     'receiveError':'Collection failed',
-    '50u':'Wallet assets must be higher than 50u',
+    '50u':'Assets greater than 50u can be claimed after 24 hours of holding time',
     'Cumulative':'Sign in for 4 days in total, and you can get a lucky draw paper in 7 days.',
     'Tips':'check-in rules',
     'Whatisaraffleticket':"What is a raffle ticket?",

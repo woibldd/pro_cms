@@ -329,7 +329,7 @@ export default {
                 const { data, status } = await USER_API.getFirstSwapJob();
                 if(data.success === true && !!data.isActivate){
                     this.firstEnter('',this.$t('noviceBenefits.receiveSuccess'));
-                    this.newUserRewardJobs();
+                    this.getSignInDetailByUser();
                 }else if (!data.isActivate){
                     this.firstEnter('',this.$t('noviceBenefits.Cloudwallet'));
                 }else{

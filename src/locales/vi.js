@@ -477,7 +477,7 @@ module.exports = {
     'signError':'Lỗi kiểm tra',
     'receiveSuccess':'Đã nhận',
     'receiveError':'Tập hợp bị lỗi',
-    '50u':'Nội dung trên ví phải cao hơn 50u',
+    '50u':'Tài sản lớn hơn 50u có thể được yêu cầu sau 24 giờ giữ',
     'Cumulative':'Ký vô đó bốn ngày tổng cộng, và bạn có thể có một giấy vẽ may mắn trong vòng bảy ngày.',
     'Tips':'quy tắc đăng ký',
     'Whatisaraffleticket':"Vé xổ số là gì?",

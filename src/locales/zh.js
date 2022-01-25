@@ -510,7 +510,7 @@ module.exports = {
       'signError':'签到失败',
       'receiveSuccess':'领取成功',
       'receiveError':'领取失败',
-      '50u':'钱包资产需高于50u',
+      '50u':'资产大于50u持币时长24小时后可领取',
       'Cumulative':'累计签到4天，7天可分别领取一张抽奖卷。',
       'Tips':'签到规则',
       'Whatisaraffleticket':"什么是抽奖卷?",
