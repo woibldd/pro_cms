@@ -3234,7 +3234,8 @@ module.exports = {
     'Tobewon': 'To be drawn',
     'congratulations': 'congratulations',
     'winningthelottery': ' winning the lottery',
-    'Cloudwallet': 'Cloud wallet has not been created yet'
+    'Cloudwallet': 'Cloud wallet has not been created yet',
+    'incompatible': 'incompatible'
   }
 };
 
@@ -3725,7 +3726,8 @@ module.exports = {
     'Tobewon': '描かれる',
     'congratulations': 'おめでとう ',
     'winningthelottery': ' 宝くじに当選',
-    'Cloudwallet': 'クラウドウォレットはまだ作成されていません'
+    'Cloudwallet': 'クラウドウォレットはまだ作成されていません',
+    'incompatible': '非互換'
   }
 };
 
@@ -4198,7 +4200,8 @@ module.exports = {
     'Tobewon': '그려지다',
     'congratulations': '축하합니다',
     'winningthelottery': ' 복권 당첨',
-    'Cloudwallet': '클라우드 지갑이 아직 생성되지 않았습니다.'
+    'Cloudwallet': '클라우드 지갑이 아직 생성되지 않았습니다.',
+    'incompatible': '호환되지 않는'
   }
 };
 
@@ -4671,7 +4674,8 @@ module.exports = {
     'Tobewon': 'Được rút ra',
     'congratulations': 'Xin chúc mừng',
     'winningthelottery': ' Trúng xổ số',
-    'Cloudwallet': 'Ví điện toán đám mây chưa được tạo'
+    'Cloudwallet': 'Ví điện toán đám mây chưa được tạo',
+    'incompatible': 'không tương thích'
   }
 };
 
@@ -5179,7 +5183,8 @@ module.exports = {
     'Tobewon': '待开奖',
     'congratulations': '恭喜您在',
     'winningthelottery': '中奖',
-    'Cloudwallet': '暂未创建云钱包'
+    'Cloudwallet': '暂未创建云钱包',
+    'incompatible': '不符合'
   }
 };
 
@@ -5257,7 +5262,8 @@ module.exports = {
     'Tobewon': '待開獎',
     'congratulations': '恭喜您在',
     'winningthelottery': '中獎',
-    'Cloudwallet': '暫未創建雲錢包'
+    'Cloudwallet': '暫未創建雲錢包',
+    'incompatible': '不符合'
   }
 };
 
@@ -5335,7 +5341,8 @@ module.exports = {
     'Tobewon': 'To be drawn',
     'congratulations': 'congratulations ',
     'winningthelottery': ' winning the lottery',
-    'Cloudwallet': 'Cloud wallet has not been created yet'
+    'Cloudwallet': 'Cloud wallet has not been created yet',
+    'incompatible': 'incompatible'
   }
 }; // 印尼
 // 'noviceBenefits':{
@@ -7277,12 +7284,12 @@ function wrapFunctional(options) {
 
 
 const components = {
+  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 179)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 185)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 282)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 103)).then(c => wrapFunctional(c.default || c)),
   BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 186)).then(c => wrapFunctional(c.default || c)),
   BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 184)).then(c => wrapFunctional(c.default || c)),
-  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 179)).then(c => wrapFunctional(c.default || c)),
   CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 81)).then(c => wrapFunctional(c.default || c)),
   CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 72)).then(c => wrapFunctional(c.default || c)),
   Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 76)).then(c => wrapFunctional(c.default || c)),

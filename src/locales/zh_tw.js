@@ -68,6 +68,7 @@ module.exports = {
       'Tobewon':'待開獎',
       'congratulations':'恭喜您在',
       'winningthelottery':'中獎',
-      'Cloudwallet':'暫未創建雲錢包'
+      'Cloudwallet':'暫未創建雲錢包',
+      'incompatible':'不符合'
     }
 }

@@ -523,6 +523,7 @@ module.exports = {
     'Tobewon':'To be drawn',
     'congratulations':'congratulations',
     'winningthelottery':' winning the lottery',
-    'Cloudwallet':'Cloud wallet has not been created yet'
+    'Cloudwallet':'Cloud wallet has not been created yet',
+    'incompatible':'incompatible'
   }
 }

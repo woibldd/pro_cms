@@ -488,6 +488,7 @@ module.exports = {
     'Tobewon':'描かれる',
     'congratulations':'おめでとう ',
     'winningthelottery':' 宝くじに当選',
-    'Cloudwallet':'クラウドウォレットはまだ作成されていません'
+    'Cloudwallet':'クラウドウォレットはまだ作成されていません',
+    'incompatible':'非互換'
   }
 }

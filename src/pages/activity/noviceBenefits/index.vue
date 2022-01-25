@@ -58,8 +58,8 @@
                 </div>
             </div>
         </div>
-        <div class="Novicebenefits-title Novicebenefits-title-not textPrimary0" v-if="!!newUser.isNewUser">{{$t('noviceBenefits.Novice')}}</div>
-        <ul class="Novicebenefits-reward Novicebenefits-sign-top-bottom colorBackground1" v-if="!!newUser.isNewUser && (!newUser.isDoneTelJob || !newUser.isDoneSwap)">
+        <div class="Novicebenefits-title Novicebenefits-title-not textPrimary0" >{{$t('noviceBenefits.Novice')}}</div>
+        <ul class="Novicebenefits-reward Novicebenefits-sign-top-bottom colorBackground1" >
             <!-- 加入Telegram -->
             <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom">
                 <div class="Novicebenefits-sign-top-bottom-img">
@@ -71,13 +71,16 @@
                     <p class="textPrimary0">{{$t('noviceBenefits.Telegram')}}</p>
                     <p class="textSecond2">{{$t('noviceBenefits.Reward')}} BKB +1</p>
                 </div> 
-                <div class="Novicebenefits-sign-top-bottom-btn">
+                 <div class="Novicebenefits-sign-top-bottom-btn" v-if="!newUser.isNewUser">
+                    <span class="alreadydraw-btn textSecond3">  {{$t('noviceBenefits.incompatible')}}</span>
+                </div>
+                <div class="Novicebenefits-sign-top-bottom-btn" v-else>
                     <span class="alreadydraw-btn textSecond3" v-if="!!newUser.isDoneTelJob">{{$t('noviceBenefits.alreadyReceived')}}</span>
                     <van-button class="draw-btn colorBackgroundPrimary" @click="joinTelegram()" v-else><span class="colorwhite Novicebenefits-sign-top-bottom-btn-span"> <span class="colorwhite"> {{!!joinTelegramflag ?  $t('noviceBenefits.Getitnow') : $t('noviceBenefits.Join')}}</span></span></van-button>
                 </div>
             </li>
 
-            <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom " v-if="!newUser.isDoneSwap">
+            <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom ">
                 <!-- swap交易 -->
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
@@ -88,14 +91,17 @@
                     <p class="textPrimary0">{{$t('noviceBenefits.swap')}}</p>
                     <p class="textSecond2">{{$t('noviceBenefits.raffle')}}</p>
                 </div>
-                <div class="Novicebenefits-sign-top-bottom-btn">
+                <div class="Novicebenefits-sign-top-bottom-btn" v-if="!newUser.isNewUser">
+                    <span class="alreadydraw-btn textSecond3"> {{$t('noviceBenefits.incompatible')}}</span>
+                </div>
+                <div class="Novicebenefits-sign-top-bottom-btn" v-else>
                     <span class="alreadydraw-btn textSecond3" v-if="!!newUser.isDoneSwap">{{$t('noviceBenefits.alreadyReceived')}}</span>
                     <van-button class="draw-btn colorBackgroundPrimary" @click="SwapTransaction()" v-else><span class="colorwhite Novicebenefits-sign-top-bottom-btn-span"> {{newUser.isUpToSwap ?  $t('noviceBenefits.Getitnow') : $t('noviceBenefits.Immediate')}}</span></van-button>
                 </div>
             </li>
 
                 <!-- 入金50u -->
-            <!-- <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom" v-if="!newUser.isDone50U">
+            <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom" >
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
                         src="https://cdn.bitkeep.vip/u_b_cb358fc0-72a8-11ec-bb03-832c5d2a67c5.png"
@@ -103,13 +109,17 @@
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
                     <p class="textPrimary0">{{$t('noviceBenefits.USDT')}}</p>
-                    <p class="textSecond2">{{$t('noviceBenefits.Reward')}} BKB +2</p>
+                    <p class="textSecond2">{{$t('noviceBenefits.Reward')}} BKB + 1</p>
                 </div>
-                <div class="Novicebenefits-sign-top-bottom-btn">
-                    <span v-if="!newUser.isUpTo50U" class="textbtn textSecond3 standard"> {{$t('noviceBenefits.standard')}}</span>
-                    <van-button class="draw-btn colorBackgroundPrimary" @click="UpTo50U()" v-if="newUser.isUpTo50U"><span class="colorwhite Novicebenefits-sign-top-bottom-btn-span"> {{ $t('noviceBenefits.Join')}}</span></van-button>
+                  <div class="Novicebenefits-sign-top-bottom-btn" v-if="!newUser.isNewUser">
+                    <span class="alreadydraw-btn textSecond3"> {{$t('noviceBenefits.incompatible')}}</span>
                 </div>
-            </li> -->
+                <div class="Novicebenefits-sign-top-bottom-btn" v-else>
+                     <span class="alreadydraw-btn textSecond3" v-if="!!newUser.isDone50U">{{$t('noviceBenefits.alreadyReceived')}}</span>
+                    <span v-else-if="!newUser.isUpTo50U" class=" alreadydraw-btn textbtn textSecond3 standard"> {{$t('noviceBenefits.standard')}}</span>
+                    <van-button class="draw-btn colorBackgroundPrimary" @click="UpTo50U()" v-if="newUser.isUpTo50U"><span class="colorwhite Novicebenefits-sign-top-bottom-btn-span"> {{ $t('noviceBenefits.Getitnow')}}</span></van-button>
+                </div>
+            </li>
         </ul>
 
          <div class="Novicebenefits-title Novicebenefits-title-not textPrimary0">{{$t('noviceBenefits.Morebenefits')}}</div>
@@ -209,6 +219,7 @@ export default {
         isDoneSwap: false,
         isUpToSwap:false,
         isUpTo50U: false,
+        isDone50U:false,
         isAlterReward: false, // 是否弹出最近一次中奖信息
         yestdaycode: '', // 最近一次中奖期号
         yestdayRewardPool: 0 // 最近一次中奖奖池
@@ -310,15 +321,15 @@ export default {
             }
         }
     },
-    // async UpTo50U(){
-    //     const { data, status } = await USER_API.getFirst50UJob();
-    //     if(data === true){
-    //          this.firstEnter(this.$t('noviceBenefits.receiveSuccess'));
-    //         this.newUserRewardJobs();
-    //     }else{
-    //         this.$toast(this.$t('noviceBenefits.receiveError'));
-    //     }
-    // },
+    async UpTo50U(){
+        const { data, status } = await USER_API.getFirst50UJob();
+        if(data === true){
+             this.firstEnter(this.$t('noviceBenefits.receiveSuccess'));
+            this.info();
+        }else{
+            this.$toast(this.$t('noviceBenefits.receiveError'));
+        }
+    },
     async SwapTransaction(){
         // SWAP交易
         if(!this.newUser.isUpToSwap){
@@ -329,7 +340,7 @@ export default {
                 const { data, status } = await USER_API.getFirstSwapJob();
                 if(data.success === true && !!data.isActivate){
                     this.firstEnter('',this.$t('noviceBenefits.receiveSuccess'));
-                    this.getSignInDetailByUser();
+                    this.info();
                 }else if (!data.isActivate){
                     this.firstEnter('',this.$t('noviceBenefits.Cloudwallet'));
                 }else{
@@ -354,7 +365,7 @@ export default {
                 const { data, status } = await USER_API.getJoinTeleJob();
                 if(data.success === true && !!data.isActivate){
                      this.firstEnter('',this.$t('noviceBenefits.receiveSuccess'));
-                    this.newUserRewardJobs();
+                    this.info();
                 }else if (!data.isActivate){
                     this.firstEnter('',this.$t('noviceBenefits.Cloudwallet'));
                 }else{
@@ -608,7 +619,6 @@ p{
             }
        }
        .alreadydraw-btn{
-            display: inline-block;
             width: 70px;
             height: 28px;
             text-align: center;
@@ -618,6 +628,8 @@ p{
             overflow:hidden;
             text-overflow:ellipsis;
             white-space:nowrap;
+            display: flex;
+            justify-content: center;
             .van-button__text{
                 width: 70px;
                 height: 28px;

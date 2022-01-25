@@ -488,6 +488,7 @@ module.exports = {
     'Tobewon':'Được rút ra',
     'congratulations':'Xin chúc mừng',
     'winningthelottery':' Trúng xổ số',
-    'Cloudwallet':'Ví điện toán đám mây chưa được tạo'
+    'Cloudwallet':'Ví điện toán đám mây chưa được tạo',
+    'incompatible':'không tương thích'
   }
 }
