@@ -316,7 +316,6 @@ export default {
         const { data, status } = await USER_API.newUserRewardJobs();
         if(data){
             this.newUser = data;
-            this.newUser.isUpTo50U = true
             if(!!data.isAlterReward){
                 this.firstEnter('',this.$t('noviceBenefits.congratulations') + data.yestdaycode + this.$t('noviceBenefits.winningthelottery') + data.yestdayRewardPool + 'BKB!',prize);
             }
