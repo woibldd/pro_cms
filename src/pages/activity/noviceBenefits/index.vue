@@ -316,6 +316,7 @@ export default {
         const { data, status } = await USER_API.newUserRewardJobs();
         if(data){
             this.newUser = data;
+            this.newUser.isUpTo50U = true
             if(!!data.isAlterReward){
                 this.firstEnter('',this.$t('noviceBenefits.congratulations') + data.yestdaycode + this.$t('noviceBenefits.winningthelottery') + data.yestdayRewardPool + 'BKB!',prize);
             }
@@ -323,11 +324,13 @@ export default {
     },
     async UpTo50U(){
         const { data, status } = await USER_API.getFirst50UJob();
-        if(data === true){
-             this.firstEnter(this.$t('noviceBenefits.receiveSuccess'));
+        if(data.success === true && !!data.isActivate){
+            this.firstEnter('',this.$t('noviceBenefits.receiveSuccess'));
             this.info();
+        }else if (!data.isActivate){
+            this.firstEnter('',this.$t('noviceBenefits.Cloudwallet'));
         }else{
-            this.$toast(this.$t('noviceBenefits.receiveError'));
+            this.firstEnter('',this.$t('noviceBenefits.receiveError'));
         }
     },
     async SwapTransaction(){
