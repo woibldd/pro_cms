@@ -112,12 +112,16 @@
                     <p class="textSecond2">{{$t('noviceBenefits.Reward')}} BKB + 1</p>
                 </div>
                   <div class="Novicebenefits-sign-top-bottom-btn" v-if="!newUser.isNewUser">
+                      <!-- 不符合 -->
                     <span class="alreadydraw-btn textSecond3"> {{$t('noviceBenefits.incompatible')}}</span>
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-btn" v-else>
+                    <!-- 已领取 -->
                      <span class="alreadydraw-btn textSecond3" v-if="!!newUser.isDone50U">{{$t('noviceBenefits.alreadyReceived')}}</span>
+                     <!-- 暂未达标 -->
                     <span v-else-if="!newUser.isUpTo50U" class=" alreadydraw-btn textbtn textSecond3 standard"> {{$t('noviceBenefits.standard')}}</span>
-                    <van-button class="draw-btn colorBackgroundPrimary" @click="UpTo50U()" v-if="newUser.isUpTo50U"><span class="colorwhite Novicebenefits-sign-top-bottom-btn-span"> {{ $t('noviceBenefits.Getitnow')}}</span></van-button>
+                    <!-- 立即领取 -->
+                    <van-button class="draw-btn colorBackgroundPrimary" @click="UpTo50U()" v-else-if="newUser.isUpTo50U"><span class="colorwhite Novicebenefits-sign-top-bottom-btn-span"> {{ $t('noviceBenefits.Getitnow')}}</span></van-button>
                 </div>
             </li>
         </ul>
