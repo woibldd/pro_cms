@@ -313,7 +313,7 @@ export default {
     },
     async viewblindboxInvite(){
         // 查看邀请
-        window.location.href = window.location.origin + '/activity/blindboxInvite';
+         this.$router.push('/activity/blindboxInvite')
     },
     // 新手任务已经是否是新用户
     async newUserRewardJobs(){
