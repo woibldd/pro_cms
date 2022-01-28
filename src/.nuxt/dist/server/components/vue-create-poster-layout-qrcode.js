@@ -1,7 +1,11 @@
 exports.ids = [16];
 exports.modules = {
 
+<<<<<<< HEAD
 /***/ 84:
+=======
+/***/ 83:
+>>>>>>> task-glw
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

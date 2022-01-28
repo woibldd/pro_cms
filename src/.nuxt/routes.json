@@ -42,6 +42,13 @@
     "_name": "_e16d1052"
   },
   {
+    "name": "activity-noviceBenefits",
+    "path": "/activity/noviceBenefits",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/noviceBenefits/index.vue",
+    "chunkName": "pages/activity/noviceBenefits/index",
+    "_name": "_14582ec8"
+  },
+  {
     "name": "activity-staking",
     "path": "/activity/staking",
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/staking/index.vue",
@@ -166,6 +173,27 @@
     "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/mining/RuleDetail.vue",
     "chunkName": "pages/activity/mining/RuleDetail",
     "_name": "_d61615d6"
+  },
+  {
+    "name": "activity-noviceBenefits-drawluckly",
+    "path": "/activity/noviceBenefits/drawluckly",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/noviceBenefits/drawluckly.vue",
+    "chunkName": "pages/activity/noviceBenefits/drawluckly",
+    "_name": "_4dce75e8"
+  },
+  {
+    "name": "activity-noviceBenefits-inviteRuleDetail",
+    "path": "/activity/noviceBenefits/inviteRuleDetail",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/noviceBenefits/inviteRuleDetail.vue",
+    "chunkName": "pages/activity/noviceBenefits/inviteRuleDetail",
+    "_name": "_2d13607c"
+  },
+  {
+    "name": "activity-noviceBenefits-lotteryresults",
+    "path": "/activity/noviceBenefits/lotteryresults",
+    "component": "/Users/gaoliangliang/Desktop/project/pro_cms/src/pages/activity/noviceBenefits/lotteryresults.vue",
+    "chunkName": "pages/activity/noviceBenefits/lotteryresults",
+    "_name": "_700f06b3"
   },
   {
     "name": "activity-staking-addPool",

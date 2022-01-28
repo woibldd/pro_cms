@@ -1,13 +1,21 @@
 exports.ids = [2];
 exports.modules = {
 
+<<<<<<< HEAD
 /***/ 107:
+=======
+/***/ 100:
+>>>>>>> task-glw
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
+<<<<<<< HEAD
 var content = __webpack_require__(149);
+=======
+var content = __webpack_require__(133);
+>>>>>>> task-glw
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -19,26 +27,43 @@ module.exports.__inject__ = function (context) {
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 148:
+=======
+/***/ 132:
+>>>>>>> task-glw
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+<<<<<<< HEAD
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlindButton_vue_vue_type_style_index_0_id_3763a924_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(107);
+=======
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlindButton_vue_vue_type_style_index_0_id_3763a924_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(100);
+>>>>>>> task-glw
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlindButton_vue_vue_type_style_index_0_id_3763a924_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlindButton_vue_vue_type_style_index_0_id_3763a924_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlindButton_vue_vue_type_style_index_0_id_3763a924_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_BlindButton_vue_vue_type_style_index_0_id_3763a924_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 149:
+=======
+/***/ 133:
+>>>>>>> task-glw
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
 var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(35);
+<<<<<<< HEAD
 var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(150);
 var ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__(151);
+=======
+var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(134);
+var ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__(135);
+>>>>>>> task-glw
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_1___);
@@ -50,21 +75,33 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 150:
+=======
+/***/ 134:
+>>>>>>> task-glw
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/BTN@3.6b9d6de.png";
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 151:
+=======
+/***/ 135:
+>>>>>>> task-glw
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/shareBtn.adf14fd.png";
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 204:
+=======
+/***/ 185:
+>>>>>>> task-glw
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -148,7 +185,11 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
+<<<<<<< HEAD
   var style0 = __webpack_require__(148)
+=======
+  var style0 = __webpack_require__(132)
+>>>>>>> task-glw
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -162,7 +203,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "3763a924",
-  "6217c536"
+  "89ae70b6"
   
 )
 

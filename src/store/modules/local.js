@@ -9,8 +9,12 @@ const log = process.env.BUILD_ENV == 'pro' ? (...arg) => {
 } : debug('bit-vuex-local')
 const INIT_STATE = {
   locale: "en", //  语言设置
+<<<<<<< HEAD
   locales: ['zh','en','ja','ko','vi'],
   firstStatus: true,
+=======
+  locales: ['zh','en','ja','ko','vi','id','zh_tw'],
+>>>>>>> task-glw
   bitkeep: {
     language: 'en',
     currency: 'cny',
@@ -69,8 +73,10 @@ const actions = {
         mylanguage: req.headers.mylanguage,
         brand: req.headers.brand,
       });
-      locale = req.headers.mylanguage || req.headers.language
-      if(!state.locales.find(lan=>lan==(locale || '').slice(0, 2))){
+      locale = req.headers.mylanguage || req.headers.language;
+      if(locale == 'zh_tw') {
+        locale = 'zh_tw'
+      }else if(!state.locales.find(lan=>lan==(locale || '').slice(0, 2))){
         locale = 'en'
       }
     }else{
@@ -94,7 +100,7 @@ const getters = {
 const mutations = {
   "CHANGE_LANG"(state, data) {
 
-    if (data) data = data.slice(0, 2).toLowerCase()
+    if (data) data = data === 'zh_tw'? data : data.slice(0, 2).toLowerCase()
 
     if (state.locales.indexOf(data) !== -1) {
       state.locale = data || state.locale

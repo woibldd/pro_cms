@@ -1,7 +1,11 @@
 exports.ids = [21];
 exports.modules = {
 
+<<<<<<< HEAD
 /***/ 278:
+=======
+/***/ 257:
+>>>>>>> task-glw
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -20,7 +24,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   false,
   null,
   null,
-  "46f3e3ce"
+  "a59f8dec"
   
 )
 

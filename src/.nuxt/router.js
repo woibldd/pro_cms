@@ -10,6 +10,7 @@ const _423e24e9 = () => interopDefault(import('../pages/activity/blindboxInvite/
 const _432e757a = () => interopDefault(import('../pages/activity/cbkbexchange/index.vue' /* webpackChunkName: "pages/activity/cbkbexchange/index" */))
 const _03bed5fa = () => interopDefault(import('../pages/activity/mining/index.vue' /* webpackChunkName: "pages/activity/mining/index" */))
 const _e16d1052 = () => interopDefault(import('../pages/activity/nftLottery/index.vue' /* webpackChunkName: "pages/activity/nftLottery/index" */))
+const _14582ec8 = () => interopDefault(import('../pages/activity/noviceBenefits/index.vue' /* webpackChunkName: "pages/activity/noviceBenefits/index" */))
 const _488fe13a = () => interopDefault(import('../pages/activity/staking/index.vue' /* webpackChunkName: "pages/activity/staking/index" */))
 const _3c2dae4d = () => interopDefault(import('../pages/activity/trading/index.vue' /* webpackChunkName: "pages/activity/trading/index" */))
 const _26864b16 = () => interopDefault(import('../pages/activity/blindbox/detail/index.vue' /* webpackChunkName: "pages/activity/blindbox/detail/index" */))
@@ -28,6 +29,9 @@ const _723d0c5e = () => interopDefault(import('../pages/activity/mining/inviteRu
 const _3390fe74 = () => interopDefault(import('../pages/activity/mining/miningRule.vue' /* webpackChunkName: "pages/activity/mining/miningRule" */))
 const _54d1d0c0 = () => interopDefault(import('../pages/activity/mining/protocol.vue' /* webpackChunkName: "pages/activity/mining/protocol" */))
 const _d61615d6 = () => interopDefault(import('../pages/activity/mining/RuleDetail.vue' /* webpackChunkName: "pages/activity/mining/RuleDetail" */))
+const _4dce75e8 = () => interopDefault(import('../pages/activity/noviceBenefits/drawluckly.vue' /* webpackChunkName: "pages/activity/noviceBenefits/drawluckly" */))
+const _2d13607c = () => interopDefault(import('../pages/activity/noviceBenefits/inviteRuleDetail.vue' /* webpackChunkName: "pages/activity/noviceBenefits/inviteRuleDetail" */))
+const _700f06b3 = () => interopDefault(import('../pages/activity/noviceBenefits/lotteryresults.vue' /* webpackChunkName: "pages/activity/noviceBenefits/lotteryresults" */))
 const _aec9c9a4 = () => interopDefault(import('../pages/activity/staking/addPool.vue' /* webpackChunkName: "pages/activity/staking/addPool" */))
 const _9a96d6b2 = () => interopDefault(import('../pages/activity/staking/myPool.vue' /* webpackChunkName: "pages/activity/staking/myPool" */))
 const _2dd20cd2 = () => interopDefault(import('../pages/activity/staking/protocol.vue' /* webpackChunkName: "pages/activity/staking/protocol" */))
@@ -75,6 +79,10 @@ export const routerOptions = {
     path: "/activity/nftLottery",
     component: _e16d1052,
     name: "activity-nftLottery"
+  }, {
+    path: "/activity/noviceBenefits",
+    component: _14582ec8,
+    name: "activity-noviceBenefits"
   }, {
     path: "/activity/staking",
     component: _488fe13a,
@@ -147,6 +155,18 @@ export const routerOptions = {
     path: "/activity/mining/RuleDetail",
     component: _d61615d6,
     name: "activity-mining-RuleDetail"
+  }, {
+    path: "/activity/noviceBenefits/drawluckly",
+    component: _4dce75e8,
+    name: "activity-noviceBenefits-drawluckly"
+  }, {
+    path: "/activity/noviceBenefits/inviteRuleDetail",
+    component: _2d13607c,
+    name: "activity-noviceBenefits-inviteRuleDetail"
+  }, {
+    path: "/activity/noviceBenefits/lotteryresults",
+    component: _700f06b3,
+    name: "activity-noviceBenefits-lotteryresults"
   }, {
     path: "/activity/staking/addPool",
     component: _aec9c9a4,
