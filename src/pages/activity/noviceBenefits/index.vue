@@ -315,7 +315,7 @@ export default {
     },
     async viewblindbox(){
         // 查看盲盒
-        window.location.href = window.location.origin + '/activity/blindbox/list';
+        this.$router.push('/activity/blindbox/list')
     },
     async viewairdrop(){
         // 查看空投
@@ -408,7 +408,7 @@ export default {
     // 获取某人的签到详情
     async getSignInDetailByUser(){
         const { data, status } = await USER_API.getSignInDetailByUser();
-        if(data){
+        if(!!data.list){
             this.signList = data;
         }
     },
