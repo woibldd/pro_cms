@@ -314,7 +314,7 @@ export default {
         }
     },
     async viewblindbox(){
-        // 查看盲盒
+        // 查看盲盒1
         this.$router.push('/activity/blindbox/list')
     },
     async viewairdrop(){
