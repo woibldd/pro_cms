@@ -492,7 +492,7 @@ module.exports = {
     Ending: '終了',
     Start: '始まる時間',
     Time: '時間',
-    Reward: '褒美',
+    Reward: '褒美 BKB + 1',
     historyData: '歴史',
     ruleContentTitle: '指定されたトークン間のスワップトランザクションを完了して、BKB報酬を比例配分で取得します（トランザクション料金のパーセンテージで計算されます）。',
     YourTradingValue: 'あなたの取引価値',

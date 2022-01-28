@@ -573,7 +573,7 @@ module.exports = {
         'Draw':'立即抽奖',
         'Novice':'新手奖励',
         'Telegram':'加入 Telegram 奖励',
-        'Reward':'奖励',
+        'Reward':'奖励 BKB + 1',
         'Join':'立即加入',
         'swap':'首次 Swap 交易奖励',
         'raffle':'奖励 BKB +2，抽奖券 +2',

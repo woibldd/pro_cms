@@ -540,7 +540,7 @@ module.exports = {
     'Draw':'Vẽ ngay',
     'Novice':'Chiến dịch mới',
     'Telegram':'Vinh quang điện tín',
-    'Reward':'Phần',
+    'Reward':'Phần BKB + 1',
     'Join':'Vào đi',
     'swap':'Giải trao đổi',
     'raffle':"Phần thưởng BKB'2', vé xổ số'2+2",

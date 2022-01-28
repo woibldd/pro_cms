@@ -14,7 +14,7 @@ module.exports = {
       'Draw':'立即抽獎',
       'Novice':'新手獎勵',
       'Telegram':'加入 Telegram 獎勵',
-      'Reward':'獎勵',
+      'Reward':'獎勵 BKB + 1',
       'Join':'立即加入',
       'swap':'首次 Swap 交易獎勵',
       'raffle':'獎勵 BKB +2，抽獎券 +2',

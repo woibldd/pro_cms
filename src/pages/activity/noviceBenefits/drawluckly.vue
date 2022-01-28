@@ -2,7 +2,7 @@
   <div class="drawluckly colorBackground1">
      <div class="drawluckly-box" :style="{'height':documentHeight + 'px'}">
       <div class="drawluckly-topbanner">
-        <span class="drawluckly-topbanner-time colorBlack">2022.10.20</span>
+        <span class="drawluckly-topbanner-time colorBlack">2022.01.28</span>
         <span  class="drawluckly-topbanner-text colorBlack">
           {{$t('noviceBenefits.Winaraffle')}} {{RewardDetail.thisRewardPool || 0}} BKB
         </span>
@@ -41,9 +41,9 @@
       <div class="drawluckly-rule colorBackground3">
         <p class="drawluckly-rule-title textPrimary0">{{$t('noviceBenefits.Activityrules')}}</p>
         <ul class="drawluckly-rule-content">
-          <li class="textSecond2"><span class="setFontFamily">1.</span>{{$t('noviceBenefits.Dailyreward')}}</li>
-          <li class="textSecond2"><span class="setFontFamily">2.</span>{{$t('noviceBenefits.morelottery')}}</li>
-          <li class="textSecond2"><span class="setFontFamily">3.</span>{{$t('noviceBenefits.luckydraw')}}</li>
+          <li class="textSecond2"><span class="setFontFamily">1. </span>{{$t('noviceBenefits.Dailyreward')}}</li>
+          <li class="textSecond2"><span class="setFontFamily">2. </span>{{$t('noviceBenefits.morelottery')}}</li>
+          <li class="textSecond2"><span class="setFontFamily">3. </span>{{$t('noviceBenefits.luckydraw')}}</li>
         </ul>
         <div class="drawluckly-rule-bottom textSecond3">*{{$t('noviceBenefits.notes')}} </div>
       </div>

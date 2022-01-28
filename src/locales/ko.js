@@ -539,7 +539,7 @@ module.exports = {
     'Draw':'즉시 추첨하다.',
     'Novice':'신입 보상',
     'Telegram':'텔레그램 가입 보상',
-    'Reward':'이미 수령',
+    'Reward':'이미 수령 BKB + 1',
     'alreadyReceived':'장려하다',
     'Join':'지금 가입',
     'swap':'첫 Swap 거래 보상',
