@@ -1,11 +1,7 @@
 exports.ids = [14];
 exports.modules = {
 
-<<<<<<< HEAD
-/***/ 306:
-=======
-/***/ 283:
->>>>>>> task-glw
+/***/ 331:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -77,7 +73,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "2c568ffc",
-  "422d80f3"
+  "f2e5e27c"
   
 )
 

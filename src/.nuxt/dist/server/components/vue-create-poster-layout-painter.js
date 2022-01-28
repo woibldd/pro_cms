@@ -1,25 +1,15 @@
 exports.ids = [15,13,16];
 exports.modules = {
 
-<<<<<<< HEAD
-/***/ 111:
-=======
-/***/ 104:
->>>>>>> task-glw
+/***/ 114:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Painter; });
-<<<<<<< HEAD
-const QR = __webpack_require__(84);
+const QR = __webpack_require__(87);
 
-const GD = __webpack_require__(85);
-=======
-const QR = __webpack_require__(83);
-
-const GD = __webpack_require__(84);
->>>>>>> task-glw
+const GD = __webpack_require__(88);
 
 class Painter {
   constructor(ctx, data) {
@@ -848,11 +838,7 @@ class Painter {
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 84:
-=======
-/***/ 83:
->>>>>>> task-glw
+/***/ 87:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1541,11 +1527,7 @@ const api = {
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 85:
-=======
-/***/ 84:
->>>>>>> task-glw
+/***/ 88:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

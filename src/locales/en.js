@@ -455,7 +455,6 @@ module.exports = {
     toast0: ' Sorry, this address has reached the maximum invite limit',
     emptyToast: 'Address field cannot be empty'
   },
-<<<<<<< HEAD
   'staking':{
     stakingTitle: 'BKB Staking',
     AddPoolTitle: 'Add Pool',
@@ -560,7 +559,7 @@ module.exports = {
     tit1: 'The Trading Reward events are only to reward our fans. They may not be considered as investment advice.',
     tit2: 'Reminder: The price of digital assets fluctuates greatly. Users are advised to fully understand and accept the risks of digital asset investment before investing.',
     btn: 'I got it'
-=======
+  },
   'noviceBenefits':{
     'sign':'Sign in to receive raffle tickets',
     'alreadySignedin':'Consecutive sign-in',
@@ -632,6 +631,5 @@ module.exports = {
     'winningthelottery':' winning the lottery',
     'Cloudwallet':'Cloud wallet has not been created yet',
     'incompatible':'incompatible'
->>>>>>> task-glw
   }
 }

@@ -420,7 +420,6 @@ module.exports = {
     toast0: '申し訳ありませんが、このアドレスは招待の上限に達しました',
     emptyToast: 'アドレスフィールドを空にすることはできません'
   },
-<<<<<<< HEAD
   'staking':{
     stakingTitle: 'BKBステーキング',
     AddPoolTitle: 'プールを追加',
@@ -525,7 +524,7 @@ module.exports = {
     tit1: 'トレーディングリワードイベントは、ファンに報酬を与えるためだけのものです。 それらは投資アドバイスとはみなされないかもしれません。',
     tit2: '注意：デジタル資産の価格は大きく変動します。 ユーザーは、投資する前に、デジタル資産投資のリスクを完全に理解して受け入れることをお勧めします。',
     btn: 'わかった'
-=======
+  },
   'noviceBenefits':{
     'sign':'抽選券にサインする',
     'alreadySignedin':'署名済み',
@@ -597,6 +596,5 @@ module.exports = {
     'winningthelottery':' 宝くじに当選',
     'Cloudwallet':'クラウドウォレットはまだ作成されていません',
     'incompatible':'非互換'
->>>>>>> task-glw
   }
 }

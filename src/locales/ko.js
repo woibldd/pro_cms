@@ -420,7 +420,6 @@ module.exports = {
     toast0: '죄송합니다. 이 주소는 최대 초대 한도에 도달했습니다.',
     emptyToast: '주소 필드는 비워둘 수 없습니다.'
   },
-<<<<<<< HEAD
   'staking':{
     stakingTitle: 'BKB 스테이킹',
     AddPoolTitle: '풀 추가',
@@ -525,7 +524,7 @@ module.exports = {
     tit1: '트레이딩 리워드 이벤트는 팬들에게만 보상을 제공하는 것입니다. 그들은 투자 조언으로 간주되지 않을 수 있습니다.',
     tit2: '알림: 디지털 자산의 가격은 크게 변동합니다. 사용자는 투자하기 전에 디지털 자산 투자의 위험을 완전히 이해하고 수용하는 것이 좋습니다.',
     btn: '알 겠어요'
-=======
+  },
   'noviceBenefits':{
     'sign':'출석을 서명하여 추첨권을 받다.',
     'alreadySignedin':'출석',
@@ -597,6 +596,5 @@ module.exports = {
     'winningthelottery':' 복권 당첨',
     'Cloudwallet':'클라우드 지갑이 아직 생성되지 않았습니다.',
     'incompatible':'호환되지 않는'
->>>>>>> task-glw
   }
 }
