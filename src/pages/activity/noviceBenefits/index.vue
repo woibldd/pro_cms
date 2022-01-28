@@ -1,5 +1,10 @@
 <template>
   <div class="Novicebenefits colorBackground0">
+    <div class="Novicebenefits-topbanner">
+        <van-image
+            src="https://cdn.bitkeep.vip/u_b_980f2ee0-7fdb-11ec-a9c3-37af95cd2c04.jpeg"
+        />
+    </div>
       <div class="Novicebenefits-box">
             <div class="Novicebenefits-title textPrimary0">
                 {{$t('noviceBenefits.sign')}}
