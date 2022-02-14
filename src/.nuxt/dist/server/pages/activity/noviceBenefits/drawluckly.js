@@ -1,41 +1,41 @@
 exports.ids = [43];
 exports.modules = {
 
-/***/ 194:
+/***/ 191:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(275);
+var content = __webpack_require__(272);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
-var add = __webpack_require__(5).default
+var add = __webpack_require__(9).default
 module.exports.__inject__ = function (context) {
   add("491e3b00", content, true, context)
 };
 
 /***/ }),
 
-/***/ 274:
+/***/ 271:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_drawluckly_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(194);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_drawluckly_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(191);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_drawluckly_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_drawluckly_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_drawluckly_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_drawluckly_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 275:
+/***/ 272:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.i, ".theme-light .textPrimary0 {\n  color: #080D21;\n}\n.theme-light .textSecond1 {\n  color: #4B5373;\n}\n.theme-light .textSecond2 {\n  color: #7F828F;\n}\n.theme-light .textSecond3 {\n  color: #9CA5B3;\n}\n.theme-light .colorDisable {\n  background-color: #DADBDE;\n}\n.theme-light .colorLine {\n  background-color: #F4F5FA;\n}\n.theme-light .colorLine1 {\n  background-color: #F0F0F0;\n}\n.theme-light .colorBackground0 {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackground1 {\n  background-color: #fff;\n}\n.theme-light .colorBackground2 {\n  background-color: #F3F5F6;\n}\n.theme-light .colorBackground3 {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackgroundWhite {\n  background-color: #fff;\n}\n.theme-light .colorBackgroundPrimary {\n  background-color: #495BFF;\n}\n.theme-light .colorBackgroundColorSecond11 {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-light .colorBackgroundSecond01 {\n  background-color: #1CBDB5;\n}\n.theme-light .colorBackgroundTextPrimary0 {\n  background-color: #080D21;\n}\n.theme-light .colorPrimary {\n  color: #495BFF;\n}\n.theme-light .colorSecond01 {\n  color: #1CBDB5;\n}\n.theme-light .backgroundSecond01 {\n  background-color: #1CBDB5;\n}\n.theme-light .colorSecond02 {\n  color: #F04A4A;\n}\n.theme-light .colorSecond03 {\n  color: #26BC80;\n}\n.theme-light .colorSecond04 {\n  color: #FF8146;\n}\n.theme-light .colorSecond05 {\n  color: #2F80ED;\n}\n.theme-light .colorSecond06 {\n  color: #4A2FD2;\n}\n.theme-light .colorSecond07 {\n  color: #F04E98;\n}\n.theme-light .colorSecond08 {\n  color: #FFB800;\n}\n.theme-light .colorBlack {\n  color: #000;\n}\n.theme-light .colorwhite {\n  color: #fff;\n}\n.theme-light .colorSecond10 {\n  color: rgba(73,91,255,0.1);\n}\n.theme-light .colorSecond11 {\n  color: rgba(28,189,181,0.1);\n}\n.theme-light .colorSecond12 {\n  color: rgba(240,74,74,0.1);\n}\n.theme-light .colorSecond13 {\n  color: rgba(38,188,128,0.1);\n}\n.theme-light .colorSecond14 {\n  color: rgba(255,129,70,0.1);\n}\n.theme-light .colorSecond15 {\n  color: rgba(47,128,237,0.1);\n}\n.theme-light .colorSecond18 {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-dark .textPrimary0 {\n  color: #DFE0E3;\n}\n.theme-dark .textSecond1 {\n  color: #9CA5B3;\n}\n.theme-dark .textSecond2 {\n  color: #7F828F;\n}\n.theme-dark .textSecond3 {\n  color: #6D707D;\n}\n.theme-dark .colorDisable {\n  background-color: #5F626D;\n}\n.theme-dark .colorLine {\n  background-color: #1F212E;\n}\n.theme-dark .colorLine1 {\n  background-color: #2A2D3D;\n}\n.theme-dark .colorBackground0 {\n  background-color: #0A0E1F;\n}\n.theme-dark .colorBackground1 {\n  background-color: #171A26;\n}\n.theme-dark .colorBackground2 {\n  background-color: #212331;\n}\n.theme-dark .colorBackground3 {\n  background-color: #212331;\n}\n.theme-dark .colorBackgroundPrimary {\n  background-color: #495BFF;\n}\n.theme-dark .colorBackgroundColorSecond11 {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorBackgroundSecond01 {\n  background-color: #1CBDB5;\n}\n.theme-dark .colorBackgroundTextPrimary0 {\n  background-color: #DFE0E3;\n}\n.theme-dark .colorPrimary {\n  color: #495BFF;\n}\n.theme-dark .colorSecond01 {\n  color: #1CBDB5;\n}\n.theme-dark .backgroundSecond01 {\n  background-color: #1CBDB5;\n}\n.theme-dark .colorSecond02 {\n  color: #F04A4A;\n}\n.theme-dark .colorSecond03 {\n  color: #26BC80;\n}\n.theme-dark .colorSecond04 {\n  color: #FF8146;\n}\n.theme-dark .colorSecond05 {\n  color: #2F80ED;\n}\n.theme-dark .colorSecond06 {\n  color: #4A2FD2;\n}\n.theme-dark .colorSecond07 {\n  color: #F04E98;\n}\n.theme-dark .colorSecond08 {\n  color: #FFB800;\n}\n.theme-dark .colorBlack {\n  color: #000;\n}\n.theme-dark .colorwhite {\n  color: #fff;\n}\n.theme-dark .colorSecond10 {\n  color: rgba(73,91,255,0.1);\n}\n.theme-dark .colorSecond11 {\n  color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorSecond12 {\n  color: rgba(240,74,74,0.1);\n}\n.theme-dark .colorSecond13 {\n  color: rgba(38,188,128,0.1);\n}\n.theme-dark .colorSecond14 {\n  color: rgba(255,129,70,0.1);\n}\n.theme-dark .colorSecond15 {\n  color: rgba(47,128,237,0.1);\n}\n.theme-dark .colorSecond18 {\n  background-color: rgba(255,184,0,0.1);\n}\nhtml,\nbody {\n  width: 100%;\n  height: 100%;\n  overflow-y: scroll;\n}\n.drawluckly-box::-webkit-scrollbar {\n  display: none;\n}\n.theme-light .drawluckly-CouponsNums-inp {\n  border: 0.03rem solid #F0F0F0;\n}\n.theme-light .drawluckly-CouponsNums-inp .drawluckly-CouponsNums-all {\n  border-left: 0.03rem solid #F0F0F0;\n}\n.theme-light .drawluckly-btnbox {\n  border-top: 0.03rem solid #F4F5FA;\n}\n.theme-dark .drawluckly-CouponsNums-inp {\n  border: 0.03rem solid #2A2D3D;\n}\n.theme-dark .drawluckly-CouponsNums-inp .van-cell {\n  background-color: #171A26;\n}\n.theme-dark .drawluckly-CouponsNums-inp .van-cell .van-cell__value .van-field__body .van-field__control {\n  color: #DFE0E3;\n}\n.theme-dark .drawluckly-CouponsNums-inp .van-cell .van-cell__value .van-field__body .van-field__control::placeholder {\n  color: #5F626D;\n}\n.theme-dark .drawluckly-CouponsNums-inp .drawluckly-CouponsNums-all {\n  border-left: 0.03rem solid #1F212E;\n}\n.theme-dark .drawluckly-btnbox {\n  border-top: 0.03rem solid #1F212E;\n}\np {\n  padding: 0;\n  margin: 0;\n}\n.drawluckly-box {\n  overflow-y: auto;\n}\n.drawluckly {\n  min-height: 100vh;\n  position: relative;\n}\n.drawluckly-topbanner {\n  width: 100%;\n  height: 3.73rem;\n  background-image: url(https://cdn.bitkeep.vip/u_b_f8a2c6a0-72bf-11ec-9c27-5bf3ec58d767.png);\n  background-size: 100%;\n  position: relative;\n}\n.drawluckly-topbanner .drawluckly-topbanner-time {\n  position: absolute;\n  top: 0.27rem;\n  left: 0.43rem;\n  font-size: 0.32rem;\n}\n.drawluckly-topbanner .drawluckly-topbanner-text {\n  display: inline-block;\n  width: 4rem;\n  position: absolute;\n  bottom: 0.27rem;\n  left: 0.43rem;\n  color: #080D21;\n  font-size: 0.69rem;\n  font-weight: 700;\n}\n.drawluckly-Coupons {\n  display: flex;\n  padding: 0.8rem 0.43rem 0.8rem 0.43rem;\n  justify-content: space-between;\n}\n.drawluckly-Coupons .drawluckly-Coupons-item p:nth-child(1) {\n  font-size: 0.37rem;\n  line-height: 0.37rem;\n  max-width: 4.4rem;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.drawluckly-Coupons .drawluckly-Coupons-item p:nth-child(2) {\n  font-size: 0.43rem;\n  line-height: 0.43rem;\n  padding-top: 0.13rem;\n  max-width: 4.4rem;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.drawluckly-CouponsNums {\n  padding: 0 0.43rem 0.8rem 0.43rem;\n}\n.drawluckly-CouponsNums .drawluckly-CouponsNums-title {\n  display: flex;\n  justify-content: space-between;\n  font-size: 0.37rem;\n  line-height: 0.37rem;\n}\n.drawluckly-CouponsNums .drawluckly-CouponsNums-title .drawluckly-CouponsNums-title-number {\n  font-style: normal;\n}\n.drawluckly-CouponsNums .drawluckly-CouponsNums-title span:nth-child(1) {\n  display: inline-block;\n  max-width: 4rem;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n.drawluckly-CouponsNums-inp {\n  margin-top: 0.27rem;\n  width: 100%;\n  height: 1.33rem;\n  border-radius: 0.21rem;\n  display: flex;\n}\n.drawluckly-CouponsNums-inp .drawluckly-CouponsNums-all {\n  width: 1.81rem;\n  margin: 0.43rem 0 0.43rem 0.43rem;\n  text-align: center;\n  font-size: 0.37rem;\n  line-height: 0.48rem;\n}\n.drawluckly-CouponsNums-inp .van-cell {\n  margin: 0.37rem 0 0.43rem 0.4rem;\n  padding: 0;\n}\n.drawluckly-CouponsNums-inp .van-cell::after {\n  border-bottom: none;\n}\n.drawluckly-CouponsNums-inp .van-cell .van-field__control {\n  font-size: 0.43rem;\n}\n.drawluckly-Award {\n  padding: 0 0.4rem;\n  font-size: 0.37rem;\n  line-height: 0.37rem;\n}\n.drawluckly-Award .drawluckly-Award-user {\n  display: flex;\n  justify-content: space-between;\n  margin-top: 0.13rem;\n  line-height: 0.4rem;\n}\n.drawluckly-rule {\n  margin: 0.8rem 0.43rem 0.53rem 0.43rem;\n  border-radius: 0.21rem;\n  padding: 0.4rem;\n  margin-bottom: 2.72rem;\n}\n.drawluckly-rule .drawluckly-rule-title {\n  font-size: 0.37rem;\n  font-weight: 600;\n}\n.drawluckly-rule .drawluckly-rule-content {\n  margin-top: 0.4rem;\n  font-size: 0.37rem;\n  line-height: 0.53rem;\n}\n.drawluckly-rule .drawluckly-rule-bottom {\n  margin-top: 0.4rem;\n  font-size: 0.32rem;\n}\n.drawluckly-btnbox {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 2.53rem;\n  display: flex;\n  justify-content: center;\n}\n.drawluckly-btnbox .drawluckly-btn {\n  width: 8.08rem;\n  height: 1.33rem;\n  opacity: 0.3;\n  border-radius: 0.27rem;\n  font-size: 0.43rem;\n  margin-top: 0.27rem;\n  border: none;\n}\n.drawluckly-btnbox .ondrawluckly-btn {\n  width: 8.08rem;\n  height: 1.33rem;\n  border-radius: 0.27rem;\n  font-size: 0.43rem;\n  margin-top: 0.27rem;\n  border: none;\n}", ""]);
@@ -45,7 +45,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 323:
+/***/ 320:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -60,10 +60,10 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/activity/noviceBenefits/drawluckly.vue?vue&type=template&id=4a4f017f&
 
 // EXTERNAL MODULE: ./api/client.js
-var client = __webpack_require__(73);
+var client = __webpack_require__(70);
 
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(6);
+var external_vuex_ = __webpack_require__(4);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/noviceBenefits/drawluckly.vue?vue&type=script&lang=js&
 //
@@ -301,7 +301,7 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(274)
+  var style0 = __webpack_require__(271)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -323,17 +323,17 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 73:
+/***/ 70:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return USER_API; });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7);
+/* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_3__);
 
 

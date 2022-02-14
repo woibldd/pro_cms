@@ -1,41 +1,41 @@
 exports.ids = [48,51];
 exports.modules = {
 
-/***/ 180:
+/***/ 177:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(243);
+var content = __webpack_require__(240);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
-var add = __webpack_require__(5).default
+var add = __webpack_require__(9).default
 module.exports.__inject__ = function (context) {
   add("224cdde4", content, true, context)
 };
 
 /***/ }),
 
-/***/ 242:
+/***/ 239:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_b75d8f8e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(180);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_b75d8f8e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(177);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_b75d8f8e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_b75d8f8e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_b75d8f8e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_b75d8f8e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 243:
+/***/ 240:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.i, ".theme-light .textPrimary0[data-v-b75d8f8e] {\n  color: #080D21;\n}\n.theme-light .textSecond1[data-v-b75d8f8e] {\n  color: #4B5373;\n}\n.theme-light .textSecond2[data-v-b75d8f8e] {\n  color: #7F828F;\n}\n.theme-light .textSecond3[data-v-b75d8f8e] {\n  color: #9CA5B3;\n}\n.theme-light .colorDisable[data-v-b75d8f8e] {\n  background-color: #DADBDE;\n}\n.theme-light .colorLine[data-v-b75d8f8e] {\n  background-color: #F4F5FA;\n}\n.theme-light .colorLine1[data-v-b75d8f8e] {\n  background-color: #F0F0F0;\n}\n.theme-light .colorBackground0[data-v-b75d8f8e] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackground1[data-v-b75d8f8e] {\n  background-color: #fff;\n}\n.theme-light .colorBackground2[data-v-b75d8f8e] {\n  background-color: #F3F5F6;\n}\n.theme-light .colorBackground3[data-v-b75d8f8e] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackgroundWhite[data-v-b75d8f8e] {\n  background-color: #fff;\n}\n.theme-light .colorBackgroundPrimary[data-v-b75d8f8e] {\n  background-color: #495BFF;\n}\n.theme-light .colorBackgroundColorSecond11[data-v-b75d8f8e] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-light .colorBackgroundSecond01[data-v-b75d8f8e] {\n  background-color: #1CBDB5;\n}\n.theme-light .colorBackgroundTextPrimary0[data-v-b75d8f8e] {\n  background-color: #080D21;\n}\n.theme-light .colorPrimary[data-v-b75d8f8e] {\n  color: #495BFF;\n}\n.theme-light .colorSecond01[data-v-b75d8f8e] {\n  color: #1CBDB5;\n}\n.theme-light .backgroundSecond01[data-v-b75d8f8e] {\n  background-color: #1CBDB5;\n}\n.theme-light .colorSecond02[data-v-b75d8f8e] {\n  color: #F04A4A;\n}\n.theme-light .colorSecond03[data-v-b75d8f8e] {\n  color: #26BC80;\n}\n.theme-light .colorSecond04[data-v-b75d8f8e] {\n  color: #FF8146;\n}\n.theme-light .colorSecond05[data-v-b75d8f8e] {\n  color: #2F80ED;\n}\n.theme-light .colorSecond06[data-v-b75d8f8e] {\n  color: #4A2FD2;\n}\n.theme-light .colorSecond07[data-v-b75d8f8e] {\n  color: #F04E98;\n}\n.theme-light .colorSecond08[data-v-b75d8f8e] {\n  color: #FFB800;\n}\n.theme-light .colorBlack[data-v-b75d8f8e] {\n  color: #000;\n}\n.theme-light .colorwhite[data-v-b75d8f8e] {\n  color: #fff;\n}\n.theme-light .colorSecond10[data-v-b75d8f8e] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-light .colorSecond11[data-v-b75d8f8e] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-light .colorSecond12[data-v-b75d8f8e] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-light .colorSecond13[data-v-b75d8f8e] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-light .colorSecond14[data-v-b75d8f8e] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-light .colorSecond15[data-v-b75d8f8e] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-light .colorSecond18[data-v-b75d8f8e] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-dark .textPrimary0[data-v-b75d8f8e] {\n  color: #DFE0E3;\n}\n.theme-dark .textSecond1[data-v-b75d8f8e] {\n  color: #9CA5B3;\n}\n.theme-dark .textSecond2[data-v-b75d8f8e] {\n  color: #7F828F;\n}\n.theme-dark .textSecond3[data-v-b75d8f8e] {\n  color: #6D707D;\n}\n.theme-dark .colorDisable[data-v-b75d8f8e] {\n  background-color: #5F626D;\n}\n.theme-dark .colorLine[data-v-b75d8f8e] {\n  background-color: #1F212E;\n}\n.theme-dark .colorLine1[data-v-b75d8f8e] {\n  background-color: #2A2D3D;\n}\n.theme-dark .colorBackground0[data-v-b75d8f8e] {\n  background-color: #0A0E1F;\n}\n.theme-dark .colorBackground1[data-v-b75d8f8e] {\n  background-color: #171A26;\n}\n.theme-dark .colorBackground2[data-v-b75d8f8e] {\n  background-color: #212331;\n}\n.theme-dark .colorBackground3[data-v-b75d8f8e] {\n  background-color: #212331;\n}\n.theme-dark .colorBackgroundPrimary[data-v-b75d8f8e] {\n  background-color: #495BFF;\n}\n.theme-dark .colorBackgroundColorSecond11[data-v-b75d8f8e] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorBackgroundSecond01[data-v-b75d8f8e] {\n  background-color: #1CBDB5;\n}\n.theme-dark .colorBackgroundTextPrimary0[data-v-b75d8f8e] {\n  background-color: #DFE0E3;\n}\n.theme-dark .colorPrimary[data-v-b75d8f8e] {\n  color: #495BFF;\n}\n.theme-dark .colorSecond01[data-v-b75d8f8e] {\n  color: #1CBDB5;\n}\n.theme-dark .backgroundSecond01[data-v-b75d8f8e] {\n  background-color: #1CBDB5;\n}\n.theme-dark .colorSecond02[data-v-b75d8f8e] {\n  color: #F04A4A;\n}\n.theme-dark .colorSecond03[data-v-b75d8f8e] {\n  color: #26BC80;\n}\n.theme-dark .colorSecond04[data-v-b75d8f8e] {\n  color: #FF8146;\n}\n.theme-dark .colorSecond05[data-v-b75d8f8e] {\n  color: #2F80ED;\n}\n.theme-dark .colorSecond06[data-v-b75d8f8e] {\n  color: #4A2FD2;\n}\n.theme-dark .colorSecond07[data-v-b75d8f8e] {\n  color: #F04E98;\n}\n.theme-dark .colorSecond08[data-v-b75d8f8e] {\n  color: #FFB800;\n}\n.theme-dark .colorBlack[data-v-b75d8f8e] {\n  color: #000;\n}\n.theme-dark .colorwhite[data-v-b75d8f8e] {\n  color: #fff;\n}\n.theme-dark .colorSecond10[data-v-b75d8f8e] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-dark .colorSecond11[data-v-b75d8f8e] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorSecond12[data-v-b75d8f8e] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-dark .colorSecond13[data-v-b75d8f8e] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-dark .colorSecond14[data-v-b75d8f8e] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-dark .colorSecond15[data-v-b75d8f8e] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-dark .colorSecond18[data-v-b75d8f8e] {\n  background-color: rgba(255,184,0,0.1);\n}\n.staking-wrap[data-v-b75d8f8e] {\n  min-height: 100vh;\n}\n.staking-wrap .loading[data-v-b75d8f8e] {\n  min-height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.staking-wrap .staking-wrap-line[data-v-b75d8f8e] {\n  width: 100%;\n  height: 0.03rem;\n}\n.staking-wrap .staking-wrap-banner[data-v-b75d8f8e] {\n  position: relative;\n}\n.staking-wrap .staking-wrap-banner img[data-v-b75d8f8e] {\n  width: 100%;\n}\n.staking-wrap .staking-wrap-banner .staking-wrap-imgText[data-v-b75d8f8e] {\n  position: absolute;\n  bottom: 0.43rem;\n  left: 0.43rem;\n}\n.staking-wrap .staking-wrap-banner .staking-wrap-imgText .imgTextTitle[data-v-b75d8f8e] {\n  font-size: 0.69rem;\n  font-weight: bold;\n  line-height: 0.75rem;\n  width: 3.73rem;\n  color: #080d21;\n}\n.staking-wrap .staking-wrap-box[data-v-b75d8f8e] {\n  padding: 0.43rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-Introduce[data-v-b75d8f8e] {\n  border-radius: 0.21rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-Introduce .staking-wrap-box-Introduce-title[data-v-b75d8f8e] {\n  height: 0.96rem;\n  line-height: 0.96rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-Introduce .staking-wrap-box-Introduce-title img[data-v-b75d8f8e] {\n  width: 0.53rem;\n  height: 0.53rem;\n  display: inline-block;\n  margin-left: 0.4rem;\n  vertical-align: sub;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-Introduce .staking-wrap-box-Introduce-title span[data-v-b75d8f8e] {\n  font-weight: 600;\n  font-size: 0.43rem;\n  margin-left: 0.13rem;\n  display: inline-block;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-Introduce .staking-wrap-box-Introduce-content[data-v-b75d8f8e] {\n  padding: 0.27rem 0.4rem 0;\n  font-size: 0.32rem;\n  line-height: 0.53rem;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  display: -webkit-box;\n  -webkit-box-orient: vertical;\n  -webkit-line-clamp: 3;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-Introduce .viewAll[data-v-b75d8f8e] {\n  text-align: right;\n  font-size: 0.37rem;\n  line-height: 0.32rem;\n  margin: 0.16rem 0.4rem 0;\n  padding-bottom: 0.27rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-Data[data-v-b75d8f8e] {\n  border-radius: 0.21rem;\n  margin-top: 0.27rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-Data .staking-wrap-box-Data-title[data-v-b75d8f8e] {\n  height: 0.96rem;\n  line-height: 0.96rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-Data .staking-wrap-box-Data-title img[data-v-b75d8f8e] {\n  width: 0.53rem;\n  height: 0.53rem;\n  display: inline-block;\n  margin-left: 0.4rem;\n  vertical-align: sub;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-Data .staking-wrap-box-Data-title span[data-v-b75d8f8e] {\n  font-weight: 600;\n  font-size: 0.43rem;\n  margin-left: 0.13rem;\n  display: inline-block;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-Data .staking-wrap-box-Data-content[data-v-b75d8f8e] {\n  padding: 0.27rem 0.4rem 0.53rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-Data .staking-wrap-box-Data-content .staking-wrap-box-Data-flex[data-v-b75d8f8e] {\n  display: flex;\n  justify-content: space-between;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-Data .staking-wrap-box-Data-content .staking-wrap-box-Data-flex .staking-wrap-box-Data-left[data-v-b75d8f8e] {\n  text-align: left;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-Data .staking-wrap-box-Data-content .staking-wrap-box-Data-flex .staking-wrap-box-Data-left[data-v-b75d8f8e] :first-child {\n  font-size: 0.32rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-Data .staking-wrap-box-Data-content .staking-wrap-box-Data-flex .staking-wrap-box-Data-left[data-v-b75d8f8e] :last-child {\n  font-size: 0.43rem;\n  margin-top: 0.13rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-Data .staking-wrap-box-Data-content .staking-wrap-box-Data-flex .staking-wrap-box-Data-right[data-v-b75d8f8e] {\n  text-align: right;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-Data .staking-wrap-box-Data-content .staking-wrap-box-Data-flex .staking-wrap-box-Data-right[data-v-b75d8f8e] :first-child {\n  font-size: 0.32rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-Data .staking-wrap-box-Data-content .staking-wrap-box-Data-flex .staking-wrap-box-Data-right[data-v-b75d8f8e] :last-child {\n  font-size: 0.43rem;\n  margin-top: 0.13rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool[data-v-b75d8f8e] {\n  border-radius: 0.21rem;\n  margin-top: 0.27rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-title[data-v-b75d8f8e] {\n  display: flex;\n  height: 1.44rem;\n  align-items: center;\n  position: relative;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-title .bigImg[data-v-b75d8f8e] {\n  width: 0.8rem;\n  height: 0.8rem;\n  display: inline-block;\n  margin-left: 0.4rem;\n  vertical-align: middle;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-title .smallImg[data-v-b75d8f8e] {\n  position: absolute;\n  bottom: 0.27rem;\n  width: 0.37rem;\n  height: 0.37rem;\n  border-radius: 50%;\n  left: 0.91rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-title-flex[data-v-b75d8f8e] {\n  display: flex;\n  justify-content: space-between;\n  margin-left: 0.27rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-title-flex .staking-wrap-box-pool-title-left[data-v-b75d8f8e] :first-child {\n  font-weight: 600;\n  font-size: 0.43rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-title-flex .staking-wrap-box-pool-title-left[data-v-b75d8f8e] :last-child {\n  font-size: 0.32rem;\n  margin-top: 0.05rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-title-flex .staking-wrap-box-pool-title-right[data-v-b75d8f8e] {\n  text-align: right;\n  position: absolute;\n  right: 0.4rem;\n  margin-top: 0.13rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-title-flex .staking-wrap-box-pool-title-right[data-v-b75d8f8e] :first-child {\n  font-size: 0.32rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-title-flex .staking-wrap-box-pool-title-right[data-v-b75d8f8e] :last-child {\n  font-size: 0.32rem;\n  margin-top: 0.05rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-content[data-v-b75d8f8e] {\n  padding: 0.27rem 0.4rem 0.53rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-content .staking-wrap-box-pool-flex[data-v-b75d8f8e] {\n  display: flex;\n  justify-content: space-between;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-content .staking-wrap-box-pool-flex .staking-wrap-box-pool-left[data-v-b75d8f8e] {\n  text-align: left;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-content .staking-wrap-box-pool-flex .staking-wrap-box-pool-left[data-v-b75d8f8e] :first-child {\n  font-size: 0.32rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-content .staking-wrap-box-pool-flex .staking-wrap-box-pool-left[data-v-b75d8f8e] :last-child {\n  font-size: 0.43rem;\n  margin-top: 0.13rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-content .staking-wrap-box-pool-flex .staking-wrap-box-pool-right[data-v-b75d8f8e] {\n  text-align: right;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-content .staking-wrap-box-pool-flex .staking-wrap-box-pool-right[data-v-b75d8f8e] :first-child {\n  font-size: 0.32rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-content .staking-wrap-box-pool-flex .staking-wrap-box-pool-right[data-v-b75d8f8e] :last-child {\n  font-size: 0.43rem;\n  margin-top: 0.13rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-content .staking-wrap-box-pool-duration[data-v-b75d8f8e] {\n  margin-top: 0.53rem;\n  font-size: 0.32rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-content .staking-wrap-box-pool-duration-box[data-v-b75d8f8e] {\n  margin-top: 0.27rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-content .staking-wrap-box-pool-duration-box .staking-wrap-box-pool-duration-smallBox[data-v-b75d8f8e] {\n  display: inline-block;\n  text-align: center;\n  height: 0.75rem;\n  width: 1.6rem;\n  line-height: 0.75rem;\n  border-radius: 0.11rem;\n  margin-right: 0.21rem;\n  font-size: 0.43rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-content .staking-wrap-box-pool-duration-box .setBorderColor[data-v-b75d8f8e] {\n  border: 0.03rem solid #495BFF;\n  color: #495BFF;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-content .staking-wrap-box-pool-stake[data-v-b75d8f8e] {\n  margin-top: 0.53rem;\n  width: 100%;\n  height: 1.33rem;\n  line-height: 1.33rem;\n  text-align: center;\n  border-radius: 0.27rem;\n  font-weight: 500;\n  font-size: 0.43rem;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-content .staking-wrap-box-pool-stake-now[data-v-b75d8f8e] {\n  background: #495BFF;\n  color: #fff;\n}\n.staking-wrap .staking-wrap-box .staking-wrap-box-pool .staking-wrap-box-pool-content .staking-wrap-box-pool-stake-soon[data-v-b75d8f8e] {\n  color: #9CA5B3;\n}\n.theme-light .staking-wrap-box-pool-duration-smallBox[data-v-b75d8f8e] {\n  border: 0.03rem solid #F0F0F0;\n}\n.theme-dark .staking-wrap-box-pool-duration-smallBox[data-v-b75d8f8e] {\n  border: 0.03rem solid #2A2D3D;\n}", ""]);
@@ -45,7 +45,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 311:
+/***/ 308:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72,17 +72,17 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/activity/staking/index.vue?vue&type=template&id=b75d8f8e&scoped=true&
 
 // EXTERNAL MODULE: ./api/client.js
-var client = __webpack_require__(73);
+var client = __webpack_require__(70);
 
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(6);
+var external_vuex_ = __webpack_require__(4);
 
 // EXTERNAL MODULE: external "moment"
-var external_moment_ = __webpack_require__(69);
+var external_moment_ = __webpack_require__(66);
 var external_moment_default = /*#__PURE__*/__webpack_require__.n(external_moment_);
 
 // EXTERNAL MODULE: ./pages/activity/staking/wallet.js
-var wallet = __webpack_require__(83);
+var wallet = __webpack_require__(80);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/staking/index.vue?vue&type=script&lang=js&
 //
@@ -514,7 +514,7 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style1 = __webpack_require__(242)
+  var style1 = __webpack_require__(239)
 if (style1.__inject__) style1.__inject__(context)
 
 }
@@ -536,17 +536,17 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 73:
+/***/ 70:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return USER_API; });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7);
+/* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_3__);
 
 
@@ -690,14 +690,14 @@ const USER_API = {
 
 /***/ }),
 
-/***/ 83:
+/***/ 80:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "transfer16", function() { return transfer16; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wallet", function() { return wallet; });
-/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(66);
+/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(63);
 /* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(eventemitter3__WEBPACK_IMPORTED_MODULE_0__);
 // import detectEthereumProvider from '@metamask/detect-provider';
  // import { transfer16 } from '../common/common'
