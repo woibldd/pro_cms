@@ -52,12 +52,12 @@ module.exports = ___CSS_LOADER_EXPORT___;
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/noviceBenefits/drawluckly.vue?vue&type=template&id=279a8efc&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/noviceBenefits/drawluckly.vue?vue&type=template&id=4a4f017f&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"drawluckly colorBackground1"},[_vm._ssrNode("<div class=\"drawluckly-box\""+(_vm._ssrStyle(null,{'height':_vm.documentHeight + 'px'}, null))+">","</div>",[_vm._ssrNode("<div class=\"drawluckly-topbanner\"><span class=\"drawluckly-topbanner-time colorBlack\">2022.01.28</span> <span class=\"drawluckly-topbanner-text colorBlack\">"+_vm._ssrEscape("\n        "+_vm._s(_vm.$t('noviceBenefits.Winaraffle'))+" "+_vm._s(_vm.RewardDetail.thisRewardPool || 0)+" BKB\n      ")+"</span></div> <div class=\"drawluckly-Coupons\"><div class=\"drawluckly-Coupons-item\"><p class=\"textSecond2\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.rafflepapers')))+"</p> <p class=\"textPrimary0 setFontFamily\">"+_vm._ssrEscape(_vm._s(_vm.RewardDetail.allPapersIn || 0))+"</p></div> <div class=\"drawluckly-Coupons-item\"><p class=\"textSecond2\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.merafflepapers')))+"</p> <p class=\"textPrimary0 setFontFamily\">"+_vm._ssrEscape(_vm._s(_vm.RewardDetail.mePapersIn || 0))+"</p></div></div> "),_vm._ssrNode("<div class=\"drawluckly-CouponsNums\">","</div>",[_vm._ssrNode("<p class=\"drawluckly-CouponsNums-title\"><span class=\"textPrimary0\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.raffletickets')))+"</span> <span class=\"textPrimary0\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.available'))+": ")+"<i class=\"colorPrimary setFontFamily drawluckly-CouponsNums-title-number\">"+_vm._ssrEscape(_vm._s(_vm.RewardDetail.mePapersKeep || 0))+"</i></span></p> "),_vm._ssrNode("<div class=\"drawluckly-CouponsNums-inp\">","</div>",[_c('van-field',{attrs:{"type":"number","placeholder":_vm.$t('noviceBenefits.Pleaseenter')},model:{value:(_vm.CouponsNums),callback:function ($$v) {_vm.CouponsNums=$$v},expression:"CouponsNums"}}),_vm._ssrNode(" <p class=\"drawluckly-CouponsNums-all colorPrimary \">All in</p>")],2)],2),_vm._ssrNode(" "+((!!_vm.RewardDetail.whoGotReward)?("<div class=\"drawluckly-Award\"><p class=\"textPrimary0\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.usersyesterday')))+"</p> <div class=\"drawluckly-Award-user\"><p class=\"textPrimary0 setFontFamily\">"+_vm._ssrEscape(_vm._s(_vm.RewardDetail.whoGotReward))+"</p> <p class=\"colorPrimary\">+ <span class=\"setFontFamily\">"+_vm._ssrEscape(_vm._s(_vm.RewardDetail.whoGotRewardPool))+"</span> BKB</p></div></div>"):"<!---->")+" <div class=\"drawluckly-rule colorBackground3\"><p class=\"drawluckly-rule-title textPrimary0\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.Activityrules')))+"</p> <ul class=\"drawluckly-rule-content\"><li class=\"textSecond2\"><span class=\"setFontFamily\">1. </span>"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.Dailyreward')))+"</li> <li class=\"textSecond2\"><span class=\"setFontFamily\">2. </span>"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.morelottery')))+"</li> <li class=\"textSecond2\"><span class=\"setFontFamily\">3. </span>"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.luckydraw')))+"</li></ul> <div class=\"drawluckly-rule-bottom textSecond3\">"+_vm._ssrEscape("*"+_vm._s(_vm.$t('noviceBenefits.notes'))+" ")+"</div></div>")],2),_vm._ssrNode(" "),_vm._ssrNode("<div class=\"drawluckly-btnbox colorBackground1\">","</div>",[_c('van-button',{class:Number(_vm.CouponsNums) > 0 ? 'ondrawluckly-btn colorBackgroundPrimary' : 'drawluckly-btn colorBackgroundPrimary',on:{"click":function($event){return _vm.pushPapersIn()}}},[_c('span',{staticClass:"colorwhite"},[_vm._v(_vm._s(_vm.$t('noviceBenefits.Immediateinput'))+" ")])])],1)],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/activity/noviceBenefits/drawluckly.vue?vue&type=template&id=279a8efc&
+// CONCATENATED MODULE: ./pages/activity/noviceBenefits/drawluckly.vue?vue&type=template&id=4a4f017f&
 
 // EXTERNAL MODULE: ./api/client.js
 var client = __webpack_require__(70);
@@ -66,6 +66,28 @@ var client = __webpack_require__(70);
 var external_vuex_ = __webpack_require__(4);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/noviceBenefits/drawluckly.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
