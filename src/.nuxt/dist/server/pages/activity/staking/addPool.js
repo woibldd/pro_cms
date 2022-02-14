@@ -1,41 +1,41 @@
 exports.ids = [47,51];
 exports.modules = {
 
-/***/ 195:
+/***/ 198:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(280);
+var content = __webpack_require__(283);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
-var add = __webpack_require__(9).default
+var add = __webpack_require__(5).default
 module.exports.__inject__ = function (context) {
   add("ebb62b9c", content, true, context)
 };
 
 /***/ }),
 
-/***/ 279:
+/***/ 282:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_7d37297c_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(195);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_7d37297c_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(198);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_7d37297c_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_7d37297c_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_7d37297c_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_7d37297c_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 280:
+/***/ 283:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.i, ".theme-light .textPrimary0[data-v-7d37297c] {\n  color: #080D21;\n}\n.theme-light .textSecond1[data-v-7d37297c] {\n  color: #4B5373;\n}\n.theme-light .textSecond2[data-v-7d37297c] {\n  color: #7F828F;\n}\n.theme-light .textSecond3[data-v-7d37297c] {\n  color: #9CA5B3;\n}\n.theme-light .colorDisable[data-v-7d37297c] {\n  background-color: #DADBDE;\n}\n.theme-light .colorLine[data-v-7d37297c] {\n  background-color: #F4F5FA;\n}\n.theme-light .colorLine1[data-v-7d37297c] {\n  background-color: #F0F0F0;\n}\n.theme-light .colorBackground0[data-v-7d37297c] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackground1[data-v-7d37297c] {\n  background-color: #fff;\n}\n.theme-light .colorBackground2[data-v-7d37297c] {\n  background-color: #F3F5F6;\n}\n.theme-light .colorBackground3[data-v-7d37297c] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackgroundWhite[data-v-7d37297c] {\n  background-color: #fff;\n}\n.theme-light .colorBackgroundPrimary[data-v-7d37297c] {\n  background-color: #495BFF;\n}\n.theme-light .colorBackgroundColorSecond11[data-v-7d37297c] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-light .colorBackgroundSecond01[data-v-7d37297c] {\n  background-color: #1CBDB5;\n}\n.theme-light .colorBackgroundTextPrimary0[data-v-7d37297c] {\n  background-color: #080D21;\n}\n.theme-light .colorPrimary[data-v-7d37297c] {\n  color: #495BFF;\n}\n.theme-light .colorSecond01[data-v-7d37297c] {\n  color: #1CBDB5;\n}\n.theme-light .backgroundSecond01[data-v-7d37297c] {\n  background-color: #1CBDB5;\n}\n.theme-light .colorSecond02[data-v-7d37297c] {\n  color: #F04A4A;\n}\n.theme-light .colorSecond03[data-v-7d37297c] {\n  color: #26BC80;\n}\n.theme-light .colorSecond04[data-v-7d37297c] {\n  color: #FF8146;\n}\n.theme-light .colorSecond05[data-v-7d37297c] {\n  color: #2F80ED;\n}\n.theme-light .colorSecond06[data-v-7d37297c] {\n  color: #4A2FD2;\n}\n.theme-light .colorSecond07[data-v-7d37297c] {\n  color: #F04E98;\n}\n.theme-light .colorSecond08[data-v-7d37297c] {\n  color: #FFB800;\n}\n.theme-light .colorBlack[data-v-7d37297c] {\n  color: #000;\n}\n.theme-light .colorwhite[data-v-7d37297c] {\n  color: #fff;\n}\n.theme-light .colorSecond10[data-v-7d37297c] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-light .colorSecond11[data-v-7d37297c] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-light .colorSecond12[data-v-7d37297c] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-light .colorSecond13[data-v-7d37297c] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-light .colorSecond14[data-v-7d37297c] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-light .colorSecond15[data-v-7d37297c] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-light .colorSecond18[data-v-7d37297c] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-dark .textPrimary0[data-v-7d37297c] {\n  color: #DFE0E3;\n}\n.theme-dark .textSecond1[data-v-7d37297c] {\n  color: #9CA5B3;\n}\n.theme-dark .textSecond2[data-v-7d37297c] {\n  color: #7F828F;\n}\n.theme-dark .textSecond3[data-v-7d37297c] {\n  color: #6D707D;\n}\n.theme-dark .colorDisable[data-v-7d37297c] {\n  background-color: #5F626D;\n}\n.theme-dark .colorLine[data-v-7d37297c] {\n  background-color: #1F212E;\n}\n.theme-dark .colorLine1[data-v-7d37297c] {\n  background-color: #2A2D3D;\n}\n.theme-dark .colorBackground0[data-v-7d37297c] {\n  background-color: #0A0E1F;\n}\n.theme-dark .colorBackground1[data-v-7d37297c] {\n  background-color: #171A26;\n}\n.theme-dark .colorBackground2[data-v-7d37297c] {\n  background-color: #212331;\n}\n.theme-dark .colorBackground3[data-v-7d37297c] {\n  background-color: #212331;\n}\n.theme-dark .colorBackgroundPrimary[data-v-7d37297c] {\n  background-color: #495BFF;\n}\n.theme-dark .colorBackgroundColorSecond11[data-v-7d37297c] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorBackgroundSecond01[data-v-7d37297c] {\n  background-color: #1CBDB5;\n}\n.theme-dark .colorBackgroundTextPrimary0[data-v-7d37297c] {\n  background-color: #DFE0E3;\n}\n.theme-dark .colorPrimary[data-v-7d37297c] {\n  color: #495BFF;\n}\n.theme-dark .colorSecond01[data-v-7d37297c] {\n  color: #1CBDB5;\n}\n.theme-dark .backgroundSecond01[data-v-7d37297c] {\n  background-color: #1CBDB5;\n}\n.theme-dark .colorSecond02[data-v-7d37297c] {\n  color: #F04A4A;\n}\n.theme-dark .colorSecond03[data-v-7d37297c] {\n  color: #26BC80;\n}\n.theme-dark .colorSecond04[data-v-7d37297c] {\n  color: #FF8146;\n}\n.theme-dark .colorSecond05[data-v-7d37297c] {\n  color: #2F80ED;\n}\n.theme-dark .colorSecond06[data-v-7d37297c] {\n  color: #4A2FD2;\n}\n.theme-dark .colorSecond07[data-v-7d37297c] {\n  color: #F04E98;\n}\n.theme-dark .colorSecond08[data-v-7d37297c] {\n  color: #FFB800;\n}\n.theme-dark .colorBlack[data-v-7d37297c] {\n  color: #000;\n}\n.theme-dark .colorwhite[data-v-7d37297c] {\n  color: #fff;\n}\n.theme-dark .colorSecond10[data-v-7d37297c] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-dark .colorSecond11[data-v-7d37297c] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorSecond12[data-v-7d37297c] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-dark .colorSecond13[data-v-7d37297c] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-dark .colorSecond14[data-v-7d37297c] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-dark .colorSecond15[data-v-7d37297c] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-dark .colorSecond18[data-v-7d37297c] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-light .staking-warp-amount-input[data-v-7d37297c] {\n  border: 0.03rem solid #F0F0F0;\n}\n.theme-light .staking-wrap-box-pool-duration-smallBox[data-v-7d37297c] {\n  border: 0.03rem solid #F0F0F0;\n}\n.theme-light .wrap-bottom[data-v-7d37297c] {\n  border-top: 0.03rem solid #F0F0F0;\n}\n.theme-dark .staking-warp-amount-input[data-v-7d37297c] {\n  border: 0.03rem solid #2A2D3D;\n}\n.theme-dark .staking-wrap-box-pool-duration-smallBox[data-v-7d37297c] {\n  border: 0.03rem solid #2A2D3D;\n}\n.theme-dark .wrap-bottom[data-v-7d37297c] {\n  border-top: 0.03rem solid #2A2D3D;\n}\n.loading[data-v-7d37297c] {\n  min-height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.addPool[data-v-7d37297c] {\n  padding: 0 0.43rem;\n  min-height: 100vh;\n}\n.addPool .staking-wrap-box-pool-title[data-v-7d37297c] {\n  display: flex;\n  height: 1.44rem;\n  align-items: center;\n  position: relative;\n}\n.addPool .staking-wrap-box-pool-title img[data-v-7d37297c] {\n  width: 0.8rem;\n  height: 0.8rem;\n  display: inline-block;\n  vertical-align: middle;\n}\n.addPool .staking-wrap-box-pool-title-flex[data-v-7d37297c] {\n  display: flex;\n  justify-content: space-between;\n  margin-left: 0.27rem;\n  align-items: center;\n}\n.addPool .staking-wrap-box-pool-title-flex .staking-wrap-box-pool-title-left[data-v-7d37297c] :first-child {\n  font-weight: 600;\n  font-size: 0.43rem;\n}\n.addPool .staking-wrap-box-pool-title-flex .staking-wrap-box-pool-title-right[data-v-7d37297c] {\n  text-align: right;\n  position: absolute;\n  right: 0;\n}\n.addPool .staking-wrap-box-pool-title-flex .staking-wrap-box-pool-title-right[data-v-7d37297c] :first-child {\n  font-size: 0.32rem;\n}\n.addPool .staking-wrap-box-pool-title-flex .staking-wrap-box-pool-title-right[data-v-7d37297c] :last-child {\n  font-size: 0.43rem;\n  margin-top: 0.05rem;\n}\n.addPool .staking-wrap-box-pool-duration[data-v-7d37297c] {\n  margin-top: 0.53rem;\n  font-size: 0.37rem;\n}\n.addPool .staking-wrap-box-pool-duration-box[data-v-7d37297c] {\n  margin-top: 0.27rem;\n}\n.addPool .staking-wrap-box-pool-duration-box .staking-wrap-box-pool-duration-smallBox[data-v-7d37297c] {\n  display: inline-block;\n  text-align: center;\n  height: 0.75rem;\n  width: 1.6rem;\n  line-height: 0.75rem;\n  border-radius: 0.11rem;\n  margin-right: 0.21rem;\n  font-size: 0.43rem;\n}\n.addPool .staking-wrap-box-pool-duration-box .setBorderColor[data-v-7d37297c] {\n  border: 0.03rem solid #495bff;\n  color: #495bff;\n}\n.addPool .staking-warp-amount[data-v-7d37297c] {\n  display: flex;\n  justify-content: space-between;\n  margin-top: 0.8rem;\n}\n.addPool .staking-warp-amount[data-v-7d37297c] :first-child {\n  font-size: 0.37rem;\n}\n.addPool .staking-warp-amount[data-v-7d37297c] :last-child {\n  font-size: 0.32rem;\n}\n.addPool .staking-warp-amount-input[data-v-7d37297c] {\n  width: 100%;\n  height: 1.33rem;\n  line-height: 1.33rem;\n  border-radius: 0.21rem;\n  margin-top: 0.27rem;\n  display: flex;\n  align-items: center;\n}\n.addPool .staking-warp-amount-input input[data-v-7d37297c] {\n  width: 55%;\n  height: 1.33rem;\n  float: left;\n  padding-left: 0.4rem;\n  font-size: 0.43rem;\n  display: block;\n  background: none;\n  outline: none;\n  border: none;\n}\n.addPool .staking-warp-amount-input .staking-warp-amount-input-right[data-v-7d37297c] {\n  float: right;\n  line-height: 1.33rem;\n}\n.addPool .staking-warp-amount-input .staking-warp-amount-input-right .right[data-v-7d37297c] {\n  float: left;\n  padding: 0 0.53rem 0 0.27rem;\n  font-size: 0.43rem;\n}\n.addPool .staking-warp-amount-input .staking-warp-amount-input-right .line[data-v-7d37297c] {\n  width: 0.03rem;\n  height: 0.48rem;\n  float: left;\n  margin-top: 0.45rem;\n}\n.addPool .staking-warp-amount-input .staking-warp-amount-input-right .max[data-v-7d37297c] {\n  float: left;\n  padding: 0 0.45rem 0 0.53rem;\n  font-size: 0.43rem;\n}\n.addPool .staking-limiation[data-v-7d37297c] {\n  margin-top: 0.8rem;\n  font-size: 0.37rem;\n}\n.addPool .staking-min[data-v-7d37297c] {\n  display: flex;\n  justify-content: space-between;\n  font-size: 0.37rem;\n  margin-top: 0.27rem;\n}\n.addPool .setColorLine[data-v-7d37297c] {\n  width: 100%;\n  height: 0.03rem;\n  margin-top: 0.8rem;\n}\n.addPool .staking-summry[data-v-7d37297c] {\n  margin-top: 1.07rem;\n  padding-bottom: 2.67rem;\n}\n.addPool .staking-summry .Summary[data-v-7d37297c] {\n  font-weight: 600;\n  font-size: 0.43rem;\n}\n.addPool .staking-summry .staking-summary-box[data-v-7d37297c] {\n  width: 100%;\n  border-radius: 0.21rem;\n  margin-top: 0.27rem;\n}\n.addPool .staking-summry .staking-summary-box ul[data-v-7d37297c] {\n  padding: 0.4rem;\n}\n.addPool .staking-summry .staking-summary-box ul li[data-v-7d37297c] {\n  font-size: 0.37rem;\n  position: relative;\n}\n.addPool .staking-summry .staking-summary-box ul li .dian[data-v-7d37297c] {\n  width: 0.16rem;\n  height: 0.16rem;\n  border-radius: 50%;\n  display: inline-block;\n  vertical-align: middle;\n  margin-right: 0.27rem;\n}\n.addPool .staking-summry .staking-summary-box ul li[data-v-7d37297c] :last-child {\n  position: absolute;\n  right: 0;\n}\n.addPool .staking-summry .staking-summary-box ul .setLeftLine[data-v-7d37297c] {\n  width: 0.05rem;\n  height: 0.75rem;\n  margin-left: 0.05rem;\n  margin-top: 0.03rem;\n}\n.addPool .staking-summry .staking-summary-box ul .setLeftColorLine[data-v-7d37297c] {\n  height: 2.16rem;\n  line-height: 2.16rem;\n  border-left: 0.05rem solid #1cbdb5;\n  margin-left: 0.05rem;\n}\n.addPool .staking-summry .staking-summary-box ul .setLeftColorLine[data-v-7d37297c] :first-child {\n  margin-left: 0.48rem;\n}\n.addPool .staking-summry .staking-summary-box .setColorLine1[data-v-7d37297c] {\n  height: 0.03rem;\n  margin: 0 0.43rem 0.4rem;\n  box-sizing: border-box;\n}\n.addPool .staking-summry .staking-summary-box .staking-warp-Interests[data-v-7d37297c] {\n  display: flex;\n  justify-content: space-between;\n  padding: 0 0.4rem 0.4rem;\n  font-size: 0.37rem;\n}\n.setBottomLine[data-v-7d37297c] {\n  width: 100%;\n  height: 0.03rem;\n}\n.wrap-bottom[data-v-7d37297c] {\n  width: 100%;\n  bottom: 0;\n  z-index: 99;\n  position: fixed;\n  padding: 0.29rem 0.96rem 0.91rem;\n  box-sizing: border-box;\n}\n.wrap-bottom .staking-wrap-box-pool-stake-now[data-v-7d37297c] {\n  background: #495bff;\n  color: #fff;\n}\n.wrap-bottom .setOpacity[data-v-7d37297c] {\n  opacity: 0.3;\n}\n.wrap-bottom .swap-btn[data-v-7d37297c] {\n  z-index: 0;\n  color: #fff;\n  height: 1.33rem;\n  border-radius: 0.27rem;\n  text-align: center;\n  line-height: 1.17rem;\n  border: none;\n  font-weight: 500;\n  font-size: 0.43rem;\n  width: 8.08rem;\n}", ""]);
@@ -45,7 +45,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 323:
+/***/ 326:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69,17 +69,17 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/activity/staking/addPool.vue?vue&type=template&id=7d37297c&scoped=true&
 
 // EXTERNAL MODULE: ./api/client.js
-var client = __webpack_require__(70);
+var client = __webpack_require__(73);
 
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(4);
+var external_vuex_ = __webpack_require__(6);
 
 // EXTERNAL MODULE: external "moment"
-var external_moment_ = __webpack_require__(66);
+var external_moment_ = __webpack_require__(69);
 var external_moment_default = /*#__PURE__*/__webpack_require__.n(external_moment_);
 
 // EXTERNAL MODULE: ./pages/activity/staking/wallet.js
-var wallet = __webpack_require__(80);
+var wallet = __webpack_require__(83);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/staking/addPool.vue?vue&type=script&lang=js&
 //
@@ -502,7 +502,7 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(279)
+  var style0 = __webpack_require__(282)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -524,17 +524,17 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 70:
+/***/ 73:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return USER_API; });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
+/* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_3__);
 
 
@@ -678,14 +678,14 @@ const USER_API = {
 
 /***/ }),
 
-/***/ 80:
+/***/ 83:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "transfer16", function() { return transfer16; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wallet", function() { return wallet; });
-/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(63);
+/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(66);
 /* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(eventemitter3__WEBPACK_IMPORTED_MODULE_0__);
 // import detectEthereumProvider from '@metamask/detect-provider';
  // import { transfer16 } from '../common/common'
