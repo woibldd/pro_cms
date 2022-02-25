@@ -96,7 +96,7 @@ export const USER_API = {
   //BKB空投
   getAirDropCount: (data,headers={}) => host_user_instance.post("user/cloudwallet/getAirDropCount", data),
   getAirDrop: (data,headers={}) => host_user_instance.post("user/cloudwallet/getAirDrop", data),
-  
+
   // 交易挖矿
   miningInfo: (data,headers={}) => host_user_instance.post("swap/mining/info", data),
   historyPhase: (data,headers={}) => host_user_instance.post("swap/mining/historyPhase", data),
@@ -119,7 +119,7 @@ export const USER_API = {
   staking: (data,headers={}) => host_user_instance.post('/user/cloudstaking/staking',data),
   //获取token
   handleGetToken: (data,headers={}) => host_user_instance.post('/user/cloudstaking/getToken',data),
-  
+
   //trading 交易大赛
   tradingGetList: (data,headers={}) => host_user_instance.post('swap/tradeCompetition/getList',data),
   //待领取
@@ -130,16 +130,16 @@ export const USER_API = {
   tradingSummary: (data,headers={}) => host_user_instance.post('swap/tradeCompetition/summary',data),
   //历史list
   tradingHistory: (data,headers={}) => host_user_instance.post('swap/tradeCompetition/history',data),
-  
+
 
   // 新手福利
-  welfareSignIn: (data,headers={}) => host_user_instance.post('user/welfare/signIn',data), // 签到 
+  welfareSignIn: (data,headers={}) => host_user_instance.post('user/welfare/signIn',data), // 签到
   getRewardDetail: (data,headers={}) => host_user_instance.post('user/welfare/getRewardDetail',data),//每日抽奖详情
   getSignInDetailByUser: (data,headers={}) => host_user_instance.post('user/welfare/getSignInDetailByUser',data), // 获取某人的签到详情
   getRewardResult: (data,headers={}) => host_user_instance.post('user/welfare/getRewardResult',data), // 获取抽奖结果
-  getRewardDetail: (data,headers={}) => host_user_instance.post('user/welfare/getRewardDetail',data), // 每日抽奖详情页
+  // getRewardDetail: (data,headers={}) => host_user_instance.post('user/welfare/getRewardDetail',data), // 每日抽奖详情页
   pushPapersIn: (data,headers={}) => host_user_instance.post('user/welfare/pushPapersIn',data), // 立即投入
-  getJoinTeleJob: (data,headers={}) => host_user_instance.post('user/welfare/getJoinTeleJob',data), // 加入电报 
+  getJoinTeleJob: (data,headers={}) => host_user_instance.post('user/welfare/getJoinTeleJob',data), // 加入电报
   getFirstSwapJob: (data,headers={}) => host_user_instance.post('user/welfare/getFirstSwapJob',data), // swap首次交易
   getFirst50UJob: (data,headers={}) => host_user_instance.post('user/welfare/getFirst50UJob',data), // 领取50u
   newUserRewardJobs: (data,headers={}) => host_user_instance.post('user/welfare/newUserRewardJobs',data), // 新手任务

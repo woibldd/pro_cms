@@ -543,7 +543,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "941c3c86",
-  "76c313ae"
+  "d889970c"
   
 )
 
@@ -726,7 +726,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "22b03018",
-  "65f78c94"
+  "6b5a18e3"
   
 )
 
@@ -821,7 +821,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "75fc548f",
-  "e1e805ee"
+  "74069cd0"
   
 )
 
@@ -920,7 +920,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "6fc736eb",
-  "13b9655c"
+  "b14fcabe"
   
 )
 
@@ -1583,7 +1583,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "75fc5c76",
-  "4eb7a586"
+  "6cc3d8d2"
   
 )
 
@@ -1722,19 +1722,18 @@ const USER_API = {
   tradingHistory: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/history', data),
   // 新手福利
   welfareSignIn: (data, headers = {}) => host_user_instance.post('user/welfare/signIn', data),
-  // 签到 
+  // 签到
   getRewardDetail: (data, headers = {}) => host_user_instance.post('user/welfare/getRewardDetail', data),
   //每日抽奖详情
   getSignInDetailByUser: (data, headers = {}) => host_user_instance.post('user/welfare/getSignInDetailByUser', data),
   // 获取某人的签到详情
   getRewardResult: (data, headers = {}) => host_user_instance.post('user/welfare/getRewardResult', data),
   // 获取抽奖结果
-  getRewardDetail: (data, headers = {}) => host_user_instance.post('user/welfare/getRewardDetail', data),
-  // 每日抽奖详情页
+  // getRewardDetail: (data,headers={}) => host_user_instance.post('user/welfare/getRewardDetail',data), // 每日抽奖详情页
   pushPapersIn: (data, headers = {}) => host_user_instance.post('user/welfare/pushPapersIn', data),
   // 立即投入
   getJoinTeleJob: (data, headers = {}) => host_user_instance.post('user/welfare/getJoinTeleJob', data),
-  // 加入电报 
+  // 加入电报
   getFirstSwapJob: (data, headers = {}) => host_user_instance.post('user/welfare/getFirstSwapJob', data),
   // swap首次交易
   getFirst50UJob: (data, headers = {}) => host_user_instance.post('user/welfare/getFirst50UJob', data),
