@@ -465,16 +465,16 @@ export default {
                   this.theme = 1;
                   this.question = 'https://cdn.bitkeep.vip/u_b_cac9ff90-78f1-11ec-9d29-f144d09ca5ed.png';
                   body.setAttribute("class", "theme-dark");
-                  setTimeout(()=>{
-                    BitKeepInvoke.setIconAction("");
-                  },500)
+                //   setTimeout(()=>{
+                //     BitKeepInvoke.setIconAction("");
+                //   },500)
                 } else {
                   this.theme = 0;
                   this.question = 'https://cdn.bitkeep.vip/u_b_af43f280-78f1-11ec-9d29-f144d09ca5ed.png';
                   body.setAttribute("class", "theme-light");
-                  setTimeout(()=>{
-                    BitKeepInvoke.setIconAction("");
-                  },500)
+                //   setTimeout(()=>{
+                //     BitKeepInvoke.setIconAction("");
+                //   },500)
                 }
               });
           })
