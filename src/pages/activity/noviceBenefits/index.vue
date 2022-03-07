@@ -459,6 +459,7 @@ export default {
             );
           //设置主题
             this.$nextTick(() => {
+                BitKeepInvoke.setIconAction();
               BitKeepInvoke.appMode((err, res) => {
                 let body = document.getElementsByTagName("body")[0];
                 if (res == 1) {
@@ -466,14 +467,14 @@ export default {
                   this.question = 'https://cdn.bitkeep.vip/u_b_cac9ff90-78f1-11ec-9d29-f144d09ca5ed.png';
                   body.setAttribute("class", "theme-dark");
                 //   setTimeout(()=>{
-                    BitKeepInvoke.setIconAction();
+                    // BitKeepInvoke.setIconAction();
                 //   },500)
                 } else {
                   this.theme = 0;
                   this.question = 'https://cdn.bitkeep.vip/u_b_af43f280-78f1-11ec-9d29-f144d09ca5ed.png';
                   body.setAttribute("class", "theme-light");
                 //   setTimeout(()=>{
-                    BitKeepInvoke.setIconAction();
+                    // BitKeepInvoke.setIconAction();
                 //   },500)
                 }
               });
