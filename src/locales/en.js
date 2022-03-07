@@ -630,6 +630,6 @@ module.exports = {
     'congratulations':'congratulations',
     'winningthelottery':' winning the lottery',
     'Cloudwallet':'Cloud wallet has not been created yet',
-    'incompatible':'incompatible'
+    'incompatible':'N/A'
   }
 }

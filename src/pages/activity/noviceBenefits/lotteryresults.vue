@@ -40,6 +40,28 @@
     </div>
 </div>
 </template>
+<script type=module>// Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDae8sHM0DPG7yzTw3134GTlnQ1X4wYEzE",
+    authDomain: "bitkeep-web.firebaseapp.com",
+    projectId: "福利中心",
+    storageBucket: "bitkeep-web.appspot.com",
+    messagingSenderId: "25685918225",
+    appId: "1:25685918225:web:6150d19eb600690a18a7b0",
+    measurementId: "G-39NRXSECDR"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 <script>
 import { USER_API } from "@/api/client";
 import { mapState } from "vuex";
@@ -109,16 +131,16 @@ export default {
                   this.theme = 1;
                   this.question = 'https://cdn.bitkeep.vip/u_b_47485390-4f90-11ec-ace3-97579b99c357.png';
                   body.setAttribute("class", "theme-dark");
-                  setTimeout(()=>{
-                    BitKeepInvoke.setIconAction("");
-                  },500)
+                  // setTimeout(()=>{
+                  //   BitKeepInvoke.setIconAction("");
+                  // },500)
                 } else {
                   this.theme = 0;
                   this.question = 'https://cdn.bitkeep.vip/u_b_99107f80-356f-11ec-8c2d-251a27ef7eba.png';
                   body.setAttribute("class", "theme-light");
-                  setTimeout(()=>{
-                    BitKeepInvoke.setIconAction("");
-                  },500)
+                  // setTimeout(()=>{
+                  //   BitKeepInvoke.setIconAction("");
+                  // },500)
                 }
               });
           })
