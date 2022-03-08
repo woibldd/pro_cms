@@ -2856,7 +2856,7 @@ module.exports = {
       "OpenTheBlindBoxText": "当足够数量的好友助力成功后，您可以点击开启盲盒",
       "shareWidthFriendsText": '您和好友瓜分盲盒内数字资产',
       "CanViewAssetsTocloudWallet": "盲盒开启后您和助力好友均可在 BitKeep 云钱包中查看获得的数字资产",
-      rules: ["Each blind box contains a random number of BKB", `Share this link to invite your friends, and ask them to fill in valid BitKeep Cloud Wallet address (Click the link to create a BitKeep Cloud Wallet <a href='https://bit.ly/BitKeepCloudWallet' class='color_red'>https://bit.ly/BitKeepCloudWallet</a> )`, "With five friends manage to make contribution, the blind box will unlock, and you and your friends will get a share of the BKB inside.", "These BKB will be deposited in your Cloud Wallet. If you have’t activated your Cloud Wallet, please tap Cloud Wallet in the NAV bar to activate it."],
+      rules: ["Each blind box contains a random number of BKB", `Share this link to invite your friends, and ask them to fill in valid BitKeep Cloud Wallet address (Click the link to create a BitKeep Cloud Wallet <a href='https://bit.ly/BitKeepCloudWallet' class='color_red'>https://bit.ly/BitKeepCloudWallet</a> )`, "With one friends manage to make contribution, the blind box will unlock, and you and your friends will get a share of the BKB inside.", "These BKB will be deposited in your Cloud Wallet. If you have’t activated your Cloud Wallet, please tap Cloud Wallet in the NAV bar to activate it."],
       modal: {
         sharedHelperMeText: "助力我开启 BitKeep 数字盲盒吧",
         openSurpriseText: "开启获取惊喜数字资产",
@@ -5230,7 +5230,7 @@ module.exports = {
       "OpenTheBlindBoxText": "当足够数量的好友助力成功后，您可以点击开启盲盒",
       "shareWidthFriendsText": '您和好友瓜分盲盒内数字资产',
       "CanViewAssetsTocloudWallet": "盲盒开启后您和助力好友均可在 BitKeep 云钱包中查看获得的数字资产",
-      rules: ["Each blind box contains a random number of BKB", `Share this link to invite your friends, and ask them to fill in valid BitKeep Cloud Wallet address (Click the link to create a BitKeep Cloud Wallet <a href='https://bit.ly/BitKeepCloudWallet' class='color_red'>https://bit.ly/BitKeepCloudWallet</a> )`, "With five friends manage to make contribution, the blind box will unlock, and you and your friends will get a share of the BKB inside.", "These BKB will be deposited in your Cloud Wallet. If you have’t activated your Cloud Wallet, please tap Cloud Wallet in the NAV bar to activate it."],
+      rules: ["Each blind box contains a random number of BKB", `Share this link to invite your friends, and ask them to fill in valid BitKeep Cloud Wallet address (Click the link to create a BitKeep Cloud Wallet <a href='https://bit.ly/BitKeepCloudWallet' class='color_red'>https://bit.ly/BitKeepCloudWallet</a> )`, "With one friends manage to make contribution, the blind box will unlock, and you and your friends will get a share of the BKB inside.", "These BKB will be deposited in your Cloud Wallet. If you have’t activated your Cloud Wallet, please tap Cloud Wallet in the NAV bar to activate it."],
       modal: {
         sharedHelperMeText: "助力我开启 BitKeep 数字盲盒吧",
         openSurpriseText: "开启获取惊喜数字资产",
@@ -7873,7 +7873,6 @@ function wrapFunctional(options) {
 
 
 const components = {
-  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 205)).then(c => wrapFunctional(c.default || c)),
   CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 85)).then(c => wrapFunctional(c.default || c)),
   CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 74)).then(c => wrapFunctional(c.default || c)),
   Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 78)).then(c => wrapFunctional(c.default || c)),
@@ -7883,6 +7882,7 @@ const components = {
   BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 214)).then(c => wrapFunctional(c.default || c)),
   BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 212)).then(c => wrapFunctional(c.default || c)),
   Trading: () => __webpack_require__.e(/* import() | components/trading */ 10).then(__webpack_require__.bind(null, 116)).then(c => wrapFunctional(c.default || c)),
+  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 205)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 12).then(__webpack_require__.bind(null, 163)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 13).then(__webpack_require__.bind(null, 88)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 14).then(__webpack_require__.bind(null, 331)).then(c => wrapFunctional(c.default || c)),

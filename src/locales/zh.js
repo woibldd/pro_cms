@@ -130,7 +130,7 @@ module.exports = {
           rules: [
             "Each blind box contains a random number of BKB",
             `Share this link to invite your friends, and ask them to fill in valid BitKeep Cloud Wallet address (Click the link to create a BitKeep Cloud Wallet <a href='https://bit.ly/BitKeepCloudWallet' class='color_red'>https://bit.ly/BitKeepCloudWallet</a> )`,
-            "With five friends manage to make contribution, the blind box will unlock, and you and your friends will get a share of the BKB inside.",
+            "With one friends manage to make contribution, the blind box will unlock, and you and your friends will get a share of the BKB inside.",
             "These BKB will be deposited in your Cloud Wallet. If you have’t activated your Cloud Wallet, please tap Cloud Wallet in the NAV bar to activate it.",
           ],
     
