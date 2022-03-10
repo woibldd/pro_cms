@@ -255,7 +255,6 @@ module.exports = {
     how: 'BKSwap 거래 보상은 어떻게 받나요?',
     how1: '1. 최신 BKSwap 튜토리얼은 ',
     how11: '을 참조하세요.',
-    // how1: `1. 최신 BKSwap 튜토리얼은 <a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a>을 참조하세요.`,
     how2: '2. 이벤트 규칙:',
     howContent: '초대 (상금 풀: 30WBKB): 트레이딩 리워드 이벤트는 5일간 진행됩니다. 초대 보상 풀은 초대에 성공한 모든 사용자가 공유합니다. 보상은 다음과 같이 계산됩니다.',
     howContent1: '매일 사용자는 다음을 얻을 수 있습니다. 15*성공적으로 초대된 사용자 수 + (모든 초대 대상자의 거래량 합계/초대된 모든 사용자의 GMV)*X<br/>여기서 "GMV 초대된 모든 사용자"를 Y로',

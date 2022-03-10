@@ -3,7 +3,7 @@
     <Header>
       <div class="blindbox_header">
         <span class="logo">
-          <img src="@/assets/activity/blindbox/logo@2.png"
+          <img src="https://cdn.bitkeep.vip/u_b_88287340-a021-11ec-b054-8b7edc051038.png"
         /></span>
       </div>
     </Header>
@@ -64,7 +64,7 @@ export default {
     align-items: center;
     .logo {
       width: 90px;
-      height: 24px;
+      height: 30px;
       display: flex;
       img {
         width: 100%;
@@ -106,7 +106,7 @@ export default {
   }
   .btn {
     margin: 190px auto 0;
-    background: #495BFF;
+    background: #7524f9;
     border-radius: 100px;
     width: 225px;
     height: 50px;

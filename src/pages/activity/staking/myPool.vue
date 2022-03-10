@@ -4,7 +4,7 @@
     :class="activeType == 1 ? 'colorBackground0' : 'colorBackground1'"
   >
     <div class="loading" v-if="isLoading">
-      <van-loading color="#1989fa" vertical
+      <van-loading color="#7524f9" vertical
         >{{ $t("base.loading") }}...</van-loading
       >
     </div>

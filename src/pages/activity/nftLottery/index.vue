@@ -1,7 +1,7 @@
 <template>
   <div class="warp-nft">
     <div class="loading" v-if="isLoading">
-      <van-loading color="#1989fa" vertical
+      <van-loading color="#7524f9" vertical
         >{{ $t("base.loading") }}...</van-loading
       >
     </div>
@@ -164,7 +164,7 @@ export default {
     padding: 20px 24px;
   }
   .van-button__text {
-    color: #495bff;
+    color: #7524f9;
     font-weight: 500;
   }
   img {

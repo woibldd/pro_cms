@@ -2987,7 +2987,6 @@ module.exports = {
     how: 'How to get BKSwap Trading Reward?',
     how1: '1. Please refer to',
     how11: ' for the latest BKSwap tutorial.',
-    // how1: `1. Please refer to <a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a> for the latest BKSwap tutorial.`,
     how2: '2. Rules of the event:',
     howContent: 'Invitation (Prize pool: 30WBKB): The Trading Reward events will last for 5 days. The invitation reward pool will be shared by all users with successful invitations. The rewards are calculated as follows:',
     howContent1: 'For each day, a user can get: 15*number of successfully invited users + (sum of the transaction volume of all his/her invitees/GMV of all invited users)*X<br/>in which, we consider “GMV of all invited users” as Y',
@@ -3604,7 +3603,6 @@ module.exports = {
     how: 'BKSwap Trading Rewardを取得するにはどうすればよいですか？',
     how1: '1.最新のBKSwapチュートリアルについては、',
     how11: ' を参照してください。',
-    // how1: `<a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a>を参照してください。`,
     hhow2: '2. イベントのルール：',
     howContent: '招待状（賞金プール：30WBKB）：トレーディングリワードイベントは5日間続きます。 招待報酬プールは、招待が成功したすべてのユーザーによって共有されます。 報酬は次のように計算されます。',
     howContent1: '毎日、ユーザーは次の情報を取得できます：15 *正常に招待されたユーザーの数+（すべての招待者のトランザクション量/すべての招待ユーザーのGMVの合計）* X <br/>ここで、「 招待されたすべてのユーザー」をYとして',
@@ -4184,7 +4182,6 @@ module.exports = {
     how: 'BKSwap 거래 보상은 어떻게 받나요?',
     how1: '1. 최신 BKSwap 튜토리얼은 ',
     how11: '을 참조하세요.',
-    // how1: `1. 최신 BKSwap 튜토리얼은 <a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a>을 참조하세요.`,
     how2: '2. 이벤트 규칙:',
     howContent: '초대 (상금 풀: 30WBKB): 트레이딩 리워드 이벤트는 5일간 진행됩니다. 초대 보상 풀은 초대에 성공한 모든 사용자가 공유합니다. 보상은 다음과 같이 계산됩니다.',
     howContent1: '매일 사용자는 다음을 얻을 수 있습니다. 15*성공적으로 초대된 사용자 수 + (모든 초대 대상자의 거래량 합계/초대된 모든 사용자의 GMV)*X<br/>여기서 "GMV 초대된 모든 사용자"를 Y로',
@@ -4765,7 +4762,6 @@ module.exports = {
     how: 'Làm thế nào để nhận được Phần thưởng giao dịch BKSwap?',
     how1: '1. Vui lòng tham khảo ',
     how11: ' để biết hướng dẫn về BKSwap mới nhất.',
-    // how1: `<a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a> để biết hướng dẫn về BKSwap mới nhất.`,
     how2: '2. Nội quy của sự kiện:',
     howContent: 'Lời mời (Tổng giải thưởng: 30WBKB): Các sự kiện Phần thưởng giao dịch sẽ kéo dài trong 5 ngày. Phần thưởng lời mời sẽ được chia sẻ bởi tất cả người dùng có lời mời thành công. Phần thưởng được tính như sau:',
     howContent1: 'Đối với mỗi ngày, người dùng có thể nhận được: 15 * số người dùng được mời thành công + (tổng khối lượng giao dịch của tất cả những người được mời / GMV của tất cả người dùng được mời) * X <br/> trong đó, chúng tôi coi là “GMV của tất cả người dùng được mời ”là Y',
@@ -5359,7 +5355,6 @@ module.exports = {
     how: 'How to get BKSwap Trading Reward?',
     how1: '1. Please refer to',
     how11: ' for the latest BKSwap tutorial.',
-    // how1: `1. Please refer to <a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a> for the latest BKSwap tutorial.`,
     how2: '2. Rules of the event:',
     howContent: 'Invitation (Prize pool: 30WBKB): The Trading Reward events will last for 5 days. The invitation reward pool will be shared by all users with successful invitations. The rewards are calculated as follows:',
     howContent1: 'For each day, a user can get: 15*number of successfully invited users + (sum of the transaction volume of all his/her invitees/GMV of all invited users)*X<br/>in which, we consider “GMV of all invited users” as Y',
@@ -6747,83 +6742,83 @@ function shouldScrollToTop(route) {
 
 
 
-const _214ac336 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/airdrop/index */ 19).then(__webpack_require__.bind(null, 301)));
+const _214ac336 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/airdrop/index */ 19).then(__webpack_require__.bind(null, 300)));
 
-const _85ae8e80 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 24).then(__webpack_require__.bind(null, 302)));
+const _85ae8e80 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 24).then(__webpack_require__.bind(null, 301)));
 
-const _423e24e9 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/index */ 32).then(__webpack_require__.bind(null, 303)));
+const _423e24e9 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/index */ 32).then(__webpack_require__.bind(null, 302)));
 
-const _432e757a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/cbkbexchange/index */ 35).then(__webpack_require__.bind(null, 304)));
+const _432e757a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/cbkbexchange/index */ 35).then(__webpack_require__.bind(null, 303)));
 
-const _03bed5fa = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/index */ 38).then(__webpack_require__.bind(null, 305)));
+const _03bed5fa = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/index */ 38).then(__webpack_require__.bind(null, 304)));
 
-const _e16d1052 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/nftLottery/index */ 42).then(__webpack_require__.bind(null, 306)));
+const _e16d1052 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/nftLottery/index */ 42).then(__webpack_require__.bind(null, 305)));
 
-const _14582ec8 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/index */ 44).then(__webpack_require__.bind(null, 307)));
+const _14582ec8 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/index */ 44).then(__webpack_require__.bind(null, 306)));
 
-const _488fe13a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/index */ 48).then(__webpack_require__.bind(null, 308)));
+const _488fe13a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/index */ 48).then(__webpack_require__.bind(null, 307)));
 
-const _3c2dae4d = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/index */ 53).then(__webpack_require__.bind(null, 309)));
+const _3c2dae4d = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/index */ 53).then(__webpack_require__.bind(null, 308)));
 
-const _26864b16 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/index */ 21).then(__webpack_require__.bind(null, 299)));
+const _26864b16 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/index */ 21).then(__webpack_require__.bind(null, 298)));
 
-const _51b48dec = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 22).then(__webpack_require__.bind(null, 310)));
+const _51b48dec = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 22).then(__webpack_require__.bind(null, 309)));
 
-const _1e254ba8 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/firendList */ 23).then(__webpack_require__.bind(null, 311)));
+const _1e254ba8 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/firendList */ 23).then(__webpack_require__.bind(null, 310)));
 
-const _271da9c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 25).then(__webpack_require__.bind(null, 312)));
+const _271da9c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 25).then(__webpack_require__.bind(null, 311)));
 
-const _a5580482 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/stepDetail */ 26).then(__webpack_require__.bind(null, 313)));
+const _a5580482 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/stepDetail */ 26).then(__webpack_require__.bind(null, 312)));
 
-const _d75b1ebe = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/copy */ 29).then(__webpack_require__.bind(null, 167)));
+const _d75b1ebe = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/copy */ 29).then(__webpack_require__.bind(null, 166)));
 
-const _c44cf06c = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/detail */ 30).then(__webpack_require__.bind(null, 314)));
+const _c44cf06c = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/detail */ 30).then(__webpack_require__.bind(null, 313)));
 
-const _21c91f7e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/download */ 31).then(__webpack_require__.bind(null, 315)));
+const _21c91f7e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/download */ 31).then(__webpack_require__.bind(null, 314)));
 
-const _1e5dd980 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/inviteList */ 33).then(__webpack_require__.bind(null, 316)));
+const _1e5dd980 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/inviteList */ 33).then(__webpack_require__.bind(null, 315)));
 
-const _62b6ad66 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/rewardList */ 34).then(__webpack_require__.bind(null, 317)));
+const _62b6ad66 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/rewardList */ 34).then(__webpack_require__.bind(null, 316)));
 
-const _3faca386 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/RuleDetail */ 27).then(__webpack_require__.bind(null, 210)));
+const _3faca386 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/RuleDetail */ 27).then(__webpack_require__.bind(null, 209)));
 
-const _133d3cbc = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/history */ 37).then(__webpack_require__.bind(null, 318)));
+const _133d3cbc = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/history */ 37).then(__webpack_require__.bind(null, 317)));
 
-const _723d0c5e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/inviteRuleDetail */ 39).then(__webpack_require__.bind(null, 208)));
+const _723d0c5e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/inviteRuleDetail */ 39).then(__webpack_require__.bind(null, 207)));
 
-const _3390fe74 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/miningRule */ 40).then(__webpack_require__.bind(null, 319)));
+const _3390fe74 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/miningRule */ 40).then(__webpack_require__.bind(null, 318)));
 
-const _54d1d0c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/protocol */ 41).then(__webpack_require__.bind(null, 206)));
+const _54d1d0c0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/protocol */ 41).then(__webpack_require__.bind(null, 205)));
 
-const _d61615d6 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/RuleDetail */ 36).then(__webpack_require__.bind(null, 207)));
+const _d61615d6 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/RuleDetail */ 36).then(__webpack_require__.bind(null, 206)));
 
-const _4dce75e8 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/drawluckly */ 43).then(__webpack_require__.bind(null, 320)));
+const _4dce75e8 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/drawluckly */ 43).then(__webpack_require__.bind(null, 319)));
 
-const _2d13607c = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/inviteRuleDetail */ 45).then(__webpack_require__.bind(null, 321)));
+const _2d13607c = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/inviteRuleDetail */ 45).then(__webpack_require__.bind(null, 320)));
 
-const _700f06b3 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/lotteryresults */ 46).then(__webpack_require__.bind(null, 322)));
+const _700f06b3 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/lotteryresults */ 46).then(__webpack_require__.bind(null, 321)));
 
-const _aec9c9a4 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/addPool */ 47).then(__webpack_require__.bind(null, 323)));
+const _aec9c9a4 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/addPool */ 47).then(__webpack_require__.bind(null, 322)));
 
-const _9a96d6b2 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/myPool */ 49).then(__webpack_require__.bind(null, 324)));
+const _9a96d6b2 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/myPool */ 49).then(__webpack_require__.bind(null, 323)));
 
-const _2dd20cd2 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/protocol */ 50).then(__webpack_require__.bind(null, 211)));
+const _2dd20cd2 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/protocol */ 50).then(__webpack_require__.bind(null, 210)));
 
 const _633da457 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/wallet */ 51).then(__webpack_require__.bind(null, 80)));
 
-const _29516762 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/history */ 52).then(__webpack_require__.bind(null, 325)));
+const _29516762 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/history */ 52).then(__webpack_require__.bind(null, 324)));
 
-const _00befa6d = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/protocol */ 54).then(__webpack_require__.bind(null, 209)));
+const _00befa6d = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/protocol */ 54).then(__webpack_require__.bind(null, 208)));
 
-const _1e1c3978 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/tradingRule */ 55).then(__webpack_require__.bind(null, 326)));
+const _1e1c3978 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/tradingRule */ 55).then(__webpack_require__.bind(null, 325)));
 
-const _5d08bdb4 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/component/createPoster */ 28).then(__webpack_require__.bind(null, 204)));
+const _5d08bdb4 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/component/createPoster */ 28).then(__webpack_require__.bind(null, 203)));
 
-const _24381afe = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/_id */ 20).then(__webpack_require__.bind(null, 327)));
+const _24381afe = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/_id */ 20).then(__webpack_require__.bind(null, 326)));
 
-const _262ca6c4 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 56).then(__webpack_require__.bind(null, 328)));
+const _262ca6c4 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 56).then(__webpack_require__.bind(null, 327)));
 
-const _18d2f8a1 = () => interopDefault(__webpack_require__.e(/* import() | pages/_id */ 18).then(__webpack_require__.bind(null, 329)));
+const _18d2f8a1 = () => interopDefault(__webpack_require__.e(/* import() | pages/_id */ 18).then(__webpack_require__.bind(null, 328)));
 
 const emptyFn = () => {};
 
@@ -7873,23 +7868,23 @@ function wrapFunctional(options) {
 
 
 const components = {
+  BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 212)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 329)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 112)).then(c => wrapFunctional(c.default || c)),
+  BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 213)).then(c => wrapFunctional(c.default || c)),
+  BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 211)).then(c => wrapFunctional(c.default || c)),
   CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 85)).then(c => wrapFunctional(c.default || c)),
   CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 74)).then(c => wrapFunctional(c.default || c)),
   Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 78)).then(c => wrapFunctional(c.default || c)),
-  BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 213)).then(c => wrapFunctional(c.default || c)),
-  BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 330)).then(c => wrapFunctional(c.default || c)),
-  BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 113)).then(c => wrapFunctional(c.default || c)),
-  BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 214)).then(c => wrapFunctional(c.default || c)),
-  BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 212)).then(c => wrapFunctional(c.default || c)),
-  Trading: () => __webpack_require__.e(/* import() | components/trading */ 10).then(__webpack_require__.bind(null, 116)).then(c => wrapFunctional(c.default || c)),
-  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 205)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 12).then(__webpack_require__.bind(null, 163)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 13).then(__webpack_require__.bind(null, 88)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 14).then(__webpack_require__.bind(null, 331)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 11).then(__webpack_require__.bind(null, 300)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutPainter: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-painter */ 15).then(__webpack_require__.bind(null, 114)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutQrcode: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-qrcode */ 16).then(__webpack_require__.bind(null, 87)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 17).then(__webpack_require__.bind(null, 115)).then(c => wrapFunctional(c.default || c))
+  Trading: () => __webpack_require__.e(/* import() | components/trading */ 10).then(__webpack_require__.bind(null, 115)).then(c => wrapFunctional(c.default || c)),
+  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 204)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 12).then(__webpack_require__.bind(null, 162)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 13).then(__webpack_require__.bind(null, 87)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 14).then(__webpack_require__.bind(null, 330)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 11).then(__webpack_require__.bind(null, 299)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutPainter: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-painter */ 15).then(__webpack_require__.bind(null, 113)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutQrcode: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-qrcode */ 16).then(__webpack_require__.bind(null, 86)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 17).then(__webpack_require__.bind(null, 114)).then(c => wrapFunctional(c.default || c))
 };
 
 for (const name in components) {

@@ -1,7 +1,7 @@
 <template>
   <div class="invite-list colorBackground0">
     <div class="loading" v-if="isLoading">
-      <van-loading color="#1989fa" vertical
+      <van-loading color="#7524f9" vertical
         >{{ $t("base.loading") }}...</van-loading
       >
     </div>
@@ -214,17 +214,17 @@ export default {
   .invite-list-header {
     margin: 0 16px;
     border-radius: 8px 8px 0px 0px;
-    color: #495bff;
+    color: #7524f9;
     display: flex;
     padding: 10px 15px 15px;
     line-height: 28px;
-    background-color: rgba(73, 91, 255, 0.1);
+    background-color: rgba(117, 36, 249, 0.1);;
     .color-line {
       width: 1px;
       height: 36px;
       opacity: 0.1;
       margin-top: 14px;
-      background: #495bff;
+      background: #7524f9;
     }
     .invite-list-header-left {
       width: 50%;

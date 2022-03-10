@@ -26,11 +26,11 @@
                                 <span v-if="item.day === 4 || item.day === 7" class="Novicebenefits-sign-item-img-obtain backgroundSecond01"> <i style="font-style:normal;" class="colorwhite">{{$t('noviceBenefits.obtain')}}</i></span>
                                 <van-image
                                     v-if="!item.isSignin"
-                                    :src="(item.day === 4 || item.day === 7) && index === signDay && !signList.todayIsSgin ? 'https://cdn.bitkeep.vip/u_b_aa80c7c0-7615-11ec-9d29-f144d09ca5ed.png' : index === signDay && !signList.todayIsSgin? 'https://cdn.bitkeep.vip/u_b_56e30a70-7448-11ec-a3df-456c694c3f18.png' : (item.day === 4 || item.day === 7) ? 'https://cdn.bitkeep.vip/u_b_65c04710-7448-11ec-a3df-456c694c3f18.png' : 'https://cdn.bitkeep.vip/u_b_5457fe50-743e-11ec-a3df-456c694c3f18.png'"
+                                    :src="(item.day === 4 || item.day === 7) && index === signDay && !signList.todayIsSgin ? 'https://cdn.bitkeep.vip/u_b_e4fd4180-a03b-11ec-ad8b-9ff4f858e021.png' : index === signDay && !signList.todayIsSgin? 'https://cdn.bitkeep.vip/u_b_2e5e5380-a034-11ec-b054-8b7edc051038.png' : (item.day === 4 || item.day === 7) ? 'https://cdn.bitkeep.vip/u_b_65c04710-7448-11ec-a3df-456c694c3f18.png' : 'https://cdn.bitkeep.vip/u_b_5457fe50-743e-11ec-a3df-456c694c3f18.png'"
                                 />
                                 <van-image
                                     v-else
-                                    :src="(item.day === 4 || item.day === 7) ? 'https://cdn.bitkeep.vip/u_b_78224830-7449-11ec-a3df-456c694c3f18.png' : 'https://cdn.bitkeep.vip/u_b_384a1810-7448-11ec-a3df-456c694c3f18.png'"
+                                    :src="(item.day === 4 || item.day === 7) ? 'https://cdn.bitkeep.vip/u_b_e4fd6890-a03b-11ec-ad8b-9ff4f858e021.png' : 'https://cdn.bitkeep.vip/u_b_2e5e0560-a034-11ec-b054-8b7edc051038.png'"
                                 />
                             </div>
                             <!-- 签到 -->
@@ -45,7 +45,7 @@
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
                         class="Novicebenefits-sign-top-bottom-img-left"
-                        src="https://cdn.bitkeep.vip/u_b_ae5cdb10-79e7-11ec-9d29-f144d09ca5ed.png"
+                        src="https://cdn.bitkeep.vip/u_b_6b97a060-a036-11ec-b054-8b7edc051038.png"
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
@@ -71,7 +71,7 @@
             <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom">
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
-                        src="https://cdn.bitkeep.vip/u_b_ce1f5eb0-72a7-11ec-bb03-832c5d2a67c5.png"
+                        src="https://cdn.bitkeep.vip/u_b_6b96dd11-a036-11ec-b054-8b7edc051038.png"
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
@@ -91,7 +91,7 @@
                 <!-- swap交易 -->
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
-                        src="https://cdn.bitkeep.vip/u_b_3badf390-79da-11ec-a1dc-431b57c20695.png"
+                        src="https://cdn.bitkeep.vip/u_b_6b96dd10-a036-11ec-b054-8b7edc051038.png"
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
@@ -111,7 +111,7 @@
             <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom" >
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
-                        src="https://cdn.bitkeep.vip/u_b_cb358fc0-72a8-11ec-bb03-832c5d2a67c5.png"
+                        src="https://cdn.bitkeep.vip/u_b_6b972b30-a036-11ec-b054-8b7edc051038.png"
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
@@ -138,7 +138,7 @@
             <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom">
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
-                        src="https://cdn.bitkeep.vip/u_b_68daa940-78e4-11ec-9d29-f144d09ca5ed.png"
+                        src="https://cdn.bitkeep.vip/u_b_b21ebdc0-a036-11ec-b054-8b7edc051038.png"
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
@@ -153,7 +153,7 @@
             <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom">
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
-                        src="https://cdn.bitkeep.vip/u_b_45ecb4a0-78e4-11ec-9d29-f144d09ca5ed.png"
+                        src="https://cdn.bitkeep.vip/u_b_b21e96b0-a036-11ec-b054-8b7edc051038.png"
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
@@ -168,7 +168,7 @@
             <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom">
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
-                        src="https://cdn.bitkeep.vip/u_b_81d17ff0-78e4-11ec-9d29-f144d09ca5ed.png"
+                        src="https://cdn.bitkeep.vip/u_b_b21e4890-a036-11ec-b054-8b7edc051038.png"
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
@@ -274,7 +274,7 @@ export default {
         return day.length;
     },
     signimg(item,index){
- return (item.day === 4 || item.day === 7) && index === this.signDay ? 'https://cdn.bitkeep.vip/u_b_aa80c7c0-7615-11ec-9d29-f144d09ca5ed.png' : index === this.signDay ? 'https://cdn.bitkeep.vip/u_b_56e30a70-7448-11ec-a3df-456c694c3f18.png' : (item.day === 4 || item.day === 7) ? 'https://cdn.bitkeep.vip/u_b_65c04710-7448-11ec-a3df-456c694c3f18.png' : 'https://cdn.bitkeep.vip/u_b_5457fe50-743e-11ec-a3df-456c694c3f18.png'
+ return (item.day === 4 || item.day === 7) && index === this.signDay ? 'https://cdn.bitkeep.vip/u_b_e4fd4180-a03b-11ec-ad8b-9ff4f858e021.png' : index === this.signDay ? 'https://cdn.bitkeep.vip/u_b_2e5e5380-a034-11ec-b054-8b7edc051038.png' : (item.day === 4 || item.day === 7) ? 'https://cdn.bitkeep.vip/u_b_65c04710-7448-11ec-a3df-456c694c3f18.png' : 'https://cdn.bitkeep.vip/u_b_5457fe50-743e-11ec-a3df-456c694c3f18.png'
     },
     userInfo() {
       return this.local.userInfo.token;
@@ -301,7 +301,7 @@ export default {
             title:title || '',
             message: mes,
             confirmButtonText: this.$t("CbkbExchange.know"),
-            confirmButtonColor: "#495BFF",
+            confirmButtonColor: "#7524f9",
         }).then(()=>{
             if(type && type==="prize"){
                 this.$router.push("/activity/noviceBenefits/lotteryresults")

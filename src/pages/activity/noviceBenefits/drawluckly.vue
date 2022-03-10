@@ -120,7 +120,7 @@ export default {
           title:title || '',
           message: message,
           confirmButtonText: this.$t("CbkbExchange.know"),
-          confirmButtonColor: "#495BFF",
+          confirmButtonColor: "#7524f9",
       });
     },
     async pushPapersIn(){
@@ -265,7 +265,7 @@ p{
 .drawluckly-topbanner{
     width: 100%;
     height: 140px;
-    background-image: url(https://cdn.bitkeep.vip/u_b_f8a2c6a0-72bf-11ec-9c27-5bf3ec58d767.png);
+    background-image: url(https://cdn.bitkeep.vip/u_b_4a4a7890-a038-11ec-b054-8b7edc051038.png);
     background-size:100%;
     position: relative;
     .drawluckly-topbanner-time{

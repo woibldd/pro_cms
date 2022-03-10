@@ -1,7 +1,7 @@
 <template>
   <div class="hisory-wrap colorBackground0">
     <div class="loading" v-if="isLoading">
-      <van-loading color="#1989fa" vertical
+      <van-loading color="#7524f9" vertical
         >{{ $t("base.loading") }}...</van-loading
       >
     </div>
@@ -130,7 +130,7 @@ export default {
         return this.$dialog.alert({
           message: data,
           confirmButtonText: this.$t("trading.know"),
-          confirmButtonColor: "#495BFF",
+          confirmButtonColor: "#7524f9",
         });
       }
       this.tradingSummarys = data;

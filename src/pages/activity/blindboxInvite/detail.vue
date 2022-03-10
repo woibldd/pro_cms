@@ -1,14 +1,14 @@
 <template>
 <div>
   <div class="loading" v-if="isLoading">
-      <van-loading color="#1989fa" vertical
+      <van-loading color="#7524f9" vertical
         >{{ $t("base.loading") }}...</van-loading
       >
   </div>
   <div class="detail_box" v-else>
     <div class="detail_box_back">
       <div class="detail_box_header">
-      <div><img src="@/assets/activity/blindbox/logo@2.png" /></div>
+      <div><img src="https://cdn.bitkeep.vip/u_b_88287340-a021-11ec-b054-8b7edc051038.png" /></div>
       <div class="detail_box_lang">
         <div class="langBox" id="showLang" @click="changeLang">
           <span class="curLang">{{langText}}</span>
@@ -30,7 +30,7 @@
         <div>
           <div>
             <img
-              src="https://cdn.bitkeep.vip/u_b_2d8ec1f0-5bed-11ec-bdbc-7722494dfa58.png"
+              src="https://cdn.bitkeep.vip/u_b_7fa557b0-a021-11ec-b054-8b7edc051038.png"
               alt=""
             />
           </div>
@@ -41,7 +41,7 @@
         <div class="detail_box_flex_content_right">
           <div>
             <img
-              src="https://cdn.bitkeep.vip/u_b_2d96d840-5bed-11ec-bdbc-7722494dfa58.png"
+              src="https://cdn.bitkeep.vip/u_b_7fa5cce0-a021-11ec-b054-8b7edc051038.png"
               alt=""
             />
           </div>
@@ -54,7 +54,7 @@
         <div>
           <div>
             <img
-              src="https://cdn.bitkeep.vip/u_b_2d97e9b0-5bed-11ec-bdbc-7722494dfa58.png"
+              src="https://cdn.bitkeep.vip/u_b_7fa57ec0-a021-11ec-b054-8b7edc051038.png"
               alt=""
             />
           </div>
@@ -63,7 +63,7 @@
         <div class="detail_box_flex_content_right">
           <div>
             <img
-              src="https://cdn.bitkeep.vip/u_b_2d8f1010-5bed-11ec-bdbc-7722494dfa58.png"
+              src="https://cdn.bitkeep.vip/u_b_7fa4e280-a021-11ec-b054-8b7edc051038.png"
               alt=""
             />
           </div>
@@ -101,7 +101,7 @@
     <div class="detail_box_wallet setMargin">
       <h1>{{$t( 'blindboxInvite.detailWhy' )}}</h1>
       <img
-        src="https://cdn.bitkeep.vip/u_b_916160b0-5a59-11ec-bdbc-7722494dfa58.png"
+        src="https://cdn.bitkeep.vip/u_b_5ebca2c0-a03e-11ec-ad3b-53d19082ce6a.png"
         alt=""
       />
       <div class="detail_box_wallet_title_content">
@@ -115,7 +115,7 @@
     </div>
     <div class="detail_box_wallet setBackground">
       <img
-        src="https://cdn.bitkeep.vip/u_b_22575140-5bec-11ec-bdbc-7722494dfa58.png"
+        src="https://cdn.bitkeep.vip/u_b_9c3b6f00-a03e-11ec-ad3b-53d19082ce6a.png"
         alt=""
       />
       <div class="detail_box_wallet_title_content setBottom">
@@ -132,7 +132,7 @@
         {{$t('blindboxInvite.detailNFTCon')}}
       </div>
       <img
-        src="https://cdn.bitkeep.vip/u_b_d35394b0-5e1f-11ec-bd49-b1b354a240c8.png"
+        src="https://cdn.bitkeep.vip/u_b_f6689bb0-a03e-11ec-ad3b-53d19082ce6a.png"
         alt=""
       />
     </div>
@@ -157,14 +157,14 @@
       </ul>
       <div class="people">
         <img
-          src="https://cdn.bitkeep.vip/u_b_e27e3060-d0b9-11eb-a1fd-1b9796c35a14.png"
+          src="https://cdn.bitkeep.vip/u_b_4005d2b0-a03f-11ec-ad3b-53d19082ce6a.png"
           alt="people"
         />
       </div>
     </div>
     <div class="blindbox_logo">
       <span class="logo">
-        <img src="@/assets/activity/blindbox/logo@2.png"
+        <img src="https://cdn.bitkeep.vip/u_b_88287340-a021-11ec-b054-8b7edc051038.png"
       /></span>
     </div>
     <div class="download" id="IosBtnen" v-if="isIos">
@@ -331,7 +331,7 @@ export default {
     align-items: center;
     img {
       width: 108px;
-      height: 28px;
+      height: 32px;
     }
     .detail_box_lang {
       .langBox {
@@ -437,7 +437,7 @@ export default {
         }
       }
       .detail_box_address_textarea_btn {
-        background: #495bff;
+        background: #7524f9;
         border-radius: 8px;
         color: #fff;
         height: 50px;
@@ -482,7 +482,7 @@ export default {
           margin-top: 3px;
           width: 14px;
           height: 14px;
-          background: url("@/assets/activity/icon/01icon.png") no-repeat;
+          background: url("https://cdn.bitkeep.vip/u_b_2d81db60-a022-11ec-b054-8b7edc051038.png") no-repeat;
           background-size: 100% auto;
         }
       }
@@ -564,8 +564,8 @@ export default {
     box-sizing: border-box;
     align-items: center;
     .logo {
-      width: 105px;
-      height: 28px;
+      width: 111px;
+      height: 36px;
       display: flex;
       img {
         width: 100%;

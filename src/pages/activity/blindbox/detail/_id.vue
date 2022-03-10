@@ -1,7 +1,7 @@
 <template>
   <div id="blindbox_invite">
     <div class="loading" v-if="isLoading">
-      <van-loading size="1rem" vertical color="#1989fa"
+      <van-loading size="1rem" vertical color="#7524f9"
         >{{ $t("base.loading") }}...</van-loading
       >
     </div>
@@ -658,7 +658,7 @@ head () {
       line-height: 20px;
       word-break: break-word;
       a {
-        color: #495bff;
+        color: #7524f9;
       }
     }
     .block_invite_list {

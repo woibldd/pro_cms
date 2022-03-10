@@ -1,3 +1,16 @@
+//! authors : Tim Wood, Iskren Chernev, Moment.js contributors
+
+//! license : MIT
+
+//! moment.js
+
+//! moment.js locale configuration
+
+//! momentjs.com
+
+//! version : 2.29.1
+
+
 /*!
  * Vue-Lazyload.js v1.2.3
  * (c) 2018 Awe <hilongjw@gmail.com>
@@ -122,27 +135,6 @@ and limitations under the License.
 
 
 /*!
- * cookie
- * Copyright(c) 2012-2014 Roman Shtylman
- * Copyright(c) 2015 Douglas Christopher Wilson
- * MIT Licensed
- */
-
-
-//! authors : Tim Wood, Iskren Chernev, Moment.js contributors
-
-//! license : MIT
-
-//! moment.js
-
-//! moment.js locale configuration
-
-//! momentjs.com
-
-//! version : 2.29.1
-
-
-/*!
  * The buffer module from node.js, for the browser.
  *
  * @author   Feross Aboukhadijeh <http://feross.org>
@@ -171,6 +163,14 @@ and limitations under the License.
     ***************************************************************************** */
 
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+
+/*!
+ * cookie
+ * Copyright(c) 2012-2014 Roman Shtylman
+ * Copyright(c) 2015 Douglas Christopher Wilson
+ * MIT Licensed
+ */
 
 
 /*!

@@ -17,7 +17,7 @@
     <div class="line colorLine"></div>
     <div class="content">
       <img
-        src="https://cdn.bitkeep.vip/u_b_7d8ec4f0-4b78-11ec-9826-e3fc5958ff1e.png"
+        src="https://cdn.bitkeep.vip/u_b_27f9ea80-a03a-11ec-ad8b-9ff4f858e021.png"
         class="logo"
         alt=""
       />

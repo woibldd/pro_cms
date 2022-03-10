@@ -1,7 +1,7 @@
 <template>
   <div class="mining">
     <div class="loading" v-if="isLoading">
-      <van-loading color="#1989fa" vertical
+      <van-loading color="#7524f9" vertical
         >{{ $t("base.loading") }}...</van-loading
       >
     </div>
@@ -249,7 +249,7 @@
                   {{ $t("mining.inviteNumber1") }}
                 </p>
                 <div class="mining-wrap-one-body-vol-number setFontFamily">
-                  <span class="setW" style="color: #495BFF">{{ activityInviteDonereward }} BKB</span>
+                  <span class="setW" style="color: #7524f9">{{ activityInviteDonereward }} BKB</span>
                 </div>
               </div>
               <div>
@@ -258,7 +258,7 @@
                 </p>
                 <div class="
                     mining-wrap-one-body-vol-number-todyVolue
-                    setFontFamily" style="color: #495BFF">{{ activityStatus != 0 ? "+" + activityTradingBkbReward + ' BKB' : '0 BKB' }}
+                    setFontFamily" style="color: #7524f9">{{ activityStatus != 0 ? "+" + activityTradingBkbReward + ' BKB' : '0 BKB' }}
                 </div>
               </div>
             </div>

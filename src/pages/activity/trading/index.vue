@@ -1,7 +1,7 @@
 <template>
   <div class="trading colorBackground0">
     <div class="loading" v-if="isLoading">
-      <van-loading color="#1989fa" vertical
+      <van-loading color="#7524f9" vertical
         >{{ $t("base.loading") }}...</van-loading
       >
     </div>
@@ -30,7 +30,7 @@
             mode="closeable">{{$t('trading.noticeBar')}}</van-notice-bar>
           <div class="img">
             <img
-              src="https://cdn.bitkeep.vip/u_b_c29ed840-7531-11ec-8de8-87fc79fc0305.png"
+              src="https://cdn.bitkeep.vip/u_b_b4082c50-a038-11ec-b054-8b7edc051038.png"
               alt=""
             />
             <div class="img-text">
@@ -54,7 +54,7 @@
           </div>
           <div v-show="activeType == 0">
             <div class="trading-wrap-box">
-              <van-loading color="#1989fa" class="setLoadingHeight" vertical v-if='isLoadingList'
+              <van-loading color="#7524f9" class="setLoadingHeight" vertical v-if='isLoadingList'
                 >{{ $t("base.loading") }}...</van-loading
               >
               <tradingCom
@@ -67,7 +67,7 @@
           </div>
           <div v-show="activeType == 1">
             <div class="trading-wrap-box">
-              <van-loading class="setLoadingHeight" color="#1989fa" vertical v-if='isLoadingList'
+              <van-loading class="setLoadingHeight" color="#7524f9" vertical v-if='isLoadingList'
                 >{{ $t("base.loading") }}...</van-loading
               >
               <tradingCom v-else :tradingList="tradingList" :activeType="1"></tradingCom>
@@ -75,7 +75,7 @@
           </div>
           <div v-show="activeType == 2">
             <div class="trading-wrap-box">
-              <van-loading color="#1989fa" class="setLoadingHeight" vertical v-if='isLoadingList'
+              <van-loading color="#7524f9" class="setLoadingHeight" vertical v-if='isLoadingList'
                 >{{ $t("base.loading") }}...</van-loading
               >
               <tradingCom v-else :tradingList="tradingList" :activeType="2"></tradingCom>
@@ -86,7 +86,7 @@
             <div class="trading-wrap-one-header">
               <div class="trading-wrap-one-header-title">
                 <img
-                  src="https://cdn.bitkeep.vip/u_b_d9de7870-3b9e-11ec-8e63-1db435df936c.png"
+                  src="https://cdn.bitkeep.vip/u_b_b0f0bdb0-a039-11ec-ad8b-9ff4f858e021.png"
                   alt=""
                 />
                 <span class="setFontWeight textPrimary0">{{

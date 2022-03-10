@@ -3,7 +3,7 @@
     <div class="mining-rule-title-one">{{$t('trading.ruleTitle')}}</div>
     <div class="mining-rule-content" v-html="$t('trading.ruleContent')"></div>
     <div class="mining-rule-title-one setM">{{$t('trading.how')}}</div>
-    <div class="mining-rule-title">{{$t('trading.how1')}}<span style="color: #495BFF" @click="openUrl"> https://www.youtube.com</span>{{$t('trading.how11')}}</div>
+    <div class="mining-rule-title">{{$t('trading.how1')}}<span style="color: #7524f9" @click="openUrl"> https://www.youtube.com</span>{{$t('trading.how11')}}</div>
     <div class="mining-rule-title">{{$t('trading.how2')}}</div>
     <div class="mining-rule-content">
       {{$t('trading.howContent')}}

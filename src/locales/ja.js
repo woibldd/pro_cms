@@ -255,7 +255,6 @@ module.exports = {
     how: 'BKSwap Trading Rewardを取得するにはどうすればよいですか？',
     how1: '1.最新のBKSwapチュートリアルについては、',
     how11: ' を参照してください。',
-    // how1: `<a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a>を参照してください。`,
     hhow2: '2. イベントのルール：',
     howContent: '招待状（賞金プール：30WBKB）：トレーディングリワードイベントは5日間続きます。 招待報酬プールは、招待が成功したすべてのユーザーによって共有されます。 報酬は次のように計算されます。',
     howContent1: '毎日、ユーザーは次の情報を取得できます：15 *正常に招待されたユーザーの数+（すべての招待者のトランザクション量/すべての招待ユーザーのGMVの合計）* X <br/>ここで、「 招待されたすべてのユーザー」をYとして',

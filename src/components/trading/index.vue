@@ -332,7 +332,7 @@ export default {
       margin-top: 15px;
     }
     .trading-wrap-box-pool-stake-now {
-      background: #495bff;
+      background: #7524f9;
       color: #fff;
     }
     .trading-wrap-box-pool-stake-soon {

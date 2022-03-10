@@ -5,7 +5,7 @@
       {{$t('mining.ruleContent')}}
     </div>
     <div class="mining-rule-title-one setM">{{$t('mining.how')}}</div>
-    <div class="mining-rule-title">{{$t('mining.how1')}}<span style="color: #495BFF" @click="openUrl"> https://www.youtube.com</span>{{$t('mining.how11')}}</div>
+    <div class="mining-rule-title">{{$t('mining.how1')}}<span style="color: #7524f9" @click="openUrl"> https://www.youtube.com</span>{{$t('mining.how11')}}</div>
     <div class="mining-rule-title">{{$t('mining.how2')}}</div>
     <div class="mining-rule-content">
       {{$t('mining.howContent')}}

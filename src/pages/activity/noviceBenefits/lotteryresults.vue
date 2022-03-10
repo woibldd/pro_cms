@@ -220,6 +220,6 @@ p{
   }
 }
 .colorBlue{
-    color: #495BFF!important;
+    color: #7524f9!important;
 }
 </style>

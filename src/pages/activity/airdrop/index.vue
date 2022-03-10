@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="loading" v-if="isLoading">
-      <van-loading  color="#1989fa" vertical>加载中...</van-loading>
+      <van-loading  color="#7524f9" vertical>加载中...</van-loading>
     </div>
     <div v-else>
       <div class="img">
@@ -60,7 +60,7 @@
         <div class="distribution-man">
           <div class="data">
             <div>
-              <span style="background: #495BFF;"></span>
+              <span style="background: #7524f9;"></span>
               <span>{{$t('CbkbExchange.mining')}}</span>
             </div>
             <div>50%</div>
@@ -241,7 +241,7 @@ export default {
         lang: this.local.locale
       });
       if (status == 1){
-        return this.$dialog.alert({ message: data,confirmButtonText: this.$t('CbkbExchange.know'),confirmButtonColor: '#495BFF' });
+        return this.$dialog.alert({ message: data,confirmButtonText: this.$t('CbkbExchange.know'),confirmButtonColor: '#7524f9' });
       }
       this.airDropCount = this.milliFormat(data.amount)
       this.status = data.status;
@@ -257,9 +257,9 @@ export default {
         lang: this.local.locale
       });
       if (status == 1) {
-        return this.$dialog.alert({ message: data,confirmButtonText: this.$t('CbkbExchange.know') ,confirmButtonColor: '#495BFF' });
+        return this.$dialog.alert({ message: data,confirmButtonText: this.$t('CbkbExchange.know') ,confirmButtonColor: '#7524f9' });
       }
-      this.$dialog.alert({ message: data,confirmButtonText: this.$t('CbkbExchange.know'),confirmButtonColor: '#495BFF' }).then(() =>{
+      this.$dialog.alert({ message: data,confirmButtonText: this.$t('CbkbExchange.know'),confirmButtonColor: '#7524f9' }).then(() =>{
         this.getAirDropCount(window.ethereum.selectedAddress);
       });
     }),
@@ -330,7 +330,7 @@ export default {
     height: 50px;
     color: #fff;
     margin: 20px auto;
-    background: #495BFF;
+    background: #7524f9;
     border-radius: 10px;
     font-weight: 500;
     font-size: 16px;
@@ -398,7 +398,7 @@ export default {
     text-align: right;
     font-size: 14px;
     line-height: 14px;
-    color: #495BFF;
+    color: #7524f9;
     margin-top: 6px;
   }
 }

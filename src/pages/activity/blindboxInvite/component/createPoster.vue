@@ -87,7 +87,7 @@ export default {
   },
   computed: {
     proxy_img() {
-      const sourceUrl = "https://cdn.bitkeep.vip/u_b_792eb450-5e3e-11ec-bd49-b1b354a240c8.png";
+      const sourceUrl = "https://cdn.bitkeep.vip/u_b_c474a860-a020-11ec-b054-8b7edc051038.jpeg";
       return sourceUrl
         ? `/poster${sourceUrl
             .replace("https://cdn.bitkeep.vip", "")
@@ -286,7 +286,7 @@ export default {
       font-size: 16px;
       // background: linear-gradient(122.71deg, #5aebff 3.38%, #6d39ff 92.57%),
         // #c4c4c4;
-      background:#495BFF;
+      background:#7524f9;
       border-radius: 100px;
       font-weight: 600;
       color: #ffffff;

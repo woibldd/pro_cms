@@ -1,7 +1,7 @@
  <template>
   <div id="blindbox_list">
     <div class="loading" v-if="isLoading">
-      <van-loading color="#1989fa" />
+      <van-loading color="#7524f9" />
     </div>
     <div v-else>
       <!-- <Header>

@@ -256,7 +256,6 @@ module.exports = {
     how: 'Làm thế nào để nhận được Phần thưởng giao dịch BKSwap?',
     how1: '1. Vui lòng tham khảo ',
     how11: ' để biết hướng dẫn về BKSwap mới nhất.',
-    // how1: `<a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a> để biết hướng dẫn về BKSwap mới nhất.`,
     how2: '2. Nội quy của sự kiện:',
     howContent: 'Lời mời (Tổng giải thưởng: 30WBKB): Các sự kiện Phần thưởng giao dịch sẽ kéo dài trong 5 ngày. Phần thưởng lời mời sẽ được chia sẻ bởi tất cả người dùng có lời mời thành công. Phần thưởng được tính như sau:',
     howContent1: 'Đối với mỗi ngày, người dùng có thể nhận được: 15 * số người dùng được mời thành công + (tổng khối lượng giao dịch của tất cả những người được mời / GMV của tất cả người dùng được mời) * X <br/> trong đó, chúng tôi coi là “GMV của tất cả người dùng được mời ”là Y',

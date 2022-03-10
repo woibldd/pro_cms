@@ -268,7 +268,6 @@ module.exports = {
         how: 'How to get BKSwap Trading Reward?',
         how1: '1. Please refer to',
         how11: ' for the latest BKSwap tutorial.',
-        // how1: `1. Please refer to <a href='https://www.youtube.com/watch?v=_5expUiioV8' style="color: #495BFF">https://www.youtube.com</a> for the latest BKSwap tutorial.`,
         how2: '2. Rules of the event:',
         howContent: 'Invitation (Prize pool: 30WBKB): The Trading Reward events will last for 5 days. The invitation reward pool will be shared by all users with successful invitations. The rewards are calculated as follows:',
         howContent1: 'For each day, a user can get: 15*number of successfully invited users + (sum of the transaction volume of all his/her invitees/GMV of all invited users)*X<br/>in which, we consider “GMV of all invited users” as Y',

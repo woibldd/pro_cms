@@ -1,7 +1,7 @@
 <template>
   <div class="colorBackground1">
     <div class="loading" v-if="isLoading">
-      <van-loading color="#1989fa" vertical
+      <van-loading color="#7524f9" vertical
         >{{ $t("base.loading") }}...</van-loading
       >
     </div>
@@ -464,8 +464,8 @@ export default {
       font-size: 16px;
     }
     .setBorderColor {
-      border: 1px solid #495bff;
-      color: #495bff;
+      border: 1px solid #7524f9;
+      color: #7524f9;
     }
   }
   .staking-warp-amount {
@@ -605,7 +605,7 @@ export default {
   padding: 11px 36px 34px;
   box-sizing:border-box;
   .staking-wrap-box-pool-stake-now {
-    background: #495bff;
+    background: #7524f9;
     color: #fff;
   }
   .setOpacity {

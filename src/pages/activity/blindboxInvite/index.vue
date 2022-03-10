@@ -1,7 +1,7 @@
 <template>
   <div class="warp-invite colorBackground0">
     <div class="loading" v-if="isLoading">
-      <van-loading color="#1989fa" vertical
+      <van-loading color="#7524f9" vertical
         >{{ $t("base.loading") }}...</van-loading
       >
     </div>
@@ -9,7 +9,7 @@
         <div class="warp-invite colorBackground0">
           <div class="warp-invite-banner">
             <img
-              src="https://cdn.bitkeep.vip/u_b_d6f84c30-5e3f-11ec-bd49-b1b354a240c8.png"
+              src="https://cdn.bitkeep.vip/u_b_2eb42130-a01f-11ec-b054-8b7edc051038.png"
             />
             <div class="imgText">
               <div class="imgTextTitle">{{ $t("blindboxInvite.toEarn") }}</div>
@@ -25,13 +25,13 @@
             <!-- <div class="borderBottom colorLine"></div> -->
             <div class="invite-setP">
               <div class="warp-invite-produced" @click="inviteFriendList">
-                <span class="textSecond1"><img src="https://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.invitedNumber") }}</span>
+                <span class="textSecond1"><img src="https://cdn.bitkeep.vip/u_b_a4c3d2d0-a01f-11ec-b054-8b7edc051038.png" alt="">{{ $t("blindboxInvite.invitedNumber") }}</span>
                 <span class="setFontFamily setDisplay textPrimary0">
                   <van-icon name="arrow" color='#999BA3'/>
                 </span>
               </div>
               <div class="warp-invite-produced" @click="rewardsList">
-                <span class="textSecond1"><img src="https://cdn.bitkeep.vip/u_b_e7b6fe30-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.tokenRewards") }}</span>
+                <span class="textSecond1"><img src="https://cdn.bitkeep.vip/u_b_a4c420f0-a01f-11ec-b054-8b7edc051038.png" alt="">{{ $t("blindboxInvite.tokenRewards") }}</span>
                 <span class="setFontFamily">
                   <van-icon name="arrow" color='#999BA3'/>
                 </span>
@@ -39,13 +39,13 @@
             </div>
             <!-- <div class="invite-setP">
               <div class="warp-invite-produced">
-                <span><img src="https://cdn.bitkeep.vip/u_b_e7b63ae0-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.NFTRewards") }}</span>
+                <span><img src="https://cdn.bitkeep.vip/u_b_a4c46f10-a01f-11ec-b054-8b7edc051038.png" alt="">{{ $t("blindboxInvite.NFTRewards") }}</span>
                 <span class="setFontFamily">0
                   <van-icon name="arrow" color='#999BA3'/>
                 </span>
               </div>
               <div class="warp-invite-produced">
-                <span><img src="https://cdn.bitkeep.vip/u_b_e7b5c5b0-5427-11ec-a16d-43771b230a03.png" alt="">{{ $t("blindboxInvite.boxRewards") }}</span>
+                <span><img src="https://cdn.bitkeep.vip/u_b_a4c4e440-a01f-11ec-b054-8b7edc051038.png" alt="">{{ $t("blindboxInvite.boxRewards") }}</span>
                 <span class="setFontFamily">0
                   <van-icon name="arrow" color='#999BA3'/>
                 </span>
@@ -79,7 +79,7 @@
           </div>
           <div class="warp-invite-imgLink setTop">
             <!-- <div @click="toReward" class="setBg">
-              <img src="https://cdn.bitkeep.vip/u_b_c9755b00-6206-11ec-9638-bfd886e3565b.png" alt="">
+              <img src="https://cdn.bitkeep.vip/u_b_2eb8dc20-a01f-11ec-b054-8b7edc051038.png" alt="">
             </div> -->
             <!-- <img src="https://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">
             <img src="https://cdn.bitkeep.vip/u_b_eac5dc40-5ee5-11ec-97a4-9306645a7a9a.png" alt="">

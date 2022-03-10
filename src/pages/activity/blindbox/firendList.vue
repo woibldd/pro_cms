@@ -1,7 +1,7 @@
 <template>
   <div class="firenddivst">
     <div class="loading" v-if="isLoading">
-      <van-loading color="#1989fa" />
+      <van-loading color="#7524f9" />
     </div>
     <div class="firenddivst-tab" v-else>
       <van-pull-refresh

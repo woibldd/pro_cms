@@ -51,7 +51,7 @@
       <div class="distribution-man">
         <div class="data">
           <div>
-            <span style="background: #495bff"></span>
+            <span style="background: #7524f9"></span>
             <span>{{ $t("mining.mining") }}</span>
           </div>
           <div class="textPrimary0">50%</div>
