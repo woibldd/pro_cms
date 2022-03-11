@@ -231,12 +231,12 @@ export default {
         font-weight: bold;
         line-height: 28px;
         width:200px;
-        color: #080D21;
+        color: #0E0E0E;
       }
       .imgTextContent{
         font-size: 12px;
         width:220px;
-        color: #080D21;
+        color: #0E0E0E;
       }
     }
   }

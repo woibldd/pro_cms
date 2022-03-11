@@ -16,7 +16,7 @@
       <div class="staking-wrap colorBackground0">
         <div class="staking-wrap-banner">
           <img
-            src="https://cdn.bitkeep.vip/u_b_e5be40b0-6468-11ec-a2a9-47db2a9d25c4.png"
+            src="https://cdn.bitkeep.vip/u_b_a3377020-a114-11ec-b5cd-6f94e6599e38.png"
             alt=""
           />
           <div class="staking-wrap-imgText">
@@ -86,7 +86,7 @@
           >
             <div class="staking-wrap-box-pool-title">
               <img
-                src="https://cdn.bitkeep.vip/u_b_a6bdfc60-5113-11ec-be10-ddc2856c6ac6.png"
+                src="https://cdn.bitkeep.vip/u_b_27f9ea80-a03a-11ec-ad8b-9ff4f858e021.png"
                 alt=""
                 class="bigImg"
               />
@@ -150,7 +150,7 @@
           <div class="staking-wrap-box-pool colorBackground1">
             <div class="staking-wrap-box-pool-title">
               <img
-                src="https://cdn.bitkeep.vip/u_b_a6bdfc60-5113-11ec-be10-ddc2856c6ac6.png"
+                src="https://cdn.bitkeep.vip/u_b_27f9ea80-a03a-11ec-ad8b-9ff4f858e021.png"
                 alt=""
                 class="bigImg"
               />
@@ -208,7 +208,7 @@
           <div class="staking-wrap-box-pool colorBackground1">
             <div class="staking-wrap-box-pool-title">
               <img
-                src="https://cdn.bitkeep.vip/u_b_a6bdfc60-5113-11ec-be10-ddc2856c6ac6.png"
+                src="https://cdn.bitkeep.vip/u_b_27f9ea80-a03a-11ec-ad8b-9ff4f858e021.png"
                 alt=""
                 class="bigImg"
               />

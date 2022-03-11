@@ -67,7 +67,7 @@
           </div>
           <div class="data">
             <div>
-              <span style="background: #1CBDB5;"></span>
+              <span style="background: #2AC8DD;"></span>
               <span>{{$t('CbkbExchange.eco')}}</span>
             </div>
             <div>20%</div>
@@ -88,7 +88,7 @@
           </div>
           <div class="data">
             <div>
-              <span style="background: #080D21;"></span>
+              <span style="background: #0E0E0E;"></span>
               <span>{{$t('CbkbExchange.tram')}}</span>
             </div>
             <div>5%</div>

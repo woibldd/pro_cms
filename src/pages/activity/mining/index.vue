@@ -16,7 +16,7 @@
       <div class="mining-wrap">
         <div class="img">
           <img
-            src="https://cdn.bitkeep.vip/u_b_56506420-5f0f-11ec-a944-e370f85086e5.png"
+            src="https://cdn.bitkeep.vip/u_b_059740b0-a110-11ec-8330-911c867f036f.png"
             alt=""
           />
         </div>
@@ -25,7 +25,7 @@
           <div class="mining-wrap-one-header" style="padding-right: 0">
             <div class="mining-wrap-one-header-title">
               <img
-                src="https://cdn.bitkeep.vip/u_b_d9de7871-3b9e-11ec-8e63-1db435df936c.png"
+                src="https://cdn.bitkeep.vip/u_b_e64f7b40-a110-11ec-b65f-cd102ebe79d3.png"
                 alt=""
               />
               <span class="setFontWeight">{{ $t("mining.coundown") }}</span>
@@ -79,7 +79,7 @@
           <div class="mining-wrap-one-header">
             <div class="mining-wrap-one-header-title">
               <img
-                src="https://cdn.bitkeep.vip/u_b_d9ddb520-3b9e-11ec-8e63-1db435df936c.png"
+                src="https://cdn.bitkeep.vip/u_b_e650dad0-a110-11ec-b65f-cd102ebe79d3.png"
                 alt=""
               />
               <span class="setFontWeight">{{ $t("mining.rewardPool") }}</span>
@@ -129,7 +129,7 @@
           <div class="mining-wrap-one-header">
             <div class="mining-wrap-one-header-title">
               <img
-                src="https://cdn.bitkeep.vip/u_b_381594a0-3b9f-11ec-8e63-1db435df936c.png"
+                src="https://cdn.bitkeep.vip/u_b_e651ec40-a110-11ec-b65f-cd102ebe79d3.png"
                 alt=""
               />
               <span class="setFontWeight">{{
@@ -154,7 +154,7 @@
           <div class="mining-wrap-one-header">
             <div class="mining-wrap-one-header-title">
               <img
-                src="https://cdn.bitkeep.vip/u_b_d9de5160-3b9e-11ec-8e63-1db435df936c.png"
+                src="https://cdn.bitkeep.vip/u_b_e6523a60-a110-11ec-b65f-cd102ebe79d3.png"
                 alt=""
               />
               <span class="setFontWeight">{{ $t("mining.myRewards") }}</span>
@@ -210,7 +210,7 @@
           <div class="mining-wrap-one-header">
             <div class="mining-wrap-one-header-title">
               <img
-                src="https://cdn.bitkeep.vip/u_b_d9ddb520-3b9e-11ec-8e63-1db435df936c.png"
+                src="https://cdn.bitkeep.vip/u_b_e650dad0-a110-11ec-b65f-cd102ebe79d3.png"
                 alt=""
               />
               <span class="setFontWeight">{{
@@ -233,7 +233,7 @@
           <div class="mining-wrap-one-header">
             <div class="mining-wrap-one-header-title">
               <img
-                src="https://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png"
+                src="https://cdn.bitkeep.vip/u_b_e65101e0-a110-11ec-b65f-cd102ebe79d3.png"
                 alt=""
               />
               <span class="setFontWeight">{{ $t("mining.invitationReward") }}</span>
@@ -291,7 +291,7 @@
           <div class="mining-wrap-one-header">
             <div class="mining-wrap-one-header-title">
               <img
-                src="https://cdn.bitkeep.vip/u_b_d9de7870-3b9e-11ec-8e63-1db435df936c.png"
+                src="https://cdn.bitkeep.vip/u_b_82d44c70-a111-11ec-8c7a-8d02428f9af4.png"
                 alt=""
               />
               <span class="setFontWeight">{{

@@ -114,7 +114,7 @@
               <div class="textSecond3">{{ $t("trading.UnclaimedReward") }}</div>
               <div class="colorPrimary setFontFamily">{{milliFormat(waitClaim)}} BKB</div>
             </div>
-            <van-button class="swap-btn colorBackgroundSecond01" style="background-color: #1CBDB5;" @click="claim">{{
+            <van-button class="swap-btn colorBackgroundSecond01" style="background-color: #2AC8DD;" @click="claim">{{
               $t("trading.claim")
             }}</van-button>
           </div>
@@ -413,10 +413,10 @@ export default {
       color: #7F828F;
     }
     .van-dialog__confirm{
-      color: #080D21;
+      color: #0E0E0E;
     }
     .van-dialog__confirm:active{
-      color: #080D21;
+      color: #0E0E0E;
     }
   }
   .trading-wrap-status {

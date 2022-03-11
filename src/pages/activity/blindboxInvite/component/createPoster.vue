@@ -237,7 +237,7 @@ export default {
       left: 20px;
       width: 275px;
       font-size: 26px;
-      color: #080D21;
+      color: #0E0E0E;
       font-weight: bold;
     }
     .commany_title {
@@ -246,7 +246,7 @@ export default {
       position: absolute;
       font-size: 12px;
       line-height: 18px;
-      color: #080D21;
+      color: #0E0E0E;
       .logo {
         width: 90px;
         height: 24px;

@@ -9,7 +9,7 @@
       <div class="addPool">
         <div class="staking-wrap-box-pool-title">
           <img
-            src="https://cdn.bitkeep.vip/u_b_a6bdfc60-5113-11ec-be10-ddc2856c6ac6.png"
+            src="https://cdn.bitkeep.vip/u_b_27f9ea80-a03a-11ec-ad8b-9ff4f858e021.png"
             alt=""
           />
           <div class="staking-wrap-box-pool-title-flex">
@@ -572,7 +572,7 @@ export default {
         .setLeftColorLine {
           height: 81px;
           line-height: 81px;
-          border-left: 2px solid #1cbdb5;
+          border-left: 2px solid #2AC8DD;
           margin-left: 2px;
           :first-child {
             margin-left: 18px;

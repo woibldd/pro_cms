@@ -29,7 +29,7 @@
       <div class="line"></div>
       <div class="about">
         <div class="about-title">
-          <img src="https://cdn.bitkeep.vip/u_b_0978f140-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
+          <img src="https://cdn.bitkeep.vip/u_b_27f9ea80-a03a-11ec-ad8b-9ff4f858e021.png" alt="">
           <span>{{$t('CbkbExchange.about')}}</span>
         </div>
         <div class="about-con">
@@ -45,7 +45,7 @@
       <div class="line"></div>
       <div class="distribution">
         <div class="distribution-title">
-          <img src="https://cdn.bitkeep.vip/u_b_244b3eb0-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
+          <img src="https://cdn.bitkeep.vip/u_b_82d62130-a111-11ec-8c7a-8d02428f9af4.png" alt="">
           <span>{{$t('CbkbExchange.distribution')}}</span>
         </div>
         <div class="charts-img">
@@ -62,7 +62,7 @@
           </div>
           <div class="data">
             <div>
-              <span style="background: #1CBDB5;"></span>
+              <span style="background: #2AC8DD;"></span>
               <span>{{$t('CbkbExchange.eco')}}</span>
             </div>
             <div>20%</div>
@@ -93,7 +93,7 @@
       <div class="line"></div>
       <div class="hold">
         <div class="hold-title">
-          <img src="https://cdn.bitkeep.vip/u_b_5930f660-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
+          <img src="https://cdn.bitkeep.vip/u_b_1e351000-a112-11ec-b5cd-6f94e6599e38.png" alt="">
           <span>{{$t('CbkbExchange.hold')}}</span>
         </div>
         <div class="hold-content">
@@ -115,21 +115,21 @@
         <div class="appreciation-grid">
           <div class="appreciation-grid-flex">
             <div>
-              <img src="https://cdn.bitkeep.vip/u_b_adf789c0-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
+              <img src="https://cdn.bitkeep.vip/u_b_9722db50-a112-11ec-b5cd-6f94e6599e38.png" alt="">
               <span>{{$t('CbkbExchange.appreciationSwap')}}</span>
             </div>
             <div>
-              <img src="https://cdn.bitkeep.vip/u_b_adf71490-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
+              <img src="https://cdn.bitkeep.vip/u_b_97232970-a112-11ec-b5cd-6f94e6599e38.png" alt="">
               <span>{{$t('CbkbExchange.appreciationCoin')}}</span>
             </div>
           </div>
           <div class="appreciation-grid-flex">
             <div>
-              <img src="https://cdn.bitkeep.vip/u_b_adf789c1-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
+              <img src="https://cdn.bitkeep.vip/u_b_9721f0f0-a112-11ec-b5cd-6f94e6599e38.png" alt="">
               <span>{{$t('CbkbExchange.appreciationPool')}}</span>
             </div>
             <div>
-              <img src="https://cdn.bitkeep.vip/u_b_adf7b0d0-2bec-11ec-b5c0-c1ce5b0a2535.png" alt="">
+              <img src="https://cdn.bitkeep.vip/u_b_97230260-a112-11ec-b5cd-6f94e6599e38.png" alt="">
               <span>{{$t('CbkbExchange.appreciationValut')}}</span>
             </div>
           </div>

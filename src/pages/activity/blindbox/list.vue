@@ -435,7 +435,7 @@ export default {
         color: #ffffff;
       }
       &.shared {
-        color: #1cbdb5;
+        color: #2AC8DD;
         background: linear-gradient(
           274.96deg,
           rgba(0, 199, 215, 0.2) 0.67%,

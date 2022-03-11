@@ -17,7 +17,7 @@
     <div class="line colorLine"></div>
     <div class="content">
       <img
-        src="https://cdn.bitkeep.vip/u_b_7d8ec4f0-4b78-11ec-9826-e3fc5958ff1e.png"
+        src="https://cdn.bitkeep.vip/u_b_27f9ea80-a03a-11ec-ad8b-9ff4f858e021.png"
         class="logo"
         alt=""
       />
@@ -28,7 +28,7 @@
             <div>
               <!-- https://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png -->
               <img
-                src="https://cdn.bitkeep.vip/u_b_e7b6fe30-5427-11ec-a16d-43771b230a03.png"
+                src="https://cdn.bitkeep.vip/u_b_e6523a60-a110-11ec-b65f-cd102ebe79d3.png"
                 alt=""
               />
               <span class="textSecond1">{{ $t("mining.tradingRewards") }}</span>
@@ -38,7 +38,7 @@
           <div class="content_invite_flex_cont setMargin">
             <div>
               <img
-                src="https://cdn.bitkeep.vip/u_b_e7b661f0-5427-11ec-a16d-43771b230a03.png"
+                src="https://cdn.bitkeep.vip/u_b_e65101e0-a110-11ec-b65f-cd102ebe79d3.png"
                 alt=""
               />
               <span class="textSecond1">{{ $t("mining.invitationRewards") }}</span>

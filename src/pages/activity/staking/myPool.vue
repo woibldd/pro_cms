@@ -46,7 +46,7 @@
               <div class="myPool-warp-tab-firstContent-title">
                 <div class="myPool-warp-tab-firstContent-titleLeft">
                   <img
-                    src="https://cdn.bitkeep.vip/u_b_a6bdfc60-5113-11ec-be10-ddc2856c6ac6.png"
+                    src="https://cdn.bitkeep.vip/u_b_27f9ea80-a03a-11ec-ad8b-9ff4f858e021.png"
                     alt=""
                   />
                   <span class="textPrimary0">{{ item.poolName }}</span>
@@ -154,7 +154,7 @@
               <div class="myPool-warp-tab-lastContent-title">
                 <div class="myPool-warp-tab-firstContent-titleLeft">
                   <img
-                    src="https://cdn.bitkeep.vip/u_b_a6bdfc60-5113-11ec-be10-ddc2856c6ac6.png"
+                    src="https://cdn.bitkeep.vip/u_b_27f9ea80-a03a-11ec-ad8b-9ff4f858e021.png"
                     alt=""
                   />
                   <span class="textPrimary0">{{ historyItem.poolName }}</span>

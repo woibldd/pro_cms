@@ -40,7 +40,7 @@
                   "
                 >
                   <img
-                    src="https://cdn.bitkeep.vip/u_b_04e2ea10-596d-11ec-bdbc-7722494dfa58.png"
+                    src="https://cdn.bitkeep.vip/u_b_27f9ea80-a03a-11ec-ad8b-9ff4f858e021.png"
                     alt=""
                   />
                   &nbsp; +{{item.reward}} BKB
