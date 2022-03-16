@@ -4,7 +4,7 @@
       <div class="drawluckly-topbanner">
         <span class="drawluckly-topbanner-time colorBlack">2022.01.28</span>
         <span  class="drawluckly-topbanner-text colorBlack">
-          {{$t('noviceBenefits.Winaraffle')}} {{RewardDetail.thisRewardPool || 0}} BKB
+          {{$t('noviceBenefits.Winaraffle')}} <br/> {{RewardDetail.thisRewardPool || 0}} BKB
         </span>
       </div>
 

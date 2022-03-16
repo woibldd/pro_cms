@@ -16,7 +16,7 @@
       <div class="mining-wrap">
         <div class="img">
           <img
-            src="https://cdn.bitkeep.vip/u_b_059740b0-a110-11ec-8330-911c867f036f.png"
+            src="https://cdn.bitkeep.vip/u_b_377ba750-a4d6-11ec-a2df-753bd9da2557.png"
             alt=""
           />
         </div>
