@@ -330,6 +330,7 @@ module.exports = {
     ClaimRewardsub: 'その日の報酬はその夜の12:00に決済されます',
     confirm: '確認',
     noData: 'データなし',
+    noRecord: '覚えてない',
     invitationReward: "招待報酬",
     myInvitationRewards: "私の招待報酬",
     totalBonusPool: "賞金総額",

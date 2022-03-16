@@ -352,6 +352,7 @@ module.exports = {
     ClaimRewardsub: 'Rewards will be settled at 24:00 each day',
     confirm: 'Confirm',
     noData: 'No data',
+    noRecord: 'No record',
     invitationReward: "My Invitation Reward",
     inviteNumber1: 'Total invite Rewards',
     inviteNumber2: 'Yesterday invite Rewards',

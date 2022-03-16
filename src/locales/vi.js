@@ -331,6 +331,7 @@ module.exports = {
     ClaimRewardsub: 'Phần thưởng sẽ được giải quyết vào lúc 12:00 tối nay',
     confirm: 'Xác nhận',
     noData: 'Không có dữ liệu',
+    noRecord: 'Tôi không nhớ',
     invitationReward: "Phần thưởng lời mời",
     totalBonusPool: "Tổng giải thưởng",
     todayBonusPool: "Tiền thưởng hôm nay",

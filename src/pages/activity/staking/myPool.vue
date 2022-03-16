@@ -126,10 +126,10 @@
           </div>
           <div class="noData" v-else>
             <img
-              src="https://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png"
+              src="https://cdn.bitkeep.vip/u_b_16faf760-a350-11ec-8358-152ffcfbd6b7.png"
               alt=""
             />
-            <p class="textSecond3">{{ $t("mining.noData") }}</p>
+            <p class="textPrimary0">{{ $t("mining.noRecord") }}</p>
           </div>
         </van-pull-refresh>
       </div>
@@ -195,10 +195,10 @@
           </div>
           <div class="noData" v-else>
             <img
-              src="https://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png"
+              src="https://cdn.bitkeep.vip/u_b_16faf760-a350-11ec-8358-152ffcfbd6b7.png"
               alt=""
             />
-            <p class="textSecond3">{{ $t("mining.noData") }}</p>
+            <p class="textPrimary0">{{ $t("mining.noRecord") }}</p>
           </div>
         </van-pull-refresh>
       </div>
@@ -559,8 +559,8 @@ export default {
   align-items: center;
   flex-direction: column;
   img {
-    width: 100px;
-    height: 100px;
+    width: 64px;
+    height: 64px;
   }
   p {
     font-size: 14px;

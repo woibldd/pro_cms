@@ -330,6 +330,7 @@ module.exports = {
     ClaimRewardsub: '오늘의 보상은 그날 밤 12시에 정산됩니다',
     confirm: '확인하다',
     noData: '데이터 없음',
+    noRecord: '기억이 안나',
     invitationReward: "초대 보상",
     myInvitationRewards: "나의 초대 보상",
     totalBonusPool: "총 상금 풀",
