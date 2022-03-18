@@ -71,7 +71,7 @@
             <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom">
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
-                        src="https://cdn.bitkeep.vip/u_b_6b96dd11-a036-11ec-b054-8b7edc051038.png"
+                        src="https://cdn.bitkeep.vip/u_b_801ad180-a692-11ec-a2a5-1f9c619ac9fc.png"
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
@@ -91,7 +91,7 @@
                 <!-- swap交易 -->
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
-                        src="https://cdn.bitkeep.vip/u_b_6b96dd10-a036-11ec-b054-8b7edc051038.png"
+                        src="https://cdn.bitkeep.vip/u_b_801af890-a692-11ec-a2a5-1f9c619ac9fc.png"
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
@@ -111,7 +111,7 @@
             <li class="Novicebenefits-reward-item Novicebenefits-sign-top-bottom" >
                 <div class="Novicebenefits-sign-top-bottom-img">
                     <van-image
-                        src="https://cdn.bitkeep.vip/u_b_6b972b30-a036-11ec-b054-8b7edc051038.png"
+                        src="https://cdn.bitkeep.vip/u_b_801a3540-a692-11ec-a2a5-1f9c619ac9fc.png"
                     />
                 </div>
                 <div class="Novicebenefits-sign-top-bottom-content">
