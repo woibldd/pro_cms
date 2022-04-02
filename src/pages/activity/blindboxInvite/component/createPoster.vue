@@ -157,6 +157,8 @@ export default {
         });
     },
     shareImage() {
+      console.log(this.info.cover_image,'123');
+      
       BitKeepInvoke.shareUrl(
         '',
         this.$t("ActivityBlindbox.shared.content"),
@@ -166,6 +168,8 @@ export default {
       );
     },
     saveImage() {
+      console.log(this.poster.url,);
+      
       if (this.poster.url) {
         this.showLoading(this.$t("ActivityBlindbox.toast.Saving"));
         BitKeepInvoke.saveImageFromBase64(this.poster.url, e => {
