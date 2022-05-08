@@ -160,7 +160,7 @@ export default {
       console.log(this.info.cover_image,'123');
       
       BitKeepInvoke.shareUrl(
-        '',
+        this.$t("blindboxInvite.inviteTitle"),
         this.$t("ActivityBlindbox.shared.content"),
         location.href + '/detail?token=' + this.userInfo,
         this.info.cover_image,

@@ -109,6 +109,18 @@ import { USER_API } from "@/api/client";
 
 export default {
   name: "blindboxInvite",
+  head(){
+    return {
+        title: this.$t("blindboxInvite.inviteTitle"),
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content:  this.$t("ActivityBlindbox.shared.content")
+          }
+        ]
+    }
+  },
   data() {
     return {
       isLoading: true,
