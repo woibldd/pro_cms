@@ -2,6 +2,9 @@
   "Activity": {
     "description": "Auto imported from components/activity/index.vue"
   },
+  "Trading": {
+    "description": "Auto imported from components/trading/index.vue"
+  },
   "BlindboxBlindButton": {
     "description": "Auto imported from components/blindbox/BlindButton.vue"
   },
@@ -25,9 +28,6 @@
   },
   "Common": {
     "description": "Auto imported from components/common/index.js"
-  },
-  "Trading": {
-    "description": "Auto imported from components/trading/index.vue"
   },
   "VueCreatePosterLayoutCanvasPoster": {
     "description": "Auto imported from components/vue-create-poster/layout/canvas-poster.vue"
