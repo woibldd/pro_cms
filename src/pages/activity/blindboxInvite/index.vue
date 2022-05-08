@@ -117,7 +117,22 @@ export default {
             hid: 'description',
             name: 'description',
             content:  this.$t("ActivityBlindbox.shared.content")
-          }
+          },
+          {
+            hid: 'og:title',
+            name: 'og:title',
+            content: this.$t("blindboxInvite.inviteTitle"),
+          },
+          {
+            hid: 'twitter:description',
+            name: 'description',
+            content:  this.$t("ActivityBlindbox.shared.content")
+          },
+          {
+            hid: 'twitter:title',
+            name: 'description',
+           content: this.$t("blindboxInvite.inviteTitle"),
+          },
         ]
     }
   },

@@ -53,13 +53,11 @@ export default {
         content: "width=device-width, initial-scale=1, user-scalable=no"
       },
       {
-        hid: "description",
         name: "description",
         content:
           "BitKeep is the best decentralized multi-chain crypto wallet, providing 40+ main chains and 45000+ crypto assets and 10,000+ DApps to global users."
       },
       {
-        hid: "keywords",
         name: "keywords",
         content:
           "bitkeep,wallet,ethereum,bitcoin,eos,exchange,dapp,imtoken,kcash,cobo,bitkeep钱包,比特币,以太坊,数字钱包,币安,火币,Okex,binance,huobi,okex"
