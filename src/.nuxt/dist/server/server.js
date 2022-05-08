@@ -7873,16 +7873,16 @@ function wrapFunctional(options) {
 
 
 const components = {
+  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 204)).then(c => wrapFunctional(c.default || c)),
+  Trading: () => __webpack_require__.e(/* import() | components/trading */ 10).then(__webpack_require__.bind(null, 115)).then(c => wrapFunctional(c.default || c)),
+  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 85)).then(c => wrapFunctional(c.default || c)),
+  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 74)).then(c => wrapFunctional(c.default || c)),
+  Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 78)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 212)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 329)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 112)).then(c => wrapFunctional(c.default || c)),
   BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 213)).then(c => wrapFunctional(c.default || c)),
   BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 211)).then(c => wrapFunctional(c.default || c)),
-  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 204)).then(c => wrapFunctional(c.default || c)),
-  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 85)).then(c => wrapFunctional(c.default || c)),
-  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 74)).then(c => wrapFunctional(c.default || c)),
-  Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 78)).then(c => wrapFunctional(c.default || c)),
-  Trading: () => __webpack_require__.e(/* import() | components/trading */ 10).then(__webpack_require__.bind(null, 115)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 12).then(__webpack_require__.bind(null, 162)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 13).then(__webpack_require__.bind(null, 87)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 14).then(__webpack_require__.bind(null, 330)).then(c => wrapFunctional(c.default || c)),
@@ -8305,7 +8305,7 @@ async function createApp(ssrContext, config = {}) {
 
   const app = {
     head: {
-      "title": "",
+      "title": "BitKeep: The Best Decentralized Multi-chain Crypto Wallet",
       "htmlAttrs": {
         "lang": "en"
       },
@@ -8320,16 +8320,68 @@ async function createApp(ssrContext, config = {}) {
       }, {
         "hid": "description",
         "name": "description",
-        "content": ""
+        "content": "BitKeep is the best decentralized multi-chain crypto wallet, providing 40+ main chains and 45000+ crypto assets and 10,000+ DApps to global users."
       }, {
         "hid": "keywords",
         "name": "keywords",
-        "content": "bitkeep,eth"
+        "content": "bitkeep,wallet,ethereum,bitcoin,eos,exchange,dapp,imtoken,kcash,cobo,bitkeep钱包,比特币,以太坊,数字钱包,币安,火币,Okex,binance,huobi,okex"
+      }, {
+        "hid": "google-site-verification",
+        "name": "google-site-verification",
+        "content": "mohvtRqx4881-yk3PPB1HGwrE4jNIUehtro0H4E3HVw"
+      }, {
+        "hid": "robots",
+        "name": "robots",
+        "content": "robots"
+      }, {
+        "property": "og:title",
+        "content": "BitKeep: The Best Decentralized Multi-chain Crypto Wallet"
+      }, {
+        "property": "og:description",
+        "content": "BitKeep is the best decentralized multi-chain crypto wallet, providing 40+ main chains and 45000+ crypto assets and 10,000+ DApps to global users."
+      }, {
+        "property": "twitter:title",
+        "content": "BitKeep: The Best Decentralized Multi-chain Crypto Wallet"
+      }, {
+        "property": "twitter:description",
+        "content": "BitKeep is the best decentralized multi-chain crypto wallet, providing 40+ main chains and 45000+ crypto assets and 10,000+ DApps to global users."
+      }, {
+        "property": "og:url",
+        "content": "https:\u002F\u002Fnews.bitkeep.biz"
+      }, {
+        "property": "og:type",
+        "content": "website"
+      }, {
+        "property": "og:image",
+        "content": "https:\u002F\u002Fcdn.bitkeep.vip\u002Fu_b_26e281b0-a509-11ec-a3eb-f758fa002ae8.png"
+      }, {
+        "property": "og:image:alt",
+        "content": "BitKeep, a Best Crpto Wallet"
+      }, {
+        "property": "og:site_name",
+        "content": "BitKeep"
+      }, {
+        "property": "twitter:image",
+        "content": "https:\u002F\u002Fcdn.bitkeep.vip\u002Fu_b_26e281b0-a509-11ec-a3eb-f758fa002ae8.png"
+      }, {
+        "property": "twitter:image:src",
+        "content": "https:\u002F\u002Fcdn.bitkeep.vip\u002Fu_b_26e281b0-a509-11ec-a3eb-f758fa002ae8.png"
+      }, {
+        "property": "twitter:image:alt",
+        "content": "BitKeep"
+      }, {
+        "property": "twitter:card",
+        "content": "summary_large_image"
+      }, {
+        "property": "twitter:image",
+        "content": "https:\u002F\u002Fcdn.bitkeep.vip\u002Fu_b_26e281b0-a509-11ec-a3eb-f758fa002ae8.png"
+      }, {
+        "property": "twitter:site",
+        "content": "https:\u002F\u002Fnews.bitkeep.biz"
       }],
       "link": [{
-        "rel": "icon",
-        "type": "image\u002Fx-icon",
-        "href": "\u002Ffavicon.ico"
+        "rel": "shortcut icon",
+        "href": "https:\u002F\u002Fcdn.bitkeep.vip\u002Fu_b_69b66a00-a046-11ec-a3eb-f758fa002ae8.png"
       }],
       "script": [],
       "style": []
