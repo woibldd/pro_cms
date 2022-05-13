@@ -2,8 +2,14 @@
   "Activity": {
     "description": "Auto imported from components/activity/index.vue"
   },
-  "Trading": {
-    "description": "Auto imported from components/trading/index.vue"
+  "CommonCVueCountdown": {
+    "description": "Auto imported from components/common/c-vue-countdown.vue"
+  },
+  "CommonHeader": {
+    "description": "Auto imported from components/common/header.vue"
+  },
+  "Common": {
+    "description": "Auto imported from components/common/index.js"
   },
   "BlindboxBlindButton": {
     "description": "Auto imported from components/blindbox/BlindButton.vue"
@@ -20,14 +26,32 @@
   "BlindboxTitleImage": {
     "description": "Auto imported from components/blindbox/titleImage.vue"
   },
-  "CommonCVueCountdown": {
-    "description": "Auto imported from components/common/c-vue-countdown.vue"
+  "PolygonAirdropAddressCard": {
+    "description": "Auto imported from components/polygon/AirdropAddressCard.vue"
   },
-  "CommonHeader": {
-    "description": "Auto imported from components/common/header.vue"
+  "PolygonAirdropAwardCard": {
+    "description": "Auto imported from components/polygon/AirdropAwardCard.vue"
   },
-  "Common": {
-    "description": "Auto imported from components/common/index.js"
+  "PolygonCountdown": {
+    "description": "Auto imported from components/polygon/countdown.vue"
+  },
+  "PolygonInvitedCard": {
+    "description": "Auto imported from components/polygon/InvitedCard.vue"
+  },
+  "PolygonMent": {
+    "description": "Auto imported from components/polygon/Ment.vue"
+  },
+  "PolygonMint": {
+    "description": "Auto imported from components/polygon/Mint.vue"
+  },
+  "PolygonMintSuccessCard": {
+    "description": "Auto imported from components/polygon/MintSuccessCard.vue"
+  },
+  "PolygonWhitelistcard": {
+    "description": "Auto imported from components/polygon/Whitelistcard.vue"
+  },
+  "Trading": {
+    "description": "Auto imported from components/trading/index.vue"
   },
   "VueCreatePosterLayoutCanvasPoster": {
     "description": "Auto imported from components/vue-create-poster/layout/canvas-poster.vue"

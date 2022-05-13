@@ -1,49 +1,341 @@
-exports.ids = [38,1,36,39,41];
+exports.ids = [46,1,44,47,49];
 exports.modules = {
 
-/***/ 118:
+/***/ 107:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return USER_API; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+ // const requestlog = debug('bit-activity-request')
+// const responselog = debug('bit-activity-response')
+// const isProduction = process.env.NODE_ENV == "production";
+// const HOST_URL = process.env.HOST_URL || process.env.baseURL
+
+const requestlog =  false ? undefined : Object(debug__WEBPACK_IMPORTED_MODULE_3__["debug"])('bit-activity-request');
+const responselog =  false ? undefined : Object(debug__WEBPACK_IMPORTED_MODULE_3__["debug"])('bit-activity-response');
+const host_user_instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
+  baseURL: "/",
+  timeout: 60000,
+  headers: {
+    token: "",
+    // token: "",
+    language: "en",
+    currency: "",
+    brand: "",
+    os: "",
+    package: "",
+    clientVersion: 1,
+    im: ""
+  }
+});
+host_user_instance.interceptors.request.use(function (config) {
+  requestlog('requestlog:', config);
+
+  if (false) {}
+
+  return config;
+}, function (error) {
+  return Promise.resolve({
+    status: 1
+  });
+}); // Add a response interceptor
+
+host_user_instance.interceptors.response.use(function (response) {
+  return response.data;
+}, function (error) {
+  responselog('responselog:', error); // Do omething with response error
+
+  let message = '网路开了小差';
+
+  if (false) {}
+
+  return Promise.resolve({
+    status: 1,
+    data: message
+  });
+});
+const USER_API = {
+  //盲盒列表
+  mBoxList: (data, headers = {}) => host_user_instance.get("user/activity/mBoxList", {
+    params: data,
+    headers
+  }),
+  // 打开盲盒÷
+  openMBox: (data, headers = {}) => host_user_instance.get("user/activity/openMBox", {
+    params: data
+  }),
+  //盲盒助力提交
+  helpMBox: (data, headers = {}) => host_user_instance.get("user/activity/helpMBox", {
+    params: data
+  }),
+  //助力邀请好友列表
+  userInviteList: (data, headers = {}) => host_user_instance.get("user/activity/inviteList", {
+    params: data
+  }),
+  mBoxDetail: (data, headers = {}) => host_user_instance.get("user/activity/mBoxDetail", {
+    params: data
+  }),
+  //cbkb兑换模块
+  getCbkbSwapInfo: (data, headers = {}) => host_user_instance.get("user/cloudwallet/getCbkbSwapInfo", {
+    params: data
+  }),
+  swapBkb: (data, headers = {}) => host_user_instance.get("user/cloudwallet/swapBkb", {
+    params: data
+  }),
+  //BKB空投
+  getAirDropCount: (data, headers = {}) => host_user_instance.post("user/cloudwallet/getAirDropCount", data),
+  getAirDrop: (data, headers = {}) => host_user_instance.post("user/cloudwallet/getAirDrop", data),
+  // 交易挖矿
+  miningInfo: (data, headers = {}) => host_user_instance.post("swap/mining/info", data),
+  historyPhase: (data, headers = {}) => host_user_instance.post("swap/mining/historyPhase", data),
+  receiveAward: (data, headers = {}) => host_user_instance.post("swap/mining/receiveAward", data),
+  // 邀请好友
+  getInviteList: (data, headers = {}) => host_user_instance.post('user/friendship/getInviteList', data),
+  certifyFriendship: (data, headers = {}) => host_user_instance.post('user/friendship/certifyFriendship', data),
+  activityDoneRewardList: (data, headers = {}) => host_user_instance.post('swap/mining/activityDoneRewardList', data),
+  //质押bkb
+  // 质押池列表
+  poolList: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/poolList', data),
+  // 我的质押池列表
+  myPool: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/myPool', data),
+  // 历史质押池列表
+  stakeHistory: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/stakeHistory', data),
+  // 取消质押
+  receiveStakingReward: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/receiveStakingReward', data),
+  //确认质押
+  staking: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/staking', data),
+  //获取token
+  handleGetToken: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/getToken', data),
+  //trading 交易大赛
+  tradingGetList: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/getList', data),
+  //待领取
+  tradingWaitClaim: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/waitClaim', data),
+  //领取
+  tradingClaim: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/claim', data),
+  //历史汇总
+  tradingSummary: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/summary', data),
+  //历史list
+  tradingHistory: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/history', data),
+  // 新手福利
+  welfareSignIn: (data, headers = {}) => host_user_instance.post('user/welfare/signIn', data),
+  // 签到
+  getRewardDetail: (data, headers = {}) => host_user_instance.post('user/welfare/getRewardDetail', data),
+  //每日抽奖详情
+  getSignInDetailByUser: (data, headers = {}) => host_user_instance.post('user/welfare/getSignInDetailByUser', data),
+  // 获取某人的签到详情
+  getRewardResult: (data, headers = {}) => host_user_instance.post('user/welfare/getRewardResult', data),
+  // 获取抽奖结果
+  // getRewardDetail: (data,headers={}) => host_user_instance.post('user/welfare/getRewardDetail',data), // 每日抽奖详情页
+  pushPapersIn: (data, headers = {}) => host_user_instance.post('user/welfare/pushPapersIn', data),
+  // 立即投入
+  getJoinTeleJob: (data, headers = {}) => host_user_instance.post('user/welfare/getJoinTeleJob', data),
+  // 加入电报
+  getFirstSwapJob: (data, headers = {}) => host_user_instance.post('user/welfare/getFirstSwapJob', data),
+  // swap首次交易
+  getFirst50UJob: (data, headers = {}) => host_user_instance.post('user/welfare/getFirst50UJob', data),
+  // 领取50u
+  newUserRewardJobs: (data, headers = {}) => host_user_instance.post('user/welfare/newUserRewardJobs', data),
+  // 新手任务
+  // NFTMint
+  //默认兑换列表
+  nftMintGetInfo: (data, headers = {}) => host_user_instance.post("/operation/nftmint/getInfo", data),
+  //建立邀请关系
+  nftMintInvite: (data, headers = {}) => host_user_instance.post("/operation/nftmint/invite", data),
+  //获取TX
+  buildNftMintTxs: (data, headers = {}) => host_user_instance.post("/operation/nftmint/buildNftMintTxs", data),
+  //签名token
+  nftMintGetToken: (data, headers = {}) => host_user_instance.post("/operation/nftmint/getToken", data),
+  //获取空头获奖列表
+  nftMintLotteryList: (data, headers = {}) => host_user_instance.post("/operation/nftmint/LotteryList", data),
+  //退款TX
+  nftMintbuildNftMeltTxs: (data, headers = {}) => host_user_instance.post("/operation/nftmint/buildNftMeltTxs", data),
+  //获取持有的NTT列表
+  nftMintnftList: (data, headers = {}) => host_user_instance.post("/operation/nftmint/nftList", data),
+  //查看Mint的广播状态
+  nftMintcheckTransaction: (data, headers = {}) => host_user_instance.post("/operation/nftmint/checkTransaction", data)
+};
+
+/***/ }),
+
+/***/ 135:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(179);
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add CSS to SSR context
+var add = __webpack_require__(6).default
+module.exports.__inject__ = function (context) {
+  add("ff7373b2", content, true, context)
+};
+
+/***/ }),
+
+/***/ 136:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(181);
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add CSS to SSR context
+var add = __webpack_require__(6).default
+module.exports.__inject__ = function (context) {
+  add("cadfcc3c", content, true, context)
+};
+
+/***/ }),
+
+/***/ 137:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(183);
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add CSS to SSR context
+var add = __webpack_require__(6).default
+module.exports.__inject__ = function (context) {
+  add("444ed4db", content, true, context)
+};
+
+/***/ }),
+
+/***/ 138:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(185);
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add CSS to SSR context
+var add = __webpack_require__(6).default
+module.exports.__inject__ = function (context) {
+  add("189111c2", content, true, context)
+};
+
+/***/ }),
+
+/***/ 139:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(187);
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add CSS to SSR context
+var add = __webpack_require__(6).default
+module.exports.__inject__ = function (context) {
+  add("11d6a15c", content, true, context)
+};
+
+/***/ }),
+
+/***/ 140:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(189);
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add CSS to SSR context
+var add = __webpack_require__(6).default
+module.exports.__inject__ = function (context) {
+  add("b4bb27bc", content, true, context)
+};
+
+/***/ }),
+
+/***/ 141:
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(191);
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add CSS to SSR context
+var add = __webpack_require__(6).default
+module.exports.__inject__ = function (context) {
+  add("9d3d2c10", content, true, context)
+};
+
+/***/ }),
+
+/***/ 178:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_41f07a04_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(89);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_41f07a04_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(135);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_41f07a04_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_41f07a04_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_41f07a04_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_id_41f07a04_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 119:
+/***/ 179:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(5);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".theme-light .textPrimary0[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-light .textSecond1[data-v-41f07a04] {\n  color: #515556;\n}\n.theme-light .textSecond2[data-v-41f07a04] {\n  color: #919899;\n}\n.theme-light .textSecond3[data-v-41f07a04] {\n  color: #9CA5B3;\n}\n.theme-light .colorDisable[data-v-41f07a04] {\n  background-color: #DADBDE;\n}\n.theme-light .colorLine[data-v-41f07a04] {\n  background-color: #F4F5FA;\n}\n.theme-light .colorLine1[data-v-41f07a04] {\n  background-color: #F0F0F0;\n}\n.theme-light .colorBackground0[data-v-41f07a04] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackground1[data-v-41f07a04] {\n  background-color: #fff;\n}\n.theme-light .colorBackground2[data-v-41f07a04] {\n  background-color: #F3F5F6;\n}\n.theme-light .colorBackground3[data-v-41f07a04] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackgroundWhite[data-v-41f07a04] {\n  background-color: #fff;\n}\n.theme-light .colorBackgroundPrimary[data-v-41f07a04] {\n  background-color: #7524f9;\n}\n.theme-light .colorBackgroundColorSecond11[data-v-41f07a04] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-light .colorBackgroundSecond01[data-v-41f07a04] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorBackgroundTextPrimary0[data-v-41f07a04] {\n  background-color: #0E0E0E;\n}\n.theme-light .colorPrimary[data-v-41f07a04] {\n  color: #7524f9;\n}\n.theme-light .colorSecond01[data-v-41f07a04] {\n  color: #2AC8DD;\n}\n.theme-light .backgroundSecond01[data-v-41f07a04] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorSecond02[data-v-41f07a04] {\n  color: #F04A4A;\n}\n.theme-light .colorSecond03[data-v-41f07a04] {\n  color: #26BC80;\n}\n.theme-light .colorSecond04[data-v-41f07a04] {\n  color: #FF8146;\n}\n.theme-light .colorSecond05[data-v-41f07a04] {\n  color: #2F80ED;\n}\n.theme-light .colorSecond06[data-v-41f07a04] {\n  color: #4A2FD2;\n}\n.theme-light .colorSecond07[data-v-41f07a04] {\n  color: #F04E98;\n}\n.theme-light .colorSecond08[data-v-41f07a04] {\n  color: #FFB800;\n}\n.theme-light .colorBlack[data-v-41f07a04] {\n  color: #000;\n}\n.theme-light .colorwhite[data-v-41f07a04] {\n  color: #fff;\n}\n.theme-light .colorSecond10[data-v-41f07a04] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-light .colorSecond11[data-v-41f07a04] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-light .colorSecond12[data-v-41f07a04] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-light .colorSecond13[data-v-41f07a04] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-light .colorSecond14[data-v-41f07a04] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-light .colorSecond15[data-v-41f07a04] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-light .colorSecond18[data-v-41f07a04] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-dark .textPrimary0[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.theme-dark .textSecond1[data-v-41f07a04] {\n  color: #9CA5B3;\n}\n.theme-dark .textSecond2[data-v-41f07a04] {\n  color: #7F828F;\n}\n.theme-dark .textSecond3[data-v-41f07a04] {\n  color: #6D707D;\n}\n.theme-dark .colorDisable[data-v-41f07a04] {\n  background-color: #5F626D;\n}\n.theme-dark .colorLine[data-v-41f07a04] {\n  background-color: #1F212E;\n}\n.theme-dark .colorLine1[data-v-41f07a04] {\n  background-color: #2A2D3D;\n}\n.theme-dark .colorBackground0[data-v-41f07a04] {\n  background-color: #0A0E1F;\n}\n.theme-dark .colorBackground1[data-v-41f07a04] {\n  background-color: #171A26;\n}\n.theme-dark .colorBackground2[data-v-41f07a04] {\n  background-color: #212331;\n}\n.theme-dark .colorBackground3[data-v-41f07a04] {\n  background-color: #212331;\n}\n.theme-dark .colorBackgroundPrimary[data-v-41f07a04] {\n  background-color: #7524f9;\n}\n.theme-dark .colorBackgroundColorSecond11[data-v-41f07a04] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorBackgroundSecond01[data-v-41f07a04] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorBackgroundTextPrimary0[data-v-41f07a04] {\n  background-color: #DFE0E3;\n}\n.theme-dark .colorPrimary[data-v-41f07a04] {\n  color: #7524f9;\n}\n.theme-dark .colorSecond01[data-v-41f07a04] {\n  color: #2AC8DD;\n}\n.theme-dark .backgroundSecond01[data-v-41f07a04] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorSecond02[data-v-41f07a04] {\n  color: #F04A4A;\n}\n.theme-dark .colorSecond03[data-v-41f07a04] {\n  color: #26BC80;\n}\n.theme-dark .colorSecond04[data-v-41f07a04] {\n  color: #FF8146;\n}\n.theme-dark .colorSecond05[data-v-41f07a04] {\n  color: #2F80ED;\n}\n.theme-dark .colorSecond06[data-v-41f07a04] {\n  color: #4A2FD2;\n}\n.theme-dark .colorSecond07[data-v-41f07a04] {\n  color: #F04E98;\n}\n.theme-dark .colorSecond08[data-v-41f07a04] {\n  color: #FFB800;\n}\n.theme-dark .colorBlack[data-v-41f07a04] {\n  color: #000;\n}\n.theme-dark .colorwhite[data-v-41f07a04] {\n  color: #fff;\n}\n.theme-dark .colorSecond10[data-v-41f07a04] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-dark .colorSecond11[data-v-41f07a04] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorSecond12[data-v-41f07a04] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-dark .colorSecond13[data-v-41f07a04] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-dark .colorSecond14[data-v-41f07a04] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-dark .colorSecond15[data-v-41f07a04] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-dark .colorSecond18[data-v-41f07a04] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-light .wrap-min[data-v-41f07a04] {\n  background: #fff;\n}\n.theme-light .line[data-v-41f07a04] {\n  border-bottom: 0.03rem solid #F4F5FA;\n}\n.theme-light .wrap[data-v-41f07a04] {\n  background: #fff;\n}\n.theme-light .about .about-wrap[data-v-41f07a04] {\n  background: #F8F9FA;\n}\n.theme-light .about .about-wrap-pos[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-light .about .about-wrap-pos p[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-light .about .about-title[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-light .about .about-con[data-v-41f07a04] {\n  color: #515556;\n}\n.theme-light .about .viewAll[data-v-41f07a04] {\n  color: #7524f9;\n}\n.theme-light .distribution .distribution-title[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-light .hold .hold-title[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-light .exchangeTotal[data-v-41f07a04] {\n  color: #515556;\n}\n.theme-light .total[data-v-41f07a04] {\n  color: #515556;\n}\n.theme-light .total span[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-light .distribution-man[data-v-41f07a04] {\n  background: #F8F9FA;\n}\n.theme-light .distribution-man .data div[data-v-41f07a04]:last-child {\n  color: #0E0E0E;\n}\n.theme-light .distribution-man .data>div[data-v-41f07a04] {\n  color: #515556;\n}\n.theme-light .distribution-man .data>div[data-v-41f07a04] :last-child {\n  color: #0E0E0E;\n}\n.theme-light .hold .hold-title[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-light .appreciation .appreciation-title[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-light .appreciation-grid .appreciation-grid-flex div span[data-v-41f07a04] {\n  color: #515556;\n}\n.theme-light .setIcon[data-v-41f07a04] {\n  color: #999ba3;\n}\n.theme-light .setLightColor[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-light .setDarkColor[data-v-41f07a04] {\n  color: #515556;\n}\n.theme-light .more .more-title[data-v-41f07a04] {\n  color: #0E0E0E;\n  border-bottom: 0.03rem solid #F4F5FA;\n}\n.theme-light .more .more-line[data-v-41f07a04] {\n  border-bottom: 0.03rem solid #F4F5FA;\n}\n.theme-light .more .more-line span[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-dark .wrap-min[data-v-41f07a04] {\n  background: #171A26;\n}\n.theme-dark .line[data-v-41f07a04] {\n  border-bottom: 0.03rem solid #1F212E;\n}\n.theme-dark .wrap[data-v-41f07a04] {\n  background: #fff;\n}\n.theme-dark .about .about-wrap[data-v-41f07a04] {\n  background: #0A0E1F;\n}\n.theme-dark .about .about-wrap-pos[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.theme-dark .about .about-wrap-pos p[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.theme-dark .about .about-title[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.theme-dark .about .about-con[data-v-41f07a04] {\n  color: #9CA5B3;\n}\n.theme-dark .about .viewAll[data-v-41f07a04] {\n  color: #7524f9;\n}\n.theme-dark .distribution .distribution-title[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.theme-dark .hold .hold-title[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.theme-dark .exchangeTotal[data-v-41f07a04] {\n  color: #9CA5B3;\n}\n.theme-dark .total[data-v-41f07a04] {\n  color: #9CA5B3;\n}\n.theme-dark .total span[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.theme-dark .distribution-man[data-v-41f07a04] {\n  background: #212331;\n}\n.theme-dark .distribution-man .data[data-v-41f07a04] :last-child {\n  color: #DFE0E3;\n}\n.theme-dark .distribution-man .data>div[data-v-41f07a04] {\n  color: #9CA5B3;\n}\n.theme-dark .distribution-man .data>div span[data-v-41f07a04]:last-child {\n  color: #9CA5B3;\n}\n.theme-dark .hold .hold-title[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.theme-dark .appreciation .appreciation-title[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.theme-dark .appreciation-grid .appreciation-grid-flex div span[data-v-41f07a04] {\n  color: #9CA5B3;\n}\n.theme-dark .setIcon[data-v-41f07a04] {\n  color: #999ba3;\n}\n.theme-dark .setdarkColor[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.theme-dark .setDarkColor[data-v-41f07a04] {\n  color: #9CA5B3;\n}\n.theme-dark .more .more-title[data-v-41f07a04] {\n  color: #DFE0E3;\n  border-bottom: 0.03rem solid #1F212E;\n}\n.theme-dark .more .more-line[data-v-41f07a04] {\n  border-bottom: 0.03rem solid #1F212E;\n}\n.theme-dark .more .more-line span[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.statusM[data-v-41f07a04] {\n  padding-bottom: 1.39rem;\n}\n.hold-content img[data-v-41f07a04] {\n  width: 1.07rem !important;\n  height: 1.07rem !important;\n}\n.about .about-wrap[data-v-41f07a04] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: 1.07rem;\n}\n.about .about-wrap-pos[data-v-41f07a04] {\n  text-align: center;\n  font-size: 0.48rem;\n  line-height: 0.48rem;\n  direction: cloumn;\n}\n.about .about-wrap-pos img[data-v-41f07a04] {\n  width: 0.75rem;\n  height: 0.75rem;\n}\n.about .about-wrap-pos p[data-v-41f07a04] {\n  margin-top: 0.13rem;\n  font-size: 0.48rem;\n  line-height: 0.48rem;\n  font-weight: 600;\n}\n.about .about-content[data-v-41f07a04] {\n  margin: 0.32rem 0.43rem 0.8rem;\n}\n.about .about-title[data-v-41f07a04] {\n  font-size: 0.43rem;\n  line-height: 0.43rem;\n  font-weight: 600;\n  vertical-align: middle;\n}\n.about .about-title img[data-v-41f07a04] {\n  width: 0.53rem;\n  height: 0.53rem;\n  vertical-align: text-top;\n  margin-right: 0.13rem;\n}\n.about .about-con[data-v-41f07a04] {\n  padding-top: 0.4rem;\n  font-size: 0.37rem;\n  line-height: 0.53rem;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  display: -webkit-box;\n  -webkit-box-orient: vertical;\n  -webkit-line-clamp: 2;\n}\n.about .viewAll[data-v-41f07a04] {\n  text-align: right;\n  font-size: 0.37rem;\n  line-height: 0.37rem;\n  margin-top: 0.16rem;\n}\n.distribution[data-v-41f07a04] {\n  margin: 0.32rem 0.43rem 0.8rem;\n}\n.distribution .distribution-title[data-v-41f07a04] {\n  font-size: 0.43rem;\n  line-height: 0.43rem;\n  font-weight: 600;\n  vertical-align: middle;\n}\n.distribution .distribution-title img[data-v-41f07a04] {\n  width: 0.53rem;\n  height: 0.53rem;\n  vertical-align: text-top;\n  margin-right: 0.13rem;\n}\n.distribution .charts-img[data-v-41f07a04] {\n  text-align: center;\n  margin: 0.53rem;\n}\n.distribution .charts-img img[data-v-41f07a04] {\n  width: 2.93rem;\n  height: 2.93rem;\n}\n.distribution .charts-img .exchangeTotal[data-v-41f07a04] {\n  font-family: bitkeep DIN;\n  font-size: 0.37rem;\n}\n.distribution .charts-img .total[data-v-41f07a04] {\n  font-size: 0.37rem;\n  line-height: 0.53rem;\n}\n.distribution .distribution-man[data-v-41f07a04] {\n  margin-bottom: 0.8rem;\n  border-radius: 0.21rem;\n  padding: 0.27rem;\n}\n.distribution .distribution-man .data[data-v-41f07a04] {\n  display: flex;\n  justify-content: space-between;\n}\n.distribution .distribution-man .data div[data-v-41f07a04]:last-child {\n  font-family: bitkeep DIN;\n  font-size: 0.37rem;\n}\n.distribution .distribution-man .data>div[data-v-41f07a04] {\n  font-size: 0.37rem;\n  line-height: 0.91rem;\n  vertical-align: middle;\n}\n.distribution .distribution-man .data>div span[data-v-41f07a04]:first-child {\n  display: inline-block;\n  width: 0.16rem;\n  height: 0.16rem;\n  border-radius: 50%;\n  vertical-align: middle;\n  margin-right: 0.11rem;\n}\n.distribution .distribution-man .data>div span[data-v-41f07a04]:last-child {\n  vertical-align: middle;\n}\n.hold[data-v-41f07a04] {\n  margin: 0.32rem 0.43rem 0.8rem;\n}\n.hold .hold-title[data-v-41f07a04] {\n  font-size: 0.43rem;\n  line-height: 0.43rem;\n  font-weight: 600;\n  color: #0E0E0E;\n  vertical-align: middle;\n}\n.hold .hold-title img[data-v-41f07a04] {\n  width: 0.53rem;\n  height: 0.53rem;\n  vertical-align: text-top;\n  margin-right: 0.13rem;\n}\n.appreciation[data-v-41f07a04] {\n  margin: 0.32rem 0.43rem 0.8rem;\n}\n.appreciation .appreciation-title[data-v-41f07a04] {\n  font-size: 0.43rem;\n  line-height: 0.43rem;\n  font-weight: 600;\n  color: #0E0E0E;\n  vertical-align: middle;\n}\n.appreciation .appreciation-title img[data-v-41f07a04] {\n  width: 0.53rem;\n  height: 0.53rem;\n  vertical-align: text-top;\n  margin-right: 0.13rem;\n}\n.appreciation-grid[data-v-41f07a04] {\n  width: 100%;\n  text-align: center;\n}\n.appreciation-grid .appreciation-grid-flex[data-v-41f07a04] {\n  display: flex;\n  flex-direction: row;\n  margin-top: 0.53rem;\n}\n.appreciation-grid .appreciation-grid-flex div[data-v-41f07a04] {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  width: 50%;\n  float: left;\n}\n.appreciation-grid .appreciation-grid-flex div img[data-v-41f07a04] {\n  margin-top: 0.13rem;\n  width: 0.64rem;\n  height: 0.64rem;\n}\n.appreciation-grid .appreciation-grid-flex div span[data-v-41f07a04] {\n  font-size: 0.37rem;\n  color: #515556;\n  width: 3.73rem;\n  margin-top: 0.13rem;\n  line-height: 0.48rem;\n}\n.setFontFamily[data-v-41f07a04] {\n  font-family: \"bitkeep DIN\";\n}\n.more[data-v-41f07a04] {\n  margin: 0 0.43rem 1.09rem;\n}\n.more .more-title[data-v-41f07a04] {\n  font-size: 0.43rem;\n  line-height: 1.2rem;\n  font-weight: 600;\n  color: #0E0E0E;\n  border-bottom: 0.03rem solid #F4F5FA;\n}\n.more .more-line[data-v-41f07a04] {\n  font-size: 0.43rem;\n  line-height: 1.33rem;\n  height: 1.33rem;\n  border-bottom: 0.03rem solid #F4F5FA;\n  vertical-align: middle;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.more .more-line a[data-v-41f07a04] {\n  flex: 1;\n}\n.more .more-line img[data-v-41f07a04] {\n  width: 0.64rem;\n  height: 0.64rem;\n  vertical-align: middle;\n}\n.more .more-line span[data-v-41f07a04] {\n  color: #0E0E0E;\n  display: inline-block;\n  margin-left: 0.27rem;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".theme-light .textPrimary0[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-light .textSecond1[data-v-41f07a04] {\n  color: #515556;\n}\n.theme-light .textSecond2[data-v-41f07a04] {\n  color: #919899;\n}\n.theme-light .textSecond3[data-v-41f07a04] {\n  color: #9CA5B3;\n}\n.theme-light .colorDisable[data-v-41f07a04] {\n  background-color: #DADBDE;\n}\n.theme-light .colorLine[data-v-41f07a04] {\n  background-color: #F4F5FA;\n}\n.theme-light .colorLine1[data-v-41f07a04] {\n  background-color: #F0F0F0;\n}\n.theme-light .colorBackground0[data-v-41f07a04] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackground1[data-v-41f07a04] {\n  background-color: #fff;\n}\n.theme-light .colorBackground2[data-v-41f07a04] {\n  background-color: #F3F5F6;\n}\n.theme-light .colorBackground3[data-v-41f07a04] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackgroundWhite[data-v-41f07a04] {\n  background-color: #fff;\n}\n.theme-light .colorBackgroundPrimary[data-v-41f07a04] {\n  background-color: #7524f9;\n}\n.theme-light .colorBackgroundColorSecond11[data-v-41f07a04] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-light .colorBackgroundSecond01[data-v-41f07a04] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorBackgroundTextPrimary0[data-v-41f07a04] {\n  background-color: #0E0E0E;\n}\n.theme-light .colorPrimary[data-v-41f07a04] {\n  color: #7524f9;\n}\n.theme-light .colorSecond01[data-v-41f07a04] {\n  color: #2AC8DD;\n}\n.theme-light .backgroundSecond01[data-v-41f07a04] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorSecond02[data-v-41f07a04] {\n  color: #F04A4A;\n}\n.theme-light .colorSecond03[data-v-41f07a04] {\n  color: #26BC80;\n}\n.theme-light .colorSecond04[data-v-41f07a04] {\n  color: #FF8146;\n}\n.theme-light .colorSecond05[data-v-41f07a04] {\n  color: #2F80ED;\n}\n.theme-light .colorSecond06[data-v-41f07a04] {\n  color: #4A2FD2;\n}\n.theme-light .colorSecond07[data-v-41f07a04] {\n  color: #F04E98;\n}\n.theme-light .colorSecond08[data-v-41f07a04] {\n  color: #FFB800;\n}\n.theme-light .colorBlack[data-v-41f07a04] {\n  color: #000;\n}\n.theme-light .colorwhite[data-v-41f07a04] {\n  color: #fff;\n}\n.theme-light .colorSecond10[data-v-41f07a04] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-light .colorSecond11[data-v-41f07a04] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-light .colorSecond12[data-v-41f07a04] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-light .colorSecond13[data-v-41f07a04] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-light .colorSecond14[data-v-41f07a04] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-light .colorSecond15[data-v-41f07a04] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-light .colorSecond18[data-v-41f07a04] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-dark .textPrimary0[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.theme-dark .textSecond1[data-v-41f07a04] {\n  color: #9CA5B3;\n}\n.theme-dark .textSecond2[data-v-41f07a04] {\n  color: #7F828F;\n}\n.theme-dark .textSecond3[data-v-41f07a04] {\n  color: #6D707D;\n}\n.theme-dark .colorDisable[data-v-41f07a04] {\n  background-color: #5F626D;\n}\n.theme-dark .colorLine[data-v-41f07a04] {\n  background-color: #1F212E;\n}\n.theme-dark .colorLine1[data-v-41f07a04] {\n  background-color: #2A2D3D;\n}\n.theme-dark .colorBackground0[data-v-41f07a04] {\n  background-color: #0A0E1F;\n}\n.theme-dark .colorBackground1[data-v-41f07a04] {\n  background-color: #171A26;\n}\n.theme-dark .colorBackground2[data-v-41f07a04] {\n  background-color: #212331;\n}\n.theme-dark .colorBackground3[data-v-41f07a04] {\n  background-color: #212331;\n}\n.theme-dark .colorBackgroundPrimary[data-v-41f07a04] {\n  background-color: #7524f9;\n}\n.theme-dark .colorBackgroundColorSecond11[data-v-41f07a04] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorBackgroundSecond01[data-v-41f07a04] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorBackgroundTextPrimary0[data-v-41f07a04] {\n  background-color: #DFE0E3;\n}\n.theme-dark .colorPrimary[data-v-41f07a04] {\n  color: #7524f9;\n}\n.theme-dark .colorSecond01[data-v-41f07a04] {\n  color: #2AC8DD;\n}\n.theme-dark .backgroundSecond01[data-v-41f07a04] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorSecond02[data-v-41f07a04] {\n  color: #F04A4A;\n}\n.theme-dark .colorSecond03[data-v-41f07a04] {\n  color: #26BC80;\n}\n.theme-dark .colorSecond04[data-v-41f07a04] {\n  color: #FF8146;\n}\n.theme-dark .colorSecond05[data-v-41f07a04] {\n  color: #2F80ED;\n}\n.theme-dark .colorSecond06[data-v-41f07a04] {\n  color: #4A2FD2;\n}\n.theme-dark .colorSecond07[data-v-41f07a04] {\n  color: #F04E98;\n}\n.theme-dark .colorSecond08[data-v-41f07a04] {\n  color: #FFB800;\n}\n.theme-dark .colorBlack[data-v-41f07a04] {\n  color: #000;\n}\n.theme-dark .colorwhite[data-v-41f07a04] {\n  color: #fff;\n}\n.theme-dark .colorSecond10[data-v-41f07a04] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-dark .colorSecond11[data-v-41f07a04] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorSecond12[data-v-41f07a04] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-dark .colorSecond13[data-v-41f07a04] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-dark .colorSecond14[data-v-41f07a04] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-dark .colorSecond15[data-v-41f07a04] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-dark .colorSecond18[data-v-41f07a04] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-light .Background0[data-v-41f07a04] {\n  background-color: #fafafa;\n}\n.theme-light .Background0[data-v-41f07a04] {\n  background-color: #F8F8F9;\n}\n.theme-dark .Background0[data-v-41f07a04] {\n  background-color: #17171A;\n}\n.theme-dark .Background1[data-v-41f07a04] {\n  background-color: #202024;\n}\n.theme-light .wrap-min[data-v-41f07a04] {\n  background: #fff;\n}\n.theme-light .line[data-v-41f07a04] {\n  border-bottom: 0.03rem solid #F4F5FA;\n}\n.theme-light .wrap[data-v-41f07a04] {\n  background: #fff;\n}\n.theme-light .about .about-wrap[data-v-41f07a04] {\n  background: #F8F9FA;\n}\n.theme-light .about .about-wrap-pos[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-light .about .about-wrap-pos p[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-light .about .about-title[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-light .about .about-con[data-v-41f07a04] {\n  color: #515556;\n}\n.theme-light .about .viewAll[data-v-41f07a04] {\n  color: #7524f9;\n}\n.theme-light .distribution .distribution-title[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-light .hold .hold-title[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-light .exchangeTotal[data-v-41f07a04] {\n  color: #515556;\n}\n.theme-light .total[data-v-41f07a04] {\n  color: #515556;\n}\n.theme-light .total span[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-light .distribution-man[data-v-41f07a04] {\n  background: #F8F9FA;\n}\n.theme-light .distribution-man .data div[data-v-41f07a04]:last-child {\n  color: #0E0E0E;\n}\n.theme-light .distribution-man .data>div[data-v-41f07a04] {\n  color: #515556;\n}\n.theme-light .distribution-man .data>div[data-v-41f07a04] :last-child {\n  color: #0E0E0E;\n}\n.theme-light .hold .hold-title[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-light .appreciation .appreciation-title[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-light .appreciation-grid .appreciation-grid-flex div span[data-v-41f07a04] {\n  color: #515556;\n}\n.theme-light .setIcon[data-v-41f07a04] {\n  color: #999ba3;\n}\n.theme-light .setLightColor[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-light .setDarkColor[data-v-41f07a04] {\n  color: #515556;\n}\n.theme-light .more .more-title[data-v-41f07a04] {\n  color: #0E0E0E;\n  border-bottom: 0.03rem solid #F4F5FA;\n}\n.theme-light .more .more-line[data-v-41f07a04] {\n  border-bottom: 0.03rem solid #F4F5FA;\n}\n.theme-light .more .more-line span[data-v-41f07a04] {\n  color: #0E0E0E;\n}\n.theme-dark .wrap-min[data-v-41f07a04] {\n  background: #171A26;\n}\n.theme-dark .line[data-v-41f07a04] {\n  border-bottom: 0.03rem solid #1F212E;\n}\n.theme-dark .wrap[data-v-41f07a04] {\n  background: #fff;\n}\n.theme-dark .about .about-wrap[data-v-41f07a04] {\n  background: #0A0E1F;\n}\n.theme-dark .about .about-wrap-pos[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.theme-dark .about .about-wrap-pos p[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.theme-dark .about .about-title[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.theme-dark .about .about-con[data-v-41f07a04] {\n  color: #9CA5B3;\n}\n.theme-dark .about .viewAll[data-v-41f07a04] {\n  color: #7524f9;\n}\n.theme-dark .distribution .distribution-title[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.theme-dark .hold .hold-title[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.theme-dark .exchangeTotal[data-v-41f07a04] {\n  color: #9CA5B3;\n}\n.theme-dark .total[data-v-41f07a04] {\n  color: #9CA5B3;\n}\n.theme-dark .total span[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.theme-dark .distribution-man[data-v-41f07a04] {\n  background: #212331;\n}\n.theme-dark .distribution-man .data[data-v-41f07a04] :last-child {\n  color: #DFE0E3;\n}\n.theme-dark .distribution-man .data>div[data-v-41f07a04] {\n  color: #9CA5B3;\n}\n.theme-dark .distribution-man .data>div span[data-v-41f07a04]:last-child {\n  color: #9CA5B3;\n}\n.theme-dark .hold .hold-title[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.theme-dark .appreciation .appreciation-title[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.theme-dark .appreciation-grid .appreciation-grid-flex div span[data-v-41f07a04] {\n  color: #9CA5B3;\n}\n.theme-dark .setIcon[data-v-41f07a04] {\n  color: #999ba3;\n}\n.theme-dark .setdarkColor[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.theme-dark .setDarkColor[data-v-41f07a04] {\n  color: #9CA5B3;\n}\n.theme-dark .more .more-title[data-v-41f07a04] {\n  color: #DFE0E3;\n  border-bottom: 0.03rem solid #1F212E;\n}\n.theme-dark .more .more-line[data-v-41f07a04] {\n  border-bottom: 0.03rem solid #1F212E;\n}\n.theme-dark .more .more-line span[data-v-41f07a04] {\n  color: #DFE0E3;\n}\n.statusM[data-v-41f07a04] {\n  padding-bottom: 1.39rem;\n}\n.hold-content img[data-v-41f07a04] {\n  width: 1.07rem !important;\n  height: 1.07rem !important;\n}\n.about .about-wrap[data-v-41f07a04] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: 1.07rem;\n}\n.about .about-wrap-pos[data-v-41f07a04] {\n  text-align: center;\n  font-size: 0.48rem;\n  line-height: 0.48rem;\n  direction: cloumn;\n}\n.about .about-wrap-pos img[data-v-41f07a04] {\n  width: 0.75rem;\n  height: 0.75rem;\n}\n.about .about-wrap-pos p[data-v-41f07a04] {\n  margin-top: 0.13rem;\n  font-size: 0.48rem;\n  line-height: 0.48rem;\n  font-weight: 600;\n}\n.about .about-content[data-v-41f07a04] {\n  margin: 0.32rem 0.43rem 0.8rem;\n}\n.about .about-title[data-v-41f07a04] {\n  font-size: 0.43rem;\n  line-height: 0.43rem;\n  font-weight: 600;\n  vertical-align: middle;\n}\n.about .about-title img[data-v-41f07a04] {\n  width: 0.53rem;\n  height: 0.53rem;\n  vertical-align: text-top;\n  margin-right: 0.13rem;\n}\n.about .about-con[data-v-41f07a04] {\n  padding-top: 0.4rem;\n  font-size: 0.37rem;\n  line-height: 0.53rem;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  display: -webkit-box;\n  -webkit-box-orient: vertical;\n  -webkit-line-clamp: 2;\n}\n.about .viewAll[data-v-41f07a04] {\n  text-align: right;\n  font-size: 0.37rem;\n  line-height: 0.37rem;\n  margin-top: 0.16rem;\n}\n.distribution[data-v-41f07a04] {\n  margin: 0.32rem 0.43rem 0.8rem;\n}\n.distribution .distribution-title[data-v-41f07a04] {\n  font-size: 0.43rem;\n  line-height: 0.43rem;\n  font-weight: 600;\n  vertical-align: middle;\n}\n.distribution .distribution-title img[data-v-41f07a04] {\n  width: 0.53rem;\n  height: 0.53rem;\n  vertical-align: text-top;\n  margin-right: 0.13rem;\n}\n.distribution .charts-img[data-v-41f07a04] {\n  text-align: center;\n  margin: 0.53rem;\n}\n.distribution .charts-img img[data-v-41f07a04] {\n  width: 2.93rem;\n  height: 2.93rem;\n}\n.distribution .charts-img .exchangeTotal[data-v-41f07a04] {\n  font-family: bitkeep DIN;\n  font-size: 0.37rem;\n}\n.distribution .charts-img .total[data-v-41f07a04] {\n  font-size: 0.37rem;\n  line-height: 0.53rem;\n}\n.distribution .distribution-man[data-v-41f07a04] {\n  margin-bottom: 0.8rem;\n  border-radius: 0.21rem;\n  padding: 0.27rem;\n}\n.distribution .distribution-man .data[data-v-41f07a04] {\n  display: flex;\n  justify-content: space-between;\n}\n.distribution .distribution-man .data div[data-v-41f07a04]:last-child {\n  font-family: bitkeep DIN;\n  font-size: 0.37rem;\n}\n.distribution .distribution-man .data>div[data-v-41f07a04] {\n  font-size: 0.37rem;\n  line-height: 0.91rem;\n  vertical-align: middle;\n}\n.distribution .distribution-man .data>div span[data-v-41f07a04]:first-child {\n  display: inline-block;\n  width: 0.16rem;\n  height: 0.16rem;\n  border-radius: 50%;\n  vertical-align: middle;\n  margin-right: 0.11rem;\n}\n.distribution .distribution-man .data>div span[data-v-41f07a04]:last-child {\n  vertical-align: middle;\n}\n.hold[data-v-41f07a04] {\n  margin: 0.32rem 0.43rem 0.8rem;\n}\n.hold .hold-title[data-v-41f07a04] {\n  font-size: 0.43rem;\n  line-height: 0.43rem;\n  font-weight: 600;\n  color: #0E0E0E;\n  vertical-align: middle;\n}\n.hold .hold-title img[data-v-41f07a04] {\n  width: 0.53rem;\n  height: 0.53rem;\n  vertical-align: text-top;\n  margin-right: 0.13rem;\n}\n.appreciation[data-v-41f07a04] {\n  margin: 0.32rem 0.43rem 0.8rem;\n}\n.appreciation .appreciation-title[data-v-41f07a04] {\n  font-size: 0.43rem;\n  line-height: 0.43rem;\n  font-weight: 600;\n  color: #0E0E0E;\n  vertical-align: middle;\n}\n.appreciation .appreciation-title img[data-v-41f07a04] {\n  width: 0.53rem;\n  height: 0.53rem;\n  vertical-align: text-top;\n  margin-right: 0.13rem;\n}\n.appreciation-grid[data-v-41f07a04] {\n  width: 100%;\n  text-align: center;\n}\n.appreciation-grid .appreciation-grid-flex[data-v-41f07a04] {\n  display: flex;\n  flex-direction: row;\n  margin-top: 0.53rem;\n}\n.appreciation-grid .appreciation-grid-flex div[data-v-41f07a04] {\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n  width: 50%;\n  float: left;\n}\n.appreciation-grid .appreciation-grid-flex div img[data-v-41f07a04] {\n  margin-top: 0.13rem;\n  width: 0.64rem;\n  height: 0.64rem;\n}\n.appreciation-grid .appreciation-grid-flex div span[data-v-41f07a04] {\n  font-size: 0.37rem;\n  color: #515556;\n  width: 3.73rem;\n  margin-top: 0.13rem;\n  line-height: 0.48rem;\n}\n.setFontFamily[data-v-41f07a04] {\n  font-family: \"bitkeep DIN\";\n}\n.more[data-v-41f07a04] {\n  margin: 0 0.43rem 1.09rem;\n}\n.more .more-title[data-v-41f07a04] {\n  font-size: 0.43rem;\n  line-height: 1.2rem;\n  font-weight: 600;\n  color: #0E0E0E;\n  border-bottom: 0.03rem solid #F4F5FA;\n}\n.more .more-line[data-v-41f07a04] {\n  font-size: 0.43rem;\n  line-height: 1.33rem;\n  height: 1.33rem;\n  border-bottom: 0.03rem solid #F4F5FA;\n  vertical-align: middle;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n.more .more-line a[data-v-41f07a04] {\n  flex: 1;\n}\n.more .more-line img[data-v-41f07a04] {\n  width: 0.64rem;\n  height: 0.64rem;\n  vertical-align: middle;\n}\n.more .more-line span[data-v-41f07a04] {\n  color: #0E0E0E;\n  display: inline-block;\n  margin-left: 0.27rem;\n}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
 
-/***/ 120:
+/***/ 180:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(90);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(136);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 121:
+/***/ 181:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(5);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.i, ".van-popup__close-icon--top-right {\n  top: 0.27rem;\n  right: 0.24rem;\n}\n.van-popup__close-icon--top-right img {\n  width: 0.75rem;\n  height: 0.75rem;\n}\n.theme-dark .van-toast {\n  background-color: #dfe0e3;\n  color: #171a26;\n}", ""]);
@@ -53,49 +345,49 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 122:
+/***/ 182:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_1_id_c8495cfe_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(91);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_1_id_c8495cfe_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(137);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_1_id_c8495cfe_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_1_id_c8495cfe_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_1_id_c8495cfe_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_1_id_c8495cfe_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 123:
+/***/ 183:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(5);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".theme-light .textPrimary0[data-v-c8495cfe] {\n  color: #0E0E0E;\n}\n.theme-light .textSecond1[data-v-c8495cfe] {\n  color: #515556;\n}\n.theme-light .textSecond2[data-v-c8495cfe] {\n  color: #919899;\n}\n.theme-light .textSecond3[data-v-c8495cfe] {\n  color: #9CA5B3;\n}\n.theme-light .colorDisable[data-v-c8495cfe] {\n  background-color: #DADBDE;\n}\n.theme-light .colorLine[data-v-c8495cfe] {\n  background-color: #F4F5FA;\n}\n.theme-light .colorLine1[data-v-c8495cfe] {\n  background-color: #F0F0F0;\n}\n.theme-light .colorBackground0[data-v-c8495cfe] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackground1[data-v-c8495cfe] {\n  background-color: #fff;\n}\n.theme-light .colorBackground2[data-v-c8495cfe] {\n  background-color: #F3F5F6;\n}\n.theme-light .colorBackground3[data-v-c8495cfe] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackgroundWhite[data-v-c8495cfe] {\n  background-color: #fff;\n}\n.theme-light .colorBackgroundPrimary[data-v-c8495cfe] {\n  background-color: #7524f9;\n}\n.theme-light .colorBackgroundColorSecond11[data-v-c8495cfe] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-light .colorBackgroundSecond01[data-v-c8495cfe] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorBackgroundTextPrimary0[data-v-c8495cfe] {\n  background-color: #0E0E0E;\n}\n.theme-light .colorPrimary[data-v-c8495cfe] {\n  color: #7524f9;\n}\n.theme-light .colorSecond01[data-v-c8495cfe] {\n  color: #2AC8DD;\n}\n.theme-light .backgroundSecond01[data-v-c8495cfe] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorSecond02[data-v-c8495cfe] {\n  color: #F04A4A;\n}\n.theme-light .colorSecond03[data-v-c8495cfe] {\n  color: #26BC80;\n}\n.theme-light .colorSecond04[data-v-c8495cfe] {\n  color: #FF8146;\n}\n.theme-light .colorSecond05[data-v-c8495cfe] {\n  color: #2F80ED;\n}\n.theme-light .colorSecond06[data-v-c8495cfe] {\n  color: #4A2FD2;\n}\n.theme-light .colorSecond07[data-v-c8495cfe] {\n  color: #F04E98;\n}\n.theme-light .colorSecond08[data-v-c8495cfe] {\n  color: #FFB800;\n}\n.theme-light .colorBlack[data-v-c8495cfe] {\n  color: #000;\n}\n.theme-light .colorwhite[data-v-c8495cfe] {\n  color: #fff;\n}\n.theme-light .colorSecond10[data-v-c8495cfe] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-light .colorSecond11[data-v-c8495cfe] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-light .colorSecond12[data-v-c8495cfe] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-light .colorSecond13[data-v-c8495cfe] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-light .colorSecond14[data-v-c8495cfe] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-light .colorSecond15[data-v-c8495cfe] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-light .colorSecond18[data-v-c8495cfe] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-dark .textPrimary0[data-v-c8495cfe] {\n  color: #DFE0E3;\n}\n.theme-dark .textSecond1[data-v-c8495cfe] {\n  color: #9CA5B3;\n}\n.theme-dark .textSecond2[data-v-c8495cfe] {\n  color: #7F828F;\n}\n.theme-dark .textSecond3[data-v-c8495cfe] {\n  color: #6D707D;\n}\n.theme-dark .colorDisable[data-v-c8495cfe] {\n  background-color: #5F626D;\n}\n.theme-dark .colorLine[data-v-c8495cfe] {\n  background-color: #1F212E;\n}\n.theme-dark .colorLine1[data-v-c8495cfe] {\n  background-color: #2A2D3D;\n}\n.theme-dark .colorBackground0[data-v-c8495cfe] {\n  background-color: #0A0E1F;\n}\n.theme-dark .colorBackground1[data-v-c8495cfe] {\n  background-color: #171A26;\n}\n.theme-dark .colorBackground2[data-v-c8495cfe] {\n  background-color: #212331;\n}\n.theme-dark .colorBackground3[data-v-c8495cfe] {\n  background-color: #212331;\n}\n.theme-dark .colorBackgroundPrimary[data-v-c8495cfe] {\n  background-color: #7524f9;\n}\n.theme-dark .colorBackgroundColorSecond11[data-v-c8495cfe] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorBackgroundSecond01[data-v-c8495cfe] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorBackgroundTextPrimary0[data-v-c8495cfe] {\n  background-color: #DFE0E3;\n}\n.theme-dark .colorPrimary[data-v-c8495cfe] {\n  color: #7524f9;\n}\n.theme-dark .colorSecond01[data-v-c8495cfe] {\n  color: #2AC8DD;\n}\n.theme-dark .backgroundSecond01[data-v-c8495cfe] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorSecond02[data-v-c8495cfe] {\n  color: #F04A4A;\n}\n.theme-dark .colorSecond03[data-v-c8495cfe] {\n  color: #26BC80;\n}\n.theme-dark .colorSecond04[data-v-c8495cfe] {\n  color: #FF8146;\n}\n.theme-dark .colorSecond05[data-v-c8495cfe] {\n  color: #2F80ED;\n}\n.theme-dark .colorSecond06[data-v-c8495cfe] {\n  color: #4A2FD2;\n}\n.theme-dark .colorSecond07[data-v-c8495cfe] {\n  color: #F04E98;\n}\n.theme-dark .colorSecond08[data-v-c8495cfe] {\n  color: #FFB800;\n}\n.theme-dark .colorBlack[data-v-c8495cfe] {\n  color: #000;\n}\n.theme-dark .colorwhite[data-v-c8495cfe] {\n  color: #fff;\n}\n.theme-dark .colorSecond10[data-v-c8495cfe] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-dark .colorSecond11[data-v-c8495cfe] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorSecond12[data-v-c8495cfe] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-dark .colorSecond13[data-v-c8495cfe] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-dark .colorSecond14[data-v-c8495cfe] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-dark .colorSecond15[data-v-c8495cfe] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-dark .colorSecond18[data-v-c8495cfe] {\n  background-color: rgba(255,184,0,0.1);\n}\n.title[data-v-c8495cfe] {\n  margin: 0.37rem 0.43rem;\n  text-align: center;\n  font-size: 0.43rem;\n  font-weight: 500;\n}\n.subTitle[data-v-c8495cfe] {\n  margin-top: 0.27rem;\n  font-size: 0.37rem;\n  font-weight: normal;\n}\n.setOpactive[data-v-c8495cfe] {\n  opacity: 0.3;\n}\n.line[data-v-c8495cfe] {\n  width: 100%;\n  margin-top: 0;\n  height: 0.03rem;\n}\n.content[data-v-c8495cfe] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  overflow: auto;\n  padding-top: 0.53rem;\n}\n.content .content_invite[data-v-c8495cfe] {\n  width: 100%;\n}\n.content .content_invite .content_invite_flex[data-v-c8495cfe] {\n  border-radius: 0.16rem;\n  margin: 0.27rem 0.53rem 0.53rem;\n  padding: 0.27rem;\n}\n.content .content_invite .content_invite_flex .content_invite_flex_cont[data-v-c8495cfe] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.content .content_invite .content_invite_flex .setMargin[data-v-c8495cfe] {\n  margin-top: 0.37rem;\n}\n.content .content_invite .content_invite_flex img[data-v-c8495cfe] {\n  width: 0.43rem;\n  height: 0.43rem;\n  vertical-align: sub;\n}\n.content .content_invite .content_invite_flex span[data-v-c8495cfe] {\n  display: inline-block;\n  margin-left: 0.13rem;\n  font-size: 0.37rem;\n}\n.content .content_invite .content_invite_flex .invite_number[data-v-c8495cfe] {\n  font-size: 0.37rem;\n}\n.content img[data-v-c8495cfe] {\n  width: 1.28rem;\n  height: 1.28rem;\n}\n.content p[data-v-c8495cfe] {\n  font-family: bitkeep DIN;\n  font-size: 0.64rem;\n  margin: 0.27rem;\n}\n.confirm-bottom[data-v-c8495cfe] {\n  height: 1.28rem;\n  width: 100%;\n  bottom: 0;\n  z-index: 99;\n  position: fixed;\n  padding: 0.29rem 0 0.91rem;\n}\n.confirm-bottom .swap-btn[data-v-c8495cfe] {\n  height: 1.33rem;\n  border-radius: 0.27rem;\n  text-align: center;\n  line-height: 1.17rem;\n  border: none;\n  font-weight: 500;\n  font-size: 0.43rem;\n  width: 8rem;\n  left: 50%;\n  color: #fff;\n  transform: translateX(-50%);\n  z-index: 0;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".theme-light .textPrimary0[data-v-c8495cfe] {\n  color: #0E0E0E;\n}\n.theme-light .textSecond1[data-v-c8495cfe] {\n  color: #515556;\n}\n.theme-light .textSecond2[data-v-c8495cfe] {\n  color: #919899;\n}\n.theme-light .textSecond3[data-v-c8495cfe] {\n  color: #9CA5B3;\n}\n.theme-light .colorDisable[data-v-c8495cfe] {\n  background-color: #DADBDE;\n}\n.theme-light .colorLine[data-v-c8495cfe] {\n  background-color: #F4F5FA;\n}\n.theme-light .colorLine1[data-v-c8495cfe] {\n  background-color: #F0F0F0;\n}\n.theme-light .colorBackground0[data-v-c8495cfe] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackground1[data-v-c8495cfe] {\n  background-color: #fff;\n}\n.theme-light .colorBackground2[data-v-c8495cfe] {\n  background-color: #F3F5F6;\n}\n.theme-light .colorBackground3[data-v-c8495cfe] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackgroundWhite[data-v-c8495cfe] {\n  background-color: #fff;\n}\n.theme-light .colorBackgroundPrimary[data-v-c8495cfe] {\n  background-color: #7524f9;\n}\n.theme-light .colorBackgroundColorSecond11[data-v-c8495cfe] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-light .colorBackgroundSecond01[data-v-c8495cfe] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorBackgroundTextPrimary0[data-v-c8495cfe] {\n  background-color: #0E0E0E;\n}\n.theme-light .colorPrimary[data-v-c8495cfe] {\n  color: #7524f9;\n}\n.theme-light .colorSecond01[data-v-c8495cfe] {\n  color: #2AC8DD;\n}\n.theme-light .backgroundSecond01[data-v-c8495cfe] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorSecond02[data-v-c8495cfe] {\n  color: #F04A4A;\n}\n.theme-light .colorSecond03[data-v-c8495cfe] {\n  color: #26BC80;\n}\n.theme-light .colorSecond04[data-v-c8495cfe] {\n  color: #FF8146;\n}\n.theme-light .colorSecond05[data-v-c8495cfe] {\n  color: #2F80ED;\n}\n.theme-light .colorSecond06[data-v-c8495cfe] {\n  color: #4A2FD2;\n}\n.theme-light .colorSecond07[data-v-c8495cfe] {\n  color: #F04E98;\n}\n.theme-light .colorSecond08[data-v-c8495cfe] {\n  color: #FFB800;\n}\n.theme-light .colorBlack[data-v-c8495cfe] {\n  color: #000;\n}\n.theme-light .colorwhite[data-v-c8495cfe] {\n  color: #fff;\n}\n.theme-light .colorSecond10[data-v-c8495cfe] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-light .colorSecond11[data-v-c8495cfe] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-light .colorSecond12[data-v-c8495cfe] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-light .colorSecond13[data-v-c8495cfe] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-light .colorSecond14[data-v-c8495cfe] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-light .colorSecond15[data-v-c8495cfe] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-light .colorSecond18[data-v-c8495cfe] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-dark .textPrimary0[data-v-c8495cfe] {\n  color: #DFE0E3;\n}\n.theme-dark .textSecond1[data-v-c8495cfe] {\n  color: #9CA5B3;\n}\n.theme-dark .textSecond2[data-v-c8495cfe] {\n  color: #7F828F;\n}\n.theme-dark .textSecond3[data-v-c8495cfe] {\n  color: #6D707D;\n}\n.theme-dark .colorDisable[data-v-c8495cfe] {\n  background-color: #5F626D;\n}\n.theme-dark .colorLine[data-v-c8495cfe] {\n  background-color: #1F212E;\n}\n.theme-dark .colorLine1[data-v-c8495cfe] {\n  background-color: #2A2D3D;\n}\n.theme-dark .colorBackground0[data-v-c8495cfe] {\n  background-color: #0A0E1F;\n}\n.theme-dark .colorBackground1[data-v-c8495cfe] {\n  background-color: #171A26;\n}\n.theme-dark .colorBackground2[data-v-c8495cfe] {\n  background-color: #212331;\n}\n.theme-dark .colorBackground3[data-v-c8495cfe] {\n  background-color: #212331;\n}\n.theme-dark .colorBackgroundPrimary[data-v-c8495cfe] {\n  background-color: #7524f9;\n}\n.theme-dark .colorBackgroundColorSecond11[data-v-c8495cfe] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorBackgroundSecond01[data-v-c8495cfe] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorBackgroundTextPrimary0[data-v-c8495cfe] {\n  background-color: #DFE0E3;\n}\n.theme-dark .colorPrimary[data-v-c8495cfe] {\n  color: #7524f9;\n}\n.theme-dark .colorSecond01[data-v-c8495cfe] {\n  color: #2AC8DD;\n}\n.theme-dark .backgroundSecond01[data-v-c8495cfe] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorSecond02[data-v-c8495cfe] {\n  color: #F04A4A;\n}\n.theme-dark .colorSecond03[data-v-c8495cfe] {\n  color: #26BC80;\n}\n.theme-dark .colorSecond04[data-v-c8495cfe] {\n  color: #FF8146;\n}\n.theme-dark .colorSecond05[data-v-c8495cfe] {\n  color: #2F80ED;\n}\n.theme-dark .colorSecond06[data-v-c8495cfe] {\n  color: #4A2FD2;\n}\n.theme-dark .colorSecond07[data-v-c8495cfe] {\n  color: #F04E98;\n}\n.theme-dark .colorSecond08[data-v-c8495cfe] {\n  color: #FFB800;\n}\n.theme-dark .colorBlack[data-v-c8495cfe] {\n  color: #000;\n}\n.theme-dark .colorwhite[data-v-c8495cfe] {\n  color: #fff;\n}\n.theme-dark .colorSecond10[data-v-c8495cfe] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-dark .colorSecond11[data-v-c8495cfe] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorSecond12[data-v-c8495cfe] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-dark .colorSecond13[data-v-c8495cfe] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-dark .colorSecond14[data-v-c8495cfe] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-dark .colorSecond15[data-v-c8495cfe] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-dark .colorSecond18[data-v-c8495cfe] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-light .Background0[data-v-c8495cfe] {\n  background-color: #fafafa;\n}\n.theme-light .Background0[data-v-c8495cfe] {\n  background-color: #F8F8F9;\n}\n.theme-dark .Background0[data-v-c8495cfe] {\n  background-color: #17171A;\n}\n.theme-dark .Background1[data-v-c8495cfe] {\n  background-color: #202024;\n}\n.title[data-v-c8495cfe] {\n  margin: 0.37rem 0.43rem;\n  text-align: center;\n  font-size: 0.43rem;\n  font-weight: 500;\n}\n.subTitle[data-v-c8495cfe] {\n  margin-top: 0.27rem;\n  font-size: 0.37rem;\n  font-weight: normal;\n}\n.setOpactive[data-v-c8495cfe] {\n  opacity: 0.3;\n}\n.line[data-v-c8495cfe] {\n  width: 100%;\n  margin-top: 0;\n  height: 0.03rem;\n}\n.content[data-v-c8495cfe] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  overflow: auto;\n  padding-top: 0.53rem;\n}\n.content .content_invite[data-v-c8495cfe] {\n  width: 100%;\n}\n.content .content_invite .content_invite_flex[data-v-c8495cfe] {\n  border-radius: 0.16rem;\n  margin: 0.27rem 0.53rem 0.53rem;\n  padding: 0.27rem;\n}\n.content .content_invite .content_invite_flex .content_invite_flex_cont[data-v-c8495cfe] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.content .content_invite .content_invite_flex .setMargin[data-v-c8495cfe] {\n  margin-top: 0.37rem;\n}\n.content .content_invite .content_invite_flex img[data-v-c8495cfe] {\n  width: 0.43rem;\n  height: 0.43rem;\n  vertical-align: sub;\n}\n.content .content_invite .content_invite_flex span[data-v-c8495cfe] {\n  display: inline-block;\n  margin-left: 0.13rem;\n  font-size: 0.37rem;\n}\n.content .content_invite .content_invite_flex .invite_number[data-v-c8495cfe] {\n  font-size: 0.37rem;\n}\n.content img[data-v-c8495cfe] {\n  width: 1.28rem;\n  height: 1.28rem;\n}\n.content p[data-v-c8495cfe] {\n  font-family: bitkeep DIN;\n  font-size: 0.64rem;\n  margin: 0.27rem;\n}\n.confirm-bottom[data-v-c8495cfe] {\n  height: 1.28rem;\n  width: 100%;\n  bottom: 0;\n  z-index: 99;\n  position: fixed;\n  padding: 0.29rem 0 0.91rem;\n}\n.confirm-bottom .swap-btn[data-v-c8495cfe] {\n  height: 1.33rem;\n  border-radius: 0.27rem;\n  text-align: center;\n  line-height: 1.17rem;\n  border: none;\n  font-weight: 500;\n  font-size: 0.43rem;\n  width: 8rem;\n  left: 50%;\n  color: #fff;\n  transform: translateX(-50%);\n  z-index: 0;\n}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
 
-/***/ 124:
+/***/ 184:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RuleDetail_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(92);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RuleDetail_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(138);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RuleDetail_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RuleDetail_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RuleDetail_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RuleDetail_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 125:
+/***/ 185:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(5);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.i, ".van-popup__close-icon--top-right {\n  top: 0.27rem;\n  right: 0.24rem;\n}\n.van-popup__close-icon--top-right img {\n  width: 0.75rem;\n  height: 0.75rem;\n}\n.theme-dark .van-toast {\n  background-color: #DFE0E3;\n  color: #171A26;\n}", ""]);
@@ -105,49 +397,49 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 126:
+/***/ 186:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RuleDetail_vue_vue_type_style_index_1_id_75fc548f_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(93);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RuleDetail_vue_vue_type_style_index_1_id_75fc548f_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(139);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RuleDetail_vue_vue_type_style_index_1_id_75fc548f_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RuleDetail_vue_vue_type_style_index_1_id_75fc548f_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RuleDetail_vue_vue_type_style_index_1_id_75fc548f_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_RuleDetail_vue_vue_type_style_index_1_id_75fc548f_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 127:
+/***/ 187:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(5);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".theme-light .textPrimary0[data-v-75fc548f] {\n  color: #0E0E0E;\n}\n.theme-light .textSecond1[data-v-75fc548f] {\n  color: #515556;\n}\n.theme-light .textSecond2[data-v-75fc548f] {\n  color: #919899;\n}\n.theme-light .textSecond3[data-v-75fc548f] {\n  color: #9CA5B3;\n}\n.theme-light .colorDisable[data-v-75fc548f] {\n  background-color: #DADBDE;\n}\n.theme-light .colorLine[data-v-75fc548f] {\n  background-color: #F4F5FA;\n}\n.theme-light .colorLine1[data-v-75fc548f] {\n  background-color: #F0F0F0;\n}\n.theme-light .colorBackground0[data-v-75fc548f] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackground1[data-v-75fc548f] {\n  background-color: #fff;\n}\n.theme-light .colorBackground2[data-v-75fc548f] {\n  background-color: #F3F5F6;\n}\n.theme-light .colorBackground3[data-v-75fc548f] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackgroundWhite[data-v-75fc548f] {\n  background-color: #fff;\n}\n.theme-light .colorBackgroundPrimary[data-v-75fc548f] {\n  background-color: #7524f9;\n}\n.theme-light .colorBackgroundColorSecond11[data-v-75fc548f] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-light .colorBackgroundSecond01[data-v-75fc548f] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorBackgroundTextPrimary0[data-v-75fc548f] {\n  background-color: #0E0E0E;\n}\n.theme-light .colorPrimary[data-v-75fc548f] {\n  color: #7524f9;\n}\n.theme-light .colorSecond01[data-v-75fc548f] {\n  color: #2AC8DD;\n}\n.theme-light .backgroundSecond01[data-v-75fc548f] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorSecond02[data-v-75fc548f] {\n  color: #F04A4A;\n}\n.theme-light .colorSecond03[data-v-75fc548f] {\n  color: #26BC80;\n}\n.theme-light .colorSecond04[data-v-75fc548f] {\n  color: #FF8146;\n}\n.theme-light .colorSecond05[data-v-75fc548f] {\n  color: #2F80ED;\n}\n.theme-light .colorSecond06[data-v-75fc548f] {\n  color: #4A2FD2;\n}\n.theme-light .colorSecond07[data-v-75fc548f] {\n  color: #F04E98;\n}\n.theme-light .colorSecond08[data-v-75fc548f] {\n  color: #FFB800;\n}\n.theme-light .colorBlack[data-v-75fc548f] {\n  color: #000;\n}\n.theme-light .colorwhite[data-v-75fc548f] {\n  color: #fff;\n}\n.theme-light .colorSecond10[data-v-75fc548f] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-light .colorSecond11[data-v-75fc548f] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-light .colorSecond12[data-v-75fc548f] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-light .colorSecond13[data-v-75fc548f] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-light .colorSecond14[data-v-75fc548f] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-light .colorSecond15[data-v-75fc548f] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-light .colorSecond18[data-v-75fc548f] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-dark .textPrimary0[data-v-75fc548f] {\n  color: #DFE0E3;\n}\n.theme-dark .textSecond1[data-v-75fc548f] {\n  color: #9CA5B3;\n}\n.theme-dark .textSecond2[data-v-75fc548f] {\n  color: #7F828F;\n}\n.theme-dark .textSecond3[data-v-75fc548f] {\n  color: #6D707D;\n}\n.theme-dark .colorDisable[data-v-75fc548f] {\n  background-color: #5F626D;\n}\n.theme-dark .colorLine[data-v-75fc548f] {\n  background-color: #1F212E;\n}\n.theme-dark .colorLine1[data-v-75fc548f] {\n  background-color: #2A2D3D;\n}\n.theme-dark .colorBackground0[data-v-75fc548f] {\n  background-color: #0A0E1F;\n}\n.theme-dark .colorBackground1[data-v-75fc548f] {\n  background-color: #171A26;\n}\n.theme-dark .colorBackground2[data-v-75fc548f] {\n  background-color: #212331;\n}\n.theme-dark .colorBackground3[data-v-75fc548f] {\n  background-color: #212331;\n}\n.theme-dark .colorBackgroundPrimary[data-v-75fc548f] {\n  background-color: #7524f9;\n}\n.theme-dark .colorBackgroundColorSecond11[data-v-75fc548f] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorBackgroundSecond01[data-v-75fc548f] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorBackgroundTextPrimary0[data-v-75fc548f] {\n  background-color: #DFE0E3;\n}\n.theme-dark .colorPrimary[data-v-75fc548f] {\n  color: #7524f9;\n}\n.theme-dark .colorSecond01[data-v-75fc548f] {\n  color: #2AC8DD;\n}\n.theme-dark .backgroundSecond01[data-v-75fc548f] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorSecond02[data-v-75fc548f] {\n  color: #F04A4A;\n}\n.theme-dark .colorSecond03[data-v-75fc548f] {\n  color: #26BC80;\n}\n.theme-dark .colorSecond04[data-v-75fc548f] {\n  color: #FF8146;\n}\n.theme-dark .colorSecond05[data-v-75fc548f] {\n  color: #2F80ED;\n}\n.theme-dark .colorSecond06[data-v-75fc548f] {\n  color: #4A2FD2;\n}\n.theme-dark .colorSecond07[data-v-75fc548f] {\n  color: #F04E98;\n}\n.theme-dark .colorSecond08[data-v-75fc548f] {\n  color: #FFB800;\n}\n.theme-dark .colorBlack[data-v-75fc548f] {\n  color: #000;\n}\n.theme-dark .colorwhite[data-v-75fc548f] {\n  color: #fff;\n}\n.theme-dark .colorSecond10[data-v-75fc548f] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-dark .colorSecond11[data-v-75fc548f] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorSecond12[data-v-75fc548f] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-dark .colorSecond13[data-v-75fc548f] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-dark .colorSecond14[data-v-75fc548f] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-dark .colorSecond15[data-v-75fc548f] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-dark .colorSecond18[data-v-75fc548f] {\n  background-color: rgba(255,184,0,0.1);\n}\n.title[data-v-75fc548f] {\n  margin: 0.37rem 0.43rem;\n  text-align: center;\n  font-size: 0.43rem;\n  font-weight: 500;\n}\n.title p[data-v-75fc548f] {\n  font-weight: 600;\n}\n.setOpactive[data-v-75fc548f] {\n  opacity: 0.3;\n}\n.line[data-v-75fc548f] {\n  width: 100%;\n  margin-top: 0;\n  height: 0.03rem;\n}\n.ruleDetailcontent[data-v-75fc548f] {\n  height: 50vh;\n  overflow: auto;\n  padding: 0.53rem;\n}\n.ruleDetailcontent img[data-v-75fc548f] {\n  width: 1.28rem;\n  height: 1.28rem;\n}\n.ruleDetailcontent .setF[data-v-75fc548f] {\n  font-size: 0.43rem;\n}\n.ruleDetailcontent .setLineHeight[data-v-75fc548f] {\n  line-height: 0.48rem;\n}\n.ruleDetailcontent p[data-v-75fc548f] {\n  font-size: 0.37rem;\n  line-height: 0.59rem;\n  margin: 0 0 0.27rem;\n}\n.confirm-bottom[data-v-75fc548f] {\n  height: 1.28rem;\n  width: 100%;\n  bottom: 0;\n  z-index: 99;\n  position: fixed;\n  padding: 0.29rem 0 0.91rem;\n}\n.confirm-bottom .swap-btn[data-v-75fc548f] {\n  height: 1.33rem;\n  border-radius: 0.27rem;\n  text-align: center;\n  line-height: 1.17rem;\n  border: none;\n  font-weight: 500;\n  font-size: 0.43rem;\n  width: 8rem;\n  left: 50%;\n  color: #fff;\n  transform: translateX(-50%);\n  z-index: 0;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".theme-light .textPrimary0[data-v-75fc548f] {\n  color: #0E0E0E;\n}\n.theme-light .textSecond1[data-v-75fc548f] {\n  color: #515556;\n}\n.theme-light .textSecond2[data-v-75fc548f] {\n  color: #919899;\n}\n.theme-light .textSecond3[data-v-75fc548f] {\n  color: #9CA5B3;\n}\n.theme-light .colorDisable[data-v-75fc548f] {\n  background-color: #DADBDE;\n}\n.theme-light .colorLine[data-v-75fc548f] {\n  background-color: #F4F5FA;\n}\n.theme-light .colorLine1[data-v-75fc548f] {\n  background-color: #F0F0F0;\n}\n.theme-light .colorBackground0[data-v-75fc548f] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackground1[data-v-75fc548f] {\n  background-color: #fff;\n}\n.theme-light .colorBackground2[data-v-75fc548f] {\n  background-color: #F3F5F6;\n}\n.theme-light .colorBackground3[data-v-75fc548f] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackgroundWhite[data-v-75fc548f] {\n  background-color: #fff;\n}\n.theme-light .colorBackgroundPrimary[data-v-75fc548f] {\n  background-color: #7524f9;\n}\n.theme-light .colorBackgroundColorSecond11[data-v-75fc548f] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-light .colorBackgroundSecond01[data-v-75fc548f] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorBackgroundTextPrimary0[data-v-75fc548f] {\n  background-color: #0E0E0E;\n}\n.theme-light .colorPrimary[data-v-75fc548f] {\n  color: #7524f9;\n}\n.theme-light .colorSecond01[data-v-75fc548f] {\n  color: #2AC8DD;\n}\n.theme-light .backgroundSecond01[data-v-75fc548f] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorSecond02[data-v-75fc548f] {\n  color: #F04A4A;\n}\n.theme-light .colorSecond03[data-v-75fc548f] {\n  color: #26BC80;\n}\n.theme-light .colorSecond04[data-v-75fc548f] {\n  color: #FF8146;\n}\n.theme-light .colorSecond05[data-v-75fc548f] {\n  color: #2F80ED;\n}\n.theme-light .colorSecond06[data-v-75fc548f] {\n  color: #4A2FD2;\n}\n.theme-light .colorSecond07[data-v-75fc548f] {\n  color: #F04E98;\n}\n.theme-light .colorSecond08[data-v-75fc548f] {\n  color: #FFB800;\n}\n.theme-light .colorBlack[data-v-75fc548f] {\n  color: #000;\n}\n.theme-light .colorwhite[data-v-75fc548f] {\n  color: #fff;\n}\n.theme-light .colorSecond10[data-v-75fc548f] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-light .colorSecond11[data-v-75fc548f] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-light .colorSecond12[data-v-75fc548f] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-light .colorSecond13[data-v-75fc548f] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-light .colorSecond14[data-v-75fc548f] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-light .colorSecond15[data-v-75fc548f] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-light .colorSecond18[data-v-75fc548f] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-dark .textPrimary0[data-v-75fc548f] {\n  color: #DFE0E3;\n}\n.theme-dark .textSecond1[data-v-75fc548f] {\n  color: #9CA5B3;\n}\n.theme-dark .textSecond2[data-v-75fc548f] {\n  color: #7F828F;\n}\n.theme-dark .textSecond3[data-v-75fc548f] {\n  color: #6D707D;\n}\n.theme-dark .colorDisable[data-v-75fc548f] {\n  background-color: #5F626D;\n}\n.theme-dark .colorLine[data-v-75fc548f] {\n  background-color: #1F212E;\n}\n.theme-dark .colorLine1[data-v-75fc548f] {\n  background-color: #2A2D3D;\n}\n.theme-dark .colorBackground0[data-v-75fc548f] {\n  background-color: #0A0E1F;\n}\n.theme-dark .colorBackground1[data-v-75fc548f] {\n  background-color: #171A26;\n}\n.theme-dark .colorBackground2[data-v-75fc548f] {\n  background-color: #212331;\n}\n.theme-dark .colorBackground3[data-v-75fc548f] {\n  background-color: #212331;\n}\n.theme-dark .colorBackgroundPrimary[data-v-75fc548f] {\n  background-color: #7524f9;\n}\n.theme-dark .colorBackgroundColorSecond11[data-v-75fc548f] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorBackgroundSecond01[data-v-75fc548f] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorBackgroundTextPrimary0[data-v-75fc548f] {\n  background-color: #DFE0E3;\n}\n.theme-dark .colorPrimary[data-v-75fc548f] {\n  color: #7524f9;\n}\n.theme-dark .colorSecond01[data-v-75fc548f] {\n  color: #2AC8DD;\n}\n.theme-dark .backgroundSecond01[data-v-75fc548f] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorSecond02[data-v-75fc548f] {\n  color: #F04A4A;\n}\n.theme-dark .colorSecond03[data-v-75fc548f] {\n  color: #26BC80;\n}\n.theme-dark .colorSecond04[data-v-75fc548f] {\n  color: #FF8146;\n}\n.theme-dark .colorSecond05[data-v-75fc548f] {\n  color: #2F80ED;\n}\n.theme-dark .colorSecond06[data-v-75fc548f] {\n  color: #4A2FD2;\n}\n.theme-dark .colorSecond07[data-v-75fc548f] {\n  color: #F04E98;\n}\n.theme-dark .colorSecond08[data-v-75fc548f] {\n  color: #FFB800;\n}\n.theme-dark .colorBlack[data-v-75fc548f] {\n  color: #000;\n}\n.theme-dark .colorwhite[data-v-75fc548f] {\n  color: #fff;\n}\n.theme-dark .colorSecond10[data-v-75fc548f] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-dark .colorSecond11[data-v-75fc548f] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorSecond12[data-v-75fc548f] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-dark .colorSecond13[data-v-75fc548f] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-dark .colorSecond14[data-v-75fc548f] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-dark .colorSecond15[data-v-75fc548f] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-dark .colorSecond18[data-v-75fc548f] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-light .Background0[data-v-75fc548f] {\n  background-color: #fafafa;\n}\n.theme-light .Background0[data-v-75fc548f] {\n  background-color: #F8F8F9;\n}\n.theme-dark .Background0[data-v-75fc548f] {\n  background-color: #17171A;\n}\n.theme-dark .Background1[data-v-75fc548f] {\n  background-color: #202024;\n}\n.title[data-v-75fc548f] {\n  margin: 0.37rem 0.43rem;\n  text-align: center;\n  font-size: 0.43rem;\n  font-weight: 500;\n}\n.title p[data-v-75fc548f] {\n  font-weight: 600;\n}\n.setOpactive[data-v-75fc548f] {\n  opacity: 0.3;\n}\n.line[data-v-75fc548f] {\n  width: 100%;\n  margin-top: 0;\n  height: 0.03rem;\n}\n.ruleDetailcontent[data-v-75fc548f] {\n  height: 50vh;\n  overflow: auto;\n  padding: 0.53rem;\n}\n.ruleDetailcontent img[data-v-75fc548f] {\n  width: 1.28rem;\n  height: 1.28rem;\n}\n.ruleDetailcontent .setF[data-v-75fc548f] {\n  font-size: 0.43rem;\n}\n.ruleDetailcontent .setLineHeight[data-v-75fc548f] {\n  line-height: 0.48rem;\n}\n.ruleDetailcontent p[data-v-75fc548f] {\n  font-size: 0.37rem;\n  line-height: 0.59rem;\n  margin: 0 0 0.27rem;\n}\n.confirm-bottom[data-v-75fc548f] {\n  height: 1.28rem;\n  width: 100%;\n  bottom: 0;\n  z-index: 99;\n  position: fixed;\n  padding: 0.29rem 0 0.91rem;\n}\n.confirm-bottom .swap-btn[data-v-75fc548f] {\n  height: 1.33rem;\n  border-radius: 0.27rem;\n  text-align: center;\n  line-height: 1.17rem;\n  border: none;\n  font-weight: 500;\n  font-size: 0.43rem;\n  width: 8rem;\n  left: 50%;\n  color: #fff;\n  transform: translateX(-50%);\n  z-index: 0;\n}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
 
-/***/ 128:
+/***/ 188:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_inviteRuleDetail_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(94);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_inviteRuleDetail_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(140);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_inviteRuleDetail_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_inviteRuleDetail_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_inviteRuleDetail_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_inviteRuleDetail_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 129:
+/***/ 189:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(5);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.i, ".van-popup__close-icon--top-right {\n  top: 0.27rem;\n  right: 0.24rem;\n}\n.van-popup__close-icon--top-right img {\n  width: 0.75rem;\n  height: 0.75rem;\n}\n.theme-dark .van-toast {\n  background-color: #DFE0E3;\n  color: #171A26;\n}", ""]);
@@ -157,69 +449,69 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 130:
+/***/ 190:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_inviteRuleDetail_vue_vue_type_style_index_1_id_6fc736eb_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(95);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_inviteRuleDetail_vue_vue_type_style_index_1_id_6fc736eb_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(141);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_inviteRuleDetail_vue_vue_type_style_index_1_id_6fc736eb_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_inviteRuleDetail_vue_vue_type_style_index_1_id_6fc736eb_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_inviteRuleDetail_vue_vue_type_style_index_1_id_6fc736eb_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_inviteRuleDetail_vue_vue_type_style_index_1_id_6fc736eb_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 131:
+/***/ 191:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(5);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".theme-light .textPrimary0[data-v-6fc736eb] {\n  color: #0E0E0E;\n}\n.theme-light .textSecond1[data-v-6fc736eb] {\n  color: #515556;\n}\n.theme-light .textSecond2[data-v-6fc736eb] {\n  color: #919899;\n}\n.theme-light .textSecond3[data-v-6fc736eb] {\n  color: #9CA5B3;\n}\n.theme-light .colorDisable[data-v-6fc736eb] {\n  background-color: #DADBDE;\n}\n.theme-light .colorLine[data-v-6fc736eb] {\n  background-color: #F4F5FA;\n}\n.theme-light .colorLine1[data-v-6fc736eb] {\n  background-color: #F0F0F0;\n}\n.theme-light .colorBackground0[data-v-6fc736eb] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackground1[data-v-6fc736eb] {\n  background-color: #fff;\n}\n.theme-light .colorBackground2[data-v-6fc736eb] {\n  background-color: #F3F5F6;\n}\n.theme-light .colorBackground3[data-v-6fc736eb] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackgroundWhite[data-v-6fc736eb] {\n  background-color: #fff;\n}\n.theme-light .colorBackgroundPrimary[data-v-6fc736eb] {\n  background-color: #7524f9;\n}\n.theme-light .colorBackgroundColorSecond11[data-v-6fc736eb] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-light .colorBackgroundSecond01[data-v-6fc736eb] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorBackgroundTextPrimary0[data-v-6fc736eb] {\n  background-color: #0E0E0E;\n}\n.theme-light .colorPrimary[data-v-6fc736eb] {\n  color: #7524f9;\n}\n.theme-light .colorSecond01[data-v-6fc736eb] {\n  color: #2AC8DD;\n}\n.theme-light .backgroundSecond01[data-v-6fc736eb] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorSecond02[data-v-6fc736eb] {\n  color: #F04A4A;\n}\n.theme-light .colorSecond03[data-v-6fc736eb] {\n  color: #26BC80;\n}\n.theme-light .colorSecond04[data-v-6fc736eb] {\n  color: #FF8146;\n}\n.theme-light .colorSecond05[data-v-6fc736eb] {\n  color: #2F80ED;\n}\n.theme-light .colorSecond06[data-v-6fc736eb] {\n  color: #4A2FD2;\n}\n.theme-light .colorSecond07[data-v-6fc736eb] {\n  color: #F04E98;\n}\n.theme-light .colorSecond08[data-v-6fc736eb] {\n  color: #FFB800;\n}\n.theme-light .colorBlack[data-v-6fc736eb] {\n  color: #000;\n}\n.theme-light .colorwhite[data-v-6fc736eb] {\n  color: #fff;\n}\n.theme-light .colorSecond10[data-v-6fc736eb] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-light .colorSecond11[data-v-6fc736eb] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-light .colorSecond12[data-v-6fc736eb] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-light .colorSecond13[data-v-6fc736eb] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-light .colorSecond14[data-v-6fc736eb] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-light .colorSecond15[data-v-6fc736eb] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-light .colorSecond18[data-v-6fc736eb] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-dark .textPrimary0[data-v-6fc736eb] {\n  color: #DFE0E3;\n}\n.theme-dark .textSecond1[data-v-6fc736eb] {\n  color: #9CA5B3;\n}\n.theme-dark .textSecond2[data-v-6fc736eb] {\n  color: #7F828F;\n}\n.theme-dark .textSecond3[data-v-6fc736eb] {\n  color: #6D707D;\n}\n.theme-dark .colorDisable[data-v-6fc736eb] {\n  background-color: #5F626D;\n}\n.theme-dark .colorLine[data-v-6fc736eb] {\n  background-color: #1F212E;\n}\n.theme-dark .colorLine1[data-v-6fc736eb] {\n  background-color: #2A2D3D;\n}\n.theme-dark .colorBackground0[data-v-6fc736eb] {\n  background-color: #0A0E1F;\n}\n.theme-dark .colorBackground1[data-v-6fc736eb] {\n  background-color: #171A26;\n}\n.theme-dark .colorBackground2[data-v-6fc736eb] {\n  background-color: #212331;\n}\n.theme-dark .colorBackground3[data-v-6fc736eb] {\n  background-color: #212331;\n}\n.theme-dark .colorBackgroundPrimary[data-v-6fc736eb] {\n  background-color: #7524f9;\n}\n.theme-dark .colorBackgroundColorSecond11[data-v-6fc736eb] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorBackgroundSecond01[data-v-6fc736eb] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorBackgroundTextPrimary0[data-v-6fc736eb] {\n  background-color: #DFE0E3;\n}\n.theme-dark .colorPrimary[data-v-6fc736eb] {\n  color: #7524f9;\n}\n.theme-dark .colorSecond01[data-v-6fc736eb] {\n  color: #2AC8DD;\n}\n.theme-dark .backgroundSecond01[data-v-6fc736eb] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorSecond02[data-v-6fc736eb] {\n  color: #F04A4A;\n}\n.theme-dark .colorSecond03[data-v-6fc736eb] {\n  color: #26BC80;\n}\n.theme-dark .colorSecond04[data-v-6fc736eb] {\n  color: #FF8146;\n}\n.theme-dark .colorSecond05[data-v-6fc736eb] {\n  color: #2F80ED;\n}\n.theme-dark .colorSecond06[data-v-6fc736eb] {\n  color: #4A2FD2;\n}\n.theme-dark .colorSecond07[data-v-6fc736eb] {\n  color: #F04E98;\n}\n.theme-dark .colorSecond08[data-v-6fc736eb] {\n  color: #FFB800;\n}\n.theme-dark .colorBlack[data-v-6fc736eb] {\n  color: #000;\n}\n.theme-dark .colorwhite[data-v-6fc736eb] {\n  color: #fff;\n}\n.theme-dark .colorSecond10[data-v-6fc736eb] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-dark .colorSecond11[data-v-6fc736eb] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorSecond12[data-v-6fc736eb] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-dark .colorSecond13[data-v-6fc736eb] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-dark .colorSecond14[data-v-6fc736eb] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-dark .colorSecond15[data-v-6fc736eb] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-dark .colorSecond18[data-v-6fc736eb] {\n  background-color: rgba(255,184,0,0.1);\n}\n.title[data-v-6fc736eb] {\n  margin: 0.37rem 0.43rem;\n  text-align: center;\n  font-size: 0.43rem;\n  font-weight: 500;\n}\n.title p[data-v-6fc736eb] {\n  font-weight: 600;\n}\n.setOpactive[data-v-6fc736eb] {\n  opacity: 0.3;\n}\n.line[data-v-6fc736eb] {\n  width: 100%;\n  margin-top: 0;\n  height: 0.03rem;\n}\n.ruleDetailcontent[data-v-6fc736eb] {\n  height: 50vh;\n  overflow: auto;\n  padding: 0.53rem;\n  height: 68%;\n  overflow: scroll;\n}\n.ruleDetailcontent img[data-v-6fc736eb] {\n  width: 1.28rem;\n  height: 1.28rem;\n}\n.ruleDetailcontent .setF[data-v-6fc736eb] {\n  font-size: 0.43rem;\n}\n.ruleDetailcontent .setLineHeight[data-v-6fc736eb] {\n  line-height: 0.48rem;\n}\n.ruleDetailcontent li[data-v-6fc736eb] {\n  font-size: 0.37rem;\n  line-height: 0.48rem;\n  margin: 0.27rem;\n  list-style: disc;\n}\n.ruleDetailcontent p[data-v-6fc736eb] {\n  font-size: 0.37rem;\n  line-height: 0.48rem;\n  margin: 0 0.27rem 0.27rem;\n}\n.confirm-bottom[data-v-6fc736eb] {\n  height: 1.28rem;\n  width: 100%;\n  bottom: 0;\n  z-index: 99;\n  position: fixed;\n  padding: 0.29rem 0 0.91rem;\n}\n.confirm-bottom .swap-btn[data-v-6fc736eb] {\n  height: 1.33rem;\n  border-radius: 0.27rem;\n  text-align: center;\n  line-height: 1.17rem;\n  border: none;\n  font-weight: 500;\n  font-size: 0.43rem;\n  width: 8rem;\n  left: 50%;\n  color: #fff;\n  transform: translateX(-50%);\n  z-index: 0;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".theme-light .textPrimary0[data-v-6fc736eb] {\n  color: #0E0E0E;\n}\n.theme-light .textSecond1[data-v-6fc736eb] {\n  color: #515556;\n}\n.theme-light .textSecond2[data-v-6fc736eb] {\n  color: #919899;\n}\n.theme-light .textSecond3[data-v-6fc736eb] {\n  color: #9CA5B3;\n}\n.theme-light .colorDisable[data-v-6fc736eb] {\n  background-color: #DADBDE;\n}\n.theme-light .colorLine[data-v-6fc736eb] {\n  background-color: #F4F5FA;\n}\n.theme-light .colorLine1[data-v-6fc736eb] {\n  background-color: #F0F0F0;\n}\n.theme-light .colorBackground0[data-v-6fc736eb] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackground1[data-v-6fc736eb] {\n  background-color: #fff;\n}\n.theme-light .colorBackground2[data-v-6fc736eb] {\n  background-color: #F3F5F6;\n}\n.theme-light .colorBackground3[data-v-6fc736eb] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackgroundWhite[data-v-6fc736eb] {\n  background-color: #fff;\n}\n.theme-light .colorBackgroundPrimary[data-v-6fc736eb] {\n  background-color: #7524f9;\n}\n.theme-light .colorBackgroundColorSecond11[data-v-6fc736eb] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-light .colorBackgroundSecond01[data-v-6fc736eb] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorBackgroundTextPrimary0[data-v-6fc736eb] {\n  background-color: #0E0E0E;\n}\n.theme-light .colorPrimary[data-v-6fc736eb] {\n  color: #7524f9;\n}\n.theme-light .colorSecond01[data-v-6fc736eb] {\n  color: #2AC8DD;\n}\n.theme-light .backgroundSecond01[data-v-6fc736eb] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorSecond02[data-v-6fc736eb] {\n  color: #F04A4A;\n}\n.theme-light .colorSecond03[data-v-6fc736eb] {\n  color: #26BC80;\n}\n.theme-light .colorSecond04[data-v-6fc736eb] {\n  color: #FF8146;\n}\n.theme-light .colorSecond05[data-v-6fc736eb] {\n  color: #2F80ED;\n}\n.theme-light .colorSecond06[data-v-6fc736eb] {\n  color: #4A2FD2;\n}\n.theme-light .colorSecond07[data-v-6fc736eb] {\n  color: #F04E98;\n}\n.theme-light .colorSecond08[data-v-6fc736eb] {\n  color: #FFB800;\n}\n.theme-light .colorBlack[data-v-6fc736eb] {\n  color: #000;\n}\n.theme-light .colorwhite[data-v-6fc736eb] {\n  color: #fff;\n}\n.theme-light .colorSecond10[data-v-6fc736eb] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-light .colorSecond11[data-v-6fc736eb] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-light .colorSecond12[data-v-6fc736eb] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-light .colorSecond13[data-v-6fc736eb] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-light .colorSecond14[data-v-6fc736eb] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-light .colorSecond15[data-v-6fc736eb] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-light .colorSecond18[data-v-6fc736eb] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-dark .textPrimary0[data-v-6fc736eb] {\n  color: #DFE0E3;\n}\n.theme-dark .textSecond1[data-v-6fc736eb] {\n  color: #9CA5B3;\n}\n.theme-dark .textSecond2[data-v-6fc736eb] {\n  color: #7F828F;\n}\n.theme-dark .textSecond3[data-v-6fc736eb] {\n  color: #6D707D;\n}\n.theme-dark .colorDisable[data-v-6fc736eb] {\n  background-color: #5F626D;\n}\n.theme-dark .colorLine[data-v-6fc736eb] {\n  background-color: #1F212E;\n}\n.theme-dark .colorLine1[data-v-6fc736eb] {\n  background-color: #2A2D3D;\n}\n.theme-dark .colorBackground0[data-v-6fc736eb] {\n  background-color: #0A0E1F;\n}\n.theme-dark .colorBackground1[data-v-6fc736eb] {\n  background-color: #171A26;\n}\n.theme-dark .colorBackground2[data-v-6fc736eb] {\n  background-color: #212331;\n}\n.theme-dark .colorBackground3[data-v-6fc736eb] {\n  background-color: #212331;\n}\n.theme-dark .colorBackgroundPrimary[data-v-6fc736eb] {\n  background-color: #7524f9;\n}\n.theme-dark .colorBackgroundColorSecond11[data-v-6fc736eb] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorBackgroundSecond01[data-v-6fc736eb] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorBackgroundTextPrimary0[data-v-6fc736eb] {\n  background-color: #DFE0E3;\n}\n.theme-dark .colorPrimary[data-v-6fc736eb] {\n  color: #7524f9;\n}\n.theme-dark .colorSecond01[data-v-6fc736eb] {\n  color: #2AC8DD;\n}\n.theme-dark .backgroundSecond01[data-v-6fc736eb] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorSecond02[data-v-6fc736eb] {\n  color: #F04A4A;\n}\n.theme-dark .colorSecond03[data-v-6fc736eb] {\n  color: #26BC80;\n}\n.theme-dark .colorSecond04[data-v-6fc736eb] {\n  color: #FF8146;\n}\n.theme-dark .colorSecond05[data-v-6fc736eb] {\n  color: #2F80ED;\n}\n.theme-dark .colorSecond06[data-v-6fc736eb] {\n  color: #4A2FD2;\n}\n.theme-dark .colorSecond07[data-v-6fc736eb] {\n  color: #F04E98;\n}\n.theme-dark .colorSecond08[data-v-6fc736eb] {\n  color: #FFB800;\n}\n.theme-dark .colorBlack[data-v-6fc736eb] {\n  color: #000;\n}\n.theme-dark .colorwhite[data-v-6fc736eb] {\n  color: #fff;\n}\n.theme-dark .colorSecond10[data-v-6fc736eb] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-dark .colorSecond11[data-v-6fc736eb] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorSecond12[data-v-6fc736eb] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-dark .colorSecond13[data-v-6fc736eb] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-dark .colorSecond14[data-v-6fc736eb] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-dark .colorSecond15[data-v-6fc736eb] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-dark .colorSecond18[data-v-6fc736eb] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-light .Background0[data-v-6fc736eb] {\n  background-color: #fafafa;\n}\n.theme-light .Background0[data-v-6fc736eb] {\n  background-color: #F8F8F9;\n}\n.theme-dark .Background0[data-v-6fc736eb] {\n  background-color: #17171A;\n}\n.theme-dark .Background1[data-v-6fc736eb] {\n  background-color: #202024;\n}\n.title[data-v-6fc736eb] {\n  margin: 0.37rem 0.43rem;\n  text-align: center;\n  font-size: 0.43rem;\n  font-weight: 500;\n}\n.title p[data-v-6fc736eb] {\n  font-weight: 600;\n}\n.setOpactive[data-v-6fc736eb] {\n  opacity: 0.3;\n}\n.line[data-v-6fc736eb] {\n  width: 100%;\n  margin-top: 0;\n  height: 0.03rem;\n}\n.ruleDetailcontent[data-v-6fc736eb] {\n  height: 50vh;\n  overflow: auto;\n  padding: 0.53rem;\n  height: 68%;\n  overflow: scroll;\n}\n.ruleDetailcontent img[data-v-6fc736eb] {\n  width: 1.28rem;\n  height: 1.28rem;\n}\n.ruleDetailcontent .setF[data-v-6fc736eb] {\n  font-size: 0.43rem;\n}\n.ruleDetailcontent .setLineHeight[data-v-6fc736eb] {\n  line-height: 0.48rem;\n}\n.ruleDetailcontent li[data-v-6fc736eb] {\n  font-size: 0.37rem;\n  line-height: 0.48rem;\n  margin: 0.27rem;\n  list-style: disc;\n}\n.ruleDetailcontent p[data-v-6fc736eb] {\n  font-size: 0.37rem;\n  line-height: 0.48rem;\n  margin: 0 0.27rem 0.27rem;\n}\n.confirm-bottom[data-v-6fc736eb] {\n  height: 1.28rem;\n  width: 100%;\n  bottom: 0;\n  z-index: 99;\n  position: fixed;\n  padding: 0.29rem 0 0.91rem;\n}\n.confirm-bottom .swap-btn[data-v-6fc736eb] {\n  height: 1.33rem;\n  border-radius: 0.27rem;\n  text-align: center;\n  line-height: 1.17rem;\n  border: none;\n  font-weight: 500;\n  font-size: 0.43rem;\n  width: 8rem;\n  left: 50%;\n  color: #fff;\n  transform: translateX(-50%);\n  z-index: 0;\n}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
 
-/***/ 170:
+/***/ 232:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(227);
+var content = __webpack_require__(312);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
-var add = __webpack_require__(9).default
+var add = __webpack_require__(6).default
 module.exports.__inject__ = function (context) {
   add("70044200", content, true, context)
 };
 
 /***/ }),
 
-/***/ 171:
+/***/ 233:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(229);
+var content = __webpack_require__(314);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
-var add = __webpack_require__(9).default
+var add = __webpack_require__(6).default
 module.exports.__inject__ = function (context) {
   add("b02dbce8", content, true, context)
 };
 
 /***/ }),
 
-/***/ 204:
+/***/ 274:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -529,7 +821,7 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(118)
+  var style0 = __webpack_require__(178)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -543,7 +835,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "41f07a04",
-  "f1ba068a"
+  "9b0bc00e"
   
 )
 
@@ -551,7 +843,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 205:
+/***/ 275:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -566,10 +858,10 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/activity/mining/protocol.vue?vue&type=template&id=c8495cfe&scoped=true&
 
 // EXTERNAL MODULE: ./tools/common.js
-var common = __webpack_require__(16);
+var common = __webpack_require__(23);
 
 // EXTERNAL MODULE: ./api/client.js
-var client = __webpack_require__(70);
+var client = __webpack_require__(107);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/mining/protocol.vue?vue&type=script&lang=js&
 //
@@ -710,9 +1002,9 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(120)
+  var style0 = __webpack_require__(180)
 if (style0.__inject__) style0.__inject__(context)
-var style1 = __webpack_require__(122)
+var style1 = __webpack_require__(182)
 if (style1.__inject__) style1.__inject__(context)
 
 }
@@ -726,7 +1018,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "c8495cfe",
-  "387a5142"
+  "7e9bb831"
   
 )
 
@@ -734,7 +1026,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 206:
+/***/ 276:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -805,9 +1097,9 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(124)
+  var style0 = __webpack_require__(184)
 if (style0.__inject__) style0.__inject__(context)
-var style1 = __webpack_require__(126)
+var style1 = __webpack_require__(186)
 if (style1.__inject__) style1.__inject__(context)
 
 }
@@ -821,7 +1113,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "75fc548f",
-  "681f6392"
+  "0f53b566"
   
 )
 
@@ -829,7 +1121,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 207:
+/***/ 277:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -904,9 +1196,9 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(128)
+  var style0 = __webpack_require__(188)
 if (style0.__inject__) style0.__inject__(context)
-var style1 = __webpack_require__(130)
+var style1 = __webpack_require__(190)
 if (style1.__inject__) style1.__inject__(context)
 
 }
@@ -920,7 +1212,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "6fc736eb",
-  "52258400"
+  "d136e822"
   
 )
 
@@ -928,23 +1220,23 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 226:
+/***/ 311:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(170);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(232);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 227:
+/***/ 312:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(5);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.i, ".van-dialog__message {\n  font-size: 0.43rem !important;\n  padding-left: 0.64rem !important;\n  padding-right: 0.64rem !important;\n  font-weight: 500;\n  line-height: 0.53rem;\n}\n.van-dialog__confirm {\n  font-weight: 500;\n  font-size: 0.45rem;\n}", ""]);
@@ -954,33 +1246,33 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 228:
+/***/ 313:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_472b1f82_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(171);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_472b1f82_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(233);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_472b1f82_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_472b1f82_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_472b1f82_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_index_vue_vue_type_style_index_1_id_472b1f82_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 229:
+/***/ 314:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(5);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".theme-light .textPrimary0[data-v-472b1f82] {\n  color: #0E0E0E;\n}\n.theme-light .textSecond1[data-v-472b1f82] {\n  color: #515556;\n}\n.theme-light .textSecond2[data-v-472b1f82] {\n  color: #919899;\n}\n.theme-light .textSecond3[data-v-472b1f82] {\n  color: #9CA5B3;\n}\n.theme-light .colorDisable[data-v-472b1f82] {\n  background-color: #DADBDE;\n}\n.theme-light .colorLine[data-v-472b1f82] {\n  background-color: #F4F5FA;\n}\n.theme-light .colorLine1[data-v-472b1f82] {\n  background-color: #F0F0F0;\n}\n.theme-light .colorBackground0[data-v-472b1f82] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackground1[data-v-472b1f82] {\n  background-color: #fff;\n}\n.theme-light .colorBackground2[data-v-472b1f82] {\n  background-color: #F3F5F6;\n}\n.theme-light .colorBackground3[data-v-472b1f82] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackgroundWhite[data-v-472b1f82] {\n  background-color: #fff;\n}\n.theme-light .colorBackgroundPrimary[data-v-472b1f82] {\n  background-color: #7524f9;\n}\n.theme-light .colorBackgroundColorSecond11[data-v-472b1f82] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-light .colorBackgroundSecond01[data-v-472b1f82] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorBackgroundTextPrimary0[data-v-472b1f82] {\n  background-color: #0E0E0E;\n}\n.theme-light .colorPrimary[data-v-472b1f82] {\n  color: #7524f9;\n}\n.theme-light .colorSecond01[data-v-472b1f82] {\n  color: #2AC8DD;\n}\n.theme-light .backgroundSecond01[data-v-472b1f82] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorSecond02[data-v-472b1f82] {\n  color: #F04A4A;\n}\n.theme-light .colorSecond03[data-v-472b1f82] {\n  color: #26BC80;\n}\n.theme-light .colorSecond04[data-v-472b1f82] {\n  color: #FF8146;\n}\n.theme-light .colorSecond05[data-v-472b1f82] {\n  color: #2F80ED;\n}\n.theme-light .colorSecond06[data-v-472b1f82] {\n  color: #4A2FD2;\n}\n.theme-light .colorSecond07[data-v-472b1f82] {\n  color: #F04E98;\n}\n.theme-light .colorSecond08[data-v-472b1f82] {\n  color: #FFB800;\n}\n.theme-light .colorBlack[data-v-472b1f82] {\n  color: #000;\n}\n.theme-light .colorwhite[data-v-472b1f82] {\n  color: #fff;\n}\n.theme-light .colorSecond10[data-v-472b1f82] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-light .colorSecond11[data-v-472b1f82] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-light .colorSecond12[data-v-472b1f82] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-light .colorSecond13[data-v-472b1f82] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-light .colorSecond14[data-v-472b1f82] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-light .colorSecond15[data-v-472b1f82] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-light .colorSecond18[data-v-472b1f82] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-dark .textPrimary0[data-v-472b1f82] {\n  color: #DFE0E3;\n}\n.theme-dark .textSecond1[data-v-472b1f82] {\n  color: #9CA5B3;\n}\n.theme-dark .textSecond2[data-v-472b1f82] {\n  color: #7F828F;\n}\n.theme-dark .textSecond3[data-v-472b1f82] {\n  color: #6D707D;\n}\n.theme-dark .colorDisable[data-v-472b1f82] {\n  background-color: #5F626D;\n}\n.theme-dark .colorLine[data-v-472b1f82] {\n  background-color: #1F212E;\n}\n.theme-dark .colorLine1[data-v-472b1f82] {\n  background-color: #2A2D3D;\n}\n.theme-dark .colorBackground0[data-v-472b1f82] {\n  background-color: #0A0E1F;\n}\n.theme-dark .colorBackground1[data-v-472b1f82] {\n  background-color: #171A26;\n}\n.theme-dark .colorBackground2[data-v-472b1f82] {\n  background-color: #212331;\n}\n.theme-dark .colorBackground3[data-v-472b1f82] {\n  background-color: #212331;\n}\n.theme-dark .colorBackgroundPrimary[data-v-472b1f82] {\n  background-color: #7524f9;\n}\n.theme-dark .colorBackgroundColorSecond11[data-v-472b1f82] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorBackgroundSecond01[data-v-472b1f82] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorBackgroundTextPrimary0[data-v-472b1f82] {\n  background-color: #DFE0E3;\n}\n.theme-dark .colorPrimary[data-v-472b1f82] {\n  color: #7524f9;\n}\n.theme-dark .colorSecond01[data-v-472b1f82] {\n  color: #2AC8DD;\n}\n.theme-dark .backgroundSecond01[data-v-472b1f82] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorSecond02[data-v-472b1f82] {\n  color: #F04A4A;\n}\n.theme-dark .colorSecond03[data-v-472b1f82] {\n  color: #26BC80;\n}\n.theme-dark .colorSecond04[data-v-472b1f82] {\n  color: #FF8146;\n}\n.theme-dark .colorSecond05[data-v-472b1f82] {\n  color: #2F80ED;\n}\n.theme-dark .colorSecond06[data-v-472b1f82] {\n  color: #4A2FD2;\n}\n.theme-dark .colorSecond07[data-v-472b1f82] {\n  color: #F04E98;\n}\n.theme-dark .colorSecond08[data-v-472b1f82] {\n  color: #FFB800;\n}\n.theme-dark .colorBlack[data-v-472b1f82] {\n  color: #000;\n}\n.theme-dark .colorwhite[data-v-472b1f82] {\n  color: #fff;\n}\n.theme-dark .colorSecond10[data-v-472b1f82] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-dark .colorSecond11[data-v-472b1f82] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorSecond12[data-v-472b1f82] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-dark .colorSecond13[data-v-472b1f82] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-dark .colorSecond14[data-v-472b1f82] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-dark .colorSecond15[data-v-472b1f82] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-dark .colorSecond18[data-v-472b1f82] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-light .mining[data-v-472b1f82] {\n  background: #F8F9FA;\n}\n.theme-light .mining .van-progress[data-v-472b1f82] {\n  border-radius: 0.27rem;\n  background: #F4F5FA;\n}\n.theme-light .mining .mining-wrap-one[data-v-472b1f82] {\n  background: #fff;\n}\n.theme-light .mining .mining-wrap-one .produced[data-v-472b1f82] :first-child {\n  color: #919899;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-header[data-v-472b1f82] {\n  border-bottom: 0.03rem solid #F4F5FA;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-title span[data-v-472b1f82] {\n  color: #0E0E0E;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-right[data-v-472b1f82] {\n  color: #7524f9;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-update[data-v-472b1f82] {\n  color: #9CA5B3;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-header .inProgress[data-v-472b1f82] {\n  color: #2AC8DD;\n  background: rgba(28,189,181,0.1);\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-header .comingsoon[data-v-472b1f82] {\n  color: #FF8146;\n  background: rgba(255,129,70,0.1);\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-header .activityEnd[data-v-472b1f82] {\n  color: #9CA5B3;\n  background: #F3F5F6;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-startCountdown[data-v-472b1f82] {\n  color: #919899;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-time[data-v-472b1f82] {\n  color: #0E0E0E;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-day[data-v-472b1f82] {\n  color: #919899;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-title[data-v-472b1f82] {\n  color: #0E0E0E;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-amount[data-v-472b1f82] {\n  color: #919899;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-number[data-v-472b1f82] {\n  color: #0E0E0E;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading .mining-wrap-one-body-vol[data-v-472b1f82] {\n  color: #919899;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading .mining-wrap-one-body-vol-number[data-v-472b1f82] {\n  color: #0E0E0E;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading .mining-wrap-one-body-vol-number-todyVolue[data-v-472b1f82] {\n  color: #0E0E0E;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-rewards .mining-wrap-one-body-vol[data-v-472b1f82] {\n  color: #919899;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-rewards .mining-wrap-one-body-vol-number[data-v-472b1f82] {\n  color: #7524f9;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-rewards .mining-wrap-one-body-vol-number-last[data-v-472b1f82] {\n  color: #7524f9;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-text[data-v-472b1f82] {\n  color: #515556;\n}\n.theme-light .line[data-v-472b1f82] {\n  border-bottom: 0.03rem solid #F4F5FA;\n}\n.theme-light .setLightColor[data-v-472b1f82] {\n  color: #515556;\n}\n.theme-light .setDarkColor[data-v-472b1f82] {\n  color: #0E0E0E;\n}\n.theme-light .setColor[data-v-472b1f82] {\n  color: #7524f9;\n}\n.theme-light .setFontFamily[data-v-472b1f82] {\n  font-family: \"bitkeep DIN\";\n}\n.theme-light .setFontWeight[data-v-472b1f82] {\n  font-size: 0.43rem;\n  font-weight: 600;\n  color: #0E0E0E;\n}\n.theme-light .wrap-bottom[data-v-472b1f82] {\n  background: #fff;\n  border-top: 0.03rem solid #F8F9FA;\n}\n.theme-light .wrap-bottom .swap-btn[data-v-472b1f82] {\n  color: #fff;\n}\n.theme-light .wrap-bottom .setColorSwap[data-v-472b1f82] {\n  background: #7524f9;\n}\n.theme-light .wrap-bottom .setColorClaim[data-v-472b1f82] {\n  background: #2AC8DD;\n}\n.theme-dark .mining[data-v-472b1f82] {\n  background: #0A0E1F;\n}\n.theme-dark .mining .van-progress[data-v-472b1f82] {\n  border-radius: 0.27rem;\n  background: #1F212E;\n}\n.theme-dark .mining .mining-wrap-one[data-v-472b1f82] {\n  background: #171A26;\n}\n.theme-dark .mining .mining-wrap-one .produced[data-v-472b1f82] :first-child {\n  color: #7F828F;\n}\n.theme-dark .mining .mining-wrap-one .mining_trans[data-v-472b1f82] {\n  color: #DFE0E3;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-header[data-v-472b1f82] {\n  border-bottom: 0.03rem solid #1F212E;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-title span[data-v-472b1f82] {\n  color: #DFE0E3;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-right[data-v-472b1f82] {\n  color: #7524f9;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-update[data-v-472b1f82] {\n  color: #6D707D;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-header .inProgress[data-v-472b1f82] {\n  color: #2AC8DD;\n  background: rgba(28,189,181,0.1);\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-header .comingsoon[data-v-472b1f82] {\n  color: #FF8146;\n  background: rgba(255,129,70,0.1);\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-header .activityEnd[data-v-472b1f82] {\n  color: #6D707D;\n  background: #212331;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-startCountdown[data-v-472b1f82] {\n  color: #7F828F;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-time[data-v-472b1f82] {\n  color: #DFE0E3;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-day[data-v-472b1f82] {\n  color: #7F828F;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-title[data-v-472b1f82] {\n  color: #DFE0E3;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-amount[data-v-472b1f82] {\n  color: #7F828F;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-number[data-v-472b1f82] {\n  color: #DFE0E3;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading .mining-wrap-one-body-vol[data-v-472b1f82] {\n  color: #7F828F;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading .mining-wrap-one-body-vol-number[data-v-472b1f82] {\n  color: #DFE0E3;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading .mining-wrap-one-body-vol-number-todyVolue[data-v-472b1f82] {\n  color: #DFE0E3;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-rewards .mining-wrap-one-body-vol[data-v-472b1f82] {\n  color: #7F828F;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-rewards .mining-wrap-one-body-vol-number[data-v-472b1f82] {\n  color: #7524f9;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-rewards .mining-wrap-one-body-vol-number-last[data-v-472b1f82] {\n  color: #7524f9;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-text[data-v-472b1f82] {\n  color: #9CA5B3;\n}\n.theme-dark .line[data-v-472b1f82] {\n  border-bottom: 0.03rem solid #1F212E;\n}\n.theme-dark .setdarkColor[data-v-472b1f82] {\n  color: #9CA5B3;\n}\n.theme-dark .setDarkColor[data-v-472b1f82] {\n  color: #DFE0E3;\n}\n.theme-dark .setColor[data-v-472b1f82] {\n  color: #7524f9;\n}\n.theme-dark .setFontFamily[data-v-472b1f82] {\n  font-family: \"bitkeep DIN\";\n}\n.theme-dark .setFontWeight[data-v-472b1f82] {\n  font-size: 0.43rem;\n  font-weight: 600;\n  color: #DFE0E3;\n}\n.theme-dark .wrap-bottom[data-v-472b1f82] {\n  background: #171A26;\n  border-top: 0.03rem solid #212331;\n}\n.theme-dark .wrap-bottom .swap-btn[data-v-472b1f82] {\n  color: #fff;\n}\n.theme-dark .wrap-bottom .setColorSwap[data-v-472b1f82] {\n  background: #7524f9;\n}\n.theme-dark .wrap-bottom .setColorClaim[data-v-472b1f82] {\n  background: #2AC8DD;\n}\n.loading[data-v-472b1f82] {\n  min-height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.setMingMargin[data-v-472b1f82] {\n  margin-top: 0.27rem;\n  font-size: 0.53rem;\n}\n.mining .mining-wrap .img img[data-v-472b1f82] {\n  width: 100%;\n}\n.mining .mining-wrap .mining-wrap-one[data-v-472b1f82] {\n  margin: 0.4rem 0.43rem 0;\n  border-radius: 0.21rem;\n  font-size: 0.37rem;\n  line-height: 0.43rem;\n}\n.mining .mining-wrap .mining-wrap-one .produced[data-v-472b1f82] {\n  font-size: 0.37rem;\n  display: flex;\n  justify-content: space-between;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-header[data-v-472b1f82] {\n  display: flex;\n  justify-content: space-between;\n  height: 1.07rem;\n  line-height: 1.07rem;\n  padding: 0 0.21rem 0 0.4rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-title img[data-v-472b1f82] {\n  width: 0.53rem;\n  height: 0.53rem;\n  vertical-align: middle;\n  margin-right: 0.11rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-title .setImg[data-v-472b1f82] {\n  width: 0.43rem;\n  height: 0.43rem;\n  vertical-align: middle;\n  margin-left: 0.16rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-title span[data-v-472b1f82] {\n  font-size: 0.43rem;\n  line-height: 0.43rem;\n  vertical-align: text-bottom;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-right[data-v-472b1f82] {\n  padding-right: 0.19rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-update[data-v-472b1f82] {\n  font-size: 0.27rem;\n  margin: 0.08rem 0.05rem 0 0;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-about[data-v-472b1f82] {\n  height: 0.64rem;\n  line-height: 0.64rem;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  text-align: center;\n  padding: 0.05rem 0.32rem;\n  border-top-right-radius: 0.21rem;\n  border-bottom-left-radius: 0.21rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body[data-v-472b1f82] {\n  padding: 0 0.4rem 0.19rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-line[data-v-472b1f82] {\n  margin-top: 0.4rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-startCountdown[data-v-472b1f82] {\n  font-size: 0.37rem;\n  line-height: 0.37rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-time[data-v-472b1f82] {\n  font-size: 0.53rem;\n  line-height: 0.53rem;\n  display: inline-block;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-day[data-v-472b1f82] {\n  font-size: 0.32rem;\n  line-height: 0.37rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-title[data-v-472b1f82] {\n  font-size: 0.37rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-amount[data-v-472b1f82] {\n  font-size: 0.37rem;\n  line-height: 0.37rem;\n  margin: 0.53rem 0 0.4rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-number[data-v-472b1f82] {\n  font-size: 0.53rem;\n  line-height: 0.53rem;\n  font-family: \"bitkeep DIN\";\n  padding-bottom: 0.27rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading[data-v-472b1f82] {\n  display: flex;\n  justify-content: space-between;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading .mining-wrap-one-body-vol[data-v-472b1f82] {\n  font-size: 0.32rem;\n  line-height: 0.37rem;\n  text-align: right;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading .mining-wrap-one-body-vol-number[data-v-472b1f82] {\n  font-size: 0.43rem;\n  line-height: 0.43rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading .mining-wrap-one-body-vol-number-last[data-v-472b1f82] {\n  text-align: right;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading .mining-wrap-one-body-vol-number-todyVolue[data-v-472b1f82] {\n  text-align: right;\n  font-size: 0.43rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-rewards[data-v-472b1f82] {\n  display: flex;\n  justify-content: space-between;\n  padding-bottom: 0.27rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-rewards .mining-wrap-one-body-vol[data-v-472b1f82] {\n  font-size: 0.32rem;\n  line-height: 0.37rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-rewards .mining-wrap-one-body-vol-number[data-v-472b1f82] {\n  font-size: 0.43rem;\n  line-height: 0.43rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-rewards .mining-wrap-one-body-vol-number-last[data-v-472b1f82] {\n  text-align: right;\n  font-size: 0.43rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-text[data-v-472b1f82] {\n  font-size: 0.37rem;\n  line-height: 0.48rem;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  display: -webkit-box;\n  -webkit-box-orient: vertical;\n  -webkit-line-clamp: 3;\n}\n.mining .mining-wrap .mining-wrap-one .mining-setP[data-v-472b1f82] {\n  padding: 0 0.4rem 0.03rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining_trans[data-v-472b1f82] {\n  margin: 0.53rem 0 !important;\n}\n.mining .mining-wrap .mining-wrap-one .mbottom[data-v-472b1f82] {\n  margin-bottom: 0.4rem !important;\n}\n.warp-invite-link-btn[data-v-472b1f82] {\n  height: 1.33rem;\n  line-height: 1.33rem;\n  color: #fff;\n  text-align: center;\n  border-radius: 0.27rem;\n  margin-bottom: 0.53rem;\n  font-size: 0.43rem;\n  margin: 0 0.4rem 0.4rem;\n}\n.invitation[data-v-472b1f82] {\n  padding-bottom: 0.13rem;\n}\n.wrap-bottom[data-v-472b1f82] {\n  height: 1.28rem;\n  width: 100%;\n  bottom: 0;\n  z-index: 99;\n  position: fixed;\n  padding: 0.29rem 0.43rem 0.91rem;\n}\n.wrap-bottom .swap-btn[data-v-472b1f82] {\n  height: 1.33rem;\n  border-radius: 0.27rem;\n  text-align: center;\n  line-height: 1.17rem;\n  border: none;\n  font-weight: 500;\n  font-size: 0.43rem;\n  width: 4.43rem;\n  z-index: 0;\n}\n.wrap-bottom .setColorSwap[data-v-472b1f82] {\n  margin-left: 0.19rem;\n  display: inline-block;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".theme-light .textPrimary0[data-v-472b1f82] {\n  color: #0E0E0E;\n}\n.theme-light .textSecond1[data-v-472b1f82] {\n  color: #515556;\n}\n.theme-light .textSecond2[data-v-472b1f82] {\n  color: #919899;\n}\n.theme-light .textSecond3[data-v-472b1f82] {\n  color: #9CA5B3;\n}\n.theme-light .colorDisable[data-v-472b1f82] {\n  background-color: #DADBDE;\n}\n.theme-light .colorLine[data-v-472b1f82] {\n  background-color: #F4F5FA;\n}\n.theme-light .colorLine1[data-v-472b1f82] {\n  background-color: #F0F0F0;\n}\n.theme-light .colorBackground0[data-v-472b1f82] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackground1[data-v-472b1f82] {\n  background-color: #fff;\n}\n.theme-light .colorBackground2[data-v-472b1f82] {\n  background-color: #F3F5F6;\n}\n.theme-light .colorBackground3[data-v-472b1f82] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackgroundWhite[data-v-472b1f82] {\n  background-color: #fff;\n}\n.theme-light .colorBackgroundPrimary[data-v-472b1f82] {\n  background-color: #7524f9;\n}\n.theme-light .colorBackgroundColorSecond11[data-v-472b1f82] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-light .colorBackgroundSecond01[data-v-472b1f82] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorBackgroundTextPrimary0[data-v-472b1f82] {\n  background-color: #0E0E0E;\n}\n.theme-light .colorPrimary[data-v-472b1f82] {\n  color: #7524f9;\n}\n.theme-light .colorSecond01[data-v-472b1f82] {\n  color: #2AC8DD;\n}\n.theme-light .backgroundSecond01[data-v-472b1f82] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorSecond02[data-v-472b1f82] {\n  color: #F04A4A;\n}\n.theme-light .colorSecond03[data-v-472b1f82] {\n  color: #26BC80;\n}\n.theme-light .colorSecond04[data-v-472b1f82] {\n  color: #FF8146;\n}\n.theme-light .colorSecond05[data-v-472b1f82] {\n  color: #2F80ED;\n}\n.theme-light .colorSecond06[data-v-472b1f82] {\n  color: #4A2FD2;\n}\n.theme-light .colorSecond07[data-v-472b1f82] {\n  color: #F04E98;\n}\n.theme-light .colorSecond08[data-v-472b1f82] {\n  color: #FFB800;\n}\n.theme-light .colorBlack[data-v-472b1f82] {\n  color: #000;\n}\n.theme-light .colorwhite[data-v-472b1f82] {\n  color: #fff;\n}\n.theme-light .colorSecond10[data-v-472b1f82] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-light .colorSecond11[data-v-472b1f82] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-light .colorSecond12[data-v-472b1f82] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-light .colorSecond13[data-v-472b1f82] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-light .colorSecond14[data-v-472b1f82] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-light .colorSecond15[data-v-472b1f82] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-light .colorSecond18[data-v-472b1f82] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-dark .textPrimary0[data-v-472b1f82] {\n  color: #DFE0E3;\n}\n.theme-dark .textSecond1[data-v-472b1f82] {\n  color: #9CA5B3;\n}\n.theme-dark .textSecond2[data-v-472b1f82] {\n  color: #7F828F;\n}\n.theme-dark .textSecond3[data-v-472b1f82] {\n  color: #6D707D;\n}\n.theme-dark .colorDisable[data-v-472b1f82] {\n  background-color: #5F626D;\n}\n.theme-dark .colorLine[data-v-472b1f82] {\n  background-color: #1F212E;\n}\n.theme-dark .colorLine1[data-v-472b1f82] {\n  background-color: #2A2D3D;\n}\n.theme-dark .colorBackground0[data-v-472b1f82] {\n  background-color: #0A0E1F;\n}\n.theme-dark .colorBackground1[data-v-472b1f82] {\n  background-color: #171A26;\n}\n.theme-dark .colorBackground2[data-v-472b1f82] {\n  background-color: #212331;\n}\n.theme-dark .colorBackground3[data-v-472b1f82] {\n  background-color: #212331;\n}\n.theme-dark .colorBackgroundPrimary[data-v-472b1f82] {\n  background-color: #7524f9;\n}\n.theme-dark .colorBackgroundColorSecond11[data-v-472b1f82] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorBackgroundSecond01[data-v-472b1f82] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorBackgroundTextPrimary0[data-v-472b1f82] {\n  background-color: #DFE0E3;\n}\n.theme-dark .colorPrimary[data-v-472b1f82] {\n  color: #7524f9;\n}\n.theme-dark .colorSecond01[data-v-472b1f82] {\n  color: #2AC8DD;\n}\n.theme-dark .backgroundSecond01[data-v-472b1f82] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorSecond02[data-v-472b1f82] {\n  color: #F04A4A;\n}\n.theme-dark .colorSecond03[data-v-472b1f82] {\n  color: #26BC80;\n}\n.theme-dark .colorSecond04[data-v-472b1f82] {\n  color: #FF8146;\n}\n.theme-dark .colorSecond05[data-v-472b1f82] {\n  color: #2F80ED;\n}\n.theme-dark .colorSecond06[data-v-472b1f82] {\n  color: #4A2FD2;\n}\n.theme-dark .colorSecond07[data-v-472b1f82] {\n  color: #F04E98;\n}\n.theme-dark .colorSecond08[data-v-472b1f82] {\n  color: #FFB800;\n}\n.theme-dark .colorBlack[data-v-472b1f82] {\n  color: #000;\n}\n.theme-dark .colorwhite[data-v-472b1f82] {\n  color: #fff;\n}\n.theme-dark .colorSecond10[data-v-472b1f82] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-dark .colorSecond11[data-v-472b1f82] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorSecond12[data-v-472b1f82] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-dark .colorSecond13[data-v-472b1f82] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-dark .colorSecond14[data-v-472b1f82] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-dark .colorSecond15[data-v-472b1f82] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-dark .colorSecond18[data-v-472b1f82] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-light .Background0[data-v-472b1f82] {\n  background-color: #fafafa;\n}\n.theme-light .Background0[data-v-472b1f82] {\n  background-color: #F8F8F9;\n}\n.theme-dark .Background0[data-v-472b1f82] {\n  background-color: #17171A;\n}\n.theme-dark .Background1[data-v-472b1f82] {\n  background-color: #202024;\n}\n.theme-light .mining[data-v-472b1f82] {\n  background: #F8F9FA;\n}\n.theme-light .mining .van-progress[data-v-472b1f82] {\n  border-radius: 0.27rem;\n  background: #F4F5FA;\n}\n.theme-light .mining .mining-wrap-one[data-v-472b1f82] {\n  background: #fff;\n}\n.theme-light .mining .mining-wrap-one .produced[data-v-472b1f82] :first-child {\n  color: #919899;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-header[data-v-472b1f82] {\n  border-bottom: 0.03rem solid #F4F5FA;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-title span[data-v-472b1f82] {\n  color: #0E0E0E;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-right[data-v-472b1f82] {\n  color: #7524f9;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-update[data-v-472b1f82] {\n  color: #9CA5B3;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-header .inProgress[data-v-472b1f82] {\n  color: #2AC8DD;\n  background: rgba(28,189,181,0.1);\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-header .comingsoon[data-v-472b1f82] {\n  color: #FF8146;\n  background: rgba(255,129,70,0.1);\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-header .activityEnd[data-v-472b1f82] {\n  color: #9CA5B3;\n  background: #F3F5F6;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-startCountdown[data-v-472b1f82] {\n  color: #919899;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-time[data-v-472b1f82] {\n  color: #0E0E0E;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-day[data-v-472b1f82] {\n  color: #919899;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-title[data-v-472b1f82] {\n  color: #0E0E0E;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-amount[data-v-472b1f82] {\n  color: #919899;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-number[data-v-472b1f82] {\n  color: #0E0E0E;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading .mining-wrap-one-body-vol[data-v-472b1f82] {\n  color: #919899;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading .mining-wrap-one-body-vol-number[data-v-472b1f82] {\n  color: #0E0E0E;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading .mining-wrap-one-body-vol-number-todyVolue[data-v-472b1f82] {\n  color: #0E0E0E;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-rewards .mining-wrap-one-body-vol[data-v-472b1f82] {\n  color: #919899;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-rewards .mining-wrap-one-body-vol-number[data-v-472b1f82] {\n  color: #7524f9;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-rewards .mining-wrap-one-body-vol-number-last[data-v-472b1f82] {\n  color: #7524f9;\n}\n.theme-light .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-text[data-v-472b1f82] {\n  color: #515556;\n}\n.theme-light .line[data-v-472b1f82] {\n  border-bottom: 0.03rem solid #F4F5FA;\n}\n.theme-light .setLightColor[data-v-472b1f82] {\n  color: #515556;\n}\n.theme-light .setDarkColor[data-v-472b1f82] {\n  color: #0E0E0E;\n}\n.theme-light .setColor[data-v-472b1f82] {\n  color: #7524f9;\n}\n.theme-light .setFontFamily[data-v-472b1f82] {\n  font-family: \"bitkeep DIN\";\n}\n.theme-light .setFontWeight[data-v-472b1f82] {\n  font-size: 0.43rem;\n  font-weight: 600;\n  color: #0E0E0E;\n}\n.theme-light .wrap-bottom[data-v-472b1f82] {\n  background: #fff;\n  border-top: 0.03rem solid #F8F9FA;\n}\n.theme-light .wrap-bottom .swap-btn[data-v-472b1f82] {\n  color: #fff;\n}\n.theme-light .wrap-bottom .setColorSwap[data-v-472b1f82] {\n  background: #7524f9;\n}\n.theme-light .wrap-bottom .setColorClaim[data-v-472b1f82] {\n  background: #2AC8DD;\n}\n.theme-dark .mining[data-v-472b1f82] {\n  background: #0A0E1F;\n}\n.theme-dark .mining .van-progress[data-v-472b1f82] {\n  border-radius: 0.27rem;\n  background: #1F212E;\n}\n.theme-dark .mining .mining-wrap-one[data-v-472b1f82] {\n  background: #171A26;\n}\n.theme-dark .mining .mining-wrap-one .produced[data-v-472b1f82] :first-child {\n  color: #7F828F;\n}\n.theme-dark .mining .mining-wrap-one .mining_trans[data-v-472b1f82] {\n  color: #DFE0E3;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-header[data-v-472b1f82] {\n  border-bottom: 0.03rem solid #1F212E;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-title span[data-v-472b1f82] {\n  color: #DFE0E3;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-right[data-v-472b1f82] {\n  color: #7524f9;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-update[data-v-472b1f82] {\n  color: #6D707D;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-header .inProgress[data-v-472b1f82] {\n  color: #2AC8DD;\n  background: rgba(28,189,181,0.1);\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-header .comingsoon[data-v-472b1f82] {\n  color: #FF8146;\n  background: rgba(255,129,70,0.1);\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-header .activityEnd[data-v-472b1f82] {\n  color: #6D707D;\n  background: #212331;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-startCountdown[data-v-472b1f82] {\n  color: #7F828F;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-time[data-v-472b1f82] {\n  color: #DFE0E3;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-day[data-v-472b1f82] {\n  color: #7F828F;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-title[data-v-472b1f82] {\n  color: #DFE0E3;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-amount[data-v-472b1f82] {\n  color: #7F828F;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-number[data-v-472b1f82] {\n  color: #DFE0E3;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading .mining-wrap-one-body-vol[data-v-472b1f82] {\n  color: #7F828F;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading .mining-wrap-one-body-vol-number[data-v-472b1f82] {\n  color: #DFE0E3;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading .mining-wrap-one-body-vol-number-todyVolue[data-v-472b1f82] {\n  color: #DFE0E3;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-rewards .mining-wrap-one-body-vol[data-v-472b1f82] {\n  color: #7F828F;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-rewards .mining-wrap-one-body-vol-number[data-v-472b1f82] {\n  color: #7524f9;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-rewards .mining-wrap-one-body-vol-number-last[data-v-472b1f82] {\n  color: #7524f9;\n}\n.theme-dark .mining .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-text[data-v-472b1f82] {\n  color: #9CA5B3;\n}\n.theme-dark .line[data-v-472b1f82] {\n  border-bottom: 0.03rem solid #1F212E;\n}\n.theme-dark .setdarkColor[data-v-472b1f82] {\n  color: #9CA5B3;\n}\n.theme-dark .setDarkColor[data-v-472b1f82] {\n  color: #DFE0E3;\n}\n.theme-dark .setColor[data-v-472b1f82] {\n  color: #7524f9;\n}\n.theme-dark .setFontFamily[data-v-472b1f82] {\n  font-family: \"bitkeep DIN\";\n}\n.theme-dark .setFontWeight[data-v-472b1f82] {\n  font-size: 0.43rem;\n  font-weight: 600;\n  color: #DFE0E3;\n}\n.theme-dark .wrap-bottom[data-v-472b1f82] {\n  background: #171A26;\n  border-top: 0.03rem solid #212331;\n}\n.theme-dark .wrap-bottom .swap-btn[data-v-472b1f82] {\n  color: #fff;\n}\n.theme-dark .wrap-bottom .setColorSwap[data-v-472b1f82] {\n  background: #7524f9;\n}\n.theme-dark .wrap-bottom .setColorClaim[data-v-472b1f82] {\n  background: #2AC8DD;\n}\n.loading[data-v-472b1f82] {\n  min-height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.setMingMargin[data-v-472b1f82] {\n  margin-top: 0.27rem;\n  font-size: 0.53rem;\n}\n.mining .mining-wrap .img img[data-v-472b1f82] {\n  width: 100%;\n}\n.mining .mining-wrap .mining-wrap-one[data-v-472b1f82] {\n  margin: 0.4rem 0.43rem 0;\n  border-radius: 0.21rem;\n  font-size: 0.37rem;\n  line-height: 0.43rem;\n}\n.mining .mining-wrap .mining-wrap-one .produced[data-v-472b1f82] {\n  font-size: 0.37rem;\n  display: flex;\n  justify-content: space-between;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-header[data-v-472b1f82] {\n  display: flex;\n  justify-content: space-between;\n  height: 1.07rem;\n  line-height: 1.07rem;\n  padding: 0 0.21rem 0 0.4rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-title img[data-v-472b1f82] {\n  width: 0.53rem;\n  height: 0.53rem;\n  vertical-align: middle;\n  margin-right: 0.11rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-title .setImg[data-v-472b1f82] {\n  width: 0.43rem;\n  height: 0.43rem;\n  vertical-align: middle;\n  margin-left: 0.16rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-title span[data-v-472b1f82] {\n  font-size: 0.43rem;\n  line-height: 0.43rem;\n  vertical-align: text-bottom;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-right[data-v-472b1f82] {\n  padding-right: 0.19rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-update[data-v-472b1f82] {\n  font-size: 0.27rem;\n  margin: 0.08rem 0.05rem 0 0;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-header .mining-wrap-one-header-about[data-v-472b1f82] {\n  height: 0.64rem;\n  line-height: 0.64rem;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n  text-align: center;\n  padding: 0.05rem 0.32rem;\n  border-top-right-radius: 0.21rem;\n  border-bottom-left-radius: 0.21rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body[data-v-472b1f82] {\n  padding: 0 0.4rem 0.19rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-line[data-v-472b1f82] {\n  margin-top: 0.4rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-startCountdown[data-v-472b1f82] {\n  font-size: 0.37rem;\n  line-height: 0.37rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-time[data-v-472b1f82] {\n  font-size: 0.53rem;\n  line-height: 0.53rem;\n  display: inline-block;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-day[data-v-472b1f82] {\n  font-size: 0.32rem;\n  line-height: 0.37rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-title[data-v-472b1f82] {\n  font-size: 0.37rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-amount[data-v-472b1f82] {\n  font-size: 0.37rem;\n  line-height: 0.37rem;\n  margin: 0.53rem 0 0.4rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-number[data-v-472b1f82] {\n  font-size: 0.53rem;\n  line-height: 0.53rem;\n  font-family: \"bitkeep DIN\";\n  padding-bottom: 0.27rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading[data-v-472b1f82] {\n  display: flex;\n  justify-content: space-between;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading .mining-wrap-one-body-vol[data-v-472b1f82] {\n  font-size: 0.32rem;\n  line-height: 0.37rem;\n  text-align: right;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading .mining-wrap-one-body-vol-number[data-v-472b1f82] {\n  font-size: 0.43rem;\n  line-height: 0.43rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading .mining-wrap-one-body-vol-number-last[data-v-472b1f82] {\n  text-align: right;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-trading .mining-wrap-one-body-vol-number-todyVolue[data-v-472b1f82] {\n  text-align: right;\n  font-size: 0.43rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-rewards[data-v-472b1f82] {\n  display: flex;\n  justify-content: space-between;\n  padding-bottom: 0.27rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-rewards .mining-wrap-one-body-vol[data-v-472b1f82] {\n  font-size: 0.32rem;\n  line-height: 0.37rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-rewards .mining-wrap-one-body-vol-number[data-v-472b1f82] {\n  font-size: 0.43rem;\n  line-height: 0.43rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-rewards .mining-wrap-one-body-vol-number-last[data-v-472b1f82] {\n  text-align: right;\n  font-size: 0.43rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining-wrap-one-body .mining-wrap-one-body-text[data-v-472b1f82] {\n  font-size: 0.37rem;\n  line-height: 0.48rem;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  display: -webkit-box;\n  -webkit-box-orient: vertical;\n  -webkit-line-clamp: 3;\n}\n.mining .mining-wrap .mining-wrap-one .mining-setP[data-v-472b1f82] {\n  padding: 0 0.4rem 0.03rem;\n}\n.mining .mining-wrap .mining-wrap-one .mining_trans[data-v-472b1f82] {\n  margin: 0.53rem 0 !important;\n}\n.mining .mining-wrap .mining-wrap-one .mbottom[data-v-472b1f82] {\n  margin-bottom: 0.4rem !important;\n}\n.warp-invite-link-btn[data-v-472b1f82] {\n  height: 1.33rem;\n  line-height: 1.33rem;\n  color: #fff;\n  text-align: center;\n  border-radius: 0.27rem;\n  margin-bottom: 0.53rem;\n  font-size: 0.43rem;\n  margin: 0 0.4rem 0.4rem;\n}\n.invitation[data-v-472b1f82] {\n  padding-bottom: 0.13rem;\n}\n.wrap-bottom[data-v-472b1f82] {\n  height: 1.28rem;\n  width: 100%;\n  bottom: 0;\n  z-index: 99;\n  position: fixed;\n  padding: 0.29rem 0.43rem 0.91rem;\n}\n.wrap-bottom .swap-btn[data-v-472b1f82] {\n  height: 1.33rem;\n  border-radius: 0.27rem;\n  text-align: center;\n  line-height: 1.17rem;\n  border: none;\n  font-weight: 500;\n  font-size: 0.43rem;\n  width: 4.43rem;\n  z-index: 0;\n}\n.wrap-bottom .setColorSwap[data-v-472b1f82] {\n  margin-left: 0.19rem;\n  display: inline-block;\n}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
 
-/***/ 304:
+/***/ 392:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -995,22 +1287,22 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/activity/mining/index.vue?vue&type=template&id=472b1f82&scoped=true&
 
 // EXTERNAL MODULE: ./api/client.js
-var client = __webpack_require__(70);
+var client = __webpack_require__(107);
 
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(4);
+var external_vuex_ = __webpack_require__(7);
 
 // EXTERNAL MODULE: ./components/activity/index.vue + 4 modules
-var activity = __webpack_require__(204);
+var activity = __webpack_require__(274);
 
 // EXTERNAL MODULE: ./pages/activity/mining/protocol.vue + 4 modules
-var protocol = __webpack_require__(205);
+var protocol = __webpack_require__(275);
 
 // EXTERNAL MODULE: ./pages/activity/mining/RuleDetail.vue + 4 modules
-var RuleDetail = __webpack_require__(206);
+var RuleDetail = __webpack_require__(276);
 
 // EXTERNAL MODULE: ./pages/activity/mining/inviteRuleDetail.vue + 4 modules
-var inviteRuleDetail = __webpack_require__(207);
+var inviteRuleDetail = __webpack_require__(277);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/mining/index.vue?vue&type=script&lang=js&
 //
@@ -1567,9 +1859,9 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(226)
+  var style0 = __webpack_require__(311)
 if (style0.__inject__) style0.__inject__(context)
-var style1 = __webpack_require__(228)
+var style1 = __webpack_require__(313)
 if (style1.__inject__) style1.__inject__(context)
 
 }
@@ -1583,290 +1875,11 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "472b1f82",
-  "fb9660d0"
+  "152b6709"
   
 )
 
 /* harmony default export */ var mining = __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ 70:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return USER_API; });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_3__);
-
-
-
- // const requestlog = debug('bit-activity-request')
-// const responselog = debug('bit-activity-response')
-// const isProduction = process.env.NODE_ENV == "production";
-// const HOST_URL = process.env.HOST_URL || process.env.baseURL
-
-const requestlog =  true ? (...arg) => {
-  console.log("bit-activity-request:", ...arg);
-} : undefined;
-const responselog =  true ? (...arg) => {
-  console.log("bit-activity-response:", ...arg);
-} : undefined;
-const host_user_instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
-  baseURL: "/",
-  timeout: 60000,
-  headers: {
-    token: "",
-    // token: "",
-    language: "en",
-    currency: "",
-    brand: "",
-    os: "",
-    package: "",
-    clientVersion: 1,
-    im: ""
-  }
-});
-host_user_instance.interceptors.request.use(function (config) {
-  requestlog('requestlog:', config);
-
-  if (false) {}
-
-  return config;
-}, function (error) {
-  return Promise.resolve({
-    status: 1
-  });
-}); // Add a response interceptor
-
-host_user_instance.interceptors.response.use(function (response) {
-  return response.data;
-}, function (error) {
-  responselog('responselog:', error); // Do omething with response error
-
-  let message = '网路开了小差';
-
-  if (false) {}
-
-  return Promise.resolve({
-    status: 1,
-    data: message
-  });
-});
-const USER_API = {
-  //盲盒列表
-  mBoxList: (data, headers = {}) => host_user_instance.get("user/activity/mBoxList", {
-    params: data,
-    headers
-  }),
-  // 打开盲盒÷
-  openMBox: (data, headers = {}) => host_user_instance.get("user/activity/openMBox", {
-    params: data
-  }),
-  //盲盒助力提交
-  helpMBox: (data, headers = {}) => host_user_instance.get("user/activity/helpMBox", {
-    params: data
-  }),
-  //助力邀请好友列表
-  userInviteList: (data, headers = {}) => host_user_instance.get("user/activity/inviteList", {
-    params: data
-  }),
-  mBoxDetail: (data, headers = {}) => host_user_instance.get("user/activity/mBoxDetail", {
-    params: data
-  }),
-  //cbkb兑换模块
-  getCbkbSwapInfo: (data, headers = {}) => host_user_instance.get("user/cloudwallet/getCbkbSwapInfo", {
-    params: data
-  }),
-  swapBkb: (data, headers = {}) => host_user_instance.get("user/cloudwallet/swapBkb", {
-    params: data
-  }),
-  //BKB空投
-  getAirDropCount: (data, headers = {}) => host_user_instance.post("user/cloudwallet/getAirDropCount", data),
-  getAirDrop: (data, headers = {}) => host_user_instance.post("user/cloudwallet/getAirDrop", data),
-  // 交易挖矿
-  miningInfo: (data, headers = {}) => host_user_instance.post("swap/mining/info", data),
-  historyPhase: (data, headers = {}) => host_user_instance.post("swap/mining/historyPhase", data),
-  receiveAward: (data, headers = {}) => host_user_instance.post("swap/mining/receiveAward", data),
-  // 邀请好友
-  getInviteList: (data, headers = {}) => host_user_instance.post('user/friendship/getInviteList', data),
-  certifyFriendship: (data, headers = {}) => host_user_instance.post('user/friendship/certifyFriendship', data),
-  activityDoneRewardList: (data, headers = {}) => host_user_instance.post('swap/mining/activityDoneRewardList', data),
-  //质押bkb
-  // 质押池列表
-  poolList: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/poolList', data),
-  // 我的质押池列表
-  myPool: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/myPool', data),
-  // 历史质押池列表
-  stakeHistory: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/stakeHistory', data),
-  // 取消质押
-  receiveStakingReward: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/receiveStakingReward', data),
-  //确认质押
-  staking: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/staking', data),
-  //获取token
-  handleGetToken: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/getToken', data),
-  //trading 交易大赛
-  tradingGetList: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/getList', data),
-  //待领取
-  tradingWaitClaim: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/waitClaim', data),
-  //领取
-  tradingClaim: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/claim', data),
-  //历史汇总
-  tradingSummary: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/summary', data),
-  //历史list
-  tradingHistory: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/history', data),
-  // 新手福利
-  welfareSignIn: (data, headers = {}) => host_user_instance.post('user/welfare/signIn', data),
-  // 签到
-  getRewardDetail: (data, headers = {}) => host_user_instance.post('user/welfare/getRewardDetail', data),
-  //每日抽奖详情
-  getSignInDetailByUser: (data, headers = {}) => host_user_instance.post('user/welfare/getSignInDetailByUser', data),
-  // 获取某人的签到详情
-  getRewardResult: (data, headers = {}) => host_user_instance.post('user/welfare/getRewardResult', data),
-  // 获取抽奖结果
-  // getRewardDetail: (data,headers={}) => host_user_instance.post('user/welfare/getRewardDetail',data), // 每日抽奖详情页
-  pushPapersIn: (data, headers = {}) => host_user_instance.post('user/welfare/pushPapersIn', data),
-  // 立即投入
-  getJoinTeleJob: (data, headers = {}) => host_user_instance.post('user/welfare/getJoinTeleJob', data),
-  // 加入电报
-  getFirstSwapJob: (data, headers = {}) => host_user_instance.post('user/welfare/getFirstSwapJob', data),
-  // swap首次交易
-  getFirst50UJob: (data, headers = {}) => host_user_instance.post('user/welfare/getFirst50UJob', data),
-  // 领取50u
-  newUserRewardJobs: (data, headers = {}) => host_user_instance.post('user/welfare/newUserRewardJobs', data) // 新手任务
-
-};
-
-/***/ }),
-
-/***/ 89:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(119);
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add CSS to SSR context
-var add = __webpack_require__(9).default
-module.exports.__inject__ = function (context) {
-  add("ff7373b2", content, true, context)
-};
-
-/***/ }),
-
-/***/ 90:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(121);
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add CSS to SSR context
-var add = __webpack_require__(9).default
-module.exports.__inject__ = function (context) {
-  add("cadfcc3c", content, true, context)
-};
-
-/***/ }),
-
-/***/ 91:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(123);
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add CSS to SSR context
-var add = __webpack_require__(9).default
-module.exports.__inject__ = function (context) {
-  add("444ed4db", content, true, context)
-};
-
-/***/ }),
-
-/***/ 92:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(125);
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add CSS to SSR context
-var add = __webpack_require__(9).default
-module.exports.__inject__ = function (context) {
-  add("189111c2", content, true, context)
-};
-
-/***/ }),
-
-/***/ 93:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(127);
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add CSS to SSR context
-var add = __webpack_require__(9).default
-module.exports.__inject__ = function (context) {
-  add("11d6a15c", content, true, context)
-};
-
-/***/ }),
-
-/***/ 94:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(129);
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add CSS to SSR context
-var add = __webpack_require__(9).default
-module.exports.__inject__ = function (context) {
-  add("b4bb27bc", content, true, context)
-};
-
-/***/ }),
-
-/***/ 95:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(131);
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add CSS to SSR context
-var add = __webpack_require__(9).default
-module.exports.__inject__ = function (context) {
-  add("9d3d2c10", content, true, context)
-};
 
 /***/ })
 

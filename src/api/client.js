@@ -144,4 +144,24 @@ export const USER_API = {
   getFirst50UJob: (data,headers={}) => host_user_instance.post('user/welfare/getFirst50UJob',data), // 领取50u
   newUserRewardJobs: (data,headers={}) => host_user_instance.post('user/welfare/newUserRewardJobs',data), // 新手任务
 
+
+    // NFTMint
+  //默认兑换列表
+  nftMintGetInfo: (data, headers = {}) => host_user_instance.post("/operation/nftmint/getInfo",data),
+  //建立邀请关系
+  nftMintInvite: (data, headers = {}) => host_user_instance.post("/operation/nftmint/invite", data),
+  //获取TX
+  buildNftMintTxs: (data, headers = {}) => host_user_instance.post("/operation/nftmint/buildNftMintTxs", data),
+  //签名token
+  nftMintGetToken: (data, headers = {}) => host_user_instance.post("/operation/nftmint/getToken", data),
+  //获取空头获奖列表
+  nftMintLotteryList: (data, headers = {}) => host_user_instance.post("/operation/nftmint/LotteryList", data),
+  //退款TX
+  nftMintbuildNftMeltTxs: (data, headers = {}) => host_user_instance.post("/operation/nftmint/buildNftMeltTxs", data),
+  //获取持有的NTT列表
+  nftMintnftList: (data, headers = {}) => host_user_instance.post("/operation/nftmint/nftList", data),
+  //查看Mint的广播状态
+  nftMintcheckTransaction: (data, headers = {}) => host_user_instance.post("/operation/nftmint/checkTransaction", data),
+  
+  
 };

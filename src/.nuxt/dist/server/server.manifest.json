@@ -10,6 +10,14 @@
     "components/common-c-vue-countdown.js": "components/common-c-vue-countdown.js",
     "components/common-header.js": "components/common-header.js",
     "components/common.js": "components/common.js",
+    "components/polygon-airdrop-address-card.js": "components/polygon-airdrop-address-card.js",
+    "components/polygon-airdrop-award-card.js": "components/polygon-airdrop-award-card.js",
+    "components/polygon-countdown.js": "components/polygon-countdown.js",
+    "components/polygon-invited-card.js": "components/polygon-invited-card.js",
+    "components/polygon-ment.js": "components/polygon-ment.js",
+    "components/polygon-mint-success-card.js": "components/polygon-mint-success-card.js",
+    "components/polygon-mint.js": "components/polygon-mint.js",
+    "components/polygon-whitelistcard.js": "components/polygon-whitelistcard.js",
     "components/trading.js": "components/trading.js",
     "components/vue-create-poster-layout-canvas-poster.js": "components/vue-create-poster-layout-canvas-poster.js",
     "components/vue-create-poster-layout-gradient.js": "components/vue-create-poster-layout-gradient.js",
@@ -57,6 +65,7 @@
     "pages/activity/trading/protocol.js": "pages/activity/trading/protocol.js",
     "pages/activity/trading/tradingRule.js": "pages/activity/trading/tradingRule.js",
     "pages/article/detail/_id.js": "pages/article/detail/_id.js",
+    "pages/polygon/index.js": "pages/polygon/index.js",
     "server.js": "server.js"
   },
   "maps": {
@@ -69,6 +78,14 @@
     "components/common-c-vue-countdown.js": "components/common-c-vue-countdown.js.map",
     "components/common-header.js": "components/common-header.js.map",
     "components/common.js": "components/common.js.map",
+    "components/polygon-airdrop-address-card.js": "components/polygon-airdrop-address-card.js.map",
+    "components/polygon-airdrop-award-card.js": "components/polygon-airdrop-award-card.js.map",
+    "components/polygon-countdown.js": "components/polygon-countdown.js.map",
+    "components/polygon-invited-card.js": "components/polygon-invited-card.js.map",
+    "components/polygon-ment.js": "components/polygon-ment.js.map",
+    "components/polygon-mint-success-card.js": "components/polygon-mint-success-card.js.map",
+    "components/polygon-mint.js": "components/polygon-mint.js.map",
+    "components/polygon-whitelistcard.js": "components/polygon-whitelistcard.js.map",
     "components/trading.js": "components/trading.js.map",
     "components/vue-create-poster-layout-canvas-poster.js": "components/vue-create-poster-layout-canvas-poster.js.map",
     "components/vue-create-poster-layout-gradient.js": "components/vue-create-poster-layout-gradient.js.map",
@@ -116,6 +133,7 @@
     "pages/activity/trading/protocol.js": "pages/activity/trading/protocol.js.map",
     "pages/activity/trading/tradingRule.js": "pages/activity/trading/tradingRule.js.map",
     "pages/article/detail/_id.js": "pages/article/detail/_id.js.map",
+    "pages/polygon/index.js": "pages/polygon/index.js.map",
     "server.js": "server.js.map"
   }
 }

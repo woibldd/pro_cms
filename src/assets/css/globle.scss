@@ -11,6 +11,46 @@
   font-family: "bitkeep DIN";
   src: url("../fonts/blindbox/DIN-Medium.otf");
 }
+@font-face {
+  font-family: "TTORegular";
+  src: url("../fonts/polygon/ttoctosquares-regular.otf");
+}
+@font-face {
+  font-family: "TTODbold";
+  src: url("../fonts/polygon/ttoctosquares-dbold.otf");
+}
+@font-face {
+  font-family: "TTODboldit";
+  src: url("../fonts/polygon/ttoctosquares-dboldit.otf");
+}
+@font-face {
+  font-family: "TTOBlack";
+  src: url("../fonts/polygon/ttoctosquares-black.otf");
+}
+@font-face {
+  font-family: "TTODBlackit";
+  src: url("../fonts/polygon/ttoctosquares-blackit.otf");
+}
+@font-face {
+  font-family: "TTOBold";
+  src: url("../fonts/polygon/ttoctosquares-bold.otf");
+}
+@font-face {
+  font-family: "TTOBoldit";
+  src: url("../fonts/polygon/ttoctosquares-boldit.otf");
+}
+@font-face {
+  font-family: "TTOItalic";
+  src: url("../fonts/polygon/ttoctosquares-italic.otf");
+}
+@font-face {
+  font-family: "TTOMedium";
+  src: url("../fonts/polygon/ttoctosquares-medium.otf");
+}
+@font-face {
+  font-family: "TTOMediumit";
+  src: url("../fonts/polygon/ttoctosquares-mediumit.otf");
+}
 /* 需要加成全局≥÷ 暂时放在这里 */
 .body {
   font-family: PingFang SC;
@@ -90,3 +130,47 @@
   }
 }
 
+
+
+
+ul,ol,li{
+  list-style: none;
+}
+
+.TTORegular{
+  font-family: "TTORegular";
+}
+.TTODbold{
+  font-family: "TTODbold";
+}
+.TTODboldit{
+  font-family: "TTODboldit";
+}
+.TTOBlack{
+  font-family: "TTOBlack";
+}
+.TTODBlackit{
+  font-family: "TTODBlackit";
+}
+.TTOBold{
+  font-family: "TTOBold";
+}
+.TTOBoldit{
+  font-family: "TTOBoldit";
+}
+.TTOItalic{
+  font-family: "TTOItalic";
+}
+.TTOMedium{
+  font-family: "TTOMedium";
+}
+.TTOMediumit{
+  font-family: "TTOMediumit";
+}
+h1,h2,h3,h4,h5,h6,div,img,a,p,span,button,input,textarea,select,label,table,tr,td,th,tbody,thead,tfoot,iframe,form,fieldset,legend,ul,ol,li{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  list-style: none;
+}

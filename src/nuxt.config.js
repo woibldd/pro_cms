@@ -44,7 +44,7 @@ export default {
       lang: "en"
     },
     bodyAttrs: {
-      class: "theme-light"
+      class: "theme-dark"
     },
     meta: [
       { charset: "utf-8" },
@@ -171,7 +171,22 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
   proxy: {
-    //  开发环境
+    //  开发环境 
+    "/operation": {
+      target: HOST_API,
+      changeOrigin: true,
+      onProxyReq(proxyReq, req, res) {
+        const xforwardedFor = (
+          req.headers["x-forwarded-for"] ||
+          req.connection.remoteAddress ||
+          req.socket.remoteAddress ||
+          req.connection.socket.remoteAddress
+        ).replace("::ffff:", "");
+
+        proxyReq.setHeader("x-forwarded-for", xforwardedFor);
+        proxyReq.setHeader("host", xforwardedFor);
+      }, 
+    },
     "/user": {
       target: HOST_API,
       changeOrigin: true,

@@ -1,51 +1,347 @@
-exports.ids = [47,51];
+exports.ids = [55,59];
 exports.modules = {
 
-/***/ 194:
+/***/ 107:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return USER_API; });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+ // const requestlog = debug('bit-activity-request')
+// const responselog = debug('bit-activity-response')
+// const isProduction = process.env.NODE_ENV == "production";
+// const HOST_URL = process.env.HOST_URL || process.env.baseURL
+
+const requestlog =  false ? undefined : Object(debug__WEBPACK_IMPORTED_MODULE_3__["debug"])('bit-activity-request');
+const responselog =  false ? undefined : Object(debug__WEBPACK_IMPORTED_MODULE_3__["debug"])('bit-activity-response');
+const host_user_instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
+  baseURL: "/",
+  timeout: 60000,
+  headers: {
+    token: "",
+    // token: "",
+    language: "en",
+    currency: "",
+    brand: "",
+    os: "",
+    package: "",
+    clientVersion: 1,
+    im: ""
+  }
+});
+host_user_instance.interceptors.request.use(function (config) {
+  requestlog('requestlog:', config);
+
+  if (false) {}
+
+  return config;
+}, function (error) {
+  return Promise.resolve({
+    status: 1
+  });
+}); // Add a response interceptor
+
+host_user_instance.interceptors.response.use(function (response) {
+  return response.data;
+}, function (error) {
+  responselog('responselog:', error); // Do omething with response error
+
+  let message = '网路开了小差';
+
+  if (false) {}
+
+  return Promise.resolve({
+    status: 1,
+    data: message
+  });
+});
+const USER_API = {
+  //盲盒列表
+  mBoxList: (data, headers = {}) => host_user_instance.get("user/activity/mBoxList", {
+    params: data,
+    headers
+  }),
+  // 打开盲盒÷
+  openMBox: (data, headers = {}) => host_user_instance.get("user/activity/openMBox", {
+    params: data
+  }),
+  //盲盒助力提交
+  helpMBox: (data, headers = {}) => host_user_instance.get("user/activity/helpMBox", {
+    params: data
+  }),
+  //助力邀请好友列表
+  userInviteList: (data, headers = {}) => host_user_instance.get("user/activity/inviteList", {
+    params: data
+  }),
+  mBoxDetail: (data, headers = {}) => host_user_instance.get("user/activity/mBoxDetail", {
+    params: data
+  }),
+  //cbkb兑换模块
+  getCbkbSwapInfo: (data, headers = {}) => host_user_instance.get("user/cloudwallet/getCbkbSwapInfo", {
+    params: data
+  }),
+  swapBkb: (data, headers = {}) => host_user_instance.get("user/cloudwallet/swapBkb", {
+    params: data
+  }),
+  //BKB空投
+  getAirDropCount: (data, headers = {}) => host_user_instance.post("user/cloudwallet/getAirDropCount", data),
+  getAirDrop: (data, headers = {}) => host_user_instance.post("user/cloudwallet/getAirDrop", data),
+  // 交易挖矿
+  miningInfo: (data, headers = {}) => host_user_instance.post("swap/mining/info", data),
+  historyPhase: (data, headers = {}) => host_user_instance.post("swap/mining/historyPhase", data),
+  receiveAward: (data, headers = {}) => host_user_instance.post("swap/mining/receiveAward", data),
+  // 邀请好友
+  getInviteList: (data, headers = {}) => host_user_instance.post('user/friendship/getInviteList', data),
+  certifyFriendship: (data, headers = {}) => host_user_instance.post('user/friendship/certifyFriendship', data),
+  activityDoneRewardList: (data, headers = {}) => host_user_instance.post('swap/mining/activityDoneRewardList', data),
+  //质押bkb
+  // 质押池列表
+  poolList: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/poolList', data),
+  // 我的质押池列表
+  myPool: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/myPool', data),
+  // 历史质押池列表
+  stakeHistory: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/stakeHistory', data),
+  // 取消质押
+  receiveStakingReward: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/receiveStakingReward', data),
+  //确认质押
+  staking: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/staking', data),
+  //获取token
+  handleGetToken: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/getToken', data),
+  //trading 交易大赛
+  tradingGetList: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/getList', data),
+  //待领取
+  tradingWaitClaim: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/waitClaim', data),
+  //领取
+  tradingClaim: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/claim', data),
+  //历史汇总
+  tradingSummary: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/summary', data),
+  //历史list
+  tradingHistory: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/history', data),
+  // 新手福利
+  welfareSignIn: (data, headers = {}) => host_user_instance.post('user/welfare/signIn', data),
+  // 签到
+  getRewardDetail: (data, headers = {}) => host_user_instance.post('user/welfare/getRewardDetail', data),
+  //每日抽奖详情
+  getSignInDetailByUser: (data, headers = {}) => host_user_instance.post('user/welfare/getSignInDetailByUser', data),
+  // 获取某人的签到详情
+  getRewardResult: (data, headers = {}) => host_user_instance.post('user/welfare/getRewardResult', data),
+  // 获取抽奖结果
+  // getRewardDetail: (data,headers={}) => host_user_instance.post('user/welfare/getRewardDetail',data), // 每日抽奖详情页
+  pushPapersIn: (data, headers = {}) => host_user_instance.post('user/welfare/pushPapersIn', data),
+  // 立即投入
+  getJoinTeleJob: (data, headers = {}) => host_user_instance.post('user/welfare/getJoinTeleJob', data),
+  // 加入电报
+  getFirstSwapJob: (data, headers = {}) => host_user_instance.post('user/welfare/getFirstSwapJob', data),
+  // swap首次交易
+  getFirst50UJob: (data, headers = {}) => host_user_instance.post('user/welfare/getFirst50UJob', data),
+  // 领取50u
+  newUserRewardJobs: (data, headers = {}) => host_user_instance.post('user/welfare/newUserRewardJobs', data),
+  // 新手任务
+  // NFTMint
+  //默认兑换列表
+  nftMintGetInfo: (data, headers = {}) => host_user_instance.post("/operation/nftmint/getInfo", data),
+  //建立邀请关系
+  nftMintInvite: (data, headers = {}) => host_user_instance.post("/operation/nftmint/invite", data),
+  //获取TX
+  buildNftMintTxs: (data, headers = {}) => host_user_instance.post("/operation/nftmint/buildNftMintTxs", data),
+  //签名token
+  nftMintGetToken: (data, headers = {}) => host_user_instance.post("/operation/nftmint/getToken", data),
+  //获取空头获奖列表
+  nftMintLotteryList: (data, headers = {}) => host_user_instance.post("/operation/nftmint/LotteryList", data),
+  //退款TX
+  nftMintbuildNftMeltTxs: (data, headers = {}) => host_user_instance.post("/operation/nftmint/buildNftMeltTxs", data),
+  //获取持有的NTT列表
+  nftMintnftList: (data, headers = {}) => host_user_instance.post("/operation/nftmint/nftList", data),
+  //查看Mint的广播状态
+  nftMintcheckTransaction: (data, headers = {}) => host_user_instance.post("/operation/nftmint/checkTransaction", data)
+};
+
+/***/ }),
+
+/***/ 122:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "transfer16", function() { return transfer16; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wallet", function() { return wallet; });
+/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(24);
+/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(eventemitter3__WEBPACK_IMPORTED_MODULE_0__);
+// import detectEthereumProvider from '@metamask/detect-provider';
+ // import { transfer16 } from '../common/common'
+
+function transfer16(val = '1') {
+  val = isNaN(Number(val)) ? 1 : Number(val);
+  return "0x" + val.toString(16);
+}
+
+class Wallet extends eventemitter3__WEBPACK_IMPORTED_MODULE_0___default.a {
+  constructor() {
+    super();
+    this._accounts = [];
+    this._chainId = 0;
+    this._walletPlatform = 'bitkeep';
+  } // 是否安装 bitkeep 钱包
+
+
+  isInstall() {
+    const isInstalled = !!window.ethereum && !!window.isBitKeep;
+    !isInstalled && console.warn("no installed bitkeep");
+    return isInstalled;
+  } // 是否连接中
+
+
+  isConnected() {
+    return window.ethereum && window.ethereum.isConnected();
+  } // 连接钱包
+
+
+  async connect() {
+    if (this.isInstall()) {
+      const Accounts = await ethereum.request({
+        method: 'eth_requestAccounts'
+      });
+      this.initEvent();
+      return Accounts[0];
+    } else {
+      return {
+        status: 50001,
+        message: 'please download bitkeep chrome '
+      };
+    }
+  } // 切换地址
+
+
+  selectedAddress() {
+    return window.ethereum && ethereum.selectedAddress;
+  } // 获取钱包信息
+
+
+  getWalletInfo() {
+    return {
+      address: window.ethereum && ethereum.selectedAddress,
+      chainName: window.ethereum && window.ethereum.chainName || 'eth',
+      chainId: window.ethereum && window.ethereum.chainId || '1',
+      walletId: '',
+      walletPlatform: this.getWalletPlatform()
+    };
+  } // 获取 chain ID
+
+
+  async getChainId() {
+    return window.ethereum && window.ethereum.request({
+      method: 'eth_chainId'
+    });
+  } // 切换 chain ID
+
+
+  async switchChainId(chainId, address) {
+    if (!address) {
+      const [nAddress] = await this.getAccounts();
+      address = nAddress;
+    }
+
+    return window.ethereum && window.ethereum.request({
+      method: 'wallet_switchEthereumChain',
+      params: [{
+        chainId: transfer16(chainId)
+      }, address]
+    });
+  } // 获取钱包标识
+
+
+  getWalletPlatform() {
+    return this._walletPlatform;
+  } // 获取钱包账号
+
+
+  async getAccounts() {
+    return window.ethereum ? window.ethereum.request({
+      method: "eth_accounts"
+    }) : [];
+  } // 登录签名
+
+
+  async LoginSign(dataToSign, address) {
+    console.log(dataToSign, address, 'dataToSign, addressdataToSign, addressdataToSign, address');
+    return await window.ethereum.request({
+      method: "personal_sign",
+      params: [dataToSign, address],
+      from: address
+    }); // return await window.ethereum.signMessage({ data: dataToSign })
+  }
+
+  initEvent() {
+    ethereum.removeAllListeners && ethereum.removeAllListeners(); // ethereum.removeListener && ethereum.removeListener('chainChanged')
+
+    ethereum.on('accountsChanged', async (...arg) => {
+      this.emit('accountsChanged', ...arg);
+    });
+    ethereum.on('chainChanged', async (...arg) => {
+      this.emit('chainChanged', ...arg);
+    });
+  }
+
+}
+
+const wallet = new Wallet();
+
+/***/ }),
+
+/***/ 256:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(279);
+var content = __webpack_require__(364);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add CSS to SSR context
-var add = __webpack_require__(9).default
+var add = __webpack_require__(6).default
 module.exports.__inject__ = function (context) {
   add("553626c4", content, true, context)
 };
 
 /***/ }),
 
-/***/ 278:
+/***/ 363:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_02132f64_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(194);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_02132f64_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(256);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_02132f64_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_02132f64_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_02132f64_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_02132f64_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 279:
+/***/ 364:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(8);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(5);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, ".theme-light .textPrimary0[data-v-02132f64] {\n  color: #0E0E0E;\n}\n.theme-light .textSecond1[data-v-02132f64] {\n  color: #515556;\n}\n.theme-light .textSecond2[data-v-02132f64] {\n  color: #919899;\n}\n.theme-light .textSecond3[data-v-02132f64] {\n  color: #9CA5B3;\n}\n.theme-light .colorDisable[data-v-02132f64] {\n  background-color: #DADBDE;\n}\n.theme-light .colorLine[data-v-02132f64] {\n  background-color: #F4F5FA;\n}\n.theme-light .colorLine1[data-v-02132f64] {\n  background-color: #F0F0F0;\n}\n.theme-light .colorBackground0[data-v-02132f64] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackground1[data-v-02132f64] {\n  background-color: #fff;\n}\n.theme-light .colorBackground2[data-v-02132f64] {\n  background-color: #F3F5F6;\n}\n.theme-light .colorBackground3[data-v-02132f64] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackgroundWhite[data-v-02132f64] {\n  background-color: #fff;\n}\n.theme-light .colorBackgroundPrimary[data-v-02132f64] {\n  background-color: #7524f9;\n}\n.theme-light .colorBackgroundColorSecond11[data-v-02132f64] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-light .colorBackgroundSecond01[data-v-02132f64] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorBackgroundTextPrimary0[data-v-02132f64] {\n  background-color: #0E0E0E;\n}\n.theme-light .colorPrimary[data-v-02132f64] {\n  color: #7524f9;\n}\n.theme-light .colorSecond01[data-v-02132f64] {\n  color: #2AC8DD;\n}\n.theme-light .backgroundSecond01[data-v-02132f64] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorSecond02[data-v-02132f64] {\n  color: #F04A4A;\n}\n.theme-light .colorSecond03[data-v-02132f64] {\n  color: #26BC80;\n}\n.theme-light .colorSecond04[data-v-02132f64] {\n  color: #FF8146;\n}\n.theme-light .colorSecond05[data-v-02132f64] {\n  color: #2F80ED;\n}\n.theme-light .colorSecond06[data-v-02132f64] {\n  color: #4A2FD2;\n}\n.theme-light .colorSecond07[data-v-02132f64] {\n  color: #F04E98;\n}\n.theme-light .colorSecond08[data-v-02132f64] {\n  color: #FFB800;\n}\n.theme-light .colorBlack[data-v-02132f64] {\n  color: #000;\n}\n.theme-light .colorwhite[data-v-02132f64] {\n  color: #fff;\n}\n.theme-light .colorSecond10[data-v-02132f64] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-light .colorSecond11[data-v-02132f64] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-light .colorSecond12[data-v-02132f64] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-light .colorSecond13[data-v-02132f64] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-light .colorSecond14[data-v-02132f64] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-light .colorSecond15[data-v-02132f64] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-light .colorSecond18[data-v-02132f64] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-dark .textPrimary0[data-v-02132f64] {\n  color: #DFE0E3;\n}\n.theme-dark .textSecond1[data-v-02132f64] {\n  color: #9CA5B3;\n}\n.theme-dark .textSecond2[data-v-02132f64] {\n  color: #7F828F;\n}\n.theme-dark .textSecond3[data-v-02132f64] {\n  color: #6D707D;\n}\n.theme-dark .colorDisable[data-v-02132f64] {\n  background-color: #5F626D;\n}\n.theme-dark .colorLine[data-v-02132f64] {\n  background-color: #1F212E;\n}\n.theme-dark .colorLine1[data-v-02132f64] {\n  background-color: #2A2D3D;\n}\n.theme-dark .colorBackground0[data-v-02132f64] {\n  background-color: #0A0E1F;\n}\n.theme-dark .colorBackground1[data-v-02132f64] {\n  background-color: #171A26;\n}\n.theme-dark .colorBackground2[data-v-02132f64] {\n  background-color: #212331;\n}\n.theme-dark .colorBackground3[data-v-02132f64] {\n  background-color: #212331;\n}\n.theme-dark .colorBackgroundPrimary[data-v-02132f64] {\n  background-color: #7524f9;\n}\n.theme-dark .colorBackgroundColorSecond11[data-v-02132f64] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorBackgroundSecond01[data-v-02132f64] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorBackgroundTextPrimary0[data-v-02132f64] {\n  background-color: #DFE0E3;\n}\n.theme-dark .colorPrimary[data-v-02132f64] {\n  color: #7524f9;\n}\n.theme-dark .colorSecond01[data-v-02132f64] {\n  color: #2AC8DD;\n}\n.theme-dark .backgroundSecond01[data-v-02132f64] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorSecond02[data-v-02132f64] {\n  color: #F04A4A;\n}\n.theme-dark .colorSecond03[data-v-02132f64] {\n  color: #26BC80;\n}\n.theme-dark .colorSecond04[data-v-02132f64] {\n  color: #FF8146;\n}\n.theme-dark .colorSecond05[data-v-02132f64] {\n  color: #2F80ED;\n}\n.theme-dark .colorSecond06[data-v-02132f64] {\n  color: #4A2FD2;\n}\n.theme-dark .colorSecond07[data-v-02132f64] {\n  color: #F04E98;\n}\n.theme-dark .colorSecond08[data-v-02132f64] {\n  color: #FFB800;\n}\n.theme-dark .colorBlack[data-v-02132f64] {\n  color: #000;\n}\n.theme-dark .colorwhite[data-v-02132f64] {\n  color: #fff;\n}\n.theme-dark .colorSecond10[data-v-02132f64] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-dark .colorSecond11[data-v-02132f64] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorSecond12[data-v-02132f64] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-dark .colorSecond13[data-v-02132f64] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-dark .colorSecond14[data-v-02132f64] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-dark .colorSecond15[data-v-02132f64] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-dark .colorSecond18[data-v-02132f64] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-light .staking-warp-amount-input[data-v-02132f64] {\n  border: 0.03rem solid #F0F0F0;\n}\n.theme-light .staking-wrap-box-pool-duration-smallBox[data-v-02132f64] {\n  border: 0.03rem solid #F0F0F0;\n}\n.theme-light .wrap-bottom[data-v-02132f64] {\n  border-top: 0.03rem solid #F0F0F0;\n}\n.theme-dark .staking-warp-amount-input[data-v-02132f64] {\n  border: 0.03rem solid #2A2D3D;\n}\n.theme-dark .staking-wrap-box-pool-duration-smallBox[data-v-02132f64] {\n  border: 0.03rem solid #2A2D3D;\n}\n.theme-dark .wrap-bottom[data-v-02132f64] {\n  border-top: 0.03rem solid #2A2D3D;\n}\n.loading[data-v-02132f64] {\n  min-height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.addPool[data-v-02132f64] {\n  padding: 0 0.43rem;\n  min-height: 100vh;\n}\n.addPool .staking-wrap-box-pool-title[data-v-02132f64] {\n  display: flex;\n  height: 1.44rem;\n  align-items: center;\n  position: relative;\n}\n.addPool .staking-wrap-box-pool-title img[data-v-02132f64] {\n  width: 0.8rem;\n  height: 0.8rem;\n  display: inline-block;\n  vertical-align: middle;\n}\n.addPool .staking-wrap-box-pool-title-flex[data-v-02132f64] {\n  display: flex;\n  justify-content: space-between;\n  margin-left: 0.27rem;\n  align-items: center;\n}\n.addPool .staking-wrap-box-pool-title-flex .staking-wrap-box-pool-title-left[data-v-02132f64] :first-child {\n  font-weight: 600;\n  font-size: 0.43rem;\n}\n.addPool .staking-wrap-box-pool-title-flex .staking-wrap-box-pool-title-right[data-v-02132f64] {\n  text-align: right;\n  position: absolute;\n  right: 0;\n}\n.addPool .staking-wrap-box-pool-title-flex .staking-wrap-box-pool-title-right[data-v-02132f64] :first-child {\n  font-size: 0.32rem;\n}\n.addPool .staking-wrap-box-pool-title-flex .staking-wrap-box-pool-title-right[data-v-02132f64] :last-child {\n  font-size: 0.43rem;\n  margin-top: 0.05rem;\n}\n.addPool .staking-wrap-box-pool-duration[data-v-02132f64] {\n  margin-top: 0.53rem;\n  font-size: 0.37rem;\n}\n.addPool .staking-wrap-box-pool-duration-box[data-v-02132f64] {\n  margin-top: 0.27rem;\n}\n.addPool .staking-wrap-box-pool-duration-box .staking-wrap-box-pool-duration-smallBox[data-v-02132f64] {\n  display: inline-block;\n  text-align: center;\n  height: 0.75rem;\n  width: 1.6rem;\n  line-height: 0.75rem;\n  border-radius: 0.11rem;\n  margin-right: 0.21rem;\n  font-size: 0.43rem;\n}\n.addPool .staking-wrap-box-pool-duration-box .setBorderColor[data-v-02132f64] {\n  border: 0.03rem solid #7524f9;\n  color: #7524f9;\n}\n.addPool .staking-warp-amount[data-v-02132f64] {\n  display: flex;\n  justify-content: space-between;\n  margin-top: 0.8rem;\n}\n.addPool .staking-warp-amount[data-v-02132f64] :first-child {\n  font-size: 0.37rem;\n}\n.addPool .staking-warp-amount[data-v-02132f64] :last-child {\n  font-size: 0.32rem;\n}\n.addPool .staking-warp-amount-input[data-v-02132f64] {\n  width: 100%;\n  height: 1.33rem;\n  line-height: 1.33rem;\n  border-radius: 0.21rem;\n  margin-top: 0.27rem;\n  display: flex;\n  align-items: center;\n}\n.addPool .staking-warp-amount-input input[data-v-02132f64] {\n  width: 55%;\n  height: 1.33rem;\n  float: left;\n  padding-left: 0.4rem;\n  font-size: 0.43rem;\n  display: block;\n  background: none;\n  outline: none;\n  border: none;\n}\n.addPool .staking-warp-amount-input .staking-warp-amount-input-right[data-v-02132f64] {\n  float: right;\n  line-height: 1.33rem;\n}\n.addPool .staking-warp-amount-input .staking-warp-amount-input-right .right[data-v-02132f64] {\n  float: left;\n  padding: 0 0.53rem 0 0.27rem;\n  font-size: 0.43rem;\n}\n.addPool .staking-warp-amount-input .staking-warp-amount-input-right .line[data-v-02132f64] {\n  width: 0.03rem;\n  height: 0.48rem;\n  float: left;\n  margin-top: 0.45rem;\n}\n.addPool .staking-warp-amount-input .staking-warp-amount-input-right .max[data-v-02132f64] {\n  float: left;\n  padding: 0 0.45rem 0 0.53rem;\n  font-size: 0.43rem;\n}\n.addPool .staking-limiation[data-v-02132f64] {\n  margin-top: 0.8rem;\n  font-size: 0.37rem;\n}\n.addPool .staking-min[data-v-02132f64] {\n  display: flex;\n  justify-content: space-between;\n  font-size: 0.37rem;\n  margin-top: 0.27rem;\n}\n.addPool .setColorLine[data-v-02132f64] {\n  width: 100%;\n  height: 0.03rem;\n  margin-top: 0.8rem;\n}\n.addPool .staking-summry[data-v-02132f64] {\n  margin-top: 1.07rem;\n  padding-bottom: 2.67rem;\n}\n.addPool .staking-summry .Summary[data-v-02132f64] {\n  font-weight: 600;\n  font-size: 0.43rem;\n}\n.addPool .staking-summry .staking-summary-box[data-v-02132f64] {\n  width: 100%;\n  border-radius: 0.21rem;\n  margin-top: 0.27rem;\n}\n.addPool .staking-summry .staking-summary-box ul[data-v-02132f64] {\n  padding: 0.4rem;\n}\n.addPool .staking-summry .staking-summary-box ul li[data-v-02132f64] {\n  font-size: 0.37rem;\n  position: relative;\n}\n.addPool .staking-summry .staking-summary-box ul li .dian[data-v-02132f64] {\n  width: 0.16rem;\n  height: 0.16rem;\n  border-radius: 50%;\n  display: inline-block;\n  vertical-align: middle;\n  margin-right: 0.27rem;\n}\n.addPool .staking-summry .staking-summary-box ul li[data-v-02132f64] :last-child {\n  position: absolute;\n  right: 0;\n}\n.addPool .staking-summry .staking-summary-box ul .setLeftLine[data-v-02132f64] {\n  width: 0.05rem;\n  height: 0.75rem;\n  margin-left: 0.05rem;\n  margin-top: 0.03rem;\n}\n.addPool .staking-summry .staking-summary-box ul .setLeftColorLine[data-v-02132f64] {\n  height: 2.16rem;\n  line-height: 2.16rem;\n  border-left: 0.05rem solid #2AC8DD;\n  margin-left: 0.05rem;\n}\n.addPool .staking-summry .staking-summary-box ul .setLeftColorLine[data-v-02132f64] :first-child {\n  margin-left: 0.48rem;\n}\n.addPool .staking-summry .staking-summary-box .setColorLine1[data-v-02132f64] {\n  height: 0.03rem;\n  margin: 0 0.43rem 0.4rem;\n  box-sizing: border-box;\n}\n.addPool .staking-summry .staking-summary-box .staking-warp-Interests[data-v-02132f64] {\n  display: flex;\n  justify-content: space-between;\n  padding: 0 0.4rem 0.4rem;\n  font-size: 0.37rem;\n}\n.setBottomLine[data-v-02132f64] {\n  width: 100%;\n  height: 0.03rem;\n}\n.wrap-bottom[data-v-02132f64] {\n  width: 100%;\n  bottom: 0;\n  z-index: 99;\n  position: fixed;\n  padding: 0.29rem 0.96rem 0.91rem;\n  box-sizing: border-box;\n}\n.wrap-bottom .staking-wrap-box-pool-stake-now[data-v-02132f64] {\n  background: #7524f9;\n  color: #fff;\n}\n.wrap-bottom .setOpacity[data-v-02132f64] {\n  opacity: 0.3;\n}\n.wrap-bottom .swap-btn[data-v-02132f64] {\n  z-index: 0;\n  color: #fff;\n  height: 1.33rem;\n  border-radius: 0.27rem;\n  text-align: center;\n  line-height: 1.17rem;\n  border: none;\n  font-weight: 500;\n  font-size: 0.43rem;\n  width: 8.08rem;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, ".theme-light .textPrimary0[data-v-02132f64] {\n  color: #0E0E0E;\n}\n.theme-light .textSecond1[data-v-02132f64] {\n  color: #515556;\n}\n.theme-light .textSecond2[data-v-02132f64] {\n  color: #919899;\n}\n.theme-light .textSecond3[data-v-02132f64] {\n  color: #9CA5B3;\n}\n.theme-light .colorDisable[data-v-02132f64] {\n  background-color: #DADBDE;\n}\n.theme-light .colorLine[data-v-02132f64] {\n  background-color: #F4F5FA;\n}\n.theme-light .colorLine1[data-v-02132f64] {\n  background-color: #F0F0F0;\n}\n.theme-light .colorBackground0[data-v-02132f64] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackground1[data-v-02132f64] {\n  background-color: #fff;\n}\n.theme-light .colorBackground2[data-v-02132f64] {\n  background-color: #F3F5F6;\n}\n.theme-light .colorBackground3[data-v-02132f64] {\n  background-color: #F8F9FA;\n}\n.theme-light .colorBackgroundWhite[data-v-02132f64] {\n  background-color: #fff;\n}\n.theme-light .colorBackgroundPrimary[data-v-02132f64] {\n  background-color: #7524f9;\n}\n.theme-light .colorBackgroundColorSecond11[data-v-02132f64] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-light .colorBackgroundSecond01[data-v-02132f64] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorBackgroundTextPrimary0[data-v-02132f64] {\n  background-color: #0E0E0E;\n}\n.theme-light .colorPrimary[data-v-02132f64] {\n  color: #7524f9;\n}\n.theme-light .colorSecond01[data-v-02132f64] {\n  color: #2AC8DD;\n}\n.theme-light .backgroundSecond01[data-v-02132f64] {\n  background-color: #2AC8DD;\n}\n.theme-light .colorSecond02[data-v-02132f64] {\n  color: #F04A4A;\n}\n.theme-light .colorSecond03[data-v-02132f64] {\n  color: #26BC80;\n}\n.theme-light .colorSecond04[data-v-02132f64] {\n  color: #FF8146;\n}\n.theme-light .colorSecond05[data-v-02132f64] {\n  color: #2F80ED;\n}\n.theme-light .colorSecond06[data-v-02132f64] {\n  color: #4A2FD2;\n}\n.theme-light .colorSecond07[data-v-02132f64] {\n  color: #F04E98;\n}\n.theme-light .colorSecond08[data-v-02132f64] {\n  color: #FFB800;\n}\n.theme-light .colorBlack[data-v-02132f64] {\n  color: #000;\n}\n.theme-light .colorwhite[data-v-02132f64] {\n  color: #fff;\n}\n.theme-light .colorSecond10[data-v-02132f64] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-light .colorSecond11[data-v-02132f64] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-light .colorSecond12[data-v-02132f64] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-light .colorSecond13[data-v-02132f64] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-light .colorSecond14[data-v-02132f64] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-light .colorSecond15[data-v-02132f64] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-light .colorSecond18[data-v-02132f64] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-dark .textPrimary0[data-v-02132f64] {\n  color: #DFE0E3;\n}\n.theme-dark .textSecond1[data-v-02132f64] {\n  color: #9CA5B3;\n}\n.theme-dark .textSecond2[data-v-02132f64] {\n  color: #7F828F;\n}\n.theme-dark .textSecond3[data-v-02132f64] {\n  color: #6D707D;\n}\n.theme-dark .colorDisable[data-v-02132f64] {\n  background-color: #5F626D;\n}\n.theme-dark .colorLine[data-v-02132f64] {\n  background-color: #1F212E;\n}\n.theme-dark .colorLine1[data-v-02132f64] {\n  background-color: #2A2D3D;\n}\n.theme-dark .colorBackground0[data-v-02132f64] {\n  background-color: #0A0E1F;\n}\n.theme-dark .colorBackground1[data-v-02132f64] {\n  background-color: #171A26;\n}\n.theme-dark .colorBackground2[data-v-02132f64] {\n  background-color: #212331;\n}\n.theme-dark .colorBackground3[data-v-02132f64] {\n  background-color: #212331;\n}\n.theme-dark .colorBackgroundPrimary[data-v-02132f64] {\n  background-color: #7524f9;\n}\n.theme-dark .colorBackgroundColorSecond11[data-v-02132f64] {\n  background-color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorBackgroundSecond01[data-v-02132f64] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorBackgroundTextPrimary0[data-v-02132f64] {\n  background-color: #DFE0E3;\n}\n.theme-dark .colorPrimary[data-v-02132f64] {\n  color: #7524f9;\n}\n.theme-dark .colorSecond01[data-v-02132f64] {\n  color: #2AC8DD;\n}\n.theme-dark .backgroundSecond01[data-v-02132f64] {\n  background-color: #2AC8DD;\n}\n.theme-dark .colorSecond02[data-v-02132f64] {\n  color: #F04A4A;\n}\n.theme-dark .colorSecond03[data-v-02132f64] {\n  color: #26BC80;\n}\n.theme-dark .colorSecond04[data-v-02132f64] {\n  color: #FF8146;\n}\n.theme-dark .colorSecond05[data-v-02132f64] {\n  color: #2F80ED;\n}\n.theme-dark .colorSecond06[data-v-02132f64] {\n  color: #4A2FD2;\n}\n.theme-dark .colorSecond07[data-v-02132f64] {\n  color: #F04E98;\n}\n.theme-dark .colorSecond08[data-v-02132f64] {\n  color: #FFB800;\n}\n.theme-dark .colorBlack[data-v-02132f64] {\n  color: #000;\n}\n.theme-dark .colorwhite[data-v-02132f64] {\n  color: #fff;\n}\n.theme-dark .colorSecond10[data-v-02132f64] {\n  color: rgba(73,91,255,0.1);\n}\n.theme-dark .colorSecond11[data-v-02132f64] {\n  color: rgba(28,189,181,0.1);\n}\n.theme-dark .colorSecond12[data-v-02132f64] {\n  color: rgba(240,74,74,0.1);\n}\n.theme-dark .colorSecond13[data-v-02132f64] {\n  color: rgba(38,188,128,0.1);\n}\n.theme-dark .colorSecond14[data-v-02132f64] {\n  color: rgba(255,129,70,0.1);\n}\n.theme-dark .colorSecond15[data-v-02132f64] {\n  color: rgba(47,128,237,0.1);\n}\n.theme-dark .colorSecond18[data-v-02132f64] {\n  background-color: rgba(255,184,0,0.1);\n}\n.theme-light .Background0[data-v-02132f64] {\n  background-color: #fafafa;\n}\n.theme-light .Background0[data-v-02132f64] {\n  background-color: #F8F8F9;\n}\n.theme-dark .Background0[data-v-02132f64] {\n  background-color: #17171A;\n}\n.theme-dark .Background1[data-v-02132f64] {\n  background-color: #202024;\n}\n.theme-light .staking-warp-amount-input[data-v-02132f64] {\n  border: 0.03rem solid #F0F0F0;\n}\n.theme-light .staking-wrap-box-pool-duration-smallBox[data-v-02132f64] {\n  border: 0.03rem solid #F0F0F0;\n}\n.theme-light .wrap-bottom[data-v-02132f64] {\n  border-top: 0.03rem solid #F0F0F0;\n}\n.theme-dark .staking-warp-amount-input[data-v-02132f64] {\n  border: 0.03rem solid #2A2D3D;\n}\n.theme-dark .staking-wrap-box-pool-duration-smallBox[data-v-02132f64] {\n  border: 0.03rem solid #2A2D3D;\n}\n.theme-dark .wrap-bottom[data-v-02132f64] {\n  border-top: 0.03rem solid #2A2D3D;\n}\n.loading[data-v-02132f64] {\n  min-height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.addPool[data-v-02132f64] {\n  padding: 0 0.43rem;\n  min-height: 100vh;\n}\n.addPool .staking-wrap-box-pool-title[data-v-02132f64] {\n  display: flex;\n  height: 1.44rem;\n  align-items: center;\n  position: relative;\n}\n.addPool .staking-wrap-box-pool-title img[data-v-02132f64] {\n  width: 0.8rem;\n  height: 0.8rem;\n  display: inline-block;\n  vertical-align: middle;\n}\n.addPool .staking-wrap-box-pool-title-flex[data-v-02132f64] {\n  display: flex;\n  justify-content: space-between;\n  margin-left: 0.27rem;\n  align-items: center;\n}\n.addPool .staking-wrap-box-pool-title-flex .staking-wrap-box-pool-title-left[data-v-02132f64] :first-child {\n  font-weight: 600;\n  font-size: 0.43rem;\n}\n.addPool .staking-wrap-box-pool-title-flex .staking-wrap-box-pool-title-right[data-v-02132f64] {\n  text-align: right;\n  position: absolute;\n  right: 0;\n}\n.addPool .staking-wrap-box-pool-title-flex .staking-wrap-box-pool-title-right[data-v-02132f64] :first-child {\n  font-size: 0.32rem;\n}\n.addPool .staking-wrap-box-pool-title-flex .staking-wrap-box-pool-title-right[data-v-02132f64] :last-child {\n  font-size: 0.43rem;\n  margin-top: 0.05rem;\n}\n.addPool .staking-wrap-box-pool-duration[data-v-02132f64] {\n  margin-top: 0.53rem;\n  font-size: 0.37rem;\n}\n.addPool .staking-wrap-box-pool-duration-box[data-v-02132f64] {\n  margin-top: 0.27rem;\n}\n.addPool .staking-wrap-box-pool-duration-box .staking-wrap-box-pool-duration-smallBox[data-v-02132f64] {\n  display: inline-block;\n  text-align: center;\n  height: 0.75rem;\n  width: 1.6rem;\n  line-height: 0.75rem;\n  border-radius: 0.11rem;\n  margin-right: 0.21rem;\n  font-size: 0.43rem;\n}\n.addPool .staking-wrap-box-pool-duration-box .setBorderColor[data-v-02132f64] {\n  border: 0.03rem solid #7524f9;\n  color: #7524f9;\n}\n.addPool .staking-warp-amount[data-v-02132f64] {\n  display: flex;\n  justify-content: space-between;\n  margin-top: 0.8rem;\n}\n.addPool .staking-warp-amount[data-v-02132f64] :first-child {\n  font-size: 0.37rem;\n}\n.addPool .staking-warp-amount[data-v-02132f64] :last-child {\n  font-size: 0.32rem;\n}\n.addPool .staking-warp-amount-input[data-v-02132f64] {\n  width: 100%;\n  height: 1.33rem;\n  line-height: 1.33rem;\n  border-radius: 0.21rem;\n  margin-top: 0.27rem;\n  display: flex;\n  align-items: center;\n}\n.addPool .staking-warp-amount-input input[data-v-02132f64] {\n  width: 55%;\n  height: 1.33rem;\n  float: left;\n  padding-left: 0.4rem;\n  font-size: 0.43rem;\n  display: block;\n  background: none;\n  outline: none;\n  border: none;\n}\n.addPool .staking-warp-amount-input .staking-warp-amount-input-right[data-v-02132f64] {\n  float: right;\n  line-height: 1.33rem;\n}\n.addPool .staking-warp-amount-input .staking-warp-amount-input-right .right[data-v-02132f64] {\n  float: left;\n  padding: 0 0.53rem 0 0.27rem;\n  font-size: 0.43rem;\n}\n.addPool .staking-warp-amount-input .staking-warp-amount-input-right .line[data-v-02132f64] {\n  width: 0.03rem;\n  height: 0.48rem;\n  float: left;\n  margin-top: 0.45rem;\n}\n.addPool .staking-warp-amount-input .staking-warp-amount-input-right .max[data-v-02132f64] {\n  float: left;\n  padding: 0 0.45rem 0 0.53rem;\n  font-size: 0.43rem;\n}\n.addPool .staking-limiation[data-v-02132f64] {\n  margin-top: 0.8rem;\n  font-size: 0.37rem;\n}\n.addPool .staking-min[data-v-02132f64] {\n  display: flex;\n  justify-content: space-between;\n  font-size: 0.37rem;\n  margin-top: 0.27rem;\n}\n.addPool .setColorLine[data-v-02132f64] {\n  width: 100%;\n  height: 0.03rem;\n  margin-top: 0.8rem;\n}\n.addPool .staking-summry[data-v-02132f64] {\n  margin-top: 1.07rem;\n  padding-bottom: 2.67rem;\n}\n.addPool .staking-summry .Summary[data-v-02132f64] {\n  font-weight: 600;\n  font-size: 0.43rem;\n}\n.addPool .staking-summry .staking-summary-box[data-v-02132f64] {\n  width: 100%;\n  border-radius: 0.21rem;\n  margin-top: 0.27rem;\n}\n.addPool .staking-summry .staking-summary-box ul[data-v-02132f64] {\n  padding: 0.4rem;\n}\n.addPool .staking-summry .staking-summary-box ul li[data-v-02132f64] {\n  font-size: 0.37rem;\n  position: relative;\n}\n.addPool .staking-summry .staking-summary-box ul li .dian[data-v-02132f64] {\n  width: 0.16rem;\n  height: 0.16rem;\n  border-radius: 50%;\n  display: inline-block;\n  vertical-align: middle;\n  margin-right: 0.27rem;\n}\n.addPool .staking-summry .staking-summary-box ul li[data-v-02132f64] :last-child {\n  position: absolute;\n  right: 0;\n}\n.addPool .staking-summry .staking-summary-box ul .setLeftLine[data-v-02132f64] {\n  width: 0.05rem;\n  height: 0.75rem;\n  margin-left: 0.05rem;\n  margin-top: 0.03rem;\n}\n.addPool .staking-summry .staking-summary-box ul .setLeftColorLine[data-v-02132f64] {\n  height: 2.16rem;\n  line-height: 2.16rem;\n  border-left: 0.05rem solid #2AC8DD;\n  margin-left: 0.05rem;\n}\n.addPool .staking-summry .staking-summary-box ul .setLeftColorLine[data-v-02132f64] :first-child {\n  margin-left: 0.48rem;\n}\n.addPool .staking-summry .staking-summary-box .setColorLine1[data-v-02132f64] {\n  height: 0.03rem;\n  margin: 0 0.43rem 0.4rem;\n  box-sizing: border-box;\n}\n.addPool .staking-summry .staking-summary-box .staking-warp-Interests[data-v-02132f64] {\n  display: flex;\n  justify-content: space-between;\n  padding: 0 0.4rem 0.4rem;\n  font-size: 0.37rem;\n}\n.setBottomLine[data-v-02132f64] {\n  width: 100%;\n  height: 0.03rem;\n}\n.wrap-bottom[data-v-02132f64] {\n  width: 100%;\n  bottom: 0;\n  z-index: 99;\n  position: fixed;\n  padding: 0.29rem 0.96rem 0.91rem;\n  box-sizing: border-box;\n}\n.wrap-bottom .staking-wrap-box-pool-stake-now[data-v-02132f64] {\n  background: #7524f9;\n  color: #fff;\n}\n.wrap-bottom .setOpacity[data-v-02132f64] {\n  opacity: 0.3;\n}\n.wrap-bottom .swap-btn[data-v-02132f64] {\n  z-index: 0;\n  color: #fff;\n  height: 1.33rem;\n  border-radius: 0.27rem;\n  text-align: center;\n  line-height: 1.17rem;\n  border: none;\n  font-weight: 500;\n  font-size: 0.43rem;\n  width: 8.08rem;\n}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
 
-/***/ 322:
+/***/ 410:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69,17 +365,17 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/activity/staking/addPool.vue?vue&type=template&id=02132f64&scoped=true&
 
 // EXTERNAL MODULE: ./api/client.js
-var client = __webpack_require__(70);
+var client = __webpack_require__(107);
 
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(4);
+var external_vuex_ = __webpack_require__(7);
 
 // EXTERNAL MODULE: external "moment"
-var external_moment_ = __webpack_require__(66);
+var external_moment_ = __webpack_require__(103);
 var external_moment_default = /*#__PURE__*/__webpack_require__.n(external_moment_);
 
 // EXTERNAL MODULE: ./pages/activity/staking/wallet.js
-var wallet = __webpack_require__(80);
+var wallet = __webpack_require__(122);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/staking/addPool.vue?vue&type=script&lang=js&
 //
@@ -502,7 +798,7 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(278)
+  var style0 = __webpack_require__(363)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -516,294 +812,11 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "02132f64",
-  "0b7e54d0"
+  "825cae76"
   
 )
 
 /* harmony default export */ var addPool = __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ 70:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return USER_API; });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_3__);
-
-
-
- // const requestlog = debug('bit-activity-request')
-// const responselog = debug('bit-activity-response')
-// const isProduction = process.env.NODE_ENV == "production";
-// const HOST_URL = process.env.HOST_URL || process.env.baseURL
-
-const requestlog =  true ? (...arg) => {
-  console.log("bit-activity-request:", ...arg);
-} : undefined;
-const responselog =  true ? (...arg) => {
-  console.log("bit-activity-response:", ...arg);
-} : undefined;
-const host_user_instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
-  baseURL: "/",
-  timeout: 60000,
-  headers: {
-    token: "",
-    // token: "",
-    language: "en",
-    currency: "",
-    brand: "",
-    os: "",
-    package: "",
-    clientVersion: 1,
-    im: ""
-  }
-});
-host_user_instance.interceptors.request.use(function (config) {
-  requestlog('requestlog:', config);
-
-  if (false) {}
-
-  return config;
-}, function (error) {
-  return Promise.resolve({
-    status: 1
-  });
-}); // Add a response interceptor
-
-host_user_instance.interceptors.response.use(function (response) {
-  return response.data;
-}, function (error) {
-  responselog('responselog:', error); // Do omething with response error
-
-  let message = '网路开了小差';
-
-  if (false) {}
-
-  return Promise.resolve({
-    status: 1,
-    data: message
-  });
-});
-const USER_API = {
-  //盲盒列表
-  mBoxList: (data, headers = {}) => host_user_instance.get("user/activity/mBoxList", {
-    params: data,
-    headers
-  }),
-  // 打开盲盒÷
-  openMBox: (data, headers = {}) => host_user_instance.get("user/activity/openMBox", {
-    params: data
-  }),
-  //盲盒助力提交
-  helpMBox: (data, headers = {}) => host_user_instance.get("user/activity/helpMBox", {
-    params: data
-  }),
-  //助力邀请好友列表
-  userInviteList: (data, headers = {}) => host_user_instance.get("user/activity/inviteList", {
-    params: data
-  }),
-  mBoxDetail: (data, headers = {}) => host_user_instance.get("user/activity/mBoxDetail", {
-    params: data
-  }),
-  //cbkb兑换模块
-  getCbkbSwapInfo: (data, headers = {}) => host_user_instance.get("user/cloudwallet/getCbkbSwapInfo", {
-    params: data
-  }),
-  swapBkb: (data, headers = {}) => host_user_instance.get("user/cloudwallet/swapBkb", {
-    params: data
-  }),
-  //BKB空投
-  getAirDropCount: (data, headers = {}) => host_user_instance.post("user/cloudwallet/getAirDropCount", data),
-  getAirDrop: (data, headers = {}) => host_user_instance.post("user/cloudwallet/getAirDrop", data),
-  // 交易挖矿
-  miningInfo: (data, headers = {}) => host_user_instance.post("swap/mining/info", data),
-  historyPhase: (data, headers = {}) => host_user_instance.post("swap/mining/historyPhase", data),
-  receiveAward: (data, headers = {}) => host_user_instance.post("swap/mining/receiveAward", data),
-  // 邀请好友
-  getInviteList: (data, headers = {}) => host_user_instance.post('user/friendship/getInviteList', data),
-  certifyFriendship: (data, headers = {}) => host_user_instance.post('user/friendship/certifyFriendship', data),
-  activityDoneRewardList: (data, headers = {}) => host_user_instance.post('swap/mining/activityDoneRewardList', data),
-  //质押bkb
-  // 质押池列表
-  poolList: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/poolList', data),
-  // 我的质押池列表
-  myPool: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/myPool', data),
-  // 历史质押池列表
-  stakeHistory: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/stakeHistory', data),
-  // 取消质押
-  receiveStakingReward: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/receiveStakingReward', data),
-  //确认质押
-  staking: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/staking', data),
-  //获取token
-  handleGetToken: (data, headers = {}) => host_user_instance.post('/user/cloudstaking/getToken', data),
-  //trading 交易大赛
-  tradingGetList: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/getList', data),
-  //待领取
-  tradingWaitClaim: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/waitClaim', data),
-  //领取
-  tradingClaim: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/claim', data),
-  //历史汇总
-  tradingSummary: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/summary', data),
-  //历史list
-  tradingHistory: (data, headers = {}) => host_user_instance.post('swap/tradeCompetition/history', data),
-  // 新手福利
-  welfareSignIn: (data, headers = {}) => host_user_instance.post('user/welfare/signIn', data),
-  // 签到
-  getRewardDetail: (data, headers = {}) => host_user_instance.post('user/welfare/getRewardDetail', data),
-  //每日抽奖详情
-  getSignInDetailByUser: (data, headers = {}) => host_user_instance.post('user/welfare/getSignInDetailByUser', data),
-  // 获取某人的签到详情
-  getRewardResult: (data, headers = {}) => host_user_instance.post('user/welfare/getRewardResult', data),
-  // 获取抽奖结果
-  // getRewardDetail: (data,headers={}) => host_user_instance.post('user/welfare/getRewardDetail',data), // 每日抽奖详情页
-  pushPapersIn: (data, headers = {}) => host_user_instance.post('user/welfare/pushPapersIn', data),
-  // 立即投入
-  getJoinTeleJob: (data, headers = {}) => host_user_instance.post('user/welfare/getJoinTeleJob', data),
-  // 加入电报
-  getFirstSwapJob: (data, headers = {}) => host_user_instance.post('user/welfare/getFirstSwapJob', data),
-  // swap首次交易
-  getFirst50UJob: (data, headers = {}) => host_user_instance.post('user/welfare/getFirst50UJob', data),
-  // 领取50u
-  newUserRewardJobs: (data, headers = {}) => host_user_instance.post('user/welfare/newUserRewardJobs', data) // 新手任务
-
-};
-
-/***/ }),
-
-/***/ 80:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "transfer16", function() { return transfer16; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wallet", function() { return wallet; });
-/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(63);
-/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(eventemitter3__WEBPACK_IMPORTED_MODULE_0__);
-// import detectEthereumProvider from '@metamask/detect-provider';
- // import { transfer16 } from '../common/common'
-
-function transfer16(val = '1') {
-  val = isNaN(Number(val)) ? 1 : Number(val);
-  return "0x" + val.toString(16);
-}
-
-class Wallet extends eventemitter3__WEBPACK_IMPORTED_MODULE_0___default.a {
-  constructor() {
-    super();
-    this._accounts = [];
-    this._chainId = 0;
-    this._walletPlatform = 'bitkeep';
-  } // 是否安装 bitkeep 钱包
-
-
-  isInstall() {
-    const isInstalled = !!window.ethereum && !!window.isBitKeep;
-    !isInstalled && console.warn("no installed bitkeep");
-    return isInstalled;
-  } // 是否连接中
-
-
-  isConnected() {
-    return window.ethereum && window.ethereum.isConnected();
-  } // 连接钱包
-
-
-  async connect() {
-    if (this.isInstall()) {
-      const Accounts = await ethereum.request({
-        method: 'eth_requestAccounts'
-      });
-      this.initEvent();
-      return Accounts[0];
-    } else {
-      return {
-        status: 50001,
-        message: 'please download bitkeep chrome '
-      };
-    }
-  } // 切换地址
-
-
-  selectedAddress() {
-    return window.ethereum && ethereum.selectedAddress;
-  } // 获取钱包信息
-
-
-  getWalletInfo() {
-    return {
-      address: window.ethereum && ethereum.selectedAddress,
-      chainName: window.ethereum && window.ethereum.chainName || 'eth',
-      chainId: window.ethereum && window.ethereum.chainId || '1',
-      walletId: '',
-      walletPlatform: this.getWalletPlatform()
-    };
-  } // 获取 chain ID
-
-
-  async getChainId() {
-    return window.ethereum && window.ethereum.request({
-      method: 'eth_chainId'
-    });
-  } // 切换 chain ID
-
-
-  async switchChainId(chainId, address) {
-    if (!address) {
-      const [nAddress] = await this.getAccounts();
-      address = nAddress;
-    }
-
-    return window.ethereum && window.ethereum.request({
-      method: 'wallet_switchEthereumChain',
-      params: [{
-        chainId: transfer16(chainId)
-      }, address]
-    });
-  } // 获取钱包标识
-
-
-  getWalletPlatform() {
-    return this._walletPlatform;
-  } // 获取钱包账号
-
-
-  async getAccounts() {
-    return window.ethereum ? window.ethereum.request({
-      method: "eth_accounts"
-    }) : [];
-  } // 登录签名
-
-
-  async LoginSign(dataToSign, address) {
-    console.log(dataToSign, address, 'dataToSign, addressdataToSign, addressdataToSign, address');
-    return await window.ethereum.request({
-      method: "personal_sign",
-      params: [dataToSign, address],
-      from: address
-    }); // return await window.ethereum.signMessage({ data: dataToSign })
-  }
-
-  initEvent() {
-    ethereum.removeAllListeners && ethereum.removeAllListeners(); // ethereum.removeListener && ethereum.removeListener('chainChanged')
-
-    ethereum.on('accountsChanged', async (...arg) => {
-      this.emit('accountsChanged', ...arg);
-    });
-    ethereum.on('chainChanged', async (...arg) => {
-      this.emit('chainChanged', ...arg);
-    });
-  }
-
-}
-
-const wallet = new Wallet();
 
 /***/ })
 

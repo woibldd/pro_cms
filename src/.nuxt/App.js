@@ -5,13 +5,15 @@ import { getMatchedComponentsInstances, getChildrenComponentInstancesUsingFetch,
 import NuxtError from './components/nuxt-error.vue'
 import NuxtLoading from './components/nuxt-loading.vue'
 
-import '../node_modules/vant/lib/index.css'
+import '..\\node_modules\\vant\\lib\\index.css'
 
-import '../assets/css/globle.scss'
+import '..\\assets\\css\\globle.scss'
 
-import _6f6c098b from '../layouts/default.vue'
+import _6f6c098b from '..\\layouts\\default.vue'
+import _72edf111 from '..\\layouts\\footer.vue'
+import _75c41e03 from '..\\layouts\\header.vue'
 
-const layouts = { "_default": sanitizeComponent(_6f6c098b) }
+const layouts = { "_default": sanitizeComponent(_6f6c098b),"_footer": sanitizeComponent(_72edf111),"_header": sanitizeComponent(_75c41e03) }
 
 export default {
   render (h, props) {

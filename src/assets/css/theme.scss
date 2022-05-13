@@ -10,7 +10,9 @@
   $theme-light-colorBackground0: #F8F9FA;
   $theme-light-colorBackground1: #FFFFFF;
   $theme-light-colorBackground2: #F3F5F6;
-  $theme-light-colorBackground3: #F8F9FA;
+  $theme-light-colorBackground3: #F8F9FA; 
+  $theme-light-background0: #fafafa;
+  $theme-light-background1: #F8F8F9;
   $theme-light-colorPrimary: #7524f9;
   $theme-light-colorSecond01: #2AC8DD;
   $theme-light-colorSecond02: #F04A4A;
@@ -42,6 +44,8 @@
   $theme-dark-colorBackground1: #171A26;
   $theme-dark-colorBackground2: #212331;
   $theme-dark-colorBackground3: #212331;
+  $theme-dark-background0: #17171A;
+  $theme-dark-background1: #202024;
   $theme-dark-colorPrimary: #7524f9;
   $theme-dark-colorSecond01: #2AC8DD;
   $theme-dark-colorSecond02: #F04A4A;
@@ -270,5 +274,23 @@
     }
     .colorSecond18{
       background-color: $theme-dark-colorSecond18;
+    }
+  }
+
+
+  .theme-light {
+    .Background0{
+      background-color: $theme-light-background0;
+    }
+    .Background0{
+      background-color: $theme-light-background1;
+    }
+  }
+  .theme-dark {
+    .Background0{
+      background-color: $theme-dark-background0;
+    }
+    .Background1{
+      background-color: $theme-dark-background1;
     }
   }
