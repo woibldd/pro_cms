@@ -6,14 +6,35 @@
         <div class="title TTORegular">以下每个地址均获得 <span class="TTOMedium">BKB奖励</span></div>
         <div class="getTime TTORegular">{{((new Date).getTime())-86400000|timeFilter}}</div>
         <div class="list">
-          <div class="Addresslist">
-            <!-- <div v-for="(item, index) in airdropList" :key="index" class="item TTORegular">
-            </div> -->
-             <van-row gutter="20">
-              <van-col  v-for="(item, index) in airdropList" :key="index" class="item TTORegular" span="8">
-                {{item}}
-              </van-col> 
-            </van-row>
+          <div @touchmove.stop="touchmove"  class="Addresslist" style="" > 
+            <!-- <van-list :finished="true">
+              <van-cell v-for="dr in showList" :key="dr" :title="dr">
+                <van-row gutter="20">
+                  <van-col  v-for="(item, index) in dr" :key="index" class="item TTORegular" span="8">
+                    {{item}}
+                  </van-col> 
+                </van-row>
+                <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; height: 30px;">
+                  <div v-for="(item, index) in dr" :key="index" class="item TTORegular" >{{item}}</div>
+                </div>
+              </van-cell>
+            </van-list>  -->
+            <!-- <van-grid :border="false" :column-num="3">
+              <van-grid-item v-for="(item, index) in LotteryList" :key="index" class="item TTORegular" :text="item"> 
+              </van-grid-item> 
+            </van-grid> -->
+            <!-- <p style="display:grid; grid-template-columns: 1fr 1fr 1fr;">
+              <span 
+                @touchmove="touchmove" 
+                @touchstart="touchstart" 
+                @touchend="touchend" 
+                v-for="(item, index) in LotteryList" 
+                :key="index" class="grid-item item TTORegular" >{{item}}</span>
+            </p> -->
+            <!-- <div style="position:absolute; top:0; left:0; z-index: 100; width: 100%; height:100%;"></div> -->
+             <div v-for="(item, index) in LotteryList" :key="index"  class="item TTORegular"> 
+              {{item}} 
+            </div> 
           </div>
         </div>
       </div>
@@ -28,15 +49,31 @@
         type: Boolean,
         default: false
       },
-      airdropList: {
+      LotteryList: {
         type: Array,
-        default: []
+        default: () => []
       }
     },
     data() {
       return {
         MintNum: 0,
         visables: this.showAirdropAddress,
+      }
+    },
+    computed: {
+      showList() {
+        const list = []
+        let dr = []
+        for (let i = 0; i < this.LotteryList.length; i++) {  
+          if (dr.length < 3) {
+            dr.push(this.LotteryList[i])
+          }
+          if (i % 3 === 2) {
+            list.push(dr)
+            dr = []
+          } 
+        } 
+        return list
       }
     },
     watch: {
@@ -47,7 +84,12 @@
     methods: {
       close() {
         this.$emit("closeAirdropAddressCard", false);
-      }
+      },
+      touchmove(event) {  
+      }, 
+    },
+    async mounted() {
+     
     }
   }
 
@@ -88,11 +130,12 @@
         height: 454px;
         overflow: auto;
         .Addresslist {
-          width: 100%;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          box-sizing: border-box;
+          width: 100%;  
+          overflow: auto;  
+          box-sizing: border-box; 
+          display:grid; 
+          grid-template-columns: 1fr 1fr 1fr; 
+          padding-bottom: 20px;
 
           .item {
             display: block;

@@ -15,10 +15,13 @@ class Wallet extends eventemitter3 {
     this._chainId = 0
     this._walletPlatform = 'bitkeep'
   }
-
+   transfer16(val = 0) {
+    val = isNaN(Number(val)) ? 1 : Number(val);
+    return "0x" + val.toString(16);
+  }
   // 是否安装 bitkeep 钱包
   isInstall() {
-    const isInstalled = !!window.ethereum && !!window.isBitKeep;
+    const isInstalled = !!window.ethereum || !!window.isBitKeep;
     !isInstalled && console.warn("no installed bitkeep")
     return isInstalled;
   }
@@ -31,7 +34,6 @@ class Wallet extends eventemitter3 {
   // 连接钱包
   async connect() {
     const Accounts = window.ethereum && await window.ethereum.request({ method: 'eth_requestAccounts' })
-    await this.chainChanged()
     return Accounts[0]
   }
 
@@ -86,10 +88,14 @@ class Wallet extends eventemitter3 {
   // 登录签名
   async LoginSign(dataToSign, address) {
     console.log(dataToSign, address, 'dataToSign, addressdataToSign, addressdataToSign, address')
-    return await window.ethereum.request({ method: "personal_sign", params: [dataToSign, address], from: address })
+    return await window.ethereum.request({ method: "personal_sign", params: [dataToSign,address],from: address})
     // return await window.ethereum.signMessage({ data: dataToSign })
   }
 
+  //邀请好友签名
+  async paritySign(dataToSign, address) {
+    return await window.ethereum.request({ method: "eth_sign", params: [address, dataToSign],from: address})
+  }
   // 取消授权
   // approveToken = async ( address, chainId, id, spender, amount ) => {
   //   await window.ethereum.request({

@@ -5,13 +5,13 @@
         <div class="title TTORegular">
           恭喜！你获得了空投奖励
         </div>
-        <div class="BKB TTORegular">{{amount}} BKB</div>
+        <div class="BKB TTORegular">{{luckNum}} BKB</div>
         <div class="Walletaddress">
           <div class="title TTORegular">
-            获取钱包地址
+            获奖钱包地址
           </div>
           <div class="address TTORegular">
-            {{address}}
+            {{currentAddress}}
           </div>
         </div>
         <!-- <div class="Getitnow TTOMedium">立即领取</div>
@@ -28,11 +28,11 @@
         type: Boolean,
         default: false
       },
-      address: {
+      currentAddress: {
         type: String,
         default: ''
       },
-      amount: {
+      luckNum: {
         type: Number,
         default: 0
       }

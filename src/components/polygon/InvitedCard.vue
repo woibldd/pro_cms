@@ -2,15 +2,15 @@
   <van-popup v-model="visables" close-icon-position="top-right" :close-on-click-overlay="false" closeable  @click-close-icon="close">
     <div class="InvitedBox">
       <div class="content">
-        <div class="title TTORegular">当前邀请成功人数 <span class="TTOMedium">2</span></div>
-        <div class="title TTORegular">领取空投概率 <span class="TTOMedium">50%</span></div>
+        <div class="title TTORegular">当前邀请成功人数 <span class="TTOMedium">{{inviteNum}}</span></div>
+        <div class="title TTORegular">领取空投概率 <span class="TTOMedium">{{luckRate}}%</span></div>
         <div class="Invitedlist TTORegular">
           <div class="item TTORegular">
             <div class="item">
               被邀请人地址
             </div>
             <div class="address">
-              0x2558248b1b72163Cff35658C707168879788997d
+              {{currentAddress}}
             </div>
           </div>
         </div>
@@ -25,6 +25,18 @@
       showInvitedlist: {
         type: Boolean,
         default: false
+      },
+      currentAddress: {
+        type: String,
+        default: ''
+      },
+      inviteNum: {
+        type: Number,
+        default: 0
+      },
+      luckRate: {
+        type: Number,
+        default: 0
       }
     },
     data() {

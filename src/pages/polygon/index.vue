@@ -12,10 +12,11 @@
     </div>
     <div class="polygon-top2">
       <div class="polygon-m-InvitationBox">
-        <div class="InvitationCodeBtn" v-if="address" @click="InvitationCode">填写邀请码</div>
+        <div class="InvitationCodeBtn" v-if="address&&!defaultData.isInvite" @click="InvitationCode">填写邀请码</div>
       </div>
       <div class="polygon-top-left">
-        <img src="../../assets/img/Py_bg.png" alt="">
+        <img class="bg0" src="../../assets/img/Py_bg.png" alt="">
+        <img class="bg8" src="../../assets/img/Py_bg8.png" alt="">
       </div> 
       <div class="polygon-top-middle">
         <img src="../../assets/img/Py_bg7.png" alt="">
@@ -45,31 +46,21 @@
           </div>
           <div class="item" v-if="!defaultData.isMelt">
             <div class="MELT TTOMedium">MELT 
-            </div>
-            <div class="TTORegular Background0 tipstext">7月17日后，可在官网以原价进行反向铸造</div>
+            </div> 
           </div>
           <div class="item" v-else>
             <div class="MELTActive TTOMedium" @click="ableMent(MentList)">
               MELT
-            </div>
-            <div class="TTORegular Background0 tipstext">现在可在官网以原价进行反向铸造</div>
+            </div> 
           </div>
+        </div>
+        <div class="tipstext-wrap Background0">
+          <div v-if="!defaultData.isMelt" class="TTORegular tipstext">7月17日后，可在官网以原价进行反向铸造</div>
+          <div v-else class="TTORegular tipstext">现在可在官网以原价进行反向铸造</div>
         </div>
         <img src="@/assets/img/Py_bg2.png" class="Py_bg2" alt="">
       </div>
-    </div>
-    <div class="Polygontext Background0">
-      <div class="TTORegular content">
-        Polygon Warrior are the first BitKeep NFTs, and the first NFTs that can be reversed. <br>
-        A Polygon Warrior NFT costs 100 Matic to mint, with the possibility to reverse after 60 <br> days of minting and
-        get all costs refunded. <br>
-        BitKeep will draw 100 holders of Polygon Warrior NFTs each day to reward them each 100BKB. <br>
-        Polygon Warrior is the first demonstrative PFP NFT on Polygon that integrates Social-Fi
-      </div>
-      <div class="TTORegular tips Background0" v-if="defaultData.fromStartTime>0">
-        7月16日后，可在官网以原价进行反向铸造。
-      </div>
-    </div>
+    </div> 
     <div class="polygonContentBox">
       <div class="RightsAndInterests">
         <div class="contentTitle">
@@ -77,16 +68,16 @@
           </h1>
         </div>
         <div class="RightsAndInterestsContent">
-          <div class="invitationBox">
+          <div class="invitationBox" >
             <img src="../../assets/img/polygon_h5/InvitationCodeBg.png" alt="" class="m-InvitationCodeBg">
             <div class="TTODbold card1 Background0">邀请好友 领取空投</div>
-            <img src="@/assets/img/Py_bg3.png" alt="">
-            <div class="TTORegular card2 Background0" @click="InvitationCode">填写邀请码</div>
+            <!-- <img src="@/assets/img/Py_bg3.png" alt="">
+            <div class="TTORegular card2 Background0"  v-if="address&&!defaultData.isInvite" @click="InvitationCode">填写邀请码</div> -->
           </div>
           <div class="infoBox">
             <div class="itembox1 TTORegular">
               <p class="TTORegular">
-                1.Mint 开启后 30 天内，每日随机挑选 100 位持有者，每位持有者空投 100 枚 BKB 到云钱包
+                 1.Mint 开启后 30 天内，每日随机挑选 100 位持有者，每位持有者空投 随机 枚 BKB 到云钱包
               </p>
               <p class="TTORegular">2.必须创建云钱包后才能领取空投</p>
               <p class="TTORegular">3.邀请人数越多，领取空投概率越大:</p>
@@ -108,7 +99,9 @@
             </div>
             <div class="itembox2 Background0">
               <div class="addressTitle">
-                <p class="TTORegular text1">当前邀请成功人数 <span class="TTOMedium">{{defaultData.inviteNum}}</span>
+                <p class="TTORegular text1">
+                  <label>当前邀请成功人数 </label> 
+                  <span class="TTOMedium">{{defaultData.inviteNum}}</span>
                   <span v-if="defaultData.inviteNum!=0" class="viewInvitee TTORegular"
                     @click="showInvitedlist=true">查看被邀请人</span>
                 </p>
@@ -154,8 +147,8 @@
             以下每个地址均获得
             <span class="TTOMedium">100 BKB</span>
           </div>
-          <div class="TTORegular m-ShortaddressTitle">共<span>100</span>个地址</div>
-          <div class="list Background0">
+          <div class="TTORegular m-ShortaddressTitle">共<span>{{LotteryList.length}}</span>个地址</div>
+          <div class="list Background0"> 
             <div v-for="(item, index) in LotteryList" :key="index" v-show="index < 9" class="item TTORegular"> 
               {{item}} 
             </div> 
@@ -266,18 +259,11 @@
       </van-popup>
       <Mint :showMint="showMint" :isWhite="defaultData.isWhite" @closeMint="closeMint"></Mint>
       <Ment :showMent="showMent" v-if="showMent" :MentList="MentList" @closeMent="closeMent"></Ment>
-      <AirdropAddressCard 
-        :showAirdropAddress="showAirdropAddress" 
-        :airdropList="LotteryList"
-        @closeAirdropAddressCard="closeAirdropAddressCard">
+      <AirdropAddressCard :showAirdropAddress="showAirdropAddress" :LotteryList="LotteryList" @closeAirdropAddressCard="closeAirdropAddressCard">
       </AirdropAddressCard>
-      <AirdropAwardCard 
-          :showAirdropAward="showAirdropAward"
-          @closeAirdropAwardCard="closeAirdropAwardCard"
-          :address="address"
-          :amount="awardAmount">
+      <AirdropAwardCard :showAirdropAward="showAirdropAward" :currentAddress="address" :luckNum="defaultData.luckNum" @closeAirdropAwardCard="closeAirdropAwardCard">
       </AirdropAwardCard>
-      <InvitedCard :showInvitedlist="showInvitedlist" @closeInvitedCard="closeInvitedCard"></InvitedCard>
+       <InvitedCard :showInvitedlist="showInvitedlist" :currentAddress="address" :inviteNum="defaultData.inviteNum" :luckRate="defaultData.luckRate"  @closeInvitedCard="closeInvitedCard"></InvitedCard>
       <Whitelistcard :showWhitelist="showWhitelist" @closeWhitelistcard="closeWhitelistcard"></Whitelistcard>
       <MintSuccessCard :showMintSuccess="showMintSuccess" :MintData="MintData" @closeMintSuccess="closeMintSuccess">
       </MintSuccessCard>
@@ -312,7 +298,7 @@
     // mixins: [cndMixins],
     data() {
       return {
-        isLoading: false,
+        isLoading: true,
         defaultData: {},
         startTime: new Date().getTime(),
         endTime: 0,
@@ -326,14 +312,13 @@
         showInvitedlist: false,
         showWhitelist: false,
         showMintSuccess: false,
-        address: "",
         chainName: "ht",
-        ChainId: 128,
+        ChainId: "128",
+        address: "",
         token: "",
         LotteryList: [],
         MintData: [],
         MentList: [],
-        awardAmount: 0,
       };
     },
     components: {
@@ -349,57 +334,21 @@
     async mounted() {
       await this.$nextTick();
       await this.connect()
-      await this.initEvent()
-      this.nftMintLotteryList()
-      this.nftMintnftList()
+      await this.nftMintLotteryList()
+      this.nftMintGetInfo(this.address, 'ht')
+      this.$bus.$on('accountsChanged', async (val) => {
+        this.connect()
+      });
+      this.isLoading = false;
     },
     methods: {
-      async initEvent() {
-        window.ethereum && window.ethereum.removeAllListeners();
-        window.ethereum &&
-          window.ethereum.on("accountsChanged", (address) => {
-            this.address = address;
-            this.nftMintGetInfo(this.address, 'ht')
-          });
-        window.ethereum &&
-          window.ethereum.on("chainChanged", async (chainId) => {
-            if (Number(chainId) != this.ChainId) {
-              return this.$dialog.alert({
-                message: "请切换到Heco主网",
-                confirmButtonText: "知道了,去切换",
-                confirmButtonColor: '#7524f9'
-              }).then(() => {
-                try {
-                  window.ethereum.request({
-                    method: "wallet_switchEthereumChain",
-                    params: [{
-                      chainId: wallet.transfer16(this.ChainId)
-                    }]
-                  })
-                } catch {
-                  ethereum.request({
-                    method: "wallet_addEthereumChain",
-                    params: [{
-                      chainId: wallet.transfer16(this.ChainId),
-                      chainName: "HECO",
-                      rpcUrls: ["https://hecoinfo.com/"],
-                      nativeCurrency: {
-                        name: "HECO",
-                        symbol: "HECO",
-                        decimals: 18,
-                      },
-                    }, ],
-                  });
-                }
-                // on close
-              });
-            }
-          });
-      },
       async connect() {
         try {
-          this.address = await wallet.connect()
+          const address = await wallet.connect();
+          console.log({address})
+          this.address =address;
           await this.nftMintGetInfo(this.address, 'ht')
+          await this.nftMintnftList()
         } catch (e) {
           console.log(e)
         }
@@ -414,8 +363,6 @@
         });
         if (status == 0) {
           this.defaultData = data;
-          this.awardAmount = data.luckNum
-          this.showAirdropAward = data.isLuck
           this.endTime = data.fromStartTime > 0 ? new Date().getTime() + data.fromStartTime : 0
         }
       },
@@ -424,7 +371,6 @@
           data,
           status
         } = await USER_API.nftMintLotteryList();
-
         if (status == 1) {
           return this.$dialog.alert({
             message: data,
@@ -451,8 +397,9 @@
         }
         this.MentList = data.list
       },
-      InvitationCode() {
-        this.address = wallet.selectedAddress()
+      async InvitationCode() {
+        const [address] = await wallet.getAccounts()
+        this.address = address
         this.show = true;
       },
       async paste() {
@@ -512,7 +459,7 @@
               confirmButtonColor: '#7524f9'
             });
           }
-          this.$toast("邀请成功");
+          this.$toast("被邀请成功");
           this.show = false;
         } catch (error) {
           console.log(error)
@@ -523,7 +470,7 @@
         this.showMint = false;
         if (MintNum) {
           const ChainId = await wallet.getChainId()
-          if (String(ChainId) != this.ChainId) {
+          if (Number(ChainId) != this.ChainId) {
             this.$dialog.alert({
               message: "请切换到Heco主网",
               confirmButtonText: "知道了,去切换",
@@ -556,7 +503,7 @@
           }
           this.isLoading = true
           const TXdata = await USER_API.buildNftMintTxs({
-            address: ethereum.selectedAddress,
+            address: this.address,
             chain: 'ht',
             num: MintNum
           });
@@ -573,7 +520,7 @@
           }
           try {
             const send = await wallet.setMintToken(tx)
-            setTimeout(async () => {
+            var MintTimer = setInterval(async () => {
               const {
                 data,
                 status
@@ -589,19 +536,26 @@
                   confirmButtonColor: '#7524f9'
                 });
               }
-              if (data.isSuccess) {
-                this.isLoading = false
+              if (data.status == 1) {
+                console.log("MintTimer", MintTimer)
+                clearInterval(MintTimer)
+                clearTimeout(MintTimer2)
+                this.isLoading = false;
                 this.$toast("Mint成功");
                 this.MintData = data.list;
+                this.connect()
                 this.showMintSuccess = true;
-              } else {
-                this.isLoading = false
-                return this.$dialog.alert({
-                  message: 'Mint失败',
-                  confirmButtonText: "知道了",
-                })
               }
-            }, 5000)
+            }, 3000)
+            var MintTimer2 = setTimeout(() => {
+              this.isLoading = false
+              this.connect()
+              clearInterval(MintTimer)
+              this.$dialog.alert({
+                message: 'Mint失败',
+                confirmButtonText: "知道了",
+              })
+            }, 1000 * 60);
           } catch (e) {
             this.isLoading = false
             console.log(e);
@@ -736,573 +690,7 @@
     font-family: "TTORegular";
     src: url("../../assets/fonts/polygon/ttoctosquares-regular.otf");
   }
-
-  // @media screen and (min-width: 960px) {
-  //   .polygon-contet {
-  //     width: 100%;
-  //     box-sizing: border-box;
-  //     padding: 60px 0px;
-  //     overflow: hidden;
-
-  //     .polygon-top1 {
-  //       width: 100%;
-  //       display: flex;
-  //       padding-left: 196px;
-  //       box-sizing: border-box;
-
-  //       .polygon-top-left {
-  //         width: 50%;
-  //         box-sizing: border-box;
-
-  //         .one {
-  //           font-weight: 400;
-  //           font-size: 80px;
-  //           color: #8247E5;
-  //         }
-
-  //         .two {
-  //           font-weight: 400;
-  //           font-size: 80px;
-  //           color: #fff;
-  //         }
-  //       }
-
-  //       .polygon-top-right {
-  //         width: 50%;
-  //         display: flex;
-  //         justify-content: flex-end;
-
-  //         img {
-  //           width: 770px;
-  //           height: 81px;
-  //         }
-  //       }
-  //     }
-
-  //     .polygon-top2 {
-  //       margin-top: 70px;
-  //       display: flex;
-  //       justify-content: space-between;
-  //       padding: 0px 169px;
-  //       box-sizing: border-box;
-
-  //       .polygon-m-InvitationBox {
-  //         display: none;
-  //       }
-
-  //       .polygon-top-left {
-  //         width: 50%; 
-  //         img {
-  //           width: 496px;
-  //           height: 463px;
-  //         }
-  //       }
-
-  //       .polygon-top-right {
-  //         width: 50%;
-
-  //         .RemainingtimeText {
-  //           font-size: 20px;
-  //           color: #fff;
-  //           font-weight: 400;
-  //           margin-bottom: 20px;
-  //         }
-
-  //         .Minted {
-  //           display: flex;
-  //           justify-content: space-between;
-  //           margin-top: 88px;
-
-  //           .item {
-  //             font-weight: 400;
-
-  //             .title {
-  //               font-size: 20px;
-  //               color: #fff;
-  //             }
-
-  //             .content {
-  //               font-size: 50px;
-  //               color: #09EFBD;
-
-  //               span {
-  //                 font-size: 20px;
-  //               }
-  //             }
-  //           }
-  //         }
-
-  //         .MintBtn {
-  //           display: flex;
-  //           justify-content: space-between;
-  //           margin: 88px 0px 150px 0px;
-  //           color: #fff;
-
-  //           .item {
-  //             width: 368px;
-
-  //             .MINT {
-  //               height: 80px;
-  //               background: url("@/assets/img/bthBg3.png");
-  //               background-size: cover;
-  //               font-size: 40px;
-  //               font-weight: 400;
-  //               text-align: center;
-  //               line-height: 80px;
-  //               cursor: pointer;
-  //               margin-right: 20px;
-  //             }
-
-  //             .MELT {
-  //               height: 80px;
-  //               background: url("@/assets/img/bthBg2.png");
-  //               background-size: cover;
-  //               font-size: 40px;
-  //               font-weight: 400;
-  //               text-align: center;
-  //               color: #707076;
-  //               line-height: 80px;
-  //               cursor: not-allowed;
-  //             }
-
-  //             .MELTActive {
-
-  //               height: 80px;
-  //               background: url("@/assets/img/btnBg4.png");
-  //               background-size: cover;
-  //               font-size: 40px;
-  //               font-weight: 400;
-  //               text-align: center;
-  //               line-height: 80px;
-  //               cursor: pointer;
-  //             }
-
-  //             .tipstext {
-  //               width: 100%;
-  //               color: #fff;
-  //               box-sizing: border-box;
-  //               padding: 12px 20px;
-  //               border: 1px solid #49494D;
-  //               margin-top: 20px;
-  //               font-size: 18px;
-  //               line-height: 23px;
-  //               text-align: left;
-  //               word-wrap: break-word;
-  //               word-break: normal;
-  //             }
-  //           }
-  //         }
-
-  //         .Py_bg2 {
-  //           width: 950px;
-  //           height: 71px;
-  //           margin-bottom: -60px;
-  //         }
-  //       }
-  //     }
-
-  //     .Polygontext {
-  //       max-width: 1338px;
-  //       color: #fff;
-  //       border: 1px solid #49494D;
-  //       border-left: none;
-  //       padding: 70px 40px 80px 195px;
-  //       box-sizing: border-box;
-  //       position: relative;
-
-  //       .content {
-  //         font-size: 24px;
-  //         font-weight: 400;
-  //         line-height: 36px;
-  //       }
-
-  //       .tips {
-  //         position: absolute;
-  //         width: 355px;
-  //         box-sizing: border-box;
-  //         word-wrap: break-word;
-  //         word-break: normal;
-  //         font-size: 18px;
-  //         font-weight: 400;
-  //         color: #fff;
-  //         padding: 12px 20px;
-  //         border: 1px solid #49494D;
-  //         top: -35px;
-  //         right: -120px;
-  //       }
-  //     }
-
-  //     .polygonContentBox {
-  //       width: 100%;
-
-  //       .contentTitle {
-  //         width: 100%;
-  //         padding: 0px 169px;
-  //         margin: 0 auto;
-  //         display: flex;
-  //         box-sizing: border-box;
-
-  //         h1 {
-  //           width: 100%;
-  //           font-weight: 400;
-  //           font-size: 80px;
-  //           color: #fff;
-  //           display: flex;
-  //           align-items: center;
-
-  //           .line {
-  //             flex: 1;
-  //             height: 1px;
-  //             background: #707076;
-  //             margin-left: 32px;
-  //             text-align: right;
-
-  //             span {
-  //               display: block;
-  //               color: #fff;
-  //               font-weight: 400;
-  //               font-size: 24px;
-  //               margin-top: -50px;
-  //             }
-  //           }
-  //         }
-  //       }
-
-  //       .RightsAndInterests {
-  //         padding: 80px 0px 56px 0px;
-
-  //         .RightsAndInterestsContent {
-  //           padding: 0px 169px;
-  //           box-sizing: border-box;
-
-  //           .invitationBox {
-  //             display: flex;
-  //             align-items: center;
-
-  //             .m-InvitationCodeBg {
-  //               display: none;
-  //             }
-
-  //             .card1 {
-  //               padding: 10px 50px 9px 20px;
-  //               box-sizing: border-box;
-  //               color: #fff;
-  //               font-size: 24px;
-  //             }
-
-  //             img {
-  //               box-sizing: border-box;
-  //               width: 235px;
-  //               margin-right: 112px;
-  //               margin-left: -10px;
-  //             }
-
-  //             .card2 {
-  //               box-sizing: border-box;
-  //               padding: 12px 23px;
-  //               color: #fff;
-  //               font-size: 20px;
-  //               cursor: pointer;
-  //             }
-  //           }
-
-  //           .infoBox {
-  //             display: flex;
-  //             min-height: 320px;
-  //             box-sizing: border-box;
-
-  //             .itembox1 {
-  //               width: 755px;
-  //               height: 320px;
-  //               background: #8247E5;
-  //               margin-right: 20px;
-  //               padding: 20px;
-  //               font-size: 16px;
-  //               box-sizing: border-box;
-
-  //               .InvitationCodeBox {
-  //                 width: 100%;
-  //                 height: 40px;
-  //                 display: flex;
-  //                 justify-content: flex-end;
-  //                 box-sizing: border-box;
-
-
-  //                 .InvitationCode {
-  //                   width: 335px;
-  //                   height: 40px;
-  //                   box-sizing: border-box;
-  //                   line-height: 40px;
-  //                   // padding: 10px 0px 10px 10px;
-  //                   font-weight: 400;
-  //                   text-align: center;
-
-  //                   .text {
-  //                     font-size: 16px;
-  //                     color: #fff;
-  //                   }
-
-  //                   .code {
-  //                     font-size: 20px;
-  //                     color: #09EFBD;
-  //                     letter-spacing: 2px;
-  //                   }
-
-  //                   .copy {
-  //                     width: 88px;
-  //                     font-size: 20px;
-  //                     margin-left: 10px;
-  //                     color: #09EFBD;
-  //                     border-left: 1px solid #707076;
-  //                     padding: 0px 10px;
-  //                     box-sizing: border-box;
-  //                     cursor: pointer;
-  //                   }
-  //                 }
-  //               }
-
-  //               p {
-  //                 color: #fff;
-  //                 margin-bottom: 20px;
-  //               }
-
-  //               p:last-child {
-  //                 margin-bottom: 0;
-  //               }
-  //             }
-
-  //             .itembox2 {
-  //               width: 366px;
-  //               height: 320px;
-  //               border: 1px solid #49494D;
-  //               margin-right: 20px;
-  //               display: flex;
-  //               flex-direction: column;
-
-  //               .addressTitle {
-  //                 width: 100%;
-  //                 // height: 80px;
-  //                 color: #fff;
-  //                 border-bottom: 1px solid #49494D;
-  //                 padding: 10px 20px 13px 20px;
-  //                 box-sizing: border-box;
-
-  //                 .text1 {
-  //                   font-size: 16px;
-  //                   margin-bottom: 10px;
-  //                   box-sizing: border-box;
-
-  //                   span {
-  //                     font-size: 30px;
-  //                     color: #09EFBD;
-  //                   }
-
-  //                   .viewInvitee {
-  //                     display: none;
-  //                   }
-  //                 }
-
-  //                 .text2 {
-  //                   font-size: 16px;
-  //                 }
-  //               }
-
-  //               .addresslistBox {
-  //                 display: flex;
-  //                 height: 200px;
-  //                 justify-content: center;
-  //                 align-items: center;
-
-  //                 .noData {
-  //                   font-size: 100px;
-  //                   color: #49494D;
-  //                 }
-
-  //                 .addresslist {
-  //                   width: 100%;
-  //                   height: 100%;
-  //                   padding: 15px 20px;
-  //                   overflow: auto;
-  //                   box-sizing: border-box;
-
-  //                   .addressItem {
-  //                     width: 275px;
-  //                     margin-bottom: 20px;
-  //                     color: #fff;
-  //                     font-weight: 400;
-
-  //                     span {
-  //                       font-size: 14px;
-  //                     }
-
-  //                     p {
-  //                       font-size: 14px;
-  //                       word-wrap: break-word;
-  //                       word-break: normal;
-  //                     }
-  //                   }
-  //                 }
-  //               }
-  //             }
-
-  //             .itembox3 {
-  //               border: 1px solid #49494D;
-  //               padding: 20px;
-  //               color: #fff;
-  //               font-size: 20px;
-  //               font-weight: 400;
-
-  //               h2 {
-  //                 font-size: 24px;
-  //                 margin-top: 20px;
-  //                 font-weight: 400;
-
-  //                 :first-child {
-  //                   margin-bottom: 0px;
-  //                 }
-  //               }
-  //             }
-  //           }
-
-  //         }
-
-  //       }
-
-  //       .ShortaddressContent {
-  //         padding: 80px 0 76px 0px;
-  //         box-sizing: border-box;
-
-  //         .Shortaddresslist {
-  //           margin-top: 20px;
-  //           padding: 0px 169px;
-  //           box-sizing: border-box;
-
-  //           .ShortaddressTitle {
-  //             font-size: 16px;
-  //             font-weight: 400;
-  //             color: #fff;
-  //             margin-bottom: 20px;
-
-  //             span {
-  //               color: #09EFBD;
-  //               font-size: 40px;
-  //             }
-  //           }
-
-  //           .m-ShortaddressTitle {
-  //             display: none;
-  //           }
-
-  //           .m-viewAll {
-  //             display: none;
-  //           }
-
-  //           .list {
-  //             width: 100%;
-  //             border: 1px solid #49494D;
-  //             padding: 10px 0px;
-  //             display: flex;
-  //             justify-content: flex-start;
-
-  //             .item {
-  //               margin-right: 20px;
-  //               color: #fff;
-  //               font-size: 14px;
-  //             }
-  //           }
-  //         }
-  //       }
-
-  //       .whiteIpcard {
-  //         display: none;
-  //       }
-
-  //       .LoadMapcontent {
-  //         padding: 80px 0px 275px 0px;
-  //         box-sizing: border-box;
-
-  //         .logoListBox {
-  //           width: 100%;
-  //           position: relative;
-  //           margin-top: 240px;
-
-  //           .logoBg {
-  //             width: 100%;
-  //             height: 20px;
-  //             background: #0E0E0F;
-  //             display: flex;
-  //             justify-content: space-between;
-
-  //             :first-child {
-  //               width: 176px;
-  //               height: 100%;
-  //             }
-
-  //             :last-child {
-  //               width: 176px;
-  //               height: 100%;
-  //             }
-  //           }
-
-  //           .logoListContent {
-  //             width: 100%;
-  //             display: -webkit-box;
-  //             display: -ms-flexbox;
-  //             display: flex;
-  //             justify-content: center;
-  //             align-items: center;
-  //             position: absolute;
-  //             top: -119px;
-
-  //             .Item {
-
-  //               .logo {
-  //                 width: 238px;
-  //                 height: 238px;
-  //                 background: url("@/assets/img/Py_bg6.png");
-  //                 background-size: cover;
-  //                 color: #fff;
-  //                 font-size: 24px;
-  //                 font-weight: 400;
-  //                 text-align: center;
-  //                 display: flex;
-  //                 align-items: center;
-  //                 justify-content: center;
-  //               }
-
-  //               .active {
-  //                 background: url("@/assets/img/Py_bg5.png");
-  //                 background-size: cover;
-  //               }
-
-  //               span {
-  //                 display: block;
-  //                 width: 100%;
-  //                 color: #fff;
-  //                 font-weight: 400;
-  //                 font-size: 24px;
-  //                 text-align: center;
-  //                 margin-top: 16px;
-  //               }
-  //             }
-  //           }
-
-  //         }
-  //       }
-  //     }
-
-  //     .Tipscontent {
-  //       max-width: 1532px;
-  //       margin: 0 auto;
-  //       padding: 20px;
-  //       color: #fff;
-  //       font-size: 20px;
-  //       font-weight: 400;
-  //     }
-
-  //   }
-  // }
-
+ 
   // @media screen and (max-width: 959px) {
     .polygon-top1 {
       display: none;
@@ -1329,12 +717,25 @@
       }
 
       .polygon-top-left {
+        position: relative;
         width: 245px;
-        height: 228px;
+        height: 235px;
         margin: 0 auto; 
         img {
           width: 100%;
           height: 100%;
+        }
+        .bg0 {
+          position:relative;
+          z-index: 2;
+        }
+        .bg8 {
+          position:absolute;
+          left: -64px;
+          top: 104px;
+          width: 376px;
+          height: 40px;
+          z-index: 1;
         }
       }
       .polygon-top-middle {
@@ -1438,10 +839,20 @@
               line-height: 50px;
               cursor: pointer;
             }
+ 
+          }
+        }
 
-            .tipstext {
-              display: none;
-            }
+        .tipstext-wrap {
+          padding: 12px 20px; 
+          width: 355px;
+          box-sizing: border-box; 
+          border: 1px solid #49494D;
+          border-left: none;
+          .tipstext {
+            color: #ffffff;
+            font-size: 18px;
+            line-height: 23.4px;
           }
         }
 
@@ -1450,24 +861,9 @@
         }
       }
     }
-
-    .Polygontext {
-      padding-right: 20px;
-      background: #202024 !important;
-      margin-bottom: 60px;
-
-      .content {
-        display: none;
-      }
-
-      .tips {
-        border: 1px solid #49494D;
-        padding: 12px 20px;
-        color: #fff;
-      }
-    }
-
+ 
     .polygonContentBox {
+      margin-top: 60px;
       .RightsAndInterests {
         .contentTitle {
           display: none;
@@ -1476,18 +872,27 @@
         .RightsAndInterestsContent {
           .invitationBox {
             display: flex;
-
-            .card1 {
-              display: none;
+            color: #ffffff;
+            font-size: 24px;
+            position: relative;
+            .card1 { 
+              position:absolute;
+              top: 1px;
+              left: 0;
+              padding-left: 20px;
+              height: 48px;
+              width: 251px;
+              line-height: 48px;
+              background-color: #17171A;
             }
 
-            .card2 {
-              display: none;
-            }
+            // .card2 {
+            //   display: none;
+            // }
 
-            img {
-              display: none;
-            }
+            // img {
+            //   display: none;
+            // }
 
             .m-InvitationCodeBg {
               display: block;
@@ -1516,7 +921,9 @@
                 justify-content: flex-end;
                 box-sizing: border-box;
 
-                .InvitationCode {
+                .InvitationCode { 
+                  display: flex;
+                  justify-content: flex-end;
                   width: 335px;
                   height: 40px;
                   box-sizing: border-box;
@@ -1530,8 +937,13 @@
                   }
 
                   .code {
+                    width: 121px;
+                    text-align: left;
+                    margin-left: 10px;
+                    margin-right: 10px;
                     font-size: 20px;
-                    color: #09EFBD;
+                    color: #09EFBD; 
+                    letter-spacing: 8px;
                   }
 
                   .copy {
@@ -1570,6 +982,9 @@
                 width: 100%;
                 color: #fff;
                 box-sizing: border-box;
+                label {
+                  margin-right: 8px;
+                }
 
                 .text1 {
                   font-size: 16px;

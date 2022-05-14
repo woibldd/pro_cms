@@ -4,7 +4,7 @@
     <div class="Mintpopup">
       <div class="Mintlogo" v-for="item in MintData" :key="item.tokenId">
         <img src="@/assets/img/Py_bg.png" alt="">
-        <div class="tokenId TTORegular">{{item.tokenId}}</div>
+        <div class="tokenId TTORegular">Token ID: #{{item.tokenId}}</div>
       </div>
     </div>
   </van-popup>
@@ -48,11 +48,19 @@
       background: #202024;
       box-sizing: border-box;
       border: 1px solid #49494D;
-
+      display: flex;
+      align-items: center;
+      overflow: auto;
       .Mintlogo {
         width: 100%;
         padding-top: 20px;
-
+        .tokenId{
+          width: 100%;
+          text-align: center;
+          margin-top: 20px;
+          font-size: 18px;
+          color: #fff;
+        }
         img {
           display: block;
           width: 215px;

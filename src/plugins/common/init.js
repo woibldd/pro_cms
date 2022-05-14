@@ -2,6 +2,7 @@ import Vue from "vue"
 import {debug} from "debug"
 // import VueCanvasPoster from 'vue-canvas-poster'
 import createVueI18n from "../../locales"
+Vue.prototype.$bus = new Vue();
 const log = process.env.BUILD_ENV == 'pro' ? (...arg) => {
     console.log("bit:init", ...arg)
   } : debug('bit:init')
@@ -36,7 +37,9 @@ import {
     Row,
     Tab,
     Tabs,
-    NoticeBar
+    NoticeBar,
+    Grid, 
+    GridItem
 } from "vant";
 
 const components = [
@@ -62,7 +65,9 @@ const components = [
     Row,
     Tab,
     Tabs,
-    NoticeBar
+    NoticeBar, 
+    Grid, 
+    GridItem
     // Lazyload
     // VueCanvasPoster
 ];

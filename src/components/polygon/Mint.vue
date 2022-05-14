@@ -90,8 +90,7 @@
   }
 
 </script>
-<style lang="scss" scoped>
-  @media screen and (max-width: 959px) {
+<style lang="scss" scoped> 
     .Mintpopup {
       width: 315px;
       height: 557px;
@@ -204,126 +203,8 @@
           cursor: pointer;
         }
       }
-    }
-  }
+    } 
 
-  @media screen and (min-width: 960px) {
-    .Mintpopup {
-      width: 790px;
-      height: 410px;
-      background: #202024;
-      box-sizing: border-box;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0px 40px;
-      border: 1px solid #49494D;
-
-      .Mintlogo {
-        width: 100%;
-
-        img {
-          display: block;
-          width: 269px;
-          height: 250px;
-          margin: 0 auto;
-        }
-      }
-
-      .PaymentBox {
-        width: 100%;
-
-        .title {
-          width: 100%;
-          text-align: center;
-          font-size: 14px;
-          color: #fff;
-          margin-top: 20px;
-          margin-bottom: 10px;
-          font-weight: 400;
-        }
-
-        .PaymentNum {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-
-          .subtraction {
-            font-size: 18px;
-            color: #fff;
-            margin-right: 20px;
-            cursor: pointer;
-            font-weight: 800;
-          }
-
-          .number {
-            width: 40px;
-            height: 40px;
-            border: 1px solid #49494D;
-            color: #09EFBD;
-            font-size: 40px;
-            margin-right: 20px;
-            text-align: center;
-            line-height: 40px;
-            box-sizing: border-box;
-          }
-
-          .Addition {
-            font-size: 18px;
-            color: #fff;
-            cursor: pointer;
-            font-weight: 800;
-          }
-        }
-
-        .PaymentInfo {
-          width: 100%;
-          margin: 40px 0px;
-          box-sizing: border-box;
-
-          .title {
-            width: 100%;
-            font-size: 14px;
-            color: #fff;
-            font-weight: 400;
-            text-align: center;
-          }
-
-          .PaymentContent {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            :first-child {
-              font-size: 24px;
-              color: #09EFBD;
-              font-weight: 400;
-            }
-
-            :last-child {
-              font-size: 14px;
-              color: #fff;
-              font-weight: 400;
-            }
-          }
-        }
-
-        .mintSubmit {
-          width: 198px;
-          height: 44px;
-          line-height: 44px;
-          background: url(@/assets/img/btnBg5.png);
-          background-size: 100% 100%;
-          margin: 0 auto;
-          text-align: center;
-          font-size: 20px;
-          color: #fff;
-          cursor: pointer;
-        }
-      }
-    }
-  }
+ 
 
 </style>
