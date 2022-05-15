@@ -231,6 +231,17 @@
         <p class="TTORegular">3. 单击铸币按钮，系统将提示您签署交易，并产生汽油费用。</p>
         <p class="TTORegular">4. 购买后，您的 NFT 将出现在您的钱包中，且可以通过 BitKeep Market 和 Opensea 进行交易！</p>
       </div>
+      <!-- <div>
+        <swiper :options="swiperOption" class="swiper-wrapper"> 
+          <swiper-slide 
+            v-for="item in MentList" :key="item.tokenId">
+            <div  class="Mentlogo" :class="item.selected==true?'MentlogoActive':''"  @click="selected(item)">
+              <img src="@/assets/img/Py_bg.png" alt="">
+              <div class="TTORegular tokenId">Token ID: #{{item.tokenId}}</div> 
+            </div>
+          </swiper-slide>
+        </swiper> 
+      </div> -->
       <van-popup v-model="show" close-icon-position="top-right" closeable>
         <div class="PopupBox">
           <div class="InvitationPopup">
@@ -285,6 +296,8 @@
   import InvitedCard from '@/components/polygon/InvitedCard'
   import Whitelistcard from '@/components/polygon/Whitelistcard'
   import MintSuccessCard from '@/components/polygon/MintSuccessCard'
+  import {storage} from '@/utils/Storage'
+  import { Swiper, SwiperSlide } from 'vue-awesome-swiper'   
   import {
     wallet
   } from "@/utils/wallet";
@@ -298,6 +311,9 @@
     // mixins: [cndMixins],
     data() {
       return {
+        swiperOption: {
+          direction: 'horizontal',  
+        },
         isLoading: true,
         defaultData: {},
         startTime: new Date().getTime(),
@@ -329,14 +345,16 @@
       InvitedCard,
       Whitelistcard,
       MintSuccessCard,
-      Ment
+      Ment,
+      Swiper, 
+      SwiperSlide,
     },
     async mounted() {
       await this.$nextTick();
       await this.connect()
-      await this.nftMintLotteryList()
-      this.nftMintGetInfo(this.address, 'ht')
-      this.$bus.$on('accountsChanged', async (val) => {
+      // await this.nftMintLotteryList()
+      // this.nftMintGetInfo(this.address, 'ht')
+      this.$bus.$on('changeAccounts', async (val) => {
         this.connect()
       });
       this.isLoading = false;
@@ -345,7 +363,6 @@
       async connect() {
         try {
           const address = await wallet.connect();
-          console.log({address})
           this.address =address;
           await this.nftMintGetInfo(this.address, 'ht')
           await this.nftMintnftList()
@@ -363,7 +380,18 @@
         });
         if (status == 0) {
           this.defaultData = data;
-          this.endTime = data.fromStartTime > 0 ? new Date().getTime() + data.fromStartTime : 0
+          this.endTime = data.fromStartTime > 0 ? new Date().getTime() + data.fromStartTime : 0;
+          if(data.luckNum>0){
+            const expires=new Date().setHours(23,59,59,999)-new Date().getTime()
+            if(!storage.getItem("luckaddress")){
+              storage.setItem({name:'luckaddress',value:this.address,expires:expires})
+            }else if(storage.getItem("luckaddress").split("|").filter(item=>{return item==this.address}).length==0){
+              storage.setItem({name:'luckaddress',value:storage.getItem("luckaddress")+'|'+this.address,expires:expires})
+            }else{
+              return false
+            }
+            this.showAirdropAward=true
+          }
         }
       },
       async nftMintLotteryList() {
@@ -459,7 +487,7 @@
               confirmButtonColor: '#7524f9'
             });
           }
-          this.$toast("被邀请成功");
+          this.$toast("填写成功");
           this.show = false;
         } catch (error) {
           console.log(error)
@@ -489,7 +517,7 @@
                   params: [{
                     chainId: wallet.transfer16(this.ChainId),
                     chainName: "HECO",
-                    rpcUrls: ["https://hecoinfo.com/"],
+                    rpcUrls: ["https://http-mainnet.hecochain.com"],
                     nativeCurrency: {
                       name: "HECO",
                       symbol: "HECO",
@@ -682,6 +710,7 @@
       }
     }
   }
+
 </script>
 <style lang="scss">
   @import "@/assets/css/theme.scss";
@@ -689,6 +718,11 @@
   @font-face {
     font-family: "TTORegular";
     src: url("../../assets/fonts/polygon/ttoctosquares-regular.otf");
+  }
+  .van-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
  
   // @media screen and (max-width: 959px) {

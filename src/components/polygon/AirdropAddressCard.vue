@@ -7,31 +7,6 @@
         <div class="getTime TTORegular">{{((new Date).getTime())-86400000|timeFilter}}</div>
         <div class="list">
           <div @touchmove.stop="touchmove"  class="Addresslist" style="" > 
-            <!-- <van-list :finished="true">
-              <van-cell v-for="dr in showList" :key="dr" :title="dr">
-                <van-row gutter="20">
-                  <van-col  v-for="(item, index) in dr" :key="index" class="item TTORegular" span="8">
-                    {{item}}
-                  </van-col> 
-                </van-row>
-                <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; height: 30px;">
-                  <div v-for="(item, index) in dr" :key="index" class="item TTORegular" >{{item}}</div>
-                </div>
-              </van-cell>
-            </van-list>  -->
-            <!-- <van-grid :border="false" :column-num="3">
-              <van-grid-item v-for="(item, index) in LotteryList" :key="index" class="item TTORegular" :text="item"> 
-              </van-grid-item> 
-            </van-grid> -->
-            <!-- <p style="display:grid; grid-template-columns: 1fr 1fr 1fr;">
-              <span 
-                @touchmove="touchmove" 
-                @touchstart="touchstart" 
-                @touchend="touchend" 
-                v-for="(item, index) in LotteryList" 
-                :key="index" class="grid-item item TTORegular" >{{item}}</span>
-            </p> -->
-            <!-- <div style="position:absolute; top:0; left:0; z-index: 100; width: 100%; height:100%;"></div> -->
              <div v-for="(item, index) in LotteryList" :key="index"  class="item TTORegular"> 
               {{item}} 
             </div> 

@@ -39,7 +39,9 @@ import {
     Tabs,
     NoticeBar,
     Grid, 
-    GridItem
+    GridItem,
+    Swipe, 
+    SwipeItem
 } from "vant";
 
 const components = [
@@ -67,7 +69,9 @@ const components = [
     Tabs,
     NoticeBar, 
     Grid, 
-    GridItem
+    GridItem,
+    Swipe, 
+    SwipeItem
     // Lazyload
     // VueCanvasPoster
 ];

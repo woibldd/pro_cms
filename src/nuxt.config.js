@@ -145,7 +145,7 @@ export default {
 
   // loading: { color: '#d832b3' },
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["vant/lib/index.css", "@/assets/css/globle.scss"],
+  css: ["vant/lib/index.css", "@/assets/css/globle.scss", 'swiper/css/swiper.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -154,7 +154,7 @@ export default {
     { src: "@/plugins/client/flexible.js", ssr: false },
     { src: "@/plugins/common/init.js" },
     { src: "@/plugins/client/sessionStorage.js", ssr: false },
-    { src: "@/plugins/client/firebase.js", ssr: false },
+    { src: "@/plugins/client/firebase.js", ssr: false }, 
     "@/plugins/axios.js" //拦截
 
     // { src:'@/plugins/common/lang/vant.js', ssr: true },

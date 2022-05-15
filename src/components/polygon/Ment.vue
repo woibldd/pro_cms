@@ -13,11 +13,28 @@
         </span>
       </div>
       <div class="MentList">
-        <div class="Mentlogo" :class="item.selected==true?'MentlogoActive':''" v-for="item in list" :key="item.tokenId"
+        <!-- <div class="Mentlogo" :class="item.selected==true?'MentlogoActive':''" v-for="item in list" :key="item.tokenId"
           @click="selected(item)">
           <img src="@/assets/img/Py_bg.png" alt="">
           <div class="TTORegular tokenId">Token ID: #{{item.tokenId}}</div>
-        </div>
+        </div> -->
+        <!-- <van-swipe :loop="true" :width="115"> 
+          <van-swipe-item class="Mentlogo" :class="item.selected==true?'MentlogoActive':''" v-for="item in list" :key="item.tokenId"
+            @click="selected(item)">
+            <img src="@/assets/img/Py_bg.png" alt="">
+            <div class="TTORegular tokenId">Token ID: #{{item.tokenId}}</div>
+          </van-swipe-item>
+        </van-swipe>
+         -->
+        <swiper @mousemove="e=>e" :options="swiperOption" class="swiper-wrapper"> 
+          <swiper-slide 
+            v-for="item in list" :key="item.tokenId">
+            <div  class="Mentlogo" :class="item.selected==true?'MentlogoActive':''"  @click="selected(item)">
+              <img src="@/assets/img/Py_bg.png" alt="">
+              <div class="TTORegular tokenId">Token ID: #{{item.tokenId}}</div> 
+            </div>
+          </swiper-slide>
+        </swiper> 
       </div>
       <div class="PaymentBox">
         <div class="PaymentInfo">
@@ -35,8 +52,13 @@
   </van-popup>
 </template>
 <script>
+  import { Swiper, SwiperSlide } from 'vue-awesome-swiper'   
   export default {
     name: "Ment",
+    components: { 
+      Swiper, 
+      SwiperSlide,
+    },
     props: {
       showMent: {
         type: Boolean,
@@ -55,6 +77,12 @@
           return item
         }),
         selectedList: [],
+        swiperOption: {
+          initialSlide: 0,
+          slidesPerView : 2.4,  
+          direction: 'horizontal',  
+          loop: false,  
+        }
       }
     },
     watch: {
@@ -118,13 +146,17 @@
         overflow: auto;
         height: 200px;
         padding: 0 10px;
+        .swiper-wrapper {
+          width: 100%;
+        }
+
         .Mentlogo { 
-          padding: 10px 0 8px; 
+          padding: 10px 10px 8px; 
           box-sizing: border-box;
           cursor: pointer;
-          &:not(:first-child) {
-            margin-left: 10px;
-          }
+          // &:not(:first-child) {
+          //   margin-left: 10px;
+          // }
 
           .tokenId {
             width: 100%;
