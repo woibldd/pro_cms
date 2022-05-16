@@ -1,9 +1,8 @@
 {
     "debug": false,
-    "///":"尽量不要改",
-    "port": 8081, 
-    "host_api":"http://dev.bitkeep.top:8880",
-    "host_operation":"http://dev.bitkeep.top:8898"
+    "port": 8081,
+    "host_api":"https://b1.bitkeep.top",
+    "host_operation": "http://ms.operation:8898"
 }
 
 
