@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div class="polygon_footer">
     <div class="container">
       <div class="footer-box-logo">
         <div class="footer-box-logo-img">
@@ -12,31 +12,31 @@
       </div>
       <div class="bottom">
         <div class="logo">
-          <img src="../assets/img/header/logo.png" alt="">
+          <img src="@/assets/img/header/logo.png" alt="">
         </div>
         <ul>
           <li class="telebox">
-            <a href="https://t.me/BitKeep_Official" target="_blank"><img src="../assets/img/footer/telegram_logo.png"
+            <a href="https://t.me/BitKeep_Official" target="_blank"><img src="@/assets/img/footer/telegram_logo.png"
                 alt="Bitkeep 官方 Telegram 账号"></a>
           </li>
-          <li><a href="https://twitter.com/BitKeepOS" target="_blank"><img src="../assets/img/footer/twitter_logo.png"
+          <li><a href="https://twitter.com/BitKeepOS" target="_blank"><img src="@/assets/img/footer/twitter_logo.png"
                 alt="Bitkeep的官方推特账号"></a></li>
           <li><a href="https://www.youtube.com/c/BitKeepWallet" target="_blank"><img
-                src="../assets/img/footer/youtube_logo.png" alt="Bitkeep的官方YouTube账号"></a></li>
-          <li><a href="https://twitter.com/BitKeepOS" target="_blank"><img src="../assets/img/footer/kaoka_logo.png"
+                src="@/assets/img/footer/youtube_logo.png" alt="Bitkeep的官方YouTube账号"></a></li>
+          <li><a href="https://twitter.com/BitKeepOS" target="_blank"><img src="@/assets/img/footer/kaoka_logo.png"
                 alt="Bitkeep的官方推特账号"></a></li>
-          <li><a href="https://medium.com/@bitkeepblog" target="_blank"><img src="../assets/img/footer/medium_logo.png"
+          <li><a href="https://medium.com/@bitkeepblog" target="_blank"><img src="@/assets/img/footer/medium_logo.png"
                 alt="Bitkeep 官方 Medium 账号"></a></li>
 
           <li><a href="https://github.com/bitkeepwallet/download" target="_blank"><img
-                src="../assets/img/footer/github_logo.png" alt="Bitkeep 官方 GitHub 账号"></a></li>
-          <li><a href="https://discord.gg/qYTatUzNjM" target="_blank"><img src="../assets/img/footer/discord_logo.png"
+                src="@/assets/img/footer/github_logo.png" alt="Bitkeep 官方 GitHub 账号"></a></li>
+          <li><a href="https://discord.gg/qYTatUzNjM" target="_blank"><img src="@/assets/img/footer/discord_logo.png"
                 alt="Bitkeep 官方 Discord 账号"></a></li>
           <li><a href="https://instagram.com/bitkeep_global?igshid=YmMyMTA2M2Y=" target="_blank"><img
-                src="../assets/img/footer/flat_logo.png" alt="Bitkeep's official instagram account"></a></li>
+                src="@/assets/img/footer/flat_logo.png" alt="Bitkeep's official instagram account"></a></li>
 
           <li><a href="https://www.facebook.com/BitKeep" target="_blank"><img
-                src="../assets/img/footer/facebook_logo.png" alt="Bitkeep's official facebook account"></a></li>
+                src="@/assets/img/footer/facebook_logo.png" alt="Bitkeep's official facebook account"></a></li>
         </ul>
       </div>
     </div>
@@ -46,7 +46,7 @@
 </script>
 <style lang="scss">
   @media screen and (min-width: 960px) {
-  .footer {
+  .polygon_footer {
     width: 100%;
     height: 430px;
     display: flex;
@@ -135,7 +135,7 @@
   }
   }
   @media screen and (max-width: 959px) {
-  .footer {
+  .polygon_footer {
     display: none;
   }
   }

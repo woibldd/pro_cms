@@ -305,9 +305,11 @@ import {
   USER_API
 } from "@/api/client";
 import "@/utils/copy"
+// Vue.prototype.$bus = new Vue();
 import { BaseMixin } from "@/mixin/base.js"
 export default {
   name: "polygon",
+  layout:"polygon/default",
   mixins: [BaseMixin],
   data() {
     return {
@@ -353,11 +355,11 @@ export default {
   async mounted() {
 
     await this.$nextTick();
-    await this.connect()
+    await this.connect()    
     await this.nftMintLotteryList()
-    this.$bus.$on('changeAccounts', async (val) => {
-      this.init()
-    });
+    // this.$bus.$on('changeAccounts', async (val) => {
+    //   this.init()
+    // });
     // this.nftMintGetInfo(this.address, 'matic')
 
   },

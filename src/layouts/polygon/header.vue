@@ -1,11 +1,11 @@
 <template>
-  <div class="header">
+  <div class="polygon_header">
     <div class="container">
       <div class="logo">
-        <img src="../assets/img/header/logo.png" alt="">
+        <img src="@/assets/img/header/logo.png" alt="">
       </div>
       <div class="header_right">
-        <img src="../assets/img/header/right_log.png" alt="" class="right_log">
+        <img src="@/assets/img/header/right_log.png" alt="" class="right_log">
         <div class="connect">
           <span @click="connect" class="TTORegular" v-if="!address">连接钱包</span>
           <span class="TTORegular" v-else>{{address|blurredDisplay}}</span>
@@ -17,8 +17,7 @@
 <script>
   import '@/filter/filter'
   import {
-    wallet
-  } from "@/utils/wallet";
+    wallet } from "@/utils/wallet";
   export default {
     data() {
       return {
@@ -43,7 +42,7 @@
 </script>
 <style lang="scss">
   @media screen and (min-width: 960px) {
-    .header {
+    .polygon_header {
       width: 100%;
       height: 120px;
       display: flex;
@@ -81,7 +80,7 @@
             height: 50px;
             cursor: pointer;
             margin-left: 88px;
-            background-image: url("../assets/img/btnBg1.png");
+            background-image: url("@/assets/img/btnBg1.png");
             background-size: cover;
             overflow: hidden;
 
@@ -103,7 +102,7 @@
   }
 
   @media screen and (max-width: 960px) {
-    .header {
+    .polygon_header {
       width: 100%;
       height: 64px;
       display: flex;
