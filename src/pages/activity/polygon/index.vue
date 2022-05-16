@@ -12,7 +12,7 @@
     </div>
     <div class="polygon-top2">
       <div class="polygon-m-InvitationBox">
-        <div class="InvitationCodeBtn" v-if="address&&(!defaultData.isInvite && !defaultData.inviteCode)" @click="InvitationCode">{{lang.enterCode}}</div>
+        <div class="InvitationCodeBtn" @click="InvitationCode">{{lang.enterCode}}</div>
       </div>
       <div class="polygon-top-left">
         <img class="bg0" src="@/assets/img/Py_bg.png" alt="">
@@ -30,7 +30,7 @@
         <div class="Minted">
           <div class="item">
             <p class="TTORegular title">Total Minted</p>
-            <p class="TTOMedium content">{{defaultData.totalMinted}}/{{defaultData.allNftNum}}</p>
+            <p class="TTOMedium content">{{defaultData.totalMinted || 0}}/{{defaultData.allNftNum || 10000}}</p>
           </div>
           <div class="item">
             <p class="TTORegular title">Price</p>
@@ -246,7 +246,7 @@
               <span class="TTORegular">输入邀请码</span>
             </div>
             <div class="Background0 invitationInput" :class="[{error: !!invitationError}]">
-              <van-field v-model="invitationCode" maxlength="6" class="Background0 TTOMedium"></van-field>
+              <van-field v-model="invitationCode" maxlength="6" :formatter="inputFormatter" class="Background0 TTOMedium"></van-field>
               <div class="clearBox" v-show="invitationCode" @click="invitationCode=''">
                 <van-icon name="clear" size="16" />
               </div>
@@ -370,6 +370,9 @@ export default {
 
   },
   methods: {
+    inputFormatter(value) {
+      return value.replace(/[^\d|a-z|A-Z]/g,'')
+    },
     async connect() {
       try {
         await wallet.connect();
@@ -382,7 +385,7 @@ export default {
     async init() {
       if (!wallet.isConnected()) {
         await wallet.connect();
-      }
+      } 
       const [nAddress] = await wallet.getAccounts()
       this.address = nAddress
       await this.nftMintGetInfo(this.address ? this.address : '', 'matic')
@@ -397,11 +400,19 @@ export default {
         chain
       });
       if (status == 0) {
-        this.defaultData = data;
-        // this.defaultData.inviteCode = 123457
-        // this.defaultData.isInvite = false
-        // this.defaultData.fromStartTime = 1652754291
-        this.endTime = data.fromStartTime > 0 ? new Date().getTime() + data.fromStartTime : 0;
+        this.defaultData = data; 
+        this.endTime = data.fromStartTime > 0 ? new Date().getTime() + data.fromStartTime : 0; 
+        this.endTime =  new Date().getTime() + 100000
+        if (data.fromStartTime > 0) {
+          const timer = setInterval(() => {
+            let newTime = new Date().getTime()
+            if (this.endTime <= newTime) {
+              clearInterval(timer)
+              location.reload()
+            }
+          }, 1000);
+        }
+
         if (+data.luckNum > 0) {
           const expires = new Date().setHours(23, 59, 59, 999) - new Date().getTime()
           if (!storage.getItem("luckaddress")) {
@@ -586,9 +597,9 @@ export default {
               chain: 'matic',
               hash: send
             }) 
-            this.addCoin(this.contract, this.chain, this.contract+'#BK#NFT') 
             this.isLoading = false
-            if (status == 1) {
+            if (status == 1) { 
+              this.addCoin(this.contract, this.chain, this.contract+'#BK#NFT') 
               this.isLoading = false
               return this.$dialog.alert({
                 message: data,
@@ -690,16 +701,8 @@ export default {
           data: TXdata.data.tx.data,
           chainId: TXdata.data.tx.chainId, // required for EIP-155 chainIds
         }
-        try {
-          const send = await wallet.setMintToken(tx)
-          // if (data.tx) { 
-          //   const params = {
-          //     // coin: 'matic', 
-          //     chain: tx.chainId, 
-          //     contract: tx.to
-          //   }
-          // }
-          // console.log(this.contract, this.chain, this.contract+'#BK#NFT')
+        try { 
+          const send = await wallet.setMintToken(tx)   
           var MentTimer = setInterval(async () => {
             const {
               data,
