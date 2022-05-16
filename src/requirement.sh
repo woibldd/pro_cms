@@ -16,4 +16,6 @@ npm install vue-i18n  vuex-persistedstate vuex  html2canvas dayjs qrcode -g
 npm install firebase -g
 
 
+npm install swiper      vue-awesome-swiper      bignumber.js -g
+
 
