@@ -13,7 +13,7 @@ const responselog = process.env.BUILD_ENV == 'pro' ? (...arg) => {
   console.log("bit-activity-response:", ...arg)
 } : debug('bit-activity-response')
 const host_user_instance = axios.create({
-  baseURL: "/",
+  baseURL: "https://b1.bitkeep.top",
   timeout: 60000,
   headers: {
     token: "",
