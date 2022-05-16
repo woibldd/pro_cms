@@ -12,7 +12,7 @@
     </div>
     <div class="polygon-top2">
       <div class="polygon-m-InvitationBox">
-        <div class="InvitationCodeBtn" v-if="address&&(!defaultData.isInvite || !defaultData.inviteCode)" @click="InvitationCode">{{lang.enterCode}}</div>
+        <div class="InvitationCodeBtn" v-if="address&&(!defaultData.isInvite && !defaultData.inviteCode)" @click="InvitationCode">{{lang.enterCode}}</div>
       </div>
       <div class="polygon-top-left">
         <img class="bg0" src="@/assets/img/Py_bg.png" alt="">
@@ -39,6 +39,11 @@
               <span>MATIC</span>
             </p>
           </div>
+        </div>
+        <div class="contract"> 
+          <label class="TTORegular title">合约地址:</label>
+          <span  class="TTORegular ">{{simplify('0x76b9a40Fb2844A450C086B06A4D20599C16FF6eA')}}</span> 
+          <span class="TTODbold copy" v-copy="'0x76b9a40Fb2844A450C086B06A4D20599C16FF6eA'">COPY</span>
         </div>
         <div class="MintBtn" v-if="defaultData.isMint||defaultData.isMelt">
           <div class="item">
@@ -155,7 +160,7 @@
               {{item}} 
             </div> 
           </div>
-          <div class="TTORegular m-viewAll" @click="showAirdropAddress=true">显示所有</div>
+          <div v-if="LotteryList.length > 0" class="TTORegular m-viewAll" @click="showAirdropAddress=true">显示所有</div>
         </div>
       </div>
       <div class="whiteIpcard">
@@ -240,12 +245,15 @@
             <div class="title TTORegular">
               <span class="TTORegular">输入邀请码</span>
             </div>
-            <div class="Background0 invitationInput">
+            <div class="Background0 invitationInput" :class="[{error: !!invitationError}]">
               <van-field v-model="invitationCode" maxlength="6" class="Background0 TTOMedium"></van-field>
               <div class="clearBox" v-show="invitationCode" @click="invitationCode=''">
                 <van-icon name="clear" size="16" />
               </div>
               <div class="pastetext" v-show="!invitationCode" @click="paste">粘贴
+              </div>
+              <div class="error-text" v-if="invitationError">
+                {{invitationError}}
               </div>
             </div>
             <div class="content">
@@ -266,7 +274,9 @@
       </AirdropAddressCard>
       <AirdropAwardCard :showAirdropAward="showAirdropAward" :currentAddress="address" :luckNum="defaultData.luckNum" @closeAirdropAwardCard="closeAirdropAwardCard">
       </AirdropAwardCard>
-       <InvitedCard :showInvitedlist="showInvitedlist" :currentAddress="address" :inviteNum="defaultData.inviteNum" :luckRate="defaultData.luckRate"  @closeInvitedCard="closeInvitedCard"></InvitedCard>
+      <InvitedCard :showInvitedlist="showInvitedlist" :inviteAddress="defaultData.inviteAddress"
+        :inviteNum="defaultData.inviteNum" :luckRate="defaultData.luckRate" @closeInvitedCard="closeInvitedCard">
+      </InvitedCard>
       <Whitelistcard :showWhitelist="showWhitelist" @closeWhitelistcard="closeWhitelistcard"></Whitelistcard>
       <MintSuccessCard :showMintSuccess="showMintSuccess" :MintData="MintData" @closeMintSuccess="closeMintSuccess">
       </MintSuccessCard>
@@ -321,7 +331,8 @@ export default {
       token: "",
       LotteryList: [],
       MintData: [],
-      MentList: [{tokenId: 1},{tokenId: 2},{tokenId: 3},{tokenId: 4}],
+      MentList: [],
+      invitationError: "",
     };
   },
   computed: {
@@ -376,7 +387,9 @@ export default {
       });
       if (status == 0) {
         this.defaultData = data;
-        this.defaultData.fromStartTime = 1652754291
+        // this.defaultData.inviteCode = 123457
+        // this.defaultData.isInvite = false
+        // this.defaultData.fromStartTime = 1652754291
         this.endTime = data.fromStartTime > 0 ? new Date().getTime() + data.fromStartTime : 0;
         if (+data.luckNum > 0) {
           const expires = new Date().setHours(23, 59, 59, 999) - new Date().getTime()
@@ -403,7 +416,7 @@ export default {
           confirmButtonColor: '#7524f9'
         });
       }
-      this.LotteryList = data.list;
+      this.LotteryList =  data.list;
     },
     async nftMintnftList() {
       if (!this.address) {
@@ -423,7 +436,7 @@ export default {
           confirmButtonColor: '#7524f9'
         });
       }
-      // this.MentList = data.list
+      this.MentList = data.list
     },
     async InvitationCode() {
       const [address] = await wallet.getAccounts()
@@ -462,6 +475,7 @@ export default {
       this.token = data.token
     },
     async invitationCodeSubmit() {
+      this.invitationError = ''
       if (!this.invitationCode) {
         this.$toast(this.$t("polygon.enterCode2"));
         return;
@@ -481,6 +495,7 @@ export default {
           verifyToken: sign
         })
         if (status == 1) {
+          this.invitationError = '邀请码错误'
           return this.$dialog.alert({
             message: data,
             confirmButtonText: this.$t('polygon.iknow'),
@@ -489,8 +504,7 @@ export default {
         }
         this.$toast(this.$t("polygon.InvitationSucceeded"));
         this.show = false;
-      } catch (error) {
-        console.log(error)
+      } catch (error) { 
         this.$toast.fail(typeof error == "object" ? error.message || 'error' : error);
       }
     },
@@ -533,7 +547,6 @@ export default {
           })
           return
         }
-        this.isLoading = true
         const TXdata = await USER_API.buildNftMintTxs({
           address: this.address,
           chain: 'ht',
@@ -551,6 +564,7 @@ export default {
           chainId: TXdata.data.tx.chainId, // required for EIP-155 chainIds
         }
         try {
+          this.isLoading = true
           const send = await wallet.setMintToken(tx)
           var MintTimer = setInterval(async () => {
             const {
@@ -559,7 +573,8 @@ export default {
             } = await USER_API.nftMintcheckTransaction({
               chain: 'ht',
               hash: send
-            })
+            }) 
+            this.isLoading = false
             if (status == 1) {
               this.isLoading = false
               return this.$dialog.alert({
@@ -577,7 +592,7 @@ export default {
               this.MintData = data.list;
               this.init()
               this.showMintSuccess = true;
-            }
+            } 
           }, 3000)
           var MintTimer2 = setTimeout(() => {
             this.isLoading = false
@@ -590,8 +605,7 @@ export default {
           }, 1000 * 60);
         } catch (error) {
           this.isLoading = false;
-          this.$toast.fail(typeof error == "object" ? error.message || 'error' : error);
-          console.log(error);
+          this.$toast.fail(typeof error == "object" ? error.message || 'error' : error); 
         }
       }
     },
@@ -644,6 +658,14 @@ export default {
           chain: 'ht',
           nftIds: Mentids.join(',')
         });
+        if (TXdata.status == 1) {
+          this.isLoading = false
+          return this.$dialog.alert({
+            message: TXdata.data,
+            confirmButtonText: this.$t('polygon.iknow'),
+            confirmButtonColor: '#7524f9'
+          }); 
+        }
         const tx = {
           gas: TXdata.data.tx.fee.gasLimitMax || TXdata.data.tx.fee.gasLimit,
           gasPrice: TXdata.data.tx.fee.gasPrice,
@@ -718,6 +740,9 @@ export default {
       this.showMintSuccess = false;
       this.isLoading = false;
     },
+    simplify(address) {
+      return address.substring(0, 6) + '...' + address.substring(address.length - 4)
+    } 
   }
 }
 </script>
@@ -814,7 +839,7 @@ export default {
           justify-content: space-between;
           align-items: center;
           padding: 0px 20px;
-          margin: 50px 0px;
+          margin: 50px 0px 5px;
 
           .item {
             .title {
@@ -882,6 +907,17 @@ export default {
               cursor: pointer;
             }
  
+          }
+        }
+
+        .contract {
+          padding: 0px 20px;
+          color: #ffffff;
+          font-size: 14px;
+          font-weight: 400;
+          .copy { 
+            color: #09EFBD; 
+            font-weight: 400;
           }
         }
 
@@ -1192,9 +1228,9 @@ export default {
 
     .title {
       color: #fff;
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 400;
-      margin-bottom: 20px;
+      margin: 20px 0 10px;;
     }
 
     .invitationInput {
@@ -1202,6 +1238,10 @@ export default {
       display: flex;
       align-items: center;
       position: relative;
+      border: solid 1px #49494d;
+      &.error {
+        border-color: #F36464;
+      }
 
       .clearBox {
         position: absolute;
@@ -1222,6 +1262,9 @@ export default {
         letter-spacing: 5px;
       }
 
+      .van-cell {
+        padding: 6px 16px;
+      }
       .van-cell::after {
         border: none;
       }
@@ -1236,6 +1279,15 @@ export default {
         font-size: 14px;
         font-weight: 400;
         cursor: pointer;
+      }
+      
+      .error-text {
+        position: absolute;
+        top: 42px;
+        left: 0;
+        margin-top: 2px;
+        color: #F36464;
+        font-size: 14px;
       }
     }
 

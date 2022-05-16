@@ -1,37 +1,40 @@
 <template>
   <van-popup v-model="visables" close-icon-position="top-right" closeable :close-on-click-overlay="false"
     @click-close-icon="close">
-    <div class="Mentpopup">
-      
+    <div class="Mentpopup"> 
       <div class="TTORegular title">
-        <span v-if="list.length > 1">
+        <div class="title1" v-if="list.length > 1">
           {{$t('polygon.meltTitle1')}}
           ({{list.filter(item=>{return item.selected==true}).length}}/{{list.length}}) 
-        </span>
-        <span v-else>
+        </div>
+        <div class="title2" v-else>
           {{$t('polygon.meltTitle2')}}
-        </span>
+        </div>
       </div>
       <div class="MentList" v-if="list.length > 1">  
           <swiper @mousemove="e=>e" :options="swiperOption" class="swiper-wrapper"> 
             <swiper-slide 
               v-for="item in list" :key="item.tokenId">
-              <div  class="Mentlogo" :class="item.selected==true?'MentlogoActive':''"  @click="selected(item)">
-                <img src="@/assets/img/Py_bg.png" alt="">
-                <div class="TTORegular tokenId">Token ID: #{{item.tokenId}}</div> 
+              <div  class="Mentlogo" :class="item.selected==true?'MentlogoActive':''"  @click="selected(item)"> 
+                  <img :src="item.picUrl" alt=""> 
+                  <!-- <img src="@/assets/img/Py_bg.png" alt=""> -->
+                  <div class="TTORegular tokenId">Token ID: #{{item.tokenId}}</div> 
+                 
               </div>
             </swiper-slide>
           </swiper>  
       </div>
-      <div v-else class="Mintlogo"> 
-        <img src="@/assets/img/Py_bg.png" alt=""> 
+      <div v-else-if="list.length == 1" class="Mintlogo"> 
+        <img :src="list[0].picUrl" alt=""> 
+        <!-- <img src="@/assets/img/Py_bg.png" alt=""> -->
+        <div class="TTORegular tokenId">Token ID: #{{list[0].tokenId}}</div> 
       </div>
       <div class="PaymentBox">
         <div class="PaymentInfo">
           <div class="title TTORegular">{{$t('polygon.meltValue')}}</div>
-          <div class="PaymentContent">
-            <span class="TTOMedium">{{MATIC}} MATIC</span>
-            <span class="TTOMedium"></span>
+          <div class="PaymentContent"> 
+            <span class="TTOMedium" v-if="list.length>1">{{ MATIC }} MATIC</span>
+            <span class="TTOMedium" v-else>100 MATIC</span> 
           </div>
           <div class="PaymentValue">
           </div>
@@ -98,7 +101,11 @@
         this.$emit("closeMent", false);
       },
       MentToken(tokens) {
-        if (tokens.length > 0) {
+        if (this.list.length == 1) {
+          this.selected(this.list[0])
+          this.$emit("closeMent", this.selectedList)
+        } else if (tokens.length > 0) {
+          console.log({tokens})
           this.$emit("closeMent", tokens)
         } else {
           this.$toast.fail(this.$t('polygon.mentAlert'));
@@ -116,8 +123,7 @@
 <style lang="scss" scoped>
  
   .Mentpopup {
-      width: 315px;
-      height: 557px;
+      width: 315px; 
       background: #202024;
       box-sizing: border-box;
       border: 1px solid #49494D;
@@ -127,24 +133,30 @@
         color: #fff;
         font-weight: 400;
         text-align: center;
-        margin: 40px 0px;
+        margin: 40px 0px 20px;
+        .title1 {
+          padding: 20px 0 30px;
+        }
       }
       
       .MentList {
         display: flex;
         justify-content: flex-start;
-        overflow: auto;
-        height: 200px;
+        overflow: visible;
+        height: 160px;
         padding: 0 10px;
         .swiper-wrapper {
           width: 100%;
+          overflow: visible;
         }
 
         .Mentlogo { 
           margin: 0 5px;
-          padding: 10px 5px 8px; 
+          padding: 0 0 8px; 
           box-sizing: border-box;
           cursor: pointer; 
+          border: 1px solid transparent;
+          opacity: .5;
 
           .tokenId {
             width: 100%;
@@ -158,20 +170,18 @@
             display: block;
             width: 108px; 
             margin: 0 auto;
-            border: 1px solid transparent;
           }
         }
 
         .MentlogoActive { 
           position: relative;
-          img {
-            border: 1px solid #09EFBD;
-          }
+          border: 1px solid #09EFBD;  
+          opacity: 1; 
           &::after {
             content: '';
             position:absolute;
             right: -10px;
-            top: 0;
+            top: -10px;
             width:20px;
             height: 20px;
             background-image:url(@/assets/img/icon-gou.png);
@@ -187,6 +197,13 @@
           width: 200px;
           height: 192px;
           margin: 0 auto;
+        } 
+        .tokenId {
+          width: 100%;
+          text-align: center;
+          font-size: 14px;
+          color: #fff;
+          margin-top: 10px;
         }
       }
       .PaymentBox {
@@ -220,29 +237,22 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-
+            align-items: center; 
             .TTOMedium:first-child {
               font-size: 24px;
               color: #09EFBD;
               font-weight: 400;
-            }
-
-            .TTOMedium:last-child {
-              font-size: 14px;
-              color: #fff;
-              font-weight: 400;
-            }
+            } 
           }
         }
 
-        .MentSubmit {
+        .MentSubmit { 
           width: 198px;
           height: 44px;
           line-height: 44px;
-          background: url(@/assets/img/btnBg6.png);
+          background: url('../../assets/img/btnBg6.png');
           background-size: 100% 100%;
-          margin: 0 auto;
+          margin: 30px auto 40px;
           text-align: center;
           font-size: 20px;
           color: #fff;

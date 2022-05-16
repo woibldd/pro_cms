@@ -52,23 +52,22 @@
 
     .content {
       padding: 30px 20px;
-      box-sizing: border-box;
-      line-height: 2em;
+      box-sizing: border-box; 
       h1 {
         font-size: 20px;
         font-weight: 400;
-        line-height: 2em;
+        line-height: 1.7em;
         color: #fff;
       }
 
       div {
         font-size: 16px;
         font-weight: 400;
+        line-height: 1.7em;
         color: #fff;
         margin-top: 5px;
         word-wrap: break-word;
-        word-break: normal;
-        line-height: 2em;
+        word-break: normal; 
       }
 
       .title2 {

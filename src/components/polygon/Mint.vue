@@ -98,7 +98,7 @@
 <style lang="scss" scoped> 
     .Mintpopup {
       width: 315px;
-      height: 557px;
+      height: 512px;
       background: #202024;
       box-sizing: border-box;
       border: 1px solid #49494D;

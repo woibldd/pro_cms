@@ -6,17 +6,17 @@
       </span>
       <span class="TTORegular">Days</span>
     </div>
-    <img class="slot" src="../../assets/img/slot/count-down.png" alt="">
+    <!-- <img class="slot" src="../../assets/img/slot/count-down.png" alt=""> -->
     <div class="item Background0">
       <span class="TTOMedium">{{zero(hh)}}</span>
       <span class="TTORegular">Hours</span>
     </div>
-    <img class="slot" src="../../assets/img/slot/count-down.png" alt="">
+    <!-- <img class="slot" src="../../assets/img/slot/count-down.png" alt=""> -->
     <div class="item Background0">
       <span class="TTOMedium">{{zero(mm)}}</span>
       <span class="TTORegular">Minutes</span>
     </div>
-    <img class="slot" src="../../assets/img/slot/count-down.png" alt="">
+    <!-- <img class="slot" src="../../assets/img/slot/count-down.png" alt=""> -->
     <div class="item Background0">
       <span class="TTOMedium">{{zero(ss)}}</span>
       <span class="TTORegular">Seconds</span>

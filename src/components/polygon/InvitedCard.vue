@@ -5,20 +5,21 @@
         <div class="title TTORegular">{{$t('polygon.inviteCount')}} <span class="TTOMedium">{{inviteNum}}</span></div>
         <div class="title TTORegular">{{$t('polygon.inviteTips2')}}<span class="TTOMedium ">{{luckRate}}%</span></div>
         <div class="Invitedlist TTORegular">
-          <div class="item TTORegular">
-            <div class="item">
+          <div class="item TTORegular" v-for="(item,index) in inviteAddress" :key="index">
+            <div class="TTORegular Invitedlabel">
               {{$t('polygon.inviteAddress')}}
             </div>
-            <div class="address">
-              {{currentAddress}}
+            <div class="address TTORegular">
+              {{item}}
             </div>
-          </div>
+          </div>  
         </div>
       </div>
     </div>
   </van-popup>
 </template>
 <script>
+
   export default {
     name: "InvitedCard",
     props: {
@@ -26,9 +27,9 @@
         type: Boolean,
         default: false
       },
-      currentAddress: {
-        type: String,
-        default: ''
+      inviteAddress: {
+        type: Array,
+        default: () => []
       },
       inviteNum: {
         type: Number,
@@ -41,7 +42,6 @@
     },
     data() {
       return {
-        MintNum: 0,
         visables: this.showInvitedlist,
       }
     },
