@@ -12,7 +12,7 @@
     </div>
     <div class="polygon-top2">
       <div class="polygon-m-InvitationBox">
-        <div class="InvitationCodeBtn" v-if="address&&(!defaultData.isInvite && !defaultData.inviteCode)" @click="InvitationCode">{{lang.enterCode}}</div>
+        <div class="InvitationCodeBtn" @click="InvitationCode">{{lang.enterCode}}</div>
       </div>
       <div class="polygon-top-left">
         <img class="bg0" src="@/assets/img/Py_bg.png" alt="">
@@ -246,7 +246,7 @@
               <span class="TTORegular">输入邀请码</span>
             </div>
             <div class="Background0 invitationInput" :class="[{error: !!invitationError}]">
-              <van-field v-model="invitationCode" maxlength="6" class="Background0 TTOMedium"></van-field>
+              <van-field v-model="invitationCode" maxlength="6" :formatter="inputFormatter" class="Background0 TTOMedium"></van-field>
               <div class="clearBox" v-show="invitationCode" @click="invitationCode=''">
                 <van-icon name="clear" size="16" />
               </div>
@@ -305,6 +305,7 @@ import {
   USER_API
 } from "@/api/client";
 import "@/utils/copy"
+import { loadView } from "@/tools/common.js" 
 // Vue.prototype.$bus = new Vue();
 import { BaseMixin } from "@/mixin/base.js"
 export default {
@@ -328,13 +329,18 @@ export default {
       showWhitelist: false,
       showMintSuccess: false,
       chainName: "matic",
+      chain:"matic",
       ChainId: "137",
+      contract:"0xF000bBB0d666d9Fbf857Ec9bC19BFeD4fD8eF61B",
+      symbol:"Polygon Warrior",
       address: "",
       token: "",
       LotteryList: [],
       MintData: [],
       MentList: [],
       invitationError: "",
+
+     
     };
   },
   computed: {
@@ -353,8 +359,8 @@ export default {
     Ment
   },
   async mounted() {
-
     await this.$nextTick();
+    await loadView()
     await this.connect()    
     await this.nftMintLotteryList()
     // this.$bus.$on('changeAccounts', async (val) => {
@@ -364,6 +370,9 @@ export default {
 
   },
   methods: {
+    inputFormatter(value) {
+      return value.replace(/[^\d|a-z|A-Z]/g,'')
+    },
     async connect() {
       try {
         await wallet.connect();
@@ -392,7 +401,18 @@ export default {
       });
       if (status == 0) {
         this.defaultData = data; 
-        this.endTime = data.fromStartTime > 0 ? new Date().getTime() + data.fromStartTime : 0;
+        this.endTime = data.fromStartTime > 0 ? new Date().getTime() + data.fromStartTime : 0; 
+        this.endTime =  new Date().getTime() + 100000
+        if (data.fromStartTime > 0) {
+          const timer = setInterval(() => {
+            let newTime = new Date().getTime()
+            if (this.endTime <= newTime) {
+              clearInterval(timer)
+              location.reload()
+            }
+          }, 1000);
+        }
+
         if (+data.luckNum > 0) {
           const expires = new Date().setHours(23, 59, 59, 999) - new Date().getTime()
           if (!storage.getItem("luckaddress")) {
@@ -578,7 +598,8 @@ export default {
               hash: send
             }) 
             this.isLoading = false
-            if (status == 1) {
+            if (status == 1) { 
+              this.addCoin(this.contract, this.chain, this.contract+'#BK#NFT') 
               this.isLoading = false
               return this.$dialog.alert({
                 message: data,
@@ -680,9 +701,8 @@ export default {
           data: TXdata.data.tx.data,
           chainId: TXdata.data.tx.chainId, // required for EIP-155 chainIds
         }
-        try {
-          const send = await wallet.setMintToken(tx)  
-          this.addCoin('test', 'matic', this.local.contract) 
+        try { 
+          const send = await wallet.setMintToken(tx)   
           var MentTimer = setInterval(async () => {
             const {
               data,
