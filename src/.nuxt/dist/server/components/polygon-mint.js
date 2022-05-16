@@ -1,17 +1,10 @@
-exports.ids = [15];
+exports.ids = [16];
 exports.modules = {
 
 /***/ 124:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/Py_bg.e03563f.png";
-
-/***/ }),
-
-/***/ 125:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/btnBg5.292a0ff.png";
 
 /***/ }),
 
@@ -51,7 +44,7 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
 var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(22);
-var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(125);
+var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(47);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 // Module
@@ -62,7 +55,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 278:
+/***/ 280:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

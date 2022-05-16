@@ -1,4 +1,4 @@
-exports.ids = [20,21,23,24,25];
+exports.ids = [21,22,24,25,26];
 exports.modules = {
 
 /***/ 129:
@@ -823,7 +823,7 @@ function linearEffect(width, height, bg, ctx) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(229);
+var content = __webpack_require__(230);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -1742,7 +1742,7 @@ const equal = (a, b) => {
 
 /***/ }),
 
-/***/ 228:
+/***/ 229:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1754,7 +1754,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 229:
+/***/ 230:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -1768,7 +1768,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 230:
+/***/ 231:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2031,7 +2031,7 @@ var render, staticRenderFns
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(228)
+  var style0 = __webpack_require__(229)
 if (style0.__inject__) style0.__inject__(context)
 
 }

@@ -1,5 +1,12 @@
-exports.ids = [14];
+exports.ids = [15];
 exports.modules = {
+
+/***/ 128:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/icon-gou.0536f32.png";
+
+/***/ }),
 
 /***/ 141:
 /***/ (function(module, exports, __webpack_require__) {
@@ -37,8 +44,8 @@ __webpack_require__.r(__webpack_exports__);
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
 var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(22);
-var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(189);
-var ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__(47);
+var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(128);
+var ___CSS_LOADER_URL_IMPORT_1___ = __webpack_require__(189);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_1___);
@@ -53,11 +60,11 @@ module.exports = ___CSS_LOADER_EXPORT___;
 /***/ 189:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/icon-gou.0536f32.png";
+module.exports = __webpack_require__.p + "img/btnBg6.64d0e76.png";
 
 /***/ }),
 
-/***/ 279:
+/***/ 281:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72,7 +79,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./components/polygon/Ment.vue?vue&type=template&id=1e41ab22&scoped=true&
 
 // EXTERNAL MODULE: external "vue-awesome-swiper"
-var external_vue_awesome_swiper_ = __webpack_require__(108);
+var external_vue_awesome_swiper_ = __webpack_require__(106);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/polygon/Ment.vue?vue&type=script&lang=js&
 //
