@@ -20,6 +20,9 @@ export const getImageInfo = (src) => new Promise(resolve => {
 
     }
 })
+export const LowerCase=(str='')=>{
+        return (str || '').toLowerCase()
+}
 
 function toBase64(img) {
     let canvas = document.createElement("canvas")

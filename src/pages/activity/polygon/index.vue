@@ -295,9 +295,10 @@ import {
   USER_API
 } from "@/api/client";
 import "@/utils/copy"
+import { BaseMixin } from "@/mixin/base.js"
 export default {
   name: "polygon",
-  // mixins: [cndMixins],
+  mixins: [BaseMixin],
   data() {
     return {
       isLoading: false,
