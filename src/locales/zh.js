@@ -707,7 +707,7 @@ module.exports = {
       pasteTips2: '您的浏览器不支持粘贴功能',
       submitSuccess: '填写成功',
       signCancel: '你取消了签名',
-      switchChain1: '请切换到Heco主网',
+      switchChain1: '请切换到Matic主网',
       switchChain2: '知道了,去切换',
       faild: '失败',
       success: '成功',

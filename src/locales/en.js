@@ -709,7 +709,7 @@ module.exports = {
     pasteTips2: 'Your browser does not support the paste function',
     submitSuccess: 'Fill in successfully',
     signCancel: 'you cancel the signature',
-    switchChain1: 'Please switch to Heco mainnet',
+    switchChain1: 'Please switch to Matic mainnet',
     switchChain2: 'Got it, go switch',
     faild: 'fail',
     success: 'success',
