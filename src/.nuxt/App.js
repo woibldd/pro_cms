@@ -4,19 +4,19 @@ import { decode, parsePath, withoutBase, withoutTrailingSlash, normalizeURL } fr
 import { getMatchedComponentsInstances, getChildrenComponentInstancesUsingFetch, promisify, globalHandleError, urlJoin, sanitizeComponent } from './utils'
 import NuxtError from './components/nuxt-error.vue'
 import NuxtLoading from './components/nuxt-loading.vue'
-import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
-import '..\\node_modules\\vant\\lib\\index.css'
+import '../node_modules/vant/lib/index.css'
 
-import '..\\assets\\css\\globle.scss'
+import '../assets/css/globle.scss'
 
-import '..\\node_modules\\swiper\\css\\swiper.css'
+import '../node_modules/swiper/css/swiper.css'
 
-import _6f6c098b from '..\\layouts\\default.vue'
-import _72edf111 from '..\\layouts\\footer.vue'
-import _75c41e03 from '..\\layouts\\header.vue'
+import _6f6c098b from '../layouts/default.vue'
+import _3252d7b6 from '../layouts/polygon/default.vue'
+import _582f3186 from '../layouts/polygon/footer.vue'
+import _5b055e78 from '../layouts/polygon/header.vue'
 
-const layouts = { "_default": sanitizeComponent(_6f6c098b),"_footer": sanitizeComponent(_72edf111),"_header": sanitizeComponent(_75c41e03) }
+const layouts = { "_default": sanitizeComponent(_6f6c098b),"_polygon/default": sanitizeComponent(_3252d7b6),"_polygon/footer": sanitizeComponent(_582f3186),"_polygon/header": sanitizeComponent(_5b055e78) }
 
 export default {
   render (h, props) {
@@ -51,7 +51,7 @@ export default {
       }
     }, [
       loadingEl,
-      h(NuxtBuildIndicator),
+
       transitionEl
     ])
   },
@@ -187,10 +187,6 @@ export default {
     },
 
     setLayout (layout) {
-      if(layout && typeof layout !== 'string') {
-        throw new Error('[nuxt] Avoid using non-string value as layout property.')
-      }
-
       if (!layout || !layouts['_' + layout]) {
         layout = 'default'
       }
