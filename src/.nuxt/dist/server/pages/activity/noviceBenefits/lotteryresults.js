@@ -1,17 +1,17 @@
-exports.ids = [55];
+exports.ids = [56];
 exports.modules = {
 
-/***/ 121:
+/***/ 111:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return USER_API; });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8);
+/* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_3__);
 
 
@@ -171,13 +171,13 @@ const USER_API = {
 
 /***/ }),
 
-/***/ 294:
+/***/ 263:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(386);
+var content = __webpack_require__(371);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -189,19 +189,19 @@ module.exports.__inject__ = function (context) {
 
 /***/ }),
 
-/***/ 385:
+/***/ 370:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_lotteryresults_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(294);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_lotteryresults_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(263);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_lotteryresults_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_lotteryresults_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_lotteryresults_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_lotteryresults_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 386:
+/***/ 371:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -215,7 +215,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 434:
+/***/ 418:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -223,17 +223,17 @@ module.exports = ___CSS_LOADER_EXPORT___;
 __webpack_require__.r(__webpack_exports__);
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/noviceBenefits/lotteryresults.vue?vue&type=template&id=6d4fed83&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"lotteryresults colorBackground1"},[_vm._ssrNode("<div class=\"lotteryresults-content\"></div> <div class=\"lotteryresults-summary colorBackground3\"><div class=\"lotteryresults-summary-item\"><p class=\"textSecond2\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.participationperiods')))+"</p> <p class=\"textPrimary0 setFontFamily\">"+_vm._ssrEscape(_vm._s(_vm.resultList.pushTimes || 0))+"</p></div> <div class=\"lotteryresults-summary-item\"><p class=\"textSecond2\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.ticketsinvested')))+"</p> <p class=\"textPrimary0 setFontFamily\">"+_vm._ssrEscape(_vm._s(_vm.resultList.pushPapers || 0))+"</p></div> <div class=\"lotteryresults-summary-item\"><p class=\"textSecond2\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.obtainBKB')))+"</p> <p class=\"textPrimary0 setFontFamily\">"+_vm._ssrEscape(_vm._s(_vm.resultList.allReward || 0))+"</p></div></div> "+((!!_vm.resultList.list.length)?("<ul class=\"lotteryresults-list\">"+(_vm._ssrList((_vm.resultList.list),function(item,index){return ("<li class=\"lotteryresults-list-item\"><div class=\"lotteryresults-list-left\"><p class=\"lotteryresults-list-itemNums textPrimary0\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.investment'))+" ")+"<span class=\"setFontFamily\">"+_vm._ssrEscape(_vm._s(item.pushPapers))+"</span>"+_vm._ssrEscape(" "+_vm._s(_vm.$t('noviceBenefits.araffleticket')))+"</p> <p class=\"lotteryresults-list-item-result textSecond3\">"+_vm._ssrEscape(_vm._s(item.code))+"</p></div> "+((Number(item.isReward) == 1 )?("<div class=\"lotteryresults-list-left\"><p class=\"lotteryresults-list-itemNums textPrimary0\">"+_vm._ssrEscape("🎉 "+_vm._s(_vm.$t('noviceBenefits.Congratulations')))+"</p> <p class=\"lotteryresults-list-item-result colorPrimary\" style=\"text-align:right \">+ <span class=\"setFontFamily\">"+_vm._ssrEscape(_vm._s(item.reward))+"</span> BKB</p></div>"):"<!---->")+" "+((Number(item.isReward) == 0 )?("<div class=\"lotteryresults-list-item-result lotteryresults-list-right textSecond3\">"+_vm._ssrEscape("\r\n                 "+_vm._s(_vm.$t('noviceBenefits.Failedto'))+"\r\n             ")+"</div>"):"<!---->")+" "+((Number(item.isReward) == 2 )?("<div class=\"lotteryresults-list-item-result lotteryresults-list-right textSecond3\">"+_vm._ssrEscape("\r\n                 "+_vm._s(_vm.$t('noviceBenefits.Tobewon'))+"\r\n             ")+"</div>"):"<!---->")+"</li>")}))+"</ul>"):"<!---->")+" "+((!_vm.resultList.list.length)?("<div class=\"lotteryresults-nodata\"><img src=\"https://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png\" alt> <p class=\"textSecond3\">"+_vm._ssrEscape(_vm._s(_vm.$t('mining.noData')))+"</p></div>"):"<!---->"))])}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"lotteryresults colorBackground1"},[_vm._ssrNode("<div class=\"lotteryresults-content\"></div> <div class=\"lotteryresults-summary colorBackground3\"><div class=\"lotteryresults-summary-item\"><p class=\"textSecond2\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.participationperiods')))+"</p> <p class=\"textPrimary0 setFontFamily\">"+_vm._ssrEscape(_vm._s(_vm.resultList.pushTimes || 0))+"</p></div> <div class=\"lotteryresults-summary-item\"><p class=\"textSecond2\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.ticketsinvested')))+"</p> <p class=\"textPrimary0 setFontFamily\">"+_vm._ssrEscape(_vm._s(_vm.resultList.pushPapers || 0))+"</p></div> <div class=\"lotteryresults-summary-item\"><p class=\"textSecond2\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.obtainBKB')))+"</p> <p class=\"textPrimary0 setFontFamily\">"+_vm._ssrEscape(_vm._s(_vm.resultList.allReward || 0))+"</p></div></div> "+((!!_vm.resultList.list.length)?("<ul class=\"lotteryresults-list\">"+(_vm._ssrList((_vm.resultList.list),function(item,index){return ("<li class=\"lotteryresults-list-item\"><div class=\"lotteryresults-list-left\"><p class=\"lotteryresults-list-itemNums textPrimary0\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.investment'))+" ")+"<span class=\"setFontFamily\">"+_vm._ssrEscape(_vm._s(item.pushPapers))+"</span>"+_vm._ssrEscape(" "+_vm._s(_vm.$t('noviceBenefits.araffleticket')))+"</p> <p class=\"lotteryresults-list-item-result textSecond3\">"+_vm._ssrEscape(_vm._s(item.code))+"</p></div> "+((Number(item.isReward) == 1 )?("<div class=\"lotteryresults-list-left\"><p class=\"lotteryresults-list-itemNums textPrimary0\">"+_vm._ssrEscape("🎉 "+_vm._s(_vm.$t('noviceBenefits.Congratulations')))+"</p> <p class=\"lotteryresults-list-item-result colorPrimary\" style=\"text-align:right \">+ <span class=\"setFontFamily\">"+_vm._ssrEscape(_vm._s(item.reward))+"</span> BKB</p></div>"):"<!---->")+" "+((Number(item.isReward) == 0 )?("<div class=\"lotteryresults-list-item-result lotteryresults-list-right textSecond3\">"+_vm._ssrEscape("\n                 "+_vm._s(_vm.$t('noviceBenefits.Failedto'))+"\n             ")+"</div>"):"<!---->")+" "+((Number(item.isReward) == 2 )?("<div class=\"lotteryresults-list-item-result lotteryresults-list-right textSecond3\">"+_vm._ssrEscape("\n                 "+_vm._s(_vm.$t('noviceBenefits.Tobewon'))+"\n             ")+"</div>"):"<!---->")+"</li>")}))+"</ul>"):"<!---->")+" "+((!_vm.resultList.list.length)?("<div class=\"lotteryresults-nodata\"><img src=\"https://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png\" alt> <p class=\"textSecond3\">"+_vm._ssrEscape(_vm._s(_vm.$t('mining.noData')))+"</p></div>"):"<!---->"))])}
 var staticRenderFns = []
 
 
 // CONCATENATED MODULE: ./pages/activity/noviceBenefits/lotteryresults.vue?vue&type=template&id=6d4fed83&
 
 // EXTERNAL MODULE: ./api/client.js
-var client = __webpack_require__(121);
+var client = __webpack_require__(111);
 
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(7);
+var external_vuex_ = __webpack_require__(6);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/noviceBenefits/lotteryresults.vue?vue&type=script&lang=js&
 //
@@ -400,7 +400,7 @@ var external_vuex_ = __webpack_require__(7);
 // CONCATENATED MODULE: ./pages/activity/noviceBenefits/lotteryresults.vue?vue&type=script&lang=js&
  /* harmony default export */ var noviceBenefits_lotteryresultsvue_type_script_lang_js_ = (lotteryresultsvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(2);
+var componentNormalizer = __webpack_require__(3);
 
 // CONCATENATED MODULE: ./pages/activity/noviceBenefits/lotteryresults.vue
 
@@ -408,7 +408,7 @@ var componentNormalizer = __webpack_require__(2);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(385)
+  var style0 = __webpack_require__(370)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -422,7 +422,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   null,
-  "27a6a65d"
+  "4133bcd5"
   
 )
 

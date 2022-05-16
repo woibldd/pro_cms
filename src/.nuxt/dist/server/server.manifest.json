@@ -51,12 +51,12 @@
     "pages/activity/mining/inviteRuleDetail.js": "pages/activity/mining/inviteRuleDetail.js",
     "pages/activity/mining/miningRule.js": "pages/activity/mining/miningRule.js",
     "pages/activity/mining/protocol.js": "pages/activity/mining/protocol.js",
+    "pages/activity/mint_nft_token/index.js": "pages/activity/mint_nft_token/index.js",
     "pages/activity/nftLottery/index.js": "pages/activity/nftLottery/index.js",
     "pages/activity/noviceBenefits/drawluckly.js": "pages/activity/noviceBenefits/drawluckly.js",
     "pages/activity/noviceBenefits/index.js": "pages/activity/noviceBenefits/index.js",
     "pages/activity/noviceBenefits/inviteRuleDetail.js": "pages/activity/noviceBenefits/inviteRuleDetail.js",
     "pages/activity/noviceBenefits/lotteryresults.js": "pages/activity/noviceBenefits/lotteryresults.js",
-    "pages/activity/polygon/index.js": "pages/activity/polygon/index.js",
     "pages/activity/staking/addPool.js": "pages/activity/staking/addPool.js",
     "pages/activity/staking/index.js": "pages/activity/staking/index.js",
     "pages/activity/staking/myPool.js": "pages/activity/staking/myPool.js",
@@ -67,7 +67,6 @@
     "pages/activity/trading/protocol.js": "pages/activity/trading/protocol.js",
     "pages/activity/trading/tradingRule.js": "pages/activity/trading/tradingRule.js",
     "pages/article/detail/_id.js": "pages/article/detail/_id.js",
-    "pages/polygon/index.js": "pages/polygon/index.js",
     "server.js": "server.js"
   },
   "maps": {
@@ -121,12 +120,12 @@
     "pages/activity/mining/inviteRuleDetail.js": "pages/activity/mining/inviteRuleDetail.js.map",
     "pages/activity/mining/miningRule.js": "pages/activity/mining/miningRule.js.map",
     "pages/activity/mining/protocol.js": "pages/activity/mining/protocol.js.map",
+    "pages/activity/mint_nft_token/index.js": "pages/activity/mint_nft_token/index.js.map",
     "pages/activity/nftLottery/index.js": "pages/activity/nftLottery/index.js.map",
     "pages/activity/noviceBenefits/drawluckly.js": "pages/activity/noviceBenefits/drawluckly.js.map",
     "pages/activity/noviceBenefits/index.js": "pages/activity/noviceBenefits/index.js.map",
     "pages/activity/noviceBenefits/inviteRuleDetail.js": "pages/activity/noviceBenefits/inviteRuleDetail.js.map",
     "pages/activity/noviceBenefits/lotteryresults.js": "pages/activity/noviceBenefits/lotteryresults.js.map",
-    "pages/activity/polygon/index.js": "pages/activity/polygon/index.js.map",
     "pages/activity/staking/addPool.js": "pages/activity/staking/addPool.js.map",
     "pages/activity/staking/index.js": "pages/activity/staking/index.js.map",
     "pages/activity/staking/myPool.js": "pages/activity/staking/myPool.js.map",
@@ -137,7 +136,6 @@
     "pages/activity/trading/protocol.js": "pages/activity/trading/protocol.js.map",
     "pages/activity/trading/tradingRule.js": "pages/activity/trading/tradingRule.js.map",
     "pages/article/detail/_id.js": "pages/article/detail/_id.js.map",
-    "pages/polygon/index.js": "pages/polygon/index.js.map",
     "server.js": "server.js.map"
   }
 }

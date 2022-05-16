@@ -12,13 +12,11 @@ import '../assets/css/globle.scss'
 import '../node_modules/swiper/css/swiper.css'
 
 import _6f6c098b from '../layouts/default.vue'
-import _72edf111 from '../layouts/footer.vue'
-import _75c41e03 from '../layouts/header.vue'
 import _3252d7b6 from '../layouts/polygon/default.vue'
 import _582f3186 from '../layouts/polygon/footer.vue'
 import _5b055e78 from '../layouts/polygon/header.vue'
 
-const layouts = { "_default": sanitizeComponent(_6f6c098b),"_footer": sanitizeComponent(_72edf111),"_header": sanitizeComponent(_75c41e03),"_polygon/default": sanitizeComponent(_3252d7b6),"_polygon/footer": sanitizeComponent(_582f3186),"_polygon/header": sanitizeComponent(_5b055e78) }
+const layouts = { "_default": sanitizeComponent(_6f6c098b),"_polygon/default": sanitizeComponent(_3252d7b6),"_polygon/footer": sanitizeComponent(_582f3186),"_polygon/header": sanitizeComponent(_5b055e78) }
 
 export default {
   render (h, props) {

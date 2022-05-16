@@ -1,7 +1,7 @@
 exports.ids = [23];
 exports.modules = {
 
-/***/ 444:
+/***/ 428:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -53,7 +53,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./components/vue-create-poster/layout/header.vue?vue&type=script&lang=js&
  /* harmony default export */ var layout_headervue_type_script_lang_js_ = (headervue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(2);
+var componentNormalizer = __webpack_require__(3);
 
 // CONCATENATED MODULE: ./components/vue-create-poster/layout/header.vue
 
@@ -73,7 +73,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "2c568ffc",
-  "392f47ae"
+  "608e9ebe"
   
 )
 
