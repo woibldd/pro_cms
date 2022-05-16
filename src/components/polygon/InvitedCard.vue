@@ -12,7 +12,7 @@
             <div class="address TTORegular">
               {{item}}
             </div>
-          </div>  
+          </div> 
         </div>
       </div>
     </div>
@@ -60,14 +60,13 @@
 </script>
 <style lang="scss" scoped>
   .InvitedBox {
-    width: 315px;
-    height: 557px;
+    width: 315px; 
     background: #202024;
     box-sizing: border-box;
     border: 1px solid #49494D;
 
     .content {
-      padding: 20px;
+      padding: 40px 20px 20px 20px;
       box-sizing: border-box;
 
       .title {

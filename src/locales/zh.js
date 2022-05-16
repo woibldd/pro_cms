@@ -716,6 +716,10 @@ module.exports = {
       mintAlert: 'Mint数量不能小于1',
       whiteAlert1: '白名单用户Mint数量不能大于10个',
       whiteAlert2: '非白名单用户Mint数量不能大于5个',
-      loading:'区块链上确认中，请稍等...'
+      loading:'区块链上确认中，请稍等...', 
+      contractAddress:'合约地址',
+      invitationError: '邀请码错误',
+      mintTitle1: "MINT 的 NFT",
+      loadingtitle2:"去浏览器中查看", 
   }
 }

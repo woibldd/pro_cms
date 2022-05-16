@@ -29,7 +29,7 @@ const vCopy = { // 名字爱取啥取啥
    textarea.setSelectionRange(0, textarea.value.length);
    const result = document.execCommand('Copy');
    if (result && el.className.indexOf('congratulations_deposit_span') == -1) {
-    Toast.success('复制成功');
+    Toast.success('Copy Success');
    }
    document.body.removeChild(textarea);
   };

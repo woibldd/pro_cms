@@ -10,8 +10,7 @@ const log = process.env.BUILD_ENV == 'pro' ? (...arg) => {
 const INIT_STATE = {
   locale: "en", //  语言设置
   locales: ['zh','en','ja','ko','vi','id','zh_tw'],
-  firstStatus: true,
-  contract: '0x76b9a40Fb2844A450C086B06A4D20599C16FF6eA',
+  firstStatus: true, 
   bitkeep: {
     language: 'en',
     currency: 'cny',
