@@ -30,7 +30,7 @@
         <div class="Minted">
           <div class="item">
             <p class="TTORegular title">Total Minted</p>
-            <p class="TTOMedium content">{{defaultData.totalMinted}}/{{defaultData.allNftNum}}</p>
+            <p class="TTOMedium content">{{defaultData.totalMinted || 0}}/{{defaultData.allNftNum || 10000}}</p>
           </div>
           <div class="item">
             <p class="TTORegular title">Price</p>
@@ -376,7 +376,7 @@ export default {
     async init() {
       if (!wallet.isConnected()) {
         await wallet.connect();
-      }
+      } 
       const [nAddress] = await wallet.getAccounts()
       this.address = nAddress
       await this.nftMintGetInfo(this.address ? this.address : '', 'matic')
@@ -391,10 +391,7 @@ export default {
         chain
       });
       if (status == 0) {
-        this.defaultData = data;
-        // this.defaultData.inviteCode = 123457
-        // this.defaultData.isInvite = false
-        // this.defaultData.fromStartTime = 1652754291
+        this.defaultData = data; 
         this.endTime = data.fromStartTime > 0 ? new Date().getTime() + data.fromStartTime : 0;
         if (+data.luckNum > 0) {
           const expires = new Date().setHours(23, 59, 59, 999) - new Date().getTime()
@@ -684,16 +681,8 @@ export default {
           chainId: TXdata.data.tx.chainId, // required for EIP-155 chainIds
         }
         try {
-          const send = await wallet.setMintToken(tx)
-          debugger
-          if (data.tx) { 
-            const params = {
-              // coin: 'matic', 
-              chain: tx.chainId, 
-              contract: tx.to
-            }
-          }
-          this.addCoin({params}) 
+          const send = await wallet.setMintToken(tx)  
+          this.addCoin('test', 'matic', this.local.contract) 
           var MentTimer = setInterval(async () => {
             const {
               data,
