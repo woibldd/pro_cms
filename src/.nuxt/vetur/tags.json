@@ -32,9 +32,6 @@
   "PolygonAirdropAwardCard": {
     "description": "Auto imported from components/polygon/AirdropAwardCard.vue"
   },
-  "PolygonCVueCountdown": {
-    "description": "Auto imported from components/polygon/c-vue-countdown.vue"
-  },
   "PolygonInvitedCard": {
     "description": "Auto imported from components/polygon/InvitedCard.vue"
   },
@@ -49,6 +46,9 @@
   },
   "PolygonWhitelistcard": {
     "description": "Auto imported from components/polygon/Whitelistcard.vue"
+  },
+  "PolygonCVueCountdown": {
+    "description": "Auto imported from components/polygon/c-vue-countdown.vue"
   },
   "Trading": {
     "description": "Auto imported from components/trading/index.vue"
