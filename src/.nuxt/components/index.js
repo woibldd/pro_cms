@@ -11,7 +11,7 @@ export { default as CommonHeader } from '../..\\components\\common\\header.vue'
 export { default as Common } from '../..\\components\\common\\index.js'
 export { default as PolygonAirdropAddressCard } from '../..\\components\\polygon\\AirdropAddressCard.vue'
 export { default as PolygonAirdropAwardCard } from '../..\\components\\polygon\\AirdropAwardCard.vue'
-export { default as PolygonCountdown } from '../..\\components\\polygon\\countdown.vue'
+export { default as PolygonCVueCountdown } from '../..\\components\\polygon\\c-vue-countdown.vue'
 export { default as PolygonInvitedCard } from '../..\\components\\polygon\\InvitedCard.vue'
 export { default as PolygonMent } from '../..\\components\\polygon\\Ment.vue'
 export { default as PolygonMint } from '../..\\components\\polygon\\Mint.vue'
@@ -37,7 +37,7 @@ export const LazyCommonHeader = import('../..\\components\\common\\header.vue' /
 export const LazyCommon = import('../..\\components\\common\\index.js' /* webpackChunkName: "components/common" */).then(c => wrapFunctional(c.default || c))
 export const LazyPolygonAirdropAddressCard = import('../..\\components\\polygon\\AirdropAddressCard.vue' /* webpackChunkName: "components/polygon-airdrop-address-card" */).then(c => wrapFunctional(c.default || c))
 export const LazyPolygonAirdropAwardCard = import('../..\\components\\polygon\\AirdropAwardCard.vue' /* webpackChunkName: "components/polygon-airdrop-award-card" */).then(c => wrapFunctional(c.default || c))
-export const LazyPolygonCountdown = import('../..\\components\\polygon\\countdown.vue' /* webpackChunkName: "components/polygon-countdown" */).then(c => wrapFunctional(c.default || c))
+export const LazyPolygonCVueCountdown = import('../..\\components\\polygon\\c-vue-countdown.vue' /* webpackChunkName: "components/polygon-c-vue-countdown" */).then(c => wrapFunctional(c.default || c))
 export const LazyPolygonInvitedCard = import('../..\\components\\polygon\\InvitedCard.vue' /* webpackChunkName: "components/polygon-invited-card" */).then(c => wrapFunctional(c.default || c))
 export const LazyPolygonMent = import('../..\\components\\polygon\\Ment.vue' /* webpackChunkName: "components/polygon-ment" */).then(c => wrapFunctional(c.default || c))
 export const LazyPolygonMint = import('../..\\components\\polygon\\Mint.vue' /* webpackChunkName: "components/polygon-mint" */).then(c => wrapFunctional(c.default || c))

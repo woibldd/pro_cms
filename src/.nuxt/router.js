@@ -4,7 +4,6 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _53b60798 = () => interopDefault(import('..\\pages\\polygon\\index.vue' /* webpackChunkName: "pages/polygon/index" */))
 const _8d955638 = () => interopDefault(import('..\\pages\\activity\\airdrop\\index.vue' /* webpackChunkName: "pages/activity/airdrop/index" */))
 const _7991ce61 = () => interopDefault(import('..\\pages\\activity\\blindbox\\index.vue' /* webpackChunkName: "pages/activity/blindbox/index" */))
 const _42139a58 = () => interopDefault(import('..\\pages\\activity\\blindboxInvite\\index.vue' /* webpackChunkName: "pages/activity/blindboxInvite/index" */))
@@ -12,6 +11,7 @@ const _75d4b43e = () => interopDefault(import('..\\pages\\activity\\cbkbexchange
 const _4b864767 = () => interopDefault(import('..\\pages\\activity\\mining\\index.vue' /* webpackChunkName: "pages/activity/mining/index" */))
 const _087c79ac = () => interopDefault(import('..\\pages\\activity\\nftLottery\\index.vue' /* webpackChunkName: "pages/activity/nftLottery/index" */))
 const _01364d05 = () => interopDefault(import('..\\pages\\activity\\noviceBenefits\\index.vue' /* webpackChunkName: "pages/activity/noviceBenefits/index" */))
+const _73665843 = () => interopDefault(import('..\\pages\\activity\\polygon\\index.vue' /* webpackChunkName: "pages/activity/polygon/index" */))
 const _588603a6 = () => interopDefault(import('..\\pages\\activity\\staking\\index.vue' /* webpackChunkName: "pages/activity/staking/index" */))
 const _06c441fc = () => interopDefault(import('..\\pages\\activity\\trading\\index.vue' /* webpackChunkName: "pages/activity/trading/index" */))
 const _665f06f0 = () => interopDefault(import('..\\pages\\activity\\blindbox\\detail\\index.vue' /* webpackChunkName: "pages/activity/blindbox/detail/index" */))
@@ -57,10 +57,6 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
-    path: "/polygon",
-    component: _53b60798,
-    name: "polygon"
-  }, {
     path: "/activity/airdrop",
     component: _8d955638,
     name: "activity-airdrop"
@@ -88,6 +84,10 @@ export const routerOptions = {
     path: "/activity/noviceBenefits",
     component: _01364d05,
     name: "activity-noviceBenefits"
+  }, {
+    path: "/activity/polygon",
+    component: _73665843,
+    name: "activity-polygon"
   }, {
     path: "/activity/staking",
     component: _588603a6,

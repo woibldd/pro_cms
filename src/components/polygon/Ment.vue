@@ -5,11 +5,11 @@
       
       <div class="TTORegular title">
         <span v-if="list.length > 1">
-          选择 MELT 的 NFT
+          {{$t('polygon.meltTitle1')}}
           ({{list.filter(item=>{return item.selected==true}).length}}/{{list.length}}) 
         </span>
         <span v-else>
-          待 MELT 的 NFT
+          {{$t('polygon.meltTitle2')}}
         </span>
       </div>
       <div class="MentList">
@@ -38,7 +38,7 @@
       </div>
       <div class="PaymentBox">
         <div class="PaymentInfo">
-          <div class="title TTORegular">预估可获得</div>
+          <div class="title TTORegular">{{$t('polygon.meltValue')}}</div>
           <div class="PaymentContent">
             <span class="TTOMedium">{{MATIC}} MATIC</span>
             <span class="TTOMedium"></span>
@@ -111,7 +111,7 @@
         if (tokens.length > 0) {
           this.$emit("closeMent", tokens)
         } else {
-          this.$toast.fail("Ment数量不能小于0");
+          this.$toast.fail(this.$t('polygon.mentAlert'));
         }
       }
     },
@@ -151,7 +151,8 @@
         }
 
         .Mentlogo { 
-          padding: 10px 10px 8px; 
+          margin: 0 5px;
+          padding: 10px 5px 8px; 
           box-sizing: border-box;
           cursor: pointer;
           // &:not(:first-child) {
@@ -168,7 +169,7 @@
 
           img {
             display: block;
-            width: 115px; 
+            width: 108px; 
             margin: 0 auto;
             border: 1px solid transparent;
           }

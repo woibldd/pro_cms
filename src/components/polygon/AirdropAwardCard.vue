@@ -3,12 +3,12 @@
     <div class="AirdropAwardBox">
       <div class="content">
         <div class="title TTORegular">
-          恭喜！你获得了空投奖励
+          {{$t('polygon.awardTitle')}}
         </div>
         <div class="BKB TTORegular">{{luckNum}} BKB</div>
         <div class="Walletaddress">
           <div class="title TTORegular">
-            获奖钱包地址
+            {{$t('polygon.awardAddress')}}
           </div>
           <div class="address TTORegular">
             {{currentAddress}}

@@ -3,7 +3,7 @@
     @click-close-icon="close">
     <div class="AirdropAddressBox">
       <div class="content">
-        <div class="title TTORegular">以下每个地址均获得 <span class="TTOMedium">BKB奖励</span></div>
+        <div class="title TTORegular">{{$t('polygon.airdropTips1')}} <span class="TTOMedium">BKB{{$t('polygon.airdropTips2')}}</span></div>
         <div class="getTime TTORegular">{{((new Date).getTime())-86400000|timeFilter}}</div>
         <div class="list">
           <div @touchmove.stop="touchmove"  class="Addresslist" style="" > 

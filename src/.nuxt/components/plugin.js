@@ -13,7 +13,7 @@ const components = {
   Common: () => import('../..\\components\\common\\index.js' /* webpackChunkName: "components/common" */).then(c => wrapFunctional(c.default || c)),
   PolygonAirdropAddressCard: () => import('../..\\components\\polygon\\AirdropAddressCard.vue' /* webpackChunkName: "components/polygon-airdrop-address-card" */).then(c => wrapFunctional(c.default || c)),
   PolygonAirdropAwardCard: () => import('../..\\components\\polygon\\AirdropAwardCard.vue' /* webpackChunkName: "components/polygon-airdrop-award-card" */).then(c => wrapFunctional(c.default || c)),
-  PolygonCountdown: () => import('../..\\components\\polygon\\countdown.vue' /* webpackChunkName: "components/polygon-countdown" */).then(c => wrapFunctional(c.default || c)),
+  PolygonCVueCountdown: () => import('../..\\components\\polygon\\c-vue-countdown.vue' /* webpackChunkName: "components/polygon-c-vue-countdown" */).then(c => wrapFunctional(c.default || c)),
   PolygonInvitedCard: () => import('../..\\components\\polygon\\InvitedCard.vue' /* webpackChunkName: "components/polygon-invited-card" */).then(c => wrapFunctional(c.default || c)),
   PolygonMent: () => import('../..\\components\\polygon\\Ment.vue' /* webpackChunkName: "components/polygon-ment" */).then(c => wrapFunctional(c.default || c)),
   PolygonMint: () => import('../..\\components\\polygon\\Mint.vue' /* webpackChunkName: "components/polygon-mint" */).then(c => wrapFunctional(c.default || c)),

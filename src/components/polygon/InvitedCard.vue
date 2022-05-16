@@ -2,12 +2,12 @@
   <van-popup v-model="visables" close-icon-position="top-right" :close-on-click-overlay="false" closeable  @click-close-icon="close">
     <div class="InvitedBox">
       <div class="content">
-        <div class="title TTORegular">当前邀请成功人数 <span class="TTOMedium">{{inviteNum}}</span></div>
-        <div class="title TTORegular">领取空投概率 <span class="TTOMedium">{{luckRate}}%</span></div>
+        <div class="title TTORegular">{{$t('polygon.inviteCount')}} <span class="TTOMedium">{{inviteNum}}</span></div>
+        <div class="title TTORegular">{{$t('polygon.inviteTips2')}}<span class="TTOMedium ">{{luckRate}}%</span></div>
         <div class="Invitedlist TTORegular">
           <div class="item TTORegular">
             <div class="item">
-              被邀请人地址
+              {{$t('polygon.inviteAddress')}}
             </div>
             <div class="address">
               {{currentAddress}}

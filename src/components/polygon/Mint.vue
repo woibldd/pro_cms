@@ -6,14 +6,14 @@
         <img src="@/assets/img/Py_bg.png" alt="">
       </div>
       <div class="PaymentBox">
-        <div class="TTORegular title">购买数量</div>
+        <div class="TTORegular title">{{$t('polygon.mintAmount')}}</div>
         <div class="PaymentNum">
           <van-icon name="minus" size="18" class="subtraction" @click="subtraction" />
           <span class="TTOMedium number">{{MintNum}}</span>
           <van-icon name="plus" size="18" class="Addition" @click="Addition" />
         </div>
         <div class="PaymentInfo">
-          <div class="title TTORegular">待支付</div>
+          <div class="title TTORegular">{{$t('polygon.mintPayment')}}</div>
           <div class="PaymentContent">
             <span class="TTOMedium">{{MATIC}} MATIC</span>
             <!-- <span class="TTOMedium">~${{MATICPRICE}}</span> -->
@@ -25,12 +25,16 @@
   </van-popup>
 </template>
 <script>
-  export default {
+   export default {
     name: "Mint",
     props: {
       showMint: {
         type: Boolean,
         default: false
+      },
+      MentList:{
+        type: Array,
+        default: () => []
       },
       isWhite: {
         type: Boolean,
@@ -53,7 +57,7 @@
         if (this.MintNum > 1) {
           this.MintNum--;
         } else {
-          this.$toast("Mint数量不能小于1");
+          this.$toast(this.$t("polygon.mintAlert"));
         }
       },
       Addition() {
@@ -61,13 +65,14 @@
         if(this.isWhite){
           MintNum=10
         }
-        if (this.MintNum < MintNum) {
+        if (this.MintNum < MintNum-this.MentList.length) {
           this.MintNum++;
         }else{
-          this.$toast(this.isWhite?"白名单用户Mint数量不能大于10个":"非白名单用户Mint数量不能大于5个");
+          this.$toast(this.isWhite?this.$t("polygon.whiteAlert1"):this.$t("polygon.whiteAlert2"));
         }
       },
       close() {
+        this.visables=false;
         this.$emit("closeMint", false);
         this.MintNum=1;
       },
@@ -75,7 +80,7 @@
         if (MintNum >= 1) {
           this.$emit("closeMint", MintNum)
         } else {
-          this.$toast.fail("Mint数量不能小于1");
+          this.$toast.fail(this.$t("polygon.mintAlert"));
         }
       }
     },
@@ -104,8 +109,8 @@
 
         img {
           display: block;
-          width: 215px;
-          height: 206px;
+          width: 200px;
+          height: 192px;
           margin: 0 auto;
         }
       }
@@ -142,7 +147,7 @@
             height: 40px;
             border: 1px solid #49494D;
             color: #09EFBD;
-            font-size: 40px;
+            font-size: 30px;
             margin-right: 10px;
             text-align: center;
             line-height: 40px;
@@ -176,17 +181,17 @@
             justify-content: center;
             align-items: center;
 
-            :first-child {
+            .TTOMedium:first-child {
               font-size: 24px;
               color: #09EFBD;
               font-weight: 400;
             }
 
-            :last-child {
-              font-size: 14px;
-              color: #fff;
-              font-weight: 400;
-            }
+            // .TTOMedium:last-child {
+            //   font-size: 14px;
+            //   color: #fff;
+            //   font-weight: 400;
+            // }
           }
         }
 

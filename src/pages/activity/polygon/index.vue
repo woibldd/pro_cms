@@ -7,23 +7,23 @@
         <h1 class="two TTOMedium">Genesis NFT Sale</h1>
       </div>
       <div class="polygon-top-right">
-        <img src="../../assets/img/Py_bg1.png" alt="">
+        <img src="@/assets/img/Py_bg1.png" alt="">
       </div>
     </div>
     <div class="polygon-top2">
       <div class="polygon-m-InvitationBox">
-        <div class="InvitationCodeBtn" v-if="address&&!defaultData.isInvite" @click="InvitationCode">填写邀请码</div>
+        <div class="InvitationCodeBtn" v-if="address&&(!defaultData.isInvite || !defaultData.inviteCode)" @click="InvitationCode">{{lang.enterCode}}</div>
       </div>
       <div class="polygon-top-left">
-        <img class="bg0" src="../../assets/img/Py_bg.png" alt="">
-        <img class="bg8" src="../../assets/img/Py_bg8.png" alt="">
+        <img class="bg0" src="@/assets/img/Py_bg.png" alt="">
+        <img class="bg8" src="@/assets/img/Py_bg8.png" alt="">
       </div> 
       <div class="polygon-top-middle">
-        <img src="../../assets/img/Py_bg7.png" alt="">
+        <img src="@/assets/img/Py_bg7.png" alt="">
         <div class="g-line"></div>
       </div>
       <div class="polygon-top-right">
-        <p class="RemainingtimeText TTORegular" v-if="defaultData.fromStartTime>0">距离开始还剩</p>
+        <p class="RemainingtimeText TTORegular" v-if="defaultData.fromStartTime>0">{{lang.remainingTime}}</p>
         <div class="Countdown" v-if="defaultData.fromStartTime>0">
           <Countdown :startTime="startTime" :endTime="endTime" :format="format" />
         </div>
@@ -55,8 +55,8 @@
           </div>
         </div>
         <div class="tipstext-wrap Background0">
-          <div v-if="!defaultData.isMelt" class="TTORegular tipstext">7月17日后，可在官网以原价进行反向铸造</div>
-          <div v-else class="TTORegular tipstext">现在可在官网以原价进行反向铸造</div>
+          <div v-if="!defaultData.isMelt" class="TTORegular tipstext">{{lang.tipsText1}}</div>
+          <div v-else class="TTORegular tipstext">{{lang.tipsText2}}</div>
         </div>
         <img src="@/assets/img/Py_bg2.png" class="Py_bg2" alt="">
       </div>
@@ -64,33 +64,33 @@
     <div class="polygonContentBox">
       <div class="RightsAndInterests">
         <div class="contentTitle">
-          <h1 class="TTORegular">权益<div class="line"></div>
+          <h1 class="TTORegular">{{lang.rights}}<div class="line"></div>
           </h1>
         </div>
         <div class="RightsAndInterestsContent">
           <div class="invitationBox" >
-            <img src="../../assets/img/polygon_h5/InvitationCodeBg.png" alt="" class="m-InvitationCodeBg">
-            <div class="TTODbold card1 Background0">邀请好友 领取空投</div>
+            <img src="@/assets/img/polygon_h5/InvitationCodeBg.png" alt="" class="m-InvitationCodeBg">
+            <div class="TTODbold card1 Background0">{{lang.inviteFriends}}</div>
             <!-- <img src="@/assets/img/Py_bg3.png" alt="">
             <div class="TTORegular card2 Background0"  v-if="address&&!defaultData.isInvite" @click="InvitationCode">填写邀请码</div> -->
           </div>
           <div class="infoBox">
             <div class="itembox1 TTORegular">
               <p class="TTORegular">
-                 1.Mint 开启后 30 天内，每日随机挑选 100 位持有者，每位持有者空投 随机 枚 BKB 到云钱包
+                 {{lang.info1}}
               </p>
-              <p class="TTORegular">2.必须创建云钱包后才能领取空投</p>
-              <p class="TTORegular">3.邀请人数越多，领取空投概率越大:</p>
+              <p class="TTORegular">{{lang.info2}}</p>
+              <p class="TTORegular">{{lang.info3}}</p>
               <p class="TTORegular" style="margin-bottom:0px">
-                邀请人数 0 —— 0% 幸运加成 <br>
-                邀请人数 1 —— 20% 幸运加成 <br>
-                邀请人数 2 —— 50% 幸运加成<br>
-                邀请人数 3 及以上 —— 100% 幸运加成<br>
-                注：幸运值越高，获得空投几率越大
+                {{lang.info4}} <br>
+                {{lang.info5}} <br>
+                {{lang.info6}}<br>
+                {{lang.info7}}<br>
+                {{lang.info8}}
               </p>
               <div class="InvitationCodeBox" v-if="defaultData.inviteCode!=0">
                 <div class="InvitationCode Background0">
-                  <span class="TTORegular text">我的邀请码</span>
+                  <span class="TTORegular text">{{lang.inviteCode}}</span>
                   <span class="TTODbold code">{{defaultData.inviteCode}}</span>
                   <span class="line"></span>
                   <span class="TTODbold copy" v-copy="defaultData.inviteCode">COPY</span>
@@ -100,18 +100,18 @@
             <div class="itembox2 Background0">
               <div class="addressTitle">
                 <p class="TTORegular text1">
-                  <label>当前邀请成功人数 </label> 
+                  <label>{{lang.inviteCount}} </label> 
                   <span class="TTOMedium">{{defaultData.inviteNum}}</span>
                   <span v-if="defaultData.inviteNum!=0" class="viewInvitee TTORegular"
-                    @click="showInvitedlist=true">查看被邀请人</span>
+                    @click="showInvitedlist=true">{{lang.inviteShow}}</span>
                 </p>
-                <p class="TTORegular text2">填入你的邀请码后 MINT 成功的用户算作邀请成功</p>
+                <p class="TTORegular text2">{{lang.inviteTips1}}</p>
               </div>
               <div class="addresslistBox">
                 <div class="noData TTOMedium" v-if="defaultData.inviteNum==0">0</div>
                 <div class="addresslist" v-else>
                   <div class="addressItem TTORegular" v-for="item in defaultData.inviteAddress" :key="item">
-                    <span class="TTORegular">被邀请地址</span>
+                    <span class="TTORegular">{{lang.inviteAddress}}</span>
                     <p class="TTORegular">
                       {{item}}</p>
                   </div>
@@ -119,16 +119,16 @@
               </div>
             </div>
             <div class="itembox3 TTORegular Background0">
-              <h2 class="TTORegular">白名单特权</h2>
+              <h2 class="TTORegular">{{lang.whiteTitle}}</h2>
               <div class="TTORegular">
-                1、白名单用户在5月15日开启Mint <br>
-                2、非白名单用户在5月16日开启Mint<br>
-                3、白名单用户购买上限为10个<br>
-                4、非白名单用户购买上限为5个</div>
-              <h2 class="TTORegular">怎样成为白名单 ？</h2>
+                {{lang.whiteTips1}} <br>
+                {{lang.whiteTips2}}<br>
+                {{lang.whiteTips3}}<br>
+                {{lang.whiteTips4}}</div>
+              <h2 class="TTORegular">{{lang.whiteTips9}}</h2>
               <div class="TTORegular">
-                1、使用Swap进行交易过的用户<br>
-                2、通过NFT交易市场交易过的用户<br>
+                {{lang.whiteTips5}}<br>
+                {{lang.whiteTips6}}<br>
               </div>
             </div>
           </div>
@@ -137,30 +137,33 @@
       <div class="ShortaddressContent">
         <!-- 接口暂时没加 -->
         <div class="contentTitle">
-          <h1 class="TTORegular">空投获奖地址<div class="line">
-              <span class="TTORegular">05-16-2022</span>
+          <h1 class="TTORegular">{{lang.airdropTitle}}<div class="line">
+              <span class="TTORegular">{{ ((new Date).getTime()) - 86400000 | timeFilter }}</span>
             </div>
           </h1>
         </div>
         <div class="Shortaddresslist">
           <div class="ShortaddressTitle TTORegular">
-            以下每个地址均获得
-            <span class="TTOMedium">100 BKB</span>
+            {{lang.airdropTips1}}
+            <span class="TTOMedium">BKB{{$t('polygon.airdropTips2')}}</span>
           </div>
-          <div class="TTORegular m-ShortaddressTitle">共<span>{{LotteryList.length}}</span>个地址</div>
+          <div class="TTORegular m-ShortaddressTitle" v-html="$t('polygon.airdropAmount', {amount: `<span>${LotteryList.length}</span>`})">
+            <!-- 共<span>{{LotteryList.length}}</span>个地址 -->
+          </div>
           <div class="list Background0"> 
             <div v-for="(item, index) in LotteryList" :key="index" v-show="index < 9" class="item TTORegular"> 
               {{item}} 
             </div> 
           </div>
-          <div class="TTORegular m-viewAll" @click="showAirdropAddress=true">查看全部</div>
+          <div class="TTORegular m-viewAll" @click="showAirdropAddress=true">显示所有</div>
         </div>
       </div>
       <div class="whiteIpcard">
         <div class="text Background0">
-          <span v-if="defaultData.isWhite">您是白名单特权用户</span>
-          <span v-else>您暂时不是白名单用户</span>
-          <img src="@/assets/img/polygon_h5/question.png" alt="" @click="showWhitelist=true"></div>
+          <span v-if="defaultData.isWhite">{{lang.whiteTips7}}</span>
+          <span v-else>{{lang.whiteTips8}}</span>
+          <img src="@/assets/img/polygon_h5/question.png" alt="" @click="showWhitelist=true">
+        </div>
         <img src="@/assets/img/polygon_h5/Py_bottom.png" alt="">
       </div>
       <div class="LoadMapcontent">
@@ -176,45 +179,45 @@
           <div class="logoListContent">
             <div class="Item">
               <div class="TTOMedium logo active">
-                公开发售
+                {{lang.sell}}
+              </div>
+              <span class="TTOMedium">05-17-2022</span>
+            </div>
+            <div class="Item">
+              <div class="TTOMedium logo">
+                {{lang.sell}}
               </div>
               <span class="TTOMedium">05-15-2022</span>
             </div>
             <div class="Item">
               <div class="TTOMedium logo">
-                公开发售
-              </div>
-              <span class="TTOMedium">05-15-2022</span>
-            </div>
-            <div class="Item">
-              <div class="TTOMedium logo">
-                第一轮福利 <br>
+                {{lang.welfare1}} <br>
                 BKB
               </div>
               <span class="TTOMedium">07-16-2022</span>
             </div>
             <div class="Item">
               <div class="TTOMedium logo">
-                开启反向铸造
+                {{lang.welfare2}}
               </div>
               <span class="TTOMedium ">Q2-2022</span>
             </div>
             <div class="Item">
               <div class="TTOMedium logo">
-                第二轮福利
+                {{lang.welfare3}}
               </div>
               <span class="TTOMedium">Q3-2022</span>
             </div>
             <div class="Item">
               <div class="TTOMedium logo">
-                开启成就 2.0
+                {{lang.welfare4}} 2.0
               </div>
               <span class="TTOMedium">Q4-2022</span>
             </div>
             <div class="Item">
               <div class="TTOMedium logo">
-                更多福利 <br>
-                敬请期待
+                {{lang.welfare5}} <br>
+                {{lang.welfare6}}
               </div>
               <span class="TTOMedium">2023</span>
             </div>
@@ -225,23 +228,12 @@
         <div style="clear-both"></div>
       </div>
       <div class="Tipscontent Background0 TTORegular">
-        <p class="TTORegular">注意事项</p>
-        <p class="TTORegular">1. 注册 BitKeep 并通过 Wallet Connect 连接该网站。</p>
-        <p class="TTORegular">2. 确保你的钱包里有足够的 MATIC 来支付包括汽油费在内的总成本。</p>
-        <p class="TTORegular">3. 单击铸币按钮，系统将提示您签署交易，并产生汽油费用。</p>
-        <p class="TTORegular">4. 购买后，您的 NFT 将出现在您的钱包中，且可以通过 BitKeep Market 和 Opensea 进行交易！</p>
-      </div>
-      <!-- <div>
-        <swiper :options="swiperOption" class="swiper-wrapper"> 
-          <swiper-slide 
-            v-for="item in MentList" :key="item.tokenId">
-            <div  class="Mentlogo" :class="item.selected==true?'MentlogoActive':''"  @click="selected(item)">
-              <img src="@/assets/img/Py_bg.png" alt="">
-              <div class="TTORegular tokenId">Token ID: #{{item.tokenId}}</div> 
-            </div>
-          </swiper-slide>
-        </swiper> 
-      </div> -->
+        <p class="TTORegular">{{lang.matters}}</p>
+        <p class="TTORegular">{{lang.mattersTips1}}</p>
+        <p class="TTORegular">{{lang.mattersTips2}}</p>
+        <p class="TTORegular">{{lang.mattersTips3}}</p>
+        <p class="TTORegular">{{lang.mattersTips4}}</p>
+      </div> 
       <van-popup v-model="show" close-icon-position="top-right" closeable>
         <div class="PopupBox">
           <div class="InvitationPopup">
@@ -268,8 +260,8 @@
           </div>
         </div>
       </van-popup>
-      <Mint :showMint="showMint" :isWhite="defaultData.isWhite" @closeMint="closeMint"></Mint>
-      <Ment :showMent="showMent" v-if="showMent" :MentList="MentList" @closeMent="closeMent"></Ment>
+      <Mint :showMint="showMint" :MentList="MentList" :isWhite="defaultData.isWhite"  @closeMint="closeMint"></Mint>
+      <Ment :showMent="showMent" :MentList="MentList" v-if="showMent" @closeMent="closeMent"></Ment>
       <AirdropAddressCard :showAirdropAddress="showAirdropAddress" :LotteryList="LotteryList" @closeAirdropAddressCard="closeAirdropAddressCard">
       </AirdropAddressCard>
       <AirdropAwardCard :showAirdropAward="showAirdropAward" :currentAddress="address" :luckNum="defaultData.luckNum" @closeAirdropAwardCard="closeAirdropAwardCard">
@@ -288,436 +280,452 @@
 </template>
 <script>
   // import cndMixins from "@/mixin/cnd.js";
-  import Countdown from "@/components/common/c-vue-countdown";
-  import Mint from "@/components/polygon/Mint";
-  import Ment from "@/components/polygon/Ment";
-  import AirdropAddressCard from "@/components/polygon/AirdropAddressCard";
-  import AirdropAwardCard from "@/components/polygon/AirdropAwardCard";
-  import InvitedCard from '@/components/polygon/InvitedCard'
-  import Whitelistcard from '@/components/polygon/Whitelistcard'
-  import MintSuccessCard from '@/components/polygon/MintSuccessCard'
-  import {storage} from '@/utils/Storage'
-  import { Swiper, SwiperSlide } from 'vue-awesome-swiper'   
-  import {
-    wallet
-  } from "@/utils/wallet";
-  // MintToken
-  import {
-    USER_API
-  } from "@/api/client";
-  import "@/utils/copy"
-  export default {
-    name: "polygon",
-    // mixins: [cndMixins],
-    data() {
-      return {
-        swiperOption: {
-          direction: 'horizontal',  
-        },
-        isLoading: true,
-        defaultData: {},
-        startTime: new Date().getTime(),
-        endTime: 0,
-        format: "{dd}天{hh}小时{mm}分钟{ss}秒",
-        show: false,
-        showMint: false,
-        showMent: false,
-        invitationCode: "",
-        showAirdropAddress: false,
-        showAirdropAward: false,
-        showInvitedlist: false,
-        showWhitelist: false,
-        showMintSuccess: false,
-        chainName: "ht",
-        ChainId: "128",
-        address: "",
-        token: "",
-        LotteryList: [],
-        MintData: [],
-        MentList: [],
-      };
+import Countdown from "@/components/polygon/c-vue-countdown";
+import Mint from "@/components/polygon/Mint";
+import Ment from "@/components/polygon/Ment";
+import AirdropAddressCard from "@/components/polygon/AirdropAddressCard";
+import AirdropAwardCard from "@/components/polygon/AirdropAwardCard";
+import InvitedCard from '@/components/polygon/InvitedCard'
+import Whitelistcard from '@/components/polygon/Whitelistcard'
+import MintSuccessCard from '@/components/polygon/MintSuccessCard'
+import { storage } from '@/utils/Storage'
+import { wallet } from "@/utils/wallet";
+// MintToken
+import {
+  USER_API
+} from "@/api/client";
+import "@/utils/copy"
+export default {
+  name: "polygon",
+  // mixins: [cndMixins],
+  data() {
+    return {
+      isLoading: false,
+      defaultData: {},
+      startTime: new Date().getTime(),
+      endTime: 0,
+      format: "{dd}天{hh}小时{mm}分钟{ss}秒",
+      show: false,
+      showMint: false,
+      showMent: false,
+      invitationCode: "",
+      showAirdropAddress: false,
+      showAirdropAward: false,
+      showInvitedlist: false,
+      showWhitelist: false,
+      showMintSuccess: false,
+      chainName: "ht",
+      ChainId: "128",
+      address: "",
+      token: "",
+      LotteryList: [],
+      MintData: [],
+      MentList: [{tokenId: 1},{tokenId: 2},{tokenId: 3},{tokenId: 4}],
+    };
+  },
+  computed: {
+    lang() {
+      return this.$t('polygon')
+    }
+  },
+  components: {
+    Countdown,
+    Mint,
+    AirdropAddressCard,
+    AirdropAwardCard,
+    InvitedCard,
+    Whitelistcard,
+    MintSuccessCard,
+    Ment
+  },
+  async mounted() {
+
+    await this.$nextTick();
+    await this.connect()
+    await this.nftMintLotteryList()
+    this.$bus.$on('changeAccounts', async (val) => {
+      this.init()
+    });
+    // this.nftMintGetInfo(this.address, 'ht')
+
+  },
+  methods: {
+    async connect() {
+      try {
+        await wallet.connect();
+        this.init()
+      } catch (e) {
+        this.init()
+        console.log(e)
+      }
     },
-    components: {
-      Countdown,
-      Mint,
-      AirdropAddressCard,
-      AirdropAwardCard,
-      InvitedCard,
-      Whitelistcard,
-      MintSuccessCard,
-      Ment,
-      Swiper, 
-      SwiperSlide,
+    async init() {
+      const [nAddress] = await wallet.getAccounts()
+      this.address = nAddress
+      await this.nftMintGetInfo(this.address ? this.address : '', 'ht')
+      await this.nftMintnftList()
     },
-    async mounted() {
-      await this.$nextTick();
-      await this.connect()
-      // await this.nftMintLotteryList()
-      // this.nftMintGetInfo(this.address, 'ht')
-      this.$bus.$on('changeAccounts', async (val) => {
-        this.connect()
+    async nftMintGetInfo(address, chain) {
+      const {
+        data,
+        status
+      } = await USER_API.nftMintGetInfo({
+        address,
+        chain
       });
+      if (status == 0) {
+        this.defaultData = data;
+        this.defaultData.fromStartTime = 1652754291
+        this.endTime = data.fromStartTime > 0 ? new Date().getTime() + data.fromStartTime : 0;
+        if (+data.luckNum > 0) {
+          const expires = new Date().setHours(23, 59, 59, 999) - new Date().getTime()
+          if (!storage.getItem("luckaddress")) {
+            storage.setItem({ name: 'luckaddress', value: this.address, expires: expires })
+          } else if (storage.getItem("luckaddress").split("|").filter(item => { return item == this.address }).length == 0) {
+            storage.setItem({ name: 'luckaddress', value: storage.getItem("luckaddress") + '|' + this.address, expires: expires })
+          } else {
+            return false
+          }
+          this.showAirdropAward = true
+        }
+      }
+    },
+    async nftMintLotteryList() {
+      const {
+        data,
+        status
+      } = await USER_API.nftMintLotteryList();
+      if (status == 1) {
+        return this.$dialog.alert({
+          message: data,
+          confirmButtonText: this.$t('polygon.iknow'),
+          confirmButtonColor: '#7524f9'
+        });
+      }
+      this.LotteryList = data.list;
+    },
+    async nftMintnftList() {
+      if (!this.address) {
+        return false
+      }
+      const {
+        data,
+        status
+      } = await USER_API.nftMintnftList({
+        address: this.address,
+        chain: this.chainName
+      })
+      if (status == 1) {
+        return this.$dialog.alert({
+          message: data,
+          confirmButtonText: this.$t('polygon.iknow'),
+          confirmButtonColor: '#7524f9'
+        });
+      }
+      // this.MentList = data.list
+    },
+    async InvitationCode() {
+      const [address] = await wallet.getAccounts()
+      this.address = address
+      this.show = true;
+    },
+    async paste() {
+      if (navigator.clipboard) {
+        const clipText = await navigator.clipboard.readText();
+        if (clipText.replace(/\s/g, "")) {
+          this.invitationCode = clipText.replace(/\s/g, "");
+        } else {
+          this.$toast(this.$t("polygon.pasteTips1"));
+        }
+      } else {
+        this.$toast({
+          message: this.$t("polygon.pasteTips2"),
+          duration: 2000
+        });
+      }
+    },
+    async getToken(address) {
+      const {
+        data,
+        status
+      } = await USER_API.nftMintGetToken({
+        address
+      })
+      if (status == 1) {
+        return this.$dialog.alert({
+          message: data,
+          confirmButtonText: this.$t('polygon.iknow'),
+          confirmButtonColor: '#7524f9'
+        });
+      }
+      this.token = data.token
+    },
+    async invitationCodeSubmit() {
+      if (!this.invitationCode) {
+        this.$toast(this.$t("polygon.enterCode2"));
+        return;
+      }
+      try {
+        await this.getToken(this.address)
+        const sign = await wallet.paritySign(this.token, this.address)
+        console.log(sign)
+        const {
+          data,
+          status
+        } = await USER_API.nftMintInvite({
+          address: this.address,
+          chain: 'ht',
+          code: this.invitationCode,
+          c_token: this.token,
+          verifyToken: sign
+        })
+        if (status == 1) {
+          return this.$dialog.alert({
+            message: data,
+            confirmButtonText: this.$t('polygon.iknow'),
+            confirmButtonColor: '#7524f9'
+          });
+        }
+        this.$toast(this.$t("polygon.InvitationSucceeded"));
+        this.show = false;
+      } catch (error) {
+        console.log(error)
+        this.$toast.fail(typeof error == "object" ? error.message || 'error' : error);
+      }
+    },
+    closeinvitationCode() {
+      this.show = false;
+      this.invitationCode = ""
+    },
+    async closeMint(MintNum) {
+      this.showMint = false;
+      if (MintNum) {
+        const ChainId = await wallet.getChainId()
+        if (Number(ChainId) != this.ChainId) {
+          this.$dialog.alert({
+            message: this.$t("polygon.switchChain1"),
+            confirmButtonText: this.$t("polygon.switchChain2"),
+            confirmButtonColor: '#7524f9'
+          }).then(() => {
+            try {
+              window.ethereum.request({
+                method: "wallet_switchEthereumChain",
+                params: [{
+                  chainId: wallet.transfer16(this.ChainId)
+                }]
+              })
+            } catch {
+              ethereum.request({
+                method: "wallet_addEthereumChain",
+                params: [{
+                  chainId: wallet.transfer16(this.ChainId),
+                  chainName: "HECO",
+                  rpcUrls: ["https://http-mainnet.hecochain.com"],
+                  nativeCurrency: {
+                    name: "HECO",
+                    symbol: "HECO",
+                    decimals: 18,
+                  },
+                },],
+              });
+            }
+          })
+          return
+        }
+        this.isLoading = true
+        const TXdata = await USER_API.buildNftMintTxs({
+          address: this.address,
+          chain: 'ht',
+          num: MintNum
+        });
+        const tx = {
+          gas: TXdata.data.tx.fee.gasLimitMax || TXdata.data.tx.fee.gasLimit,
+          gasPrice: TXdata.data.tx.fee.gasPrice,
+          nonce: String(TXdata.data.tx.nonce), // ignored by MetaMask
+          to: TXdata.data.tx.to, // Required except during contract publications.
+          from: TXdata.data.tx.from, // must match user's active address.
+          value: TXdata.data.tx
+            .value, // Only required to send ether to the recipient from the initiating external account.
+          data: TXdata.data.tx.data,
+          chainId: TXdata.data.tx.chainId, // required for EIP-155 chainIds
+        }
+        try {
+          const send = await wallet.setMintToken(tx)
+          var MintTimer = setInterval(async () => {
+            const {
+              data,
+              status
+            } = await USER_API.nftMintcheckTransaction({
+              chain: 'ht',
+              hash: send
+            })
+            if (status == 1) {
+              this.isLoading = false
+              return this.$dialog.alert({
+                message: data,
+                confirmButtonText: this.$t('polygon.iknow'),
+                confirmButtonColor: '#7524f9'
+              });
+            }
+            if (data.status == 1) {
+              console.log("MintTimer", MintTimer)
+              clearInterval(MintTimer)
+              clearTimeout(MintTimer2)
+              this.isLoading = false;
+              this.$toast("Mint" + this.$t("polygon.success"));
+              this.MintData = data.list;
+              this.init()
+              this.showMintSuccess = true;
+            }
+          }, 3000)
+          var MintTimer2 = setTimeout(() => {
+            this.isLoading = false
+            this.init()
+            clearInterval(MintTimer)
+            this.$dialog.alert({
+              message: 'Mint' + this.$t('polygon.faild'),
+              confirmButtonText: this.$t('polygon.iknow'),
+            })
+          }, 1000 * 60);
+        } catch (error) {
+          this.isLoading = false;
+          this.$toast.fail(typeof error == "object" ? error.message || 'error' : error);
+          console.log(error);
+        }
+      }
+    },
+    async ableMent(Mentlist) {
+      if (Mentlist.length == 0) {
+        return this.$dialog.alert({
+          message: this.$t('polygon.noNft'),
+        })
+      }
+      this.showMent = true;
+    },
+    async closeMent(Mentids) {
+      this.showMent = false;
+      if (Mentids) {
+        const ChainId = await wallet.getChainId()
+        if (Number(ChainId) != this.ChainId) {
+          this.$dialog.alert({
+            message: this.$t("polygon.switchChain1"),
+            confirmButtonText: this.$t("polygon.switchChain2"),
+            confirmButtonColor: '#7524f9'
+          }).then(() => {
+            try {
+              window.ethereum.request({
+                method: "wallet_switchEthereumChain",
+                params: [{
+                  chainId: wallet.transfer16(this.ChainId)
+                }]
+              })
+            } catch {
+              ethereum.request({
+                method: "wallet_addEthereumChain",
+                params: [{
+                  chainId: wallet.transfer16(this.ChainId),
+                  chainName: "HECO",
+                  rpcUrls: ["https://hecoinfo.com/"],
+                  nativeCurrency: {
+                    name: "HECO",
+                    symbol: "HECO",
+                    decimals: 18,
+                  },
+                },],
+              });
+            }
+          })
+          return
+        }
+        this.isLoading = true
+        const TXdata = await USER_API.nftMintbuildNftMeltTxs({
+          address: this.address,
+          chain: 'ht',
+          nftIds: Mentids.join(',')
+        });
+        const tx = {
+          gas: TXdata.data.tx.fee.gasLimitMax || TXdata.data.tx.fee.gasLimit,
+          gasPrice: TXdata.data.tx.fee.gasPrice,
+          nonce: String(TXdata.data.tx.nonce), // ignored by MetaMask
+          to: TXdata.data.tx.to, // Required except during contract publications.
+          from: TXdata.data.tx.from, // must match user's active address.
+          value: TXdata.data.tx
+            .value, // Only required to send ether to the recipient from the initiating external account.
+          data: TXdata.data.tx.data,
+          chainId: TXdata.data.tx.chainId, // required for EIP-155 chainIds
+        }
+        try {
+          const send = await wallet.setMintToken(tx)
+          var MentTimer = setInterval(async () => {
+            const {
+              data,
+              status
+            } = await USER_API.nftMintcheckTransaction({
+              chain: 'ht',
+              hash: send
+            })
+            if (status == 1) {
+              this.isLoading = false
+              return this.$dialog.alert({
+                message: data,
+                confirmButtonText: this.$t('polygon.iknow'),
+                confirmButtonColor: '#7524f9'
+              });
+            }
+            if (data.status == 1) {
+              console.log("MentTimer", MentTimer)
+              clearInterval(MentTimer)
+              clearTimeout(MentTimer2)
+              this.isLoading = false;
+              this.$toast("MELT" + this.$t("polygon.success"))
+              const MLETsuccess=data.list.map(item => {
+                return item.tokenId
+              })
+               this.MentList=this.MentList.filter(item => {
+                return MLETsuccess.indexOf(item.tokenId) == -1
+              });
+            }
+          }, 3000)
+          var MentTimer2 = setTimeout(() => {
+            this.isLoading = false
+            this.init()
+            MentTimer && clearInterval(MentTimer)
+            this.$dialog.alert({
+              message: 'MELT' + this.$t("polygon.faild"),
+              confirmButtonText: $t('polygon.iknow'),
+            })
+          }, 1000 * 60);
+        } catch (error) {
+          this.isLoading = false
+          this.$toast.fail(typeof error == "object" ? error.message || 'error' : error);
+        }
+      }
+    },
+    closeAirdropAddressCard() {
+      this.showAirdropAddress = false;
+    },
+    closeAirdropAwardCard() {
+      this.showAirdropAward = false;
+    },
+    closeInvitedCard() {
+      this.showInvitedlist = false;
+    },
+    closeWhitelistcard() {
+      this.showWhitelist = false;
+    },
+    closeMintSuccess() {
+      this.showMintSuccess = false;
       this.isLoading = false;
     },
-    methods: {
-      async connect() {
-        try {
-          const address = await wallet.connect();
-          this.address =address;
-          await this.nftMintGetInfo(this.address, 'ht')
-          await this.nftMintnftList()
-        } catch (e) {
-          console.log(e)
-        }
-      },
-      async nftMintGetInfo(address, chain) {
-        const {
-          data,
-          status
-        } = await USER_API.nftMintGetInfo({
-          address,
-          chain
-        });
-        if (status == 0) {
-          this.defaultData = data;
-          this.endTime = data.fromStartTime > 0 ? new Date().getTime() + data.fromStartTime : 0;
-          if(data.luckNum>0){
-            const expires=new Date().setHours(23,59,59,999)-new Date().getTime()
-            if(!storage.getItem("luckaddress")){
-              storage.setItem({name:'luckaddress',value:this.address,expires:expires})
-            }else if(storage.getItem("luckaddress").split("|").filter(item=>{return item==this.address}).length==0){
-              storage.setItem({name:'luckaddress',value:storage.getItem("luckaddress")+'|'+this.address,expires:expires})
-            }else{
-              return false
-            }
-            this.showAirdropAward=true
-          }
-        }
-      },
-      async nftMintLotteryList() {
-        const {
-          data,
-          status
-        } = await USER_API.nftMintLotteryList();
-        if (status == 1) {
-          return this.$dialog.alert({
-            message: data,
-            confirmButtonText: "知道了",
-            confirmButtonColor: '#7524f9'
-          });
-        }
-        this.LotteryList = data.list;
-      },
-      async nftMintnftList() {
-        const {
-          data,
-          status
-        } = await USER_API.nftMintnftList({
-          address: this.address,
-          chain: this.chainName
-        })
-        if (status == 1) {
-          return this.$dialog.alert({
-            message: data,
-            confirmButtonText: "知道了",
-            confirmButtonColor: '#7524f9'
-          });
-        }
-        this.MentList = data.list
-      },
-      async InvitationCode() {
-        const [address] = await wallet.getAccounts()
-        this.address = address
-        this.show = true;
-      },
-      async paste() {
-        if (navigator.clipboard) {
-          const clipText = await navigator.clipboard.readText();
-          if (clipText.replace(/\s/g, "")) {
-            this.invitationCode = clipText.replace(/\s/g, "");
-          } else {
-            this.$toast("没有内容可以粘贴");
-          }
-        } else {
-          this.$toast({
-            message: '您的浏览器不支持粘贴功能',
-            duration: 2000
-          });
-        }
-      },
-      async getToken(address) {
-        const {
-          data,
-          status
-        } = await USER_API.nftMintGetToken({
-          address
-        })
-        if (status == 1) {
-          return this.$dialog.alert({
-            message: data,
-            confirmButtonText: "知道了",
-            confirmButtonColor: '#7524f9'
-          });
-        }
-        this.token = data.token
-      },
-      async invitationCodeSubmit() {
-        if (!this.invitationCode) {
-          this.$toast("邀请码不能为空");
-          return;
-        }
-        try {
-          await this.getToken(this.address)
-          const sign = await wallet.paritySign(this.token, this.address)
-          console.log(sign)
-          const {
-            data,
-            status
-          } = await USER_API.nftMintInvite({
-            address: this.address,
-            chain: 'ht',
-            code: this.invitationCode,
-            c_token: this.token,
-            verifyToken: sign
-          })
-          if (status == 1) {
-            return this.$dialog.alert({
-              message: data,
-              confirmButtonText: "知道了",
-              confirmButtonColor: '#7524f9'
-            });
-          }
-          this.$toast("填写成功");
-          this.show = false;
-        } catch (error) {
-          console.log(error)
-          this.$toast('你取消了签名');
-        }
-      },
-      async closeMint(MintNum) {
-        this.showMint = false;
-        if (MintNum) {
-          const ChainId = await wallet.getChainId()
-          if (Number(ChainId) != this.ChainId) {
-            this.$dialog.alert({
-              message: "请切换到Heco主网",
-              confirmButtonText: "知道了,去切换",
-              confirmButtonColor: '#7524f9'
-            }).then(() => {
-              try {
-                window.ethereum.request({
-                  method: "wallet_switchEthereumChain",
-                  params: [{
-                    chainId: wallet.transfer16(this.ChainId)
-                  }]
-                })
-              } catch {
-                ethereum.request({
-                  method: "wallet_addEthereumChain",
-                  params: [{
-                    chainId: wallet.transfer16(this.ChainId),
-                    chainName: "HECO",
-                    rpcUrls: ["https://http-mainnet.hecochain.com"],
-                    nativeCurrency: {
-                      name: "HECO",
-                      symbol: "HECO",
-                      decimals: 18,
-                    },
-                  }, ],
-                });
-              }
-            })
-            return
-          }
-          this.isLoading = true
-          const TXdata = await USER_API.buildNftMintTxs({
-            address: this.address,
-            chain: 'ht',
-            num: MintNum
-          });
-          const tx = {
-            gas: TXdata.data.tx.fee.gasLimitMax || TXdata.data.tx.fee.gasLimit,
-            gasPrice: TXdata.data.tx.fee.gasPrice,
-            nonce: String(TXdata.data.tx.nonce), // ignored by MetaMask
-            to: TXdata.data.tx.to, // Required except during contract publications.
-            from: TXdata.data.tx.from, // must match user's active address.
-            value: TXdata.data.tx
-              .value, // Only required to send ether to the recipient from the initiating external account.
-            data: TXdata.data.tx.data,
-            chainId: TXdata.data.tx.chainId, // required for EIP-155 chainIds
-          }
-          try {
-            const send = await wallet.setMintToken(tx)
-            var MintTimer = setInterval(async () => {
-              const {
-                data,
-                status
-              } = await USER_API.nftMintcheckTransaction({
-                chain: 'ht',
-                hash: send
-              })
-              if (status == 1) {
-                this.isLoading = false
-                return this.$dialog.alert({
-                  message: data,
-                  confirmButtonText: "知道了",
-                  confirmButtonColor: '#7524f9'
-                });
-              }
-              if (data.status == 1) {
-                console.log("MintTimer", MintTimer)
-                clearInterval(MintTimer)
-                clearTimeout(MintTimer2)
-                this.isLoading = false;
-                this.$toast("Mint成功");
-                this.MintData = data.list;
-                this.connect()
-                this.showMintSuccess = true;
-              }
-            }, 3000)
-            var MintTimer2 = setTimeout(() => {
-              this.isLoading = false
-              this.connect()
-              clearInterval(MintTimer)
-              this.$dialog.alert({
-                message: 'Mint失败',
-                confirmButtonText: "知道了",
-              })
-            }, 1000 * 60);
-          } catch (e) {
-            this.isLoading = false
-            console.log(e);
-          }
-        }
-      },
-      async ableMent(Mentlist) {
-        if (Mentlist.length == 0) {
-          return this.$dialog.alert({
-            message: '暂时没有可以Ment的NFT',
-          })
-        }
-        this.showMent = true;
-      },
-      async closeMent(Mentids) {
-        this.showMent = false;
-        if (Mentids) {
-          const ChainId = await wallet.getChainId()
-          if (Number(ChainId) != this.ChainId) {
-            this.$dialog.alert({
-              message: "请切换到Heco主网",
-              confirmButtonText: "知道了,去切换",
-              confirmButtonColor: '#7524f9'
-            }).then(() => {
-              try {
-                window.ethereum.request({
-                  method: "wallet_switchEthereumChain",
-                  params: [{
-                    chainId: wallet.transfer16(this.ChainId)
-                  }]
-                })
-              } catch {
-                ethereum.request({
-                  method: "wallet_addEthereumChain",
-                  params: [{
-                    chainId: wallet.transfer16(this.ChainId),
-                    chainName: "HECO",
-                    rpcUrls: ["https://hecoinfo.com/"],
-                    nativeCurrency: {
-                      name: "HECO",
-                      symbol: "HECO",
-                      decimals: 18,
-                    },
-                  }, ],
-                });
-              }
-            })
-            return
-          }
-          this.isLoading = true
-          const TXdata = await USER_API.nftMintbuildNftMeltTxs({
-            address: this.address,
-            chain: 'ht',
-            nftIds: Mentids.join(',')
-          });
-          const tx = {
-            gas: TXdata.data.tx.fee.gasLimitMax || TXdata.data.tx.fee.gasLimit,
-            gasPrice: TXdata.data.tx.fee.gasPrice,
-            nonce: String(TXdata.data.tx.nonce), // ignored by MetaMask
-            to: TXdata.data.tx.to, // Required except during contract publications.
-            from: TXdata.data.tx.from, // must match user's active address.
-            value: TXdata.data.tx
-              .value, // Only required to send ether to the recipient from the initiating external account.
-            data: TXdata.data.tx.data,
-            chainId: TXdata.data.tx.chainId, // required for EIP-155 chainIds
-          }
-          try {
-            const send = await wallet.setMintToken(tx)
-            var MentTimer = setTimeout(async () => {
-              const {
-                data,
-                status
-              } = await USER_API.nftMintcheckTransaction({
-                chain: 'ht',
-                hash: send
-              })
-              if (status == 1) {
-                this.isLoading = false
-                return this.$dialog.alert({
-                  message: data,
-                  confirmButtonText: "知道了",
-                  confirmButtonColor: '#7524f9'
-                });
-              }
-              if (data.status == 1) {
-                console.log("MentTimer", MentTimer)
-                clearInterval(MentTimer)
-                clearTimeout(MentTimer2)
-                this.isLoading = false;
-                this.$toast("Ment成功")
-                this.connect()
-              }
-            }, 3000)
-            var MentTimer2 = setTimeout(() => {
-              this.isLoading = false
-              this.connect()
-              MentTimer && clearInterval(MentTimer)
-              this.$dialog.alert({
-                message: 'Ment失败',
-                confirmButtonText: "知道了",
-              })
-            }, 1000 * 60);
-          } catch (e) {
-            this.isLoading = false
-            console.log(e);
-          }
-        }
-      },
-      closeAirdropAddressCard() {
-        this.showAirdropAddress = false;
-      },
-      closeAirdropAwardCard() {
-        this.showAirdropAward = false;
-      },
-      closeInvitedCard() {
-        this.showInvitedlist = false;
-      },
-      closeWhitelistcard() {
-        this.showWhitelist = false;
-      },
-      closeMintSuccess() {
-        this.showMintSuccess = false;
-        this.isLoading = false;
-      }
-    }
   }
-
+}
 </script>
 <style lang="scss">
   @import "@/assets/css/theme.scss";
 
   @font-face {
     font-family: "TTORegular";
-    src: url("../../assets/fonts/polygon/ttoctosquares-regular.otf");
+    src: url("@/assets/fonts/polygon/ttoctosquares-regular.otf");
   }
   .van-overlay {
     display: flex;
@@ -776,19 +784,18 @@
         position: relative;
         width: 375px;
         height: 70px;
-        margin: 35px auto 58px;
-        text-align: center;
+        margin: 35px auto 0; 
         .g-line {
           position: absolute;
           right: 0;
           top: 15px;
           height: 1px;
-          width: 200px;
+          width: 210px;
           background-color: #09EFBD;
         }
         img {
-          width: 335px;
-          height: 100%;
+          width: 300px;
+          margin-left: 20px;
         }
       }
 
@@ -797,7 +804,7 @@
           font-weight: 400;
           font-size: 14px;
           color: #fff;
-          margin: 10px 0px;
+          margin: 15px 0px 10px;
           text-align: center;
         }
 
@@ -885,7 +892,7 @@
           border-left: none;
           .tipstext {
             color: #ffffff;
-            font-size: 18px;
+            font-size: 16px;
             line-height: 23.4px;
           }
         }
@@ -982,7 +989,7 @@
 
                   .copy {
                     width: 88px;
-                    font-size: 20px;
+                    font-size: 16px;
                     margin-left: 10px;
                     color: #09EFBD;
                     border-left: 1px solid #707076;
@@ -1080,6 +1087,7 @@
             border: 1px solid #49494D;
             box-sizing: border-box;
             border-bottom: none;
+            font-weight: 400;
 
             .line {
               box-sizing: border-box;
@@ -1153,6 +1161,7 @@
           font-weight: 400;
           padding: 15px 20px 14px 20px;
           box-sizing: border-box;
+          white-space: nowrap;
 
           img {
             width: 16px;

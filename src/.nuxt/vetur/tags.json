@@ -32,8 +32,8 @@
   "PolygonAirdropAwardCard": {
     "description": "Auto imported from components/polygon/AirdropAwardCard.vue"
   },
-  "PolygonCountdown": {
-    "description": "Auto imported from components/polygon/countdown.vue"
+  "PolygonCVueCountdown": {
+    "description": "Auto imported from components/polygon/c-vue-countdown.vue"
   },
   "PolygonInvitedCard": {
     "description": "Auto imported from components/polygon/InvitedCard.vue"

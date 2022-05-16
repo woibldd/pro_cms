@@ -2,14 +2,14 @@
   <van-popup v-model="visables" close-icon-position="top-right" closeable :close-on-click-overlay="false" @click-close-icon="close">
     <div class="WhitelistBox">
       <div class="content TTORegular">
-        <h1 class="TTORegular title1">白名单特权</h1>
-        <div class="TTORegular">1.白名单用户在5月15日开启Mint</div>
-        <div class="TTORegular">2.非白名单用户在5月16日开启Mint</div>
-        <div class="TTORegular">3.白名单用户购买上限为10个</div>
-        <div class="TTORegular">4.非白名单用户购买上限为5个</div>
-        <h1 class="TTORegular title2">怎样成为白名单？</h1>
-        <div class="TTORegular">1.使用Swap进行交易过的用户</div>
-        <div class="TTORegular">2.通过NFT交易市场交易过的用户</div>
+        <h1 class="TTORegular title1">{{$t('polygon.whiteTitle')}}</h1>
+        <div class="TTORegular">{{$t('polygon.whiteTips1')}}</div>
+        <div class="TTORegular">{{$t('polygon.whiteTips2')}}</div>
+        <div class="TTORegular">{{$t('polygon.whiteTips3')}}</div>
+        <div class="TTORegular">{{$t('polygon.whiteTips4')}}</div>
+        <h1 class="TTORegular title2">{{$t('polygon.whiteTips9')}}</h1>
+        <div class="TTORegular">{{$t('polygon.whiteTips5')}}</div>
+        <div class="TTORegular">{{$t('polygon.whiteTips6')}}</div>
       </div>
     </div>
   </van-popup>
@@ -53,10 +53,11 @@
     .content {
       padding: 30px 20px;
       box-sizing: border-box;
-
+      line-height: 2em;
       h1 {
         font-size: 20px;
         font-weight: 400;
+        line-height: 2em;
         color: #fff;
       }
 
@@ -67,6 +68,7 @@
         margin-top: 5px;
         word-wrap: break-word;
         word-break: normal;
+        line-height: 2em;
       }
 
       .title2 {

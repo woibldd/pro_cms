@@ -17,7 +17,7 @@ You can directly use them in pages and other components without the need to impo
 - `<Common>` | `<common>` (components/common/index.js)
 - `<PolygonAirdropAddressCard>` | `<polygon-airdrop-address-card>` (components/polygon/AirdropAddressCard.vue)
 - `<PolygonAirdropAwardCard>` | `<polygon-airdrop-award-card>` (components/polygon/AirdropAwardCard.vue)
-- `<PolygonCountdown>` | `<polygon-countdown>` (components/polygon/countdown.vue)
+- `<PolygonCVueCountdown>` | `<polygon-c-vue-countdown>` (components/polygon/c-vue-countdown.vue)
 - `<PolygonInvitedCard>` | `<polygon-invited-card>` (components/polygon/InvitedCard.vue)
 - `<PolygonMent>` | `<polygon-ment>` (components/polygon/Ment.vue)
 - `<PolygonMint>` | `<polygon-mint>` (components/polygon/Mint.vue)
