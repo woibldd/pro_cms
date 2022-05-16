@@ -328,13 +328,18 @@ export default {
       showWhitelist: false,
       showMintSuccess: false,
       chainName: "matic",
+      chain:"matic",
       ChainId: "137",
+      contract:"0xF000bBB0d666d9Fbf857Ec9bC19BFeD4fD8eF61B",
+      symbol:"Polygon Warrior",
       address: "",
       token: "",
       LotteryList: [],
       MintData: [],
       MentList: [],
       invitationError: "",
+
+     
     };
   },
   computed: {
@@ -685,15 +690,14 @@ export default {
         }
         try {
           const send = await wallet.setMintToken(tx)
-          debugger
-          if (data.tx) { 
-            const params = {
-              // coin: 'matic', 
-              chain: tx.chainId, 
-              contract: tx.to
-            }
-          }
-          this.addCoin({params}) 
+          // if (data.tx) { 
+          //   const params = {
+          //     // coin: 'matic', 
+          //     chain: tx.chainId, 
+          //     contract: tx.to
+          //   }
+          // }
+          this.addCoin(this.contract, this.chain, this.contract) 
           var MentTimer = setInterval(async () => {
             const {
               data,
