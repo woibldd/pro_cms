@@ -527,7 +527,7 @@ const responselog =  true ? (...arg) => {
   console.log("bit-activity-response:", ...arg);
 } : undefined;
 const host_user_instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
-  baseURL: "/",
+  baseURL: "https://b1.bitkeep.top",
   timeout: 60000,
   headers: {
     token: "",
