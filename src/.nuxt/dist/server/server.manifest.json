@@ -67,6 +67,7 @@
     "pages/activity/trading/protocol.js": "pages/activity/trading/protocol.js",
     "pages/activity/trading/tradingRule.js": "pages/activity/trading/tradingRule.js",
     "pages/article/detail/_id.js": "pages/article/detail/_id.js",
+    "pages/polygon/index.js": "pages/polygon/index.js",
     "server.js": "server.js"
   },
   "maps": {
@@ -136,6 +137,7 @@
     "pages/activity/trading/protocol.js": "pages/activity/trading/protocol.js.map",
     "pages/activity/trading/tradingRule.js": "pages/activity/trading/tradingRule.js.map",
     "pages/article/detail/_id.js": "pages/article/detail/_id.js.map",
+    "pages/polygon/index.js": "pages/polygon/index.js.map",
     "server.js": "server.js.map"
   }
 }

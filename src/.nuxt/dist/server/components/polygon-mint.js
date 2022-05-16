@@ -1,20 +1,20 @@
 exports.ids = [16];
 exports.modules = {
 
-/***/ 124:
+/***/ 127:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "img/Py_bg.e03563f.png";
 
 /***/ }),
 
-/***/ 140:
+/***/ 136:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(186);
+var content = __webpack_require__(149);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -26,25 +26,25 @@ module.exports.__inject__ = function (context) {
 
 /***/ }),
 
-/***/ 185:
+/***/ 148:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Mint_vue_vue_type_style_index_0_id_26f07a4b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(140);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Mint_vue_vue_type_style_index_0_id_26f07a4b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(136);
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Mint_vue_vue_type_style_index_0_id_26f07a4b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Mint_vue_vue_type_style_index_0_id_26f07a4b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Mint_vue_vue_type_style_index_0_id_26f07a4b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_7_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_3_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Mint_vue_vue_type_style_index_0_id_26f07a4b_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 186:
+/***/ 149:
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
-var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(22);
-var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(47);
+var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(20);
+var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(64);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 // Module
@@ -55,7 +55,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ 280:
+/***/ 191:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -63,7 +63,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 __webpack_require__.r(__webpack_exports__);
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/polygon/Mint.vue?vue&type=template&id=26f07a4b&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('van-popup',{attrs:{"close-icon-position":"top-right","closeable":"","close-on-click-overlay":false},on:{"click-close-icon":_vm.close},model:{value:(_vm.visables),callback:function ($$v) {_vm.visables=$$v},expression:"visables"}},[_c('div',{staticClass:"Mintpopup"},[_c('div',{staticClass:"Mintlogo"},[_c('img',{attrs:{"src":__webpack_require__(124),"alt":""}})]),_vm._v(" "),_c('div',{staticClass:"PaymentBox"},[_c('div',{staticClass:"TTORegular title"},[_vm._v(_vm._s(_vm.$t('polygon.mintAmount')))]),_vm._v(" "),_c('div',{staticClass:"PaymentNum"},[_c('van-icon',{staticClass:"subtraction",attrs:{"name":"minus","size":"18"},on:{"click":_vm.subtraction}}),_vm._v(" "),_c('span',{staticClass:"TTOMedium number"},[_vm._v(_vm._s(_vm.MintNum))]),_vm._v(" "),_c('van-icon',{staticClass:"Addition",attrs:{"name":"plus","size":"18"},on:{"click":_vm.Addition}})],1),_vm._v(" "),_c('div',{staticClass:"PaymentInfo"},[_c('div',{staticClass:"title TTORegular"},[_vm._v(_vm._s(_vm.$t('polygon.mintPayment')))]),_vm._v(" "),_c('div',{staticClass:"PaymentContent"},[_c('span',{staticClass:"TTOMedium"},[_vm._v(_vm._s(_vm.MATIC)+" MATIC")])])]),_vm._v(" "),_c('div',{staticClass:"mintSubmit TTOMedium",on:{"click":function($event){return _vm.MintToken(_vm.MintNum)}}},[_vm._v("MINT")])])])])}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('van-popup',{attrs:{"close-icon-position":"top-right","closeable":"","close-on-click-overlay":false},on:{"click-close-icon":_vm.close},model:{value:(_vm.visables),callback:function ($$v) {_vm.visables=$$v},expression:"visables"}},[_c('div',{staticClass:"Mintpopup"},[_c('div',{staticClass:"Mintlogo"},[_c('img',{attrs:{"src":__webpack_require__(127),"alt":""}})]),_vm._v(" "),_c('div',{staticClass:"PaymentBox"},[_c('div',{staticClass:"TTORegular title"},[_vm._v(_vm._s(_vm.$t('polygon.mintAmount')))]),_vm._v(" "),_c('div',{staticClass:"PaymentNum"},[_c('van-icon',{staticClass:"subtraction",attrs:{"name":"minus","size":"18"},on:{"click":_vm.subtraction}}),_vm._v(" "),_c('span',{staticClass:"TTOMedium number"},[_vm._v(_vm._s(_vm.MintNum))]),_vm._v(" "),_c('van-icon',{staticClass:"Addition",attrs:{"name":"plus","size":"18"},on:{"click":_vm.Addition}})],1),_vm._v(" "),_c('div',{staticClass:"PaymentInfo"},[_c('div',{staticClass:"title TTORegular"},[_vm._v(_vm._s(_vm.$t('polygon.mintPayment')))]),_vm._v(" "),_c('div',{staticClass:"PaymentContent"},[_c('span',{staticClass:"TTOMedium"},[_vm._v(_vm._s(_vm.MATIC)+" MATIC")])])]),_vm._v(" "),_c('div',{staticClass:"mintSubmit TTOMedium",on:{"click":function($event){return _vm.MintToken(_vm.MintNum)}}},[_vm._v("MINT")])])])])}
 var staticRenderFns = []
 
 
@@ -177,7 +177,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./components/polygon/Mint.vue?vue&type=script&lang=js&
  /* harmony default export */ var polygon_Mintvue_type_script_lang_js_ = (Mintvue_type_script_lang_js_); 
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__(3);
+var componentNormalizer = __webpack_require__(2);
 
 // CONCATENATED MODULE: ./components/polygon/Mint.vue
 
@@ -185,7 +185,7 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(185)
+  var style0 = __webpack_require__(148)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -199,7 +199,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "26f07a4b",
-  "698410e0"
+  "79994258"
   
 )
 

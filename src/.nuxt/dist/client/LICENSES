@@ -121,19 +121,6 @@ and limitations under the License.
  */
 
 
-//! authors : Tim Wood, Iskren Chernev, Moment.js contributors
-
-//! license : MIT
-
-//! moment.js
-
-//! moment.js locale configuration
-
-//! momentjs.com
-
-//! version : 2.29.1
-
-
 /*!
  * cookie
  * Copyright(c) 2012-2014 Roman Shtylman
@@ -143,28 +130,11 @@ and limitations under the License.
 
 
 /*!
-  * vue-router v3.5.2
-  * (c) 2021 Evan You
-  * @license MIT
-  */
-
-/*!
- * Vue.js v2.6.14
- * (c) 2014-2021 Evan You
- * Released under the MIT License.
- */
-
-
-/*!
  * vue-awesome-swiper v4.1.1
  * Copyright (c) Surmon. All rights reserved.
  * Released under the MIT License.
  * Surmon <https://github.com/surmon-china>
  */
-
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
-***************************************************************************** */
 
 
 /*!
@@ -196,3 +166,29 @@ and limitations under the License.
     ***************************************************************************** */
 
 /*! ieee754. BSD-3-Clause License. Feross Aboukhadijeh <https://feross.org/opensource> */
+
+
+/*!
+  * vue-router v3.5.2
+  * (c) 2021 Evan You
+  * @license MIT
+  */
+
+/*!
+ * Vue.js v2.6.14
+ * (c) 2014-2021 Evan You
+ * Released under the MIT License.
+ */
+
+
+//! authors : Tim Wood, Iskren Chernev, Moment.js contributors
+
+//! license : MIT
+
+//! moment.js
+
+//! moment.js locale configuration
+
+//! momentjs.com
+
+//! version : 2.29.1
