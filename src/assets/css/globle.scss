@@ -190,9 +190,9 @@ h1,h2,h3,h4,h5,h6,div,img,a,p,span,button,input,textarea,select,label,table,tr,t
     width: 198px;
     height: 44px;
     line-height: 44px;
-    background: url(@/assets/img/btnBg6.png);
+    background: url(@/assets/img/btnBg5.png);
     background-size: 100% 100%;
-    margin: 0 20px 40px;
+    margin: 0 60px 40px;
     text-align: center;
     font-size: 20px;
     color: #fff;
@@ -200,5 +200,8 @@ h1,h2,h3,h4,h5,h6,div,img,a,p,span,button,input,textarea,select,label,table,tr,t
   }
   .van-hairline--top::after {
     border: none
+  }
+  .van-dialog__confirm {
+    color: #ffffff !important;;
   }
 }

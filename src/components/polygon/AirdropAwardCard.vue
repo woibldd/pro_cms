@@ -5,7 +5,7 @@
         <div class="title TTORegular">
           {{$t('polygon.awardTitle')}}
         </div>
-        <div class="BKB TTOMedium">{{luckNum}} BKB</div>
+        <!-- <div class="BKB TTOMedium">{{luckNum}} BKB</div> -->
         <div class="Walletaddress">
           <div class="title TTORegular">
             {{$t('polygon.awardAddress')}}

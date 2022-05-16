@@ -12,7 +12,7 @@
     </div>
     <div class="polygon-top2">
       <div class="polygon-m-InvitationBox">
-        <div class="InvitationCodeBtn" @click="InvitationCode">{{lang.enterCode}}</div>
+        <div class="InvitationCodeBtn" v-if="address&&(!defaultData.isInvite && !defaultData.inviteCode)" @click="InvitationCode">{{lang.enterCode}}</div>
       </div>
       <div class="polygon-top-left">
         <img class="bg0" src="@/assets/img/Py_bg.png" alt="">
@@ -41,7 +41,7 @@
           </div>
         </div>
         <div class="contract"> 
-          <label class="TTORegular title">合约地址:</label>
+          <label class="TTORegular title">{{lang.contractAddress}}:</label>
           <span  class="TTORegular ">{{simplify('0x76b9a40Fb2844A450C086B06A4D20599C16FF6eA')}}</span> 
           <span class="TTOMedium copy" v-copy="'0x76b9a40Fb2844A450C086B06A4D20599C16FF6eA'">COPY</span>
         </div>
@@ -160,7 +160,7 @@
               {{item}} 
             </div> 
           </div>
-          <div v-if="LotteryList.length > 0" class="TTORegular m-viewAll" @click="showAirdropAddress=true">显示所有</div>
+          <div v-if="LotteryList.length > 0" class="TTORegular m-viewAll" @click="showAirdropAddress=true">{{lang.airdropOpen}}</div>
         </div>
       </div>
       <div class="whiteIpcard">
@@ -243,27 +243,27 @@
         <div class="PopupBox">
           <div class="InvitationPopup">
             <div class="title TTORegular">
-              <span class="TTORegular">输入邀请码</span>
+              <span class="TTORegular">{{lang.enterCode2}}</span>
             </div>
             <div class="Background0 invitationInput" :class="[{error: !!invitationError}]">
               <van-field v-model="invitationCode" maxlength="6" :formatter="inputFormatter" class="Background0 TTOMedium"></van-field>
               <div class="clearBox" v-show="invitationCode" @click="invitationCode=''">
                 <van-icon name="clear" size="16" />
               </div>
-              <div class="pastetext" v-show="!invitationCode" @click="paste">粘贴
+              <div class="pastetext" v-show="!invitationCode" @click="paste">{{lang.paste}}
               </div>
               <div class="error-text" v-if="invitationError">
                 {{invitationError}}
               </div>
             </div>
             <div class="content">
-              <p class="TTORegular">当前钱包地址</p>
+              <p class="TTORegular">{{lang.currentAddress}}</p>
               <p class="TTORegular">
                 {{address}}
               </p>
             </div>
             <div class="invitationCodeSubmit TTOMedium" @click="invitationCodeSubmit">
-              确认
+              {{lang.confirm}}
             </div>
           </div>
         </div>
@@ -277,13 +277,13 @@
       <InvitedCard :showInvitedlist="showInvitedlist" :inviteAddress="defaultData.inviteAddress"
         :inviteNum="defaultData.inviteNum" :luckRate="defaultData.luckRate" @closeInvitedCard="closeInvitedCard">
       </InvitedCard>
-      <Whitelistcard :showWhitelist="showWhitelist" @closeWhitelistcard="closeWhitelistcard"></Whitelistcard>
-      <MintSuccessCard :showMintSuccess="showMintSuccess" :MintData="MintData" @closeMintSuccess="closeMintSuccess">
+      <Whitelistcard :showWhitelist="showWhitelist" @closeWhitelistcard="closeWhitelistcard"></Whitelistcard> 
+      <MintSuccessCard :showMintSuccess="showMintSuccess" :sendhash="sendhash" :MintData="MintData" @closeMintSuccess="closeMintSuccess">
       </MintSuccessCard>
       <van-overlay :show="isLoading" z-index="999" @click="isLoading = false">
         <div class="loading">
-          <van-loading color="#7524f9" vertical>loading...</van-loading>
-        </div>
+          <van-loading color="#7524f9" vertical>{{$t('base.loading')}}...</van-loading>
+        </div> 
       </van-overlay>
     </div>
   </div>
@@ -313,9 +313,11 @@ export default {
   layout:"polygon/default",
   mixins: [BaseMixin],
   data() {
-    return {
+    return { 
       isLoading: false,
-      defaultData: {},
+      defaultData: {
+        isInvite: true
+      },
       startTime: new Date().getTime(),
       endTime: 0,
       format: "{dd}天{hh}小时{mm}分钟{ss}秒",
@@ -331,7 +333,7 @@ export default {
       chainName: "matic",
       chain:"matic",
       ChainId: "137",
-      contract:"0xF000bBB0d666d9Fbf857Ec9bC19BFeD4fD8eF61B",
+      contract:"0xDE2A32e5363d01a89e3624442F8f5c43F38fc53a",
       symbol:"Polygon Warrior",
       address: "",
       token: "",
@@ -339,8 +341,7 @@ export default {
       MintData: [],
       MentList: [],
       invitationError: "",
-
-     
+      sendhash: "", 
     };
   },
   computed: {
@@ -366,8 +367,7 @@ export default {
     // this.$bus.$on('changeAccounts', async (val) => {
     //   this.init()
     // });
-    // this.nftMintGetInfo(this.address, 'matic')
-
+    // this.nftMintGetInfo(this.address, 'matic') 
   },
   methods: {
     inputFormatter(value) {
@@ -402,12 +402,13 @@ export default {
       if (status == 0) {
         this.defaultData = data; 
         this.endTime = data.fromStartTime > 0 ? new Date().getTime() + data.fromStartTime : 0; 
-        this.endTime =  new Date().getTime() + 100000
+        // data.fromStartTime = 100 
+        // this.endTime =  new Date().getTime() + 10000 
         if (data.fromStartTime > 0) {
+          let endTime = this.endTime
           const timer = setInterval(() => {
             let newTime = new Date().getTime()
-            if (this.endTime <= newTime) {
-              clearInterval(timer)
+            if (endTime <= newTime + 1000) {  
               location.reload()
             }
           }, 1000);
@@ -517,7 +518,7 @@ export default {
           verifyToken: sign
         })
         if (status == 1) {
-          this.invitationError = '邀请码错误'
+          this.invitationError = this.lang.invitationError
           return this.$dialog.alert({
             message: data,
             confirmButtonText: this.$t('polygon.iknow'),
@@ -588,7 +589,8 @@ export default {
         }
         try {
           this.isLoading = true
-          const send = await wallet.setMintToken(tx)
+          const send = await wallet.setMintToken(tx) 
+          console.log({send})
           var MintTimer = setInterval(async () => {
             const {
               data,
@@ -598,8 +600,7 @@ export default {
               hash: send
             }) 
             this.isLoading = false
-            if (status == 1) { 
-              this.addCoin(this.contract, this.chain, this.contract+'#BK#NFT') 
+            if (status == 1) {
               this.isLoading = false
               return this.$dialog.alert({
                 message: data,
@@ -623,7 +624,7 @@ export default {
             this.init()
             clearInterval(MintTimer)
             this.$dialog.alert({
-              message: 'Mint' + this.$t('polygon.faild'),
+              message: 'Mint ' + this.$t('polygon.faild'),
               confirmButtonText: this.$t('polygon.iknow'),
             })
           }, 1000 * 60);
@@ -631,6 +632,8 @@ export default {
           this.isLoading = false;
           this.$toast.fail(typeof error == "object" ? error.message || 'error' : error); 
         }
+        
+        this.addCoin(this.contract, this.chain, this.contract+'#BK#NFT') 
       }
     },
     async ableMent(Mentlist) {
@@ -1213,25 +1216,20 @@ export default {
       }
 
       .whiteIpcard {
-        width: 100%;
-        height: 50px;
+        width: 100%; 
         display: flex;
         justify-content: space-between;
-        margin-bottom: 80px;
-        white-space: nowrap;
+        margin-bottom: 80px; 
         overflow: hidden;
         .text {
           width: 266px;
-          height: 100%;
-          white-space: nowrap;
-          overflow: hidden;
+          height: 100%; 
           line-height: 100%;
           font-size: 16px;
           color: #fff;
           font-weight: 400;
           padding: 15px 20px 14px 20px;
-          box-sizing: border-box;
-          white-space: nowrap;
+          box-sizing: border-box; 
 
           img {
             width: 16px;
@@ -1345,6 +1343,10 @@ export default {
       font-size: 20px;
       color: #fff;
     }
+  }
+
+  .en {
+
   }
 
 </style>
