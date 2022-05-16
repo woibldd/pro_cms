@@ -493,7 +493,7 @@ export default {
       }
       try {
         await this.getToken(this.address)
-        const sign = await wallet.paritySign(this.token, this.address)
+        const sign = await wallet.paritySign(this.address,this.invitationCode)
         console.log(sign)
         const {
           data,
