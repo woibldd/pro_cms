@@ -1,5 +1,5 @@
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-
+const CompressionPlugin = require("compression-webpack-plugin");
 require("events").EventEmitter.defaultMaxListeners = 30;
 const Path = require("path");
 
@@ -259,6 +259,17 @@ export default {
   devtools: BUILD_ENV == "dev",
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    publicPath: "/nft_h5_static/",
+    extractCSS: { allChunks: true },
+    plugins: [
+      new CompressionPlugin({
+        test: /\.js$|\.html$|\.css/, // 匹配文件名
+
+        threshold: 10240, // 对超过10kb的数据进行压缩
+
+        deleteOriginalAssets: false, // 是否删除原文件
+      }),
+    ],
     // terser: {
     //   sourceMap: BUILD_ENV=='dev',
     // },
