@@ -559,7 +559,7 @@ export default {
                 params: [{
                   chainId: wallet.transfer16(this.ChainId),
                   chainName: "Polygon",
-                  rpcUrls: ["https://http-mainnet.polygonchain.com"],
+                  rpcUrls: [" https://polygon-rpc.com"],
                   nativeCurrency: {
                     name: "Polygon",
                     symbol: "Polygon",
@@ -667,7 +667,7 @@ export default {
                 params: [{
                   chainId: wallet.transfer16(this.ChainId),
                   chainName: "Polygon",
-                  rpcUrls: ["https://http-mainnet.polygonchain.com"],
+                  rpcUrls: [" https://polygon-rpc.com"],
                   nativeCurrency: {
                     name: "Polygon",
                     symbol: "Polygon",
