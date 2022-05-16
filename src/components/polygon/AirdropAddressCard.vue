@@ -116,6 +116,7 @@
             display: block;
             width: 93px;
             height: 14px;
+            font-size: 11px;
             font-weight: 400;
             color: #fff;
             box-sizing: border-box;

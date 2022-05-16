@@ -12,29 +12,19 @@
           {{$t('polygon.meltTitle2')}}
         </span>
       </div>
-      <div class="MentList">
-        <!-- <div class="Mentlogo" :class="item.selected==true?'MentlogoActive':''" v-for="item in list" :key="item.tokenId"
-          @click="selected(item)">
-          <img src="@/assets/img/Py_bg.png" alt="">
-          <div class="TTORegular tokenId">Token ID: #{{item.tokenId}}</div>
-        </div> -->
-        <!-- <van-swipe :loop="true" :width="115"> 
-          <van-swipe-item class="Mentlogo" :class="item.selected==true?'MentlogoActive':''" v-for="item in list" :key="item.tokenId"
-            @click="selected(item)">
-            <img src="@/assets/img/Py_bg.png" alt="">
-            <div class="TTORegular tokenId">Token ID: #{{item.tokenId}}</div>
-          </van-swipe-item>
-        </van-swipe>
-         -->
-        <swiper @mousemove="e=>e" :options="swiperOption" class="swiper-wrapper"> 
-          <swiper-slide 
-            v-for="item in list" :key="item.tokenId">
-            <div  class="Mentlogo" :class="item.selected==true?'MentlogoActive':''"  @click="selected(item)">
-              <img src="@/assets/img/Py_bg.png" alt="">
-              <div class="TTORegular tokenId">Token ID: #{{item.tokenId}}</div> 
-            </div>
-          </swiper-slide>
-        </swiper> 
+      <div class="MentList" v-if="list.length > 1">  
+          <swiper @mousemove="e=>e" :options="swiperOption" class="swiper-wrapper"> 
+            <swiper-slide 
+              v-for="item in list" :key="item.tokenId">
+              <div  class="Mentlogo" :class="item.selected==true?'MentlogoActive':''"  @click="selected(item)">
+                <img src="@/assets/img/Py_bg.png" alt="">
+                <div class="TTORegular tokenId">Token ID: #{{item.tokenId}}</div> 
+              </div>
+            </swiper-slide>
+          </swiper>  
+      </div>
+      <div v-else class="Mintlogo"> 
+        <img src="@/assets/img/Py_bg.png" alt=""> 
       </div>
       <div class="PaymentBox">
         <div class="PaymentInfo">
@@ -154,10 +144,7 @@
           margin: 0 5px;
           padding: 10px 5px 8px; 
           box-sizing: border-box;
-          cursor: pointer;
-          // &:not(:first-child) {
-          //   margin-left: 10px;
-          // }
+          cursor: pointer; 
 
           .tokenId {
             width: 100%;
@@ -192,6 +179,16 @@
           }
         }
       } 
+      
+      .Mintlogo {
+        width: 100%;  
+        img {
+          display: block;
+          width: 200px;
+          height: 192px;
+          margin: 0 auto;
+        }
+      }
       .PaymentBox {
         width: 100%;
 
