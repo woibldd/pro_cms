@@ -43,7 +43,7 @@
         <div class="contract"> 
           <label class="TTORegular title">合约地址:</label>
           <span  class="TTORegular ">{{simplify('0x76b9a40Fb2844A450C086B06A4D20599C16FF6eA')}}</span> 
-          <span class="TTODbold copy" v-copy="'0x76b9a40Fb2844A450C086B06A4D20599C16FF6eA'">COPY</span>
+          <span class="TTOMedium copy" v-copy="'0x76b9a40Fb2844A450C086B06A4D20599C16FF6eA'">COPY</span>
         </div>
         <div class="MintBtn" v-if="defaultData.isMint||defaultData.isMelt">
           <div class="item">
@@ -150,7 +150,7 @@
         <div class="Shortaddresslist">
           <div class="ShortaddressTitle TTORegular">
             {{lang.airdropTips1}}
-            <span class="TTOMedium">BKB{{$t('polygon.airdropTips2')}}</span>
+            <span class="TTOMedium">BKB {{$t('polygon.airdropTips2')}}</span>
           </div>
           <div class="TTORegular m-ShortaddressTitle" v-html="$t('polygon.airdropAmount', {amount: `<span>${LotteryList.length}</span>`})">
             <!-- 共<span>{{LotteryList.length}}</span>个地址 -->
@@ -280,7 +280,7 @@
       <Whitelistcard :showWhitelist="showWhitelist" @closeWhitelistcard="closeWhitelistcard"></Whitelistcard>
       <MintSuccessCard :showMintSuccess="showMintSuccess" :MintData="MintData" @closeMintSuccess="closeMintSuccess">
       </MintSuccessCard>
-      <van-overlay :show="isLoading" z-index="999">
+      <van-overlay :show="isLoading" z-index="999" @click="isLoading = false">
         <div class="loading">
           <van-loading color="#7524f9" vertical>loading...</van-loading>
         </div>
@@ -299,7 +299,7 @@ import InvitedCard from '@/components/polygon/InvitedCard'
 import Whitelistcard from '@/components/polygon/Whitelistcard'
 import MintSuccessCard from '@/components/polygon/MintSuccessCard'
 import { storage } from '@/utils/Storage'
-import { wallet } from "@/utils/wallet";
+import { wallet } from "@/utils/wallet"; 
 // MintToken
 import {
   USER_API
@@ -325,8 +325,8 @@ export default {
       showInvitedlist: false,
       showWhitelist: false,
       showMintSuccess: false,
-      chainName: "ht",
-      ChainId: "128",
+      chainName: "matic",
+      ChainId: "137",
       address: "",
       token: "",
       LotteryList: [],
@@ -358,7 +358,7 @@ export default {
     this.$bus.$on('changeAccounts', async (val) => {
       this.init()
     });
-    // this.nftMintGetInfo(this.address, 'ht')
+    // this.nftMintGetInfo(this.address, 'matic')
 
   },
   methods: {
@@ -372,9 +372,12 @@ export default {
       }
     },
     async init() {
+      if (!wallet.isConnected()) {
+        await wallet.connect();
+      }
       const [nAddress] = await wallet.getAccounts()
       this.address = nAddress
-      await this.nftMintGetInfo(this.address ? this.address : '', 'ht')
+      await this.nftMintGetInfo(this.address ? this.address : '', 'matic')
       await this.nftMintnftList()
     },
     async nftMintGetInfo(address, chain) {
@@ -489,7 +492,7 @@ export default {
           status
         } = await USER_API.nftMintInvite({
           address: this.address,
-          chain: 'ht',
+          chain: 'matic',
           code: this.invitationCode,
           c_token: this.token,
           verifyToken: sign
@@ -502,7 +505,8 @@ export default {
             confirmButtonColor: '#7524f9'
           });
         }
-        this.$toast(this.$t("polygon.InvitationSucceeded"));
+        this.$toast(this.$t("polygon.InvitationSucceeded")); 
+        this.defaultData.isInvite = true
         this.show = false;
       } catch (error) { 
         this.$toast.fail(typeof error == "object" ? error.message || 'error' : error);
@@ -534,11 +538,11 @@ export default {
                 method: "wallet_addEthereumChain",
                 params: [{
                   chainId: wallet.transfer16(this.ChainId),
-                  chainName: "HECO",
-                  rpcUrls: ["https://http-mainnet.hecochain.com"],
+                  chainName: "Polygon",
+                  rpcUrls: ["https://http-mainnet.polygonchain.com"],
                   nativeCurrency: {
-                    name: "HECO",
-                    symbol: "HECO",
+                    name: "Polygon",
+                    symbol: "Polygon",
                     decimals: 18,
                   },
                 },],
@@ -549,7 +553,7 @@ export default {
         }
         const TXdata = await USER_API.buildNftMintTxs({
           address: this.address,
-          chain: 'ht',
+          chain: 'matic',
           num: MintNum
         });
         const tx = {
@@ -571,7 +575,7 @@ export default {
               data,
               status
             } = await USER_API.nftMintcheckTransaction({
-              chain: 'ht',
+              chain: 'matic',
               hash: send
             }) 
             this.isLoading = false
@@ -639,11 +643,11 @@ export default {
                 method: "wallet_addEthereumChain",
                 params: [{
                   chainId: wallet.transfer16(this.ChainId),
-                  chainName: "HECO",
-                  rpcUrls: ["https://hecoinfo.com/"],
+                  chainName: "Polygon",
+                  rpcUrls: ["https://http-mainnet.polygonchain.com"],
                   nativeCurrency: {
-                    name: "HECO",
-                    symbol: "HECO",
+                    name: "Polygon",
+                    symbol: "Polygon",
                     decimals: 18,
                   },
                 },],
@@ -655,7 +659,7 @@ export default {
         this.isLoading = true
         const TXdata = await USER_API.nftMintbuildNftMeltTxs({
           address: this.address,
-          chain: 'ht',
+          chain: 'matic',
           nftIds: Mentids.join(',')
         });
         if (TXdata.status == 1) {
@@ -679,12 +683,21 @@ export default {
         }
         try {
           const send = await wallet.setMintToken(tx)
+          debugger
+          if (data.tx) { 
+            const params = {
+              // coin: 'matic', 
+              chain: tx.chainId, 
+              contract: tx.to
+            }
+          }
+          this.addCoin({params}) 
           var MentTimer = setInterval(async () => {
             const {
               data,
               status
             } = await USER_API.nftMintcheckTransaction({
-              chain: 'ht',
+              chain: 'matic',
               hash: send
             })
             if (status == 1) {
@@ -781,6 +794,7 @@ export default {
           background-size: 100% 100%;
           color: #fff;
           cursor: pointer;
+          white-space: nowrap;
         }
       }
 
@@ -866,7 +880,7 @@ export default {
           justify-content: space-between;
           align-items: center;
           padding: 0px 20px;
-          margin: 50px 0px;
+          margin: 50px 0px 0;
 
           .item {
             width: 163px;
@@ -922,6 +936,7 @@ export default {
         }
 
         .tipstext-wrap {
+          margin-top: 50px;
           padding: 12px 20px; 
           width: 355px;
           box-sizing: border-box; 
@@ -962,6 +977,8 @@ export default {
               width: 251px;
               line-height: 48px;
               background-color: #17171A;
+              white-space: nowrap;
+              overflow: hidden;
             }
 
             // .card2 {
@@ -1008,10 +1025,12 @@ export default {
                   line-height: 40px;
                   font-weight: 400;
                   text-align: center;
-
+                  white-space: nowrap;
                   .text {
                     font-size: 16px;
                     color: #fff;
+                    text-align: left;
+                    overflow: hidden;
                   }
 
                   .code {
@@ -1115,7 +1134,7 @@ export default {
           color: #fff;
           font-size: 16px;
           background: $theme-dark-background0;
-
+          white-space: nowrap;
           h1 {
             font-size: 16px;
             display: flex;
@@ -1188,10 +1207,13 @@ export default {
         display: flex;
         justify-content: space-between;
         margin-bottom: 80px;
-
+        white-space: nowrap;
+        overflow: hidden;
         .text {
           width: 266px;
           height: 100%;
+          white-space: nowrap;
+          overflow: hidden;
           line-height: 100%;
           font-size: 16px;
           color: #fff;
