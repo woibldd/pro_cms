@@ -62,7 +62,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/activity/blindbox/download.vue?vue&type=template&id=039a7e0d&
 
 // EXTERNAL MODULE: ./components/common/index.js
-var common = __webpack_require__(92);
+var common = __webpack_require__(93);
 
 // EXTERNAL MODULE: external "vuex"
 var external_vuex_ = __webpack_require__(4);
@@ -267,7 +267,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 92:
+/***/ 93:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

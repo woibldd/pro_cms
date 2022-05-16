@@ -1,5 +1,11 @@
 [
   {
+    "name": "mint_nft_token",
+    "path": "/mint_nft_token",
+    "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/mint_nft_token/index.vue",
+    "chunkName": "pages/mint_nft_token/index"
+  },
+  {
     "name": "activity-airdrop",
     "path": "/activity/airdrop",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/airdrop/index.vue",
@@ -28,12 +34,6 @@
     "path": "/activity/mining",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/mining/index.vue",
     "chunkName": "pages/activity/mining/index"
-  },
-  {
-    "name": "activity-mint_nft_token",
-    "path": "/activity/mint_nft_token",
-    "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/mint_nft_token/index.vue",
-    "chunkName": "pages/activity/mint_nft_token/index"
   },
   {
     "name": "activity-nftLottery",

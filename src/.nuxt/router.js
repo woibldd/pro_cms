@@ -4,12 +4,12 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
+const _19e6a3ae = () => interopDefault(import('../pages/mint_nft_token/index.vue' /* webpackChunkName: "pages/mint_nft_token/index" */))
 const _1e16834e = () => interopDefault(import('../pages/activity/airdrop/index.vue' /* webpackChunkName: "pages/activity/airdrop/index" */))
 const _65e970f7 = () => interopDefault(import('../pages/activity/blindbox/index.vue' /* webpackChunkName: "pages/activity/blindbox/index" */))
 const _330b97e0 = () => interopDefault(import('../pages/activity/blindboxInvite/index.vue' /* webpackChunkName: "pages/activity/blindboxInvite/index" */))
 const _4b1489fa = () => interopDefault(import('../pages/activity/cbkbexchange/index.vue' /* webpackChunkName: "pages/activity/cbkbexchange/index" */))
 const _8a23a01e = () => interopDefault(import('../pages/activity/mining/index.vue' /* webpackChunkName: "pages/activity/mining/index" */))
-const _05ebff0c = () => interopDefault(import('../pages/activity/mint_nft_token/index.vue' /* webpackChunkName: "pages/activity/mint_nft_token/index" */))
 const _0abcfe4e = () => interopDefault(import('../pages/activity/nftLottery/index.vue' /* webpackChunkName: "pages/activity/nftLottery/index" */))
 const _32bd48da = () => interopDefault(import('../pages/activity/noviceBenefits/index.vue' /* webpackChunkName: "pages/activity/noviceBenefits/index" */))
 const _0a73f44c = () => interopDefault(import('../pages/activity/staking/index.vue' /* webpackChunkName: "pages/activity/staking/index" */))
@@ -57,6 +57,10 @@ export const routerOptions = {
   scrollBehavior,
 
   routes: [{
+    path: "/mint_nft_token",
+    component: _19e6a3ae,
+    name: "mint_nft_token"
+  }, {
     path: "/activity/airdrop",
     component: _1e16834e,
     name: "activity-airdrop"
@@ -76,10 +80,6 @@ export const routerOptions = {
     path: "/activity/mining",
     component: _8a23a01e,
     name: "activity-mining"
-  }, {
-    path: "/activity/mint_nft_token",
-    component: _05ebff0c,
-    name: "activity-mint_nft_token"
   }, {
     path: "/activity/nftLottery",
     component: _0abcfe4e,

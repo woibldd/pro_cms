@@ -72,7 +72,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/activity/blindbox/list.vue?vue&type=template&id=c7440f2a&scoped=true&
 
 // EXTERNAL MODULE: ./components/common/index.js
-var common = __webpack_require__(92);
+var common = __webpack_require__(93);
 
 // EXTERNAL MODULE: external "dayjs"
 var external_dayjs_ = __webpack_require__(82);
@@ -783,7 +783,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 92:
+/***/ 93:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

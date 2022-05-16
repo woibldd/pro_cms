@@ -51,7 +51,6 @@
     "pages/activity/mining/inviteRuleDetail.js": "pages/activity/mining/inviteRuleDetail.js",
     "pages/activity/mining/miningRule.js": "pages/activity/mining/miningRule.js",
     "pages/activity/mining/protocol.js": "pages/activity/mining/protocol.js",
-    "pages/activity/mint_nft_token/index.js": "pages/activity/mint_nft_token/index.js",
     "pages/activity/nftLottery/index.js": "pages/activity/nftLottery/index.js",
     "pages/activity/noviceBenefits/drawluckly.js": "pages/activity/noviceBenefits/drawluckly.js",
     "pages/activity/noviceBenefits/index.js": "pages/activity/noviceBenefits/index.js",
@@ -67,6 +66,7 @@
     "pages/activity/trading/protocol.js": "pages/activity/trading/protocol.js",
     "pages/activity/trading/tradingRule.js": "pages/activity/trading/tradingRule.js",
     "pages/article/detail/_id.js": "pages/article/detail/_id.js",
+    "pages/mint_nft_token/index.js": "pages/mint_nft_token/index.js",
     "server.js": "server.js"
   },
   "maps": {
@@ -120,7 +120,6 @@
     "pages/activity/mining/inviteRuleDetail.js": "pages/activity/mining/inviteRuleDetail.js.map",
     "pages/activity/mining/miningRule.js": "pages/activity/mining/miningRule.js.map",
     "pages/activity/mining/protocol.js": "pages/activity/mining/protocol.js.map",
-    "pages/activity/mint_nft_token/index.js": "pages/activity/mint_nft_token/index.js.map",
     "pages/activity/nftLottery/index.js": "pages/activity/nftLottery/index.js.map",
     "pages/activity/noviceBenefits/drawluckly.js": "pages/activity/noviceBenefits/drawluckly.js.map",
     "pages/activity/noviceBenefits/index.js": "pages/activity/noviceBenefits/index.js.map",
@@ -136,6 +135,7 @@
     "pages/activity/trading/protocol.js": "pages/activity/trading/protocol.js.map",
     "pages/activity/trading/tradingRule.js": "pages/activity/trading/tradingRule.js.map",
     "pages/article/detail/_id.js": "pages/article/detail/_id.js.map",
+    "pages/mint_nft_token/index.js": "pages/mint_nft_token/index.js.map",
     "server.js": "server.js.map"
   }
 }
