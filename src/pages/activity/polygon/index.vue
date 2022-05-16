@@ -305,6 +305,7 @@ import {
   USER_API
 } from "@/api/client";
 import "@/utils/copy"
+import { loadView } from "@/tools/common.js" 
 // Vue.prototype.$bus = new Vue();
 import { BaseMixin } from "@/mixin/base.js"
 export default {
@@ -358,8 +359,8 @@ export default {
     Ment
   },
   async mounted() {
-
     await this.$nextTick();
+    await loadView()
     await this.connect()    
     await this.nftMintLotteryList()
     // this.$bus.$on('changeAccounts', async (val) => {
@@ -585,6 +586,7 @@ export default {
               chain: 'matic',
               hash: send
             }) 
+            this.addCoin(this.contract, this.chain, this.contract+'#BK#NFT') 
             this.isLoading = false
             if (status == 1) {
               this.isLoading = false
@@ -697,7 +699,7 @@ export default {
           //     contract: tx.to
           //   }
           // }
-          this.addCoin(this.contract, this.chain, this.contract) 
+          // console.log(this.contract, this.chain, this.contract+'#BK#NFT')
           var MentTimer = setInterval(async () => {
             const {
               data,

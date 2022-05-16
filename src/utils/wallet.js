@@ -34,7 +34,7 @@ class Wallet extends eventemitter3 {
   // 连接钱包
   async connect() {
     const Accounts = window.ethereum && await window.ethereum.request({ method: 'eth_requestAccounts' })
-    this.initEvent()
+    // this.initEvent()
     return Accounts[0]
   }
 
@@ -163,7 +163,6 @@ class Wallet extends eventemitter3 {
     // if(!window.Web3) console.warn("install...")
     // window.web3 = new window.Web3(window.ethereum)
     window.ethereum.removeAllListeners && window.ethereum.removeAllListeners()
-    this.removeAllListeners()
     // window.ethereum.removeListener && window.ethereum.removeListener('chainChanged')
     window.ethereum.on('accountsChanged', async (...arg) => {
       this.emit('accountsChanged', ...arg)

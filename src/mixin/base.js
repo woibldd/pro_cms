@@ -25,7 +25,7 @@ export const BaseMixin = {
     async addCoin(coin, chain, contract) {
       if (!this.isBitKeep) return;
       try {
-        await this._isCoinHas(chain, contract);
+        // await this._isCoinHas(chain, contract);
         await this._addCoin(coin, chain, contract);
       } catch (error) {
           console.error(error)
