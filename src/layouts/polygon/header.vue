@@ -16,7 +16,6 @@
 </template>
 <script>
   import '@/filter/filter'
-  import { loadView } from "@/tools/common.js"  
   import {
     wallet } from "@/utils/wallet";
   export default {
@@ -25,10 +24,8 @@
         address: "",
       };
     },
-    async mounted() { 
-      await this.$nextTick();
-      await loadView()
-      this.connect()
+    async mounted() {
+    //  this.connect()
     },
     methods: {
       async connect() {
