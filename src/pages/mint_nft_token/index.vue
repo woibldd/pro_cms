@@ -360,10 +360,6 @@ export default {
   async mounted() {
     this.loading =true
     await loadView()
-    console.log(window.ethereum, window.ethereum && ethereum.selectedAddress)
-    if(window.ethereum){
-      alert(ethereum.selectedAddress)
-    }
     if(!window.ethereum){
        this.loadingAddress()
     }
