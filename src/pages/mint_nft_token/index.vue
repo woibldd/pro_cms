@@ -362,10 +362,10 @@ export default {
     Ment
   },
   async mounted() { 
-    await this.$nextTick();
     await loadView()
     await this.connect()    
-    await this.nftMintLotteryList()
+    this.nftMintLotteryList()
+    this.watchAddress()
     // this.$bus.$on('changeAccounts', async (val) => {
     //   this.init()
     // });
@@ -375,6 +375,14 @@ export default {
     handleCopy(data) {
       copy(data)
       this.$toast.success(this.$t('polygon.copySuccess'))
+    },
+    watchAddress(){
+        this.timer=setInterval(()=>{
+              if(typeof ethereum !="undefined"  && ethereum.selectedAddress){
+                clearInterval(this.timer)
+                this.connect()
+              }
+        },300)
     },
     inputFormatter(value) {
       return value.replace(/[^\d|a-z|A-Z]/g,'')
