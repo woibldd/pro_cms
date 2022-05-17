@@ -20,7 +20,7 @@
       </div>
       <div v-else-if="MintData.length == 1" class="Mintlogo"> 
         <img :src="MintData[0].picUrl" alt="">  
-        <div class="TTORegular tokenId">Token ID: #{{MintData[0].tokenId}}</div> 
+        <div class="TTORegular tokenId">Token ID: #{{MintData[0].tokenId}}</div>  
       </div> 
     </div>
 

@@ -270,7 +270,7 @@ var external_vue_ = __webpack_require__(0);
 var external_vue_default = /*#__PURE__*/__webpack_require__.n(external_vue_);
 
 // EXTERNAL MODULE: external "vue-i18n"
-var external_vue_i18n_ = __webpack_require__(18);
+var external_vue_i18n_ = __webpack_require__(19);
 var external_vue_i18n_default = /*#__PURE__*/__webpack_require__.n(external_vue_i18n_);
 
 // CONCATENATED MODULE: ./locales/vant/index.js
@@ -363,581 +363,6 @@ module.exports = require("bignumber.js");
 
 /***/ }),
 /* 9 */
-/***/ (function(module, exports) {
-
-// This file is intentionally left empty for noop aliases
-
-/***/ }),
-/* 10 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_2_0_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_2_0_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_ref_2_0_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_2_0_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports) {
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/***/ }),
-/* 12 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _footer_vue_vue_type_template_id_6a01166d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19);
-/* harmony import */ var _footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
-
-
-
-function injectStyles (context) {
-  
-  var style0 = __webpack_require__(61)
-if (style0.__inject__) style0.__inject__(context)
-
-}
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(
-  _footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _footer_vue_vue_type_template_id_6a01166d___WEBPACK_IMPORTED_MODULE_0__[/* render */ "a"],
-  _footer_vue_vue_type_template_id_6a01166d___WEBPACK_IMPORTED_MODULE_0__[/* staticRenderFns */ "b"],
-  false,
-  injectStyles,
-  null,
-  "92ffaa1c"
-  
-)
-
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-/* 13 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export transfer16 */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return wallet; });
-/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(21);
-/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(eventemitter3__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var bignumber_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
-/* harmony import */ var bignumber_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bignumber_js__WEBPACK_IMPORTED_MODULE_1__);
-// import detectEthereumProvider from '@metamask/detect-provider';
- // import abiCoder from 'web3-eth-abi';
-
- // import Web3 from 'web3'
-// import { transfer16 } from '../common/common'
-
-function transfer16(val = '1') {
-  val = isNaN(Number(val)) ? 1 : Number(val);
-  return "0x" + val.toString(16);
-}
-
-class Wallet extends eventemitter3__WEBPACK_IMPORTED_MODULE_0___default.a {
-  constructor() {
-    super();
-
-    this.setMintToken = async data => {
-      data.gas = "0x" + bignumber_js__WEBPACK_IMPORTED_MODULE_1___default()(data.gas || data.gasLimit || 0).toString(16);
-      data.gasPrice = "0x" + bignumber_js__WEBPACK_IMPORTED_MODULE_1___default()(data.gasPrice || 0).times(bignumber_js__WEBPACK_IMPORTED_MODULE_1___default()(10).pow(18)).toString(16);
-      data.value = "0x" + bignumber_js__WEBPACK_IMPORTED_MODULE_1___default()(data.value || 0).toString(16);
-      return await window.ethereum.request({
-        method: 'eth_sendTransaction',
-        params: [data]
-      }); //  const web3 = new Web3(ethereum)
-      //  await web3.eth.sendTransaction(data)
-      //  await web3.eth.request({
-      //   method: 'eth_sendTransaction',
-      //   params: [
-      //     data
-      //   ],
-      // });
-    };
-
-    this._accounts = [];
-    this._chainId = 0;
-    this._walletPlatform = 'bitkeep';
-  }
-
-  transfer16(val = 0) {
-    val = isNaN(Number(val)) ? 1 : Number(val);
-    return "0x" + val.toString(16);
-  } // 是否安装 bitkeep 钱包
-
-
-  isInstall() {
-    const isInstalled = !!window.ethereum || !!window.isBitKeep;
-    !isInstalled && console.warn("no installed bitkeep");
-    return isInstalled;
-  } // 是否连接中
-
-
-  isConnected() {
-    return window.ethereum && window.ethereum.selectedAddress;
-  } // 连接钱包
-
-
-  async connect() {
-    const Accounts = window.ethereum && (await window.ethereum.request({
-      method: 'eth_requestAccounts'
-    })); // this.initEvent()
-
-    return Accounts[0];
-  } // 切换地址
-
-
-  selectedAddress() {
-    return window.ethereum && window.ethereum.selectedAddress;
-  } // 获取钱包信息
-
-
-  getWalletInfo() {
-    return {
-      address: window.ethereum && window.ethereum.selectedAddress,
-      // chainName: window.ethereum && window.ethereum.chainName || 'eth',
-      // chain: window.ethereum && window.ethereum.chain || 'eth',
-      chainId: window.ethereum && window.ethereum.chainId || '1',
-      walletId: '',
-      walletPlatform: this.getWalletPlatform()
-    };
-  } // 获取 chain ID
-
-
-  async getChainId() {
-    return window.ethereum && window.ethereum.request({
-      method: 'eth_chainId'
-    });
-  } // 切换 chain ID
-
-
-  async switchChainId(chainId, address) {
-    if (!address) {
-      const [nAddress] = await this.getAccounts();
-      address = nAddress;
-    }
-
-    return window.ethereum && window.ethereum.request({
-      method: 'wallet_switchEthereumChain',
-      params: [{
-        chainId: transfer16(chainId)
-      }, address]
-    });
-  } // 获取钱包标识
-
-
-  getWalletPlatform() {
-    return this._walletPlatform;
-  }
-
-  chainChanged() {
-    window.ethereum.on('chainChanged', async (...arg) => {
-      console.log(...arg, 'arg'); // window.location.reload()
-
-      this.emit('chainChanged', ...arg);
-    });
-  } // 获取钱包账号
-
-
-  async getAccounts() {
-    return window.ethereum ? window.ethereum.request({
-      method: "eth_accounts"
-    }) : [];
-  } // 登录签名
-
-
-  async LoginSign(dataToSign, address) {
-    console.log(dataToSign, address, 'dataToSign, addressdataToSign, addressdataToSign, address');
-    return await window.ethereum.request({
-      method: "personal_sign",
-      params: [dataToSign, address],
-      from: address
-    }); // return await window.ethereum.signMessage({ data: dataToSign })
-  } //邀请好友签名
-
-
-  async paritySign(address, inviteCode) {
-    const chainId = parseInt(await this.getChainId(), 10) || 137;
-    const msgParams = JSON.stringify({
-      domain: {
-        // Defining the chain aka Rinkeby testnet or Ethereum Main Net
-        chainId: chainId,
-        // Give a user friendly name to the specific contract you are signing for.
-        name: 'Ether Mail',
-        // If name isn't enough add verifying contract to make sure you are establishing contracts with the proper entity
-        verifyingContract: '0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC',
-        // Just let's you know the latest version. Definitely make sure the field name is correct.
-        version: '1'
-      },
-      // Defining the message signing data content.
-      message: {
-        /*
-         - Anything you want. Just a JSON Blob that encodes the data you want to send
-         - No required fields
-         - This is DApp Specific
-         - Be as explicit as possible when building out the message schema.
-        */
-        contents: inviteCode,
-        attachedMoneyInEth: 4.2,
-        from: {
-          name: 'Invite Code',
-          wallets: [address]
-        } // to: [
-        //   {
-        //     name: 'to_address',
-        //     wallets: [
-        //       toConstractAddress
-        //     ],
-        //   },
-        // ],
-
-      },
-      // Refers to the keys of the *types* object below.
-      primaryType: 'Mail',
-      types: {
-        // TODO: Clarify if EIP712Domain refers to the domain the contract is hosted on
-        EIP712Domain: [{
-          name: 'name',
-          type: 'string'
-        }, {
-          name: 'version',
-          type: 'string'
-        }, {
-          name: 'chainId',
-          type: 'uint256'
-        }, {
-          name: 'verifyingContract',
-          type: 'address'
-        }],
-        // Not an EIP712Domain definition
-        Group: [{
-          name: 'name',
-          type: 'string'
-        }, {
-          name: 'members',
-          type: 'Person[]'
-        }],
-        // Refer to PrimaryType
-        Mail: [{
-          name: 'from',
-          type: 'Person'
-        }, // { name: 'to', type: 'Person[]' },
-        {
-          name: 'contents',
-          type: 'string'
-        }],
-        // Not an EIP712Domain definition
-        Person: [{
-          name: 'name',
-          type: 'string'
-        }, {
-          name: 'wallets',
-          type: 'address[]'
-        }]
-      }
-    });
-    return await window.ethereum.request({
-      method: "eth_signTypedData_v4",
-      params: [address, msgParams],
-      from: address
-    }); // return await window.ethereum.request({ method: "eth_sign", params: [address, dataToSign],from: address})
-  } // 取消授权
-  // approveToken = async ( address, chainId, id, spender, amount ) => {
-  //   await window.ethereum.request({
-  //     method: 'eth_sendTransaction',
-  //     params: [
-  //       {
-  //         from: address,
-  //         to: id,
-  //         chainId: chainId,
-  //         data: abiCoder.encodeFunctionCall(
-  //           {
-  //             constant: false,
-  //             inputs: [
-  //               {
-  //                 name: '_spender',
-  //                 type: 'address',
-  //               },
-  //               {
-  //                 name: '_value',
-  //                 type: 'uint256',
-  //               },
-  //             ],
-  //             name: 'approve',
-  //             outputs: [
-  //               {
-  //                 name: '',
-  //                 type: 'bool',
-  //               },
-  //             ],
-  //             payable: false,
-  //             stateMutability: 'nonpayable',
-  //             type: 'function',
-  //           },
-  //           [spender, amount]
-  //         ),
-  //       },
-  //     ],
-  //   });
-  // }
-  //MintToken
-
-
-  initEvent() {
-    // if(!window.Web3) console.warn("install...")
-    // window.web3 = new window.Web3(window.ethereum)
-    window.ethereum.removeAllListeners && window.ethereum.removeAllListeners(); // window.ethereum.removeListener && window.ethereum.removeListener('chainChanged')
-
-    window.ethereum.on('accountsChanged', async (...arg) => {
-      this.emit('accountsChanged', ...arg);
-    });
-    window.ethereum.on('chainChanged', async (...arg) => {
-      this.emit('accountsChanged', ...arg);
-    });
-  }
-
-}
-
-const wallet = new Wallet();
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports) {
-
-module.exports = require("vue-no-ssr");
-
-/***/ }),
-/* 15 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _tools_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(20);
-/* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
-
-
-
-const log =  true ? (...arg) => {
-  console.log("bit-vuex-local:", ...arg);
-} : undefined;
-const INIT_STATE = {
-  locale: "en",
-  //  语言设置
-  locales: ['zh', 'en', 'ja', 'ko', 'vi', 'id', 'zh_tw'],
-  firstStatus: true,
-  bitkeep: {
-    language: 'en',
-    currency: 'cny',
-    os: 'android',
-    package: 'com.bitkeep.wallet5',
-    clientversion: '6.1.6',
-    ua: 'BitKeep Android/6.1.6',
-    token: '',
-    mylanguage: 'en',
-    brand: 'Android'
-  },
-  userInfo: {
-    token: ""
-  },
-  UA: {
-    ios: false,
-    android: false,
-    Mobile: false,
-    MobileAll: false,
-    wPhone: false,
-    PC: false,
-    weixin: false,
-    bitkeepios: false,
-    bitkeepandroid: false,
-    isPhonx: false,
-    isMiniProgram: false,
-    //小程序环境
-    isDingDing: false // 钉钉环境
-
-  }
-};
-
-const state = _ => ({ ...INIT_STATE
-});
-
-const actions = {
-  async nuxtServerInit({
-    commit,
-    state
-  }, ctx) {
-    const {
-      params,
-      query,
-      req
-    } = ctx;
-    let locale = query.lang || params.lang; //UA
-
-    let headerUa = req.headers.ua ? req.headers.ua : '';
-    commit('SET_UA', Object(_tools_common__WEBPACK_IMPORTED_MODULE_1__[/* parseUA */ "d"])(req.headers['user-agent'], headerUa)); //App内嵌
-
-    if (state.UA.isBitKeep) {
-      log("内嵌bitkeep app 设置参数", state.UA.isBitKeep);
-      commit('SET_BIT_KEEP', {
-        language: req.headers.language,
-        currency: req.headers.currency,
-        os: req.headers.os,
-        package: req.headers.package,
-        ua: req.headers.ua,
-        token: req.headers.token,
-        mylanguage: req.headers.mylanguage,
-        brand: req.headers.brand
-      });
-      locale = req.headers.mylanguage || req.headers.language;
-
-      if (locale == 'zh_tw') {
-        locale = 'zh_tw';
-      } else if (!state.locales.find(lan => lan == (locale || '').slice(0, 2))) {
-        locale = 'en';
-      }
-    } else {
-      const acceptLanguage = req.headers['accept-language'];
-
-      if (acceptLanguage) {
-        locale = locale || acceptLanguage.split(",")[0];
-      }
-    }
-
-    commit("CHANGE_LANG", locale);
-    log("当前语言", {
-      locale
-    });
-  }
-
-};
-const getters = {};
-const mutations = {
-  "CHANGE_LANG"(state, data) {
-    if (data) data = data === 'zh_tw' ? data : data.slice(0, 2).toLowerCase();
-
-    if (state.locales.indexOf(data) !== -1) {
-      state.locale = data || state.locale;
-      Object(_locales__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(state.locale);
-      log("切换语言", data); // langMouedles[state.locale] && Locale.use(state.locale, langMouedles[state.locale])
-    } else {
-      Object(_locales__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])("en");
-    }
-  },
-
-  "SET_BIT_KEEP"(state, data) {
-    if (data.token) {
-      state.userInfo.token = data.token;
-    }
-
-    Object.assign(state.bitkeep, data);
-    log("SET_BIT_KEEP", state);
-  },
-
-  "SET_USER"(state, data) {
-    Object.assign(state.userInfo, data);
-  },
-
-  "SET_UA"(state, data) {
-    Object.assign(state.UA, data);
-  },
-
-  "SET_firstStatus"(state, data) {
-    state.firstStatus = data;
-  }
-
-};
-/* harmony default export */ __webpack_exports__["default"] = ({
-  state,
-  actions,
-  getters,
-  mutations
-});
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports) {
-
-module.exports = require("vue-client-only");
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports) {
-
-module.exports = require("vue-router");
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports) {
-
-module.exports = require("vue-i18n");
-
-/***/ }),
-/* 19 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, "a", function() { return /* reexport */ render; });
-__webpack_require__.d(__webpack_exports__, "b", function() { return /* reexport */ staticRenderFns; });
-
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/polygon/footer.vue?vue&type=template&id=6a01166d&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"polygon_footer"},[_vm._ssrNode("<div class=\"container\"><div class=\"footer-box-logo\"><div class=\"footer-box-logo-img\"><img src=\"https://cdn.bitkeep.vip/u_b_e018f290-b8dc-11ec-821f-dfed729e21e7.png\" alt></div> <div class=\"footer-box-logo-msg\"><p class=\"TTORegular\">Converge the power of &quot;Polygon Warriors&quot;</p> <h3 class=\"TTORegular\">May 1 - May 31 , 2022</h3></div></div> <div class=\"bottom\"><div class=\"logo\"><img"+(_vm._ssrAttr("src",__webpack_require__(24)))+" alt></div> <ul><li class=\"telebox\"><a href=\"https://t.me/BitKeep_Official\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(52)))+" alt=\"Bitkeep 官方 Telegram 账号\"></a></li> <li><a href=\"https://twitter.com/BitKeepOS\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(53)))+" alt=\"Bitkeep的官方推特账号\"></a></li> <li><a href=\"https://www.youtube.com/c/BitKeepWallet\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(54)))+" alt=\"Bitkeep的官方YouTube账号\"></a></li> <li><a href=\"https://twitter.com/BitKeepOS\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(55)))+" alt=\"Bitkeep的官方推特账号\"></a></li> <li><a href=\"https://medium.com/@bitkeepblog\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(56)))+" alt=\"Bitkeep 官方 Medium 账号\"></a></li> <li><a href=\"https://github.com/bitkeepwallet/download\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(57)))+" alt=\"Bitkeep 官方 GitHub 账号\"></a></li> <li><a href=\"https://discord.gg/qYTatUzNjM\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(58)))+" alt=\"Bitkeep 官方 Discord 账号\"></a></li> <li><a href=\"https://instagram.com/bitkeep_global?igshid=YmMyMTA2M2Y=\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(59)))+" alt=\"Bitkeep's official instagram account\"></a></li> <li><a href=\"https://www.facebook.com/BitKeep\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(60)))+" alt=\"Bitkeep's official facebook account\"></a></li></ul></div></div>")])}
-var staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./layouts/polygon/footer.vue?vue&type=template&id=6a01166d&
-
-
-/***/ }),
-/* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -956,7 +381,7 @@ var staticRenderFns = []
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DPR; });
 /* unused harmony export filterTime */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return loadView; });
-/* harmony import */ var core_js_modules_esnext_array_last_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67);
+/* harmony import */ var core_js_modules_esnext_array_last_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(64);
 /* harmony import */ var core_js_modules_esnext_array_last_index_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_esnext_array_last_index_js__WEBPACK_IMPORTED_MODULE_0__);
 
 const getImageInfo = src => new Promise(resolve => {
@@ -1282,7 +707,582 @@ const loadView = function () {
     }, 4000);
   });
 };
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(66)["URL"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(63)["URL"]))
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+// This file is intentionally left empty for noop aliases
+
+/***/ }),
+/* 11 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_2_0_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_2_0_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_ref_2_0_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_2_0_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 13 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _footer_vue_vue_type_template_id_6a01166d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20);
+/* harmony import */ var _footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+
+
+
+function injectStyles (context) {
+  
+  var style0 = __webpack_require__(61)
+if (style0.__inject__) style0.__inject__(context)
+
+}
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(
+  _footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _footer_vue_vue_type_template_id_6a01166d___WEBPACK_IMPORTED_MODULE_0__[/* render */ "a"],
+  _footer_vue_vue_type_template_id_6a01166d___WEBPACK_IMPORTED_MODULE_0__[/* staticRenderFns */ "b"],
+  false,
+  injectStyles,
+  null,
+  "92ffaa1c"
+  
+)
+
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+/* 14 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export transfer16 */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return wallet; });
+/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(21);
+/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(eventemitter3__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var bignumber_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
+/* harmony import */ var bignumber_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bignumber_js__WEBPACK_IMPORTED_MODULE_1__);
+// import detectEthereumProvider from '@metamask/detect-provider';
+ // import abiCoder from 'web3-eth-abi';
+
+ // import Web3 from 'web3'
+// import { transfer16 } from '../common/common'
+
+function transfer16(val = '1') {
+  val = isNaN(Number(val)) ? 1 : Number(val);
+  return "0x" + val.toString(16);
+}
+
+class Wallet extends eventemitter3__WEBPACK_IMPORTED_MODULE_0___default.a {
+  constructor() {
+    super();
+
+    this.setMintToken = async data => {
+      data.gas = "0x" + bignumber_js__WEBPACK_IMPORTED_MODULE_1___default()(data.gas || data.gasLimit || 0).toString(16);
+      data.gasPrice = "0x" + bignumber_js__WEBPACK_IMPORTED_MODULE_1___default()(data.gasPrice || 0).times(bignumber_js__WEBPACK_IMPORTED_MODULE_1___default()(10).pow(18)).toString(16);
+      data.value = "0x" + bignumber_js__WEBPACK_IMPORTED_MODULE_1___default()(data.value || 0).toString(16);
+      return await window.ethereum.request({
+        method: 'eth_sendTransaction',
+        params: [data]
+      }); //  const web3 = new Web3(ethereum)
+      //  await web3.eth.sendTransaction(data)
+      //  await web3.eth.request({
+      //   method: 'eth_sendTransaction',
+      //   params: [
+      //     data
+      //   ],
+      // });
+    };
+
+    this._accounts = [];
+    this._chainId = 0;
+    this._walletPlatform = 'bitkeep';
+  }
+
+  transfer16(val = 0) {
+    val = isNaN(Number(val)) ? 1 : Number(val);
+    return "0x" + val.toString(16);
+  } // 是否安装 bitkeep 钱包
+
+
+  isInstall() {
+    const isInstalled = !!window.ethereum || !!window.isBitKeep;
+    !isInstalled && console.warn("no installed bitkeep");
+    return isInstalled;
+  } // 是否连接中
+
+
+  isConnected() {
+    return window.ethereum && window.ethereum.selectedAddress;
+  } // 连接钱包
+
+
+  async connect() {
+    const Accounts = window.ethereum && (await window.ethereum.request({
+      method: 'eth_requestAccounts'
+    })); // this.initEvent()
+
+    return Accounts[0];
+  } // 切换地址
+
+
+  selectedAddress() {
+    return window.ethereum && window.ethereum.selectedAddress;
+  } // 获取钱包信息
+
+
+  getWalletInfo() {
+    return {
+      address: window.ethereum && window.ethereum.selectedAddress,
+      // chainName: window.ethereum && window.ethereum.chainName || 'eth',
+      // chain: window.ethereum && window.ethereum.chain || 'eth',
+      chainId: window.ethereum && window.ethereum.chainId || '1',
+      walletId: '',
+      walletPlatform: this.getWalletPlatform()
+    };
+  } // 获取 chain ID
+
+
+  async getChainId() {
+    return window.ethereum && window.ethereum.request({
+      method: 'eth_chainId'
+    });
+  } // 切换 chain ID
+
+
+  async switchChainId(chainId, address) {
+    if (!address) {
+      const [nAddress] = await this.getAccounts();
+      address = nAddress;
+    }
+
+    return window.ethereum && window.ethereum.request({
+      method: 'wallet_switchEthereumChain',
+      params: [{
+        chainId: transfer16(chainId)
+      }, address]
+    });
+  } // 获取钱包标识
+
+
+  getWalletPlatform() {
+    return this._walletPlatform;
+  }
+
+  chainChanged() {
+    window.ethereum.on('chainChanged', async (...arg) => {
+      console.log(...arg, 'arg'); // window.location.reload()
+
+      this.emit('chainChanged', ...arg);
+    });
+  } // 获取钱包账号
+
+
+  async getAccounts() {
+    return window.ethereum ? window.ethereum.request({
+      method: "eth_accounts"
+    }) : [];
+  } // 登录签名
+
+
+  async LoginSign(dataToSign, address) {
+    console.log(dataToSign, address, 'dataToSign, addressdataToSign, addressdataToSign, address');
+    return await window.ethereum.request({
+      method: "personal_sign",
+      params: [dataToSign, address],
+      from: address
+    }); // return await window.ethereum.signMessage({ data: dataToSign })
+  } //邀请好友签名
+
+
+  async paritySign(address, inviteCode) {
+    const chainId = parseInt(await this.getChainId(), 10) || 137;
+    const msgParams = JSON.stringify({
+      domain: {
+        // Defining the chain aka Rinkeby testnet or Ethereum Main Net
+        chainId: chainId,
+        // Give a user friendly name to the specific contract you are signing for.
+        name: 'Ether Mail',
+        // If name isn't enough add verifying contract to make sure you are establishing contracts with the proper entity
+        verifyingContract: '0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC',
+        // Just let's you know the latest version. Definitely make sure the field name is correct.
+        version: '1'
+      },
+      // Defining the message signing data content.
+      message: {
+        /*
+         - Anything you want. Just a JSON Blob that encodes the data you want to send
+         - No required fields
+         - This is DApp Specific
+         - Be as explicit as possible when building out the message schema.
+        */
+        contents: inviteCode,
+        attachedMoneyInEth: 4.2,
+        from: {
+          name: 'Invite Code',
+          wallets: [address]
+        } // to: [
+        //   {
+        //     name: 'to_address',
+        //     wallets: [
+        //       toConstractAddress
+        //     ],
+        //   },
+        // ],
+
+      },
+      // Refers to the keys of the *types* object below.
+      primaryType: 'Mail',
+      types: {
+        // TODO: Clarify if EIP712Domain refers to the domain the contract is hosted on
+        EIP712Domain: [{
+          name: 'name',
+          type: 'string'
+        }, {
+          name: 'version',
+          type: 'string'
+        }, {
+          name: 'chainId',
+          type: 'uint256'
+        }, {
+          name: 'verifyingContract',
+          type: 'address'
+        }],
+        // Not an EIP712Domain definition
+        Group: [{
+          name: 'name',
+          type: 'string'
+        }, {
+          name: 'members',
+          type: 'Person[]'
+        }],
+        // Refer to PrimaryType
+        Mail: [{
+          name: 'from',
+          type: 'Person'
+        }, // { name: 'to', type: 'Person[]' },
+        {
+          name: 'contents',
+          type: 'string'
+        }],
+        // Not an EIP712Domain definition
+        Person: [{
+          name: 'name',
+          type: 'string'
+        }, {
+          name: 'wallets',
+          type: 'address[]'
+        }]
+      }
+    });
+    return await window.ethereum.request({
+      method: "eth_signTypedData_v4",
+      params: [address, msgParams],
+      from: address
+    }); // return await window.ethereum.request({ method: "eth_sign", params: [address, dataToSign],from: address})
+  } // 取消授权
+  // approveToken = async ( address, chainId, id, spender, amount ) => {
+  //   await window.ethereum.request({
+  //     method: 'eth_sendTransaction',
+  //     params: [
+  //       {
+  //         from: address,
+  //         to: id,
+  //         chainId: chainId,
+  //         data: abiCoder.encodeFunctionCall(
+  //           {
+  //             constant: false,
+  //             inputs: [
+  //               {
+  //                 name: '_spender',
+  //                 type: 'address',
+  //               },
+  //               {
+  //                 name: '_value',
+  //                 type: 'uint256',
+  //               },
+  //             ],
+  //             name: 'approve',
+  //             outputs: [
+  //               {
+  //                 name: '',
+  //                 type: 'bool',
+  //               },
+  //             ],
+  //             payable: false,
+  //             stateMutability: 'nonpayable',
+  //             type: 'function',
+  //           },
+  //           [spender, amount]
+  //         ),
+  //       },
+  //     ],
+  //   });
+  // }
+  //MintToken
+
+
+  initEvent() {
+    // if(!window.Web3) console.warn("install...")
+    // window.web3 = new window.Web3(window.ethereum)
+    window.ethereum.removeAllListeners && window.ethereum.removeAllListeners(); // window.ethereum.removeListener && window.ethereum.removeListener('chainChanged')
+
+    window.ethereum.on('accountsChanged', async (...arg) => {
+      this.emit('accountsChanged', ...arg);
+    });
+    window.ethereum.on('chainChanged', async (...arg) => {
+      this.emit('accountsChanged', ...arg);
+    });
+  }
+
+}
+
+const wallet = new Wallet();
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+module.exports = require("vue-no-ssr");
+
+/***/ }),
+/* 16 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _tools_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9);
+/* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
+
+
+
+const log =  true ? (...arg) => {
+  console.log("bit-vuex-local:", ...arg);
+} : undefined;
+const INIT_STATE = {
+  locale: "en",
+  //  语言设置
+  locales: ['zh', 'en', 'ja', 'ko', 'vi', 'id', 'zh_tw'],
+  firstStatus: true,
+  bitkeep: {
+    language: 'en',
+    currency: 'cny',
+    os: 'android',
+    package: 'com.bitkeep.wallet5',
+    clientversion: '6.1.6',
+    ua: 'BitKeep Android/6.1.6',
+    token: '',
+    mylanguage: 'en',
+    brand: 'Android'
+  },
+  userInfo: {
+    token: ""
+  },
+  UA: {
+    ios: false,
+    android: false,
+    Mobile: false,
+    MobileAll: false,
+    wPhone: false,
+    PC: false,
+    weixin: false,
+    bitkeepios: false,
+    bitkeepandroid: false,
+    isPhonx: false,
+    isMiniProgram: false,
+    //小程序环境
+    isDingDing: false // 钉钉环境
+
+  }
+};
+
+const state = _ => ({ ...INIT_STATE
+});
+
+const actions = {
+  async nuxtServerInit({
+    commit,
+    state
+  }, ctx) {
+    const {
+      params,
+      query,
+      req
+    } = ctx;
+    let locale = query.lang || params.lang; //UA
+
+    let headerUa = req.headers.ua ? req.headers.ua : '';
+    commit('SET_UA', Object(_tools_common__WEBPACK_IMPORTED_MODULE_1__[/* parseUA */ "d"])(req.headers['user-agent'], headerUa)); //App内嵌
+
+    if (state.UA.isBitKeep) {
+      log("内嵌bitkeep app 设置参数", state.UA.isBitKeep);
+      commit('SET_BIT_KEEP', {
+        language: req.headers.language,
+        currency: req.headers.currency,
+        os: req.headers.os,
+        package: req.headers.package,
+        ua: req.headers.ua,
+        token: req.headers.token,
+        mylanguage: req.headers.mylanguage,
+        brand: req.headers.brand
+      });
+      locale = req.headers.mylanguage || req.headers.language;
+
+      if (locale == 'zh_tw') {
+        locale = 'zh_tw';
+      } else if (!state.locales.find(lan => lan == (locale || '').slice(0, 2))) {
+        locale = 'en';
+      }
+    } else {
+      const acceptLanguage = req.headers['accept-language'];
+
+      if (acceptLanguage) {
+        locale = locale || acceptLanguage.split(",")[0];
+      }
+    }
+
+    commit("CHANGE_LANG", locale);
+    log("当前语言", {
+      locale
+    });
+  }
+
+};
+const getters = {};
+const mutations = {
+  "CHANGE_LANG"(state, data) {
+    if (data) data = data === 'zh_tw' ? data : data.slice(0, 2).toLowerCase();
+
+    if (state.locales.indexOf(data) !== -1) {
+      state.locale = data || state.locale;
+      Object(_locales__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(state.locale);
+      log("切换语言", data); // langMouedles[state.locale] && Locale.use(state.locale, langMouedles[state.locale])
+    } else {
+      Object(_locales__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])("en");
+    }
+  },
+
+  "SET_BIT_KEEP"(state, data) {
+    if (data.token) {
+      state.userInfo.token = data.token;
+    }
+
+    Object.assign(state.bitkeep, data);
+    log("SET_BIT_KEEP", state);
+  },
+
+  "SET_USER"(state, data) {
+    Object.assign(state.userInfo, data);
+  },
+
+  "SET_UA"(state, data) {
+    Object.assign(state.UA, data);
+  },
+
+  "SET_firstStatus"(state, data) {
+    state.firstStatus = data;
+  }
+
+};
+/* harmony default export */ __webpack_exports__["default"] = ({
+  state,
+  actions,
+  getters,
+  mutations
+});
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+module.exports = require("vue-client-only");
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+module.exports = require("vue-router");
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports) {
+
+module.exports = require("vue-i18n");
+
+/***/ }),
+/* 20 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "a", function() { return /* reexport */ render; });
+__webpack_require__.d(__webpack_exports__, "b", function() { return /* reexport */ staticRenderFns; });
+
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/polygon/footer.vue?vue&type=template&id=6a01166d&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"polygon_footer"},[_vm._ssrNode("<div class=\"container\"><div class=\"footer-box-logo\"><div class=\"footer-box-logo-img\"><img src=\"https://cdn.bitkeep.vip/u_b_e018f290-b8dc-11ec-821f-dfed729e21e7.png\" alt></div> <div class=\"footer-box-logo-msg\"><p class=\"TTORegular\">Converge the power of &quot;Polygon Warriors&quot;</p> <h3 class=\"TTORegular\">May 1 - May 31 , 2022</h3></div></div> <div class=\"bottom\"><div class=\"logo\"><img"+(_vm._ssrAttr("src",__webpack_require__(24)))+" alt></div> <ul><li class=\"telebox\"><a href=\"https://t.me/BitKeep_Official\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(52)))+" alt=\"Bitkeep 官方 Telegram 账号\"></a></li> <li><a href=\"https://twitter.com/BitKeepOS\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(53)))+" alt=\"Bitkeep的官方推特账号\"></a></li> <li><a href=\"https://www.youtube.com/c/BitKeepWallet\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(54)))+" alt=\"Bitkeep的官方YouTube账号\"></a></li> <li><a href=\"https://twitter.com/BitKeepOS\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(55)))+" alt=\"Bitkeep的官方推特账号\"></a></li> <li><a href=\"https://medium.com/@bitkeepblog\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(56)))+" alt=\"Bitkeep 官方 Medium 账号\"></a></li> <li><a href=\"https://github.com/bitkeepwallet/download\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(57)))+" alt=\"Bitkeep 官方 GitHub 账号\"></a></li> <li><a href=\"https://discord.gg/qYTatUzNjM\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(58)))+" alt=\"Bitkeep 官方 Discord 账号\"></a></li> <li><a href=\"https://instagram.com/bitkeep_global?igshid=YmMyMTA2M2Y=\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(59)))+" alt=\"Bitkeep's official instagram account\"></a></li> <li><a href=\"https://www.facebook.com/BitKeep\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(60)))+" alt=\"Bitkeep's official facebook account\"></a></li></ul></div></div>")])}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./layouts/polygon/footer.vue?vue&type=template&id=6a01166d&
+
 
 /***/ }),
 /* 21 */
@@ -2846,6 +2846,18 @@ module.exports = __webpack_require__.p + "img/right_log.d071a26.png";
 
 /***/ }),
 /* 63 */
+/***/ (function(module, exports) {
+
+module.exports = require("url");
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/modules/esnext.array.last-index.js");
+
+/***/ }),
+/* 65 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2856,7 +2868,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /***/ }),
-/* 64 */
+/* 66 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2867,30 +2879,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /***/ }),
-/* 65 */
+/* 67 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_local__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15);
+/* harmony import */ var _modules_local__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   modules: {
     local: _modules_local__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
-
-/***/ }),
-/* 66 */
-/***/ (function(module, exports) {
-
-module.exports = require("url");
-
-/***/ }),
-/* 67 */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/modules/esnext.array.last-index.js");
 
 /***/ }),
 /* 68 */
@@ -7054,15 +7054,15 @@ var external_vue_meta_ = __webpack_require__(42);
 var external_vue_meta_default = /*#__PURE__*/__webpack_require__.n(external_vue_meta_);
 
 // EXTERNAL MODULE: external "vue-client-only"
-var external_vue_client_only_ = __webpack_require__(16);
+var external_vue_client_only_ = __webpack_require__(17);
 var external_vue_client_only_default = /*#__PURE__*/__webpack_require__.n(external_vue_client_only_);
 
 // EXTERNAL MODULE: external "vue-no-ssr"
-var external_vue_no_ssr_ = __webpack_require__(14);
+var external_vue_no_ssr_ = __webpack_require__(15);
 var external_vue_no_ssr_default = /*#__PURE__*/__webpack_require__.n(external_vue_no_ssr_);
 
 // EXTERNAL MODULE: external "vue-router"
-var external_vue_router_ = __webpack_require__(17);
+var external_vue_router_ = __webpack_require__(18);
 var external_vue_router_default = /*#__PURE__*/__webpack_require__.n(external_vue_router_);
 
 // CONCATENATED MODULE: ./.nuxt/router.scrollBehavior.js
@@ -7953,14 +7953,14 @@ var defaultvue_type_template_id_db7e3638_staticRenderFns = []
 // CONCATENATED MODULE: ./layouts/polygon/default.vue?vue&type=template&id=db7e3638&
 
 // EXTERNAL MODULE: ./layouts/polygon/footer.vue
-var footer = __webpack_require__(12);
+var footer = __webpack_require__(13);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/polygon/header.vue?vue&type=template&id=3ffa8a00&
-var headervue_type_template_id_3ffa8a00_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"polygon_header"},[_vm._ssrNode("<div class=\"container\"><div class=\"logo\"><img"+(_vm._ssrAttr("src",__webpack_require__(24)))+" alt></div> <div class=\"header_right\"><img"+(_vm._ssrAttr("src",__webpack_require__(62)))+" alt class=\"right_log\"> <div class=\"connect\">"+((!_vm.address)?("<span class=\"TTORegular\">连接钱包</span>"):("<span class=\"TTORegular\">"+_vm._ssrEscape(_vm._s(_vm._f("blurredDisplay")(_vm.address)))+"</span>"))+"</div></div></div>")])}
-var headervue_type_template_id_3ffa8a00_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/polygon/header.vue?vue&type=template&id=4da7f22a&
+var headervue_type_template_id_4da7f22a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"polygon_header"},[_vm._ssrNode("<div class=\"container\"><div class=\"logo\"><img"+(_vm._ssrAttr("src",__webpack_require__(24)))+" alt></div> <div class=\"header_right\"><img"+(_vm._ssrAttr("src",__webpack_require__(62)))+" alt class=\"right_log\"> <div class=\"connect\">"+((!_vm.address)?("<span class=\"TTORegular\">连接钱包</span>"):("<span class=\"TTORegular\">"+_vm._ssrEscape(_vm._s(_vm._f("blurredDisplay")(_vm.address)))+"</span>"))+"</div></div></div>")])}
+var headervue_type_template_id_4da7f22a_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./layouts/polygon/header.vue?vue&type=template&id=3ffa8a00&
+// CONCATENATED MODULE: ./layouts/polygon/header.vue?vue&type=template&id=4da7f22a&
 
 // CONCATENATED MODULE: ./filter/filter.js
  //合约地址模糊展示
@@ -7990,8 +7990,11 @@ external_vue_default.a.filter("timeFilter", function (value) {
     return oMonth + '-' + oDay + '-' + oYear;
   }
 });
+// EXTERNAL MODULE: ./tools/common.js
+var common = __webpack_require__(9);
+
 // EXTERNAL MODULE: ./utils/wallet.js
-var wallet = __webpack_require__(13);
+var wallet = __webpack_require__(14);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/polygon/header.vue?vue&type=script&lang=js&
 //
@@ -8012,6 +8015,7 @@ var wallet = __webpack_require__(13);
 //
 
 
+
 /* harmony default export */ var headervue_type_script_lang_js_ = ({
   data() {
     return {
@@ -8020,6 +8024,8 @@ var wallet = __webpack_require__(13);
   },
 
   async mounted() {
+    await this.$nextTick();
+    await Object(common["c" /* loadView */])();
     this.connect();
   },
 
@@ -8043,7 +8049,7 @@ var wallet = __webpack_require__(13);
 
 function header_injectStyles (context) {
   
-  var style0 = __webpack_require__(63)
+  var style0 = __webpack_require__(65)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -8052,8 +8058,8 @@ if (style0.__inject__) style0.__inject__(context)
 
 var header_component = Object(componentNormalizer["a" /* default */])(
   polygon_headervue_type_script_lang_js_,
-  headervue_type_template_id_3ffa8a00_render,
-  headervue_type_template_id_3ffa8a00_staticRenderFns,
+  headervue_type_template_id_4da7f22a_render,
+  headervue_type_template_id_4da7f22a_staticRenderFns,
   false,
   header_injectStyles,
   null,
@@ -8088,7 +8094,7 @@ var header_component = Object(componentNormalizer["a" /* default */])(
 
 function default_injectStyles (context) {
   
-  var style0 = __webpack_require__(64)
+  var style0 = __webpack_require__(66)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -8304,11 +8310,11 @@ const VUEX_PROPERTIES = ['state', 'getters', 'actions', 'mutations'];
 let store_store = {};
 
 (function updateModules() {
-  store_store = normalizeRoot(__webpack_require__(65), 'store/index.js'); // If store is an exported method = classic mode (deprecated)
+  store_store = normalizeRoot(__webpack_require__(67), 'store/index.js'); // If store is an exported method = classic mode (deprecated)
   // Enforce store modules
 
   store_store.modules = store_store.modules || {};
-  resolveStoreModules(__webpack_require__(15), 'modules/local.js'); // If the environment supports hot reloading...
+  resolveStoreModules(__webpack_require__(16), 'modules/local.js'); // If the environment supports hot reloading...
 })(); // createStore
 
 
@@ -8698,7 +8704,7 @@ const setupProgress = axios => {
   inject('axios', axios);
 });
 // EXTERNAL MODULE: ./.nuxt/empty.js
-var _nuxt_empty = __webpack_require__(9);
+var _nuxt_empty = __webpack_require__(10);
 
 // EXTERNAL MODULE: external "debug"
 var external_debug_ = __webpack_require__(5);

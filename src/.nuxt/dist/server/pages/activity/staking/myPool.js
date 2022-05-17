@@ -73,7 +73,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/activity/staking/protocol.vue?vue&type=template&id=49c56fde&scoped=true&
 
 // EXTERNAL MODULE: ./tools/common.js
-var common = __webpack_require__(20);
+var common = __webpack_require__(9);
 
 // EXTERNAL MODULE: ./api/client.js
 var client = __webpack_require__(85);

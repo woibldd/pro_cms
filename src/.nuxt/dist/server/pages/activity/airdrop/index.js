@@ -65,7 +65,7 @@ var staticRenderFns = []
 var client = __webpack_require__(85);
 
 // EXTERNAL MODULE: ./tools/common.js
-var common = __webpack_require__(20);
+var common = __webpack_require__(9);
 
 // EXTERNAL MODULE: external "vuex"
 var external_vuex_ = __webpack_require__(4);
