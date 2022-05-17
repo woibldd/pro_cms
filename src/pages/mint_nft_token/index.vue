@@ -364,6 +364,9 @@ export default {
     if(window.ethereum){
       alert(ethereum.selectedAddress)
     }
+    if(!window.ethereum){
+       this.loadingAddress()
+    }
     this.loading =false
     await this.connect()    
     this.nftMintLotteryList()
@@ -400,9 +403,6 @@ export default {
         await wallet.connect();
       } 
       const [nAddress] = await wallet.getAccounts()
-      if(!nAddress){
-         this.loadingAddress()
-      }
       this.address = nAddress
       this.nftMintGetInfo(this.address ? this.address : '', 'matic')
       this.nftMintnftList()
