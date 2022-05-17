@@ -42,8 +42,8 @@
         </div>
         <div class="contract"> 
           <label class="TTORegular title">{{lang.contractAddress}}:</label>
-          <span  class="TTORegular ">{{simplify('0x76b9a40Fb2844A450C086B06A4D20599C16FF6eA')}}</span> 
-          <span class="TTOMedium copy" v-copy="'0x76b9a40Fb2844A450C086B06A4D20599C16FF6eA'">COPY</span>
+          <span  class="TTORegular ">{{simplify(contract)}}</span> 
+          <span class="TTOMedium copy" @click="handleCopy(contract)">COPY</span>
         </div>
         <div class="MintBtn" v-if="defaultData.isMint||defaultData.isMelt">
           <div class="item">
@@ -93,12 +93,12 @@
                 {{lang.info7}}<br>
                 {{lang.info8}}
               </p>
-              <div class="InvitationCodeBox" v-if="!+defaultData.inviteCode">
+              <div class="InvitationCodeBox" v-if="defaultData.inviteCode!=0">
                 <div class="InvitationCode Background0">
                   <span class="TTORegular text">{{lang.inviteCode}}</span>
                   <span class="TTODbold code">{{defaultData.inviteCode}}</span>
                   <span class="line"></span>
-                  <span class="TTODbold copy" v-copy="defaultData.inviteCode">COPY</span>
+                  <span class="TTODbold copy"  @click="handleCopy(defaultData.inviteCode)" >COPY</span>
                 </div>
               </div>
             </div>
@@ -250,8 +250,8 @@
               <div class="clearBox" v-show="invitationCode" @click="invitationCode=''">
                 <van-icon name="clear" size="16" />
               </div>
-              <div class="pastetext" v-show="!invitationCode" @click="paste">{{lang.paste}}
-              </div>
+              <!-- <div class="pastetext" v-show="!invitationCode" @click="paste">{{lang.paste}}
+              </div> -->
               <div class="error-text" v-if="invitationError">
                 {{invitationError}}
               </div>
@@ -290,6 +290,7 @@
 </template>
 <script>
   // import cndMixins from "@/mixin/cnd.js";
+  
 import Countdown from "@/components/polygon/c-vue-countdown";
 import Mint from "@/components/polygon/Mint";
 import Ment from "@/components/polygon/Ment";
@@ -301,11 +302,14 @@ import MintSuccessCard from '@/components/polygon/MintSuccessCard'
 import { storage } from '@/utils/Storage'
 import { wallet } from "@/utils/wallet"; 
 // MintToken
-import { USER_API } from "@/api/client";
+import {
+  USER_API
+} from "@/api/client";
 import "@/utils/copy"
 import { loadView } from "@/tools/common.js" 
 // Vue.prototype.$bus = new Vue();
 import { BaseMixin } from "@/mixin/base.js"
+import copy from 'copy-to-clipboard';
 export default {
   name: "polygon",
   layout:"polygon/default",
@@ -357,30 +361,20 @@ export default {
     MintSuccessCard,
     Ment
   },
-  async mounted() {
-    this.loading =true
+  async mounted() { 
+    await this.$nextTick();
     await loadView()
-    if(!window.ethereum){
-       this.loadingAddress()
-    }
-    this.loading =false
     await this.connect()    
-    this.nftMintLotteryList()
+    await this.nftMintLotteryList()
     // this.$bus.$on('changeAccounts', async (val) => {
     //   this.init()
     // });
     // this.nftMintGetInfo(this.address, 'matic') 
   },
-  methods: {
-    loadingAddress(){
-       this.timer = setInterval(()=>{
-           if(typeof window != "undefined" && window.ethereum){
-                if(window.ethereum.selectedAddress){
-                      this.connect()
-                      clearInterval(this.timer)
-                }
-           }
-       },300)
+  methods: { 
+    handleCopy(data) {
+      copy(data)
+      this.$toast.success(this.$t('polygon.copySuccess'))
     },
     inputFormatter(value) {
       return value.replace(/[^\d|a-z|A-Z]/g,'')
