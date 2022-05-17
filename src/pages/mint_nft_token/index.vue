@@ -634,7 +634,19 @@ export default {
               console.log("MentList", this.MentList)
               this.nftMintGetInfo(this.address ? this.address : '', this.chainName)
               this.showMintSuccess = true;
+              this.addCoin(this.contract, this.chain, this.contract+'#BK#NFT') 
             } 
+               if (data.status == 2) {
+              clearInterval(MintTimer)
+              clearTimeout(MintTimer2)
+              this.isLoading = false;
+              this.init()
+              return this.$dialog.alert({
+                message: "Mint " + this.$t("polygon.faild"),
+                confirmButtonText: this.$t('polygon.iknow'),
+                confirmButtonColor: '#7524f9'
+              });
+            }
           }, 3000)
           var MintTimer2 = setTimeout(() => {
             this.isLoading = false
@@ -644,13 +656,13 @@ export default {
               message: 'Mint ' + this.$t('polygon.faild'),
               confirmButtonText: this.$t('polygon.iknow'),
             })
-          }, 1000 * 60);
+          }, 1000 * 30);
         } catch (error) {
           this.isLoading = false;
           this.$toast.fail(typeof error == "object" ? error.message || 'error' : error); 
         }
         
-        this.addCoin(this.contract, this.chain, this.contract+'#BK#NFT') 
+        // this.addCoin(this.contract, this.chain, this.contract+'#BK#NFT') 
       }
     },
     async ableMent(Mentlist) {
@@ -752,6 +764,17 @@ export default {
                 return MLETsuccess.indexOf(item.tokenId) == -1
               });
             }
+             if (data.status == 2) {
+              clearInterval(MentTimer)
+              clearTimeout(MentTimer2)
+              this.isLoading = false;
+              this.init()
+              return this.$dialog.alert({
+                message: "MELT " + this.$t("polygon.faild"),
+                confirmButtonText: this.$t('polygon.iknow'),
+                confirmButtonColor: '#7524f9'
+              });
+            }
           }, 3000)
           var MentTimer2 = setTimeout(() => {
             this.isLoading = false
@@ -761,7 +784,7 @@ export default {
               message: 'MELT' + this.$t("polygon.faild"),
               confirmButtonText: $t('polygon.iknow'),
             })
-          }, 1000 * 60);
+          }, 1000 * 30);
         } catch (error) {
           this.isLoading = false
           this.$toast.fail(typeof error == "object" ? error.message || 'error' : error);
@@ -1256,7 +1279,8 @@ export default {
             width: 16px;
             height: 16px;
             margin-left: 5px;
-          }
+            vertical-align: middle;
+            }
         }
 
         img {
