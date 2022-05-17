@@ -361,6 +361,9 @@ export default {
     this.loading =true
     await loadView()
     console.log(window.ethereum, window.ethereum && ethereum.selectedAddress)
+    if(window.ethereum){
+      alert(ethereum.selectedAddress)
+    }
     this.loading =false
     await this.connect()    
     this.nftMintLotteryList()

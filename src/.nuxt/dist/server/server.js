@@ -8501,16 +8501,14 @@ function wrapFunctional(options) {
 
 
 const components = {
-  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 220)).then(c => wrapFunctional(c.default || c)),
-  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 98)).then(c => wrapFunctional(c.default || c)),
-  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 88)).then(c => wrapFunctional(c.default || c)),
-  Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 93)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 228)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 315)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 130)).then(c => wrapFunctional(c.default || c)),
   BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 229)).then(c => wrapFunctional(c.default || c)),
   BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 227)).then(c => wrapFunctional(c.default || c)),
-  Trading: () => __webpack_require__.e(/* import() | components/trading */ 19).then(__webpack_require__.bind(null, 134)).then(c => wrapFunctional(c.default || c)),
+  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 98)).then(c => wrapFunctional(c.default || c)),
+  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 88)).then(c => wrapFunctional(c.default || c)),
+  Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 93)).then(c => wrapFunctional(c.default || c)),
   PolygonAirdropAddressCard: () => __webpack_require__.e(/* import() | components/polygon-airdrop-address-card */ 10).then(__webpack_require__.bind(null, 214)).then(c => wrapFunctional(c.default || c)),
   PolygonAirdropAwardCard: () => __webpack_require__.e(/* import() | components/polygon-airdrop-award-card */ 11).then(__webpack_require__.bind(null, 215)).then(c => wrapFunctional(c.default || c)),
   PolygonInvitedCard: () => __webpack_require__.e(/* import() | components/polygon-invited-card */ 14).then(__webpack_require__.bind(null, 216)).then(c => wrapFunctional(c.default || c)),
@@ -8520,6 +8518,8 @@ const components = {
   PolygonWhitelistcard: () => __webpack_require__.e(/* import() | components/polygon-whitelistcard */ 18).then(__webpack_require__.bind(null, 217)).then(c => wrapFunctional(c.default || c)),
   PolygonCVueCountdown: () => __webpack_require__.e(/* import() | components/polygon-c-vue-countdown */ 12).then(__webpack_require__.bind(null, 211)).then(c => wrapFunctional(c.default || c)),
   PolygonCountdown: () => __webpack_require__.e(/* import() | components/polygon-countdown */ 13).then(__webpack_require__.bind(null, 316)).then(c => wrapFunctional(c.default || c)),
+  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 220)).then(c => wrapFunctional(c.default || c)),
+  Trading: () => __webpack_require__.e(/* import() | components/trading */ 19).then(__webpack_require__.bind(null, 134)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 21).then(__webpack_require__.bind(null, 168)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 22).then(__webpack_require__.bind(null, 100)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 23).then(__webpack_require__.bind(null, 317)).then(c => wrapFunctional(c.default || c)),
