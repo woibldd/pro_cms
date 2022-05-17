@@ -670,7 +670,7 @@ module.exports = {
     info8: 'Note: The higher the lucky value, the greater the chance of getting airdrops',
     whiteTitle: 'Whitelist Privileges',
     whiteTips1: '1. Whitelisted users will open Mint on May 17',
-    whiteTips2: '2. Non-whitelisted users will open Mint on May 19',
+    whiteTips2: '2. Non-whitelisted users will open Mint on May 18',
     whiteTips3: '3. The purchase limit for whitelisted users is 10',
     whiteTips4: '4. The purchase limit for non-whitelisted users is 5',
     whiteTips5: '1. Users who have traded using Swap',

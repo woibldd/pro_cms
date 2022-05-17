@@ -668,7 +668,7 @@ module.exports = {
       info8: '注：幸运值越高，获得空投几率越大',
       whiteTitle: '白名单特权',
       whiteTips1: '1.白名单用户在5月17日开启Mint',
-      whiteTips2: '2.非白名单用户在5月19日开启Mint',
+      whiteTips2: '2.非白名单用户在5月18日开启Mint',
       whiteTips3: '3.白名单用户购买上限为10个',
       whiteTips4: '4.非白名单用户购买上限为5个',
       whiteTips5: '1.使用Swap进行交易过的用户',

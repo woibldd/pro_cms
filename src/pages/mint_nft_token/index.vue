@@ -361,7 +361,7 @@ export default {
     MintSuccessCard,
     Ment
   },
-  async mounted() {
+  async mounted() { 
     await this.$nextTick();
     await loadView()
     await this.connect()    
@@ -1145,7 +1145,7 @@ export default {
 
                   .viewInvitee {
                     flex: 1;
-                    font-size: 16px;
+                    font-size: 14px;
                     text-align: right;
                   }
                 }
@@ -1268,6 +1268,7 @@ export default {
             width: 16px;
             height: 16px;
             margin-left: 5px;
+            vertical-align: center;
           }
         }
 

@@ -3597,7 +3597,7 @@ module.exports = {
     info8: 'Note: The higher the lucky value, the greater the chance of getting airdrops',
     whiteTitle: 'Whitelist Privileges',
     whiteTips1: '1. Whitelisted users will open Mint on May 17',
-    whiteTips2: '2. Non-whitelisted users will open Mint on May 19',
+    whiteTips2: '2. Non-whitelisted users will open Mint on May 18',
     whiteTips3: '3. The purchase limit for whitelisted users is 10',
     whiteTips4: '4. The purchase limit for non-whitelisted users is 5',
     whiteTips5: '1. Users who have traded using Swap',
@@ -6063,7 +6063,7 @@ module.exports = {
     info8: '注：幸运值越高，获得空投几率越大',
     whiteTitle: '白名单特权',
     whiteTips1: '1.白名单用户在5月17日开启Mint',
-    whiteTips2: '2.非白名单用户在5月19日开启Mint',
+    whiteTips2: '2.非白名单用户在5月18日开启Mint',
     whiteTips3: '3.白名单用户购买上限为10个',
     whiteTips4: '4.非白名单用户购买上限为5个',
     whiteTips5: '1.使用Swap进行交易过的用户',
@@ -8465,6 +8465,7 @@ function wrapFunctional(options) {
 
 
 const components = {
+  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 221)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 229)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 316)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 131)).then(c => wrapFunctional(c.default || c)),
@@ -8473,7 +8474,6 @@ const components = {
   CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 99)).then(c => wrapFunctional(c.default || c)),
   CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 89)).then(c => wrapFunctional(c.default || c)),
   Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 94)).then(c => wrapFunctional(c.default || c)),
-  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 221)).then(c => wrapFunctional(c.default || c)),
   PolygonAirdropAddressCard: () => __webpack_require__.e(/* import() | components/polygon-airdrop-address-card */ 10).then(__webpack_require__.bind(null, 215)).then(c => wrapFunctional(c.default || c)),
   PolygonAirdropAwardCard: () => __webpack_require__.e(/* import() | components/polygon-airdrop-award-card */ 11).then(__webpack_require__.bind(null, 216)).then(c => wrapFunctional(c.default || c)),
   PolygonCVueCountdown: () => __webpack_require__.e(/* import() | components/polygon-c-vue-countdown */ 12).then(__webpack_require__.bind(null, 212)).then(c => wrapFunctional(c.default || c)),
