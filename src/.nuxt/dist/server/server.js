@@ -270,7 +270,7 @@ var external_vue_ = __webpack_require__(0);
 var external_vue_default = /*#__PURE__*/__webpack_require__.n(external_vue_);
 
 // EXTERNAL MODULE: external "vue-i18n"
-var external_vue_i18n_ = __webpack_require__(19);
+var external_vue_i18n_ = __webpack_require__(18);
 var external_vue_i18n_default = /*#__PURE__*/__webpack_require__.n(external_vue_i18n_);
 
 // CONCATENATED MODULE: ./locales/vant/index.js
@@ -363,6 +363,581 @@ module.exports = require("bignumber.js");
 
 /***/ }),
 /* 9 */
+/***/ (function(module, exports) {
+
+// This file is intentionally left empty for noop aliases
+
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_2_0_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_2_0_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_ref_2_0_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_2_0_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 12 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _footer_vue_vue_type_template_id_6a01166d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19);
+/* harmony import */ var _footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10);
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+
+
+
+function injectStyles (context) {
+  
+  var style0 = __webpack_require__(61)
+if (style0.__inject__) style0.__inject__(context)
+
+}
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(
+  _footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _footer_vue_vue_type_template_id_6a01166d___WEBPACK_IMPORTED_MODULE_0__[/* render */ "a"],
+  _footer_vue_vue_type_template_id_6a01166d___WEBPACK_IMPORTED_MODULE_0__[/* staticRenderFns */ "b"],
+  false,
+  injectStyles,
+  null,
+  "57c3b594"
+  
+)
+
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+/* 13 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export transfer16 */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return wallet; });
+/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(21);
+/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(eventemitter3__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var bignumber_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
+/* harmony import */ var bignumber_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bignumber_js__WEBPACK_IMPORTED_MODULE_1__);
+// import detectEthereumProvider from '@metamask/detect-provider';
+ // import abiCoder from 'web3-eth-abi';
+
+ // import Web3 from 'web3'
+// import { transfer16 } from '../common/common'
+
+function transfer16(val = '1') {
+  val = isNaN(Number(val)) ? 1 : Number(val);
+  return "0x" + val.toString(16);
+}
+
+class Wallet extends eventemitter3__WEBPACK_IMPORTED_MODULE_0___default.a {
+  constructor() {
+    super();
+
+    this.setMintToken = async data => {
+      data.gas = "0x" + bignumber_js__WEBPACK_IMPORTED_MODULE_1___default()(data.gas || data.gasLimit || 0).toString(16);
+      data.gasPrice = "0x" + bignumber_js__WEBPACK_IMPORTED_MODULE_1___default()(data.gasPrice || 0).times(bignumber_js__WEBPACK_IMPORTED_MODULE_1___default()(10).pow(18)).toString(16);
+      data.value = "0x" + bignumber_js__WEBPACK_IMPORTED_MODULE_1___default()(data.value || 0).toString(16);
+      return await window.ethereum.request({
+        method: 'eth_sendTransaction',
+        params: [data]
+      }); //  const web3 = new Web3(ethereum)
+      //  await web3.eth.sendTransaction(data)
+      //  await web3.eth.request({
+      //   method: 'eth_sendTransaction',
+      //   params: [
+      //     data
+      //   ],
+      // });
+    };
+
+    this._accounts = [];
+    this._chainId = 0;
+    this._walletPlatform = 'bitkeep';
+  }
+
+  transfer16(val = 0) {
+    val = isNaN(Number(val)) ? 1 : Number(val);
+    return "0x" + val.toString(16);
+  } // 是否安装 bitkeep 钱包
+
+
+  isInstall() {
+    const isInstalled = !!window.ethereum || !!window.isBitKeep;
+    !isInstalled && console.warn("no installed bitkeep");
+    return isInstalled;
+  } // 是否连接中
+
+
+  isConnected() {
+    return window.ethereum && window.ethereum.selectedAddress;
+  } // 连接钱包
+
+
+  async connect() {
+    const Accounts = window.ethereum && (await window.ethereum.request({
+      method: 'eth_requestAccounts'
+    })); // this.initEvent()
+
+    return Accounts[0];
+  } // 切换地址
+
+
+  selectedAddress() {
+    return window.ethereum && window.ethereum.selectedAddress;
+  } // 获取钱包信息
+
+
+  getWalletInfo() {
+    return {
+      address: window.ethereum && window.ethereum.selectedAddress,
+      // chainName: window.ethereum && window.ethereum.chainName || 'eth',
+      // chain: window.ethereum && window.ethereum.chain || 'eth',
+      chainId: window.ethereum && window.ethereum.chainId || '1',
+      walletId: '',
+      walletPlatform: this.getWalletPlatform()
+    };
+  } // 获取 chain ID
+
+
+  async getChainId() {
+    return window.ethereum && window.ethereum.request({
+      method: 'eth_chainId'
+    });
+  } // 切换 chain ID
+
+
+  async switchChainId(chainId, address) {
+    if (!address) {
+      const [nAddress] = await this.getAccounts();
+      address = nAddress;
+    }
+
+    return window.ethereum && window.ethereum.request({
+      method: 'wallet_switchEthereumChain',
+      params: [{
+        chainId: transfer16(chainId)
+      }, address]
+    });
+  } // 获取钱包标识
+
+
+  getWalletPlatform() {
+    return this._walletPlatform;
+  }
+
+  chainChanged() {
+    window.ethereum.on('chainChanged', async (...arg) => {
+      console.log(...arg, 'arg'); // window.location.reload()
+
+      this.emit('chainChanged', ...arg);
+    });
+  } // 获取钱包账号
+
+
+  async getAccounts() {
+    return window.ethereum ? window.ethereum.request({
+      method: "eth_accounts"
+    }) : [];
+  } // 登录签名
+
+
+  async LoginSign(dataToSign, address) {
+    console.log(dataToSign, address, 'dataToSign, addressdataToSign, addressdataToSign, address');
+    return await window.ethereum.request({
+      method: "personal_sign",
+      params: [dataToSign, address],
+      from: address
+    }); // return await window.ethereum.signMessage({ data: dataToSign })
+  } //邀请好友签名
+
+
+  async paritySign(address, inviteCode) {
+    const chainId = parseInt(await this.getChainId(), 10) || 137;
+    const msgParams = JSON.stringify({
+      domain: {
+        // Defining the chain aka Rinkeby testnet or Ethereum Main Net
+        chainId: chainId,
+        // Give a user friendly name to the specific contract you are signing for.
+        name: 'Ether Mail',
+        // If name isn't enough add verifying contract to make sure you are establishing contracts with the proper entity
+        verifyingContract: '0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC',
+        // Just let's you know the latest version. Definitely make sure the field name is correct.
+        version: '1'
+      },
+      // Defining the message signing data content.
+      message: {
+        /*
+         - Anything you want. Just a JSON Blob that encodes the data you want to send
+         - No required fields
+         - This is DApp Specific
+         - Be as explicit as possible when building out the message schema.
+        */
+        contents: inviteCode,
+        attachedMoneyInEth: 4.2,
+        from: {
+          name: 'Invite Code',
+          wallets: [address]
+        } // to: [
+        //   {
+        //     name: 'to_address',
+        //     wallets: [
+        //       toConstractAddress
+        //     ],
+        //   },
+        // ],
+
+      },
+      // Refers to the keys of the *types* object below.
+      primaryType: 'Mail',
+      types: {
+        // TODO: Clarify if EIP712Domain refers to the domain the contract is hosted on
+        EIP712Domain: [{
+          name: 'name',
+          type: 'string'
+        }, {
+          name: 'version',
+          type: 'string'
+        }, {
+          name: 'chainId',
+          type: 'uint256'
+        }, {
+          name: 'verifyingContract',
+          type: 'address'
+        }],
+        // Not an EIP712Domain definition
+        Group: [{
+          name: 'name',
+          type: 'string'
+        }, {
+          name: 'members',
+          type: 'Person[]'
+        }],
+        // Refer to PrimaryType
+        Mail: [{
+          name: 'from',
+          type: 'Person'
+        }, // { name: 'to', type: 'Person[]' },
+        {
+          name: 'contents',
+          type: 'string'
+        }],
+        // Not an EIP712Domain definition
+        Person: [{
+          name: 'name',
+          type: 'string'
+        }, {
+          name: 'wallets',
+          type: 'address[]'
+        }]
+      }
+    });
+    return await window.ethereum.request({
+      method: "eth_signTypedData_v4",
+      params: [address, msgParams],
+      from: address
+    }); // return await window.ethereum.request({ method: "eth_sign", params: [address, dataToSign],from: address})
+  } // 取消授权
+  // approveToken = async ( address, chainId, id, spender, amount ) => {
+  //   await window.ethereum.request({
+  //     method: 'eth_sendTransaction',
+  //     params: [
+  //       {
+  //         from: address,
+  //         to: id,
+  //         chainId: chainId,
+  //         data: abiCoder.encodeFunctionCall(
+  //           {
+  //             constant: false,
+  //             inputs: [
+  //               {
+  //                 name: '_spender',
+  //                 type: 'address',
+  //               },
+  //               {
+  //                 name: '_value',
+  //                 type: 'uint256',
+  //               },
+  //             ],
+  //             name: 'approve',
+  //             outputs: [
+  //               {
+  //                 name: '',
+  //                 type: 'bool',
+  //               },
+  //             ],
+  //             payable: false,
+  //             stateMutability: 'nonpayable',
+  //             type: 'function',
+  //           },
+  //           [spender, amount]
+  //         ),
+  //       },
+  //     ],
+  //   });
+  // }
+  //MintToken
+
+
+  initEvent() {
+    // if(!window.Web3) console.warn("install...")
+    // window.web3 = new window.Web3(window.ethereum)
+    window.ethereum.removeAllListeners && window.ethereum.removeAllListeners(); // window.ethereum.removeListener && window.ethereum.removeListener('chainChanged')
+
+    window.ethereum.on('accountsChanged', async (...arg) => {
+      this.emit('accountsChanged', ...arg);
+    });
+    window.ethereum.on('chainChanged', async (...arg) => {
+      this.emit('accountsChanged', ...arg);
+    });
+  }
+
+}
+
+const wallet = new Wallet();
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports) {
+
+module.exports = require("vue-no-ssr");
+
+/***/ }),
+/* 15 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _tools_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(20);
+/* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
+
+
+
+const log =  true ? (...arg) => {
+  console.log("bit-vuex-local:", ...arg);
+} : undefined;
+const INIT_STATE = {
+  locale: "en",
+  //  语言设置
+  locales: ['zh', 'en', 'ja', 'ko', 'vi', 'id', 'zh_tw'],
+  firstStatus: true,
+  bitkeep: {
+    language: 'en',
+    currency: 'cny',
+    os: 'android',
+    package: 'com.bitkeep.wallet5',
+    clientversion: '6.1.6',
+    ua: 'BitKeep Android/6.1.6',
+    token: '',
+    mylanguage: 'en',
+    brand: 'Android'
+  },
+  userInfo: {
+    token: ""
+  },
+  UA: {
+    ios: false,
+    android: false,
+    Mobile: false,
+    MobileAll: false,
+    wPhone: false,
+    PC: false,
+    weixin: false,
+    bitkeepios: false,
+    bitkeepandroid: false,
+    isPhonx: false,
+    isMiniProgram: false,
+    //小程序环境
+    isDingDing: false // 钉钉环境
+
+  }
+};
+
+const state = _ => ({ ...INIT_STATE
+});
+
+const actions = {
+  async nuxtServerInit({
+    commit,
+    state
+  }, ctx) {
+    const {
+      params,
+      query,
+      req
+    } = ctx;
+    let locale = query.lang || params.lang; //UA
+
+    let headerUa = req.headers.ua ? req.headers.ua : '';
+    commit('SET_UA', Object(_tools_common__WEBPACK_IMPORTED_MODULE_1__[/* parseUA */ "d"])(req.headers['user-agent'], headerUa)); //App内嵌
+
+    if (state.UA.isBitKeep) {
+      log("内嵌bitkeep app 设置参数", state.UA.isBitKeep);
+      commit('SET_BIT_KEEP', {
+        language: req.headers.language,
+        currency: req.headers.currency,
+        os: req.headers.os,
+        package: req.headers.package,
+        ua: req.headers.ua,
+        token: req.headers.token,
+        mylanguage: req.headers.mylanguage,
+        brand: req.headers.brand
+      });
+      locale = req.headers.mylanguage || req.headers.language;
+
+      if (locale == 'zh_tw') {
+        locale = 'zh_tw';
+      } else if (!state.locales.find(lan => lan == (locale || '').slice(0, 2))) {
+        locale = 'en';
+      }
+    } else {
+      const acceptLanguage = req.headers['accept-language'];
+
+      if (acceptLanguage) {
+        locale = locale || acceptLanguage.split(",")[0];
+      }
+    }
+
+    commit("CHANGE_LANG", locale);
+    log("当前语言", {
+      locale
+    });
+  }
+
+};
+const getters = {};
+const mutations = {
+  "CHANGE_LANG"(state, data) {
+    if (data) data = data === 'zh_tw' ? data : data.slice(0, 2).toLowerCase();
+
+    if (state.locales.indexOf(data) !== -1) {
+      state.locale = data || state.locale;
+      Object(_locales__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(state.locale);
+      log("切换语言", data); // langMouedles[state.locale] && Locale.use(state.locale, langMouedles[state.locale])
+    } else {
+      Object(_locales__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])("en");
+    }
+  },
+
+  "SET_BIT_KEEP"(state, data) {
+    if (data.token) {
+      state.userInfo.token = data.token;
+    }
+
+    Object.assign(state.bitkeep, data);
+    log("SET_BIT_KEEP", state);
+  },
+
+  "SET_USER"(state, data) {
+    Object.assign(state.userInfo, data);
+  },
+
+  "SET_UA"(state, data) {
+    Object.assign(state.UA, data);
+  },
+
+  "SET_firstStatus"(state, data) {
+    state.firstStatus = data;
+  }
+
+};
+/* harmony default export */ __webpack_exports__["default"] = ({
+  state,
+  actions,
+  getters,
+  mutations
+});
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+module.exports = require("vue-client-only");
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+module.exports = require("vue-router");
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+module.exports = require("vue-i18n");
+
+/***/ }),
+/* 19 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "a", function() { return /* reexport */ render; });
+__webpack_require__.d(__webpack_exports__, "b", function() { return /* reexport */ staticRenderFns; });
+
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/polygon/footer.vue?vue&type=template&id=6a01166d&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"polygon_footer"},[_vm._ssrNode("<div class=\"container\"><div class=\"footer-box-logo\"><div class=\"footer-box-logo-img\"><img src=\"https://cdn.bitkeep.vip/u_b_e018f290-b8dc-11ec-821f-dfed729e21e7.png\" alt></div> <div class=\"footer-box-logo-msg\"><p class=\"TTORegular\">Converge the power of &quot;Polygon Warriors&quot;</p> <h3 class=\"TTORegular\">May 1 - May 31 , 2022</h3></div></div> <div class=\"bottom\"><div class=\"logo\"><img"+(_vm._ssrAttr("src",__webpack_require__(24)))+" alt></div> <ul><li class=\"telebox\"><a href=\"https://t.me/BitKeep_Official\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(52)))+" alt=\"Bitkeep 官方 Telegram 账号\"></a></li> <li><a href=\"https://twitter.com/BitKeepOS\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(53)))+" alt=\"Bitkeep的官方推特账号\"></a></li> <li><a href=\"https://www.youtube.com/c/BitKeepWallet\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(54)))+" alt=\"Bitkeep的官方YouTube账号\"></a></li> <li><a href=\"https://twitter.com/BitKeepOS\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(55)))+" alt=\"Bitkeep的官方推特账号\"></a></li> <li><a href=\"https://medium.com/@bitkeepblog\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(56)))+" alt=\"Bitkeep 官方 Medium 账号\"></a></li> <li><a href=\"https://github.com/bitkeepwallet/download\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(57)))+" alt=\"Bitkeep 官方 GitHub 账号\"></a></li> <li><a href=\"https://discord.gg/qYTatUzNjM\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(58)))+" alt=\"Bitkeep 官方 Discord 账号\"></a></li> <li><a href=\"https://instagram.com/bitkeep_global?igshid=YmMyMTA2M2Y=\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(59)))+" alt=\"Bitkeep's official instagram account\"></a></li> <li><a href=\"https://www.facebook.com/BitKeep\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(60)))+" alt=\"Bitkeep's official facebook account\"></a></li></ul></div></div>")])}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./layouts/polygon/footer.vue?vue&type=template&id=6a01166d&
+
+
+/***/ }),
+/* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -380,8 +955,9 @@ module.exports = require("bignumber.js");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return debounce; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DPR; });
 /* unused harmony export filterTime */
+/* unused harmony export isExisit */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return loadView; });
-/* harmony import */ var core_js_modules_esnext_array_last_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(64);
+/* harmony import */ var core_js_modules_esnext_array_last_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(67);
 /* harmony import */ var core_js_modules_esnext_array_last_index_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_esnext_array_last_index_js__WEBPACK_IMPORTED_MODULE_0__);
 
 const getImageInfo = src => new Promise(resolve => {
@@ -687,621 +1263,71 @@ function filterTime(date) {
   var MI = val.getMinutes() >= 10 ? val.getMinutes() : "0" + val.getMinutes();
   var S = val.getSeconds() >= 10 ? val.getSeconds() : "0" + val.getSeconds();
   return Y + "-" + M + "-" + D + " " + H + ":" + MI + ":" + S;
-} // export const loadView = function() {
-//   let isLoad = false;
-//   new Promise(resolve => {
-//     if (document.readyState == "complete") {
-//       isLoad = true;
-//       return resolve();
-//     }
-//     window.addEventListener("load", () => {
-//       isLoad = true;
-//       resolve();
-//     });
-//     setTimeout(() => {
-//       if (!isLoad) {
-//         resolve();
-//       }
-//     }, 4000);
-//   });
-// };
+}
+const isExisit = function () {
+  if (typeof window != "undefined") {
+    return window.ethereum && ethereum.selectedAddress;
+  }
 
+  return false;
+};
 const loadView = function () {
   let isLoad = false;
+  let timer = null;
   new Promise(resolve => {
     if (document.readyState == "complete") {
+      if (isExisit()) {
+        if (!isLoad) {
+          clearInterval(timer);
+          isLoad = true;
+          return resolve();
+        }
+      }
+
+      timer = setInterval(() => {
+        if (isExisit()) {
+          if (!isLoad) {
+            clearInterval(timer);
+            isLoad = true;
+            return resolve();
+          }
+        }
+      }, 200);
       setTimeout(() => {
-        isLoad = true;
-        resolve();
-      }, 3000);
+        if (!isLoad) {
+          clearInterval(timer);
+          isLoad = true;
+          return resolve();
+        }
+      }, 5000);
       return;
     }
 
     window.addEventListener("load", () => {
-      isLoad = true;
+      if (isExisit()) {
+        if (!isLoad) {
+          isLoad = true;
+          return resolve();
+        }
+      }
+
+      timer = setInterval(() => {
+        if (isExisit()) {
+          if (!isLoad) {
+            clearInterval(timer);
+            isLoad = true;
+            return resolve();
+          }
+        }
+      }, 200);
       setTimeout(() => {
         isLoad = true;
         resolve();
-      }, 3000);
+      }, 5000);
     });
   });
 };
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(63)["URL"]))
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports) {
-
-// This file is intentionally left empty for noop aliases
-
-/***/ }),
-/* 11 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_2_0_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_2_0_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_ref_2_0_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_2_0_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports) {
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/***/ }),
-/* 13 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _footer_vue_vue_type_template_id_6a01166d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20);
-/* harmony import */ var _footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
-
-
-
-function injectStyles (context) {
-  
-  var style0 = __webpack_require__(61)
-if (style0.__inject__) style0.__inject__(context)
-
-}
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(
-  _footer_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _footer_vue_vue_type_template_id_6a01166d___WEBPACK_IMPORTED_MODULE_0__[/* render */ "a"],
-  _footer_vue_vue_type_template_id_6a01166d___WEBPACK_IMPORTED_MODULE_0__[/* staticRenderFns */ "b"],
-  false,
-  injectStyles,
-  null,
-  "92ffaa1c"
-  
-)
-
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-/* 14 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export transfer16 */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return wallet; });
-/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(21);
-/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(eventemitter3__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var bignumber_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
-/* harmony import */ var bignumber_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(bignumber_js__WEBPACK_IMPORTED_MODULE_1__);
-// import detectEthereumProvider from '@metamask/detect-provider';
- // import abiCoder from 'web3-eth-abi';
-
- // import Web3 from 'web3'
-// import { transfer16 } from '../common/common'
-
-function transfer16(val = '1') {
-  val = isNaN(Number(val)) ? 1 : Number(val);
-  return "0x" + val.toString(16);
-}
-
-class Wallet extends eventemitter3__WEBPACK_IMPORTED_MODULE_0___default.a {
-  constructor() {
-    super();
-
-    this.setMintToken = async data => {
-      data.gas = "0x" + bignumber_js__WEBPACK_IMPORTED_MODULE_1___default()(data.gas || data.gasLimit || 0).toString(16);
-      data.gasPrice = "0x" + bignumber_js__WEBPACK_IMPORTED_MODULE_1___default()(data.gasPrice || 0).times(bignumber_js__WEBPACK_IMPORTED_MODULE_1___default()(10).pow(18)).toString(16);
-      data.value = "0x" + bignumber_js__WEBPACK_IMPORTED_MODULE_1___default()(data.value || 0).toString(16);
-      return await window.ethereum.request({
-        method: 'eth_sendTransaction',
-        params: [data]
-      }); //  const web3 = new Web3(ethereum)
-      //  await web3.eth.sendTransaction(data)
-      //  await web3.eth.request({
-      //   method: 'eth_sendTransaction',
-      //   params: [
-      //     data
-      //   ],
-      // });
-    };
-
-    this._accounts = [];
-    this._chainId = 0;
-    this._walletPlatform = 'bitkeep';
-  }
-
-  transfer16(val = 0) {
-    val = isNaN(Number(val)) ? 1 : Number(val);
-    return "0x" + val.toString(16);
-  } // 是否安装 bitkeep 钱包
-
-
-  isInstall() {
-    const isInstalled = !!window.ethereum || !!window.isBitKeep;
-    !isInstalled && console.warn("no installed bitkeep");
-    return isInstalled;
-  } // 是否连接中
-
-
-  isConnected() {
-    return window.ethereum && window.ethereum.selectedAddress;
-  } // 连接钱包
-
-
-  async connect() {
-    const Accounts = window.ethereum && (await window.ethereum.request({
-      method: 'eth_requestAccounts'
-    })); // this.initEvent()
-
-    return Accounts[0];
-  } // 切换地址
-
-
-  selectedAddress() {
-    return window.ethereum && window.ethereum.selectedAddress;
-  } // 获取钱包信息
-
-
-  getWalletInfo() {
-    return {
-      address: window.ethereum && window.ethereum.selectedAddress,
-      // chainName: window.ethereum && window.ethereum.chainName || 'eth',
-      // chain: window.ethereum && window.ethereum.chain || 'eth',
-      chainId: window.ethereum && window.ethereum.chainId || '1',
-      walletId: '',
-      walletPlatform: this.getWalletPlatform()
-    };
-  } // 获取 chain ID
-
-
-  async getChainId() {
-    return window.ethereum && window.ethereum.request({
-      method: 'eth_chainId'
-    });
-  } // 切换 chain ID
-
-
-  async switchChainId(chainId, address) {
-    if (!address) {
-      const [nAddress] = await this.getAccounts();
-      address = nAddress;
-    }
-
-    return window.ethereum && window.ethereum.request({
-      method: 'wallet_switchEthereumChain',
-      params: [{
-        chainId: transfer16(chainId)
-      }, address]
-    });
-  } // 获取钱包标识
-
-
-  getWalletPlatform() {
-    return this._walletPlatform;
-  }
-
-  chainChanged() {
-    window.ethereum.on('chainChanged', async (...arg) => {
-      console.log(...arg, 'arg'); // window.location.reload()
-
-      this.emit('chainChanged', ...arg);
-    });
-  } // 获取钱包账号
-
-
-  async getAccounts() {
-    return window.ethereum ? window.ethereum.request({
-      method: "eth_accounts"
-    }) : [];
-  } // 登录签名
-
-
-  async LoginSign(dataToSign, address) {
-    console.log(dataToSign, address, 'dataToSign, addressdataToSign, addressdataToSign, address');
-    return await window.ethereum.request({
-      method: "personal_sign",
-      params: [dataToSign, address],
-      from: address
-    }); // return await window.ethereum.signMessage({ data: dataToSign })
-  } //邀请好友签名
-
-
-  async paritySign(address, inviteCode) {
-    const chainId = parseInt(await this.getChainId(), 10) || 137;
-    const msgParams = JSON.stringify({
-      domain: {
-        // Defining the chain aka Rinkeby testnet or Ethereum Main Net
-        chainId: chainId,
-        // Give a user friendly name to the specific contract you are signing for.
-        name: 'Ether Mail',
-        // If name isn't enough add verifying contract to make sure you are establishing contracts with the proper entity
-        verifyingContract: '0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC',
-        // Just let's you know the latest version. Definitely make sure the field name is correct.
-        version: '1'
-      },
-      // Defining the message signing data content.
-      message: {
-        /*
-         - Anything you want. Just a JSON Blob that encodes the data you want to send
-         - No required fields
-         - This is DApp Specific
-         - Be as explicit as possible when building out the message schema.
-        */
-        contents: inviteCode,
-        attachedMoneyInEth: 4.2,
-        from: {
-          name: 'Invite Code',
-          wallets: [address]
-        } // to: [
-        //   {
-        //     name: 'to_address',
-        //     wallets: [
-        //       toConstractAddress
-        //     ],
-        //   },
-        // ],
-
-      },
-      // Refers to the keys of the *types* object below.
-      primaryType: 'Mail',
-      types: {
-        // TODO: Clarify if EIP712Domain refers to the domain the contract is hosted on
-        EIP712Domain: [{
-          name: 'name',
-          type: 'string'
-        }, {
-          name: 'version',
-          type: 'string'
-        }, {
-          name: 'chainId',
-          type: 'uint256'
-        }, {
-          name: 'verifyingContract',
-          type: 'address'
-        }],
-        // Not an EIP712Domain definition
-        Group: [{
-          name: 'name',
-          type: 'string'
-        }, {
-          name: 'members',
-          type: 'Person[]'
-        }],
-        // Refer to PrimaryType
-        Mail: [{
-          name: 'from',
-          type: 'Person'
-        }, // { name: 'to', type: 'Person[]' },
-        {
-          name: 'contents',
-          type: 'string'
-        }],
-        // Not an EIP712Domain definition
-        Person: [{
-          name: 'name',
-          type: 'string'
-        }, {
-          name: 'wallets',
-          type: 'address[]'
-        }]
-      }
-    });
-    return await window.ethereum.request({
-      method: "eth_signTypedData_v4",
-      params: [address, msgParams],
-      from: address
-    }); // return await window.ethereum.request({ method: "eth_sign", params: [address, dataToSign],from: address})
-  } // 取消授权
-  // approveToken = async ( address, chainId, id, spender, amount ) => {
-  //   await window.ethereum.request({
-  //     method: 'eth_sendTransaction',
-  //     params: [
-  //       {
-  //         from: address,
-  //         to: id,
-  //         chainId: chainId,
-  //         data: abiCoder.encodeFunctionCall(
-  //           {
-  //             constant: false,
-  //             inputs: [
-  //               {
-  //                 name: '_spender',
-  //                 type: 'address',
-  //               },
-  //               {
-  //                 name: '_value',
-  //                 type: 'uint256',
-  //               },
-  //             ],
-  //             name: 'approve',
-  //             outputs: [
-  //               {
-  //                 name: '',
-  //                 type: 'bool',
-  //               },
-  //             ],
-  //             payable: false,
-  //             stateMutability: 'nonpayable',
-  //             type: 'function',
-  //           },
-  //           [spender, amount]
-  //         ),
-  //       },
-  //     ],
-  //   });
-  // }
-  //MintToken
-
-
-  initEvent() {
-    // if(!window.Web3) console.warn("install...")
-    // window.web3 = new window.Web3(window.ethereum)
-    window.ethereum.removeAllListeners && window.ethereum.removeAllListeners(); // window.ethereum.removeListener && window.ethereum.removeListener('chainChanged')
-
-    window.ethereum.on('accountsChanged', async (...arg) => {
-      this.emit('accountsChanged', ...arg);
-    });
-    window.ethereum.on('chainChanged', async (...arg) => {
-      this.emit('accountsChanged', ...arg);
-    });
-  }
-
-}
-
-const wallet = new Wallet();
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports) {
-
-module.exports = require("vue-no-ssr");
-
-/***/ }),
-/* 16 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _tools_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9);
-/* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
-
-
-
-const log =  true ? (...arg) => {
-  console.log("bit-vuex-local:", ...arg);
-} : undefined;
-const INIT_STATE = {
-  locale: "en",
-  //  语言设置
-  locales: ['zh', 'en', 'ja', 'ko', 'vi', 'id', 'zh_tw'],
-  firstStatus: true,
-  bitkeep: {
-    language: 'en',
-    currency: 'cny',
-    os: 'android',
-    package: 'com.bitkeep.wallet5',
-    clientversion: '6.1.6',
-    ua: 'BitKeep Android/6.1.6',
-    token: '',
-    mylanguage: 'en',
-    brand: 'Android'
-  },
-  userInfo: {
-    token: ""
-  },
-  UA: {
-    ios: false,
-    android: false,
-    Mobile: false,
-    MobileAll: false,
-    wPhone: false,
-    PC: false,
-    weixin: false,
-    bitkeepios: false,
-    bitkeepandroid: false,
-    isPhonx: false,
-    isMiniProgram: false,
-    //小程序环境
-    isDingDing: false // 钉钉环境
-
-  }
-};
-
-const state = _ => ({ ...INIT_STATE
-});
-
-const actions = {
-  async nuxtServerInit({
-    commit,
-    state
-  }, ctx) {
-    const {
-      params,
-      query,
-      req
-    } = ctx;
-    let locale = query.lang || params.lang; //UA
-
-    let headerUa = req.headers.ua ? req.headers.ua : '';
-    commit('SET_UA', Object(_tools_common__WEBPACK_IMPORTED_MODULE_1__[/* parseUA */ "d"])(req.headers['user-agent'], headerUa)); //App内嵌
-
-    if (state.UA.isBitKeep) {
-      log("内嵌bitkeep app 设置参数", state.UA.isBitKeep);
-      commit('SET_BIT_KEEP', {
-        language: req.headers.language,
-        currency: req.headers.currency,
-        os: req.headers.os,
-        package: req.headers.package,
-        ua: req.headers.ua,
-        token: req.headers.token,
-        mylanguage: req.headers.mylanguage,
-        brand: req.headers.brand
-      });
-      locale = req.headers.mylanguage || req.headers.language;
-
-      if (locale == 'zh_tw') {
-        locale = 'zh_tw';
-      } else if (!state.locales.find(lan => lan == (locale || '').slice(0, 2))) {
-        locale = 'en';
-      }
-    } else {
-      const acceptLanguage = req.headers['accept-language'];
-
-      if (acceptLanguage) {
-        locale = locale || acceptLanguage.split(",")[0];
-      }
-    }
-
-    commit("CHANGE_LANG", locale);
-    log("当前语言", {
-      locale
-    });
-  }
-
-};
-const getters = {};
-const mutations = {
-  "CHANGE_LANG"(state, data) {
-    if (data) data = data === 'zh_tw' ? data : data.slice(0, 2).toLowerCase();
-
-    if (state.locales.indexOf(data) !== -1) {
-      state.locale = data || state.locale;
-      Object(_locales__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(state.locale);
-      log("切换语言", data); // langMouedles[state.locale] && Locale.use(state.locale, langMouedles[state.locale])
-    } else {
-      Object(_locales__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])("en");
-    }
-  },
-
-  "SET_BIT_KEEP"(state, data) {
-    if (data.token) {
-      state.userInfo.token = data.token;
-    }
-
-    Object.assign(state.bitkeep, data);
-    log("SET_BIT_KEEP", state);
-  },
-
-  "SET_USER"(state, data) {
-    Object.assign(state.userInfo, data);
-  },
-
-  "SET_UA"(state, data) {
-    Object.assign(state.UA, data);
-  },
-
-  "SET_firstStatus"(state, data) {
-    state.firstStatus = data;
-  }
-
-};
-/* harmony default export */ __webpack_exports__["default"] = ({
-  state,
-  actions,
-  getters,
-  mutations
-});
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports) {
-
-module.exports = require("vue-client-only");
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports) {
-
-module.exports = require("vue-router");
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports) {
-
-module.exports = require("vue-i18n");
-
-/***/ }),
-/* 20 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, "a", function() { return /* reexport */ render; });
-__webpack_require__.d(__webpack_exports__, "b", function() { return /* reexport */ staticRenderFns; });
-
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/polygon/footer.vue?vue&type=template&id=6a01166d&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"polygon_footer"},[_vm._ssrNode("<div class=\"container\"><div class=\"footer-box-logo\"><div class=\"footer-box-logo-img\"><img src=\"https://cdn.bitkeep.vip/u_b_e018f290-b8dc-11ec-821f-dfed729e21e7.png\" alt></div> <div class=\"footer-box-logo-msg\"><p class=\"TTORegular\">Converge the power of &quot;Polygon Warriors&quot;</p> <h3 class=\"TTORegular\">May 1 - May 31 , 2022</h3></div></div> <div class=\"bottom\"><div class=\"logo\"><img"+(_vm._ssrAttr("src",__webpack_require__(24)))+" alt></div> <ul><li class=\"telebox\"><a href=\"https://t.me/BitKeep_Official\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(52)))+" alt=\"Bitkeep 官方 Telegram 账号\"></a></li> <li><a href=\"https://twitter.com/BitKeepOS\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(53)))+" alt=\"Bitkeep的官方推特账号\"></a></li> <li><a href=\"https://www.youtube.com/c/BitKeepWallet\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(54)))+" alt=\"Bitkeep的官方YouTube账号\"></a></li> <li><a href=\"https://twitter.com/BitKeepOS\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(55)))+" alt=\"Bitkeep的官方推特账号\"></a></li> <li><a href=\"https://medium.com/@bitkeepblog\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(56)))+" alt=\"Bitkeep 官方 Medium 账号\"></a></li> <li><a href=\"https://github.com/bitkeepwallet/download\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(57)))+" alt=\"Bitkeep 官方 GitHub 账号\"></a></li> <li><a href=\"https://discord.gg/qYTatUzNjM\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(58)))+" alt=\"Bitkeep 官方 Discord 账号\"></a></li> <li><a href=\"https://instagram.com/bitkeep_global?igshid=YmMyMTA2M2Y=\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(59)))+" alt=\"Bitkeep's official instagram account\"></a></li> <li><a href=\"https://www.facebook.com/BitKeep\" target=\"_blank\"><img"+(_vm._ssrAttr("src",__webpack_require__(60)))+" alt=\"Bitkeep's official facebook account\"></a></li></ul></div></div>")])}
-var staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./layouts/polygon/footer.vue?vue&type=template&id=6a01166d&
-
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(66)["URL"]))
 
 /***/ }),
 /* 21 */
@@ -1333,7 +1359,7 @@ module.exports = {
 /* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/logo.2e48948.png";
+module.exports = __webpack_require__.p + "img/logo.90e9b15.png";
 
 /***/ }),
 /* 25 */
@@ -2796,55 +2822,55 @@ module.exports = {
 /* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/telegram_logo.25e12aa.png";
+module.exports = __webpack_require__.p + "img/telegram_logo.a088423.png";
 
 /***/ }),
 /* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/twitter_logo.f2d3f8f.png";
+module.exports = __webpack_require__.p + "img/twitter_logo.acab344.png";
 
 /***/ }),
 /* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/youtube_logo.eab0dab.png";
+module.exports = __webpack_require__.p + "img/youtube_logo.7c19493.png";
 
 /***/ }),
 /* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/kaoka_logo.c0bcfcb.png";
+module.exports = __webpack_require__.p + "img/kaoka_logo.1f99667.png";
 
 /***/ }),
 /* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/medium_logo.63ba0ca.png";
+module.exports = __webpack_require__.p + "img/medium_logo.d16b95d.png";
 
 /***/ }),
 /* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/github_logo.1017f62.png";
+module.exports = __webpack_require__.p + "img/github_logo.120373a.png";
 
 /***/ }),
 /* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/discord_logo.92412ca.png";
+module.exports = __webpack_require__.p + "img/discord_logo.c3d3a19.png";
 
 /***/ }),
 /* 59 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "img/flat_logo.5d747f9.png";
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAAilBMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////2N2iNAAAALXRSTlMAIN8V+/EP9PgasOfZz6KeQggGfurdkleBvGIxwjasdybHl4xO4ly3cmtQTD7AeCF/AAACNUlEQVRIx+WV2ZqiMBCFBypUSFgSZBeQRaFd3//1Js5IExTx6+uuOz7OTyqpk8OfX16bAIAx46kYAwg2i/pCZknexuas3JwnYdUsEMgOW5/HDrnNirgeF6kEfNFvQzeyKBn1E2FTy3HD7ROxgVBYt7dliZBtZvpGuhZ5DxDLPRQ6EVSps6y0Hcei6lPRVgYa8K4h4nhDmuyoasrPQAcSTjWd2qcqat9IXMqqTtTHKE90gHHP1vRe6YukKz2b5oLhvV2F5kwHcpeMXZDI5H4WHmvB+z73GyaHO+C0OmBMehqfzgYAIIIx1G7si/Lf6iQ2dMD83qbZXgoMQFWA17R18/wxfXMZiOoUULlq3+2rBuFy6sfpLwN2P1wRlat2X7tUIhZnU/XzHrA9bmAjPeUqSh3vUKChzm8FoKWAaer36YJf0hXA6mqE/e4huU8XMt9aA5IjQvf1AOhuDxCKVUCEMK1AvzrAY7IGjE1MK2DdWaub9iGQ2+j/k5NWAYiSfjrW4uA5lFIr8mTz4VgVYZ4LRJmqufnbA+J16O/6NWucLoBNpZyRyQIhraPbOkDiNr2O5isurUmWgXiyt1kPBiAqwjifYvr9wtUB1jraBeq5qI9h5nMzIpP+6cbFZHZFu0T45fzacvYxBCb9SwiM013NPh0Yp7tU09RnUX/4FJWymYcr+xTGsHmNe0ft8zXuiXLVFPcaATIV3HPJc7rGXLmKTXot8qss4blrzipu80S5avPjn+Lvrr9FLZKX6RK6bwAAAABJRU5ErkJggg=="
 
 /***/ }),
 /* 60 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-module.exports = __webpack_require__.p + "img/facebook_logo.2eb134a.png";
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAMAAADVRocKAAAAnFBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////+TINBkAAAAM3RSTlMAIN8J5zhY/PMb7xQQ44vC+JBw3KsBDQR/yAfOMtSbVSTrtUmxrCxklHhhXdVNPYdqQ/X+VNdiAAACPUlEQVRo3u3ZyW6rMBSAYcBuj5mCU4d5hpTMTVLe/91uSwiKVHGrynbVhf8li3yLcDiWrKlUKtXP8lFg6ryZZoD8GQC1Gy9nBlcsbvYtmgGCfWQQ6LkCfIw2wQxgNkcKPWdADc+cA2IMPXdAcn0G0Bn0AgI2Cxi9kAwF/BYAQIg1RggF0QAQ3Ky2y8+KYrVmGEQCQGucx9vzy1AUnbcpowIBwPnuUJm27YzZ1XZNxAHwnjblG9Ieshev4gDA6SlzkC8NoHmTmaGmSQPqXemEmjyAGoc3pMkDaLrWkS8RePcKW7vnhygIAsdxBL6m1uLiTL8f2G2533zM2s5LqSCgjg7Tzg2r7LKLzp9fC3GTjB/+YvM1xnVdWx9R2osCnp9GwA/1xy0uHgirqwG9RCDpTm4vE0BPJZYMPCvgNwFKyS1WTkBWMnIPgA+gLF2vhoprl4xzoGfFaqzBBPiA1FsuhqKnKhwBs4sWY4Vr8QFWsavsIQeFvjYKiWOPdTkvsHxxtPl8PScyAT/oDOglAqGdub1MIMlKLAmYRk4ycN1IBtpLLRUIDhE3UESdeWsaND9B46PqZWlxAuCy2Btav1Xh/d1p195QzFzgBYjl3krbLplWZjo+tAgv0MM9t3zYBy7c+/sLRwEKUIACFKAABUwAAxEAsFkgJ8APAI5nb0A8gwIvAPTYzAHBJjpi4AOAGNE+mD0j75uYGd8Un7LkfnQ8xV+uuXJv06L/XNSZ+neZKHk4/OpfGi7qVCqV6kf9A8g09ExRy4pDAAAAAElFTkSuQmCC"
 
 /***/ }),
 /* 61 */
@@ -2861,22 +2887,10 @@ __webpack_require__.r(__webpack_exports__);
 /* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/right_log.d071a26.png";
+module.exports = __webpack_require__.p + "img/right_log.f5c8631.png";
 
 /***/ }),
 /* 63 */
-/***/ (function(module, exports) {
-
-module.exports = require("url");
-
-/***/ }),
-/* 64 */
-/***/ (function(module, exports) {
-
-module.exports = require("core-js/modules/esnext.array.last-index.js");
-
-/***/ }),
-/* 65 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2887,7 +2901,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /***/ }),
-/* 66 */
+/* 64 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2898,18 +2912,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /***/ }),
-/* 67 */
+/* 65 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_local__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16);
+/* harmony import */ var _modules_local__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   modules: {
     local: _modules_local__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports) {
+
+module.exports = require("url");
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports) {
+
+module.exports = require("core-js/modules/esnext.array.last-index.js");
 
 /***/ }),
 /* 68 */
@@ -7075,15 +7101,15 @@ var external_vue_meta_ = __webpack_require__(42);
 var external_vue_meta_default = /*#__PURE__*/__webpack_require__.n(external_vue_meta_);
 
 // EXTERNAL MODULE: external "vue-client-only"
-var external_vue_client_only_ = __webpack_require__(17);
+var external_vue_client_only_ = __webpack_require__(16);
 var external_vue_client_only_default = /*#__PURE__*/__webpack_require__.n(external_vue_client_only_);
 
 // EXTERNAL MODULE: external "vue-no-ssr"
-var external_vue_no_ssr_ = __webpack_require__(15);
+var external_vue_no_ssr_ = __webpack_require__(14);
 var external_vue_no_ssr_default = /*#__PURE__*/__webpack_require__.n(external_vue_no_ssr_);
 
 // EXTERNAL MODULE: external "vue-router"
-var external_vue_router_ = __webpack_require__(18);
+var external_vue_router_ = __webpack_require__(17);
 var external_vue_router_default = /*#__PURE__*/__webpack_require__.n(external_vue_router_);
 
 // CONCATENATED MODULE: ./.nuxt/router.scrollBehavior.js
@@ -7163,85 +7189,85 @@ function shouldScrollToTop(route) {
 
 
 
-const _e41d0026 = () => interopDefault(__webpack_require__.e(/* import() | pages/mint_nft_token/index */ 66).then(__webpack_require__.bind(null, 286)));
+const _19e6a3ae = () => interopDefault(__webpack_require__.e(/* import() | pages/mint_nft_token/index */ 66).then(__webpack_require__.bind(null, 285)));
 
-const _8d955638 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/airdrop/index */ 28).then(__webpack_require__.bind(null, 287)));
+const _1e16834e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/airdrop/index */ 28).then(__webpack_require__.bind(null, 286)));
 
-const _7991ce61 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 33).then(__webpack_require__.bind(null, 288)));
+const _65e970f7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 33).then(__webpack_require__.bind(null, 287)));
 
-const _42139a58 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/index */ 41).then(__webpack_require__.bind(null, 289)));
+const _330b97e0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/index */ 41).then(__webpack_require__.bind(null, 288)));
 
-const _75d4b43e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/cbkbexchange/index */ 44).then(__webpack_require__.bind(null, 290)));
+const _4b1489fa = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/cbkbexchange/index */ 44).then(__webpack_require__.bind(null, 289)));
 
-const _4b864767 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/index */ 47).then(__webpack_require__.bind(null, 291)));
+const _8a23a01e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/index */ 47).then(__webpack_require__.bind(null, 290)));
 
-const _087c79ac = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/nftLottery/index */ 51).then(__webpack_require__.bind(null, 292)));
+const _0abcfe4e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/nftLottery/index */ 51).then(__webpack_require__.bind(null, 291)));
 
-const _01364d05 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/index */ 53).then(__webpack_require__.bind(null, 293)));
+const _32bd48da = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/index */ 53).then(__webpack_require__.bind(null, 292)));
 
-const _588603a6 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/index */ 57).then(__webpack_require__.bind(null, 294)));
+const _0a73f44c = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/index */ 57).then(__webpack_require__.bind(null, 293)));
 
-const _06c441fc = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/index */ 62).then(__webpack_require__.bind(null, 295)));
+const _6ae99336 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/index */ 62).then(__webpack_require__.bind(null, 294)));
 
-const _665f06f0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/index */ 30).then(__webpack_require__.bind(null, 284)));
+const _4f6736ff = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/index */ 30).then(__webpack_require__.bind(null, 283)));
 
-const _5ff1b3c9 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 31).then(__webpack_require__.bind(null, 296)));
+const _6bb9fd1a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 31).then(__webpack_require__.bind(null, 295)));
 
-const _76a5a12b = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/firendList */ 32).then(__webpack_require__.bind(null, 297)));
+const _19ba2c55 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/firendList */ 32).then(__webpack_require__.bind(null, 296)));
 
-const _d0a34542 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 34).then(__webpack_require__.bind(null, 298)));
+const _1b2d1009 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 34).then(__webpack_require__.bind(null, 297)));
 
-const _330c44be = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/stepDetail */ 35).then(__webpack_require__.bind(null, 299)));
+const _53be6030 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/stepDetail */ 35).then(__webpack_require__.bind(null, 298)));
 
-const _c6d71460 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/copy */ 38).then(__webpack_require__.bind(null, 174)));
+const _00fe3558 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/copy */ 38).then(__webpack_require__.bind(null, 173)));
 
-const _ce9a7f8a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/detail */ 39).then(__webpack_require__.bind(null, 300)));
+const _728b189a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/detail */ 39).then(__webpack_require__.bind(null, 299)));
 
-const _ceef5f1c = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/download */ 40).then(__webpack_require__.bind(null, 301)));
+const _637105ea = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/download */ 40).then(__webpack_require__.bind(null, 300)));
 
-const _1af2a99e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/inviteList */ 42).then(__webpack_require__.bind(null, 302)));
+const _b3d03aae = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/inviteList */ 42).then(__webpack_require__.bind(null, 301)));
 
-const _646c4557 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/rewardList */ 43).then(__webpack_require__.bind(null, 303)));
+const _17fd7ccf = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/rewardList */ 43).then(__webpack_require__.bind(null, 302)));
 
-const _41623b77 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/RuleDetail */ 36).then(__webpack_require__.bind(null, 226)));
+const _16191a22 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/RuleDetail */ 36).then(__webpack_require__.bind(null, 225)));
 
-const _f223f22e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/history */ 46).then(__webpack_require__.bind(null, 304)));
+const _8804161a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/history */ 46).then(__webpack_require__.bind(null, 303)));
 
-const _08b864d1 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/inviteRuleDetail */ 48).then(__webpack_require__.bind(null, 224)));
+const _32dabbf2 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/inviteRuleDetail */ 48).then(__webpack_require__.bind(null, 223)));
 
-const _3dc86927 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/miningRule */ 49).then(__webpack_require__.bind(null, 305)));
+const _268e46dd = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/miningRule */ 49).then(__webpack_require__.bind(null, 304)));
 
-const _5000d9da = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/protocol */ 50).then(__webpack_require__.bind(null, 222)));
+const _44ed6649 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/protocol */ 50).then(__webpack_require__.bind(null, 221)));
 
-const _c1a74070 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/RuleDetail */ 45).then(__webpack_require__.bind(null, 223)));
+const _f01b8504 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/RuleDetail */ 45).then(__webpack_require__.bind(null, 222)));
 
-const _67776b1f = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/drawluckly */ 52).then(__webpack_require__.bind(null, 306)));
+const _03154551 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/drawluckly */ 52).then(__webpack_require__.bind(null, 305)));
 
-const _1ce75073 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/inviteRuleDetail */ 54).then(__webpack_require__.bind(null, 307)));
+const _32313d25 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/inviteRuleDetail */ 54).then(__webpack_require__.bind(null, 306)));
 
-const _1586ef2c = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/lotteryresults */ 55).then(__webpack_require__.bind(null, 308)));
+const _7d1df99c = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/lotteryresults */ 55).then(__webpack_require__.bind(null, 307)));
 
-const _29bd0ab1 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/addPool */ 56).then(__webpack_require__.bind(null, 309)));
+const _17f169d7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/addPool */ 56).then(__webpack_require__.bind(null, 308)));
 
-const _60b5ae78 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/myPool */ 58).then(__webpack_require__.bind(null, 310)));
+const _5b754cde = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/myPool */ 58).then(__webpack_require__.bind(null, 309)));
 
-const _e79a0b18 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/protocol */ 59).then(__webpack_require__.bind(null, 227)));
+const _648a800e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/protocol */ 59).then(__webpack_require__.bind(null, 226)));
 
-const _3fe8cecc = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/wallet */ 60).then(__webpack_require__.bind(null, 95)));
+const _dc0ced80 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/wallet */ 60).then(__webpack_require__.bind(null, 94)));
 
-const _6a97b03e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/history */ 61).then(__webpack_require__.bind(null, 311)));
+const _5aad9af8 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/history */ 61).then(__webpack_require__.bind(null, 310)));
 
-const _698b145e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/protocol */ 63).then(__webpack_require__.bind(null, 225)));
+const _7c3280e4 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/protocol */ 63).then(__webpack_require__.bind(null, 224)));
 
-const _7d9b0de7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/tradingRule */ 64).then(__webpack_require__.bind(null, 312)));
+const _46e90ba1 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/tradingRule */ 64).then(__webpack_require__.bind(null, 311)));
 
-const _6671e1a8 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/component/createPoster */ 37).then(__webpack_require__.bind(null, 220)));
+const _1f4eb79d = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/component/createPoster */ 37).then(__webpack_require__.bind(null, 219)));
 
-const _66e20558 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/_id */ 29).then(__webpack_require__.bind(null, 313)));
+const _4d04ed27 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/_id */ 29).then(__webpack_require__.bind(null, 312)));
 
-const _6fd6c0af = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 65).then(__webpack_require__.bind(null, 314)));
+const _74266e07 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 65).then(__webpack_require__.bind(null, 313)));
 
-const _3927d70e = () => interopDefault(__webpack_require__.e(/* import() | pages/_id */ 27).then(__webpack_require__.bind(null, 315)));
+const _275a9b50 = () => interopDefault(__webpack_require__.e(/* import() | pages/_id */ 27).then(__webpack_require__.bind(null, 314)));
 
 const emptyFn = () => {};
 
@@ -7254,163 +7280,163 @@ const routerOptions = {
   scrollBehavior: router_scrollBehavior,
   routes: [{
     path: "/mint_nft_token",
-    component: _e41d0026,
+    component: _19e6a3ae,
     name: "mint_nft_token"
   }, {
     path: "/activity/airdrop",
-    component: _8d955638,
+    component: _1e16834e,
     name: "activity-airdrop"
   }, {
     path: "/activity/blindbox",
-    component: _7991ce61,
+    component: _65e970f7,
     name: "activity-blindbox"
   }, {
     path: "/activity/blindboxInvite",
-    component: _42139a58,
+    component: _330b97e0,
     name: "activity-blindboxInvite"
   }, {
     path: "/activity/cbkbexchange",
-    component: _75d4b43e,
+    component: _4b1489fa,
     name: "activity-cbkbexchange"
   }, {
     path: "/activity/mining",
-    component: _4b864767,
+    component: _8a23a01e,
     name: "activity-mining"
   }, {
     path: "/activity/nftLottery",
-    component: _087c79ac,
+    component: _0abcfe4e,
     name: "activity-nftLottery"
   }, {
     path: "/activity/noviceBenefits",
-    component: _01364d05,
+    component: _32bd48da,
     name: "activity-noviceBenefits"
   }, {
     path: "/activity/staking",
-    component: _588603a6,
+    component: _0a73f44c,
     name: "activity-staking"
   }, {
     path: "/activity/trading",
-    component: _06c441fc,
+    component: _6ae99336,
     name: "activity-trading"
   }, {
     path: "/activity/blindbox/detail",
-    component: _665f06f0,
+    component: _4f6736ff,
     name: "activity-blindbox-detail"
   }, {
     path: "/activity/blindbox/download",
-    component: _5ff1b3c9,
+    component: _6bb9fd1a,
     name: "activity-blindbox-download"
   }, {
     path: "/activity/blindbox/firendList",
-    component: _76a5a12b,
+    component: _19ba2c55,
     name: "activity-blindbox-firendList"
   }, {
     path: "/activity/blindbox/list",
-    component: _d0a34542,
+    component: _1b2d1009,
     name: "activity-blindbox-list"
   }, {
     path: "/activity/blindbox/stepDetail",
-    component: _330c44be,
+    component: _53be6030,
     name: "activity-blindbox-stepDetail"
   }, {
     path: "/activity/blindboxInvite/copy",
-    component: _c6d71460,
+    component: _00fe3558,
     name: "activity-blindboxInvite-copy"
   }, {
     path: "/activity/blindboxInvite/detail",
-    component: _ce9a7f8a,
+    component: _728b189a,
     name: "activity-blindboxInvite-detail"
   }, {
     path: "/activity/blindboxInvite/download",
-    component: _ceef5f1c,
+    component: _637105ea,
     name: "activity-blindboxInvite-download"
   }, {
     path: "/activity/blindboxInvite/inviteList",
-    component: _1af2a99e,
+    component: _b3d03aae,
     name: "activity-blindboxInvite-inviteList"
   }, {
     path: "/activity/blindboxInvite/rewardList",
-    component: _646c4557,
+    component: _17fd7ccf,
     name: "activity-blindboxInvite-rewardList"
   }, {
     path: "/activity/blindboxInvite/RuleDetail",
-    component: _41623b77,
+    component: _16191a22,
     name: "activity-blindboxInvite-RuleDetail"
   }, {
     path: "/activity/mining/history",
-    component: _f223f22e,
+    component: _8804161a,
     name: "activity-mining-history"
   }, {
     path: "/activity/mining/inviteRuleDetail",
-    component: _08b864d1,
+    component: _32dabbf2,
     name: "activity-mining-inviteRuleDetail"
   }, {
     path: "/activity/mining/miningRule",
-    component: _3dc86927,
+    component: _268e46dd,
     name: "activity-mining-miningRule"
   }, {
     path: "/activity/mining/protocol",
-    component: _5000d9da,
+    component: _44ed6649,
     name: "activity-mining-protocol"
   }, {
     path: "/activity/mining/RuleDetail",
-    component: _c1a74070,
+    component: _f01b8504,
     name: "activity-mining-RuleDetail"
   }, {
     path: "/activity/noviceBenefits/drawluckly",
-    component: _67776b1f,
+    component: _03154551,
     name: "activity-noviceBenefits-drawluckly"
   }, {
     path: "/activity/noviceBenefits/inviteRuleDetail",
-    component: _1ce75073,
+    component: _32313d25,
     name: "activity-noviceBenefits-inviteRuleDetail"
   }, {
     path: "/activity/noviceBenefits/lotteryresults",
-    component: _1586ef2c,
+    component: _7d1df99c,
     name: "activity-noviceBenefits-lotteryresults"
   }, {
     path: "/activity/staking/addPool",
-    component: _29bd0ab1,
+    component: _17f169d7,
     name: "activity-staking-addPool"
   }, {
     path: "/activity/staking/myPool",
-    component: _60b5ae78,
+    component: _5b754cde,
     name: "activity-staking-myPool"
   }, {
     path: "/activity/staking/protocol",
-    component: _e79a0b18,
+    component: _648a800e,
     name: "activity-staking-protocol"
   }, {
     path: "/activity/staking/wallet",
-    component: _3fe8cecc,
+    component: _dc0ced80,
     name: "activity-staking-wallet"
   }, {
     path: "/activity/trading/history",
-    component: _6a97b03e,
+    component: _5aad9af8,
     name: "activity-trading-history"
   }, {
     path: "/activity/trading/protocol",
-    component: _698b145e,
+    component: _7c3280e4,
     name: "activity-trading-protocol"
   }, {
     path: "/activity/trading/tradingRule",
-    component: _7d9b0de7,
+    component: _46e90ba1,
     name: "activity-trading-tradingRule"
   }, {
     path: "/activity/blindboxInvite/component/createPoster",
-    component: _6671e1a8,
+    component: _1f4eb79d,
     name: "activity-blindboxInvite-component-createPoster"
   }, {
     path: "/activity/blindbox/detail/:id",
-    component: _66e20558,
+    component: _4d04ed27,
     name: "activity-blindbox-detail-id"
   }, {
     path: "/article/detail/:id?",
-    component: _6fd6c0af,
+    component: _74266e07,
     name: "article-detail-id"
   }, {
     path: "/:id?",
-    component: _3927d70e,
+    component: _275a9b50,
     name: "id"
   }],
   fallback: false
@@ -7608,7 +7634,7 @@ var nuxt_error_component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   null,
-  "00c9a607"
+  "7df36c6e"
   
 )
 
@@ -7912,7 +7938,7 @@ var nuxt_loading_component = Object(componentNormalizer["a" /* default */])(
   false,
   nuxt_loading_injectStyles,
   null,
-  "6b4f3d7b"
+  "0ef1f8bd"
   
 )
 
@@ -7961,7 +7987,7 @@ var default_component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "276292c8"
+  "e93714ea"
   
 )
 
@@ -7974,14 +8000,14 @@ var defaultvue_type_template_id_db7e3638_staticRenderFns = []
 // CONCATENATED MODULE: ./layouts/polygon/default.vue?vue&type=template&id=db7e3638&
 
 // EXTERNAL MODULE: ./layouts/polygon/footer.vue
-var footer = __webpack_require__(13);
+var footer = __webpack_require__(12);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/polygon/header.vue?vue&type=template&id=25c94111&
-var headervue_type_template_id_25c94111_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"polygon_header"},[_vm._ssrNode("<div class=\"container\"><div class=\"logo\"><img"+(_vm._ssrAttr("src",__webpack_require__(24)))+" alt></div> <div class=\"header_right\"><img"+(_vm._ssrAttr("src",__webpack_require__(62)))+" alt class=\"right_log\"> <div class=\"connect\">"+((!_vm.address)?("<span class=\"TTORegular\">连接钱包</span>"):("<span class=\"TTORegular\">"+_vm._ssrEscape(_vm._s(_vm._f("blurredDisplay")(_vm.address)))+"</span>"))+"</div></div></div>")])}
-var headervue_type_template_id_25c94111_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/polygon/header.vue?vue&type=template&id=9e93eba0&
+var headervue_type_template_id_9e93eba0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"polygon_header"},[_vm._ssrNode("<div class=\"container\"><div class=\"logo\"><img"+(_vm._ssrAttr("src",__webpack_require__(24)))+" alt></div> <div class=\"header_right\"><img"+(_vm._ssrAttr("src",__webpack_require__(62)))+" alt class=\"right_log\"> <div class=\"connect\">"+((!_vm.address)?("<span class=\"TTORegular\">连接钱包</span>"):("<span class=\"TTORegular\">"+_vm._ssrEscape(_vm._s(_vm._f("blurredDisplay")(_vm.address)))+"</span>"))+"</div></div></div>")])}
+var headervue_type_template_id_9e93eba0_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./layouts/polygon/header.vue?vue&type=template&id=25c94111&
+// CONCATENATED MODULE: ./layouts/polygon/header.vue?vue&type=template&id=9e93eba0&
 
 // CONCATENATED MODULE: ./filter/filter.js
  //合约地址模糊展示
@@ -8011,11 +8037,8 @@ external_vue_default.a.filter("timeFilter", function (value) {
     return oMonth + '-' + oDay + '-' + oYear;
   }
 });
-// EXTERNAL MODULE: ./tools/common.js
-var common = __webpack_require__(9);
-
 // EXTERNAL MODULE: ./utils/wallet.js
-var wallet = __webpack_require__(14);
+var wallet = __webpack_require__(13);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/polygon/header.vue?vue&type=script&lang=js&
 //
@@ -8036,7 +8059,6 @@ var wallet = __webpack_require__(14);
 //
 
 
-
 /* harmony default export */ var headervue_type_script_lang_js_ = ({
   data() {
     return {
@@ -8044,10 +8066,7 @@ var wallet = __webpack_require__(14);
     };
   },
 
-  async mounted() {
-    // await this.$nextTick();
-    await Object(common["c" /* loadView */])();
-    this.connect();
+  async mounted() {//  this.connect()
   },
 
   methods: {
@@ -8070,7 +8089,7 @@ var wallet = __webpack_require__(14);
 
 function header_injectStyles (context) {
   
-  var style0 = __webpack_require__(65)
+  var style0 = __webpack_require__(63)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -8079,12 +8098,12 @@ if (style0.__inject__) style0.__inject__(context)
 
 var header_component = Object(componentNormalizer["a" /* default */])(
   polygon_headervue_type_script_lang_js_,
-  headervue_type_template_id_25c94111_render,
-  headervue_type_template_id_25c94111_staticRenderFns,
+  headervue_type_template_id_9e93eba0_render,
+  headervue_type_template_id_9e93eba0_staticRenderFns,
   false,
   header_injectStyles,
   null,
-  "509ae238"
+  "155eedb0"
   
 )
 
@@ -8115,7 +8134,7 @@ var header_component = Object(componentNormalizer["a" /* default */])(
 
 function default_injectStyles (context) {
   
-  var style0 = __webpack_require__(66)
+  var style0 = __webpack_require__(64)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -8129,7 +8148,7 @@ var polygon_default_component = Object(componentNormalizer["a" /* default */])(
   false,
   default_injectStyles,
   null,
-  "7ec1000c"
+  "56c0ce36"
   
 )
 
@@ -8331,11 +8350,11 @@ const VUEX_PROPERTIES = ['state', 'getters', 'actions', 'mutations'];
 let store_store = {};
 
 (function updateModules() {
-  store_store = normalizeRoot(__webpack_require__(67), 'store/index.js'); // If store is an exported method = classic mode (deprecated)
+  store_store = normalizeRoot(__webpack_require__(65), 'store/index.js'); // If store is an exported method = classic mode (deprecated)
   // Enforce store modules
 
   store_store.modules = store_store.modules || {};
-  resolveStoreModules(__webpack_require__(16), 'modules/local.js'); // If the environment supports hot reloading...
+  resolveStoreModules(__webpack_require__(15), 'modules/local.js'); // If the environment supports hot reloading...
 })(); // createStore
 
 
@@ -8484,32 +8503,32 @@ function wrapFunctional(options) {
 
 
 const components = {
-  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 99)).then(c => wrapFunctional(c.default || c)),
-  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 89)).then(c => wrapFunctional(c.default || c)),
-  Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 94)).then(c => wrapFunctional(c.default || c)),
-  BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 229)).then(c => wrapFunctional(c.default || c)),
-  BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 316)).then(c => wrapFunctional(c.default || c)),
-  BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 131)).then(c => wrapFunctional(c.default || c)),
-  BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 230)).then(c => wrapFunctional(c.default || c)),
-  BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 228)).then(c => wrapFunctional(c.default || c)),
-  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 221)).then(c => wrapFunctional(c.default || c)),
-  PolygonAirdropAddressCard: () => __webpack_require__.e(/* import() | components/polygon-airdrop-address-card */ 10).then(__webpack_require__.bind(null, 215)).then(c => wrapFunctional(c.default || c)),
-  PolygonAirdropAwardCard: () => __webpack_require__.e(/* import() | components/polygon-airdrop-award-card */ 11).then(__webpack_require__.bind(null, 216)).then(c => wrapFunctional(c.default || c)),
-  PolygonCVueCountdown: () => __webpack_require__.e(/* import() | components/polygon-c-vue-countdown */ 12).then(__webpack_require__.bind(null, 212)).then(c => wrapFunctional(c.default || c)),
-  PolygonCountdown: () => __webpack_require__.e(/* import() | components/polygon-countdown */ 13).then(__webpack_require__.bind(null, 317)).then(c => wrapFunctional(c.default || c)),
-  PolygonInvitedCard: () => __webpack_require__.e(/* import() | components/polygon-invited-card */ 14).then(__webpack_require__.bind(null, 217)).then(c => wrapFunctional(c.default || c)),
-  PolygonMent: () => __webpack_require__.e(/* import() | components/polygon-ment */ 15).then(__webpack_require__.bind(null, 214)).then(c => wrapFunctional(c.default || c)),
-  PolygonMint: () => __webpack_require__.e(/* import() | components/polygon-mint */ 16).then(__webpack_require__.bind(null, 213)).then(c => wrapFunctional(c.default || c)),
-  PolygonMintSuccessCard: () => __webpack_require__.e(/* import() | components/polygon-mint-success-card */ 17).then(__webpack_require__.bind(null, 219)).then(c => wrapFunctional(c.default || c)),
-  PolygonWhitelistcard: () => __webpack_require__.e(/* import() | components/polygon-whitelistcard */ 18).then(__webpack_require__.bind(null, 218)).then(c => wrapFunctional(c.default || c)),
-  Trading: () => __webpack_require__.e(/* import() | components/trading */ 19).then(__webpack_require__.bind(null, 135)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 21).then(__webpack_require__.bind(null, 169)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 22).then(__webpack_require__.bind(null, 101)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 23).then(__webpack_require__.bind(null, 318)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 20).then(__webpack_require__.bind(null, 285)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutPainter: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-painter */ 24).then(__webpack_require__.bind(null, 133)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutQrcode: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-qrcode */ 25).then(__webpack_require__.bind(null, 100)).then(c => wrapFunctional(c.default || c)),
-  VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 26).then(__webpack_require__.bind(null, 134)).then(c => wrapFunctional(c.default || c))
+  BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 228)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 315)).then(c => wrapFunctional(c.default || c)),
+  BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 130)).then(c => wrapFunctional(c.default || c)),
+  BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 229)).then(c => wrapFunctional(c.default || c)),
+  BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 227)).then(c => wrapFunctional(c.default || c)),
+  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 98)).then(c => wrapFunctional(c.default || c)),
+  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 88)).then(c => wrapFunctional(c.default || c)),
+  Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 93)).then(c => wrapFunctional(c.default || c)),
+  PolygonAirdropAddressCard: () => __webpack_require__.e(/* import() | components/polygon-airdrop-address-card */ 10).then(__webpack_require__.bind(null, 214)).then(c => wrapFunctional(c.default || c)),
+  PolygonAirdropAwardCard: () => __webpack_require__.e(/* import() | components/polygon-airdrop-award-card */ 11).then(__webpack_require__.bind(null, 215)).then(c => wrapFunctional(c.default || c)),
+  PolygonInvitedCard: () => __webpack_require__.e(/* import() | components/polygon-invited-card */ 14).then(__webpack_require__.bind(null, 216)).then(c => wrapFunctional(c.default || c)),
+  PolygonMent: () => __webpack_require__.e(/* import() | components/polygon-ment */ 15).then(__webpack_require__.bind(null, 213)).then(c => wrapFunctional(c.default || c)),
+  PolygonMint: () => __webpack_require__.e(/* import() | components/polygon-mint */ 16).then(__webpack_require__.bind(null, 212)).then(c => wrapFunctional(c.default || c)),
+  PolygonMintSuccessCard: () => __webpack_require__.e(/* import() | components/polygon-mint-success-card */ 17).then(__webpack_require__.bind(null, 218)).then(c => wrapFunctional(c.default || c)),
+  PolygonWhitelistcard: () => __webpack_require__.e(/* import() | components/polygon-whitelistcard */ 18).then(__webpack_require__.bind(null, 217)).then(c => wrapFunctional(c.default || c)),
+  PolygonCVueCountdown: () => __webpack_require__.e(/* import() | components/polygon-c-vue-countdown */ 12).then(__webpack_require__.bind(null, 211)).then(c => wrapFunctional(c.default || c)),
+  PolygonCountdown: () => __webpack_require__.e(/* import() | components/polygon-countdown */ 13).then(__webpack_require__.bind(null, 316)).then(c => wrapFunctional(c.default || c)),
+  Trading: () => __webpack_require__.e(/* import() | components/trading */ 19).then(__webpack_require__.bind(null, 134)).then(c => wrapFunctional(c.default || c)),
+  Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 220)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 21).then(__webpack_require__.bind(null, 168)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 22).then(__webpack_require__.bind(null, 100)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 23).then(__webpack_require__.bind(null, 317)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayout: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout */ 20).then(__webpack_require__.bind(null, 284)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutPainter: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-painter */ 24).then(__webpack_require__.bind(null, 132)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutQrcode: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-qrcode */ 25).then(__webpack_require__.bind(null, 99)).then(c => wrapFunctional(c.default || c)),
+  VueCreatePosterLayoutUtil: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-util */ 26).then(__webpack_require__.bind(null, 133)).then(c => wrapFunctional(c.default || c))
 };
 
 for (const name in components) {
@@ -8725,7 +8744,7 @@ const setupProgress = axios => {
   inject('axios', axios);
 });
 // EXTERNAL MODULE: ./.nuxt/empty.js
-var _nuxt_empty = __webpack_require__(10);
+var _nuxt_empty = __webpack_require__(9);
 
 // EXTERNAL MODULE: external "debug"
 var external_debug_ = __webpack_require__(5);
@@ -8845,21 +8864,21 @@ const responselog =  true ? (...arg) => {
 
 /* Plugins */
 
- // Source: .\\components\\plugin.js (mode: 'all')
+ // Source: ./components/plugin.js (mode: 'all')
 
- // Source: .\\axios.js (mode: 'all')
+ // Source: ./axios.js (mode: 'all')
 
- // Source: ..\\plugins\\client\\bitkeep.js (mode: 'client')
+ // Source: ../plugins/client/bitkeep.js (mode: 'client')
 
- // Source: ..\\plugins\\client\\flexible.js (mode: 'client')
+ // Source: ../plugins/client/flexible.js (mode: 'client')
 
- // Source: ..\\plugins\\common\\init.js (mode: 'all')
+ // Source: ../plugins/common/init.js (mode: 'all')
 
- // Source: ..\\plugins\\client\\sessionStorage.js (mode: 'client')
+ // Source: ../plugins/client/sessionStorage.js (mode: 'client')
 
- // Source: ..\\plugins\\client\\firebase.js (mode: 'client')
+ // Source: ../plugins/client/firebase.js (mode: 'client')
 
- // Source: ..\\plugins\\axios.js (mode: 'all')
+ // Source: ../plugins/axios.js (mode: 'all')
 // Component: <ClientOnly>
 
 external_vue_default.a.component(external_vue_client_only_default.a.name, external_vue_client_only_default.a); // TODO: Remove in Nuxt 3: <NoSsr>
@@ -9588,16 +9607,10 @@ module.exports = require("dayjs");
 /* 83 */
 /***/ (function(module, exports) {
 
-module.exports = require("copy-to-clipboard");
-
-/***/ }),
-/* 84 */
-/***/ (function(module, exports) {
-
 module.exports = require("cookie");
 
 /***/ }),
-/* 85 */
+/* 84 */
 /***/ (function(module, exports) {
 
 module.exports = require("@finpo/vue2-recaptcha-invisible");

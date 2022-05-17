@@ -13,14 +13,14 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_ba45076e from 'nuxt_plugin_plugin_ba45076e' // Source: .\\components\\plugin.js (mode: 'all')
-import nuxt_plugin_axios_7a7e55ec from 'nuxt_plugin_axios_7a7e55ec' // Source: .\\axios.js (mode: 'all')
-import nuxt_plugin_bitkeep_1ee24016 from 'nuxt_plugin_bitkeep_1ee24016' // Source: ..\\plugins\\client\\bitkeep.js (mode: 'client')
-import nuxt_plugin_flexible_92f9b208 from 'nuxt_plugin_flexible_92f9b208' // Source: ..\\plugins\\client\\flexible.js (mode: 'client')
-import nuxt_plugin_init_04de01b7 from 'nuxt_plugin_init_04de01b7' // Source: ..\\plugins\\common\\init.js (mode: 'all')
-import nuxt_plugin_sessionStorage_c18bdcfc from 'nuxt_plugin_sessionStorage_c18bdcfc' // Source: ..\\plugins\\client\\sessionStorage.js (mode: 'client')
-import nuxt_plugin_firebase_37cc4f40 from 'nuxt_plugin_firebase_37cc4f40' // Source: ..\\plugins\\client\\firebase.js (mode: 'client')
-import nuxt_plugin_axios_397e53b5 from 'nuxt_plugin_axios_397e53b5' // Source: ..\\plugins\\axios.js (mode: 'all')
+import nuxt_plugin_plugin_431dfad0 from 'nuxt_plugin_plugin_431dfad0' // Source: ./components/plugin.js (mode: 'all')
+import nuxt_plugin_axios_3c5f5ca4 from 'nuxt_plugin_axios_3c5f5ca4' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_bitkeep_1ee24016 from 'nuxt_plugin_bitkeep_1ee24016' // Source: ../plugins/client/bitkeep.js (mode: 'client')
+import nuxt_plugin_flexible_92f9b208 from 'nuxt_plugin_flexible_92f9b208' // Source: ../plugins/client/flexible.js (mode: 'client')
+import nuxt_plugin_init_04de01b7 from 'nuxt_plugin_init_04de01b7' // Source: ../plugins/common/init.js (mode: 'all')
+import nuxt_plugin_sessionStorage_c18bdcfc from 'nuxt_plugin_sessionStorage_c18bdcfc' // Source: ../plugins/client/sessionStorage.js (mode: 'client')
+import nuxt_plugin_firebase_37cc4f40 from 'nuxt_plugin_firebase_37cc4f40' // Source: ../plugins/client/firebase.js (mode: 'client')
+import nuxt_plugin_axios_397e53b5 from 'nuxt_plugin_axios_397e53b5' // Source: ../plugins/axios.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -217,12 +217,12 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_ba45076e === 'function') {
-    await nuxt_plugin_plugin_ba45076e(app.context, inject)
+  if (typeof nuxt_plugin_plugin_431dfad0 === 'function') {
+    await nuxt_plugin_plugin_431dfad0(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_7a7e55ec === 'function') {
-    await nuxt_plugin_axios_7a7e55ec(app.context, inject)
+  if (typeof nuxt_plugin_axios_3c5f5ca4 === 'function') {
+    await nuxt_plugin_axios_3c5f5ca4(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_bitkeep_1ee24016 === 'function') {
