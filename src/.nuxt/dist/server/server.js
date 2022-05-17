@@ -687,24 +687,43 @@ function filterTime(date) {
   var MI = val.getMinutes() >= 10 ? val.getMinutes() : "0" + val.getMinutes();
   var S = val.getSeconds() >= 10 ? val.getSeconds() : "0" + val.getSeconds();
   return Y + "-" + M + "-" + D + " " + H + ":" + MI + ":" + S;
-}
+} // export const loadView = function() {
+//   let isLoad = false;
+//   new Promise(resolve => {
+//     if (document.readyState == "complete") {
+//       isLoad = true;
+//       return resolve();
+//     }
+//     window.addEventListener("load", () => {
+//       isLoad = true;
+//       resolve();
+//     });
+//     setTimeout(() => {
+//       if (!isLoad) {
+//         resolve();
+//       }
+//     }, 4000);
+//   });
+// };
+
 const loadView = function () {
   let isLoad = false;
   new Promise(resolve => {
     if (document.readyState == "complete") {
-      isLoad = true;
-      return resolve();
+      setTimeout(() => {
+        isLoad = true;
+        resolve();
+      }, 3000);
+      return;
     }
 
     window.addEventListener("load", () => {
       isLoad = true;
-      resolve();
-    });
-    setTimeout(() => {
-      if (!isLoad) {
+      setTimeout(() => {
+        isLoad = true;
         resolve();
-      }
-    }, 4000);
+      }, 3000);
+    });
   });
 };
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(63)["URL"]))
@@ -7957,12 +7976,12 @@ var defaultvue_type_template_id_db7e3638_staticRenderFns = []
 // EXTERNAL MODULE: ./layouts/polygon/footer.vue
 var footer = __webpack_require__(13);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/polygon/header.vue?vue&type=template&id=4da7f22a&
-var headervue_type_template_id_4da7f22a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"polygon_header"},[_vm._ssrNode("<div class=\"container\"><div class=\"logo\"><img"+(_vm._ssrAttr("src",__webpack_require__(24)))+" alt></div> <div class=\"header_right\"><img"+(_vm._ssrAttr("src",__webpack_require__(62)))+" alt class=\"right_log\"> <div class=\"connect\">"+((!_vm.address)?("<span class=\"TTORegular\">连接钱包</span>"):("<span class=\"TTORegular\">"+_vm._ssrEscape(_vm._s(_vm._f("blurredDisplay")(_vm.address)))+"</span>"))+"</div></div></div>")])}
-var headervue_type_template_id_4da7f22a_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/polygon/header.vue?vue&type=template&id=25c94111&
+var headervue_type_template_id_25c94111_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"polygon_header"},[_vm._ssrNode("<div class=\"container\"><div class=\"logo\"><img"+(_vm._ssrAttr("src",__webpack_require__(24)))+" alt></div> <div class=\"header_right\"><img"+(_vm._ssrAttr("src",__webpack_require__(62)))+" alt class=\"right_log\"> <div class=\"connect\">"+((!_vm.address)?("<span class=\"TTORegular\">连接钱包</span>"):("<span class=\"TTORegular\">"+_vm._ssrEscape(_vm._s(_vm._f("blurredDisplay")(_vm.address)))+"</span>"))+"</div></div></div>")])}
+var headervue_type_template_id_25c94111_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./layouts/polygon/header.vue?vue&type=template&id=4da7f22a&
+// CONCATENATED MODULE: ./layouts/polygon/header.vue?vue&type=template&id=25c94111&
 
 // CONCATENATED MODULE: ./filter/filter.js
  //合约地址模糊展示
@@ -8026,7 +8045,7 @@ var wallet = __webpack_require__(14);
   },
 
   async mounted() {
-    await this.$nextTick();
+    // await this.$nextTick();
     await Object(common["c" /* loadView */])();
     this.connect();
   },
@@ -8060,8 +8079,8 @@ if (style0.__inject__) style0.__inject__(context)
 
 var header_component = Object(componentNormalizer["a" /* default */])(
   polygon_headervue_type_script_lang_js_,
-  headervue_type_template_id_4da7f22a_render,
-  headervue_type_template_id_4da7f22a_staticRenderFns,
+  headervue_type_template_id_25c94111_render,
+  headervue_type_template_id_25c94111_staticRenderFns,
   false,
   header_injectStyles,
   null,
@@ -8465,15 +8484,15 @@ function wrapFunctional(options) {
 
 
 const components = {
+  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 99)).then(c => wrapFunctional(c.default || c)),
+  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 89)).then(c => wrapFunctional(c.default || c)),
+  Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 94)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindButton: () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 229)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindStrategy: () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 316)).then(c => wrapFunctional(c.default || c)),
   BlindboxBlindTimeText: () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 131)).then(c => wrapFunctional(c.default || c)),
   BlindboxCreatePoster: () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 230)).then(c => wrapFunctional(c.default || c)),
   BlindboxTitleImage: () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 228)).then(c => wrapFunctional(c.default || c)),
   Activity: () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 221)).then(c => wrapFunctional(c.default || c)),
-  CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 99)).then(c => wrapFunctional(c.default || c)),
-  CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 89)).then(c => wrapFunctional(c.default || c)),
-  Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 94)).then(c => wrapFunctional(c.default || c)),
   PolygonAirdropAddressCard: () => __webpack_require__.e(/* import() | components/polygon-airdrop-address-card */ 10).then(__webpack_require__.bind(null, 215)).then(c => wrapFunctional(c.default || c)),
   PolygonAirdropAwardCard: () => __webpack_require__.e(/* import() | components/polygon-airdrop-award-card */ 11).then(__webpack_require__.bind(null, 216)).then(c => wrapFunctional(c.default || c)),
   PolygonCVueCountdown: () => __webpack_require__.e(/* import() | components/polygon-c-vue-countdown */ 12).then(__webpack_require__.bind(null, 212)).then(c => wrapFunctional(c.default || c)),

@@ -26,7 +26,7 @@
       };
     },
     async mounted() { 
-      await this.$nextTick();
+      // await this.$nextTick();
       await loadView()
       this.connect()
     },

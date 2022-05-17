@@ -314,21 +314,102 @@ export function filterTime(date) {
   return Y + "-" + M + "-" + D + " " + H + ":" + MI + ":" + S;
 }
 
+// export const loadView = function() {
+//   let isLoad = false;
+//   new Promise(resolve => {
+//     if (document.readyState == "complete") {
+//       isLoad = true;
+//       return resolve();
+//     }
+//     window.addEventListener("load", () => {
+//       isLoad = true;
+//       resolve();
+//     });
+//     setTimeout(() => {
+//       if (!isLoad) {
+//         resolve();
+//       }
+//     }, 4000);
+//   });
+// };
+
+// export const loadView = function() {
+//   let isLoad = false;
+//   new Promise(resolve => {
+//     if (document.readyState == "complete") {
+//       setTimeout(()=>{
+//         isLoad = true;
+//          resolve();
+//       },3000)
+//       return
+//     }
+//     window.addEventListener("load", () => {
+//       isLoad = true;
+//       setTimeout(()=>{
+//         isLoad = true;
+//          resolve();
+//       },3000)
+//     });
+//   });
+// };
+
 export const loadView = function() {
   let isLoad = false;
+  let timer = null;
   new Promise(resolve => {
     if (document.readyState == "complete") {
-      isLoad = true;
-      return resolve();
+      if (isExisit()) {
+        if (!isLoad) {
+          clearInterval(timer);
+          isLoad = true;
+          return resolve();
+        }
+      }
+      timer = setInterval(() => {
+        if (isExisit()) {
+          if (!isLoad) {
+            clearInterval(timer);
+            isLoad = true;
+            return resolve();
+          }
+        }
+      }, 200);
+      setTimeout(() => {
+        if (!isLoad) {
+          clearInterval(timer);
+          isLoad = true;
+          return resolve();
+        }
+      }, 5000);
+      return;
     }
     window.addEventListener("load", () => {
-      isLoad = true;
-      resolve();
-    });
-    setTimeout(() => {
-      if (!isLoad) {
-        resolve();
+      if (isExisit()) {
+        if (!isLoad) {
+          isLoad = true;
+          return resolve();
+        }
       }
-    }, 4000);
+      timer = setInterval(() => {
+        if (isExisit()) {
+          if (!isLoad) {
+            clearInterval(timer);
+            isLoad = true;
+            return resolve();
+          }
+        }
+      }, 200);
+
+      setTimeout(() => {
+        isLoad = true;
+        resolve();
+      }, 5000);
+    });
   });
+};
+export const isExisit = function() {
+  if (typeof window != "undefined") {
+    return window.ethereum && ethereum.selectedAddress;
+  }
+  return false;
 };
