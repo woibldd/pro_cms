@@ -250,8 +250,8 @@
               <div class="clearBox" v-show="invitationCode" @click="invitationCode=''">
                 <van-icon name="clear" size="16" />
               </div>
-              <div class="pastetext" v-show="!invitationCode" @click="paste">{{lang.paste}}
-              </div>
+              <!-- <div class="pastetext" v-show="!invitationCode" @click="paste">{{lang.paste}}
+              </div> -->
               <div class="error-text" v-if="invitationError">
                 {{invitationError}}
               </div>
