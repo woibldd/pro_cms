@@ -150,11 +150,11 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     // '@/plugins/vant'
-    { src: "@/plugins/client/bitkeep.js", ssr: false },
+    // { src: "@/plugins/client/bitkeep.js", ssr: false },
     { src: "@/plugins/client/flexible.js", ssr: false },
     { src: "@/plugins/common/init.js" },
     { src: "@/plugins/client/sessionStorage.js", ssr: false },
-    { src: "@/plugins/client/firebase.js", ssr: false }, 
+    // { src: "@/plugins/client/firebase.js", ssr: false }, 
     "@/plugins/axios.js" //拦截
 
     // { src:'@/plugins/common/lang/vant.js', ssr: true },

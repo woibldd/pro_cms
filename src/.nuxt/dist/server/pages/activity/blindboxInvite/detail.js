@@ -45,7 +45,7 @@ var external_vuex_ = __webpack_require__(4);
 var client = __webpack_require__(86);
 
 // EXTERNAL MODULE: ./tools/common.js
-var common = __webpack_require__(20);
+var common = __webpack_require__(19);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/blindboxInvite/detail.vue?vue&type=script&lang=js&
 //

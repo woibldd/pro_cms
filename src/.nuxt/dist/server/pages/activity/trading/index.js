@@ -306,7 +306,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/activity/trading/protocol.vue?vue&type=template&id=38df161a&scoped=true&
 
 // EXTERNAL MODULE: ./tools/common.js
-var common = __webpack_require__(20);
+var common = __webpack_require__(19);
 
 // EXTERNAL MODULE: ./api/client.js
 var client = __webpack_require__(86);

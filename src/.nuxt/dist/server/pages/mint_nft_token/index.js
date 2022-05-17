@@ -1597,7 +1597,7 @@ var MintSuccessCard = __webpack_require__(150);
 var Storage = __webpack_require__(161);
 
 // EXTERNAL MODULE: ./utils/wallet.js
-var wallet = __webpack_require__(12);
+var wallet = __webpack_require__(11);
 
 // EXTERNAL MODULE: ./api/client.js
 var client = __webpack_require__(86);
@@ -1606,7 +1606,7 @@ var client = __webpack_require__(86);
 var copy = __webpack_require__(162);
 
 // EXTERNAL MODULE: ./tools/common.js
-var common = __webpack_require__(20);
+var common = __webpack_require__(19);
 
 // EXTERNAL MODULE: ./mixin/base.js
 var base = __webpack_require__(89);

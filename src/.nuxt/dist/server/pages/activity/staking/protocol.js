@@ -8,7 +8,7 @@ exports.modules = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "transfer16", function() { return transfer16; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wallet", function() { return wallet; });
-/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(21);
+/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20);
 /* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(eventemitter3__WEBPACK_IMPORTED_MODULE_0__);
 // import detectEthereumProvider from '@metamask/detect-provider';
  // import { transfer16 } from '../common/common'
@@ -192,7 +192,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/activity/staking/protocol.vue?vue&type=template&id=49c56fde&scoped=true&
 
 // EXTERNAL MODULE: ./tools/common.js
-var common = __webpack_require__(20);
+var common = __webpack_require__(19);
 
 // EXTERNAL MODULE: ./api/client.js
 var client = __webpack_require__(86);
