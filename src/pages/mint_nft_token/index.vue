@@ -1268,7 +1268,7 @@ export default {
             width: 16px;
             height: 16px;
             margin-left: 5px;
-            vertical-align: center;
+            vertical-align: middle;
           }
         }
 
