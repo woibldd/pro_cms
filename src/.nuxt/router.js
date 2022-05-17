@@ -5,6 +5,7 @@ import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
 const _19e6a3ae = () => interopDefault(import('../pages/mint_nft_token/index.vue' /* webpackChunkName: "pages/mint_nft_token/index" */))
+const _3a3b8413 = () => interopDefault(import('../pages/no.vue' /* webpackChunkName: "pages/no" */))
 const _1e16834e = () => interopDefault(import('../pages/activity/airdrop/index.vue' /* webpackChunkName: "pages/activity/airdrop/index" */))
 const _65e970f7 = () => interopDefault(import('../pages/activity/blindbox/index.vue' /* webpackChunkName: "pages/activity/blindbox/index" */))
 const _330b97e0 = () => interopDefault(import('../pages/activity/blindboxInvite/index.vue' /* webpackChunkName: "pages/activity/blindboxInvite/index" */))
@@ -43,7 +44,6 @@ const _46e90ba1 = () => interopDefault(import('../pages/activity/trading/trading
 const _1f4eb79d = () => interopDefault(import('../pages/activity/blindboxInvite/component/createPoster.vue' /* webpackChunkName: "pages/activity/blindboxInvite/component/createPoster" */))
 const _4d04ed27 = () => interopDefault(import('../pages/activity/blindbox/detail/_id.vue' /* webpackChunkName: "pages/activity/blindbox/detail/_id" */))
 const _74266e07 = () => interopDefault(import('../pages/article/detail/_id.vue' /* webpackChunkName: "pages/article/detail/_id" */))
-const _275a9b50 = () => interopDefault(import('../pages/_id.vue' /* webpackChunkName: "pages/_id" */))
 
 const emptyFn = () => {}
 
@@ -60,6 +60,10 @@ export const routerOptions = {
     path: "/mint_nft_token",
     component: _19e6a3ae,
     name: "mint_nft_token"
+  }, {
+    path: "/no",
+    component: _3a3b8413,
+    name: "no"
   }, {
     path: "/activity/airdrop",
     component: _1e16834e,
@@ -212,10 +216,6 @@ export const routerOptions = {
     path: "/article/detail/:id?",
     component: _74266e07,
     name: "article-detail-id"
-  }, {
-    path: "/:id?",
-    component: _275a9b50,
-    name: "id"
   }],
 
   fallback: false

@@ -27,7 +27,6 @@
     "components/vue-create-poster-layout-qrcode.js": "components/vue-create-poster-layout-qrcode.js",
     "components/vue-create-poster-layout-util.js": "components/vue-create-poster-layout-util.js",
     "components/vue-create-poster-layout.js": "components/vue-create-poster-layout.js",
-    "pages/_id.js": "pages/_id.js",
     "pages/activity/airdrop/index.js": "pages/activity/airdrop/index.js",
     "pages/activity/blindbox/detail/_id.js": "pages/activity/blindbox/detail/_id.js",
     "pages/activity/blindbox/detail/index.js": "pages/activity/blindbox/detail/index.js",
@@ -67,6 +66,7 @@
     "pages/activity/trading/tradingRule.js": "pages/activity/trading/tradingRule.js",
     "pages/article/detail/_id.js": "pages/article/detail/_id.js",
     "pages/mint_nft_token/index.js": "pages/mint_nft_token/index.js",
+    "pages/no.js": "pages/no.js",
     "server.js": "server.js"
   },
   "maps": {
@@ -96,7 +96,6 @@
     "components/vue-create-poster-layout-qrcode.js": "components/vue-create-poster-layout-qrcode.js.map",
     "components/vue-create-poster-layout-util.js": "components/vue-create-poster-layout-util.js.map",
     "components/vue-create-poster-layout.js": "components/vue-create-poster-layout.js.map",
-    "pages/_id.js": "pages/_id.js.map",
     "pages/activity/airdrop/index.js": "pages/activity/airdrop/index.js.map",
     "pages/activity/blindbox/detail/_id.js": "pages/activity/blindbox/detail/_id.js.map",
     "pages/activity/blindbox/detail/index.js": "pages/activity/blindbox/detail/index.js.map",
@@ -136,6 +135,7 @@
     "pages/activity/trading/tradingRule.js": "pages/activity/trading/tradingRule.js.map",
     "pages/article/detail/_id.js": "pages/article/detail/_id.js.map",
     "pages/mint_nft_token/index.js": "pages/mint_nft_token/index.js.map",
+    "pages/no.js": "pages/no.js.map",
     "server.js": "server.js.map"
   }
 }
