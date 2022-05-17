@@ -67,7 +67,6 @@
     "pages/article/detail/_id.js": "pages/article/detail/_id.js",
     "pages/mint_nft_token/BK.js": "pages/mint_nft_token/BK.js",
     "pages/mint_nft_token/index.js": "pages/mint_nft_token/index.js",
-    "pages/no.js": "pages/no.js",
     "server.js": "server.js"
   },
   "maps": {
@@ -137,7 +136,6 @@
     "pages/article/detail/_id.js": "pages/article/detail/_id.js.map",
     "pages/mint_nft_token/BK.js": "pages/mint_nft_token/BK.js.map",
     "pages/mint_nft_token/index.js": "pages/mint_nft_token/index.js.map",
-    "pages/no.js": "pages/no.js.map",
     "server.js": "server.js.map"
   }
 }

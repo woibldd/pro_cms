@@ -1735,7 +1735,7 @@ const equal = (a, b) => {
 
 /***/ }),
 
-/***/ 187:
+/***/ 186:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1747,7 +1747,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 188:
+/***/ 187:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2010,7 +2010,7 @@ var render, staticRenderFns
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(187)
+  var style0 = __webpack_require__(186)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -2032,13 +2032,13 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 289:
+/***/ 286:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "install", function() { return install; });
-/* harmony import */ var _canvas_poster__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(188);
+/* harmony import */ var _canvas_poster__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(187);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "VueCanvasPoster", function() { return _canvas_poster__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 

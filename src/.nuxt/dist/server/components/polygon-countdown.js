@@ -1,14 +1,14 @@
 exports.ids = [13];
 exports.modules = {
 
-/***/ 186:
+/***/ 185:
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAABkBAMAAABuue1xAAAALVBMVEUAAACem6aem6aenaeenKaenaeenaecm6WdnKacm6Wcm6Wbm6Senaeem6aenaeST9mYAAAADnRSTlMAD3DvkN8gCIU/UTHRYt0Y/rEAAABLSURBVDjLY0AFgmlwwMB442goDDAwqti9g4ERy9EINoYBBvZZLS4wwMC+UwkOGBjKBeGAYRSMgkECkJIlSoJFScooiXww5LkB4AAAVkRwKRqahZ8AAAAASUVORK5CYII="
 
 /***/ }),
 
-/***/ 231:
+/***/ 228:
 /***/ (function(module, exports) {
 
 // Exports
@@ -19,19 +19,19 @@ module.exports = {
 
 /***/ }),
 
-/***/ 287:
+/***/ 283:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_countdown_vue_vue_type_style_index_0_id_b06df160_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(231);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_countdown_vue_vue_type_style_index_0_id_b06df160_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(228);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_countdown_vue_vue_type_style_index_0_id_b06df160_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_countdown_vue_vue_type_style_index_0_id_b06df160_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_countdown_vue_vue_type_style_index_0_id_b06df160_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_countdown_vue_vue_type_style_index_0_id_b06df160_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 322:
+/***/ 317:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39,7 +39,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/polygon/countdown.vue?vue&type=template&id=b06df160&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"cuntdown"},[_vm._ssrNode("<div class=\"item Background0\" data-v-b06df160><span class=\"TTOMedium\" data-v-b06df160>"+_vm._ssrEscape("\n      "+_vm._s(_vm.zero(_vm.dd))+"\n    ")+"</span> <span class=\"TTORegular\" data-v-b06df160>Days</span></div> <img"+(_vm._ssrAttr("src",__webpack_require__(186)))+" alt class=\"slot\" data-v-b06df160> <div class=\"item Background0\" data-v-b06df160><span class=\"TTOMedium\" data-v-b06df160>"+_vm._ssrEscape(_vm._s(_vm.zero(_vm.hh)))+"</span> <span class=\"TTORegular\" data-v-b06df160>Hours</span></div> <img"+(_vm._ssrAttr("src",__webpack_require__(186)))+" alt class=\"slot\" data-v-b06df160> <div class=\"item Background0\" data-v-b06df160><span class=\"TTOMedium\" data-v-b06df160>"+_vm._ssrEscape(_vm._s(_vm.zero(_vm.mm)))+"</span> <span class=\"TTORegular\" data-v-b06df160>Minutes</span></div> <img"+(_vm._ssrAttr("src",__webpack_require__(186)))+" alt class=\"slot\" data-v-b06df160> <div class=\"item Background0\" data-v-b06df160><span class=\"TTOMedium\" data-v-b06df160>"+_vm._ssrEscape(_vm._s(_vm.zero(_vm.ss)))+"</span> <span class=\"TTORegular\" data-v-b06df160>Seconds</span></div>")])}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"cuntdown"},[_vm._ssrNode("<div class=\"item Background0\" data-v-b06df160><span class=\"TTOMedium\" data-v-b06df160>"+_vm._ssrEscape("\n      "+_vm._s(_vm.zero(_vm.dd))+"\n    ")+"</span> <span class=\"TTORegular\" data-v-b06df160>Days</span></div> <img"+(_vm._ssrAttr("src",__webpack_require__(185)))+" alt class=\"slot\" data-v-b06df160> <div class=\"item Background0\" data-v-b06df160><span class=\"TTOMedium\" data-v-b06df160>"+_vm._ssrEscape(_vm._s(_vm.zero(_vm.hh)))+"</span> <span class=\"TTORegular\" data-v-b06df160>Hours</span></div> <img"+(_vm._ssrAttr("src",__webpack_require__(185)))+" alt class=\"slot\" data-v-b06df160> <div class=\"item Background0\" data-v-b06df160><span class=\"TTOMedium\" data-v-b06df160>"+_vm._ssrEscape(_vm._s(_vm.zero(_vm.mm)))+"</span> <span class=\"TTORegular\" data-v-b06df160>Minutes</span></div> <img"+(_vm._ssrAttr("src",__webpack_require__(185)))+" alt class=\"slot\" data-v-b06df160> <div class=\"item Background0\" data-v-b06df160><span class=\"TTOMedium\" data-v-b06df160>"+_vm._ssrEscape(_vm._s(_vm.zero(_vm.ss)))+"</span> <span class=\"TTORegular\" data-v-b06df160>Seconds</span></div>")])}
 var staticRenderFns = []
 
 
@@ -267,7 +267,7 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(287)
+  var style0 = __webpack_require__(283)
 if (style0.__inject__) style0.__inject__(context)
 
 }

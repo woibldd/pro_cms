@@ -7,13 +7,6 @@
     "_name": "_19e6a3ae"
   },
   {
-    "name": "no",
-    "path": "/no",
-    "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/no.vue",
-    "chunkName": "pages/no",
-    "_name": "_3a3b8413"
-  },
-  {
     "name": "activity-airdrop",
     "path": "/activity/airdrop",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/airdrop/index.vue",

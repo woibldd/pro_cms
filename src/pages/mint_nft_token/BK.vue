@@ -362,10 +362,9 @@ export default {
     Ment
   },
   async mounted() { 
-    await this.$nextTick();
     await loadView()
     await this.connect()    
-    await this.nftMintLotteryList()
+    this.nftMintLotteryList()
     // this.$bus.$on('changeAccounts', async (val) => {
     //   this.init()
     // });
