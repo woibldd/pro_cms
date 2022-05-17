@@ -1,53 +1,183 @@
 exports.ids = [57,58,59];
 exports.modules = {
 
-/***/ 123:
-/***/ (function(module, exports) {
-
-// Exports
-module.exports = {
-
-};
-
-
-/***/ }),
-
-/***/ 124:
-/***/ (function(module, exports) {
-
-// Exports
-module.exports = {
-
-};
-
-
-/***/ }),
-
-/***/ 158:
+/***/ 103:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(123);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "transfer16", function() { return transfer16; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wallet", function() { return wallet; });
+/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(21);
+/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(eventemitter3__WEBPACK_IMPORTED_MODULE_0__);
+// import detectEthereumProvider from '@metamask/detect-provider';
+ // import { transfer16 } from '../common/common'
+
+function transfer16(val = '1') {
+  val = isNaN(Number(val)) ? 1 : Number(val);
+  return "0x" + val.toString(16);
+}
+
+class Wallet extends eventemitter3__WEBPACK_IMPORTED_MODULE_0___default.a {
+  constructor() {
+    super();
+    this._accounts = [];
+    this._chainId = 0;
+    this._walletPlatform = 'bitkeep';
+  } // 是否安装 bitkeep 钱包
+
+
+  isInstall() {
+    const isInstalled = !!window.ethereum && !!window.isBitKeep;
+    !isInstalled && console.warn("no installed bitkeep");
+    return isInstalled;
+  } // 是否连接中
+
+
+  isConnected() {
+    return window.ethereum && window.ethereum.isConnected();
+  } // 连接钱包
+
+
+  async connect() {
+    if (this.isInstall()) {
+      const Accounts = await ethereum.request({
+        method: 'eth_requestAccounts'
+      });
+      this.initEvent();
+      return Accounts[0];
+    } else {
+      return {
+        status: 50001,
+        message: 'please download bitkeep chrome '
+      };
+    }
+  } // 切换地址
+
+
+  selectedAddress() {
+    return window.ethereum && ethereum.selectedAddress;
+  } // 获取钱包信息
+
+
+  getWalletInfo() {
+    return {
+      address: window.ethereum && ethereum.selectedAddress,
+      chainName: window.ethereum && window.ethereum.chainName || 'eth',
+      chainId: window.ethereum && window.ethereum.chainId || '1',
+      walletId: '',
+      walletPlatform: this.getWalletPlatform()
+    };
+  } // 获取 chain ID
+
+
+  async getChainId() {
+    return window.ethereum && window.ethereum.request({
+      method: 'eth_chainId'
+    });
+  } // 切换 chain ID
+
+
+  async switchChainId(chainId, address) {
+    if (!address) {
+      const [nAddress] = await this.getAccounts();
+      address = nAddress;
+    }
+
+    return window.ethereum && window.ethereum.request({
+      method: 'wallet_switchEthereumChain',
+      params: [{
+        chainId: transfer16(chainId)
+      }, address]
+    });
+  } // 获取钱包标识
+
+
+  getWalletPlatform() {
+    return this._walletPlatform;
+  } // 获取钱包账号
+
+
+  async getAccounts() {
+    return window.ethereum ? window.ethereum.request({
+      method: "eth_accounts"
+    }) : [];
+  } // 登录签名
+
+
+  async LoginSign(dataToSign, address) {
+    console.log(dataToSign, address, 'dataToSign, addressdataToSign, addressdataToSign, address');
+    return await window.ethereum.request({
+      method: "personal_sign",
+      params: [dataToSign, address],
+      from: address
+    }); // return await window.ethereum.signMessage({ data: dataToSign })
+  }
+
+  initEvent() {
+    ethereum.removeAllListeners && ethereum.removeAllListeners(); // ethereum.removeListener && ethereum.removeListener('chainChanged')
+
+    ethereum.on('accountsChanged', async (...arg) => {
+      this.emit('accountsChanged', ...arg);
+    });
+    ethereum.on('chainChanged', async (...arg) => {
+      this.emit('chainChanged', ...arg);
+    });
+  }
+
+}
+
+const wallet = new Wallet();
+
+/***/ }),
+
+/***/ 132:
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {
+
+};
+
+
+/***/ }),
+
+/***/ 133:
+/***/ (function(module, exports) {
+
+// Exports
+module.exports = {
+
+};
+
+
+/***/ }),
+
+/***/ 177:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(132);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 159:
+/***/ 178:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_1_id_49c56fde_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(124);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_1_id_49c56fde_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(133);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_1_id_49c56fde_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_1_id_49c56fde_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_1_id_49c56fde_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_protocol_vue_vue_type_style_index_1_id_49c56fde_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 204:
+/***/ 224:
 /***/ (function(module, exports) {
 
 // Exports
@@ -58,7 +188,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 227:
+/***/ 239:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -79,7 +209,7 @@ var common = __webpack_require__(20);
 var client = __webpack_require__(86);
 
 // EXTERNAL MODULE: ./pages/activity/staking/wallet.js
-var wallet = __webpack_require__(95);
+var wallet = __webpack_require__(103);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/staking/protocol.vue?vue&type=script&lang=js&
 //
@@ -253,9 +383,9 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(158)
+  var style0 = __webpack_require__(177)
 if (style0.__inject__) style0.__inject__(context)
-var style1 = __webpack_require__(159)
+var style1 = __webpack_require__(178)
 if (style1.__inject__) style1.__inject__(context)
 
 }
@@ -277,19 +407,19 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 276:
+/***/ 280:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_myPool_vue_vue_type_style_index_0_id_e9db9b56_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(204);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_myPool_vue_vue_type_style_index_0_id_e9db9b56_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(224);
 /* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_myPool_vue_vue_type_style_index_0_id_e9db9b56_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_myPool_vue_vue_type_style_index_0_id_e9db9b56_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
 /* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_myPool_vue_vue_type_style_index_0_id_e9db9b56_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_myPool_vue_vue_type_style_index_0_id_e9db9b56_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 311:
+/***/ 316:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -310,7 +440,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/activity/staking/myPool.vue?vue&type=template&id=e9db9b56&scoped=true&
 
 // EXTERNAL MODULE: ./pages/activity/staking/protocol.vue + 4 modules
-var protocol = __webpack_require__(227);
+var protocol = __webpack_require__(239);
 
 // EXTERNAL MODULE: ./api/client.js
 var client = __webpack_require__(86);
@@ -737,7 +867,7 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(276)
+  var style0 = __webpack_require__(280)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -926,136 +1056,6 @@ const USER_API = {
   //查看Mint的广播状态
   nftMintcheckTransaction: (data, headers = {}) => host_user_instance.post("/operation/nftmint/checkTransaction", data)
 };
-
-/***/ }),
-
-/***/ 95:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "transfer16", function() { return transfer16; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "wallet", function() { return wallet; });
-/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(21);
-/* harmony import */ var eventemitter3__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(eventemitter3__WEBPACK_IMPORTED_MODULE_0__);
-// import detectEthereumProvider from '@metamask/detect-provider';
- // import { transfer16 } from '../common/common'
-
-function transfer16(val = '1') {
-  val = isNaN(Number(val)) ? 1 : Number(val);
-  return "0x" + val.toString(16);
-}
-
-class Wallet extends eventemitter3__WEBPACK_IMPORTED_MODULE_0___default.a {
-  constructor() {
-    super();
-    this._accounts = [];
-    this._chainId = 0;
-    this._walletPlatform = 'bitkeep';
-  } // 是否安装 bitkeep 钱包
-
-
-  isInstall() {
-    const isInstalled = !!window.ethereum && !!window.isBitKeep;
-    !isInstalled && console.warn("no installed bitkeep");
-    return isInstalled;
-  } // 是否连接中
-
-
-  isConnected() {
-    return window.ethereum && window.ethereum.isConnected();
-  } // 连接钱包
-
-
-  async connect() {
-    if (this.isInstall()) {
-      const Accounts = await ethereum.request({
-        method: 'eth_requestAccounts'
-      });
-      this.initEvent();
-      return Accounts[0];
-    } else {
-      return {
-        status: 50001,
-        message: 'please download bitkeep chrome '
-      };
-    }
-  } // 切换地址
-
-
-  selectedAddress() {
-    return window.ethereum && ethereum.selectedAddress;
-  } // 获取钱包信息
-
-
-  getWalletInfo() {
-    return {
-      address: window.ethereum && ethereum.selectedAddress,
-      chainName: window.ethereum && window.ethereum.chainName || 'eth',
-      chainId: window.ethereum && window.ethereum.chainId || '1',
-      walletId: '',
-      walletPlatform: this.getWalletPlatform()
-    };
-  } // 获取 chain ID
-
-
-  async getChainId() {
-    return window.ethereum && window.ethereum.request({
-      method: 'eth_chainId'
-    });
-  } // 切换 chain ID
-
-
-  async switchChainId(chainId, address) {
-    if (!address) {
-      const [nAddress] = await this.getAccounts();
-      address = nAddress;
-    }
-
-    return window.ethereum && window.ethereum.request({
-      method: 'wallet_switchEthereumChain',
-      params: [{
-        chainId: transfer16(chainId)
-      }, address]
-    });
-  } // 获取钱包标识
-
-
-  getWalletPlatform() {
-    return this._walletPlatform;
-  } // 获取钱包账号
-
-
-  async getAccounts() {
-    return window.ethereum ? window.ethereum.request({
-      method: "eth_accounts"
-    }) : [];
-  } // 登录签名
-
-
-  async LoginSign(dataToSign, address) {
-    console.log(dataToSign, address, 'dataToSign, addressdataToSign, addressdataToSign, address');
-    return await window.ethereum.request({
-      method: "personal_sign",
-      params: [dataToSign, address],
-      from: address
-    }); // return await window.ethereum.signMessage({ data: dataToSign })
-  }
-
-  initEvent() {
-    ethereum.removeAllListeners && ethereum.removeAllListeners(); // ethereum.removeListener && ethereum.removeListener('chainChanged')
-
-    ethereum.on('accountsChanged', async (...arg) => {
-      this.emit('accountsChanged', ...arg);
-    });
-    ethereum.on('chainChanged', async (...arg) => {
-      this.emit('chainChanged', ...arg);
-    });
-  }
-
-}
-
-const wallet = new Wallet();
 
 /***/ })
 

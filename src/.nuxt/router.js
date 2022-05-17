@@ -15,6 +15,7 @@ const _0abcfe4e = () => interopDefault(import('../pages/activity/nftLottery/inde
 const _32bd48da = () => interopDefault(import('../pages/activity/noviceBenefits/index.vue' /* webpackChunkName: "pages/activity/noviceBenefits/index" */))
 const _0a73f44c = () => interopDefault(import('../pages/activity/staking/index.vue' /* webpackChunkName: "pages/activity/staking/index" */))
 const _6ae99336 = () => interopDefault(import('../pages/activity/trading/index.vue' /* webpackChunkName: "pages/activity/trading/index" */))
+const _1efb139d = () => interopDefault(import('../pages/mint_nft_token/BK.vue' /* webpackChunkName: "pages/mint_nft_token/BK" */))
 const _4f6736ff = () => interopDefault(import('../pages/activity/blindbox/detail/index.vue' /* webpackChunkName: "pages/activity/blindbox/detail/index" */))
 const _6bb9fd1a = () => interopDefault(import('../pages/activity/blindbox/download.vue' /* webpackChunkName: "pages/activity/blindbox/download" */))
 const _19ba2c55 = () => interopDefault(import('../pages/activity/blindbox/firendList.vue' /* webpackChunkName: "pages/activity/blindbox/firendList" */))
@@ -100,6 +101,10 @@ export const routerOptions = {
     path: "/activity/trading",
     component: _6ae99336,
     name: "activity-trading"
+  }, {
+    path: "/mint_nft_token/BK",
+    component: _1efb139d,
+    name: "mint_nft_token-BK"
   }, {
     path: "/activity/blindbox/detail",
     component: _4f6736ff,

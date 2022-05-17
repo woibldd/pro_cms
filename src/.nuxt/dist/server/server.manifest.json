@@ -65,6 +65,7 @@
     "pages/activity/trading/protocol.js": "pages/activity/trading/protocol.js",
     "pages/activity/trading/tradingRule.js": "pages/activity/trading/tradingRule.js",
     "pages/article/detail/_id.js": "pages/article/detail/_id.js",
+    "pages/mint_nft_token/BK.js": "pages/mint_nft_token/BK.js",
     "pages/mint_nft_token/index.js": "pages/mint_nft_token/index.js",
     "pages/no.js": "pages/no.js",
     "server.js": "server.js"
@@ -134,6 +135,7 @@
     "pages/activity/trading/protocol.js": "pages/activity/trading/protocol.js.map",
     "pages/activity/trading/tradingRule.js": "pages/activity/trading/tradingRule.js.map",
     "pages/article/detail/_id.js": "pages/article/detail/_id.js.map",
+    "pages/mint_nft_token/BK.js": "pages/mint_nft_token/BK.js.map",
     "pages/mint_nft_token/index.js": "pages/mint_nft_token/index.js.map",
     "pages/no.js": "pages/no.js.map",
     "server.js": "server.js.map"

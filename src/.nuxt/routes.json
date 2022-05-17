@@ -77,6 +77,13 @@
     "_name": "_6ae99336"
   },
   {
+    "name": "mint_nft_token-BK",
+    "path": "/mint_nft_token/BK",
+    "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/mint_nft_token/BK.vue",
+    "chunkName": "pages/mint_nft_token/BK",
+    "_name": "_1efb139d"
+  },
+  {
     "name": "activity-blindbox-detail",
     "path": "/activity/blindbox/detail",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindbox/detail/index.vue",
