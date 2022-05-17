@@ -93,7 +93,7 @@
                 {{lang.info7}}<br>
                 {{lang.info8}}
               </p>
-              <div class="InvitationCodeBox" v-if="defaultData.inviteCode!=0">
+              <div class="InvitationCodeBox" v-if="!+defaultData.inviteCode">
                 <div class="InvitationCode Background0">
                   <span class="TTORegular text">{{lang.inviteCode}}</span>
                   <span class="TTODbold code">{{defaultData.inviteCode}}</span>
@@ -358,7 +358,9 @@ export default {
     Ment
   },
   async mounted() {
+    this.loading =true
     await loadView()
+    this.loading =false
     await this.connect()    
     this.nftMintLotteryList()
     // this.$bus.$on('changeAccounts', async (val) => {
@@ -398,18 +400,19 @@ export default {
          this.loadingAddress()
       }
       this.address = nAddress
-
-      await this.nftMintGetInfo(this.address ? this.address : '', 'matic')
-      await this.nftMintnftList()
+      this.nftMintGetInfo(this.address ? this.address : '', 'matic')
+      this.nftMintnftList()
     },
-    async nftMintGetInfo(address, chain) {
+    async nftMintGetInfo(address, chain) { 
+      this.isLoading = true
       const {
         data,
         status
       } = await USER_API.nftMintGetInfo({
         address,
         chain
-      });
+      }); 
+      this.isLoading = false
       if (status == 0) {
         this.defaultData = data; 
         this.endTime = data.fromStartTime > 0 ? new Date().getTime() + data.fromStartTime : 0; 
@@ -438,11 +441,13 @@ export default {
         }
       }
     },
-    async nftMintLotteryList() {
+    async nftMintLotteryList() { 
+      this.isLoading = true
       const {
         data,
         status
       } = await USER_API.nftMintLotteryList();
+      this.isLoading = false
       if (status == 1) {
         return this.$dialog.alert({
           message: data,
@@ -452,7 +457,8 @@ export default {
       }
       this.LotteryList =  data.list;
     },
-    async nftMintnftList() {
+    async nftMintnftList() { 
+      this.isLoading = true
       if (!this.address) {
         return false
       }
@@ -462,7 +468,8 @@ export default {
       } = await USER_API.nftMintnftList({
         address: this.address,
         chain: this.chainName
-      })
+      }) 
+      this.isLoading = false
       if (status == 1) {
         return this.$dialog.alert({
           message: data,
@@ -514,10 +521,10 @@ export default {
         this.$toast(this.$t("polygon.enterCode2"));
         return;
       }
-      try {
-        await this.getToken(this.address)
-        const sign = await wallet.paritySign(this.address,this.invitationCode)
-        console.log(sign)
+      try { 
+        this.isLoading = true
+        await this.getToken(this.address) 
+        const sign = await wallet.paritySign(this.address,this.invitationCode)  
         const {
           data,
           status
@@ -536,10 +543,12 @@ export default {
             confirmButtonColor: '#7524f9'
           });
         }
+        this.isLoading = false
         this.$toast(this.$t("polygon.InvitationSucceeded")); 
         this.defaultData.isInvite = true
         this.show = false;
       } catch (error) { 
+        this.isLoading = false
         this.$toast.fail(typeof error == "object" ? error.message || 'error' : error);
       }
     },
@@ -548,7 +557,7 @@ export default {
       this.invitationCode = ""
     },
     async closeMint(MintNum) {
-      this.showMint = false;
+      this.showMint = false;   
       if (MintNum) {
         const ChainId = await wallet.getChainId()
         if (Number(ChainId) != this.ChainId) {
