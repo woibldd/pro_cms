@@ -1,10 +1,4 @@
 {
-  "Activity": {
-    "description": "Auto imported from components/activity/index.vue"
-  },
-  "Trading": {
-    "description": "Auto imported from components/trading/index.vue"
-  },
   "BlindboxBlindButton": {
     "description": "Auto imported from components/blindbox/BlindButton.vue"
   },
@@ -20,11 +14,29 @@
   "BlindboxTitleImage": {
     "description": "Auto imported from components/blindbox/titleImage.vue"
   },
+  "Activity": {
+    "description": "Auto imported from components/activity/index.vue"
+  },
+  "CommonCVueCountdown": {
+    "description": "Auto imported from components/common/c-vue-countdown.vue"
+  },
+  "CommonHeader": {
+    "description": "Auto imported from components/common/header.vue"
+  },
+  "Common": {
+    "description": "Auto imported from components/common/index.js"
+  },
   "PolygonAirdropAddressCard": {
     "description": "Auto imported from components/polygon/AirdropAddressCard.vue"
   },
   "PolygonAirdropAwardCard": {
     "description": "Auto imported from components/polygon/AirdropAwardCard.vue"
+  },
+  "PolygonCVueCountdown": {
+    "description": "Auto imported from components/polygon/c-vue-countdown.vue"
+  },
+  "PolygonCountdown": {
+    "description": "Auto imported from components/polygon/countdown.vue"
   },
   "PolygonInvitedCard": {
     "description": "Auto imported from components/polygon/InvitedCard.vue"
@@ -41,20 +53,8 @@
   "PolygonWhitelistcard": {
     "description": "Auto imported from components/polygon/Whitelistcard.vue"
   },
-  "PolygonCVueCountdown": {
-    "description": "Auto imported from components/polygon/c-vue-countdown.vue"
-  },
-  "PolygonCountdown": {
-    "description": "Auto imported from components/polygon/countdown.vue"
-  },
-  "CommonCVueCountdown": {
-    "description": "Auto imported from components/common/c-vue-countdown.vue"
-  },
-  "CommonHeader": {
-    "description": "Auto imported from components/common/header.vue"
-  },
-  "Common": {
-    "description": "Auto imported from components/common/index.js"
+  "Trading": {
+    "description": "Auto imported from components/trading/index.vue"
   },
   "VueCreatePosterLayoutCanvasPoster": {
     "description": "Auto imported from components/vue-create-poster/layout/canvas-poster.vue"

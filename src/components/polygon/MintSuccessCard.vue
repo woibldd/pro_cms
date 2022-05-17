@@ -4,52 +4,24 @@
     <div class="Mintpopup">
       <div class="TTORegular title">
         {{ $t('polygon.mintTitle1') }}
-        <span class="TTOMedium">({{ MintData.length }})</span></div>
-      <!-- <div class="swpierbox" v-if="MintData.length>1">
-        <div v-swiper="swiperOption" :loop="false">
-          <div class="MintList swiper-wrapper">
-            <div class="Mintlogo swiper-slide" v-for="item in MintData" :key="item.tokenId">
-              <img :src="item.picUrl" alt="" class="picUrl">
-              <span class="TTORegular tokenId">Token ID: #{{ item.tokenId }}</span>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-button-prev  swiper-button-black" slot="button-prev"></div>
-        <div class="swiper-button-next  swiper-button-black" slot="button-next"></div>
-      </div> -->
-      <!-- <div class="oneMintList" v-else>
-        <div class="oneMintlogo" v-for="item in MintData" :key="item.tokenId">
-          <img :src="item.picUrl" alt="">
-          <span class="TTORegular tokenId">Token ID: #{{ item.tokenId }}</span>
-        </div>
-      </div> -->
-      <!-- <div class="MintlogoOne" v-for="item in MintData" :key="item.tokenId">
-        <img :src="item.picUrl" alt=""> 
-        <img src="@/assets/img/Py_bg.png" alt="">
-        <div class="tokenId TTORegular">Token ID: #{{ item.tokenId }}</div>
-      </div> -->
+        <span class="TTOMedium">({{ MintData.length }})</span>
+      </div> 
       <div class="MentList" v-if="MintData.length > 1">  
           <swiper @mousemove="e=>e" :options="swiperOption" class="swiper-wrapper"> 
             <swiper-slide 
               v-for="item in MintData" :key="item.tokenId">
               <div  class="Mentlogo" :class="item.selected==true?'MentlogoActive':''"> 
-                  <!-- <img :src="item.picUrl" alt="">  -->
-                  <img src="@/assets/img/Py_bg.png" alt="">
-                  <div class="TTORegular tokenId">Token ID: #{{item.tokenId}}</div> 
-                 
+                  <img :src="item.picUrl" alt=""> 
+                  <!-- <img src="@/assets/img/Py_bg.png" alt=""> -->
+                  <div class="TTORegular tokenId">Token ID: #{{item.tokenId}}</div>  
               </div>
             </swiper-slide>
           </swiper>  
       </div>
       <div v-else-if="MintData.length == 1" class="Mintlogo"> 
-        <img :src="MintData[0].picUrl" alt=""> 
-        <!-- <img src="@/assets/img/Py_bg.png" alt=""> -->
+        <img :src="MintData[0].picUrl" alt="">  
         <div class="TTORegular tokenId">Token ID: #{{MintData[0].tokenId}}</div> 
-      </div>
-      <!-- <a  class="TTORegular browserview" :href="'https://polygonscan.com/tx/' + sendhash" target="_blank"
-        rel="noopener noreferrer">{{ $t("polygon.loadingtitle2") }}
-        <van-icon name="arrow" />
-      </a> -->
+      </div> 
     </div>
 
   </van-popup>

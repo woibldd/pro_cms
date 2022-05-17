@@ -613,9 +613,12 @@ export default {
               clearInterval(MintTimer)
               clearTimeout(MintTimer2)
               this.isLoading = false;
-              this.$toast("Mint" + this.$t("polygon.success"));
+              this.$toast.success("Mint " + this.$t("polygon.success"));
               this.MintData = data.list;
-              this.init()
+              console.log("list", ...data.list)
+              this.MentList.push(...data.list)
+              console.log("MentList", this.MentList)
+              this.nftMintGetInfo(this.address ? this.address : '', this.chainName)
               this.showMintSuccess = true;
             } 
           }, 3000)
@@ -1103,6 +1106,7 @@ export default {
                   border: 1px solid #49494D;
                   background: $theme-dark-background0;
                   border-bottom: none;
+                  border-left: none;
                   padding: 10px 20px;
                   display: flex;
                   flex-direction: row;
@@ -1124,6 +1128,7 @@ export default {
                   background: $theme-dark-background0;
                   padding: 10px 20px;
                   border: 1px solid #49494D;
+                  border-left: none;
                   font-size: 16px;
                 }
               }
@@ -1155,6 +1160,7 @@ export default {
             justify-items: center;
             padding: 15px 20px 10px 20px;
             border: 1px solid #49494D;
+            border-left: none;
             box-sizing: border-box;
             border-bottom: none;
             font-weight: 400;
@@ -1172,6 +1178,7 @@ export default {
         .Shortaddresslist {
           padding: 10px 20px 16px 20px;
           border: 1px solid #49494D;
+          border-left: none;
           background: $theme-dark-background0;
 
           .ShortaddressTitle {
@@ -1345,8 +1352,25 @@ export default {
     }
   }
 
-  .en {
-
+  [lang='en'] {
+    .polygon-top2 .polygon-m-InvitationBox .InvitationCodeBtn {
+      font-size: 11px;
+    }
+    .polygonContentBox .RightsAndInterests .RightsAndInterestsContent .infoBox .itembox1 {
+      font-size: 14px;
+    }
+    .polygonContentBox .RightsAndInterests .RightsAndInterestsContent .infoBox .itembox2 .addressTitle .text1 {
+      font-size: 14px
+    }
+    .polygonContentBox .RightsAndInterests .RightsAndInterestsContent .infoBox .itembox2 .addressTitle .text2 {
+      font-size: 14px
+    }
+    .polygonContentBox .ShortaddressContent .contentTitle h1 {
+      font-size: 14px;
+    }
+    .polygonContentBox .whiteIpcard .text {
+      font-size: 14px;
+    }
   }
 
 </style>

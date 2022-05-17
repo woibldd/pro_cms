@@ -1,7 +1,7 @@
 exports.ids = [4,8];
 exports.modules = {
 
-/***/ 125:
+/***/ 124:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13,7 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 131:
+/***/ 130:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -28,7 +28,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./components/blindbox/blindTimeText.vue?vue&type=template&id=0becdc74&scoped=true&
 
 // EXTERNAL MODULE: ./components/common/c-vue-countdown.vue + 4 modules
-var c_vue_countdown = __webpack_require__(99);
+var c_vue_countdown = __webpack_require__(98);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./components/blindbox/blindTimeText.vue?vue&type=script&lang=js&
 //
@@ -104,7 +104,7 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(125)
+  var style0 = __webpack_require__(124)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -118,7 +118,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "0becdc74",
-  "302b5802"
+  "1001593d"
   
 )
 
@@ -148,7 +148,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 98:
+/***/ 97:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -160,7 +160,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 99:
+/***/ 98:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -380,7 +380,7 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(98)
+  var style0 = __webpack_require__(97)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -394,7 +394,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "ce47b7d2",
-  "9b23d0f6"
+  "04530c03"
   
 )
 

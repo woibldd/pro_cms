@@ -5,16 +5,16 @@ import { getMatchedComponentsInstances, getChildrenComponentInstancesUsingFetch,
 import NuxtError from './components/nuxt-error.vue'
 import NuxtLoading from './components/nuxt-loading.vue'
 
-import '../node_modules/vant/lib/index.css'
+import '..\\node_modules\\vant\\lib\\index.css'
 
-import '../assets/css/globle.scss'
+import '..\\assets\\css\\globle.scss'
 
-import '../node_modules/swiper/css/swiper.css'
+import '..\\node_modules\\swiper\\css\\swiper.css'
 
-import _6f6c098b from '../layouts/default.vue'
-import _3252d7b6 from '../layouts/polygon/default.vue'
-import _582f3186 from '../layouts/polygon/footer.vue'
-import _5b055e78 from '../layouts/polygon/header.vue'
+import _6f6c098b from '..\\layouts\\default.vue'
+import _3252d7b6 from '..\\layouts\\polygon\\default.vue'
+import _582f3186 from '..\\layouts\\polygon\\footer.vue'
+import _5b055e78 from '..\\layouts\\polygon\\header.vue'
 
 const layouts = { "_default": sanitizeComponent(_6f6c098b),"_polygon/default": sanitizeComponent(_3252d7b6),"_polygon/footer": sanitizeComponent(_582f3186),"_polygon/header": sanitizeComponent(_5b055e78) }
 
