@@ -1,4 +1,7 @@
 {
+  "Activity": {
+    "description": "Auto imported from components/activity/index.vue"
+  },
   "BlindboxBlindButton": {
     "description": "Auto imported from components/blindbox/BlindButton.vue"
   },
@@ -22,6 +25,9 @@
   },
   "Common": {
     "description": "Auto imported from components/common/index.js"
+  },
+  "Trading": {
+    "description": "Auto imported from components/trading/index.vue"
   },
   "PolygonAirdropAddressCard": {
     "description": "Auto imported from components/polygon/AirdropAddressCard.vue"
@@ -49,12 +55,6 @@
   },
   "PolygonCountdown": {
     "description": "Auto imported from components/polygon/countdown.vue"
-  },
-  "Trading": {
-    "description": "Auto imported from components/trading/index.vue"
-  },
-  "Activity": {
-    "description": "Auto imported from components/activity/index.vue"
   },
   "VueCreatePosterLayoutCanvasPoster": {
     "description": "Auto imported from components/vue-create-poster/layout/canvas-poster.vue"

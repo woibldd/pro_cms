@@ -396,7 +396,7 @@ export default {
         await wallet.connect();
       } 
       const [nAddress] = await wallet.getAccounts()
-      if(!address){
+      if(!nAddress){
          this.loadingAddress()
       }
       this.address = nAddress

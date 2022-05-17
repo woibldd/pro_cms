@@ -3,240 +3,280 @@
     "name": "mint_nft_token",
     "path": "/mint_nft_token",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/mint_nft_token/index.vue",
-    "chunkName": "pages/mint_nft_token/index"
+    "chunkName": "pages/mint_nft_token/index",
+    "_name": "_19e6a3ae"
   },
   {
     "name": "activity-airdrop",
     "path": "/activity/airdrop",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/airdrop/index.vue",
-    "chunkName": "pages/activity/airdrop/index"
+    "chunkName": "pages/activity/airdrop/index",
+    "_name": "_1e16834e"
   },
   {
     "name": "activity-blindbox",
     "path": "/activity/blindbox",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindbox/index.vue",
-    "chunkName": "pages/activity/blindbox/index"
+    "chunkName": "pages/activity/blindbox/index",
+    "_name": "_65e970f7"
   },
   {
     "name": "activity-blindboxInvite",
     "path": "/activity/blindboxInvite",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindboxInvite/index.vue",
-    "chunkName": "pages/activity/blindboxInvite/index"
+    "chunkName": "pages/activity/blindboxInvite/index",
+    "_name": "_330b97e0"
   },
   {
     "name": "activity-cbkbexchange",
     "path": "/activity/cbkbexchange",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/cbkbexchange/index.vue",
-    "chunkName": "pages/activity/cbkbexchange/index"
+    "chunkName": "pages/activity/cbkbexchange/index",
+    "_name": "_4b1489fa"
   },
   {
     "name": "activity-mining",
     "path": "/activity/mining",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/mining/index.vue",
-    "chunkName": "pages/activity/mining/index"
+    "chunkName": "pages/activity/mining/index",
+    "_name": "_8a23a01e"
   },
   {
     "name": "activity-nftLottery",
     "path": "/activity/nftLottery",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/nftLottery/index.vue",
-    "chunkName": "pages/activity/nftLottery/index"
+    "chunkName": "pages/activity/nftLottery/index",
+    "_name": "_0abcfe4e"
   },
   {
     "name": "activity-noviceBenefits",
     "path": "/activity/noviceBenefits",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/noviceBenefits/index.vue",
-    "chunkName": "pages/activity/noviceBenefits/index"
+    "chunkName": "pages/activity/noviceBenefits/index",
+    "_name": "_32bd48da"
   },
   {
     "name": "activity-staking",
     "path": "/activity/staking",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/staking/index.vue",
-    "chunkName": "pages/activity/staking/index"
+    "chunkName": "pages/activity/staking/index",
+    "_name": "_0a73f44c"
   },
   {
     "name": "activity-trading",
     "path": "/activity/trading",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/trading/index.vue",
-    "chunkName": "pages/activity/trading/index"
+    "chunkName": "pages/activity/trading/index",
+    "_name": "_6ae99336"
   },
   {
     "name": "activity-blindbox-detail",
     "path": "/activity/blindbox/detail",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindbox/detail/index.vue",
-    "chunkName": "pages/activity/blindbox/detail/index"
+    "chunkName": "pages/activity/blindbox/detail/index",
+    "_name": "_4f6736ff"
   },
   {
     "name": "activity-blindbox-download",
     "path": "/activity/blindbox/download",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindbox/download.vue",
-    "chunkName": "pages/activity/blindbox/download"
+    "chunkName": "pages/activity/blindbox/download",
+    "_name": "_6bb9fd1a"
   },
   {
     "name": "activity-blindbox-firendList",
     "path": "/activity/blindbox/firendList",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindbox/firendList.vue",
-    "chunkName": "pages/activity/blindbox/firendList"
+    "chunkName": "pages/activity/blindbox/firendList",
+    "_name": "_19ba2c55"
   },
   {
     "name": "activity-blindbox-list",
     "path": "/activity/blindbox/list",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindbox/list.vue",
-    "chunkName": "pages/activity/blindbox/list"
+    "chunkName": "pages/activity/blindbox/list",
+    "_name": "_1b2d1009"
   },
   {
     "name": "activity-blindbox-stepDetail",
     "path": "/activity/blindbox/stepDetail",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindbox/stepDetail.vue",
-    "chunkName": "pages/activity/blindbox/stepDetail"
+    "chunkName": "pages/activity/blindbox/stepDetail",
+    "_name": "_53be6030"
   },
   {
     "name": "activity-blindboxInvite-copy",
     "path": "/activity/blindboxInvite/copy",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindboxInvite/copy.js",
-    "chunkName": "pages/activity/blindboxInvite/copy"
+    "chunkName": "pages/activity/blindboxInvite/copy",
+    "_name": "_00fe3558"
   },
   {
     "name": "activity-blindboxInvite-detail",
     "path": "/activity/blindboxInvite/detail",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindboxInvite/detail.vue",
-    "chunkName": "pages/activity/blindboxInvite/detail"
+    "chunkName": "pages/activity/blindboxInvite/detail",
+    "_name": "_728b189a"
   },
   {
     "name": "activity-blindboxInvite-download",
     "path": "/activity/blindboxInvite/download",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindboxInvite/download.vue",
-    "chunkName": "pages/activity/blindboxInvite/download"
+    "chunkName": "pages/activity/blindboxInvite/download",
+    "_name": "_637105ea"
   },
   {
     "name": "activity-blindboxInvite-inviteList",
     "path": "/activity/blindboxInvite/inviteList",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindboxInvite/inviteList.vue",
-    "chunkName": "pages/activity/blindboxInvite/inviteList"
+    "chunkName": "pages/activity/blindboxInvite/inviteList",
+    "_name": "_b3d03aae"
   },
   {
     "name": "activity-blindboxInvite-rewardList",
     "path": "/activity/blindboxInvite/rewardList",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindboxInvite/rewardList.vue",
-    "chunkName": "pages/activity/blindboxInvite/rewardList"
+    "chunkName": "pages/activity/blindboxInvite/rewardList",
+    "_name": "_17fd7ccf"
   },
   {
     "name": "activity-blindboxInvite-RuleDetail",
     "path": "/activity/blindboxInvite/RuleDetail",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindboxInvite/RuleDetail.vue",
-    "chunkName": "pages/activity/blindboxInvite/RuleDetail"
+    "chunkName": "pages/activity/blindboxInvite/RuleDetail",
+    "_name": "_16191a22"
   },
   {
     "name": "activity-mining-history",
     "path": "/activity/mining/history",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/mining/history.vue",
-    "chunkName": "pages/activity/mining/history"
+    "chunkName": "pages/activity/mining/history",
+    "_name": "_8804161a"
   },
   {
     "name": "activity-mining-inviteRuleDetail",
     "path": "/activity/mining/inviteRuleDetail",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/mining/inviteRuleDetail.vue",
-    "chunkName": "pages/activity/mining/inviteRuleDetail"
+    "chunkName": "pages/activity/mining/inviteRuleDetail",
+    "_name": "_32dabbf2"
   },
   {
     "name": "activity-mining-miningRule",
     "path": "/activity/mining/miningRule",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/mining/miningRule.vue",
-    "chunkName": "pages/activity/mining/miningRule"
+    "chunkName": "pages/activity/mining/miningRule",
+    "_name": "_268e46dd"
   },
   {
     "name": "activity-mining-protocol",
     "path": "/activity/mining/protocol",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/mining/protocol.vue",
-    "chunkName": "pages/activity/mining/protocol"
+    "chunkName": "pages/activity/mining/protocol",
+    "_name": "_44ed6649"
   },
   {
     "name": "activity-mining-RuleDetail",
     "path": "/activity/mining/RuleDetail",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/mining/RuleDetail.vue",
-    "chunkName": "pages/activity/mining/RuleDetail"
+    "chunkName": "pages/activity/mining/RuleDetail",
+    "_name": "_f01b8504"
   },
   {
     "name": "activity-noviceBenefits-drawluckly",
     "path": "/activity/noviceBenefits/drawluckly",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/noviceBenefits/drawluckly.vue",
-    "chunkName": "pages/activity/noviceBenefits/drawluckly"
+    "chunkName": "pages/activity/noviceBenefits/drawluckly",
+    "_name": "_03154551"
   },
   {
     "name": "activity-noviceBenefits-inviteRuleDetail",
     "path": "/activity/noviceBenefits/inviteRuleDetail",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/noviceBenefits/inviteRuleDetail.vue",
-    "chunkName": "pages/activity/noviceBenefits/inviteRuleDetail"
+    "chunkName": "pages/activity/noviceBenefits/inviteRuleDetail",
+    "_name": "_32313d25"
   },
   {
     "name": "activity-noviceBenefits-lotteryresults",
     "path": "/activity/noviceBenefits/lotteryresults",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/noviceBenefits/lotteryresults.vue",
-    "chunkName": "pages/activity/noviceBenefits/lotteryresults"
+    "chunkName": "pages/activity/noviceBenefits/lotteryresults",
+    "_name": "_7d1df99c"
   },
   {
     "name": "activity-staking-addPool",
     "path": "/activity/staking/addPool",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/staking/addPool.vue",
-    "chunkName": "pages/activity/staking/addPool"
+    "chunkName": "pages/activity/staking/addPool",
+    "_name": "_17f169d7"
   },
   {
     "name": "activity-staking-myPool",
     "path": "/activity/staking/myPool",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/staking/myPool.vue",
-    "chunkName": "pages/activity/staking/myPool"
+    "chunkName": "pages/activity/staking/myPool",
+    "_name": "_5b754cde"
   },
   {
     "name": "activity-staking-protocol",
     "path": "/activity/staking/protocol",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/staking/protocol.vue",
-    "chunkName": "pages/activity/staking/protocol"
+    "chunkName": "pages/activity/staking/protocol",
+    "_name": "_648a800e"
   },
   {
     "name": "activity-staking-wallet",
     "path": "/activity/staking/wallet",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/staking/wallet.js",
-    "chunkName": "pages/activity/staking/wallet"
+    "chunkName": "pages/activity/staking/wallet",
+    "_name": "_dc0ced80"
   },
   {
     "name": "activity-trading-history",
     "path": "/activity/trading/history",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/trading/history.vue",
-    "chunkName": "pages/activity/trading/history"
+    "chunkName": "pages/activity/trading/history",
+    "_name": "_5aad9af8"
   },
   {
     "name": "activity-trading-protocol",
     "path": "/activity/trading/protocol",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/trading/protocol.vue",
-    "chunkName": "pages/activity/trading/protocol"
+    "chunkName": "pages/activity/trading/protocol",
+    "_name": "_7c3280e4"
   },
   {
     "name": "activity-trading-tradingRule",
     "path": "/activity/trading/tradingRule",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/trading/tradingRule.vue",
-    "chunkName": "pages/activity/trading/tradingRule"
+    "chunkName": "pages/activity/trading/tradingRule",
+    "_name": "_46e90ba1"
   },
   {
     "name": "activity-blindboxInvite-component-createPoster",
     "path": "/activity/blindboxInvite/component/createPoster",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindboxInvite/component/createPoster.vue",
-    "chunkName": "pages/activity/blindboxInvite/component/createPoster"
+    "chunkName": "pages/activity/blindboxInvite/component/createPoster",
+    "_name": "_1f4eb79d"
   },
   {
     "name": "activity-blindbox-detail-id",
     "path": "/activity/blindbox/detail/:id",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/activity/blindbox/detail/_id.vue",
-    "chunkName": "pages/activity/blindbox/detail/_id"
+    "chunkName": "pages/activity/blindbox/detail/_id",
+    "_name": "_4d04ed27"
   },
   {
     "name": "article-detail-id",
     "path": "/article/detail/:id?",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/article/detail/_id.vue",
-    "chunkName": "pages/article/detail/_id"
+    "chunkName": "pages/article/detail/_id",
+    "_name": "_74266e07"
   },
   {
     "name": "id",
     "path": "/:id?",
     "component": "/Users/caoshiyuan/project/bitkeep/project/pro_cms/src/pages/_id.vue",
-    "chunkName": "pages/_id"
+    "chunkName": "pages/_id",
+    "_name": "_275a9b50"
   }
 ]
