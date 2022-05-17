@@ -374,10 +374,10 @@ export default {
            if(typeof window != "undefined" && window.ethereum){
                 if(window.ethereum.selectedAddress){
                       this.connect()
-                       clearInterval(this.timer)
+                      clearInterval(this.timer)
                 }
            }
-       })
+       },300)
     },
     inputFormatter(value) {
       return value.replace(/[^\d|a-z|A-Z]/g,'')
