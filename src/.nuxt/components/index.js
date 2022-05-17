@@ -1,6 +1,5 @@
 import { wrapFunctional } from './utils'
 
-export { default as Activity } from '../..\\components\\activity\\index.vue'
 export { default as BlindboxBlindButton } from '../..\\components\\blindbox\\BlindButton.vue'
 export { default as BlindboxBlindStrategy } from '../..\\components\\blindbox\\blindStrategy.vue'
 export { default as BlindboxBlindTimeText } from '../..\\components\\blindbox\\blindTimeText.vue'
@@ -9,6 +8,7 @@ export { default as BlindboxTitleImage } from '../..\\components\\blindbox\\titl
 export { default as CommonCVueCountdown } from '../..\\components\\common\\c-vue-countdown.vue'
 export { default as CommonHeader } from '../..\\components\\common\\header.vue'
 export { default as Common } from '../..\\components\\common\\index.js'
+export { default as Activity } from '../..\\components\\activity\\index.vue'
 export { default as PolygonAirdropAddressCard } from '../..\\components\\polygon\\AirdropAddressCard.vue'
 export { default as PolygonAirdropAwardCard } from '../..\\components\\polygon\\AirdropAwardCard.vue'
 export { default as PolygonCVueCountdown } from '../..\\components\\polygon\\c-vue-countdown.vue'
@@ -27,7 +27,6 @@ export { default as VueCreatePosterLayoutPainter } from '../..\\components\\vue-
 export { default as VueCreatePosterLayoutQrcode } from '../..\\components\\vue-create-poster\\layout\\qrcode.js'
 export { default as VueCreatePosterLayoutUtil } from '../..\\components\\vue-create-poster\\layout\\util.js'
 
-export const LazyActivity = import('../..\\components\\activity\\index.vue' /* webpackChunkName: "components/activity" */).then(c => wrapFunctional(c.default || c))
 export const LazyBlindboxBlindButton = import('../..\\components\\blindbox\\BlindButton.vue' /* webpackChunkName: "components/blindbox-blind-button" */).then(c => wrapFunctional(c.default || c))
 export const LazyBlindboxBlindStrategy = import('../..\\components\\blindbox\\blindStrategy.vue' /* webpackChunkName: "components/blindbox-blind-strategy" */).then(c => wrapFunctional(c.default || c))
 export const LazyBlindboxBlindTimeText = import('../..\\components\\blindbox\\blindTimeText.vue' /* webpackChunkName: "components/blindbox-blind-time-text" */).then(c => wrapFunctional(c.default || c))
@@ -36,6 +35,7 @@ export const LazyBlindboxTitleImage = import('../..\\components\\blindbox\\title
 export const LazyCommonCVueCountdown = import('../..\\components\\common\\c-vue-countdown.vue' /* webpackChunkName: "components/common-c-vue-countdown" */).then(c => wrapFunctional(c.default || c))
 export const LazyCommonHeader = import('../..\\components\\common\\header.vue' /* webpackChunkName: "components/common-header" */).then(c => wrapFunctional(c.default || c))
 export const LazyCommon = import('../..\\components\\common\\index.js' /* webpackChunkName: "components/common" */).then(c => wrapFunctional(c.default || c))
+export const LazyActivity = import('../..\\components\\activity\\index.vue' /* webpackChunkName: "components/activity" */).then(c => wrapFunctional(c.default || c))
 export const LazyPolygonAirdropAddressCard = import('../..\\components\\polygon\\AirdropAddressCard.vue' /* webpackChunkName: "components/polygon-airdrop-address-card" */).then(c => wrapFunctional(c.default || c))
 export const LazyPolygonAirdropAwardCard = import('../..\\components\\polygon\\AirdropAwardCard.vue' /* webpackChunkName: "components/polygon-airdrop-award-card" */).then(c => wrapFunctional(c.default || c))
 export const LazyPolygonCVueCountdown = import('../..\\components\\polygon\\c-vue-countdown.vue' /* webpackChunkName: "components/polygon-c-vue-countdown" */).then(c => wrapFunctional(c.default || c))

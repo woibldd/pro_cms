@@ -721,5 +721,6 @@ module.exports = {
       invitationError: '邀请码错误',
       mintTitle1: "MINT 的 NFT",
       loadingtitle2:"去浏览器中查看", 
+      copySuccess:'复制成功',
   }
 }

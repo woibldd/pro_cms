@@ -1,7 +1,4 @@
 {
-  "Activity": {
-    "description": "Auto imported from components/activity/index.vue"
-  },
   "BlindboxBlindButton": {
     "description": "Auto imported from components/blindbox/BlindButton.vue"
   },
@@ -25,6 +22,9 @@
   },
   "Common": {
     "description": "Auto imported from components/common/index.js"
+  },
+  "Activity": {
+    "description": "Auto imported from components/activity/index.vue"
   },
   "PolygonAirdropAddressCard": {
     "description": "Auto imported from components/polygon/AirdropAddressCard.vue"

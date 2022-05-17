@@ -42,8 +42,8 @@
         </div>
         <div class="contract"> 
           <label class="TTORegular title">{{lang.contractAddress}}:</label>
-          <span  class="TTORegular ">{{simplify('0x76b9a40Fb2844A450C086B06A4D20599C16FF6eA')}}</span> 
-          <span class="TTOMedium copy" v-copy="'0x76b9a40Fb2844A450C086B06A4D20599C16FF6eA'">COPY</span>
+          <span  class="TTORegular ">{{simplify(contract)}}</span> 
+          <span class="TTOMedium copy" @click="handleCopy(contract)">COPY</span>
         </div>
         <div class="MintBtn" v-if="defaultData.isMint||defaultData.isMelt">
           <div class="item">
@@ -98,7 +98,7 @@
                   <span class="TTORegular text">{{lang.inviteCode}}</span>
                   <span class="TTODbold code">{{defaultData.inviteCode}}</span>
                   <span class="line"></span>
-                  <span class="TTODbold copy" v-copy="defaultData.inviteCode">COPY</span>
+                  <span class="TTODbold copy"  @click="handleCopy(defaultData.inviteCode)" >COPY</span>
                 </div>
               </div>
             </div>
@@ -290,6 +290,7 @@
 </template>
 <script>
   // import cndMixins from "@/mixin/cnd.js";
+  
 import Countdown from "@/components/polygon/c-vue-countdown";
 import Mint from "@/components/polygon/Mint";
 import Ment from "@/components/polygon/Ment";
@@ -308,6 +309,7 @@ import "@/utils/copy"
 import { loadView } from "@/tools/common.js" 
 // Vue.prototype.$bus = new Vue();
 import { BaseMixin } from "@/mixin/base.js"
+import copy from 'copy-to-clipboard';
 export default {
   name: "polygon",
   layout:"polygon/default",
@@ -369,7 +371,11 @@ export default {
     // });
     // this.nftMintGetInfo(this.address, 'matic') 
   },
-  methods: {
+  methods: { 
+    handleCopy(data) {
+      copy(data)
+      this.$toast.success(this.$t('polygon.copySuccess'))
+    },
     inputFormatter(value) {
       return value.replace(/[^\d|a-z|A-Z]/g,'')
     },
@@ -535,7 +541,7 @@ export default {
     closeinvitationCode() {
       this.show = false;
       this.invitationCode = ""
-    },
+    }, 
     async closeMint(MintNum) {
       this.showMint = false;
       if (MintNum) {
@@ -571,6 +577,7 @@ export default {
           })
           return
         }
+        this.isLoading = true
         const TXdata = await USER_API.buildNftMintTxs({
           address: this.address,
           chain: 'matic',
@@ -599,7 +606,6 @@ export default {
               chain: 'matic',
               hash: send
             }) 
-            this.isLoading = false
             if (status == 1) {
               this.isLoading = false
               return this.$dialog.alert({
@@ -613,14 +619,24 @@ export default {
               clearInterval(MintTimer)
               clearTimeout(MintTimer2)
               this.isLoading = false;
-              this.$toast.success("Mint " + this.$t("polygon.success"));
+              this.$toast("Mint" + this.$t("polygon.success"));
               this.MintData = data.list;
-              console.log("list", ...data.list)
               this.MentList.push(...data.list)
-              console.log("MentList", this.MentList)
               this.nftMintGetInfo(this.address ? this.address : '', this.chainName)
-              this.showMintSuccess = true;
+              this.showMintSuccess = true; 
+              this.addCoin(this.contract, this.chain, this.contract+'#BK#NFT') 
             } 
+             if (data.status == 2) {
+              clearInterval(MintTimer)
+              clearTimeout(MintTimer2)
+              this.isLoading = false;
+              this.init()
+              return this.$dialog.alert({
+                message: "Mint " + this.$t("polygon.faild"),
+                confirmButtonText: this.$t('polygon.iknow'),
+                confirmButtonColor: '#7524f9'
+              });
+            }
           }, 3000)
           var MintTimer2 = setTimeout(() => {
             this.isLoading = false
@@ -630,13 +646,12 @@ export default {
               message: 'Mint ' + this.$t('polygon.faild'),
               confirmButtonText: this.$t('polygon.iknow'),
             })
-          }, 1000 * 60);
+          }, 1000 * 30);
         } catch (error) {
           this.isLoading = false;
           this.$toast.fail(typeof error == "object" ? error.message || 'error' : error); 
         }
-        
-        this.addCoin(this.contract, this.chain, this.contract+'#BK#NFT') 
+
       }
     },
     async ableMent(Mentlist) {
@@ -738,6 +753,17 @@ export default {
                 return MLETsuccess.indexOf(item.tokenId) == -1
               });
             }
+            if (data.status == 2) {
+              clearInterval(MentTimer)
+              clearTimeout(MentTimer2)
+              this.isLoading = false;
+              this.init()
+              return this.$dialog.alert({
+                message: "MELT " + this.$t("polygon.faild"),
+                confirmButtonText: this.$t('polygon.iknow'),
+                confirmButtonColor: '#7524f9'
+              });
+            }
           }, 3000)
           var MentTimer2 = setTimeout(() => {
             this.isLoading = false
@@ -747,7 +773,7 @@ export default {
               message: 'MELT' + this.$t("polygon.faild"),
               confirmButtonText: $t('polygon.iknow'),
             })
-          }, 1000 * 60);
+          }, 1000 * 30);
         } catch (error) {
           this.isLoading = false
           this.$toast.fail(typeof error == "object" ? error.message || 'error' : error);

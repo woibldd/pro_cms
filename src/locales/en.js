@@ -723,5 +723,6 @@ module.exports = {
     invitationError: 'Invitation code error',
     mintTitle1: "MINT's NFT",
     loadingtitle2:"View in browser",
+    copySuccess:'Copy successfully',
   }
 }
