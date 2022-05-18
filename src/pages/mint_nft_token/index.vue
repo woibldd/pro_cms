@@ -364,7 +364,8 @@ export default {
   async mounted() { 
     await loadView()
     await this.connect()    
-    this.nftMintLotteryList()
+    this.nftMintLotteryList() 
+    this.nftMintGetInfo(this.address ? this.address : '', 'matic')
     this.watchAddress()
     // this.$bus.$on('changeAccounts', async (val) => {
     //   this.init()
