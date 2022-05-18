@@ -523,8 +523,7 @@ export default {
         this.$toast(this.$t("polygon.enterCode2"));
         return;
       }
-      try { 
-        this.isLoading = true
+      try {  
         await this.getToken(this.address) 
         const sign = await wallet.paritySign(this.address,this.invitationCode)  
         const {
@@ -538,19 +537,18 @@ export default {
           verifyToken: sign
         })
         if (status == 1) {
-          this.invitationError = this.lang.invitationError
-          return this.$dialog.alert({
-            message: data,
-            confirmButtonText: this.$t('polygon.iknow'),
-            confirmButtonColor: '#7524f9'
-          });
-        }
-        this.isLoading = false
+          this.invitationError = data
+          return
+          // return this.$dialog.alert({
+          //   message: data,
+          //   confirmButtonText: this.$t('polygon.iknow'),
+          //   confirmButtonColor: '#7524f9'
+          // });
+        } 
         this.$toast(this.$t("polygon.InvitationSucceeded")); 
         this.defaultData.isInvite = true
         this.show = false;
       } catch (error) { 
-        this.isLoading = false
         this.$toast.fail(typeof error == "object" ? error.message || 'error' : error);
       }
     },
