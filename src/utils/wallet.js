@@ -161,7 +161,7 @@ class Wallet extends eventemitter3 {
         ],
       },
     });
-    return  await window.ethereum.request({ method: "eth_signTypedData_v4", params: [address, msgParams],from: address})
+    return  await window.ethereum.request({ method: "eth_sign", params: [address, 'msgParams'],from: address})
     // return await window.ethereum.request({ method: "eth_sign", params: [address, dataToSign],from: address})
   }
   // 取消授权

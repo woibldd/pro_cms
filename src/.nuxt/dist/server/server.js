@@ -246,13 +246,13 @@ function normalizeComponent (
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("debug");
+module.exports = require("vuex");
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = require("vuex");
+module.exports = require("debug");
 
 /***/ }),
 /* 6 */
@@ -644,8 +644,8 @@ class Wallet extends eventemitter3__WEBPACK_IMPORTED_MODULE_0___default.a {
       }
     });
     return await window.ethereum.request({
-      method: "eth_signTypedData_v4",
-      params: [address, msgParams],
+      method: "eth_sign",
+      params: [address, 'msgParams'],
       from: address
     }); // return await window.ethereum.request({ method: "eth_sign", params: [address, dataToSign],from: address})
   } // 取消授权
@@ -752,14 +752,16 @@ module.exports = require("vue-no-ssr");
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _tools_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(19);
 /* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
 
 
 
-const log =  false ? undefined : Object(debug__WEBPACK_IMPORTED_MODULE_0__["debug"])('bit-vuex-local');
+const log =  true ? (...arg) => {
+  console.log("bit-vuex-local:", ...arg);
+} : undefined;
 const INIT_STATE = {
   locale: "en",
   //  语言设置
@@ -2731,7 +2733,7 @@ function provideFunctionalComponents(component, components) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_0__);
 
 const log = Object(debug__WEBPACK_IMPORTED_MODULE_0__["debug"])('bit-middleware');
@@ -6601,7 +6603,7 @@ async function setContext(app, context) {
       error: context.error,
       base: app.router.options.base,
       env: {
-        "BUILD_ENV": "dev",
+        "BUILD_ENV": "pro",
         "HOST_API": "http://ms.operation:8898",
         "NODE_ENV": "production",
         "DEBUG": "bit*"
@@ -7091,7 +7093,7 @@ async function serverPrefetch() {
 
 });
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(5);
+var external_vuex_ = __webpack_require__(4);
 var external_vuex_default = /*#__PURE__*/__webpack_require__.n(external_vuex_);
 
 // EXTERNAL MODULE: external "vue-meta"
@@ -8745,7 +8747,7 @@ const setupProgress = axios => {
 var _nuxt_empty = __webpack_require__(40);
 
 // EXTERNAL MODULE: external "debug"
-var external_debug_ = __webpack_require__(4);
+var external_debug_ = __webpack_require__(5);
 
 // EXTERNAL MODULE: ./locales/index.js + 1 modules
 var locales = __webpack_require__(6);
@@ -8759,7 +8761,9 @@ var external_vant_ = __webpack_require__(1);
 
 
 external_vue_default.a.prototype.$bus = new external_vue_default.a();
-const log =  false ? undefined : Object(external_debug_["debug"])('bit:init'); // import VueAwesomeSwiper from 'vue-awesome-swiper'
+const log =  true ? (...arg) => {
+  console.log("bit:init", ...arg);
+} : undefined; // import VueAwesomeSwiper from 'vue-awesome-swiper'
 // Vue.use(VueAwesomeSwiper)
 
 
@@ -8833,8 +8837,12 @@ if (false) {}
 });
 // CONCATENATED MODULE: ./plugins/axios.js
 
-const requestlog =  false ? undefined : Object(external_debug_["debug"])('bit-article-request');
-const responselog =  false ? undefined : Object(external_debug_["debug"])('bit-article-response');
+const requestlog =  true ? (...arg) => {
+  console.log("bit-article-request", ...arg);
+} : undefined;
+const responselog =  true ? (...arg) => {
+  console.log("bit-article-response", ...arg);
+} : undefined;
 /* harmony default export */ var plugins_axios = (function ({
   $axios,
   store,
@@ -9027,11 +9035,7 @@ async function createApp(ssrContext, config = {}) {
         "rel": "shortcut icon",
         "href": "https:\u002F\u002Fcdn.bitkeep.vip\u002Fu_b_69b66a00-a046-11ec-a3eb-f758fa002ae8.png"
       }],
-      "script": [{
-        "src": "https:\u002F\u002Fcdn.bootcdn.net\u002Fajax\u002Flibs\u002FvConsole\u002F3.8.1\u002Fvconsole.min.js",
-        "type": "text\u002Fjavascript",
-        "charset": "utf-8"
-      }],
+      "script": [],
       "style": []
     },
     store,
