@@ -239,7 +239,7 @@
         <p class="TTORegular">{{lang.mattersTips3}}</p>
         <p class="TTORegular">{{lang.mattersTips4}}</p>
       </div> 
-      <van-popup v-model="show" close-icon-position="top-right" closeable>
+      <van-popup v-model="show" close-icon-position="top-right" closeable @close="closeinvitationCode">
         <div class="PopupBox">
           <div class="InvitationPopup">
             <div class="title TTORegular">
@@ -371,7 +371,7 @@ export default {
     // });
     // this.nftMintGetInfo(this.address, 'matic') 
   },
-  methods: { 
+  methods: {  
     handleCopy(data) {
       copy(data)
       this.$toast.success(this.$t('polygon.copySuccess'))
@@ -554,6 +554,7 @@ export default {
     },
     closeinvitationCode() {
       this.show = false;
+      this.invitationError = ""
       this.invitationCode = ""
     },
     async closeMint(MintNum) {
