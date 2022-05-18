@@ -1,7 +1,7 @@
 exports.ids = [24,22,25];
 exports.modules = {
 
-/***/ 109:
+/***/ 110:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -236,8 +236,8 @@ function badcheck() {
   var thisbad = 0;
   var bw = 0; // blocks of same color.
 
-  for (y = 0; y < width - 1; y++) for (x = 0; x < width - 1; x++) if (qrframe[x + width * y] && qrframe[x + 1 + width * y] && qrframe[x + width * (y + 1)] && qrframe[x + 1 + width * (y + 1)] || // all black
-  !(qrframe[x + width * y] || qrframe[x + 1 + width * y] || qrframe[x + width * (y + 1)] || qrframe[x + 1 + width * (y + 1)])) // all white
+  for (y = 0; y < width - 1; y++) for (x = 0; x < width - 1; x++) if (qrframe[x + width * y] && qrframe[x + 1 + width * y] && qrframe[x + width * (y + 1)] && qrframe[x + 1 + width * (y + 1)] // all black
+  || !(qrframe[x + width * y] || qrframe[x + 1 + width * y] || qrframe[x + width * (y + 1)] || qrframe[x + 1 + width * (y + 1)])) // all white
     thisbad += N2; // X runs
 
 
@@ -690,7 +690,7 @@ const api = {
 
 /***/ }),
 
-/***/ 110:
+/***/ 111:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -817,15 +817,15 @@ function linearEffect(width, height, bg, ctx) {
 
 /***/ }),
 
-/***/ 141:
+/***/ 142:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Painter; });
-const QR = __webpack_require__(109);
+const QR = __webpack_require__(110);
 
-const GD = __webpack_require__(110);
+const GD = __webpack_require__(111);
 
 class Painter {
   constructor(ctx, data) {

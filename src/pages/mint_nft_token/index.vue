@@ -524,8 +524,8 @@ export default {
         return;
       }
       try {  
-        await this.getToken(this.address) 
-        const sign = await wallet.paritySign(this.address,this.invitationCode)  
+        // await this.getToken(this.address) 
+        // const sign = await wallet.paritySign(this.address,this.invitationCode)  
         const {
           data,
           status
@@ -533,8 +533,8 @@ export default {
           address: this.address,
           chain: 'matic',
           code: this.invitationCode,
-          c_token: this.token,
-          verifyToken: sign
+          c_token: '', // this.token,
+          verifyToken: '' // sign
         })
         if (status == 1) {
           this.invitationError = data
