@@ -32,7 +32,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/noviceBenefits/lotteryresults.vue?vue&type=template&id=6d4fed83&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"lotteryresults colorBackground1"},[_vm._ssrNode("<div class=\"lotteryresults-content\"></div> <div class=\"lotteryresults-summary colorBackground3\"><div class=\"lotteryresults-summary-item\"><p class=\"textSecond2\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.participationperiods')))+"</p> <p class=\"textPrimary0 setFontFamily\">"+_vm._ssrEscape(_vm._s(_vm.resultList.pushTimes || 0))+"</p></div> <div class=\"lotteryresults-summary-item\"><p class=\"textSecond2\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.ticketsinvested')))+"</p> <p class=\"textPrimary0 setFontFamily\">"+_vm._ssrEscape(_vm._s(_vm.resultList.pushPapers || 0))+"</p></div> <div class=\"lotteryresults-summary-item\"><p class=\"textSecond2\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.obtainBKB')))+"</p> <p class=\"textPrimary0 setFontFamily\">"+_vm._ssrEscape(_vm._s(_vm.resultList.allReward || 0))+"</p></div></div> "+((!!_vm.resultList.list.length)?("<ul class=\"lotteryresults-list\">"+(_vm._ssrList((_vm.resultList.list),function(item,index){return ("<li class=\"lotteryresults-list-item\"><div class=\"lotteryresults-list-left\"><p class=\"lotteryresults-list-itemNums textPrimary0\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.investment'))+" ")+"<span class=\"setFontFamily\">"+_vm._ssrEscape(_vm._s(item.pushPapers))+"</span>"+_vm._ssrEscape(" "+_vm._s(_vm.$t('noviceBenefits.araffleticket')))+"</p> <p class=\"lotteryresults-list-item-result textSecond3\">"+_vm._ssrEscape(_vm._s(item.code))+"</p></div> "+((Number(item.isReward) == 1 )?("<div class=\"lotteryresults-list-left\"><p class=\"lotteryresults-list-itemNums textPrimary0\">"+_vm._ssrEscape("🎉 "+_vm._s(_vm.$t('noviceBenefits.Congratulations')))+"</p> <p class=\"lotteryresults-list-item-result colorPrimary\" style=\"text-align:right \">+ <span class=\"setFontFamily\">"+_vm._ssrEscape(_vm._s(item.reward))+"</span> BKB</p></div>"):"<!---->")+" "+((Number(item.isReward) == 0 )?("<div class=\"lotteryresults-list-item-result lotteryresults-list-right textSecond3\">"+_vm._ssrEscape("\n                 "+_vm._s(_vm.$t('noviceBenefits.Failedto'))+"\n             ")+"</div>"):"<!---->")+" "+((Number(item.isReward) == 2 )?("<div class=\"lotteryresults-list-item-result lotteryresults-list-right textSecond3\">"+_vm._ssrEscape("\n                 "+_vm._s(_vm.$t('noviceBenefits.Tobewon'))+"\n             ")+"</div>"):"<!---->")+"</li>")}))+"</ul>"):"<!---->")+" "+((!_vm.resultList.list.length)?("<div class=\"lotteryresults-nodata\"><img src=\"https://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png\" alt> <p class=\"textSecond3\">"+_vm._ssrEscape(_vm._s(_vm.$t('mining.noData')))+"</p></div>"):"<!---->"))])}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"lotteryresults colorBackground1"},[_vm._ssrNode("<div class=\"lotteryresults-content\"></div> <div class=\"lotteryresults-summary colorBackground3\"><div class=\"lotteryresults-summary-item\"><p class=\"textSecond2\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.participationperiods')))+"</p> <p class=\"textPrimary0 setFontFamily\">"+_vm._ssrEscape(_vm._s(_vm.resultList.pushTimes || 0))+"</p></div> <div class=\"lotteryresults-summary-item\"><p class=\"textSecond2\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.ticketsinvested')))+"</p> <p class=\"textPrimary0 setFontFamily\">"+_vm._ssrEscape(_vm._s(_vm.resultList.pushPapers || 0))+"</p></div> <div class=\"lotteryresults-summary-item\"><p class=\"textSecond2\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.obtainBKB')))+"</p> <p class=\"textPrimary0 setFontFamily\">"+_vm._ssrEscape(_vm._s(_vm.resultList.allReward || 0))+"</p></div></div> "+((!!_vm.resultList.list.length)?("<ul class=\"lotteryresults-list\">"+(_vm._ssrList((_vm.resultList.list),function(item,index){return ("<li class=\"lotteryresults-list-item\"><div class=\"lotteryresults-list-left\"><p class=\"lotteryresults-list-itemNums textPrimary0\">"+_vm._ssrEscape(_vm._s(_vm.$t('noviceBenefits.investment'))+" ")+"<span class=\"setFontFamily\">"+_vm._ssrEscape(_vm._s(item.pushPapers))+"</span>"+_vm._ssrEscape(" "+_vm._s(_vm.$t('noviceBenefits.araffleticket')))+"</p> <p class=\"lotteryresults-list-item-result textSecond3\">"+_vm._ssrEscape(_vm._s(item.code))+"</p></div> "+((Number(item.isReward) == 1 )?("<div class=\"lotteryresults-list-left\"><p class=\"lotteryresults-list-itemNums textPrimary0\">"+_vm._ssrEscape("🎉 "+_vm._s(_vm.$t('noviceBenefits.Congratulations')))+"</p> <p class=\"lotteryresults-list-item-result colorPrimary\" style=\"text-align:right \">+ <span class=\"setFontFamily\">"+_vm._ssrEscape(_vm._s(item.reward))+"</span> BKB</p></div>"):"<!---->")+" "+((Number(item.isReward) == 0 )?("<div class=\"lotteryresults-list-item-result lotteryresults-list-right textSecond3\">"+_vm._ssrEscape("\r\n                 "+_vm._s(_vm.$t('noviceBenefits.Failedto'))+"\r\n             ")+"</div>"):"<!---->")+" "+((Number(item.isReward) == 2 )?("<div class=\"lotteryresults-list-item-result lotteryresults-list-right textSecond3\">"+_vm._ssrEscape("\r\n                 "+_vm._s(_vm.$t('noviceBenefits.Tobewon'))+"\r\n             ")+"</div>"):"<!---->")+"</li>")}))+"</ul>"):"<!---->")+" "+((!_vm.resultList.list.length)?("<div class=\"lotteryresults-nodata\"><img src=\"https://cdn.bitkeep.vip/u_b_eeb7a7d0-4797-11ec-8e77-6dd2cb9eb50d.png\" alt> <p class=\"textSecond3\">"+_vm._ssrEscape(_vm._s(_vm.$t('mining.noData')))+"</p></div>"):"<!---->"))])}
 var staticRenderFns = []
 
 
@@ -42,7 +42,7 @@ var staticRenderFns = []
 var client = __webpack_require__(86);
 
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(4);
+var external_vuex_ = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/noviceBenefits/lotteryresults.vue?vue&type=script&lang=js&
 //
@@ -231,7 +231,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   null,
-  "4133bcd5"
+  "1d761284"
   
 )
 
@@ -249,7 +249,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_3__);
 
 
@@ -259,12 +259,8 @@ var component = Object(componentNormalizer["a" /* default */])(
 // const isProduction = process.env.NODE_ENV == "production";
 // const HOST_URL = process.env.HOST_URL || process.env.baseURL
 
-const requestlog =  true ? (...arg) => {
-  console.log("bit-activity-request:", ...arg);
-} : undefined;
-const responselog =  true ? (...arg) => {
-  console.log("bit-activity-response:", ...arg);
-} : undefined;
+const requestlog =  false ? undefined : Object(debug__WEBPACK_IMPORTED_MODULE_3__["debug"])('bit-activity-request');
+const responselog =  false ? undefined : Object(debug__WEBPACK_IMPORTED_MODULE_3__["debug"])('bit-activity-response');
 const host_user_instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
   baseURL: "https://b1.bitkeep.top",
   timeout: 60000,

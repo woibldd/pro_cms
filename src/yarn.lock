@@ -3314,9 +3314,9 @@
   "version" "2.6.12"
 
 "core-js@^3.9.1":
-  "integrity" "sha1-YjIrmMccwgGLAnlxppQZ4kJcKmw="
-  "resolved" "https://registry.nlark.com/core-js/download/core-js-3.14.0.tgz?cache=0&sync_timestamp=1624386828826&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcore-js%2Fdownload%2Fcore-js-3.14.0.tgz"
-  "version" "3.14.0"
+  "integrity" "sha512-gSjRvzkxQc1zjM/5paAmL4idJBFzuJoo+jDjF1tStYFMV2ERfD02HhahhCGXUyHxQRG4yFKVSdO6g62eoRMcDg=="
+  "resolved" "https://registry.npmjs.org/core-js/-/core-js-3.9.1.tgz"
+  "version" "3.9.1"
 
 "core-js@3.6.5":
   "integrity" "sha1-c5XcJzrzf7LlDpvT2f6EEoUjHRo="

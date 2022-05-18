@@ -39,7 +39,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/activity/blindbox/stepDetail.vue?vue&type=template&id=2a910c3a&scoped=true&
 
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(4);
+var external_vuex_ = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/blindbox/stepDetail.vue?vue&type=script&lang=js&
 //
@@ -149,7 +149,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "2a910c3a",
-  "12dd9661"
+  "ae8cd5e0"
   
 )
 

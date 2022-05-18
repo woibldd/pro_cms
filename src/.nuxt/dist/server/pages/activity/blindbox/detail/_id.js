@@ -258,7 +258,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "ce47b7d2",
-  "9b23d0f6"
+  "04530c03"
   
 )
 
@@ -423,7 +423,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "0becdc74",
-  "302b5802"
+  "1001593d"
   
 )
 
@@ -655,7 +655,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "bd22fe4c",
-  "19545dba"
+  "69c904a5"
   
 )
 
@@ -761,7 +761,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "3763a924",
-  "38fe98b7"
+  "de1c5516"
   
 )
 
@@ -1061,7 +1061,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "77ca09a3",
-  "ae1978ae"
+  "4f679eab"
   
 )
 
@@ -1155,7 +1155,7 @@ var vue2_recaptcha_invisible_ = __webpack_require__(85);
 var vue2_recaptcha_invisible_default = /*#__PURE__*/__webpack_require__.n(vue2_recaptcha_invisible_);
 
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(4);
+var external_vuex_ = __webpack_require__(5);
 
 // EXTERNAL MODULE: ./mixin/base.js
 var base = __webpack_require__(89);
@@ -1734,7 +1734,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "010ae2b5",
-  "ec7c98c0"
+  "62329582"
   
 )
 
@@ -1752,7 +1752,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_3__);
 
 
@@ -1762,12 +1762,8 @@ var component = Object(componentNormalizer["a" /* default */])(
 // const isProduction = process.env.NODE_ENV == "production";
 // const HOST_URL = process.env.HOST_URL || process.env.baseURL
 
-const requestlog =  true ? (...arg) => {
-  console.log("bit-activity-request:", ...arg);
-} : undefined;
-const responselog =  true ? (...arg) => {
-  console.log("bit-activity-response:", ...arg);
-} : undefined;
+const requestlog =  false ? undefined : Object(debug__WEBPACK_IMPORTED_MODULE_3__["debug"])('bit-activity-request');
+const responselog =  false ? undefined : Object(debug__WEBPACK_IMPORTED_MODULE_3__["debug"])('bit-activity-response');
 const host_user_instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
   baseURL: "https://b1.bitkeep.top",
   timeout: 60000,
@@ -1940,7 +1936,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BaseMixin; });
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vuex__WEBPACK_IMPORTED_MODULE_0__);
 
 
@@ -2115,7 +2111,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "3521874b",
-  "1eb405d8"
+  "f2cf28cc"
   
 )
 

@@ -215,7 +215,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "adb65f7a",
-  "260c9f8b"
+  "52a67bd3"
   
 )
 
@@ -264,7 +264,7 @@ var staticRenderFns = []
 var client = __webpack_require__(86);
 
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(4);
+var external_vuex_ = __webpack_require__(5);
 
 // EXTERNAL MODULE: ./components/trading/index.vue + 4 modules
 var trading = __webpack_require__(151);
@@ -458,7 +458,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "ff84e56a",
-  "4e3a85f1"
+  "018dd9e6"
   
 )
 
@@ -476,7 +476,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_3__);
 
 
@@ -486,12 +486,8 @@ var component = Object(componentNormalizer["a" /* default */])(
 // const isProduction = process.env.NODE_ENV == "production";
 // const HOST_URL = process.env.HOST_URL || process.env.baseURL
 
-const requestlog =  true ? (...arg) => {
-  console.log("bit-activity-request:", ...arg);
-} : undefined;
-const responselog =  true ? (...arg) => {
-  console.log("bit-activity-response:", ...arg);
-} : undefined;
+const requestlog =  false ? undefined : Object(debug__WEBPACK_IMPORTED_MODULE_3__["debug"])('bit-activity-request');
+const responselog =  false ? undefined : Object(debug__WEBPACK_IMPORTED_MODULE_3__["debug"])('bit-activity-response');
 const host_user_instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
   baseURL: "https://b1.bitkeep.top",
   timeout: 60000,

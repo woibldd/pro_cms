@@ -246,13 +246,13 @@ function normalizeComponent (
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("vuex");
+module.exports = require("debug");
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = require("debug");
+module.exports = require("vuex");
 
 /***/ }),
 /* 6 */
@@ -734,7 +734,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   false,
   injectStyles,
   null,
-  "57c3b594"
+  "92ffaa1c"
   
 )
 
@@ -752,16 +752,14 @@ module.exports = require("vue-no-ssr");
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _tools_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(19);
 /* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
 
 
 
-const log =  true ? (...arg) => {
-  console.log("bit-vuex-local:", ...arg);
-} : undefined;
+const log =  false ? undefined : Object(debug__WEBPACK_IMPORTED_MODULE_0__["debug"])('bit-vuex-local');
 const INIT_STATE = {
   locale: "en",
   //  语言设置
@@ -2733,7 +2731,7 @@ function provideFunctionalComponents(component, components) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_0__);
 
 const log = Object(debug__WEBPACK_IMPORTED_MODULE_0__["debug"])('bit-middleware');
@@ -6603,7 +6601,7 @@ async function setContext(app, context) {
       error: context.error,
       base: app.router.options.base,
       env: {
-        "BUILD_ENV": "pro",
+        "BUILD_ENV": "dev",
         "HOST_API": "http://ms.operation:8898",
         "NODE_ENV": "production",
         "DEBUG": "bit*"
@@ -7093,7 +7091,7 @@ async function serverPrefetch() {
 
 });
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(4);
+var external_vuex_ = __webpack_require__(5);
 var external_vuex_default = /*#__PURE__*/__webpack_require__.n(external_vuex_);
 
 // EXTERNAL MODULE: external "vue-meta"
@@ -7189,85 +7187,85 @@ function shouldScrollToTop(route) {
 
 
 
-const _19e6a3ae = () => interopDefault(__webpack_require__.e(/* import() | pages/mint_nft_token/index */ 66).then(__webpack_require__.bind(null, 288)));
+const _e41d0026 = () => interopDefault(__webpack_require__.e(/* import() | pages/mint_nft_token/index */ 66).then(__webpack_require__.bind(null, 288)));
 
-const _1e16834e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/airdrop/index */ 27).then(__webpack_require__.bind(null, 289)));
+const _8d955638 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/airdrop/index */ 27).then(__webpack_require__.bind(null, 289)));
 
-const _65e970f7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 32).then(__webpack_require__.bind(null, 290)));
+const _7991ce61 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/index */ 32).then(__webpack_require__.bind(null, 290)));
 
-const _330b97e0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/index */ 40).then(__webpack_require__.bind(null, 291)));
+const _42139a58 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/index */ 40).then(__webpack_require__.bind(null, 291)));
 
-const _4b1489fa = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/cbkbexchange/index */ 43).then(__webpack_require__.bind(null, 292)));
+const _75d4b43e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/cbkbexchange/index */ 43).then(__webpack_require__.bind(null, 292)));
 
-const _8a23a01e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/index */ 46).then(__webpack_require__.bind(null, 293)));
+const _4b864767 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/index */ 46).then(__webpack_require__.bind(null, 293)));
 
-const _0abcfe4e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/nftLottery/index */ 50).then(__webpack_require__.bind(null, 294)));
+const _087c79ac = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/nftLottery/index */ 50).then(__webpack_require__.bind(null, 294)));
 
-const _32bd48da = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/index */ 52).then(__webpack_require__.bind(null, 295)));
+const _01364d05 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/index */ 52).then(__webpack_require__.bind(null, 295)));
 
-const _0a73f44c = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/index */ 56).then(__webpack_require__.bind(null, 296)));
+const _588603a6 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/index */ 56).then(__webpack_require__.bind(null, 296)));
 
-const _6ae99336 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/index */ 61).then(__webpack_require__.bind(null, 297)));
+const _06c441fc = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/index */ 61).then(__webpack_require__.bind(null, 297)));
 
-const _1efb139d = () => interopDefault(__webpack_require__.e(/* import() | pages/mint_nft_token/BK */ 65).then(__webpack_require__.bind(null, 298)));
+const _03ecb7be = () => interopDefault(__webpack_require__.e(/* import() | pages/mint_nft_token/BK */ 65).then(__webpack_require__.bind(null, 298)));
 
-const _4f6736ff = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/index */ 29).then(__webpack_require__.bind(null, 285)));
+const _665f06f0 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/index */ 29).then(__webpack_require__.bind(null, 285)));
 
-const _6bb9fd1a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 30).then(__webpack_require__.bind(null, 299)));
+const _5ff1b3c9 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/download */ 30).then(__webpack_require__.bind(null, 299)));
 
-const _19ba2c55 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/firendList */ 31).then(__webpack_require__.bind(null, 300)));
+const _76a5a12b = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/firendList */ 31).then(__webpack_require__.bind(null, 300)));
 
-const _1b2d1009 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 33).then(__webpack_require__.bind(null, 301)));
+const _d0a34542 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/list */ 33).then(__webpack_require__.bind(null, 301)));
 
-const _53be6030 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/stepDetail */ 34).then(__webpack_require__.bind(null, 302)));
+const _330c44be = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/stepDetail */ 34).then(__webpack_require__.bind(null, 302)));
 
-const _00fe3558 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/copy */ 37).then(__webpack_require__.bind(null, 192)));
+const _c6d71460 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/copy */ 37).then(__webpack_require__.bind(null, 192)));
 
-const _728b189a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/detail */ 38).then(__webpack_require__.bind(null, 303)));
+const _ce9a7f8a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/detail */ 38).then(__webpack_require__.bind(null, 303)));
 
-const _637105ea = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/download */ 39).then(__webpack_require__.bind(null, 304)));
+const _ceef5f1c = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/download */ 39).then(__webpack_require__.bind(null, 304)));
 
-const _b3d03aae = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/inviteList */ 41).then(__webpack_require__.bind(null, 305)));
+const _1af2a99e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/inviteList */ 41).then(__webpack_require__.bind(null, 305)));
 
-const _17fd7ccf = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/rewardList */ 42).then(__webpack_require__.bind(null, 306)));
+const _646c4557 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/rewardList */ 42).then(__webpack_require__.bind(null, 306)));
 
-const _16191a22 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/RuleDetail */ 35).then(__webpack_require__.bind(null, 236)));
+const _41623b77 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/RuleDetail */ 35).then(__webpack_require__.bind(null, 236)));
 
-const _8804161a = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/history */ 45).then(__webpack_require__.bind(null, 307)));
+const _f223f22e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/history */ 45).then(__webpack_require__.bind(null, 307)));
 
-const _32dabbf2 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/inviteRuleDetail */ 47).then(__webpack_require__.bind(null, 234)));
+const _08b864d1 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/inviteRuleDetail */ 47).then(__webpack_require__.bind(null, 234)));
 
-const _268e46dd = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/miningRule */ 48).then(__webpack_require__.bind(null, 308)));
+const _3dc86927 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/miningRule */ 48).then(__webpack_require__.bind(null, 308)));
 
-const _44ed6649 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/protocol */ 49).then(__webpack_require__.bind(null, 232)));
+const _5000d9da = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/protocol */ 49).then(__webpack_require__.bind(null, 232)));
 
-const _f01b8504 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/RuleDetail */ 44).then(__webpack_require__.bind(null, 233)));
+const _c1a74070 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/mining/RuleDetail */ 44).then(__webpack_require__.bind(null, 233)));
 
-const _03154551 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/drawluckly */ 51).then(__webpack_require__.bind(null, 309)));
+const _67776b1f = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/drawluckly */ 51).then(__webpack_require__.bind(null, 309)));
 
-const _32313d25 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/inviteRuleDetail */ 53).then(__webpack_require__.bind(null, 310)));
+const _1ce75073 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/inviteRuleDetail */ 53).then(__webpack_require__.bind(null, 310)));
 
-const _7d1df99c = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/lotteryresults */ 54).then(__webpack_require__.bind(null, 311)));
+const _1586ef2c = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/noviceBenefits/lotteryresults */ 54).then(__webpack_require__.bind(null, 311)));
 
-const _17f169d7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/addPool */ 55).then(__webpack_require__.bind(null, 312)));
+const _29bd0ab1 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/addPool */ 55).then(__webpack_require__.bind(null, 312)));
 
-const _5b754cde = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/myPool */ 57).then(__webpack_require__.bind(null, 313)));
+const _60b5ae78 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/myPool */ 57).then(__webpack_require__.bind(null, 313)));
 
-const _648a800e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/protocol */ 58).then(__webpack_require__.bind(null, 237)));
+const _e79a0b18 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/protocol */ 58).then(__webpack_require__.bind(null, 237)));
 
-const _dc0ced80 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/wallet */ 59).then(__webpack_require__.bind(null, 103)));
+const _3fe8cecc = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/staking/wallet */ 59).then(__webpack_require__.bind(null, 103)));
 
-const _5aad9af8 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/history */ 60).then(__webpack_require__.bind(null, 314)));
+const _6a97b03e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/history */ 60).then(__webpack_require__.bind(null, 314)));
 
-const _7c3280e4 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/protocol */ 62).then(__webpack_require__.bind(null, 235)));
+const _698b145e = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/protocol */ 62).then(__webpack_require__.bind(null, 235)));
 
-const _46e90ba1 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/tradingRule */ 63).then(__webpack_require__.bind(null, 315)));
+const _7d9b0de7 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/trading/tradingRule */ 63).then(__webpack_require__.bind(null, 315)));
 
-const _1f4eb79d = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/component/createPoster */ 36).then(__webpack_require__.bind(null, 230)));
+const _6671e1a8 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindboxInvite/component/createPoster */ 36).then(__webpack_require__.bind(null, 230)));
 
-const _4d04ed27 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/_id */ 28).then(__webpack_require__.bind(null, 316)));
+const _66e20558 = () => interopDefault(__webpack_require__.e(/* import() | pages/activity/blindbox/detail/_id */ 28).then(__webpack_require__.bind(null, 316)));
 
-const _74266e07 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 64).then(__webpack_require__.bind(null, 287)));
+const _6fd6c0af = () => interopDefault(__webpack_require__.e(/* import() | pages/article/detail/_id */ 64).then(__webpack_require__.bind(null, 287)));
 
 const emptyFn = () => {};
 
@@ -7280,163 +7278,163 @@ const routerOptions = {
   scrollBehavior: router_scrollBehavior,
   routes: [{
     path: "/mint_nft_token",
-    component: _19e6a3ae,
+    component: _e41d0026,
     name: "mint_nft_token"
   }, {
     path: "/activity/airdrop",
-    component: _1e16834e,
+    component: _8d955638,
     name: "activity-airdrop"
   }, {
     path: "/activity/blindbox",
-    component: _65e970f7,
+    component: _7991ce61,
     name: "activity-blindbox"
   }, {
     path: "/activity/blindboxInvite",
-    component: _330b97e0,
+    component: _42139a58,
     name: "activity-blindboxInvite"
   }, {
     path: "/activity/cbkbexchange",
-    component: _4b1489fa,
+    component: _75d4b43e,
     name: "activity-cbkbexchange"
   }, {
     path: "/activity/mining",
-    component: _8a23a01e,
+    component: _4b864767,
     name: "activity-mining"
   }, {
     path: "/activity/nftLottery",
-    component: _0abcfe4e,
+    component: _087c79ac,
     name: "activity-nftLottery"
   }, {
     path: "/activity/noviceBenefits",
-    component: _32bd48da,
+    component: _01364d05,
     name: "activity-noviceBenefits"
   }, {
     path: "/activity/staking",
-    component: _0a73f44c,
+    component: _588603a6,
     name: "activity-staking"
   }, {
     path: "/activity/trading",
-    component: _6ae99336,
+    component: _06c441fc,
     name: "activity-trading"
   }, {
     path: "/mint_nft_token/BK",
-    component: _1efb139d,
+    component: _03ecb7be,
     name: "mint_nft_token-BK"
   }, {
     path: "/activity/blindbox/detail",
-    component: _4f6736ff,
+    component: _665f06f0,
     name: "activity-blindbox-detail"
   }, {
     path: "/activity/blindbox/download",
-    component: _6bb9fd1a,
+    component: _5ff1b3c9,
     name: "activity-blindbox-download"
   }, {
     path: "/activity/blindbox/firendList",
-    component: _19ba2c55,
+    component: _76a5a12b,
     name: "activity-blindbox-firendList"
   }, {
     path: "/activity/blindbox/list",
-    component: _1b2d1009,
+    component: _d0a34542,
     name: "activity-blindbox-list"
   }, {
     path: "/activity/blindbox/stepDetail",
-    component: _53be6030,
+    component: _330c44be,
     name: "activity-blindbox-stepDetail"
   }, {
     path: "/activity/blindboxInvite/copy",
-    component: _00fe3558,
+    component: _c6d71460,
     name: "activity-blindboxInvite-copy"
   }, {
     path: "/activity/blindboxInvite/detail",
-    component: _728b189a,
+    component: _ce9a7f8a,
     name: "activity-blindboxInvite-detail"
   }, {
     path: "/activity/blindboxInvite/download",
-    component: _637105ea,
+    component: _ceef5f1c,
     name: "activity-blindboxInvite-download"
   }, {
     path: "/activity/blindboxInvite/inviteList",
-    component: _b3d03aae,
+    component: _1af2a99e,
     name: "activity-blindboxInvite-inviteList"
   }, {
     path: "/activity/blindboxInvite/rewardList",
-    component: _17fd7ccf,
+    component: _646c4557,
     name: "activity-blindboxInvite-rewardList"
   }, {
     path: "/activity/blindboxInvite/RuleDetail",
-    component: _16191a22,
+    component: _41623b77,
     name: "activity-blindboxInvite-RuleDetail"
   }, {
     path: "/activity/mining/history",
-    component: _8804161a,
+    component: _f223f22e,
     name: "activity-mining-history"
   }, {
     path: "/activity/mining/inviteRuleDetail",
-    component: _32dabbf2,
+    component: _08b864d1,
     name: "activity-mining-inviteRuleDetail"
   }, {
     path: "/activity/mining/miningRule",
-    component: _268e46dd,
+    component: _3dc86927,
     name: "activity-mining-miningRule"
   }, {
     path: "/activity/mining/protocol",
-    component: _44ed6649,
+    component: _5000d9da,
     name: "activity-mining-protocol"
   }, {
     path: "/activity/mining/RuleDetail",
-    component: _f01b8504,
+    component: _c1a74070,
     name: "activity-mining-RuleDetail"
   }, {
     path: "/activity/noviceBenefits/drawluckly",
-    component: _03154551,
+    component: _67776b1f,
     name: "activity-noviceBenefits-drawluckly"
   }, {
     path: "/activity/noviceBenefits/inviteRuleDetail",
-    component: _32313d25,
+    component: _1ce75073,
     name: "activity-noviceBenefits-inviteRuleDetail"
   }, {
     path: "/activity/noviceBenefits/lotteryresults",
-    component: _7d1df99c,
+    component: _1586ef2c,
     name: "activity-noviceBenefits-lotteryresults"
   }, {
     path: "/activity/staking/addPool",
-    component: _17f169d7,
+    component: _29bd0ab1,
     name: "activity-staking-addPool"
   }, {
     path: "/activity/staking/myPool",
-    component: _5b754cde,
+    component: _60b5ae78,
     name: "activity-staking-myPool"
   }, {
     path: "/activity/staking/protocol",
-    component: _648a800e,
+    component: _e79a0b18,
     name: "activity-staking-protocol"
   }, {
     path: "/activity/staking/wallet",
-    component: _dc0ced80,
+    component: _3fe8cecc,
     name: "activity-staking-wallet"
   }, {
     path: "/activity/trading/history",
-    component: _5aad9af8,
+    component: _6a97b03e,
     name: "activity-trading-history"
   }, {
     path: "/activity/trading/protocol",
-    component: _7c3280e4,
+    component: _698b145e,
     name: "activity-trading-protocol"
   }, {
     path: "/activity/trading/tradingRule",
-    component: _46e90ba1,
+    component: _7d9b0de7,
     name: "activity-trading-tradingRule"
   }, {
     path: "/activity/blindboxInvite/component/createPoster",
-    component: _1f4eb79d,
+    component: _6671e1a8,
     name: "activity-blindboxInvite-component-createPoster"
   }, {
     path: "/activity/blindbox/detail/:id",
-    component: _4d04ed27,
+    component: _66e20558,
     name: "activity-blindbox-detail-id"
   }, {
     path: "/article/detail/:id?",
-    component: _74266e07,
+    component: _6fd6c0af,
     name: "article-detail-id"
   }],
   fallback: false
@@ -7634,7 +7632,7 @@ var nuxt_error_component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   null,
-  "7df36c6e"
+  "00c9a607"
   
 )
 
@@ -7938,7 +7936,7 @@ var nuxt_loading_component = Object(componentNormalizer["a" /* default */])(
   false,
   nuxt_loading_injectStyles,
   null,
-  "0ef1f8bd"
+  "6b4f3d7b"
   
 )
 
@@ -7987,7 +7985,7 @@ var default_component = Object(componentNormalizer["a" /* default */])(
   false,
   null,
   null,
-  "e93714ea"
+  "276292c8"
   
 )
 
@@ -8103,7 +8101,7 @@ var header_component = Object(componentNormalizer["a" /* default */])(
   false,
   header_injectStyles,
   null,
-  "155eedb0"
+  "509ae238"
   
 )
 
@@ -8148,7 +8146,7 @@ var polygon_default_component = Object(componentNormalizer["a" /* default */])(
   false,
   default_injectStyles,
   null,
-  "56c0ce36"
+  "7ec1000c"
   
 )
 
@@ -8512,16 +8510,16 @@ const components = {
   CommonCVueCountdown: () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 108)).then(c => wrapFunctional(c.default || c)),
   CommonHeader: () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 90)).then(c => wrapFunctional(c.default || c)),
   Common: () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 94)).then(c => wrapFunctional(c.default || c)),
-  Trading: () => __webpack_require__.e(/* import() | components/trading */ 19).then(__webpack_require__.bind(null, 151)).then(c => wrapFunctional(c.default || c)),
   PolygonAirdropAddressCard: () => __webpack_require__.e(/* import() | components/polygon-airdrop-address-card */ 10).then(__webpack_require__.bind(null, 146)).then(c => wrapFunctional(c.default || c)),
   PolygonAirdropAwardCard: () => __webpack_require__.e(/* import() | components/polygon-airdrop-award-card */ 11).then(__webpack_require__.bind(null, 147)).then(c => wrapFunctional(c.default || c)),
+  PolygonCVueCountdown: () => __webpack_require__.e(/* import() | components/polygon-c-vue-countdown */ 12).then(__webpack_require__.bind(null, 143)).then(c => wrapFunctional(c.default || c)),
+  PolygonCountdown: () => __webpack_require__.e(/* import() | components/polygon-countdown */ 13).then(__webpack_require__.bind(null, 318)).then(c => wrapFunctional(c.default || c)),
   PolygonInvitedCard: () => __webpack_require__.e(/* import() | components/polygon-invited-card */ 14).then(__webpack_require__.bind(null, 148)).then(c => wrapFunctional(c.default || c)),
   PolygonMent: () => __webpack_require__.e(/* import() | components/polygon-ment */ 15).then(__webpack_require__.bind(null, 145)).then(c => wrapFunctional(c.default || c)),
   PolygonMint: () => __webpack_require__.e(/* import() | components/polygon-mint */ 16).then(__webpack_require__.bind(null, 144)).then(c => wrapFunctional(c.default || c)),
   PolygonMintSuccessCard: () => __webpack_require__.e(/* import() | components/polygon-mint-success-card */ 17).then(__webpack_require__.bind(null, 150)).then(c => wrapFunctional(c.default || c)),
   PolygonWhitelistcard: () => __webpack_require__.e(/* import() | components/polygon-whitelistcard */ 18).then(__webpack_require__.bind(null, 149)).then(c => wrapFunctional(c.default || c)),
-  PolygonCVueCountdown: () => __webpack_require__.e(/* import() | components/polygon-c-vue-countdown */ 12).then(__webpack_require__.bind(null, 143)).then(c => wrapFunctional(c.default || c)),
-  PolygonCountdown: () => __webpack_require__.e(/* import() | components/polygon-countdown */ 13).then(__webpack_require__.bind(null, 318)).then(c => wrapFunctional(c.default || c)),
+  Trading: () => __webpack_require__.e(/* import() | components/trading */ 19).then(__webpack_require__.bind(null, 151)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutCanvasPoster: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 21).then(__webpack_require__.bind(null, 187)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutGradient: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 22).then(__webpack_require__.bind(null, 110)).then(c => wrapFunctional(c.default || c)),
   VueCreatePosterLayoutHeader: () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 23).then(__webpack_require__.bind(null, 319)).then(c => wrapFunctional(c.default || c)),
@@ -8747,7 +8745,7 @@ const setupProgress = axios => {
 var _nuxt_empty = __webpack_require__(40);
 
 // EXTERNAL MODULE: external "debug"
-var external_debug_ = __webpack_require__(5);
+var external_debug_ = __webpack_require__(4);
 
 // EXTERNAL MODULE: ./locales/index.js + 1 modules
 var locales = __webpack_require__(6);
@@ -8761,9 +8759,7 @@ var external_vant_ = __webpack_require__(1);
 
 
 external_vue_default.a.prototype.$bus = new external_vue_default.a();
-const log =  true ? (...arg) => {
-  console.log("bit:init", ...arg);
-} : undefined; // import VueAwesomeSwiper from 'vue-awesome-swiper'
+const log =  false ? undefined : Object(external_debug_["debug"])('bit:init'); // import VueAwesomeSwiper from 'vue-awesome-swiper'
 // Vue.use(VueAwesomeSwiper)
 
 
@@ -8837,12 +8833,8 @@ if (false) {}
 });
 // CONCATENATED MODULE: ./plugins/axios.js
 
-const requestlog =  true ? (...arg) => {
-  console.log("bit-article-request", ...arg);
-} : undefined;
-const responselog =  true ? (...arg) => {
-  console.log("bit-article-response", ...arg);
-} : undefined;
+const requestlog =  false ? undefined : Object(external_debug_["debug"])('bit-article-request');
+const responselog =  false ? undefined : Object(external_debug_["debug"])('bit-article-response');
 /* harmony default export */ var plugins_axios = (function ({
   $axios,
   store,
@@ -8882,17 +8874,17 @@ const responselog =  true ? (...arg) => {
 
 /* Plugins */
 
- // Source: ./components/plugin.js (mode: 'all')
+ // Source: .\\components\\plugin.js (mode: 'all')
 
- // Source: ./axios.js (mode: 'all')
+ // Source: .\\axios.js (mode: 'all')
 
- // Source: ../plugins/client/flexible.js (mode: 'client')
+ // Source: ..\\plugins\\client\\flexible.js (mode: 'client')
 
- // Source: ../plugins/common/init.js (mode: 'all')
+ // Source: ..\\plugins\\common\\init.js (mode: 'all')
 
- // Source: ../plugins/client/sessionStorage.js (mode: 'client')
+ // Source: ..\\plugins\\client\\sessionStorage.js (mode: 'client')
 
- // Source: ../plugins/axios.js (mode: 'all')
+ // Source: ..\\plugins\\axios.js (mode: 'all')
 // Component: <ClientOnly>
 
 external_vue_default.a.component(external_vue_client_only_default.a.name, external_vue_client_only_default.a); // TODO: Remove in Nuxt 3: <NoSsr>
@@ -9035,7 +9027,11 @@ async function createApp(ssrContext, config = {}) {
         "rel": "shortcut icon",
         "href": "https:\u002F\u002Fcdn.bitkeep.vip\u002Fu_b_69b66a00-a046-11ec-a3eb-f758fa002ae8.png"
       }],
-      "script": [],
+      "script": [{
+        "src": "https:\u002F\u002Fcdn.bootcdn.net\u002Fajax\u002Flibs\u002FvConsole\u002F3.8.1\u002Fvconsole.min.js",
+        "type": "text\u002Fjavascript",
+        "charset": "utf-8"
+      }],
       "style": []
     },
     store,

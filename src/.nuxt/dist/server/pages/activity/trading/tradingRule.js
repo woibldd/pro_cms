@@ -39,7 +39,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/activity/trading/tradingRule.vue?vue&type=template&id=1004b379&scoped=true&
 
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(4);
+var external_vuex_ = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/trading/tradingRule.vue?vue&type=script&lang=js&
 //
@@ -133,7 +133,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "1004b379",
-  "f8b45bcc"
+  "16d7b8e2"
   
 )
 

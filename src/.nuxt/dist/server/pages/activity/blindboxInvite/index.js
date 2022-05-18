@@ -349,7 +349,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "2ad7cb24",
-  "222e31d6"
+  "4421229c"
   
 )
 
@@ -384,7 +384,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/activity/blindboxInvite/index.vue?vue&type=template&id=c7064f60&scoped=true&
 
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(4);
+var external_vuex_ = __webpack_require__(5);
 
 // EXTERNAL MODULE: ./pages/activity/blindboxInvite/component/createPoster.vue + 4 modules
 var createPoster = __webpack_require__(230);
@@ -650,7 +650,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "c7064f60",
-  "e430bef2"
+  "045f4c10"
   
 )
 
@@ -668,7 +668,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(0);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _locales__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
-/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
+/* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var debug__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(debug__WEBPACK_IMPORTED_MODULE_3__);
 
 
@@ -678,12 +678,8 @@ var component = Object(componentNormalizer["a" /* default */])(
 // const isProduction = process.env.NODE_ENV == "production";
 // const HOST_URL = process.env.HOST_URL || process.env.baseURL
 
-const requestlog =  true ? (...arg) => {
-  console.log("bit-activity-request:", ...arg);
-} : undefined;
-const responselog =  true ? (...arg) => {
-  console.log("bit-activity-response:", ...arg);
-} : undefined;
+const requestlog =  false ? undefined : Object(debug__WEBPACK_IMPORTED_MODULE_3__["debug"])('bit-activity-request');
+const responselog =  false ? undefined : Object(debug__WEBPACK_IMPORTED_MODULE_3__["debug"])('bit-activity-response');
 const host_user_instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
   baseURL: "https://b1.bitkeep.top",
   timeout: 60000,
@@ -833,7 +829,7 @@ const USER_API = {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BaseMixin; });
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vuex__WEBPACK_IMPORTED_MODULE_0__);
 
 

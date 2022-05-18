@@ -13,12 +13,12 @@ import { createStore } from './store.js'
 
 /* Plugins */
 
-import nuxt_plugin_plugin_431dfad0 from 'nuxt_plugin_plugin_431dfad0' // Source: ./components/plugin.js (mode: 'all')
-import nuxt_plugin_axios_3c5f5ca4 from 'nuxt_plugin_axios_3c5f5ca4' // Source: ./axios.js (mode: 'all')
-import nuxt_plugin_flexible_92f9b208 from 'nuxt_plugin_flexible_92f9b208' // Source: ../plugins/client/flexible.js (mode: 'client')
-import nuxt_plugin_init_04de01b7 from 'nuxt_plugin_init_04de01b7' // Source: ../plugins/common/init.js (mode: 'all')
-import nuxt_plugin_sessionStorage_c18bdcfc from 'nuxt_plugin_sessionStorage_c18bdcfc' // Source: ../plugins/client/sessionStorage.js (mode: 'client')
-import nuxt_plugin_axios_397e53b5 from 'nuxt_plugin_axios_397e53b5' // Source: ../plugins/axios.js (mode: 'all')
+import nuxt_plugin_plugin_ba45076e from 'nuxt_plugin_plugin_ba45076e' // Source: .\\components\\plugin.js (mode: 'all')
+import nuxt_plugin_axios_7a7e55ec from 'nuxt_plugin_axios_7a7e55ec' // Source: .\\axios.js (mode: 'all')
+import nuxt_plugin_flexible_92f9b208 from 'nuxt_plugin_flexible_92f9b208' // Source: ..\\plugins\\client\\flexible.js (mode: 'client')
+import nuxt_plugin_init_04de01b7 from 'nuxt_plugin_init_04de01b7' // Source: ..\\plugins\\common\\init.js (mode: 'all')
+import nuxt_plugin_sessionStorage_c18bdcfc from 'nuxt_plugin_sessionStorage_c18bdcfc' // Source: ..\\plugins\\client\\sessionStorage.js (mode: 'client')
+import nuxt_plugin_axios_397e53b5 from 'nuxt_plugin_axios_397e53b5' // Source: ..\\plugins\\axios.js (mode: 'all')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -86,7 +86,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"BitKeep: The Best Decentralized Multi-chain Crypto Wallet","htmlAttrs":{"lang":"en"},"bodyAttrs":{"class":"theme-dark"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1, user-scalable=no"},{"name":"description","content":"BitKeep is the best decentralized multi-chain crypto wallet, providing 40+ main chains and 45000+ crypto assets and 10,000+ DApps to global users."},{"name":"keywords","content":"bitkeep,wallet,ethereum,bitcoin,eos,exchange,dapp,imtoken,kcash,cobo,bitkeep钱包,比特币,以太坊,数字钱包,币安,火币,Okex,binance,huobi,okex"},{"hid":"google-site-verification","name":"google-site-verification","content":"mohvtRqx4881-yk3PPB1HGwrE4jNIUehtro0H4E3HVw"},{"hid":"robots","name":"robots","content":"robots"},{"property":"og:title","content":"BitKeep: The Best Decentralized Multi-chain Crypto Wallet"},{"property":"og:description","content":"BitKeep is the best decentralized multi-chain crypto wallet, providing 40+ main chains and 45000+ crypto assets and 10,000+ DApps to global users."},{"property":"twitter:title","content":"BitKeep: The Best Decentralized Multi-chain Crypto Wallet"},{"property":"twitter:description","content":"BitKeep is the best decentralized multi-chain crypto wallet, providing 40+ main chains and 45000+ crypto assets and 10,000+ DApps to global users."},{"property":"og:url","content":"https:\u002F\u002Fnews.bitkeep.biz"},{"property":"og:type","content":"website"},{"property":"og:image","content":"https:\u002F\u002Fcdn.bitkeep.vip\u002Fu_b_26e281b0-a509-11ec-a3eb-f758fa002ae8.png"},{"property":"og:image:alt","content":"BitKeep, a Best Crpto Wallet"},{"property":"og:site_name","content":"BitKeep"},{"property":"twitter:image","content":"https:\u002F\u002Fcdn.bitkeep.vip\u002Fu_b_26e281b0-a509-11ec-a3eb-f758fa002ae8.png"},{"property":"twitter:image:src","content":"https:\u002F\u002Fcdn.bitkeep.vip\u002Fu_b_26e281b0-a509-11ec-a3eb-f758fa002ae8.png"},{"property":"twitter:image:alt","content":"BitKeep"},{"property":"twitter:card","content":"summary_large_image"},{"property":"twitter:image","content":"https:\u002F\u002Fcdn.bitkeep.vip\u002Fu_b_26e281b0-a509-11ec-a3eb-f758fa002ae8.png"},{"property":"twitter:site","content":"https:\u002F\u002Fnews.bitkeep.biz"}],"link":[{"rel":"shortcut icon","href":"https:\u002F\u002Fcdn.bitkeep.vip\u002Fu_b_69b66a00-a046-11ec-a3eb-f758fa002ae8.png"}],"script":[],"style":[]},
+    head: {"title":"BitKeep: The Best Decentralized Multi-chain Crypto Wallet","htmlAttrs":{"lang":"en"},"bodyAttrs":{"class":"theme-dark"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1, user-scalable=no"},{"name":"description","content":"BitKeep is the best decentralized multi-chain crypto wallet, providing 40+ main chains and 45000+ crypto assets and 10,000+ DApps to global users."},{"name":"keywords","content":"bitkeep,wallet,ethereum,bitcoin,eos,exchange,dapp,imtoken,kcash,cobo,bitkeep钱包,比特币,以太坊,数字钱包,币安,火币,Okex,binance,huobi,okex"},{"hid":"google-site-verification","name":"google-site-verification","content":"mohvtRqx4881-yk3PPB1HGwrE4jNIUehtro0H4E3HVw"},{"hid":"robots","name":"robots","content":"robots"},{"property":"og:title","content":"BitKeep: The Best Decentralized Multi-chain Crypto Wallet"},{"property":"og:description","content":"BitKeep is the best decentralized multi-chain crypto wallet, providing 40+ main chains and 45000+ crypto assets and 10,000+ DApps to global users."},{"property":"twitter:title","content":"BitKeep: The Best Decentralized Multi-chain Crypto Wallet"},{"property":"twitter:description","content":"BitKeep is the best decentralized multi-chain crypto wallet, providing 40+ main chains and 45000+ crypto assets and 10,000+ DApps to global users."},{"property":"og:url","content":"https:\u002F\u002Fnews.bitkeep.biz"},{"property":"og:type","content":"website"},{"property":"og:image","content":"https:\u002F\u002Fcdn.bitkeep.vip\u002Fu_b_26e281b0-a509-11ec-a3eb-f758fa002ae8.png"},{"property":"og:image:alt","content":"BitKeep, a Best Crpto Wallet"},{"property":"og:site_name","content":"BitKeep"},{"property":"twitter:image","content":"https:\u002F\u002Fcdn.bitkeep.vip\u002Fu_b_26e281b0-a509-11ec-a3eb-f758fa002ae8.png"},{"property":"twitter:image:src","content":"https:\u002F\u002Fcdn.bitkeep.vip\u002Fu_b_26e281b0-a509-11ec-a3eb-f758fa002ae8.png"},{"property":"twitter:image:alt","content":"BitKeep"},{"property":"twitter:card","content":"summary_large_image"},{"property":"twitter:image","content":"https:\u002F\u002Fcdn.bitkeep.vip\u002Fu_b_26e281b0-a509-11ec-a3eb-f758fa002ae8.png"},{"property":"twitter:site","content":"https:\u002F\u002Fnews.bitkeep.biz"}],"link":[{"rel":"shortcut icon","href":"https:\u002F\u002Fcdn.bitkeep.vip\u002Fu_b_69b66a00-a046-11ec-a3eb-f758fa002ae8.png"}],"script":[{"src":"https:\u002F\u002Fcdn.bootcdn.net\u002Fajax\u002Flibs\u002FvConsole\u002F3.8.1\u002Fvconsole.min.js","type":"text\u002Fjavascript","charset":"utf-8"}],"style":[]},
 
     store,
     router,
@@ -215,12 +215,12 @@ async function createApp(ssrContext, config = {}) {
   }
   // Plugin execution
 
-  if (typeof nuxt_plugin_plugin_431dfad0 === 'function') {
-    await nuxt_plugin_plugin_431dfad0(app.context, inject)
+  if (typeof nuxt_plugin_plugin_ba45076e === 'function') {
+    await nuxt_plugin_plugin_ba45076e(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_3c5f5ca4 === 'function') {
-    await nuxt_plugin_axios_3c5f5ca4(app.context, inject)
+  if (typeof nuxt_plugin_axios_7a7e55ec === 'function') {
+    await nuxt_plugin_axios_7a7e55ec(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_flexible_92f9b208 === 'function') {

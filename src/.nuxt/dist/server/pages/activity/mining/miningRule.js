@@ -39,7 +39,7 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/activity/mining/miningRule.vue?vue&type=template&id=25e44d30&scoped=true&
 
 // EXTERNAL MODULE: external "vuex"
-var external_vuex_ = __webpack_require__(4);
+var external_vuex_ = __webpack_require__(5);
 
 // CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/mining/miningRule.vue?vue&type=script&lang=js&
 //
@@ -183,7 +183,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "25e44d30",
-  "6a8c5796"
+  "a4208276"
   
 )
 
