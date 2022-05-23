@@ -453,6 +453,7 @@ export default {
       this.isLoading = false
       if (status == 1) {
         return this.$dialog.alert({
+          className: 'polygon-dialog',
           message: data,
           confirmButtonText: this.$t('polygon.iknow'),
           confirmButtonColor: '#7524f9'
@@ -475,6 +476,7 @@ export default {
       this.isLoading = false
       if (status == 1) {
         return this.$dialog.alert({
+          className: 'polygon-dialog',
           message: data,
           confirmButtonText: this.$t('polygon.iknow'),
           confirmButtonColor: '#7524f9'
@@ -511,6 +513,7 @@ export default {
       })
       if (status == 1) {
         return this.$dialog.alert({
+          className: 'polygon-dialog',
           message: data,
           confirmButtonText: this.$t('polygon.iknow'),
           confirmButtonColor: '#7524f9'
@@ -564,6 +567,7 @@ export default {
         const ChainId = await wallet.getChainId()
         if (Number(ChainId) != this.ChainId) {
           this.$dialog.alert({
+            className: 'polygon-dialog',
             message: this.$t("polygon.switchChain1"),
             confirmButtonText: this.$t("polygon.switchChain2"),
             confirmButtonColor: '#7524f9'
@@ -625,6 +629,7 @@ export default {
             if (status == 1) {
               this.isLoading = false
               return this.$dialog.alert({
+                className: 'polygon-dialog',
                 message: data,
                 confirmButtonText: this.$t('polygon.iknow'),
                 confirmButtonColor: '#7524f9'
@@ -650,6 +655,7 @@ export default {
               this.isLoading = false;
               this.init()
               return this.$dialog.alert({
+                className: 'polygon-dialog',
                 message: "Mint " + this.$t("polygon.faild"),
                 confirmButtonText: this.$t('polygon.iknow'),
                 confirmButtonColor: '#7524f9'
@@ -661,6 +667,7 @@ export default {
             this.init()
             clearInterval(MintTimer)
             this.$dialog.alert({
+              className: 'polygon-dialog',
               message: 'Mint ' + this.$t('polygon.faild'),
               confirmButtonText: this.$t('polygon.iknow'),
             })
@@ -676,6 +683,7 @@ export default {
     async ableMent(Mentlist) {
       if (Mentlist.length == 0) {
         return this.$dialog.alert({
+          className: 'polygon-dialog',
           message: this.$t('polygon.noNft'),
         })
       }
@@ -687,6 +695,7 @@ export default {
         const ChainId = await wallet.getChainId()
         if (Number(ChainId) != this.ChainId) {
           this.$dialog.alert({
+            className: 'polygon-dialog',
             message: this.$t("polygon.switchChain1"),
             confirmButtonText: this.$t("polygon.switchChain2"),
             confirmButtonColor: '#7524f9'
@@ -725,6 +734,7 @@ export default {
         if (TXdata.status == 1) {
           this.isLoading = false
           return this.$dialog.alert({
+            className: 'polygon-dialog',
             message: TXdata.data,
             confirmButtonText: this.$t('polygon.iknow'),
             confirmButtonColor: '#7524f9'
@@ -754,6 +764,7 @@ export default {
             if (status == 1) {
               this.isLoading = false
               return this.$dialog.alert({
+                className: 'polygon-dialog',
                 message: data,
                 confirmButtonText: this.$t('polygon.iknow'),
                 confirmButtonColor: '#7524f9'
@@ -778,6 +789,7 @@ export default {
               this.isLoading = false;
               this.init()
               return this.$dialog.alert({
+                className: 'polygon-dialog',
                 message: "MELT " + this.$t("polygon.faild"),
                 confirmButtonText: this.$t('polygon.iknow'),
                 confirmButtonColor: '#7524f9'
@@ -789,6 +801,7 @@ export default {
             this.init()
             MentTimer && clearInterval(MentTimer)
             this.$dialog.alert({
+              className: 'polygon-dialog',
               message: 'MELT' + this.$t("polygon.faild"),
               confirmButtonText: $t('polygon.iknow'),
             })
@@ -1418,5 +1431,37 @@ export default {
       font-size: 14px;
     }
   }
+
+  
+
+.van-dialog.polygon-dialog {
+  border-radius:0;
+  background-color: #202024;
+  border-color: #49494D;
+  color: #ffffff;
+  font-size: 18px;
+  font-family: "TTOMedium";
+  .van-dialog__message {
+    margin: 40px 20px;
+  }
+  .van-button--default { 
+    width: 198px;
+    height: 44px;
+    line-height: 44px;
+    background: url(@/assets/img/btnBg5.png);
+    background-size: 100% 100%;
+    margin: 0 60px 40px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+  }
+  .van-hairline--top::after {
+    border: none
+  }
+  .van-dialog__confirm {
+    color: #ffffff !important;;
+  }
+}
 
 </style>
