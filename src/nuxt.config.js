@@ -172,7 +172,7 @@ export default {
   components: true,
   proxy: {
     //  开发环境 
-    "/operation": {
+    "/operationweb": {
       target: HOST_API,
       changeOrigin: true,
       onProxyReq(proxyReq, req, res) {
