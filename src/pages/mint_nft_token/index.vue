@@ -602,6 +602,14 @@ export default {
           chain: 'matic',
           num: MintNum
         });
+        if (TXdata.status == 1) {
+          this.isLoading = false;
+          return this.$dialog.alert({
+            message: TXdata.data,
+            confirmButtonText: this.$t('polygon.iknow'),
+            confirmButtonColor: '#7524f9'
+          })
+        }
         const tx = {
           gas: TXdata.data.tx.fee.gasLimitMax || TXdata.data.tx.fee.gasLimit,
           gasPrice: TXdata.data.tx.fee.gasPrice,
