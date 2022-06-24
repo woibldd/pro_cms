@@ -605,6 +605,7 @@ export default {
         if (TXdata.status == 1) {
           this.isLoading = false;
           return this.$dialog.alert({
+            className: 'polygon-dialog',
             message: TXdata.data,
             confirmButtonText: this.$t('polygon.iknow'),
             confirmButtonColor: '#7524f9'
