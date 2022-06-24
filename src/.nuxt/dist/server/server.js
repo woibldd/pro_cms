@@ -6503,6 +6503,12 @@ __webpack_require__.r(__webpack_exports__);
 var components_namespaceObject = {};
 __webpack_require__.r(components_namespaceObject);
 __webpack_require__.d(components_namespaceObject, "Activity", function() { return Activity; });
+__webpack_require__.d(components_namespaceObject, "Trading", function() { return Trading; });
+__webpack_require__.d(components_namespaceObject, "BlindboxBlindButton", function() { return BlindboxBlindButton; });
+__webpack_require__.d(components_namespaceObject, "BlindboxBlindStrategy", function() { return BlindboxBlindStrategy; });
+__webpack_require__.d(components_namespaceObject, "BlindboxBlindTimeText", function() { return BlindboxBlindTimeText; });
+__webpack_require__.d(components_namespaceObject, "BlindboxCreatePoster", function() { return BlindboxCreatePoster; });
+__webpack_require__.d(components_namespaceObject, "BlindboxTitleImage", function() { return BlindboxTitleImage; });
 __webpack_require__.d(components_namespaceObject, "CommonCVueCountdown", function() { return CommonCVueCountdown; });
 __webpack_require__.d(components_namespaceObject, "CommonHeader", function() { return CommonHeader; });
 __webpack_require__.d(components_namespaceObject, "Common", function() { return Common; });
@@ -6515,12 +6521,6 @@ __webpack_require__.d(components_namespaceObject, "PolygonMintSuccessCard", func
 __webpack_require__.d(components_namespaceObject, "PolygonWhitelistcard", function() { return PolygonWhitelistcard; });
 __webpack_require__.d(components_namespaceObject, "PolygonCVueCountdown", function() { return PolygonCVueCountdown; });
 __webpack_require__.d(components_namespaceObject, "PolygonCountdown", function() { return PolygonCountdown; });
-__webpack_require__.d(components_namespaceObject, "Trading", function() { return Trading; });
-__webpack_require__.d(components_namespaceObject, "BlindboxBlindButton", function() { return BlindboxBlindButton; });
-__webpack_require__.d(components_namespaceObject, "BlindboxBlindStrategy", function() { return BlindboxBlindStrategy; });
-__webpack_require__.d(components_namespaceObject, "BlindboxBlindTimeText", function() { return BlindboxBlindTimeText; });
-__webpack_require__.d(components_namespaceObject, "BlindboxCreatePoster", function() { return BlindboxCreatePoster; });
-__webpack_require__.d(components_namespaceObject, "BlindboxTitleImage", function() { return BlindboxTitleImage; });
 __webpack_require__.d(components_namespaceObject, "VueCreatePosterLayoutCanvasPoster", function() { return VueCreatePosterLayoutCanvasPoster; });
 __webpack_require__.d(components_namespaceObject, "VueCreatePosterLayoutGradient", function() { return VueCreatePosterLayoutGradient; });
 __webpack_require__.d(components_namespaceObject, "VueCreatePosterLayoutHeader", function() { return VueCreatePosterLayoutHeader; });
@@ -8609,6 +8609,12 @@ function mergeProperty(storeModule, moduleData, property) {
 }
 // CONCATENATED MODULE: ./.nuxt/components/index.js
 const Activity = () => __webpack_require__.e(/* import() | components/activity */ 1).then(__webpack_require__.bind(null, 239)).then(c => wrapFunctional(c.default || c));
+const Trading = () => __webpack_require__.e(/* import() | components/trading */ 19).then(__webpack_require__.bind(null, 153)).then(c => wrapFunctional(c.default || c));
+const BlindboxBlindButton = () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 241)).then(c => wrapFunctional(c.default || c));
+const BlindboxBlindStrategy = () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 319)).then(c => wrapFunctional(c.default || c));
+const BlindboxBlindTimeText = () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 142)).then(c => wrapFunctional(c.default || c));
+const BlindboxCreatePoster = () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 242)).then(c => wrapFunctional(c.default || c));
+const BlindboxTitleImage = () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 240)).then(c => wrapFunctional(c.default || c));
 const CommonCVueCountdown = () => __webpack_require__.e(/* import() | components/common-c-vue-countdown */ 8).then(__webpack_require__.bind(null, 110)).then(c => wrapFunctional(c.default || c));
 const CommonHeader = () => __webpack_require__.e(/* import() | components/common-header */ 9).then(__webpack_require__.bind(null, 92)).then(c => wrapFunctional(c.default || c));
 const Common = () => __webpack_require__.e(/* import() | components/common */ 7).then(__webpack_require__.bind(null, 96)).then(c => wrapFunctional(c.default || c));
@@ -8620,13 +8626,7 @@ const PolygonMint = () => __webpack_require__.e(/* import() | components/polygon
 const PolygonMintSuccessCard = () => __webpack_require__.e(/* import() | components/polygon-mint-success-card */ 17).then(__webpack_require__.bind(null, 152)).then(c => wrapFunctional(c.default || c));
 const PolygonWhitelistcard = () => __webpack_require__.e(/* import() | components/polygon-whitelistcard */ 18).then(__webpack_require__.bind(null, 151)).then(c => wrapFunctional(c.default || c));
 const PolygonCVueCountdown = () => __webpack_require__.e(/* import() | components/polygon-c-vue-countdown */ 12).then(__webpack_require__.bind(null, 145)).then(c => wrapFunctional(c.default || c));
-const PolygonCountdown = () => __webpack_require__.e(/* import() | components/polygon-countdown */ 13).then(__webpack_require__.bind(null, 319)).then(c => wrapFunctional(c.default || c));
-const Trading = () => __webpack_require__.e(/* import() | components/trading */ 19).then(__webpack_require__.bind(null, 153)).then(c => wrapFunctional(c.default || c));
-const BlindboxBlindButton = () => __webpack_require__.e(/* import() | components/blindbox-blind-button */ 2).then(__webpack_require__.bind(null, 241)).then(c => wrapFunctional(c.default || c));
-const BlindboxBlindStrategy = () => __webpack_require__.e(/* import() | components/blindbox-blind-strategy */ 3).then(__webpack_require__.bind(null, 320)).then(c => wrapFunctional(c.default || c));
-const BlindboxBlindTimeText = () => __webpack_require__.e(/* import() | components/blindbox-blind-time-text */ 4).then(__webpack_require__.bind(null, 142)).then(c => wrapFunctional(c.default || c));
-const BlindboxCreatePoster = () => __webpack_require__.e(/* import() | components/blindbox-create-poster */ 5).then(__webpack_require__.bind(null, 242)).then(c => wrapFunctional(c.default || c));
-const BlindboxTitleImage = () => __webpack_require__.e(/* import() | components/blindbox-title-image */ 6).then(__webpack_require__.bind(null, 240)).then(c => wrapFunctional(c.default || c));
+const PolygonCountdown = () => __webpack_require__.e(/* import() | components/polygon-countdown */ 13).then(__webpack_require__.bind(null, 320)).then(c => wrapFunctional(c.default || c));
 const VueCreatePosterLayoutCanvasPoster = () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-canvas-poster */ 21).then(__webpack_require__.bind(null, 189)).then(c => wrapFunctional(c.default || c));
 const VueCreatePosterLayoutGradient = () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-gradient */ 22).then(__webpack_require__.bind(null, 112)).then(c => wrapFunctional(c.default || c));
 const VueCreatePosterLayoutHeader = () => __webpack_require__.e(/* import() | components/vue-create-poster-layout-header */ 23).then(__webpack_require__.bind(null, 321)).then(c => wrapFunctional(c.default || c));
