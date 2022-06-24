@@ -5,11 +5,11 @@ import { getMatchedComponentsInstances, getChildrenComponentInstancesUsingFetch,
 import NuxtError from './components/nuxt-error.vue'
 import NuxtLoading from './components/nuxt-loading.vue'
 
-import '../node_modules/vant/lib/index.css'
+import '../node_modules/_vant@2.12.47@vant/lib/index.css'
 
 import '../assets/css/globle.scss'
 
-import '../node_modules/swiper/css/swiper.css'
+import '../node_modules/_swiper@5.4.5@swiper/css/swiper.css'
 
 import _6f6c098b from '../layouts/default.vue'
 import _3252d7b6 from '../layouts/polygon/default.vue'
