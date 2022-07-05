@@ -1,7 +1,7 @@
 exports.ids = [55,59];
 exports.modules = {
 
-/***/ 105:
+/***/ 103:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -131,7 +131,7 @@ const wallet = new Wallet();
 
 /***/ }),
 
-/***/ 223:
+/***/ 221:
 /***/ (function(module, exports) {
 
 // Exports
@@ -142,26 +142,26 @@ module.exports = {
 
 /***/ }),
 
-/***/ 278:
+/***/ 276:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_15_9_8_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_7_3_1_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_2_2_1_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_8_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_02132f64_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(223);
-/* harmony import */ var _node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_15_9_8_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_7_3_1_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_2_2_1_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_8_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_02132f64_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_15_9_8_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_7_3_1_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_2_2_1_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_8_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_02132f64_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_15_9_8_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_7_3_1_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_2_2_1_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_8_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_02132f64_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_css_loader_4_3_0_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_15_9_8_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_3_0_0_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_7_3_1_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_2_2_1_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_15_9_8_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_02132f64_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_02132f64_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(221);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_02132f64_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_02132f64_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_02132f64_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_css_loader_dist_cjs_js_ref_7_oneOf_1_0_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_oneOf_1_1_node_modules_sass_loader_dist_cjs_js_ref_7_oneOf_1_2_node_modules_nuxt_components_dist_loader_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addPool_vue_vue_type_style_index_0_id_02132f64_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 
 
 /***/ }),
 
-/***/ 314:
+/***/ 312:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/_vue-loader@15.9.8@vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/_@nuxt_components@2.2.1@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.8@vue-loader/lib??vue-loader-options!./pages/activity/staking/addPool.vue?vue&type=template&id=02132f64&scoped=true&
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/staking/addPool.vue?vue&type=template&id=02132f64&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"colorBackground1"},[(_vm.isLoading)?_vm._ssrNode("<div class=\"loading\" data-v-02132f64>","</div>",[_c('van-loading',{attrs:{"color":"#7524f9","vertical":""}},[_vm._v(_vm._s(_vm.$t("base.loading"))+"...")])],1):_vm._ssrNode(("<div data-v-02132f64><div class=\"addPool\" data-v-02132f64><div class=\"staking-wrap-box-pool-title\" data-v-02132f64><img src=\"https://cdn.bitkeep.vip/u_b_27f9ea80-a03a-11ec-ad8b-9ff4f858e021.png\" alt data-v-02132f64> <div class=\"staking-wrap-box-pool-title-flex\" data-v-02132f64><div class=\"staking-wrap-box-pool-title-left\" data-v-02132f64><div class=\"textPrimary0\" data-v-02132f64>"+_vm._ssrEscape(_vm._s(_vm.title))+"</div></div> <div class=\"staking-wrap-box-pool-title-right\" data-v-02132f64><div class=\"textSecond2\" data-v-02132f64>"+_vm._ssrEscape(_vm._s(_vm.$t("staking.APY")))+"</div> <div class=\"colorSecond01 setFontFamily\" data-v-02132f64>"+_vm._ssrEscape(_vm._s(_vm.apy + "%"))+"</div></div></div></div> <div class=\"staking-wrap-box-pool-duration textPrimary0\" data-v-02132f64>"+_vm._ssrEscape("\n        "+_vm._s(_vm.$t("staking.Duration"))+"\n      ")+"</div> <div class=\"staking-wrap-box-pool-duration-box\" data-v-02132f64>"+(_vm._ssrList((_vm.listInfo.list[0].config),function(sitem,i){return ("<span"+(_vm._ssrClass("staking-wrap-box-pool-duration-smallBox setFontFamily",[
             _vm.isActiveSaleOut(sitem) ? 'textSecond3' : 'textSecond1',
             i == _vm.setBorderColor ? 'setBorderColor' : '' ]))+" data-v-02132f64>"+_vm._ssrEscape(_vm._s(sitem.time))+"</span>")}))+"</div> <div class=\"staking-warp-amount\" data-v-02132f64><div class=\"textPrimary0\" data-v-02132f64>"+_vm._ssrEscape(_vm._s(_vm.$t("staking.StakeAmount")))+"</div> <div class=\"textSecond3\" data-v-02132f64>"+_vm._ssrEscape("\n          "+_vm._s(_vm.$t("staking.Available"))+":\n          "+_vm._s(_vm.listInfo.list[0].userAmount.toFixed(6))+" BKB\n        ")+"</div></div> <div class=\"staking-warp-amount-input\" data-v-02132f64><input type=\"number\""+(_vm._ssrAttr("min",1))+" placeholder=\"Entry stake amount\""+(_vm._ssrAttr("value",(_vm.inputNumber)))+" class=\"textPrimary0 setFontFamily\" data-v-02132f64> <div class=\"staking-warp-amount-input-right\" data-v-02132f64><div class=\"right textPrimary0 setFontFamily\" data-v-02132f64>BKB</div> <div class=\"line colorLine1\" data-v-02132f64></div> <div class=\"max colorPrimary\" data-v-02132f64>"+_vm._ssrEscape("\n            "+_vm._s(_vm.$t("staking.MAX"))+"\n          ")+"</div></div></div> <div class=\"staking-limiation textPrimary0\" data-v-02132f64>"+_vm._ssrEscape("\n        "+_vm._s(_vm.$t("staking.StakeAmountLimiation"))+"\n      ")+"</div> <div class=\"staking-min textSecond3\" data-v-02132f64><div data-v-02132f64>"+_vm._ssrEscape("\n          "+_vm._s(_vm.$t("staking.Minimum"))+":\n          ")+"<span class=\"setFontFamily textPrimary0\" data-v-02132f64> 1 BKB</span></div> <div data-v-02132f64></div></div> <div class=\"staking-summry\" data-v-02132f64><div class=\"textPrimary0 Summary\" data-v-02132f64>"+_vm._ssrEscape(_vm._s(_vm.$t("staking.Summary")))+"</div> <div class=\"staking-summary-box colorBackground3\" data-v-02132f64><ul data-v-02132f64><li data-v-02132f64><span class=\"dian colorBackgroundPrimary\" data-v-02132f64></span> <span class=\"textSecond3\" data-v-02132f64>"+_vm._ssrEscape(_vm._s(_vm.$t("staking.StakeDate"))+" ")+"</span> <span class=\"textPrimary0 setFontFamily\" data-v-02132f64>"+_vm._ssrEscape(_vm._s(_vm.timerFormatte(_vm.listInfo.serverTime)))+"</span></li> <li class=\"setLeftLine colorDisable\" data-v-02132f64></li> <li data-v-02132f64><span class=\"dian colorBackgroundPrimary\" data-v-02132f64></span> <span class=\"textSecond3\" data-v-02132f64>"+_vm._ssrEscape(_vm._s(_vm.$t("staking.ValueDate"))+" ")+"</span> <span class=\"textPrimary0 setFontFamily\" data-v-02132f64>"+_vm._ssrEscape(_vm._s(_vm.timerFormatte(_vm.listInfo.serverTime)))+"</span></li> <li class=\"setLeftColorLine\" data-v-02132f64><span class=\"textSecond3\" data-v-02132f64>"+_vm._ssrEscape(_vm._s(_vm.$t("staking.InterestPeriod"))+"\n              ")+"</span> <span class=\"textPrimary0 setFontFamily\" data-v-02132f64>"+_vm._ssrEscape(_vm._s(_vm.day)+" "+_vm._s(_vm.$t("staking.Days")))+"</span></li> <li data-v-02132f64><span class=\"dian colorBackgroundPrimary\" data-v-02132f64></span> <span class=\"textSecond3\" data-v-02132f64>"+_vm._ssrEscape(_vm._s(_vm.$t("staking.InterestEndDate"))+"\n              ")+"</span> <span class=\"textPrimary0 setFontFamily\" data-v-02132f64>"+_vm._ssrEscape(_vm._s(_vm.endtimerFormatte(_vm.listInfo.serverTime)))+"</span></li> <li class=\"setLeftLine colorDisable\" data-v-02132f64></li> <li data-v-02132f64><span class=\"dian colorBackgroundPrimary\" data-v-02132f64></span> <span class=\"textSecond3\" data-v-02132f64>"+_vm._ssrEscape(_vm._s(_vm.$t("staking.RedemptionDate"))+"\n              ")+"</span> <span class=\"textPrimary0 setFontFamily\" data-v-02132f64>"+_vm._ssrEscape(_vm._s(_vm.endtimerFormatte(_vm.listInfo.serverTime)))+"</span></li></ul> <div class=\"colorLine1 setColorLine1\" data-v-02132f64></div> <div class=\"staking-warp-Interests\" data-v-02132f64><div class=\"textSecond3\" data-v-02132f64>"+_vm._ssrEscape("\n              "+_vm._s(_vm.$t("staking.EstimatedInterests"))+"\n            ")+"</div> <div class=\"colorSecond01 setFontFamily\" data-v-02132f64>"+_vm._ssrEscape("\n              "+_vm._s(_vm.inputNumber
@@ -178,19 +178,19 @@ var staticRenderFns = []
 // CONCATENATED MODULE: ./pages/activity/staking/addPool.vue?vue&type=template&id=02132f64&scoped=true&
 
 // EXTERNAL MODULE: ./api/client.js
-var client = __webpack_require__(88);
+var client = __webpack_require__(86);
 
 // EXTERNAL MODULE: external "vuex"
 var external_vuex_ = __webpack_require__(4);
 
 // EXTERNAL MODULE: external "moment"
-var external_moment_ = __webpack_require__(83);
+var external_moment_ = __webpack_require__(81);
 var external_moment_default = /*#__PURE__*/__webpack_require__.n(external_moment_);
 
 // EXTERNAL MODULE: ./pages/activity/staking/wallet.js
-var wallet = __webpack_require__(105);
+var wallet = __webpack_require__(103);
 
-// CONCATENATED MODULE: ./node_modules/_babel-loader@8.2.5@babel-loader/lib??ref--2-0!./node_modules/_@nuxt_components@2.2.1@@nuxt/components/dist/loader.js??ref--0-0!./node_modules/_vue-loader@15.9.8@vue-loader/lib??vue-loader-options!./pages/activity/staking/addPool.vue?vue&type=script&lang=js&
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib??ref--2-0!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/activity/staking/addPool.vue?vue&type=script&lang=js&
 //
 //
 //
@@ -602,7 +602,7 @@ var wallet = __webpack_require__(105);
 });
 // CONCATENATED MODULE: ./pages/activity/staking/addPool.vue?vue&type=script&lang=js&
  /* harmony default export */ var staking_addPoolvue_type_script_lang_js_ = (addPoolvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./node_modules/_vue-loader@15.9.8@vue-loader/lib/runtime/componentNormalizer.js
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__(3);
 
 // CONCATENATED MODULE: ./pages/activity/staking/addPool.vue
@@ -611,7 +611,7 @@ var componentNormalizer = __webpack_require__(3);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(278)
+  var style0 = __webpack_require__(276)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -625,7 +625,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   false,
   injectStyles,
   "02132f64",
-  "2c8cefb5"
+  "0b7e54d0"
   
 )
 
@@ -633,7 +633,7 @@ var component = Object(componentNormalizer["a" /* default */])(
 
 /***/ }),
 
-/***/ 88:
+/***/ 86:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -667,7 +667,7 @@ const host_user_instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
     // token: "",
     language: "en",
     currency: "",
-    brand: "",
+    brand: "web",
     os: "",
     package: "",
     clientVersion: 1,
