@@ -23,7 +23,7 @@ const host_user_instance = axios.create({
     brand: "web",
     os: "",
     package: "",
-    clientVersion: 1,
+    clientVersion: "",
     im: "",
   }
 });
