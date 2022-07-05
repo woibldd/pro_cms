@@ -8,6 +8,7 @@
         "error_file": "./api_error.log",
         "out_file":  "./api_runtime.log",
         "env": {
+          "NUXT_ENV_port":"8083",
           "BUILD_ENV":"pro",
           "DEBUG":"",
           "NODE_ENV": "production",
