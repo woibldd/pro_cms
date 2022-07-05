@@ -16,11 +16,11 @@ const INIT_STATE = {
     currency: 'cny',
     os: 'android',
     package: 'com.bitkeep.wallet5',
-    clientversion: '6.1.6',
+    clientversion: '',
     ua: 'BitKeep Android/6.1.6',
     token: '',
     mylanguage: 'en',
-    brand: 'Android',
+    brand: 'web',
   },
   userInfo: {
     token: ""

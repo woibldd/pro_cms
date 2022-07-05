@@ -20,7 +20,7 @@ const host_user_instance = axios.create({
     // token: "",
     language: "en",
     currency: "",
-    brand: "",
+    brand: "web",
     os: "",
     package: "",
     clientVersion: 1,
