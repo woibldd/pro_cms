@@ -152,6 +152,8 @@ export default {
     // '@/plugins/vant'
     // { src: "@/plugins/client/bitkeep.js", ssr: false },
     { src: "@/plugins/client/flexible.js", ssr: false },
+    { src: "@/plugins/client/bitkeep.js", ssr: false },
+    { src: "@/plugins/client/ta.js", ssr: false },
     { src: "@/plugins/common/init.js" },
     { src: "@/plugins/client/sessionStorage.js", ssr: false },
     // { src: "@/plugins/client/firebase.js", ssr: false }, 
