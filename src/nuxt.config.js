@@ -261,7 +261,7 @@ export default {
   devtools: BUILD_ENV == "dev",
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    // publicPath: "/nft_h5_static/",
+    publicPath: "/nft_h5_static/",
     extractCSS: { allChunks: true },
     plugins: [
       new CompressionPlugin({
